@@ -6,3 +6,6 @@
 .sail-study{border:1px solid #a2d3c0;background:#192e2b;padding:18px;border-radius:14px;margin-bottom:20px}.sail-study h2{font-size:23px;margin:8px 0}.sail-study p{font-size:14px;line-height:1.55}.sail-study label{display:flex;justify-content:space-between;gap:12px;font-size:14px}.sail-study input{width:100%;accent-color:#a2e1bd;margin:15px 0}.sail-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sail-buttons button{font-size:13px;padding:10px;color:#e8f4ef;background:#263d39;border:1px solid #5c7d71;border-radius:7px;cursor:pointer}.study-note{color:#f0d4a2;border-top:1px solid #536b60;padding-top:10px}
 
 .label3d.assembly{font-size:12px;padding:4px 7px;max-width:150px}.sail-study[hidden]{display:none!important}
+
+/* Keep every tool reachable on small screens and when zoomed. */
+.tools{max-height:calc(100% - 150px);overflow-y:auto;z-index:4;scrollbar-width:thin}.tools button{flex-shrink:0}.tools small{font-size:10px;line-height:1.15}.tools #annotations{border:1px solid #607e69}.label3d{pointer-events:none}

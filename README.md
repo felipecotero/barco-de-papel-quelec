@@ -6,8 +6,8 @@ Vela de cuatro caras con 270 mm de profundidad, costillas independientes por mit
 
 ## Planos y archivos de taller
 
-- [Ocho pliegos 100 × 70 cm, revisión R08](downloads/Planos-R08.pdf).
-- [Paquete técnico R08: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R08.zip).
+- [Ocho pliegos 100 × 70 cm, revisión R08](downloads/Planos-R08.pdf?rev=R08-audit1).
+- [Paquete técnico R08: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R08.zip?rev=R08-audit1).
 
 **Seis láminas de 2440 × 1220 × 4 mm**: encaje geométrico verificado para 133 blancos, con margen de 10 mm y separación mínima de 6 mm. Incluye pestañas, contraplacas y costillas. El anidado de la vela utiliza su desarrollo real.
 
@@ -17,9 +17,9 @@ Con 700 g/m², estimación por mitad: A 6,863 kg; B 7,911 kg. Entre dos adultos 
 
 ## Usar el visor
 
-**Ver despiece** muestra las seis láminas. **Ver interior** deja ver costillas y seis cierres. **Cierre con velcro**, **Cintas y bandas** y **Sostener la vela** abren detalles. El deslizador separa el ensamble mostrado. **Presentación** permite observar papel, luces y sombras. Los botones incluyen texto y ayuda.
+**Ver despiece** muestra las seis láminas. **Ver interior** deja ver costillas y seis cierres. **Ubicar 6 velcros** señala C1–C6 con las coordenadas de B-06. El botón **Rótulos** de la barra controla todas las llamadas y cuadros de pieza, también dentro de los detalles. **Cierre con velcro**, **Cintas y bandas** y **Sostener la vela** abren detalles. El deslizador separa el ensamble mostrado. **Presentación** permite observar papel, luces y sombras. Los botones incluyen texto y ayuda.
 
-Arrastrar para girar; rueda o pinza para acercar. C girar, H encuadrar, espacio animar/pausar y Escape volver. Compartir vista conserva cámara, etapa y separación en el enlace.
+Arrastrar para girar; rueda o pinza para acercar. E mostrar/ocultar todas las etiquetas, C girar, H encuadrar, espacio animar/pausar y Escape volver. Compartir vista conserva cámara, etapa, separación y visibilidad de etiquetas en el enlace.
 
 El velcro es cierre de posición: cada bastidor sostiene su propia mitad. Ajustar el contacto y medir apertura en prototipo. Uniones, retenciones, adhesivos y maniobra elevada requieren prueba física. El fondo no lleva cabezas de tornillos por debajo; las pestañas del fondo se unen con adhesivo PP-LSE probado. La gaffer remata y presenta, junto a bandas y fijaciones.
 
@@ -31,8 +31,12 @@ Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su 
 
 Fuentes de materiales: [Coroplast](https://www.coroplast.com/resources/), [3M DP8005 para PP de baja energía superficial](https://www.3m.com/3M/en_US/p/d/b5005321032/), [Pro Gaff](https://www.protapes.com/pro-gaff-tape/). Las fichas no certifican este conjunto.
 
-[Ubicaciones nominales de las28 pestañasTP](downloads/Ubicaciones-TP-R08.csv): coordenadasX/Y/Z yencuentro; pliegue yángulo se presentan sobre las piezas reales.
+[Ubicaciones nominales de las28 pestañasTP](downloads/Ubicaciones-TP-R08.csv?rev=R08-audit1): coordenadasX/Y/Z yencuentro; pliegue yángulo se presentan sobre las piezas reales.
 
 ## Cambios R08
 
-Octavo pliego dedicado a las asas de ambas mitades. El visor dibuja los perímetros y pliegues reales; no activa mallas de alambre ni extrae diagonales de la triangulación. La geometría, seis láminas y presupuesto R07 se conservan.
+Octavo pliego dedicado a las asas de ambas mitades. El visor dibuja los perímetros y pliegues reales; no activa mallas de alambre ni extrae diagonales de la triangulación. La geometría, seis láminas y presupuesto anterior se conservan.
+
+## Revisión de concordancia
+
+B-06 localiza las seis parejas y define soportes, replanteo, taladros, fijaciones y retención textil. CSV, modelo y PDF usan C1–C6 de la misma tabla. Se retiraron las descargas obsoletas y los visores antiguos redirigen a R08; el historial de Git conserva los originales. Se mantienen ocho pliegos de letra grande y el anidado de seis láminas. La pletina de retención se concreta dentro de la reserva existente de 80 g; ensayar fijación, apertura y peso real.
