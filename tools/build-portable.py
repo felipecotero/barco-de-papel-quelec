@@ -9,7 +9,7 @@ orb=(P/'vendor/OrbitControls.js').read_text();orb=re.sub(r"import \{([^}]+)\} fr
 app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M);app=app.replace("data=await fetch(", "data=window.BARCO_MODEL||await fetch(")
 html=(P/'index.html').read_text();html=html.replace('<link rel="stylesheet" href="style.css?v=R08">','<style>'+(P/'style.css').read_text()+'</style>');html=re.sub(r'<script type="importmap">.*?</script>','',html)
 bundle=core+mod+orb+'window.BARCO_MODEL='+ (P/'model-r05.json').read_text()+';\n(()=>{'+app+'})();';bundle=bundle.replace('</script','<\\/script')
-html=html.replace('<script type="module" src="app.js?v=R08"></script>','<script>'+bundle+'</script>');(P/'Abrir-Barco.html').write_text(html)
+html=html.replace('<script type="module" src="app.js?v=R08-velcro1"></script>','<script>'+bundle+'</script>');(P/'Abrir-Barco.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Barco.html').stat().st_size)
 
 if json.loads((P/"model-r05.json").read_text()).get("auxRevision",{}).get("id")=="M02":
