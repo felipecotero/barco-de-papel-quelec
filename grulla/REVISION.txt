@@ -1,5 +1,6 @@
-G01 / Grulla / 2026-10-23
-800 ancho x500 cabeza-cola x650 alto total nominal, con cables y anilla.
-Suelo útil400 x400; reserva350 x350 x350; sin semilla visible.
-Prototipo con carga útil prevista3 kg; validar estructura y cuelgue antes de elevar.
-Dos documentos de4 pliegos100 x70 cm y105 plantillas en una lámina2440 x1220 x4.
+G02 /2026-10-23/ revisión de forma basada en el boceto y la grulla tradicional.
+Propuesta1200 envergadura x1000 cabeza-cola x1000 alto total mm.
+Hueco400 x400 mm; reserva350 x350 x350, sin semilla visible.
+Piel Cartón Plast2 mm;36 caras planas; cuatro cables directos, sin marco superior.
+El soporte se muestra aparte como esquema de estudio; fabricación, peso y capacidad pendientes de desarrollo.
+Los planos G01 están archivados y no corresponden a esta forma.

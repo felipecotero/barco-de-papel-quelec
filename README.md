@@ -47,6 +47,10 @@ B-06 localiza las seis parejas y define soportes, replanteo, taladros, fijacione
 
 La vista del velcro abre el interior y lo indica con una banda visible. **Mostrar paneles** devuelve el cartón Plast sin alterar la separación de las mitades. **Barco completo** abre la presentación exterior. Cambiar de modo, comenzar la animación, recorrer el montaje o volver al despiece restablece los paneles. Las etiquetas se controlan por separado con E.
 
-## Grulla de papel G01
+## Grulla de origami G02
 
-[**Abrir la grulla 3D**](https://felipecotero.github.io/barco-de-papel-quelec/grulla/?rev=G01). Pieza independiente de 80 × 50 × 65 cm nominales, incluidos cables y anilla. Centro vacío de 40 × 40 cm; reserva de carga de 35 × 35 × 35 cm para hasta 3 kg útiles previstos. Incluye interior, despiece, animación de armado, LED, batería extraíble, cargador externo y dos juegos de cuatro pliegos de 100 × 70 cm. El estudio geométrico cabe en una lámina de Cartón Plast de 2440 × 1220 × 4 mm. La estructura, las conexiones y el cuelgue requieren revisión y prueba del prototipo antes de elevar.
+[**Abrir la grulla corregida**](https://felipecotero.github.io/barco-de-papel-quelec/grulla/?rev=G02). Revisión de silueta basada en el boceto y en la grulla tradicional: alas triangulares amplias, cola alta, cuello inclinado y pico corto. Propone 120 cm de envergadura, 100 cm de cabeza a cola y 100 cm de altura total con anilla. Mantiene suelo útil de 40 × 40 cm, reserva de 35 × 35 × 35 cm sin semilla visible y piel propuesta de Cartón Plast de 2 mm.
+
+Cuatro cables directos sustituyen el marco superior de G01. El soporte se muestra por separado como esquema de estudio: sus rutas, uniones, secciones, peso y capacidad deben desarrollarse y probarse con esta geometría. La vista de piezas es ilustrativa; no representa un despiece aprobado ni un consumo verificado. El visor permite comparar con el boceto, girar, mostrar el interior, separar caras, ver luces y ocultar rótulos.
+
+Los documentos de la forma G01 descartada se conservan como historial en `grulla/archivo-G01/`; no corresponden a G02 y se retiraron de las descargas de la vista actual.

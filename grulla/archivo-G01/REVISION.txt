@@ -1,0 +1,5 @@
+G01 / Grulla / 2026-10-23
+800 ancho x500 cabeza-cola x650 alto total nominal, con cables y anilla.
+Suelo útil400 x400; reserva350 x350 x350; sin semilla visible.
+Prototipo con carga útil prevista3 kg; validar estructura y cuelgue antes de elevar.
+Dos documentos de4 pliegos100 x70 cm y105 plantillas en una lámina2440 x1220 x4.

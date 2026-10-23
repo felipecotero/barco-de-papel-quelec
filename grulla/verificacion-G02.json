@@ -1,0 +1,25 @@
+{
+  "revision": "G02",
+  "nominalMm": [
+    1200,
+    1000,
+    1000
+  ],
+  "clearFloorMm": [
+    400,
+    400
+  ],
+  "cargoMm": [
+    350,
+    350,
+    350
+  ],
+  "skinMm": 2,
+  "planarFaces": 36,
+  "paperIntersectsReservedCargo": false,
+  "paperIntersects400Opening": false,
+  "minimumCableSideClearanceAtCargoTopMm": 50.466666666666654,
+  "noUpperSpreader": true,
+  "identificationSheets": 2,
+  "status": "Forma y holguras geométricas revisadas; diseño constructivo y capacidad pendientes de desarrollo y prueba."
+}

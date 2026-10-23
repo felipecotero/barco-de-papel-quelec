@@ -1,0 +1,4 @@
+G01 / VERSIÓN DE FORMA DESCARTADA
+Estos documentos corresponden al modelo anterior, rechazado por su silueta.
+Se conservan como historial. No fabricar la nueva grulla G02 con estos planos.
+G02 tiene nuevas proporciones, piel de2 mm y otro esquema de cuelgue.

@@ -1,0 +1,81 @@
+GRULLA DE PAPEL / QUELEC / G01 / 23 OCTUBRE 2026
+
+ESTUDIO DIMENSIONADO PARA PROTOTIPO
+La geometría y el anidado se verificaron; este paquete no certifica capacidad de carga.
+El conjunto completo pesa aproximadamente 3.80 kg en presupuesto y 6.80 kg con 3 kg útiles.
+El responsable de estructura/cuelgue debe revisar resistencias, terminales, arriostramiento,
+fijaciones y retención de la carga antes de elevar. No se ha hecho un ensayo físico.
+
+MEDIDAS Y RESERVA
+X=ancho800; Z=cabeza-cola500; Y=alto650 con anilla y cables, en mm.
+Cola máxima580. Suelo de carga Y100,400 x400 libres entre paredes.
+Se interpreta la respuesta de35 x35 como una reserva de350 x350 x350, centrada,
+desdeY100 hastaY450. El cargador se representa aparte, apoyado, fuera del ave.
+La semilla no está dibujada. La forma y fijación de esa carga se estudian por separado.
+
+CÓMO LEER LOS ARCHIVOS
+Dos PDF de4 pliegos100 x70 cm: estudio técnico y guía visual. Imprimir al100 %.
+La hoja de anidado del PDF NO es plantilla1:1. Usar los SVG en milímetros, sin ajustar
+a página. Comprobar la barra100 mm del SVG de lámina y una dimensión de cada familia.
+105 blancos PP4:42 caras,39 bandas U y24 pestañas TP, en una lámina2440 x1220.
+Línea continua: cortar. Línea verde discontinua: pliegue interior; no atravesar ambas
+pieles. Círculos: perforar según cota. Identificadores e1,e2...: canto de la cara.
+uniones-entre-caras.csv empareja cada U con dos caras y dos cantos. Centrar la banda
+sobre el canto: su largo es10 mm menor en cada extremo. Encolar15 mm por cara.
+Las cotas son nominales de estudio; comprobar4 mm reales y tolerancias en probeta.
+
+ORDEN DE PRESENTACIÓN Y PESTAÑAS TP
+1. Presentar cuerpo B01-B05 apoyado en bandeja, sin carga.
+2. TP01-TP08:2 por pared B02-B05, a100 mm de sus extremos. Unión pared/fondo.
+3. TP09-TP12:1 por esquina vertical del cuerpo, centrada en altura de pared.
+4. TP13-TP16:2 por ala, a100 mm de extremos de raíz, unión ala/pared lateral.
+5. TP17-TP20:4 para cerrar vientre B06-B09 contra cuerpo. Conservar los tornillos
+   de B09 accesibles para servicio. Las bandas no deben bloquear su retirada.
+6. TP21-TP22:2 para pie de cola; TP23-TP24:2 para pie de cuello contra pared frontal.
+Estas pestañas son reservas de montaje; presentar en seco sobre geometría real y
+replantear agujeros antes de pegar. Evitar cortes cercanos a puntas, dobleces y canto
+de pieles: centros mínimo15 mm al borde; si no cabe una TP, ajustar la montura, no
+adelgazar el borde. Ninguna TP, banda U ni gaffer recibe la carga suspendida.
+7. Montar y fijar la piel al soporte; apoyar B01 sobre bandeja sin vacíos.
+8. Instalar LED, batería y cables, comprobar accesibilidad, después cerrar vientre.
+9. Conectar cuelgue a metal, revisar geometría y realizar prueba del prototipo.
+
+UNIONES METÁLICAS Y ANCLAJES
+Los perfiles perimetrales tienen eje428 mm entre vértices. Con tubo15 e inglete45°,
+el largo exterior es443 e interior413. Los travesaños rectos miden413 entre tubos.
+El tubo del visor se simplifica en las esquinas; usar el detalle de inglete al cortar.
+Escuadras metálicas y tornillos pasantes M4 con tuerca autofrenante; usar casquillos
+de13 mm entre paredes del tubular donde atraviese un tornillo, para no aplastarlo.
+La propuesta de placas de30 x30 x3 y ojos forjados cerrados M6 debe revisarse con el
+proveedor de cuelgue: no usar anillas abiertas ni inferir CMU por el diámetro de rosca.
+Ocho ramales en dos etapas de cuatro. Alturas de los puntos265/425/610. El marco
+separador mantiene libres los lados de la carga. Las longitudes de cable del modelo
+son distancias entre puntos, NO largos de corte; incluir terminales homologados.
+No asignamos un valor CMU/WLL a un ensamblaje que todavía no ha sido ensayado.
+
+ELECTRICIDAD Y ACABADO
+Dos LED5 V de200 mm en paralelo; cálculo3,2 W y0,64 A. Positivo por fusible1 A e
+interruptor>=2 A/5 VDC. Negativo común. Batería USB comercial protegida y extraíble.
+Autonomía de referencia18,5 Wh x75 % /3,2 W=4,34 h: verificar etiqueta y prueba real.
+Probar que la batería no se apaga por carga pequeña. No modificar celdas.
+Retirar la batería y recargarla apoyada con cargador compatible5 V/2 A; no volarla
+mientras carga. Cables sujetos, conectores aislados y fuera del volumen de carga.
+PP es de baja energía superficial: ensayo obligatorio del adhesivo en material real.
+Referencia de adhesivo3M DP8005; respetar mezcla, equipo y curado de su fabricante.
+Gaffer blanco25 mm para remate exterior; no usarlo como camino de carga.
+Papel ligero/acabado mate: ensayar adherencia, masa, temperatura y transmisión LED.
+
+QUÉ COMPROBAMOS Y QUÉ FALTA
+PASS: caras planas; área desarrollada;105 piezas sin superposición;6 mm entre piezas,
+margen10 mm; reserva350 cúbica sin colisión con piel; paso geométrico del cuelgue.
+Holgura nominal a cable superior en esquina de reserva:12,76 mm. Confirmar tolerancias.
+PENDIENTE: especificación final y CMU de herrajes y ramales, resistencia de conexiones,
+ensayo físico3 kg útiles, peso real terminado, retención de la semilla, temperatura
+y autonomía reales y compatibilidad del acabado. No elevar antes de cerrar estas pruebas.
+
+FUENTES PRIMARIAS
+led: https://www.adafruit.com/product/5851
+ledDatasheet: https://cdn-shop.adafruit.com/product-files/5851/S005320ZC1LZ%20ds.pdf
+battery: https://service.anker.com/product-description/a085g000004x2AvAAI/powercore-5000%3Fref%3DHome_Page
+lifting: https://www.hse.gov.uk/work-equipment-machinery/lift-equipment.htm
+adhesive: https://www.3m.com/3M/en_US/p/d/b5005321032/
