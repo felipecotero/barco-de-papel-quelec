@@ -40,3 +40,7 @@ Octavo pliego dedicado a las asas de ambas mitades. El visor dibuja los perímet
 ## Revisión de concordancia
 
 B-06 localiza las seis parejas y define soportes, replanteo, taladros, fijaciones y retención textil. CSV, modelo y PDF usan C1–C6 de la misma tabla. Se retiraron las descargas obsoletas y los visores antiguos redirigen a R08; el historial de Git conserva los originales. Se mantienen ocho pliegos de letra grande y el anidado de seis láminas. La pletina de retención se concreta dentro de la reserva existente de 80 g; ensayar fijación, apertura y peso real.
+
+## Paneles e interior
+
+La vista del velcro abre el interior y lo indica con una banda visible. **Mostrar paneles** devuelve el cartón Plast sin alterar la separación de las mitades. **Barco completo** abre la presentación exterior. Cambiar de modo, comenzar la animación, recorrer el montaje o volver al despiece restablece los paneles. Las etiquetas se controlan por separado con E.
