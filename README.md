@@ -30,3 +30,5 @@ Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su 
 `model-r05.json` conserva su nombre por compatibilidad, pero su contenido y sus desarrollos corresponden a R07. Regenerar la copia portátil con `python3 tools/build-portable.py` después de editar.
 
 Fuentes de materiales: [Coroplast](https://www.coroplast.com/resources/), [3M DP8005 para PP de baja energía superficial](https://www.3m.com/3M/en_US/p/d/b5005321032/), [Pro Gaff](https://www.protapes.com/pro-gaff-tape/). Las fichas no certifican este conjunto.
+
+[Ubicaciones nominales de las28 pestañasTP](downloads/Ubicaciones-TP-R07.csv): coordenadasX/Y/Z yencuentro; pliegue yángulo se presentan sobre las piezas reales.
