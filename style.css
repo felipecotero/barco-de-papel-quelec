@@ -11,3 +11,5 @@
 .tools{max-height:calc(100% - 150px);overflow-y:auto;z-index:4;scrollbar-width:thin}.tools button{flex-shrink:0}.tools small{font-size:10px;line-height:1.15}.tools #annotations{border:1px solid #607e69}.label3d{pointer-events:none}
 
 #skin-status{position:absolute;top:68px;left:95px;right:16px;max-width:510px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 11px;background:#263b36f5;border:1px solid #87b59d;border-radius:7px;color:#e8f2ed;font-size:12px}#skin-status button{padding:7px 10px;border-radius:5px;background:#c6e7ae;color:#16291c;font-weight:600;font-size:12px;white-space:nowrap}@media(max-width:850px){#skin-status{left:73px;top:64px;gap:7px;padding:7px;font-size:11px}#skin-status button{font-size:11px;padding:6px}#skin-status span{max-width:100px}}
+
+dialog{max-height:calc(100dvh - 40px);overflow-y:auto}.guide-download{background:#24413d;border-color:#89bba6}.guide-download small{color:#c0d9ce}

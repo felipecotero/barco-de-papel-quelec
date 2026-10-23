@@ -6,6 +6,8 @@ Vela de cuatro caras con 270 mm de profundidad, costillas independientes por mit
 
 ## Planos y archivos de taller
 
+- [Guía visual de armado: ocho pliegos de 100 × 70 cm](downloads/Guia-visual-R08.pdf?rev=R08-guide1). Fondo claro, colores del visor, nomenclatura sencilla, dibujos por pasos y comprobación al terminar cada etapa. Complementa los blueprints; para cortar se usan las plantillas 1:1 del paquete técnico.
+
 - [Ocho pliegos 100 × 70 cm, revisión R08](downloads/Planos-R08.pdf?rev=R08-audit1).
 - [Paquete técnico R08: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R08.zip?rev=R08-audit1).
 
