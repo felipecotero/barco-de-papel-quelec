@@ -1,21 +1,32 @@
-# Barco de papel · Taller 3D R06
+# Barco de papel · Taller 3D R07
 
-[**Abrir el visor 3D**](https://felipecotero.github.io/barco-de-papel-quelec/)
+[**Abrir el visor**](https://felipecotero.github.io/barco-de-papel-quelec/)
 
-Visor didáctico en español: seis etapas de montaje, piezas por color de lámina, vistas explotadas, bastidores, uniones, agarres cortos acolchados y separación de las dos mitades. Modo de presentación con acabado de papel, luces y sombras.
+Vela de cuatro caras con 270 mm de profundidad, costillas independientes por mitad, seis parejas de velcro, bandas de unión y agarres cortos acolchados. Interfaz en español con vistas de construcción, detalles ampliados y presentación con acabado de papel.
 
-## Planos y construcción
+## Planos y archivos de taller
 
-- [Siete pliegos de 100 × 70 cm, revisión R06](downloads/Planos-R06.pdf).
-- [Plantillas y paquete técnico R06](downloads/Paquete-tecnico-R06.zip).
-- [Medidas y montaje de los agarres R06](Agarres-R06.md).
+- [Siete pliegos 100 × 70 cm, revisión R07](downloads/Planos-R07.pdf).
+- [Paquete técnico R07: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R07.zip).
 
-Se mantienen seis láminas de cartón Plast de 2440 × 1220 mm. Peso previsto: **12,951 kg**, con margen de **49 g** hasta 13 kg; es una estimación, pendiente de pesaje del prototipo. La maniobra elevada y las fijaciones requieren verificación física antes de uso escénico.
+**Seis láminas de 2440 × 1220 × 4 mm**: encaje geométrico verificado para 133 blancos, con margen de 10 mm y separación mínima de 6 mm. Incluye pestañas, contraplacas y costillas. El anidado de la vela utiliza su desarrollo real.
 
-## Uso
+**Presupuesto completo**: 13,738 kg con PP de 600 g/m²; 14,774 kg con PP de 700 g/m². Objetivo 14 kg, máximo autorizado 15 kg. Estos valores dependen de conservar los límites de compra de cada partida y requieren pesaje final. El tubo de bandera es ahora aluminio Ø32 × 1 mm, ID30, sostenido por una espina y dos brazos íntegramente en B. Las barras de portadores Ø40 × 2 se conservan.
 
-Arrastrar para girar; rueda o pinza para acercar. Cada herramienta incluye texto y ayuda. Atajos: C girar, H encuadrar, espacio reproducir/pausar y Escape salir del detalle. Compartir vista guarda la cámara y los controles en el enlace.
+Con 700 g/m², estimación por mitad: A 6,863 kg; B 7,911 kg. Entre dos adultos por mitad, medias 3,431 y 3,956 kg. Las reservas se distribuyen al 50%; no es medición de fuerzas en las manos ni certificación de la maniobra.
 
-Para abrir sin conexión, descargar el repositorio y abrir Abrir-Barco.html, conservando downloads a su lado. Para servir en web utilizar index.html. No requiere compilación ni servicios externos. Three.js se distribuye localmente con su licencia MIT en vendor/LICENSE-three.txt.
+## Usar el visor
 
-El archivo model-r05.json conserva su nombre por compatibilidad; su contenido corresponde a la revisión R06.
+**Ver despiece** muestra las seis láminas. **Ver interior** deja ver costillas y seis cierres. **Cierre con velcro**, **Cintas y bandas** y **Sostener la vela** abren detalles. El deslizador separa el ensamble mostrado. **Presentación** permite observar papel, luces y sombras. Los botones incluyen texto y ayuda.
+
+Arrastrar para girar; rueda o pinza para acercar. C girar, H encuadrar, espacio animar/pausar y Escape volver. Compartir vista conserva cámara, etapa y separación en el enlace.
+
+El velcro es cierre de posición: cada bastidor sostiene su propia mitad. Ajustar el contacto y medir apertura en prototipo. Uniones, retenciones, adhesivos y maniobra elevada requieren prueba física. El fondo no lleva cabezas de tornillos por debajo; las pestañas del fondo se unen con adhesivo PP-LSE probado. La gaffer remata y presenta, junto a bandas y fijaciones.
+
+## Abrir sin conexión
+
+Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su lado. La versión web `index.html` no requiere compilación. Three.js y su licencia MIT están incluidos en `vendor`. No hay analítica ni servicios externos.
+
+`model-r05.json` conserva su nombre por compatibilidad, pero su contenido y sus desarrollos corresponden a R07. Regenerar la copia portátil con `python3 tools/build-portable.py` después de editar.
+
+Fuentes de materiales: [Coroplast](https://www.coroplast.com/resources/), [3M DP8005 para PP de baja energía superficial](https://www.3m.com/3M/en_US/p/d/b5005321032/), [Pro Gaff](https://www.protapes.com/pro-gaff-tape/). Las fichas no certifican este conjunto.
