@@ -1,0 +1,13 @@
+GRULLA QUELEC G03 — PLANTILLAS NOMINALES
+Una lámina 2440 × 1220 × 2 mm. 36 caras + 5 separadores internos.
+Área neta PP: 1.159174 m². Margen mínimo 10 mm. Separación mínima entre contornos 6 mm.
+SVG en milímetros a escala 1:1. Imprimir al 100 %, sin ajustar. Comprobar que el borde exterior mide 2440 × 1220 mm.
+Línea continua = corte del contorno. Etiquetas = códigos del visor. No cortar letras ni margen punteado.
+No hay pestañas: las caras se juntan a tope con cinta flexible blanca de 25 mm por dentro. Las costillas R01–R04 mantienen las alas y R05 la cola. Probar adhesión en PP2 y comportamiento del acabado de papel antes del montaje completo. La cinta no es elemento de suspensión.
+El SVG corta caras planas, no es un desarrollo de papel que se pliegue de una sola pieza. Las triangulaciones de render no son cortes.
+B01 suelo. B02–B05 paredes. B06–B09 vientre. A01–A07 ala izquierda. A08–A14 ala derecha. T01–T04 cola. N01–N06 cuello. P01–P03 pico. R01–R05 separadores.
+Secuencia: identificar todas las piezas; armar cuerpo alrededor de la bandeja independiente; fijar los separadores dentro de las alas/cola y cerrar sus caras; unir cuello y pico; unir alas/cola al cuerpo; colocar sistema de luz bajo el suelo; fijar los cuatro montantes y ojos a metal en las esquinas; conectar cuatro ramales verticales a cruceta y anilla.
+Todos los blancos PP están en la lámina. Papel de acabado, cinta flexible, bastidor, bandeja, montantes, cruceta, cables, ojos y sistema eléctrico son materiales separados. No añadir piezas PP fuera de este inventario sin revisar el anidado.
+La orientación de canales no se usa como criterio de capacidad: la piel no lleva la carga. Verificar la rigidez de la referencia real y no cambiar geometría para forzar pliegues.
+La forma nominal exterior es 1200 × 1000 × 1000 mm con cuelgue. Hueco útil 400 × 400 mm, reserva interior 350 × 350 × 350 mm, semilla no representada.
+Cuelgue conceptual para carga prevista de 3 kg, sin capacidad certificada. Validación de herrajes, uniones, estabilidad y carga del prototipo antes de suspender. Los planos G01 están obsoletos para esta forma.

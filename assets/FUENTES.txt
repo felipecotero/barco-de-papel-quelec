@@ -1,0 +1,8 @@
+Imágenes aportadas en los Términos de Referencia del proyecto Quelec.
+quelec-membrete.png: word/media/image11.png de TdR_Texturas_y_disenos_de_utileria_Quelec_2026-10-08.docx.
+tdr-barco.jpg: word/media/image19.jpg de TdR_PlanA_Utileria_Quelec_2026-10-08.docx.
+tdr-grulla.jpg: word/media/image32.jpg del mismo TdR Plan A.
+tdr-nave.jpg: word/media/image26.jpg del mismo TdR Plan A.
+quelec-pie.png: Grafica/MEMBRETE ABAJO, original del proyecto.
+logo-grulla.svg: nuevo símbolo vectorial simplificado de grulla de origami para el taller.
+Las tres imágenes de tarjeta son referencias artísticas de TDR, no capturas de los modelos vigentes.

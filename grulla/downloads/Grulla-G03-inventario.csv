@@ -1,0 +1,42 @@
+﻿ID,Pieza,Grupo,PP mm,Área m²,Ángulo °,X mm,Y mm,Lados mm
+B01,"Suelo útil 400 x400, vacío",cuerpo,2,0.163216,0,10,10,404.00 / 404.00 / 404.00 / 404.00
+B02,Costado izquierdo,cuerpo,2,0.03636,90,650,330,404.00 / 90.00 / 404.00 / 90.00
+B03,Costado derecho,cuerpo,2,0.03636,90,750,380,404.00 / 90.00 / 404.00 / 90.00
+B04,Frente del hueco,cuerpo,2,0.03636,90,1500,400,404.00 / 90.00 / 404.00 / 90.00
+B05,Trasera del hueco,cuerpo,2,0.03636,0,10,420,404.00 / 90.00 / 404.00 / 90.00
+B06,Pliegue inferior del cuerpo 1,vientre,2,0.068687,0,420,10,404.00 / 395.51 / 395.51
+B07,Pliegue inferior del cuerpo 2,vientre,2,0.056018,90,670,10,404.00 / 302.97 / 395.51
+B08,Pliegue inferior del cuerpo 3,vientre,2,0.045611,0,1390,10,404.00 / 302.97 / 302.97
+B09,Pliegue inferior del cuerpo 4,vientre,2,0.056018,0,960,10,404.00 / 395.51 / 302.97
+A01,Ala izquierda / pliegue 1,alaI,2,0.042128,270,420,30,400.00 / 457.39 / 210.72
+A02,Ala izquierda / pliegue 2,alaI,2,0.042128,270,960,70,457.39 / 400.00 / 210.72
+A03,Ala izquierda / pliegue 3,alaI,2,0.042612,90,1600,10,210.72 / 405.00 / 466.30
+A04,Ala izquierda / pliegue 4,alaI,2,0.042612,180,1910,10,210.72 / 466.30 / 405.00
+A05,Ala izquierda / pliegue 5,alaI,2,0.007811,90,1460,400,466.30 / 35.00 / 457.39
+A06,Ala izquierda / pliegue 6,alaI,2,0.007811,90,2140,430,466.30 / 457.39 / 35.00
+A07,Ala izquierda / pliegue 7,alaI,2,0.01212,270,1250,20,210.72 / 210.72 / 404.00
+A08,Ala derecha / pliegue 1,alaD,2,0.042128,90,1570,240,457.39 / 400.00 / 210.72
+A09,Ala derecha / pliegue 2,alaD,2,0.042128,270,1770,240,400.00 / 457.39 / 210.72
+A10,Ala derecha / pliegue 3,alaD,2,0.042612,90,2130,10,405.00 / 210.72 / 466.30
+A11,Ala derecha / pliegue 4,alaD,2,0.042612,270,1390,120,466.30 / 210.72 / 405.00
+A12,Ala derecha / pliegue 5,alaD,2,0.007811,180,1040,420,35.00 / 466.30 / 457.39
+A13,Ala derecha / pliegue 6,alaD,2,0.007811,90,2180,430,457.39 / 466.30 / 35.00
+A14,Ala derecha / pliegue 7,alaD,2,0.01212,270,1060,390,210.72 / 210.72 / 404.00
+T01,Cola alta / cara 1,cola,2,0.021757,270,1600,420,572.45 / 636.26 / 96.38
+T02,Cola alta / cara 2,cola,2,0.021757,270,2350,250,636.26 / 572.45 / 96.38
+T03,Cola alta / cara 3,cola,2,0.047387,90,1230,10,636.26 / 150.00 / 636.26
+T04,Cola alta / cara 4,cola,2,0.00454,270,820,10,96.38 / 96.38 / 150.00
+N01,Cuello inclinado / cara 1,cuello,2,0.011431,90,590,400,72.78 / 376.03 / 90.00 / 525.48
+N02,Cuello inclinado / cara 2,cuello,2,0.011431,90,1970,430,376.03 / 72.78 / 525.48 / 90.00
+N03,Cuello inclinado / cara 3,cuello,2,0.023854,0,850,410,17.84 / 376.03 / 110.00 / 376.03
+N04,Cuello inclinado / cara 4,cuello,2,0.024007,90,2350,10,711.76 / 525.48 / 202.21
+N05,Cuello inclinado / cara 5,cuello,2,0.024007,90,1150,170,711.76 / 202.21 / 525.48
+N06,Cuello inclinado / cara 6,cuello,2,0.010702,90,2010,430,202.21 / 202.21 / 110.00
+P01,Pico / pliegue 1,pico,2,0.006358,0,2020,10,72.78 / 192.77 / 174.93
+P02,Pico / pliegue 2,pico,2,0.006358,0,1800,10,174.93 / 192.77 / 72.78
+P03,Pico / pliegue 3,pico,2,0.001717,180,2140,10,17.84 / 192.77 / 192.77
+R01,Separador interior de ala 1,auxiliares,2,0.006084,90,2140,10,155.71 / 155.71 / 20.38 / 155.71 / 155.71 / 20.38
+R02,Separador interior de ala 2,auxiliares,2,0.001052,270,2350,10,76.29 / 76.29 / 7.19 / 76.29 / 76.29 / 7.19
+R03,Separador interior de ala 3,auxiliares,2,0.006084,270,2220,430,155.71 / 155.71 / 20.38 / 155.71 / 155.71 / 20.38
+R04,Separador interior de ala 4,auxiliares,2,0.001052,90,2160,10,76.29 / 76.29 / 7.19 / 76.29 / 76.29 / 7.19
+R05,Separador interior de cola,auxiliares,2,0.000162,90,2100,10,30.88 / 30.88 / 60.84

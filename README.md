@@ -1,6 +1,8 @@
-# Barco de papel · Taller 3D R08
+# Quelec · Taller de objetos
 
-[**Abrir el visor**](https://felipecotero.github.io/barco-de-papel-quelec/)
+[**Abrir el índice del taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I01)
+
+Índice con imágenes originales de los TDR, símbolo de grulla de origami y accesos al [barco R08](barco.html?rev=R08-obj1), la [grulla G03](grulla/?rev=G03) y la nave (próximamente).
 
 Vela de cuatro caras con 270 mm de profundidad, costillas independientes por mitad, seis parejas de velcro, bandas de unión y agarres cortos acolchados. Interfaz en español con vistas de construcción, detalles ampliados y presentación con acabado de papel.
 
@@ -27,7 +29,7 @@ El velcro es cierre de posición: cada bastidor sostiene su propia mitad. Ajusta
 
 ## Abrir sin conexión
 
-Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su lado. La versión web `index.html` no requiere compilación. Three.js y su licencia MIT están incluidos en `vendor`. No hay analítica ni servicios externos.
+Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su lado. La versión web del barco `barco.html` no requiere compilación. El índice es `index.html`. Three.js y su licencia MIT están incluidos en `vendor`. No hay analítica ni servicios externos.
 
 `model-r05.json` conserva su nombre por compatibilidad, pero su contenido y sus desarrollos corresponden a R08. Regenerar la copia portátil con `python3 tools/build-portable.py` después de editar.
 
@@ -47,10 +49,26 @@ B-06 localiza las seis parejas y define soportes, replanteo, taladros, fijacione
 
 La vista del velcro abre el interior y lo indica con una banda visible. **Mostrar paneles** devuelve el cartón Plast sin alterar la separación de las mitades. **Barco completo** abre la presentación exterior. Cambiar de modo, comenzar la animación, recorrer el montaje o volver al despiece restablece los paneles. Las etiquetas se controlan por separado con E.
 
-## Grulla de origami G02
+## Grulla de origami G03
 
-[**Abrir la grulla corregida**](https://felipecotero.github.io/barco-de-papel-quelec/grulla/?rev=G02). Revisión de silueta basada en el boceto y en la grulla tradicional: alas triangulares amplias, cola alta, cuello inclinado y pico corto. Propone 120 cm de envergadura, 100 cm de cabeza a cola y 100 cm de altura total con anilla. Mantiene suelo útil de 40 × 40 cm, reserva de 35 × 35 × 35 cm sin semilla visible y piel propuesta de Cartón Plast de 2 mm.
+[**Abrir la grulla**](https://felipecotero.github.io/barco-de-papel-quelec/grulla/?rev=G03). Se conservan sin alteración las 36 caras de la silueta G02: 120 cm de envergadura, 100 cm de cabeza a cola y 100 cm de altura total con anilla. Suelo útil 40 × 40 cm; reserva 35 × 35 × 35 cm, sin representar la semilla. Piel propuesta de Cartón Plast de 2 mm.
 
-Cuatro cables directos sustituyen el marco superior de G01. El soporte se muestra por separado como esquema de estudio: sus rutas, uniones, secciones, peso y capacidad deben desarrollarse y probarse con esta geometría. La vista de piezas es ilustrativa; no representa un despiece aprobado ni un consumo verificado. El visor permite comparar con el boceto, girar, mostrar el interior, separar caras, ver luces y ocultar rótulos.
+El cuelgue nace en **las cuatro esquinas de la canasta**, sin tomar cargas de las alas. Bandeja y bastidor conectan con cuatro montantes metálicos de esquina; cuatro ramales verticales llegan a una cruceta ligera sobre el ave y a una anilla común. Las diagonales de la cruceta miden 571,34 mm, perfil propuesto aluminio 15 × 15 × 1 mm. Dejan libre la reserva central. Ojos propuestos M6 con contraplaca y tuerca autoblocante, unidos a metal. El modelo define el recorrido; capacidad, uniones y estabilidad requieren validación física del prototipo antes de suspender la carga prevista de hasta 3 kg.
 
-Los documentos de la forma G01 descartada se conservan como historial en `grulla/archivo-G01/`; no corresponden a G02 y se retiraron de las descargas de la vista actual.
+**Una lámina de 2440 × 1220 × 2 mm** contiene 36 caras y 5 separadores interiores. Área neta 1,159174 m²; margen mínimo 10 mm, hueco mínimo 6 mm, sin solapes. Las caras se unen a tope con cinta flexible interior propuesta de 25 mm, sin pestañas adicionales. La cinta y el acabado de papel se compran en rollo; bastidor, bandeja, cruceta y herrajes son materiales separados. Ensayar adhesión y rigidez del PP2 real: el anidado no asigna capacidad estructural a la dirección de los canales.
+
+[Despiece nominal G03 en ZIP](grulla/downloads/Despiece-Grulla-G03.zip): SVG 1:1 en milímetros, inventario CSV con códigos y longitudes de lados, secuencia y criterios de unión. Imprimir al 100 %, sin ajustar, y verificar la medida 2440 × 1220 mm antes de cortar. El visor permite animar de la única lámina al ave y reconocer las mismas 41 piezas. Los separadores quedan dentro de los volúmenes, sin alterar la silueta.
+
+Los documentos G01 y la verificación formal G02 se conservan solo como historial; no son los planos de fabricación de G03. Las verificaciones actuales se describen en `grulla/verificacion-G03.json`.
+
+## Exportar modelos 3D
+
+El botón **OBJ**, con icono y ayuda, está disponible en ambos visores. Permite elegir metros o milímetros a escala 1:1. Descarga un ZIP con OBJ, MTL y texturas PNG; descomprimir todo en una carpeta y mantener los archivos juntos. OBJ no codifica una unidad estándar: seleccionar la unidad elegida al importar. `LEER.txt` registra unidades y envolvente real del archivo, incluidos accesorios.
+
+Se exporta el modelo ensamblado, independientemente de la etapa, la explosión o la visibilidad de las pieles. Se incluyen las caras, separadores y sistemas del objeto. Se excluyen suelo, cuadrícula, rótulos, esquemas ampliados y cargador externo. En el barco se exportan las mitades reunidas y la bandera si está colocada. El formato conserva mallas, UV, materiales y texturas; la iluminación y sombras dinámicas del visor no forman parte de OBJ. El exportador funciona también en los HTML portátiles.
+
+## Versiones y compatibilidad
+
+El barco conserva geometría, seis láminas, presupuesto y sus dos juegos de ocho pliegos. Los enlaces antiguos a la raíz con revisión R05–R08, `vista` o vistas compartidas se redirigen a `barco.html`, preservando sus parámetros. Los visores tienen un acceso **Índice**. La nave no tiene enlace activo ni modelo publicado todavía.
+
+Las imágenes del índice provienen de los TDR del proyecto; ver `assets/FUENTES.txt`. Three.js conserva su licencia MIT. No se usan servicios de exportación ni analítica.

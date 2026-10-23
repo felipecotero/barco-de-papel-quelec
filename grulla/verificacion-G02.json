@@ -21,5 +21,6 @@
   "minimumCableSideClearanceAtCargoTopMm": 50.466666666666654,
   "noUpperSpreader": true,
   "identificationSheets": 2,
-  "status": "Forma y holguras geométricas revisadas; diseño constructivo y capacidad pendientes de desarrollo y prueba."
+  "status": "Forma y holguras geométricas revisadas; diseño constructivo y capacidad pendientes de desarrollo y prueba.",
+  "archivedStatus": "Historial de silueta G02; el cuelgue y el despiece vigentes se verifican en verificacion-G03.json"
 }

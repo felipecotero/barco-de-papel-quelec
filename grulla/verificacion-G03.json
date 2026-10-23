@@ -1,0 +1,28 @@
+{
+  "revision": "G03",
+  "skinFacesPreserved": 36,
+  "totalPPpieces": 41,
+  "sheets": 1,
+  "sheetMm": [
+    2440,
+    1220
+  ],
+  "areaM2": 1.159174174514376,
+  "minGapMm": 6.0,
+  "edgeMarginMm": 10,
+  "internalSeparatorsMinClearanceMm": {
+    "R01": 2.798994974874347,
+    "R02": 2.798994974874347,
+    "R03": 2.798994974874347,
+    "R04": 2.798994974874347,
+    "R05": 2.2221310389004145
+  },
+  "verticalCornerRamals": 4,
+  "payloadNotRendered": true,
+  "boatManufacturingFilesUnchanged": [
+    "model-r05.json",
+    "downloads/Planos-R08.pdf",
+    "downloads/Guia-visual-R08.pdf"
+  ],
+  "loadRatingCertified": false
+}

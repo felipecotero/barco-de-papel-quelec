@@ -1,27 +1,15 @@
-GRULLA G02 / ESTUDIO DE SILUETA Y PROPORCIONES
+GRULLA QUELEC G03 — PLANTILLAS NOMINALES
+Una lámina 2440 × 1220 × 2 mm. 36 caras + 5 separadores internos.
+Área neta PP: 1.159174 m². Margen mínimo 10 mm. Separación mínima entre contornos 6 mm.
+SVG en milímetros a escala 1:1. Imprimir al 100 %, sin ajustar. Comprobar que el borde exterior mide 2440 × 1220 mm.
+Línea continua = corte del contorno. Etiquetas = códigos del visor. No cortar letras ni margen punteado.
+No hay pestañas: las caras se juntan a tope con cinta flexible blanca de 25 mm por dentro. Las costillas R01–R04 mantienen las alas y R05 la cola. Probar adhesión en PP2 y comportamiento del acabado de papel antes del montaje completo. La cinta no es elemento de suspensión.
+El SVG corta caras planas, no es un desarrollo de papel que se pliegue de una sola pieza. Las triangulaciones de render no son cortes.
+B01 suelo. B02–B05 paredes. B06–B09 vientre. A01–A07 ala izquierda. A08–A14 ala derecha. T01–T04 cola. N01–N06 cuello. P01–P03 pico. R01–R05 separadores.
+Secuencia: identificar todas las piezas; armar cuerpo alrededor de la bandeja independiente; fijar los separadores dentro de las alas/cola y cerrar sus caras; unir cuello y pico; unir alas/cola al cuerpo; colocar sistema de luz bajo el suelo; fijar los cuatro montantes y ojos a metal en las esquinas; conectar cuatro ramales verticales a cruceta y anilla.
+Todos los blancos PP están en la lámina. Papel de acabado, cinta flexible, bastidor, bandeja, montantes, cruceta, cables, ojos y sistema eléctrico son materiales separados. No añadir piezas PP fuera de este inventario sin revisar el anidado.
+La orientación de canales no se usa como criterio de capacidad: la piel no lleva la carga. Verificar la rigidez de la referencia real y no cambiar geometría para forzar pliegues.
+La forma nominal exterior es 1200 × 1000 × 1000 mm con cuelgue. Hueco útil 400 × 400 mm, reserva interior 350 × 350 × 350 mm, semilla no representada.
+Cuelgue conceptual para carga prevista de 3 kg, sin capacidad certificada. Validación de herrajes, uniones, estabilidad y carga del prototipo antes de suspender. Los planos G01 están obsoletos para esta forma.
 
-La versión G01 fue descartada por no conservar la forma de una grulla.
-Esta revisión toma el boceto del usuario y referencias de la grulla tradicional.
-Propone120 cm de envergadura,100 cm cabeza-cola y100 cm de altura total con anilla.
-La cola alcanza88 cm. El cuerpo tiene un suelo útil400 x400 mm aY190 y deja
-una reserva350 x350 x350 mm para la futura semilla de hasta3 kg, que no se representa.
-
-Piel propuesta: Cartón Plast2 mm, acabado mate de papel. El fabricante ofrece2 mm;
-verificar disponibilidad local, transmisión LED, adhesión y rigidez mediante probeta.
-Fuentes: https://www.coroplast.com/products/coroplast-print/
-https://home.nps.gov/articles/000/origami-cranes.htm
-
-El visor muestra las caras y los pliegues reales. La vista Piezas es una disposición
-ilustrativa para identificarlas; NO representa un despiece aprobado ni un consumo
-verificado de láminas. El soporte interior es un esquema: sus rutas, secciones,
-uniones, peso, terminales y capacidad se desarrollarán con esta nueva geometría.
-No asignar a G02 el peso ni la capacidad del estudio G01. La luz, batería extraíble
-y cargador siguen siendo componentes propuestos. No fabricar ni suspender una carga
-con este modelo de forma; completar el constructivo y las pruebas físicas primero.
-
-La verificación-G02 revisa planitud, ausencia de intersección de la piel con el
-hueco400 y con la reserva350, y paso geométrico de los cuatro cables directos.
-No hay cálculo ni ensayo de resistencia del conjunto en esta revisión.
-
-Los planos anteriores se conservan bajo archivo-G01 y se identifican como descartados.
-Abrir-Grulla.html incluye el modelo y el boceto y funciona sin conexión.
+OBJ: el botón del visor descarga OBJ + MTL + PNG en ZIP a escala 1:1 en metros o milímetros. Mantener todos los archivos juntos. La vista o la explosión no modifican el modelo exportado. El cargador externo no se incluye.
