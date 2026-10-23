@@ -46,3 +46,7 @@ B-06 localiza las seis parejas y define soportes, replanteo, taladros, fijacione
 ## Paneles e interior
 
 La vista del velcro abre el interior y lo indica con una banda visible. **Mostrar paneles** devuelve el cartón Plast sin alterar la separación de las mitades. **Barco completo** abre la presentación exterior. Cambiar de modo, comenzar la animación, recorrer el montaje o volver al despiece restablece los paneles. Las etiquetas se controlan por separado con E.
+
+## Grulla de papel G01
+
+[**Abrir la grulla 3D**](https://felipecotero.github.io/barco-de-papel-quelec/grulla/?rev=G01). Pieza independiente de 80 × 50 × 65 cm nominales, incluidos cables y anilla. Centro vacío de 40 × 40 cm; reserva de carga de 35 × 35 × 35 cm para hasta 3 kg útiles previstos. Incluye interior, despiece, animación de armado, LED, batería extraíble, cargador externo y dos juegos de cuatro pliegos de 100 × 70 cm. El estudio geométrico cabe en una lámina de Cartón Plast de 2440 × 1220 × 4 mm. La estructura, las conexiones y el cuelgue requieren revisión y prueba del prototipo antes de elevar.
