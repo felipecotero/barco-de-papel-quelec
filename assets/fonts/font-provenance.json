@@ -1,0 +1,42 @@
+{
+  "downloadDate": "2026-10-23",
+  "webFonts": [
+    {
+      "file": "Montserrat-Bold.woff2",
+      "family": "Montserrat",
+      "fullName": "Montserrat Bold",
+      "postScriptName": "Montserrat-Bold",
+      "weight": 700,
+      "version": "Version 9.000; ttfautohint (v1.8.4.7-5d5b)",
+      "license": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "licenseURL": "https://openfontlicense.org",
+      "sha256": "029f035451ce4e367b69e886afca615cc6dddf33b6bf33d6f967e79295c3031c",
+      "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/webfonts/Montserrat-Bold.woff2"
+    },
+    {
+      "file": "Montserrat-Regular.woff2",
+      "family": "Montserrat",
+      "fullName": "Montserrat Regular",
+      "postScriptName": "Montserrat-Regular",
+      "weight": 400,
+      "version": "Version 9.000; ttfautohint (v1.8.4.7-5d5b)",
+      "license": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "licenseURL": "https://openfontlicense.org",
+      "sha256": "6cf3e021436786e7ac49a0fe3fd6d7ec575431b2dff0dd42f53a4bb82808e2aa",
+      "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/webfonts/Montserrat-Regular.woff2"
+    },
+    {
+      "file": "Montserrat-SemiBold.woff2",
+      "family": "Montserrat SemiBold",
+      "fullName": "Montserrat SemiBold",
+      "postScriptName": "Montserrat-SemiBold",
+      "weight": 600,
+      "version": "Version 9.000; ttfautohint (v1.8.4.7-5d5b)",
+      "license": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org",
+      "licenseURL": "https://openfontlicense.org",
+      "sha256": "fc9002b9d04f81904c82d001b364eab985d00e4b29257fc7f4fdf8686d6692e6",
+      "source": "https://raw.githubusercontent.com/JulietaUla/Montserrat/master/fonts/webfonts/Montserrat-SemiBold.woff2"
+    }
+  ],
+  "licenseFile": "OFL-Montserrat.txt"
+}

@@ -1,0 +1,142 @@
+{
+  "revision": "G04",
+  "date": "2026-10-23",
+  "parts": 41,
+  "exteriorFaces": 36,
+  "interiorSeparators": 5,
+  "stockSheets": 1,
+  "stockMm": [
+    2440,
+    1220,
+    2
+  ],
+  "netAreaM2": 0.9989289371332964,
+  "stockMarginMm": 10,
+  "minGapMm": 6.0,
+  "minGapParts": [
+    "B01",
+    "A05"
+  ],
+  "payloadKg": 3,
+  "payloadStatus": "Previsto, pendiente de validación del prototipo; no es capacidad certificada.",
+  "basketUsefulMm": [
+    300,
+    300
+  ],
+  "hanging": "4esquinas a una argolla, sin cruceta",
+  "ropeEyeToEyeMm": 694.1239082469355,
+  "coneClearanceMm": 110.60331862356759,
+  "lighting": "2módulos5V1Wmáx al INTERIOR de alas PPnatural translúcido+papel fino no opaco; M3×16",
+  "pdfs": {
+    "Grulla-Blueprints-G04.pdf": {
+      "pages": 3,
+      "sheetMm": [
+        1000,
+        700
+      ],
+      "sha256": "1d267245674ae9604b3ae45fabefae51eb9db946aa88701b8bb6322112d11128"
+    },
+    "Grulla-Guia-visual-G04.pdf": {
+      "pages": 3,
+      "sheetMm": [
+        1000,
+        700
+      ],
+      "sha256": "a6bd8948e43f16601e1db7c9d1432e421dbba39fe7ca3e6d0142c0f751be12a4"
+    },
+    "Planos-R08.pdf": {
+      "pages": 8,
+      "sheetMm": [
+        1000,
+        700
+      ],
+      "sha256": "fef7975f3cf5c1c7435379fee65475fd161c41d045d4816c06062ed2df0e0a6b"
+    },
+    "Guia-visual-R08.pdf": {
+      "pages": 8,
+      "sheetMm": [
+        1000,
+        700
+      ],
+      "sha256": "637e567a914cb535dfa9409caf0d8441ca440694f90c525dcc40a873326bb498"
+    }
+  },
+  "documentQA": {
+    "revision": "G04",
+    "sizeMm": [
+      1000,
+      700
+    ],
+    "pdfCount": 2,
+    "pagesEach": 3,
+    "textMinPt": 22,
+    "headingPt": 52,
+    "fontFamilies": [
+      "QuicheDisplay",
+      "Montserrat",
+      "Arial"
+    ],
+    "textOverlapCount": 0,
+    "textOutsideSafeMarginCount": 0,
+    "renderedAndInspectedPages": 6,
+    "renderSizePx": [
+      2200,
+      1540
+    ],
+    "planScales": {
+      "alzado": 6,
+      "perfil": 6,
+      "planta": 6,
+      "stockMap": 5,
+      "isometrica": "informativa sin escala",
+      "detalles": "esquemáticos sin escala"
+    },
+    "parts": 41,
+    "stockSheets": 1,
+    "stockAreaM2": 0.9989289371332964,
+    "stockMinimumGapMm": 6.0,
+    "stockMarginMm": 10,
+    "coneClearanceMm": 110.60331862356759,
+    "pendingValidation": "Peso propio real, herrajes de capacidad declarada, resistencia y estabilidad del cuelgue y prueba térmica; no se certifica capacidad.",
+    "lighting": "Dos módulos USB 5 V / 1 W dentro de alas de PP natural translúcido de 2 mm + papel fino no opaco; contraplaca exterior y base/lente/luz al interior.",
+    "files": [
+      {
+        "name": "Grulla-Blueprints-G04-3-pliegos-100x70.pdf",
+        "bytes": 110844,
+        "sha256": "1d267245674ae9604b3ae45fabefae51eb9db946aa88701b8bb6322112d11128",
+        "embeddedSubsets": [
+          "/AAAAAA+Arial-BoldMT",
+          "/AAAAAA+ArialMT",
+          "/AAAAAA+Montserrat-SemiBold",
+          "/AAAAAA+QuicheDisplay-Regular"
+        ]
+      },
+      {
+        "name": "Grulla-Guia-visual-G04-3-pliegos-100x70.pdf",
+        "bytes": 113395,
+        "sha256": "a6bd8948e43f16601e1db7c9d1432e421dbba39fe7ca3e6d0142c0f751be12a4",
+        "embeddedSubsets": [
+          "/AAAAAA+Arial-BoldMT",
+          "/AAAAAA+ArialMT",
+          "/AAAAAA+Montserrat-SemiBold",
+          "/AAAAAA+QuicheDisplay-Regular"
+        ]
+      }
+    ]
+  },
+  "viewerQA": {
+    "status": "passed",
+    "tested": [
+      "41 paneles con volumen positivo igual a área × espesor",
+      "cotas conmutables en ambos visores",
+      "rótulos independientes",
+      "vistas completas/interior/despiece/detalles",
+      "LED interiores visibles y apagado restaura iluminación general",
+      "mobile390 sin desbordamiento horizontal",
+      "descargas PDF desde botones y comprobación de hashes",
+      "exportaciónGLB/OBJ/STL en ambos visores sin alterar estado",
+      "validaciónKhronosGLB:0errores0avisos en ambos objetos",
+      "portátilGrulla file:// sin red:render16muestras y exportaciónGLB"
+    ]
+  }
+}

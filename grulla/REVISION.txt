@@ -1,1 +1,1 @@
-G03 / 23.10.2026 / Silueta G02 conservada / Cuatro esquinas de la canasta y ramales verticales con cruceta / 41 blancos PP2 en una lámina 2440 × 1220 mm, margen10 y separación6 mm / OBJ a escala con MTL y texturas / No usar planos G01.
+G04 / 23.10.2026 / Envergadura1400 × cabeza-cola1000 × alto total1000mm / Canasta útil300×300mm / Cuatro esquinas a una argolla, sin cruceta / 41 blancos PP2 en una lámina2440×1220mm, margen10 y separación6 / LED interiores en alas translúcidas / 3blueprints +3guías100×70cm / GLB,OBJ+MTL+PNG,STL a escala / No fabricar con G01/G03.
