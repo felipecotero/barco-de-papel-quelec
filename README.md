@@ -1,4 +1,4 @@
-# Barco de papel · Taller 3D R07
+# Barco de papel · Taller 3D R08
 
 [**Abrir el visor**](https://felipecotero.github.io/barco-de-papel-quelec/)
 
@@ -6,8 +6,8 @@ Vela de cuatro caras con 270 mm de profundidad, costillas independientes por mit
 
 ## Planos y archivos de taller
 
-- [Siete pliegos 100 × 70 cm, revisión R07](downloads/Planos-R07.pdf).
-- [Paquete técnico R07: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R07.zip).
+- [Ocho pliegos 100 × 70 cm, revisión R08](downloads/Planos-R08.pdf).
+- [Paquete técnico R08: DXF, SVG 1:1, tablas y comprobaciones](downloads/Paquete-tecnico-R08.zip).
 
 **Seis láminas de 2440 × 1220 × 4 mm**: encaje geométrico verificado para 133 blancos, con margen de 10 mm y separación mínima de 6 mm. Incluye pestañas, contraplacas y costillas. El anidado de la vela utiliza su desarrollo real.
 
@@ -27,8 +27,12 @@ El velcro es cierre de posición: cada bastidor sostiene su propia mitad. Ajusta
 
 Descargar la carpeta y abrir **Abrir-Barco.html**, manteniendo `downloads` a su lado. La versión web `index.html` no requiere compilación. Three.js y su licencia MIT están incluidos en `vendor`. No hay analítica ni servicios externos.
 
-`model-r05.json` conserva su nombre por compatibilidad, pero su contenido y sus desarrollos corresponden a R07. Regenerar la copia portátil con `python3 tools/build-portable.py` después de editar.
+`model-r05.json` conserva su nombre por compatibilidad, pero su contenido y sus desarrollos corresponden a R08. Regenerar la copia portátil con `python3 tools/build-portable.py` después de editar.
 
 Fuentes de materiales: [Coroplast](https://www.coroplast.com/resources/), [3M DP8005 para PP de baja energía superficial](https://www.3m.com/3M/en_US/p/d/b5005321032/), [Pro Gaff](https://www.protapes.com/pro-gaff-tape/). Las fichas no certifican este conjunto.
 
-[Ubicaciones nominales de las28 pestañasTP](downloads/Ubicaciones-TP-R07.csv): coordenadasX/Y/Z yencuentro; pliegue yángulo se presentan sobre las piezas reales.
+[Ubicaciones nominales de las28 pestañasTP](downloads/Ubicaciones-TP-R08.csv): coordenadasX/Y/Z yencuentro; pliegue yángulo se presentan sobre las piezas reales.
+
+## Cambios R08
+
+Octavo pliego dedicado a las asas de ambas mitades. El visor dibuja los perímetros y pliegues reales; no activa mallas de alambre ni extrae diagonales de la triangulación. La geometría, seis láminas y presupuesto R07 se conservan.

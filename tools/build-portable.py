@@ -7,9 +7,9 @@ core=(P/'vendor/three.core.js').read_text();ex=re.search(r'export \{([^}]+)\};',
 mod=(P/'vendor/three.module.js').read_text();mod=re.sub(r"import \{([^}]+)\} from '[^']+';",lambda m:'const {'+m.group(1).replace(' as ',':')+'}=__core;',mod);mod=re.sub(r"export \{[^}]+\} from '[^']+';",'',mod);ex=re.search(r'export \{([^}]+)\};',mod);mod=mod[:ex.start()]+'return Object.assign({},__core,{'+names(ex.group(1))+'});'+mod[ex.end():];mod='const THREE=(()=>{'+mod+'})();\n'
 orb=(P/'vendor/OrbitControls.js').read_text();orb=re.sub(r"import \{([^}]+)\} from '[^']+';",lambda m:'const {'+m.group(1).replace(' as ',':')+'}=THREE;',orb);orb=re.sub(r'export \{ OrbitControls \};','return OrbitControls;',orb);orb='const OrbitControls=(()=>{'+orb+'})();\n'
 app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M);app=app.replace("data=await fetch(", "data=window.BARCO_MODEL||await fetch(")
-html=(P/'index.html').read_text();html=html.replace('<link rel="stylesheet" href="style.css?v=R07">','<style>'+(P/'style.css').read_text()+'</style>');html=re.sub(r'<script type="importmap">.*?</script>','',html)
+html=(P/'index.html').read_text();html=html.replace('<link rel="stylesheet" href="style.css?v=R08">','<style>'+(P/'style.css').read_text()+'</style>');html=re.sub(r'<script type="importmap">.*?</script>','',html)
 bundle=core+mod+orb+'window.BARCO_MODEL='+ (P/'model-r05.json').read_text()+';\n(()=>{'+app+'})();';bundle=bundle.replace('</script','<\\/script')
-html=html.replace('<script type="module" src="app.js?v=R07"></script>','<script>'+bundle+'</script>');(P/'Abrir-Barco.html').write_text(html)
+html=html.replace('<script type="module" src="app.js?v=R08"></script>','<script>'+bundle+'</script>');(P/'Abrir-Barco.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Barco.html').stat().st_size)
 
 if json.loads((P/"model-r05.json").read_text()).get("auxRevision",{}).get("id")=="M02":
@@ -18,5 +18,5 @@ if json.loads((P/"model-r05.json").read_text()).get("auxRevision",{}).get("id")=
 if json.loads((P/"model-r05.json").read_text()).get("revision")=="R06":
  (P/"Barco-Agarres-R06.html").write_text(html)
 
-if json.loads((P/"model-r05.json").read_text()).get("revision")=="R07":
- (P/"Barco-R07.html").write_text(html)
+if json.loads((P/"model-r05.json").read_text()).get("revision")=="R08":
+ (P/"Barco-R08.html").write_text(html)
