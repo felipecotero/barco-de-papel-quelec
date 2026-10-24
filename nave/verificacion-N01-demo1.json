@@ -1,0 +1,280 @@
+{
+  "revision": "N01-demo1",
+  "date": "2026-10-24",
+  "scope": "Demostraciones visuales de encaje, liberación, elenco y fabricación; la alternativa en bloques no reemplaza todavía los documentos N01 de planchas.",
+  "opening": {
+    "passed": true,
+    "errors": [],
+    "bad": [],
+    "stages": [
+      {
+        "view": "join",
+        "sep": 0,
+        "explode": 0,
+        "lift": 1,
+        "skin": false,
+        "labelsOn": false,
+        "mode": "studio",
+        "opening": false,
+        "released": 0,
+        "demoStage": 1,
+        "demoPlaying": false,
+        "actorsVisible": false,
+        "caucheraVisible": false,
+        "carriersVisible": false
+      },
+      {
+        "view": "join",
+        "sep": 0,
+        "explode": 0,
+        "lift": 1,
+        "skin": false,
+        "labelsOn": false,
+        "mode": "studio",
+        "opening": false,
+        "released": 1,
+        "demoStage": 2,
+        "demoPlaying": false,
+        "actorsVisible": false,
+        "caucheraVisible": false,
+        "carriersVisible": false
+      },
+      {
+        "view": "join",
+        "sep": 0.05,
+        "explode": 0,
+        "lift": 1,
+        "skin": false,
+        "labelsOn": false,
+        "mode": "studio",
+        "opening": false,
+        "released": 1,
+        "demoStage": 3,
+        "demoPlaying": false,
+        "actorsVisible": false,
+        "caucheraVisible": false,
+        "carriersVisible": false
+      },
+      {
+        "view": "actors",
+        "sep": 1,
+        "explode": 0,
+        "lift": 1,
+        "skin": true,
+        "labelsOn": false,
+        "mode": "studio",
+        "opening": false,
+        "released": 1,
+        "demoStage": 4,
+        "demoPlaying": false,
+        "actorsVisible": true,
+        "caucheraVisible": true,
+        "carriersVisible": true
+      }
+    ],
+    "checks": [
+      "releaseBeforeTranslation",
+      "fourActorsStationaryOnStage",
+      "caucheraStationary",
+      "twoPortersTravelWithEachHalf",
+      "canonicalExportIndependentOfDemonstration",
+      "canonicalMaterialsExcludeGuideColors",
+      "fullSequenceEndsOpen",
+      "mobile390"
+    ]
+  },
+  "fabrication": {
+    "passed": true,
+    "errors": [],
+    "bad": [],
+    "records": [
+      {
+        "active": true,
+        "method": "carve",
+        "progress": 0,
+        "playing": false,
+        "section": false,
+        "stage": 1,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 3.68424,
+        "blockCount": 2,
+        "blockSizeMm": [
+          4080,
+          860,
+          525
+        ],
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "carve",
+        "progress": 0.34,
+        "playing": false,
+        "section": false,
+        "stage": 2,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 3.68424,
+        "blockCount": 2,
+        "blockSizeMm": [
+          4080,
+          860,
+          525
+        ],
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "carve",
+        "progress": 0.7,
+        "playing": false,
+        "section": false,
+        "stage": 3,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 3.68424,
+        "blockCount": 2,
+        "blockSizeMm": [
+          4080,
+          860,
+          525
+        ],
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "carve",
+        "progress": 1,
+        "playing": false,
+        "section": false,
+        "stage": 4,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 3.68424,
+        "blockCount": 2,
+        "blockSizeMm": [
+          4080,
+          860,
+          525
+        ],
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "assemble",
+        "progress": 0,
+        "playing": false,
+        "section": false,
+        "stage": 1,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 0.6,
+        "blockCount": 0,
+        "blockSizeMm": null,
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "assemble",
+        "progress": 0.34,
+        "playing": false,
+        "section": false,
+        "stage": 2,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 0.6,
+        "blockCount": 0,
+        "blockSizeMm": null,
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "assemble",
+        "progress": 0.7,
+        "playing": false,
+        "section": false,
+        "stage": 3,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 0.6,
+        "blockCount": 0,
+        "blockSizeMm": null,
+        "geometryIsProposal": true
+      },
+      {
+        "active": true,
+        "method": "assemble",
+        "progress": 1,
+        "playing": false,
+        "section": false,
+        "stage": 4,
+        "nominalWallMm": 35,
+        "purchasedVolumeM3": 0.6,
+        "blockCount": 0,
+        "blockSizeMm": null,
+        "geometryIsProposal": true
+      }
+    ],
+    "checks": [
+      "twoMethodsSameFinishedGeometry",
+      "35mmNormalWallSection",
+      "two4mBlocksProposal",
+      "twelveSheetAssembly",
+      "playPause",
+      "canonicalExportUnaffected",
+      "mobile390"
+    ]
+  },
+  "finalChecks": {
+    "passed": true,
+    "errors": [],
+    "bad": [],
+    "measurements": [
+      {
+        "side": "A",
+        "minMm": 34.99995348225922,
+        "maxMm": 35.00003262058036
+      },
+      {
+        "side": "B",
+        "minMm": 34.99995348225922,
+        "maxMm": 35.00003262058036
+      }
+    ],
+    "checks": [
+      "sharedReleaseStateRestored",
+      "fourActorsVisible",
+      "actual35mmBandCoordinates",
+      "mobileFitAndExpandableInstructions",
+      "animationEndsAndCanReplay",
+      "methodExplanationConsistent"
+    ]
+  },
+  "offlineFabrication": {
+    "passed": true,
+    "externalHttpRequests": 0
+  },
+  "stockComparison": {
+    "currentSheetMethod": {
+      "sheets": 12,
+      "sizeMm": [
+        1000,
+        1000,
+        50
+      ],
+      "purchaseVolumeM3": 0.6
+    },
+    "blockAlternative": {
+      "blocks": 2,
+      "orientedSizeMm": [
+        4080,
+        860,
+        525
+      ],
+      "purchaseVolumeM3": 3.68424,
+      "ratioToSheets": 6.1404,
+      "densityComparisonKgM3": 20,
+      "price": "No publicado; por cotizar junto con vaciado, talla y transporte.",
+      "source": "https://www.precomprimidos.com.co/Servicios/Geobloque"
+    }
+  },
+  "limits": [
+    "Animación ilustrativa: no es trayectoria de máquina ni plazo de trabajo.",
+    "35mm nominal en cuerpo; nariz y propulsor tienen espesores propios.",
+    "La ergonomía y la liberación en movimiento requieren prueba con reparto, vestuario y cauchera reales."
+  ]
+}

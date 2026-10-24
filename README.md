@@ -62,6 +62,14 @@ Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo con dri
 
 La documentación define una propuesta para ensayar. Antes de fabricar la versión definitiva: maqueta de paso 1:1, pruebas de agarres y cierre, ensayo de trayectoria y apertura con las ocho personas y la cauchera. Seleccionar materiales, adhesivo y recubrimiento acuoso compatibles con EPS mediante probeta. El conjunto no tiene capacidad estructural certificada.
 
+## Nave · demostraciones de apertura y fabricación
+
+[Encaje y liberación](nave/?rev=N01-demo1&demo=encaje) ofrece cuatro pasos: dientes intercalados, ambas cinchas liberadas, retirada lateral de los peines y apertura con cuatro gruñones, cauchera y cuatro portadores. Azul/naranja distinguen las guías solo en el detalle; la descarga conserva sus materiales normales. La apertura es ilustrativa, sin simular biomecánica ni demostrar la maniobra de liberación real.
+
+La [talla en bloques](nave/?rev=N01-demo1&demo=talla) y el [ensamblaje de planchas](nave/?rev=N01-demo1&demo=planchas) se recorren con animación, pausa, deslizador y cuatro etapas. El [corte de pared](nave/?rev=N01-demo1&demo=pared) muestra los 35 mm normales a la superficie del cuerpo. Los remates de nariz y propulsor tienen sus espesores propios. El estudio no es una trayectoria CNC ni un presupuesto de tiempo.
+
+El formato de bloque publicado por [Precomprimidos](https://www.precomprimidos.com.co/Servicios/Geobloque) permite estudiar, girándolo, dos bloques de 4080 × 860 × 525 mm, uno por mitad. Su volumen de compra suma 3,68424 m³ frente a los 0,60 m³ de las doce planchas. Reduce juntas, pero la economía total depende del precio, vaciado, talla, transporte y aprovechamiento de sobrantes. El proveedor no publica precio: disponibilidad por unidad y densidad 20 kg/m³ por confirmar. Esta alternativa se muestra para evaluar; los documentos N01 y la estimación reservada se refieren al ensamblaje de planchas. En ambas rutas se mantienen bastidores independientes y el objetivo de carcasa hueca.
+
 ## Archivos y revisión
 
 Los documentos antiguos quedan señalados como archivo y no corresponden a las versiones vigentes. Los enlaces antiguos a R05–R08 en la raíz conservan su redirección al barco. Three.js y las bibliotecas de render se distribuyen con sus licencias MIT; Montserrat con OFL. Quiche se usa mediante instalación local.

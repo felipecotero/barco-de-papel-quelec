@@ -20,7 +20,7 @@ def shared_assets(html,Q,prefix):
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
  html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I03"',html)
  html=html.replace('href="../index.html"','href="'+site+'?rev=I03"').replace('href="index.html"','href="'+site+'?rev=I03"')
- html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Nave.html"','href="'+site+'grulla/Abrir-Nave.html"')
+ html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Nave.html"','href="'+site+'nave/Abrir-Nave.html"')
  html=html.replace('href="downloads/','href="'+site+'nave/downloads/')
  for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg']:
   if f.exists():
@@ -52,7 +52,7 @@ def inline_path_backend(Q):
 core=(Q/'vendor/three.core.js').read_text();ex=re.search(r'export \{([^}]+)\};',core);core=core[:ex.start()]+'return {'+names(ex.group(1))+'};'+core[ex.end():];core='const __core=(()=>{'+core+'})();\n'
 mod=(Q/'vendor/three.module.js').read_text();mod=re.sub(r"import \{([^}]+)\} from '[^']+';",lambda m:'const {'+m.group(1).replace(' as ',':')+'}=__core;',mod);mod=re.sub(r"export \{[^}]+\} from '[^']+';",'',mod);ex=re.search(r'export \{([^}]+)\};',mod);mod=mod[:ex.start()]+'return Object.assign({},__core,{'+names(ex.group(1))+'});'+mod[ex.end():];mod='const THREE=(()=>{'+mod+'})();\n'
 orb=(Q/'vendor/OrbitControls.js').read_text();orb=re.sub(r"import \{([^}]+)\} from '[^']+';",lambda m:'const {'+m.group(1).replace(' as ',':')+'}=THREE;',orb);orb=re.sub(r'export \{ OrbitControls \};','return OrbitControls;',orb);orb='const OrbitControls=(()=>{'+orb+'})();\n'
-app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M);app=app.replace("data=await fetch(", "data=window.GRULLA_MODEL||await fetch(")
+app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M);assert 'window.NAVE_MODEL' in app
 html=(P/'index.html').read_text();html=re.sub(r'<link rel="stylesheet" href="style.css[^"]*">',lambda m:'<style>'+(P/'style.css').read_text()+'</style>',html);html=re.sub(r'<script type="importmap">.*?</script>','',html)
 for name,f in [('referencia-interpretes.jpg',P/'referencia-interpretes.jpg'),('../assets/tdr-nave.jpg',Q/'assets/tdr-nave.jpg')]:
  html=html.replace('src="'+name+'"','src="data:image/jpeg;base64,'+base64.b64encode(f.read_bytes()).decode()+'"')
@@ -61,5 +61,6 @@ bundle=core+mod+orb+'window.NAVE_MODEL='+ (P/'model.json').read_text()+';\n(()=>
 Q=P.parent if (P.parent/'shared/obj-export.js').exists() else P.parent/'barco-github'
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,Q,'../')
+html=re.sub(r'<script src="fabricacion.js[^"]*"></script>',lambda m:'<script>'+(P/'fabricacion.js').read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Nave.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Nave.html').stat().st_size)
