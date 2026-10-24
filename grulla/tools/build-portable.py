@@ -12,11 +12,16 @@ def shared_assets(html,Q,prefix):
   css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())
  html=re.sub(r'<link rel="stylesheet" href="'+re.escape(prefix)+r'shared/brand.css[^"]*">',lambda m:'<style>'+css+'</style>',html)
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/dimensions.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/dimensions.js').read_text()+'</script>',html)
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/studio-render.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/studio-render.js').read_text().replace('</script','<\\/script')+'</script>',html)
+ encrypted=(Q/'private/estimaciones.enc.json').read_text()
+ privatejs=(Q/'shared/private-costs.js').read_text().replace('</script','<\\/script')
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/private-costs.js[^>]*></script>',lambda m:'<script>window.QUELEC_PRIVATE_ESTIMATE='+encrypted+';'+privatejs+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
- html=html.replace('href="../index.html"','href="'+site+'?rev=I02"').replace('href="index.html"','href="'+site+'?rev=I02"')
+ html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I03"',html)
+ html=html.replace('href="../index.html"','href="'+site+'?rev=I03"').replace('href="index.html"','href="'+site+'?rev=I03"')
  html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Grulla.html"','href="'+site+'grulla/Abrir-Grulla.html"')
  html=html.replace('href="downloads/','href="'+site+'grulla/downloads/')
- for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg']:
+ for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg']:
   if f.exists():
    uri='data:image/svg+xml;base64,'+base64.b64encode(f.read_bytes()).decode()
    html=html.replace('href="assets/'+f.name+'"','href="'+uri+'"').replace('href="../assets/'+f.name+'"','href="'+uri+'"')

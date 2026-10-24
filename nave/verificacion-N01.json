@@ -1,0 +1,194 @@
+{
+  "revision": "N01",
+  "pdfs": [
+    {
+      "path": "Nave-Blueprints-N01-4-pliegos-100x70.pdf",
+      "pages": 4,
+      "pageSizesMm": [
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ]
+      ],
+      "embeddedFontSubsets": [
+        "/AAAAAA+Arial-BoldMT",
+        "/AAAAAA+ArialMT",
+        "/AAAAAA+Montserrat-SemiBold",
+        "/AAAAAA+QuicheDisplay-Regular",
+        "/Helvetica"
+      ],
+      "bytes": 507338,
+      "sha256": "ba860fd907bf9198970463d6bea96b4ae273f51819fe35f09a7802700e96912d"
+    },
+    {
+      "path": "Nave-Guia-visual-N01-4-pliegos-100x70.pdf",
+      "pages": 4,
+      "pageSizesMm": [
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ],
+        [
+          1000.0001166666667,
+          700.000011111111
+        ]
+      ],
+      "embeddedFontSubsets": [
+        "/AAAAAA+Arial-BoldMT",
+        "/AAAAAA+ArialMT",
+        "/AAAAAA+Montserrat-SemiBold",
+        "/AAAAAA+QuicheDisplay-Regular",
+        "/Helvetica"
+      ],
+      "bytes": 938521,
+      "sha256": "2ea81f485b0db3d739228a868a7863cafe216b5346e705da6ffab5a9f5737ed5"
+    }
+  ],
+  "layout": {
+    "trackedTextBoxes": 422,
+    "minimumTypePt": 22,
+    "titlePt": 52,
+    "outsideSafeMargins": 0,
+    "intersectingTextBoxes": 0,
+    "testToleranceMm": 0.8,
+    "graphicPathChecks": [
+      {
+        "file": "Nave-Guia-visual-N01-4-pliegos-100x70.pdf",
+        "page": 4,
+        "region": "paso12",
+        "boundsMm": [
+          692.4,
+          318.3482107813361,
+          930.6,
+          525.6
+        ],
+        "allowedMm": [
+          680,
+          280,
+          948,
+          529
+        ],
+        "panelMm": [
+          664,
+          135,
+          964,
+          584
+        ],
+        "result": "All illustration paths, heads, line widths and arrows fit within the panel padding."
+      }
+    ]
+  },
+  "modelChecks": {
+    "duelaMatrixIds": 154,
+    "completeCsvBlanks": 178,
+    "sheetCount": 12,
+    "blanksPerSheet": {
+      "1": 6,
+      "2": 10,
+      "3": 8,
+      "4": 8,
+      "5": 10,
+      "6": 11,
+      "7": 15,
+      "8": 15,
+      "9": 24,
+      "10": 27,
+      "11": 32,
+      "12": 12
+    },
+    "minStockGapMm": 4.999999999999999,
+    "stockMarginMm": 10,
+    "stationCount": 14,
+    "fullSizeHalfSectionSvgs": 28,
+    "finalMassKgWithReserve": 20.183,
+    "optionalLEDTotalKgWithReserve": 20.643,
+    "finalLighting": "two independent banks, no cable between halves",
+    "fixtures": "root M4x20; tube support M4x35; sleeves preloaded",
+    "prototypeValidation": "actor/cauchera passage, load/handles/release/finish/electric autonomy explicitly pending",
+    "separateHalfFinishingNote": "Revestir y pintar cada mitad por separado; tela, cola y masilla no deben puentear A/B.",
+    "releaseReachPrototypeNote": "Con cada mitad controlada, ensaya el alcance de los tiradores sin perder el control. A la señal, libera AMBAS cinchas antes de abrir a los lados. Los gruñones siguen sobre el escenario."
+  },
+  "visualInspection": {
+    "pages": 8,
+    "renderPixels": [
+      2200,
+      1540
+    ],
+    "reviewed": [
+      "B-01",
+      "B-02",
+      "B-03",
+      "B-04",
+      "G-01",
+      "G-02",
+      "G-03",
+      "G-04"
+    ],
+    "result": "All pages inspected individually; no clipping, illegible text, accidental triangulation, or illustration/text overlap.",
+    "correction": "Step 12 scene reduced to 200 x171 mm (23.1% narrower) and centered in its third panel; heads, paths, stroke widths and arrows measured within padded panel."
+  },
+  "publishedCopies": [
+    {
+      "source": "Nave-Blueprints-N01-4-pliegos-100x70.pdf",
+      "publishedCopy": "downloads/Blueprints-N01.pdf",
+      "sha256": "ba860fd907bf9198970463d6bea96b4ae273f51819fe35f09a7802700e96912d",
+      "identical": true
+    },
+    {
+      "source": "Nave-Guia-visual-N01-4-pliegos-100x70.pdf",
+      "publishedCopy": "downloads/Guia-visual-N01.pdf",
+      "sha256": "2ea81f485b0db3d739228a868a7863cafe216b5346e705da6ffab5a9f5737ed5",
+      "identical": true
+    }
+  ],
+  "date": "2026-10-24",
+  "runtimeChecks": {
+    "localBrowser": "Google Chrome",
+    "javascriptErrors": 0,
+    "failedRequests": 0,
+    "stockPacking": "178 blancos / 12 planchas / margen 10 mm / separación mínima 5 mm",
+    "closedEPSMeshesPositiveVolume": 154,
+    "exportFormats": [
+      "GLB",
+      "OBJ + MTL + PNG ZIP",
+      "STL"
+    ],
+    "glbValidator": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "exportBoundsMetres": [
+      4,
+      1.230000019,
+      1.40340000048
+    ],
+    "exportCanonicalOrigin": "Y = 0 en borde inferior del fuselaje; independiente de porte, explosión y separación",
+    "optionalLighting": "Dos baterías independientes; ningún cable entre mitades",
+    "physicalTestsPending": [
+      "paso con reparto, vestuario y cauchera reales",
+      "esfuerzo, equilibrio y agarres",
+      "alcance de tiradores y liberación controlada en movimiento",
+      "recubrimiento y temperatura/autonomía eléctrica"
+    ]
+  }
+}

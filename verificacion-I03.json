@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "object": "__boat",
+      "studio": {
+        "active": true,
+        "night": false,
+        "ready": true,
+        "engine": "PBR · entorno PMREM local · sombras suaves",
+        "environmentMs": 35.200000000186265,
+        "contactMs": 5.7999999998137355,
+        "contactPasses": 2,
+        "samplesRequired": 0
+      }
+    },
+    {
+      "object": "__crane",
+      "studio": {
+        "active": true,
+        "night": false,
+        "ready": true,
+        "engine": "PBR · entorno PMREM local · sombras suaves",
+        "environmentMs": 29.699999999254942,
+        "contactMs": 0.599999999627471,
+        "contactPasses": 2,
+        "samplesRequired": 0
+      }
+    },
+    {
+      "object": "__nave",
+      "studio": {
+        "active": true,
+        "night": false,
+        "ready": true,
+        "engine": "PBR · entorno PMREM local · sombras suaves",
+        "environmentMs": 23.200000000186265,
+        "contactMs": 0.40000000037252903,
+        "contactPasses": 2,
+        "samplesRequired": 0
+      }
+    }
+  ],
+  "errors": [],
+  "bad": [],
+  "checks": [
+    "all3studio",
+    "dimensions",
+    "documents",
+    "actualNavePDFdownloads",
+    "grullaLEDoff",
+    "Navecanonicalexportindependentofview",
+    "mobile390"
+  ],
+  "revision": "I03",
+  "date": "2026-10-24",
+  "offlineChecks": {
+    "objects": 3,
+    "externalHttpRequests": 0,
+    "studio": true,
+    "privatePanel": true,
+    "glbExport": true
+  },
+  "retainedGeometryAndDocuments": [
+    {
+      "file": "model-r05.json",
+      "sha256": "97ebc062cf0dbed3e45196b2ebe97a5b89533569595e675982ac3d81cabf9586",
+      "unchanged": true
+    },
+    {
+      "file": "downloads/Planos-R08.pdf",
+      "sha256": "fef7975f3cf5c1c7435379fee65475fd161c41d045d4816c06062ed2df0e0a6b",
+      "unchanged": true
+    },
+    {
+      "file": "downloads/Guia-visual-R08.pdf",
+      "sha256": "637e567a914cb535dfa9409caf0d8441ca440694f90c525dcc40a873326bb498",
+      "unchanged": true
+    },
+    {
+      "file": "grulla/model.json",
+      "sha256": "1255f8c7bd6953cbb15073cd1f624da605cfdd5c802dc3ea7a66502d5e6f2d2a",
+      "unchanged": true
+    },
+    {
+      "file": "grulla/downloads/Grulla-Blueprints-G04.pdf",
+      "sha256": "1d267245674ae9604b3ae45fabefae51eb9db946aa88701b8bb6322112d11128",
+      "unchanged": true
+    },
+    {
+      "file": "grulla/downloads/Grulla-Guia-visual-G04.pdf",
+      "sha256": "a6bd8948e43f16601e1db7c9d1432e421dbba39fe7ca3e6d0142c0f751be12a4",
+      "unchanged": true
+    }
+  ],
+  "privateAccess": {
+    "cipher": "AES-256-GCM",
+    "plaintextKeyPublished": false,
+    "plaintextEstimatesPublished": false,
+    "closedPanelClearsValues": true
+  },
+  "naveDocuments": "nave/verificacion-N01.json",
+  "rendererLimit": "Estudio rápido PBR con sombra de contacto aproximada; no es trazado de rayos progresivo."
+}

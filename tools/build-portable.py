@@ -12,11 +12,16 @@ def shared_assets(html,Q,prefix):
   css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())
  html=re.sub(r'<link rel="stylesheet" href="'+re.escape(prefix)+r'shared/brand.css[^"]*">',lambda m:'<style>'+css+'</style>',html)
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/dimensions.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/dimensions.js').read_text()+'</script>',html)
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/studio-render.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/studio-render.js').read_text().replace('</script','<\\/script')+'</script>',html)
+ encrypted=(Q/'private/estimaciones.enc.json').read_text()
+ privatejs=(Q/'shared/private-costs.js').read_text().replace('</script','<\\/script')
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/private-costs.js[^>]*></script>',lambda m:'<script>window.QUELEC_PRIVATE_ESTIMATE='+encrypted+';'+privatejs+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
- html=html.replace('href="../index.html"','href="'+site+'?rev=I02"').replace('href="index.html"','href="'+site+'?rev=I02"')
+ html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I03"',html)
+ html=html.replace('href="../index.html"','href="'+site+'?rev=I03"').replace('href="index.html"','href="'+site+'?rev=I03"')
  html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Grulla.html"','href="'+site+'grulla/Abrir-Grulla.html"')
  html=html.replace('href="downloads/','href="'+site+'downloads/')
- for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg']:
+ for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg']:
   if f.exists():
    uri='data:image/svg+xml;base64,'+base64.b64encode(f.read_bytes()).decode()
    html=html.replace('href="assets/'+f.name+'"','href="'+uri+'"').replace('href="../assets/'+f.name+'"','href="'+uri+'"')
@@ -50,7 +55,8 @@ app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M);app=
 html=(P/'barco.html').read_text();html=re.sub(r'<link rel="stylesheet" href="style.css[^"]*">',lambda m:'<style>'+(P/'style.css').read_text()+'</style>',html);html=re.sub(r'<script type="importmap">.*?</script>','',html)
 html=re.sub(r'<script src="shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(P/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,P,'')
-bundle=core+mod+orb+'window.BARCO_MODEL='+ (P/'model-r05.json').read_text()+';\n(()=>{'+app+'})();';bundle=bundle.replace('</script','<\\/script')
+Q=P
+bundle=core+mod+orb+inline_path_backend(Q)+'window.BARCO_MODEL='+ (P/'model-r05.json').read_text()+';\n(()=>{'+app+'})();';bundle=bundle.replace('</script','<\\/script')
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Barco.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Barco.html').stat().st_size)
 

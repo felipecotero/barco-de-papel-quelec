@@ -1,0 +1,27 @@
+QUELEC / NAVE N01 / 24.10.2026 / PROTOTIPO
+
+Fuselaje de4000mm de largo x1000mm de ancho x800mm de alto. Aleta hasta1230mm. Cuatro portadores externos sostienen la nave; cuatro gruñones caminan sobre el escenario con una cauchera horizontal de2000x800mm. No hay plataforma para personas.
+
+CORTES Y GÁLIBOS
+Doce planchas EPS de1000x1000x50mm, con178blancos rectangulares. Margen10mm y separación5mm. Los154blancos de duelas se biselan y esculpen: no son piezas planas terminadas. Los otros24 forman aletas, propulsor y núcleos de nariz. Espesor nominal del cuerpo35mm. Nariz: tres núcleos140x280x50 por mitad y cubiertaEVA10; redondeoR35 en planta, sin metal.
+
+Blancos-N01-completo.csv contiene las178piezas; Duelas-N01.csv detalla los154paños de talla. Bastidores-N01.csv reúne los perfiles. Cada EPS-N01-plancha-*.svg está a1:1 en milímetros, sobre1000x1000mm. Los28SVG Galibo-S01-A aS14-B tienen formato1000x700mm y control de100mm. Imprimir al100%, sin ajustar, y comprobar la regla antes de cortar. No hace falta imprimir todos: A/B son espejos y S04-S09 tienen la misma sección; reutilizar el gálibo del cuerpo.
+
+MONTAJE
+1. Hacer maqueta de paso con el reparto, vestuario y cauchera reales.
+2. Armar los bastidoresA/B y sus consolas; comprobar agarres antes de ponerEPS.
+3. Cortar blancos, biselar y ensamblar sobre los gálibos; esculpir y después rematar ventanas.
+4. Atornillar raíces de guías y topes al metal, colocar cinchas y cubiertas blandas.
+5. Aplicar tela y recubrimiento acuoso compatible conEPS tras una probeta. Secar, dar acabado blanco/plata, rojo y azul, y proteger los cantos.
+6. Colocar accesorios y LED opcionales independientes por mitad.
+7. Pesar cada mitad y ensayar progresivamente los controles y la apertura con señal común. Liberar ambos cierres antes de desplazarlas.
+
+FIJACIONES
+Consolas: baseAl80x80x3, frontal80x120x3 y cartelas3. DosM6x35verticales por base; casquillos17mm precargados en tubo20x20x1,5, agujero6,5. Los peinesPEHD6 son guías, no portadores: M4x20 y arandelas12 al alaAl3. El soporte al tubo lleva M4x35 y casquillo17, agujero4,5. G1 centra; G2 permite desplazamientoX de+/-4mm; G3 de+/-6mm. Dos cinchas50 conVelcrocosido, solape50x100; cubiertas separadas por mitad protegen dientes/raíces.
+
+MASA Y LUZ
+Masa con reserva15%:20.183kg; conLED y reserva:20.643kg. Es cálculo por cantidades y reservas, no pesaje ni capacidad certificada. Cada conjunto de dos portadores debe probar su mitad: no asumir que siempre recibe exactamente un cuarto de la masa.
+Cuatro LED5V/0,5W máximo, con driver y difusor; dos por mitad. Dos baterías comerciales protegidas e independientes, cada una con fusible1A e interruptor. No hay cable entre mitades. Extraer para recargar; comprobar temperatura y visibilidad con el reparto.
+
+PLANOS
+Blueprints-N01.pdf y Guia-visual-N01.pdf: cuatro pliegos cada uno, de1000x700mm. Son instrucciones de montaje. Para corte a tamaño real usarSVG y sus cotas. Antes de fabricación definitiva: validar materiales, paso, controles y trayectoria de apertura con el responsable del prototipo.

@@ -7,3 +7,5 @@ quelec-pie.png: Grafica/MEMBRETE ABAJO, original del proyecto.
 logo-grulla.svg: nuevo símbolo vectorial simplificado de grulla de origami para el taller.
 Las tres imágenes de tarjeta son referencias artísticas de TDR, no capturas de los modelos vigentes.
 logo-barco.svg: símbolo vectorial de barco de papel, usado en el visor del barco y su favicon.
+logo-nave.svg: símbolo vectorial de nave escénica para el visor N01.
+nave/referencia-interpretes.jpg: word/media/image20.jpg de TdR_Texturas_y_disenos_de_utileria_Quelec_2026-10-08.docx; cuatro intérpretes con piernas libres y apertura longitudinal.
