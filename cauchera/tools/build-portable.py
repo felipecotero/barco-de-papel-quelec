@@ -18,8 +18,8 @@ def shared_assets(html,Q,prefix):
  privatejs=(Q/'shared/private-costs.js').read_text().replace('</script','<\\/script')
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/private-costs.js[^>]*></script>',lambda m:'<script>window.QUELEC_PRIVATE_ESTIMATE='+encrypted+';'+privatejs+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
- html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I05"',html)
- html=html.replace('href="../index.html"','href="'+site+'?rev=I05"').replace('href="index.html"','href="'+site+'?rev=I05"')
+ html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I05-C02"',html)
+ html=html.replace('href="../index.html"','href="'+site+'?rev=I05-C02"').replace('href="index.html"','href="'+site+'?rev=I05-C02"')
  html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Cauchera.html"','href="'+site+'cauchera/Abrir-Cauchera.html"')
  html=html.replace('href="downloads/','href="'+site+'cauchera/downloads/')
  for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg',Q/'assets/logo-cauchera.svg']:
@@ -64,5 +64,7 @@ Q=P.parent if (P.parent/'shared/obj-export.js').exists() else P.parent/'barco-gi
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,Q,'../')
 html=re.sub(r'<script src="../shared/cauchera-model.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/cauchera-model.js').read_text().replace('</script','<\\/script')+'</script>',html)
+html=re.sub(r'<script src="posturas.js[^"]*"></script>',lambda m:'<script>'+(P/'posturas.js').read_text().replace('</script','<\\/script')+'</script>',html)
+html=html.replace('href="referencia-C02.png"','href="https://felipecotero.github.io/barco-de-papel-quelec/cauchera/referencia-C02.png"')
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Cauchera.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Cauchera.html').stat().st_size)

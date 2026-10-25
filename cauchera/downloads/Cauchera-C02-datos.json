@@ -1,0 +1,186 @@
+{
+  "revision": "C02",
+  "date": "2026-10-25",
+  "title": "Cauchera de Quelec",
+  "status": "Revisión visual de asas compactas, lengüeta, bandas, bola y postura con dos personas",
+  "units": "mm",
+  "dimensions": {
+    "height": 2000,
+    "width": 800,
+    "depthWithFoot": 140,
+    "depthCarry": 250,
+    "woodDiameterRange": [
+      80,
+      100
+    ],
+    "forkCentersWidth": 700,
+    "forkRootY": 1340,
+    "forkTipY": 1950,
+    "handleHandLength": 140,
+    "handleOutsideDiameter": 40,
+    "footPad": [
+      180,
+      70
+    ],
+    "handleOverallWidth": 260,
+    "handleCentersWidth": 220
+  },
+  "core": {
+    "material": "Acero al carbono; selección preliminar",
+    "outsideDiameter": 25.4,
+    "wall": 1.5,
+    "straightCenterlineLength": 1290,
+    "forkCenterlineLengthApprox": 1536,
+    "stockLength": 6000,
+    "installedAllowanceM": 4.806,
+    "note": "Curvado y uniones según taller y verificación de tracción real. No capacidad de lanzamiento acreditada."
+  },
+  "foam": {
+    "material": "Poliuretano flexible en lámina, densidad de planeación18kg/m³",
+    "stockMm": [
+      1000,
+      2000,
+      50
+    ],
+    "stockSheets": 1,
+    "roughBlanks": [
+      {
+        "id": "F-U-A",
+        "sizeMm": [
+          800,
+          720,
+          50
+        ]
+      },
+      {
+        "id": "F-U-B",
+        "sizeMm": [
+          800,
+          720,
+          50
+        ]
+      },
+      {
+        "id": "F-M-A1",
+        "sizeMm": [
+          100,
+          650,
+          50
+        ]
+      },
+      {
+        "id": "F-M-A2",
+        "sizeMm": [
+          100,
+          690,
+          50
+        ]
+      },
+      {
+        "id": "F-M-B1",
+        "sizeMm": [
+          100,
+          690,
+          50
+        ]
+      },
+      {
+        "id": "F-M-B2",
+        "sizeMm": [
+          100,
+          650,
+          50
+        ]
+      }
+    ],
+    "note": "Los rectángulos son blancos para tallar, no desarrollos. El mango blando se arma por tramos con juntas alternadas; el núcleo sigue continuo. Confirmar que calibre5 corresponde a50mm con el vendedor."
+  },
+  "parts": [
+    {
+      "id": "C01",
+      "name": "Núcleo recto + U",
+      "material": "Acero redondoØ25,4×1,5",
+      "quantity": 1
+    },
+    {
+      "id": "C02",
+      "name": "Dos asas compactas",
+      "material": "Mismo acero y acolchado flexible",
+      "quantity": 2
+    },
+    {
+      "id": "C03",
+      "name": "Lengüeta desmontable para la punta del pie",
+      "material": "Acero, placa2mm, cubierta antideslizante",
+      "quantity": 1
+    },
+    {
+      "id": "C04",
+      "name": "Mango de rama",
+      "material": "PU flexible, tela ligera y pintura flexible",
+      "quantity": 1
+    },
+    {
+      "id": "C05",
+      "name": "Horqueta de rama",
+      "material": "PU flexible, tela ligera y pintura flexible",
+      "quantity": 1
+    },
+    {
+      "id": "C06",
+      "name": "Elástico y bolsa escénicos",
+      "material": "Sistema comercial pendiente de seleccionar",
+      "quantity": 1
+    },
+    {
+      "id": "C07",
+      "name": "Remates y zonas de servicio",
+      "material": "Espuma/EVA y tela de acceso",
+      "quantity": 1
+    }
+  ],
+  "massBudget": {
+    "steelTubeKg": 4.249,
+    "footPlateKg": 0.377,
+    "foamInstalledAllowanceKg": 0.45,
+    "fabricAndFinishKg": 0.65,
+    "paddingAndCapsKg": 0.25,
+    "fastenersAndMountsKg": 0.35,
+    "elasticAndPouchAllowanceKg": 0.35,
+    "note": "Planeación con cantidades de estudio; no pesaje ni capacidad. Ajustar núcleo y elástico después de definir las bolas.",
+    "subtotalKg": 6.676,
+    "withReserve15Kg": 7.677,
+    "status": "Archivo de planeación C01, no actualizado ni validado para las bandas y bolsa visuales C02"
+  },
+  "elastic": {
+    "status": "Pendiente",
+    "requestedDistanceMm": 2500,
+    "distanceMeaning": "Por confirmar: recorrido hacia atrás o longitud total estirada",
+    "demo": "Bandas visuales anchas; control de distancia bolsa–horqueta de1,2a2,5m, sin soltar y sin cálculo de rigidez o elongación"
+  },
+  "pending": [
+    "Masa y material exactos de las bolas; TdR menciona esferas luminosas de50cm.",
+    "Distancia escénica y significado de los2,5m.",
+    "Selección comercial del elástico y bolsa; fuerza admisible y prueba del conjunto por profesional idóneo segúnTdR.",
+    "Prueba de agarres, apoyo de pie, recorrido y transporte en nave con vestuario."
+  ],
+  "constructionDocumentsRevision": "C01",
+  "costEstimateBaseRevision": "C01",
+  "poseStudy": {
+    "referenceHeightsMm": [
+      1700,
+      1750
+    ],
+    "defaultBagDistanceMm": 1800,
+    "defaultBagHeightMm": 950,
+    "referenceBallDiameterMm": 350,
+    "ballDiameterRangeMm": [
+      300,
+      500
+    ],
+    "measuresOccupiedEnvelopeOnly": true,
+    "figuresAndBallExported": false,
+    "warning": "Estudio geométrico orientativo. No valida fuerza, equilibrio, seguridad ni aptitud del sistema para lanzar."
+  },
+  "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02"
+}

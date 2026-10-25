@@ -7,7 +7,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.utils import simpleSplit
 P=Path(__file__).resolve().parents[1];R=P.parents[2];OUT=R/'output/pdf';TMP=R/'tmp/pdfs/cauchera-C01';OUT.mkdir(exist_ok=True);TMP.mkdir(parents=True,exist_ok=True)
-D=json.loads((P/'model.json').read_text());F=Path('/Users/felipecamachootero/Library/Fonts')
+D=json.loads((P/'archivo-C01/model.json').read_text());F=Path('/Users/felipecamachootero/Library/Fonts')
 for n,p in [('Q',F/'QuicheDisplay-Regular.ttf'),('M',F/'Montserrat-SemiBold.ttf'),('A',Path('/System/Library/Fonts/Supplemental/Arial.ttf'))]:pdfmetrics.registerFont(TTFont(n,str(p)))
 CHECK=[];C=None;PAGE=0;TECH=True;FILE=''
 def txt(x,y,s,size=25,font='A',color=None,align='left'):

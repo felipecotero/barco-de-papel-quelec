@@ -1,8 +1,8 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I05) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C01](cauchera/?rev=C01)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I05) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02&vista=posture)
 
-Índice oscuro con imágenes originales de los TDR. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
+Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
 ## Ver los acabados sin esperar
 
@@ -62,17 +62,19 @@ Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo, dos po
 
 [Encaje y liberación](nave/?rev=N02&demo=encaje), [talla](nave/?rev=N02&demo=talla), [ensamblaje de planchas](nave/?rev=N02&demo=planchas) y [corte de 50 mm](nave/?rev=N02&demo=pared) tienen animación, pausa y pasos. La fabricación es ilustrativa; no es una trayectoria de máquina ni una garantía de plazo.
 
-## Cauchera C01 · estudio para prototipo
+## Cauchera C02 · apariencia y postura
 
-2000 mm de alto × 800 mm de ancho exterior, horqueta en U, dos asas cerradas bajo la horqueta y apoyo bajo desmontable para el pie. Apariencia de rama irregular de 80–100 mm: espuma flexible de PU, tela fina y pintura flexible mate. Núcleo preliminar de acero Ø exterior real25,4 × pared1,5 mm; no se ha comprobado frente a la tracción real. El apoyo posiciona al ras del escenario y no es un escalón para subirse.
+La revisión visual C02 conserva la U de 2000 × 800 mm y la rama de 80–100 mm. Acerca las asas al tronco: ancho total aproximado260mm, con 140mm de zona acolchada. Cambia la plataforma por una lengüeta lateral redondeada de180×70mm, a unos25mm del suelo, para la punta del pie. El apoyo se retira al llevar la cauchera en la nave.
 
-- [Blueprints de estudio: dos pliegos100×70cm](cauchera/downloads/Blueprints-C01.pdf).
-- [Guía visual: dos pliegos100×70cm](cauchera/downloads/Guia-visual-C01.pdf).
-- [Medidas y nomenclatura C01](cauchera/downloads/Cauchera-C01-datos.json).
+[Ver las dos personas](cauchera/?rev=C02&vista=posture): una figura toma las dos asas y coloca la punta del pie; la otra toma una bolsa cóncava y se desplaza con ella. Las bandas son más largas y visualmente anchas, rojas, siguiendo el boceto del usuario. Bola de referencia ajustable30–50cm, por defecto35cm; se puede quitar. Distancia bolsa–horqueta1,20–2,50m, por defecto1,80m, y altura de bolsa70–120cm. Las estaturas también se ajustan. La animación conserva las manos en la bolsa y termina sin soltarla.
 
-El visor separa los conjuntos C01–C07, muestra cinco etapas, remates, asas y apoyo. Comparte la misma geometría con la referencia de cauchera de la nave, excluida del peso y las exportaciones de la nave. Para llevarla horizontal se retira el apoyo. La espuma se reparte en seis blancos de una lámina nominal1000×2000×50mm, con juntas alternadas solo en el revestimiento del mango. Confirmar formato y densidad con el proveedor. Masa de planeación con reserva15%:7,7kg, no pesaje ni capacidad.
+La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No es una zona de seguridad ni una validación ergonómica o de lanzamiento. Los contactos de manos se resuelven con figuras de proporciones aproximadas, sin fuerzas. Los controles y el encuadre se comparten en el enlace. Las exportaciones C02 son del objeto en reposo, sin figuras, bola, huella o cotas. La referencia dentro de la nave usa la misma geometría C02, con bandas recogidas y sin lengüeta.
 
-El deslizador de hasta2,5m representa espacio provisional hacia atrás. No es una selección de banda, fuerza ni simulación de disparo. Faltan significado exacto del estiramiento, material y masa de las bolas y distancia al barco. Los TDR mencionan bolas luminosas de50cm y revisión por profesional idóneo para la cauchera. El núcleo y el apoyo requieren verificación con la tracción finalmente elegida.
+- [Datos del estudio visual C02](cauchera/downloads/Cauchera-C02-datos.json).
+- [Blueprints C01 anteriores: dos pliegos100×70cm](cauchera/downloads/Blueprints-C01.pdf).
+- [Guía visual C01 anterior: dos pliegos100×70cm](cauchera/downloads/Guia-visual-C01.pdf).
+
+Los PDF y la estimación reservada se conservan como **base C01 anterior a este ajuste**; aún no se actualizan a las asas, lengüeta y bandas C02. El visor y el cuadro de documentos lo indican. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
 ## Estimaciones reservadas I05
 

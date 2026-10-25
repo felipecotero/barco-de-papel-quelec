@@ -1,0 +1,201 @@
+{
+  "pass": true,
+  "revision": "C02",
+  "initial": {
+    "state": {
+      "view": "posture",
+      "colors": false,
+      "skin": true,
+      "labels": false,
+      "explode": 0,
+      "stage": 5,
+      "draw": 1.8,
+      "playing": false,
+      "posePlaying": false,
+      "peopleOn": true,
+      "ballOn": true,
+      "footprintOn": true,
+      "poseHeights": [
+        1.7,
+        1.75
+      ],
+      "bagHeight": 0.95,
+      "ballDiameter": 0.35
+    },
+    "metrics": {
+      "occupiedWidthM": 1.1020408197264466,
+      "occupiedDepthM": 2.805698061556829,
+      "missingContacts": 0,
+      "maxContactGapM": 0,
+      "holder": {
+        "missing": [],
+        "handL": [
+          -0.10999999999999999,
+          1.145,
+          0.03500000000000009
+        ],
+        "handR": [
+          0.10999999999999999,
+          1.145,
+          0.035
+        ],
+        "feet": {
+          "L": {
+            "center": [
+              0.235,
+              0.055,
+              0.04
+            ],
+            "ankle": [
+              0.295,
+              0.12,
+              0.04
+            ],
+            "yaw": -1.5707963267948966
+          },
+          "R": {
+            "center": [
+              0.64,
+              0.032,
+              0.43
+            ],
+            "ankle": [
+              0.64,
+              0.115,
+              0.48
+            ],
+            "yaw": 0
+          }
+        }
+      },
+      "puller": {
+        "missing": [],
+        "handL": [
+          -0.18,
+          0.935,
+          1.8900000000000001
+        ],
+        "handR": [
+          0.18,
+          0.9349999999999999,
+          1.8900000000000001
+        ],
+        "feet": {
+          "L": {
+            "center": [
+              -0.18,
+              0.032,
+              2.02
+            ],
+            "ankle": [
+              -0.18,
+              0.115,
+              2.0700000000000003
+            ],
+            "yaw": 0
+          },
+          "R": {
+            "center": [
+              0.19,
+              0.032,
+              2.56
+            ],
+            "ankle": [
+              0.19,
+              0.115,
+              2.6100000000000003
+            ],
+            "yaw": 0
+          }
+        }
+      },
+      "bagPosition": [
+        0,
+        0.95,
+        1.8
+      ],
+      "ballDiameterM": 0.35
+    },
+    "people": 2
+  },
+  "contact": {
+    "sole": 0.025749998837709398,
+    "pad": 0.026000000189989804,
+    "gap": -0.00025000135228040593,
+    "gripWidth": 0.2640188932418823
+  },
+  "maxDistanceOccupiedDepthM": 3.5056980615568287,
+  "exports": {
+    "geom": {
+      "bad": [],
+      "names": [
+        "C01_0",
+        "C01_1",
+        "C01_2",
+        "C02_0",
+        "C02_1",
+        "C02_2",
+        "C02_3",
+        "C03_0",
+        "C03_1",
+        "C03_2",
+        "C03_3",
+        "C03_4",
+        "C03_5",
+        "C03_6",
+        "C03_7",
+        "C03_8",
+        "C03_9",
+        "C04_0",
+        "C04_1",
+        "C04_2",
+        "C05_0",
+        "C05_1",
+        "C05_2",
+        "C05_3",
+        "C05_4",
+        "C06_0",
+        "C06_1",
+        "C06_2",
+        "C06_3",
+        "C06_4",
+        "C07_0"
+      ]
+    },
+    "glb": {
+      "size": [
+        0.8040000200271606,
+        2.000000001817942,
+        0.9919999986886978
+      ],
+      "textures": 1
+    },
+    "obj": {
+      "size": [
+        804.0000200271606,
+        2000.000001817942,
+        991.9999986886978
+      ],
+      "textures": 1
+    }
+  },
+  "mobile": true,
+  "animationEndsHeld": true,
+  "errors": [],
+  "date": "2026-10-25",
+  "status": "Estudio geométrico de postura y apariencia; no validación física ni dimensionamiento del elástico",
+  "documentsRevision": "C01 anterior",
+  "estimateBaseRevision": "C01 anterior",
+  "offline": {
+    "cauchera": true,
+    "nave": true,
+    "externalRequests": 0,
+    "sharedViewRestored": true,
+    "allFiguresFitFrontAndSide": true
+  },
+  "GLBValidator": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "publicModelSha256": "dfbd3a72ef1aeb6d10e9b04df755f96ba341ef8382f66c8866c3405bd6c508e6"
+}

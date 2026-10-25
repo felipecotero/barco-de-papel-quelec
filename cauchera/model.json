@@ -1,14 +1,14 @@
 {
-  "revision": "C01",
-  "date": "2026-10-24",
+  "revision": "C02",
+  "date": "2026-10-25",
   "title": "Cauchera de Quelec",
-  "status": "Estudio de forma y construcción para prototipo; elástico pendiente",
+  "status": "Revisión visual de asas compactas, lengüeta, bandas, bola y postura con dos personas",
   "units": "mm",
   "dimensions": {
     "height": 2000,
     "width": 800,
-    "depthWithFoot": 380,
-    "depthCarry": 200,
+    "depthWithFoot": 140,
+    "depthCarry": 250,
     "woodDiameterRange": [
       80,
       100
@@ -19,9 +19,11 @@
     "handleHandLength": 140,
     "handleOutsideDiameter": 40,
     "footPad": [
-      200,
-      120
-    ]
+      180,
+      70
+    ],
+    "handleOverallWidth": 260,
+    "handleCentersWidth": 220
   },
   "core": {
     "material": "Acero al carbono; selección preliminar",
@@ -102,13 +104,13 @@
     },
     {
       "id": "C02",
-      "name": "Dos asas cerradas",
+      "name": "Dos asas compactas",
       "material": "Mismo acero y acolchado flexible",
       "quantity": 2
     },
     {
       "id": "C03",
-      "name": "Apoyo desmontable de pie",
+      "name": "Lengüeta desmontable para la punta del pie",
       "material": "Acero, placa2mm, cubierta antideslizante",
       "quantity": 1
     },
@@ -147,18 +149,38 @@
     "elasticAndPouchAllowanceKg": 0.35,
     "note": "Planeación con cantidades de estudio; no pesaje ni capacidad. Ajustar núcleo y elástico después de definir las bolas.",
     "subtotalKg": 6.676,
-    "withReserve15Kg": 7.677
+    "withReserve15Kg": 7.677,
+    "status": "Archivo de planeación C01, no actualizado ni validado para las bandas y bolsa visuales C02"
   },
   "elastic": {
     "status": "Pendiente",
     "requestedDistanceMm": 2500,
     "distanceMeaning": "Por confirmar: recorrido hacia atrás o longitud total estirada",
-    "demo": "Espacio ilustrativo provisional, sin simulación de disparo ni selección de rigidez o sección"
+    "demo": "Bandas visuales anchas; control de distancia bolsa–horqueta de1,2a2,5m, sin soltar y sin cálculo de rigidez o elongación"
   },
   "pending": [
     "Masa y material exactos de las bolas; TdR menciona esferas luminosas de50cm.",
     "Distancia escénica y significado de los2,5m.",
     "Selección comercial del elástico y bolsa; fuerza admisible y prueba del conjunto por profesional idóneo segúnTdR.",
     "Prueba de agarres, apoyo de pie, recorrido y transporte en nave con vestuario."
-  ]
+  ],
+  "constructionDocumentsRevision": "C01",
+  "costEstimateBaseRevision": "C01",
+  "poseStudy": {
+    "referenceHeightsMm": [
+      1700,
+      1750
+    ],
+    "defaultBagDistanceMm": 1800,
+    "defaultBagHeightMm": 950,
+    "referenceBallDiameterMm": 350,
+    "ballDiameterRangeMm": [
+      300,
+      500
+    ],
+    "measuresOccupiedEnvelopeOnly": true,
+    "figuresAndBallExported": false,
+    "warning": "Estudio geométrico orientativo. No valida fuerza, equilibrio, seguridad ni aptitud del sistema para lanzar."
+  },
+  "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02"
 }
