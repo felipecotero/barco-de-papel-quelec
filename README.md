@@ -1,12 +1,12 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I05) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I05) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA02](pancartas/?rev=PA02)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
 ## Ver los acabados sin esperar
 
-**Estudio rápido** está disponible en los cuatro objetos. Usa materiales PBR, iluminación de entorno local, luces de estudio y sombras suaves; no acumula muestras. Se puede girar, separar y examinar el modelo mientras se ve su acabado. La sombra de contacto es una aproximación gráfica, no un cálculo estructural ni fotométrico.
+**Estudio rápido** está disponible en todos los objetos. Usa materiales PBR, iluminación de entorno local, luces de estudio y sombras suaves; no acumula muestras. Se puede girar, separar y examinar el modelo mientras se ve su acabado. La sombra de contacto es una aproximación gráfica, no un cálculo estructural ni fotométrico.
 
 El trazado de rayos permanece como opción secundaria en barco y grulla. Es más lento, puede conservar ruido y necesita dejar quieta la cámara. La vista rápida no depende de ese proceso. La grulla conserva sus LED dentro de las alas; apagarlos devuelve la iluminación general.
 
@@ -16,7 +16,7 @@ El trazado de rayos permanece como opción secundaria en barco y grulla. Es más
 
 **Descargar 3D**, junto a **Guías y planos**, ofrece GLB con texturas integradas, OBJ+MTL+PNG en ZIP y STL sin texturas. GLB usa metros; OBJ/STL permiten elegir metros o milímetros y requieren seleccionar la misma unidad al importarlos. Escala 1:1, objeto ensamblado, sin suelo, cotas ni rótulos. STL reúne mallas y no implica una única pieza lista para imprimir.
 
-Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html** **nave/Abrir-Nave.html** y **cauchera/Abrir-Cauchera.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
+Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
 
 ## Barco R08
 
@@ -76,6 +76,23 @@ La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No
 
 Los PDF y la estimación reservada se conservan como **base C01 anterior a este ajuste**; aún no se actualizan a las asas, lengüeta y bandas C02. El visor y el cuadro de documentos lo indican. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
+## Pancartas PA02
+
+Cuatro pancartas verticales, con dos ilustraciones aprobadas por objeto y sin texto sobre las caras. Parejas: soñar/imaginación; felicidad y alegría/ositos; helado/jugar; perder el tiempo/jugar. Las imágenes completas se conservan intactas: el visor selecciona cada cara por coordenadas UV y los artes de impresión usan un recuadro de la misma proporción. Los títulos, códigos y páginas son etiquetas de interfaz y de construcción; no se imprimen en las caras.
+
+Propuesta de montaje: dos tableros de 400 × 600 × 3 mm, una banda posterior de 60 × 560 × 3 mm y un mango de pino de 25 × 15 × 1800 mm, con solape de 350 mm. Alto total 2050 mm. Cuatro tacos de 15 × 50 × 30 mm separan la tapa para dejar el mango y los herrajes dentro. Caja nominal de 36 mm; papel y cabezas añaden un pequeño relieve. Ambas ilustraciones quedan libres de madera y tuercas.
+
+Dos M4 × 30 por pancarta, arandelas Ø18 y casquillos Ø6/4,3 × 6 limitan el aplastamiento del tablero y la banda. Centros a X200 y Y100/220 desde la esquina inferior izquierda; PP Ø6,2 y madera Ø4,5. Los tacos reciben dos tornillos de madera Ø3 × 12 por cara, con arandelas Ø8: 16 por pancarta, 64 en total. Las caras de papel cubren las cabezas. Comprobar montaje, adhesión, lectura y manejo con prototipo y ensayo; la aprobación gráfica no certifica las fijaciones.
+
+Una lámina de 1220 × 2440 × 3 mm contiene ocho tableros y cuatro bandas; área neta 2,0544 m², sin solapamientos. El visor permite voltear, ampliar la ilustración, abrir el interior y separar las capas. La exportación guarda la pancarta seleccionada ensamblada, con ambas imágenes.
+
+- [Plano técnico: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Blueprints-PA02.pdf).
+- [Guía visual: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Guia-visual-PA02.pdf).
+- [Ocho artes de impresión de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA02.pdf).
+- [Despiece 1:1 de la lámina](pancartas/downloads/Pancartas-Cortes-PA02.svg).
+
+Los temas se relacionan con Escenas V2, 7 de octubre de 2026; cada ficha indica sus páginas. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts de las imágenes están en `pancartas/assets/prompts.json`; se generaron con la herramienta integrada y no se redibujan al aplicarlos. El panel reservado de los otros cuatro objetos se conserva; las pancartas aún no tienen estimación allí.
+
 ## Estimaciones reservadas I05
 
 El panel incluye la cauchera como cuarto objeto; su elástico es una provisión pendiente. El panel cifrado compara materiales, vaciado, trabajo específico de cada ruta, trabajo común y transporte de la nave. El vaciado de bloques no se vuelve a cobrar como montaje de planchas. Permite elegir origen de bloque y modificar los cinco trayectos urbanos indicados en los TDR. Un suministro local del formato largo se presenta como hipótesis por confirmar. Se separan provisiones propias de precios públicos; no hay cotizaciones recibidas ni proveedores contratados. Claves e importes no se distribuyen en texto abierto.
@@ -86,4 +103,4 @@ Los documentos antiguos quedan señalados como archivo y no corresponden a las v
 
 Las estimaciones del equipo se distribuyen cifradas; la clave se mantiene fuera del repositorio y de los planos compartidos. No se guardan claves en el navegador ni se muestran importes al abrir una página.
 
-Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` `python3 nave/tools/build-portable.py` y `python3 cauchera/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.
+Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` `python3 nave/tools/build-portable.py` `python3 cauchera/tools/build-portable.py` y `python3 pancartas/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.

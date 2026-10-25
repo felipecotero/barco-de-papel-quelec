@@ -1,0 +1,583 @@
+{
+  "pass": true,
+  "date": "2026-10-25",
+  "revision": "PA02",
+  "initial": {
+    "state": {
+      "mode": "single",
+      "selected": 0,
+      "faceIndex": 0,
+      "stage": 4,
+      "explode": 0,
+      "colors": false,
+      "labels": false,
+      "playing": false
+    },
+    "count": 4,
+    "faces": [
+      [
+        {
+          "id": "P01A",
+          "title": "Soñar",
+          "rotationY": 0,
+          "crop": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1449,
+            1086
+          ],
+          "offset": [
+            0.013802622498274672,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.4748102139406487,
+            0.9502762430939227
+          ],
+          "source": [
+            1449,
+            1086
+          ],
+          "materialVisible": true
+        },
+        {
+          "id": "P01B",
+          "title": "Usar la imaginación",
+          "rotationY": 3.141592653589793,
+          "crop": [
+            743,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1449,
+            1086
+          ],
+          "offset": [
+            0.5127674258109041,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.4748102139406487,
+            0.9502762430939227
+          ],
+          "source": [
+            1449,
+            1086
+          ],
+          "materialVisible": true
+        }
+      ],
+      [
+        {
+          "id": "P02A",
+          "title": "Felicidad y gestos de alegría",
+          "rotationY": 0,
+          "crop": [
+            22,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.015193370165745856,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        },
+        {
+          "id": "P02B",
+          "title": "Ositos de peluche",
+          "rotationY": 3.141592653589793,
+          "crop": [
+            739,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.5103591160220995,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        }
+      ],
+      [
+        {
+          "id": "P03A",
+          "title": "Comer helado",
+          "rotationY": 0,
+          "crop": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.013812154696132596,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        },
+        {
+          "id": "P03B",
+          "title": "Jugar",
+          "rotationY": 3.141592653589793,
+          "crop": [
+            740,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.511049723756906,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        }
+      ],
+      [
+        {
+          "id": "P04A",
+          "title": "Perder el tiempo",
+          "rotationY": 0,
+          "crop": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.013812154696132596,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        },
+        {
+          "id": "P04B",
+          "title": "Jugar",
+          "rotationY": 3.141592653589793,
+          "crop": [
+            742,
+            26,
+            688,
+            1032
+          ],
+          "imageSize": [
+            1448,
+            1086
+          ],
+          "offset": [
+            0.5124309392265194,
+            0.025782688766114226
+          ],
+          "repeat": [
+            0.47513812154696133,
+            0.9502762430939227
+          ],
+          "source": [
+            1448,
+            1086
+          ],
+          "materialVisible": true
+        }
+      ]
+    ],
+    "records": [
+      "P01_P01_TA_0",
+      "P01_P01_R_0",
+      "P01_P01_M_0",
+      "P01_P01_Casquillo6_1.55",
+      "P01_P01_F_1",
+      "P01_P01_F_2",
+      "P01_P01_F_3",
+      "P01_P01_F_4",
+      "P01_P01_F_5",
+      "P01_P01_F_6",
+      "P01_P01_Casquillo6_1.67",
+      "P01_P01_F_8",
+      "P01_P01_F_9",
+      "P01_P01_F_10",
+      "P01_P01_F_11",
+      "P01_P01_F_12",
+      "P01_P01_F_13",
+      "P01_P01_E_0",
+      "P01_P01_E_1",
+      "P01_P01_E_2",
+      "P01_P01_E_3",
+      "P01_P01_VA_0",
+      "P01_P01_VA_1",
+      "P01_P01_VA_2",
+      "P01_P01_VA_3",
+      "P01_P01_VA_4",
+      "P01_P01_VA_5",
+      "P01_P01_VA_6",
+      "P01_P01_VA_7",
+      "P01_P01_VA_8",
+      "P01_P01_VA_9",
+      "P01_P01_VA_10",
+      "P01_P01_VA_11",
+      "P01_P01_VA_12",
+      "P01_P01_VA_13",
+      "P01_P01_VA_14",
+      "P01_P01_VA_15",
+      "P01_P01_VA_16",
+      "P01_P01_VA_17",
+      "P01_P01_VA_18",
+      "P01_P01_VA_19",
+      "P01_P01_VA_20",
+      "P01_P01_VA_21",
+      "P01_P01_VA_22",
+      "P01_P01_VA_23",
+      "P01_P01_VB_0",
+      "P01_P01_VB_1",
+      "P01_P01_VB_2",
+      "P01_P01_VB_3",
+      "P01_P01_VB_4",
+      "P01_P01_VB_5",
+      "P01_P01_VB_6",
+      "P01_P01_VB_7",
+      "P01_P01_VB_8",
+      "P01_P01_VB_9",
+      "P01_P01_VB_10",
+      "P01_P01_VB_11",
+      "P01_P01_VB_12",
+      "P01_P01_VB_13",
+      "P01_P01_VB_14",
+      "P01_P01_VB_15",
+      "P01_P01_VB_16",
+      "P01_P01_VB_17",
+      "P01_P01_VB_18",
+      "P01_P01_VB_19",
+      "P01_P01_VB_20",
+      "P01_P01_VB_21",
+      "P01_P01_VB_22",
+      "P01_P01_VB_23",
+      "P01_P01_TB_0",
+      "P01_P01_ArteA_0",
+      "P01_P01_ArteB_0"
+    ],
+    "dimensions": {
+      "panel": [
+        400,
+        600,
+        3
+      ],
+      "rearPanel": [
+        400,
+        600,
+        3
+      ],
+      "reinforcement": [
+        60,
+        560,
+        3
+      ],
+      "pole": [
+        25,
+        15,
+        1800
+      ],
+      "spacer": [
+        15,
+        50,
+        30
+      ],
+      "innerGap": 30,
+      "boxThickness": 36,
+      "overallHeight": 2050,
+      "panelBottom": 1450,
+      "panelCenterHeight": 1750,
+      "poleOverlap": 350,
+      "edgeRadius": 6,
+      "reinforcementTopBottomMargin": 20,
+      "holesFromPanelBottom": [
+        100,
+        220
+      ],
+      "holesFromPanelLeft": 200,
+      "holePitch": 120,
+      "holeDiameter": 6.2,
+      "poleHoleDiameter": 4.5,
+      "spacerCentersFromPanelMm": [
+        [
+          30,
+          40
+        ],
+        [
+          370,
+          40
+        ],
+        [
+          30,
+          560
+        ],
+        [
+          370,
+          560
+        ]
+      ],
+      "spacerScrewOffsetY": 12.5,
+      "spacerScrewDiameter": 3,
+      "spacerScrewLength": 12
+    }
+  },
+  "inside": [
+    {
+      "name": "P01_TA",
+      "type": "tablero",
+      "visible": true,
+      "stage": 1
+    },
+    {
+      "name": "P01_R",
+      "type": "refuerzo",
+      "visible": true,
+      "stage": 1
+    },
+    {
+      "name": "P01_M",
+      "type": "mango",
+      "visible": true,
+      "stage": 2
+    },
+    {
+      "name": "P01_F",
+      "type": "union",
+      "visible": true,
+      "stage": 2
+    },
+    {
+      "name": "P01_E",
+      "type": "tacos",
+      "visible": true,
+      "stage": 3
+    },
+    {
+      "name": "P01_VA",
+      "type": "union",
+      "visible": true,
+      "stage": 3
+    },
+    {
+      "name": "P01_VB",
+      "type": "union",
+      "visible": false,
+      "stage": 4
+    },
+    {
+      "name": "P01_TB",
+      "type": "tapa",
+      "visible": false,
+      "stage": 4
+    },
+    {
+      "name": "P01_ArteA",
+      "type": "papel",
+      "visible": false,
+      "stage": 4
+    },
+    {
+      "name": "P01_ArteB",
+      "type": "papel",
+      "visible": false,
+      "stage": 4
+    }
+  ],
+  "stages": true,
+  "labelsToggle": true,
+  "dimensionsToggle": true,
+  "collectionCount": 4,
+  "sheetItems": 12,
+  "animationEndsClosed": true,
+  "exports": {
+    "glb": {
+      "filename": "Quelec-Pancarta-PA02-GLB-m.glb",
+      "size": [
+        0.4000000059604645,
+        2.049999988079071,
+        0.04200000000000002
+      ],
+      "meshes": 72,
+      "textures": 3,
+      "faces": 9124,
+      "format": "glb"
+    },
+    "obj": {
+      "filename": "Quelec-Pancarta-PA02-OBJ-m.zip",
+      "size": [
+        0.4000000059604645,
+        2.049999988079071,
+        0.04200000000000002
+      ],
+      "meshes": 72,
+      "textures": 3,
+      "faces": 9124,
+      "format": "obj"
+    },
+    "stl": {
+      "filename": "Quelec-Pancarta-PA02-STL-m.stl",
+      "size": [
+        0.4000000059604645,
+        2.049999988079071,
+        0.04200000000000002
+      ],
+      "meshes": 72,
+      "textures": 0,
+      "faces": 9124,
+      "format": "stl"
+    }
+  },
+  "glbValidation": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 66,
+    "numHints": 0
+  },
+  "mobile": {
+    "width": 390,
+    "scroll": 390
+  },
+  "offline": {
+    "pass": true,
+    "httpRequests": [],
+    "stlMm": {
+      "size": [
+        400.0000059604645,
+        2049.999988079071,
+        42.00000000000003
+      ],
+      "meshes": 72
+    }
+  },
+  "errors": [],
+  "visualInspectionPending": false,
+  "visualInspection": {
+    "frontAndBack": "Caras A/B ampliadas cotejadas con la pareja aprobada: sin letras, medianil ni marco azul; sin espejo.",
+    "inside": "Tapa ausente, mango y cuatro tacos visibles.",
+    "sheet": "Ocho tableros y cuatro bandas identificables.",
+    "mobile": "Sin desbordamiento horizontal, herramientas desplazables y botones de texto presentes."
+  },
+  "exportTextureCoordinates": {
+    "glb": [
+      {
+        "name": "P01_P01_ArteA_0",
+        "transform": {
+          "offset": [
+            0.013802622498274672,
+            0.025782688766114226
+          ],
+          "scale": [
+            0.4748102139406487,
+            0.9502762430939227
+          ]
+        },
+        "imageFlipYVerified": true
+      },
+      {
+        "name": "P01_P01_ArteB_0",
+        "transform": {
+          "offset": [
+            0.5127674258109041,
+            0.025782688766114226
+          ],
+          "scale": [
+            0.4748102139406487,
+            0.9502762430939227
+          ]
+        },
+        "imageFlipYVerified": true
+      }
+    ],
+    "obj": [
+      {
+        "name": "P01_P01_ArteA_0",
+        "min": [
+          0.0138026,
+          0.0257827
+        ],
+        "max": [
+          0.4886128,
+          0.9760589
+        ]
+      },
+      {
+        "name": "P01_P01_ArteB_0",
+        "min": [
+          0.5127674,
+          0.0257827
+        ],
+        "max": [
+          0.9875776,
+          0.9760589
+        ]
+      }
+    ],
+    "bothFacesPreserved": true
+  }
+}
