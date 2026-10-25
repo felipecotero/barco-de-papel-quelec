@@ -4,3 +4,5 @@
 .face-picker{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}.face-picker button{min-height:58px;line-height:1.4}.face-picker button[aria-pressed=true]{background:#c9deb8;color:#23382b;border-color:#c9deb8}.face-picker small{display:block;font:11px Arial;margin-top:4px}.views{margin:18px 0}.views button:last-child{grid-column:1/-1}.views button{font-size:11px}.catalog-details{margin:14px 0}#source-card{margin:16px 0}#source-card h2{font-size:27px}.tools button{min-height:43px}#catalog img{aspect-ratio:1.335}.technical p{font-size:12px}#dimensions{max-width:calc(100% - 35px)}
 
 .catalog-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.catalog-face{aspect-ratio:2/3;background-repeat:no-repeat;border-radius:3px}
+
+.format-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.format-picker button{font-size:11px;padding:10px 5px}.format-picker small{display:block;font:10px Arial;margin-top:5px}.format-picker [aria-pressed=true]{background:#c7ddb5;color:#21372b;border-color:#c7ddb5}.reset-art{margin-top:8px;font-size:11px;padding:7px}.catalog-face{min-width:0}

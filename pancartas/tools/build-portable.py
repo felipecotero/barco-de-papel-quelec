@@ -13,9 +13,10 @@ for f in(Q/'assets/fonts').glob('*.woff2'):css=css.replace('../assets/fonts/'+f.
 for pattern,contents in[(r'<link rel="stylesheet" href="style.css[^"]*">',(P/'style.css').read_text()),(r'<link rel="stylesheet" href="../shared/brand.css[^"]*">',css)]:html=re.sub(pattern,lambda m:'<style>'+contents+'</style>',html)
 for f in['obj-export.js','dimensions.js','studio-render.js']:html=re.sub(r'<script src="../shared/'+re.escape(f)+r'[^"]*"></script>',lambda m:'<script>'+(Q/'shared'/f).read_text().replace('</script','<\\/script')+'</script>',html)
 logo='data:image/svg+xml;base64,'+base64.b64encode((Q/'assets/logo-pancartas.svg').read_bytes()).decode();html=html.replace('../assets/logo-pancartas.svg',logo)
-paths=sorted({f['image']for s in json.loads((P/'model.json').read_text())['signs']for f in s['faces']})
+model=json.loads((P/'model.json').read_text())
+paths=sorted({f['image'] for d in [model,*model.get('variants',{}).values()] for f in d['artLibrary']})
 art={path:'data:image/png;base64,'+base64.b64encode((P/path).read_bytes()).decode()for path in paths}
 bundle=core+mod+orb+'window.PANCARTAS_DATA='+(P/'model.json').read_text()+';window.PANCARTAS_ART='+json.dumps(art)+';\n(()=>{'+app+'})();'
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle.replace('</script','<\\/script')+'</script>',html)
-site='https://felipecotero.github.io/barco-de-papel-quelec/';html=html.replace('href="../index.html?rev=I08"','href="'+site+'?rev=I08"').replace('href="./"','href="'+site+'pancartas/?rev=PA04"').replace('href="downloads/','href="'+site+'pancartas/downloads/').replace('href="Abrir-Pancartas.html?rev=PA04"','href="'+site+'pancartas/Abrir-Pancartas.html?rev=PA04"')
+site='https://felipecotero.github.io/barco-de-papel-quelec/';html=html.replace('href="../index.html?rev=I09"','href="'+site+'?rev=I09"').replace('href="./"','href="'+site+'pancartas/?rev=PA05"').replace('href="downloads/','href="'+site+'pancartas/downloads/').replace('href="Abrir-Pancartas.html?rev=PA05"','href="'+site+'pancartas/Abrir-Pancartas.html?rev=PA05"')
 html+='<!-- Montserrat: SIL OFL 1.1. '+(Q/'assets/fonts/OFL-Montserrat.txt').read_text().replace('--','- -')+' -->';(P/'Abrir-Pancartas.html').write_text(html);print('Visor sin conexión:',len(html.encode()),'bytes')

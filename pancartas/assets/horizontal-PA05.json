@@ -1,0 +1,241 @@
+{
+  "revision": "PA05",
+  "orientation": "landscape",
+  "faces": [
+    {
+      "code": "P01A",
+      "image": "assets/horizontal-01-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        19,
+        14,
+        1047,
+        698
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Soñar",
+      "theme": "Soñar"
+    },
+    {
+      "code": "P01B",
+      "image": "assets/horizontal-01-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        18,
+        731,
+        1050,
+        700
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Usar la imaginación",
+      "theme": "Usar la imaginación"
+    },
+    {
+      "code": "P02A",
+      "image": "assets/horizontal-02-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        25,
+        18,
+        1035,
+        690
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Ser feliz",
+      "theme": "Ser feliz"
+    },
+    {
+      "code": "P02B",
+      "image": "assets/horizontal-02-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        21,
+        730,
+        1044,
+        696
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Ositos de peluche",
+      "theme": "Ositos de peluche"
+    },
+    {
+      "code": "P03A",
+      "image": "assets/horizontal-03-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        21,
+        15,
+        1044,
+        696
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Comer helado",
+      "theme": "Comer helado"
+    },
+    {
+      "code": "P03B",
+      "image": "assets/horizontal-03-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        29,
+        734,
+        1029,
+        686
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Jugar",
+      "theme": "Jugar"
+    },
+    {
+      "code": "P04A",
+      "image": "assets/horizontal-04-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        23,
+        17,
+        1041,
+        694
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Perder el tiempo",
+      "theme": "Perder el tiempo"
+    },
+    {
+      "code": "P04B",
+      "image": "assets/horizontal-04-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        21,
+        733,
+        1044,
+        696
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+      "noText": true,
+      "strikeColor": "black",
+      "strikeDirection": "top-left-to-bottom-right",
+      "strikeWidthFactor": 2,
+      "title": "Usar lápices de colores",
+      "theme": "Usar lápices de colores"
+    },
+    {
+      "code": "EX01",
+      "image": "assets/horizontal-extra-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        25,
+        18,
+        1035,
+        690
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "fe0c2eee222eae0622c9d66fa2caa9c68cbd71442d651f184801b023a2be5d38",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Pijamas navideñas",
+      "theme": "Pijamas navideñas",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    },
+    {
+      "code": "EX02",
+      "image": "assets/horizontal-extra-PA05.png",
+      "imageSizePx": [
+        1086,
+        1448
+      ],
+      "cropPx": [
+        21,
+        730,
+        1044,
+        696
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "fe0c2eee222eae0622c9d66fa2caa9c68cbd71442d651f184801b023a2be5d38",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Gestos de alegría",
+      "theme": "Gestos de alegría",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    }
+  ],
+  "note": "Recomposición con herramienta integrada image_gen; PNG completo intacto. Cada ventana tiene proporción exacta; sin estiramiento."
+}

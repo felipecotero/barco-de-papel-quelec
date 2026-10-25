@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220mm" height="2440mm" viewBox="0 0 1220 2440"><title>PA05-Cuadrada - cortes 1:1 - ocho tableros y cuatro bandas</title><rect width="1220" height="2440" fill="white" stroke="#577067" stroke-width=".4"/>
+<rect x="5" y="5" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="230.0" font-family="Arial" font-size="13" text-anchor="middle">P01A - 450 x 450</text>
+<rect x="460" y="5" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="685.0" y="230.0" font-family="Arial" font-size="13" text-anchor="middle">P01B - 450 x 450</text>
+<rect x="5" y="460" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="685.0" font-family="Arial" font-size="13" text-anchor="middle">P02A - 450 x 450</text>
+<rect x="460" y="460" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="685.0" y="685.0" font-family="Arial" font-size="13" text-anchor="middle">P02B - 450 x 450</text>
+<rect x="5" y="915" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="1140.0" font-family="Arial" font-size="13" text-anchor="middle">P03A - 450 x 450</text>
+<rect x="460" y="915" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="685.0" y="1140.0" font-family="Arial" font-size="13" text-anchor="middle">P03B - 450 x 450</text>
+<rect x="5" y="1370" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="1595.0" font-family="Arial" font-size="13" text-anchor="middle">P04A - 450 x 450</text>
+<rect x="460" y="1370" width="450" height="450" fill="none" stroke="black" stroke-width=".3"/><text x="685.0" y="1595.0" font-family="Arial" font-size="13" text-anchor="middle">P04B - 450 x 450</text>
+<rect x="5" y="1830" width="60" height="410" fill="none" stroke="black" stroke-width=".3"/><text x="35.0" y="2035.0" font-family="Arial" font-size="13" text-anchor="middle">R01 - 60 x 410</text>
+<rect x="70" y="1830" width="60" height="410" fill="none" stroke="black" stroke-width=".3"/><text x="100.0" y="2035.0" font-family="Arial" font-size="13" text-anchor="middle">R02 - 60 x 410</text>
+<rect x="135" y="1830" width="60" height="410" fill="none" stroke="black" stroke-width=".3"/><text x="165.0" y="2035.0" font-family="Arial" font-size="13" text-anchor="middle">R03 - 60 x 410</text>
+<rect x="200" y="1830" width="60" height="410" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="2035.0" font-family="Arial" font-size="13" text-anchor="middle">R04 - 60 x 410</text>
+</svg>

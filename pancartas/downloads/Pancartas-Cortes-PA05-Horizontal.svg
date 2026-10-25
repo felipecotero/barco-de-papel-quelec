@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220mm" height="2440mm" viewBox="0 0 1220 2440"><title>PA05-Horizontal - cortes 1:1 - ocho tableros y cuatro bandas</title><rect width="1220" height="2440" fill="white" stroke="#577067" stroke-width=".4"/>
+<rect x="5" y="5" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="305.0" y="205.0" font-family="Arial" font-size="13" text-anchor="middle">P01A - 600 x 400</text>
+<rect x="615" y="5" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="915.0" y="205.0" font-family="Arial" font-size="13" text-anchor="middle">P01B - 600 x 400</text>
+<rect x="5" y="410" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="305.0" y="610.0" font-family="Arial" font-size="13" text-anchor="middle">P02A - 600 x 400</text>
+<rect x="615" y="410" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="915.0" y="610.0" font-family="Arial" font-size="13" text-anchor="middle">P02B - 600 x 400</text>
+<rect x="5" y="815" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="305.0" y="1015.0" font-family="Arial" font-size="13" text-anchor="middle">P03A - 600 x 400</text>
+<rect x="615" y="815" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="915.0" y="1015.0" font-family="Arial" font-size="13" text-anchor="middle">P03B - 600 x 400</text>
+<rect x="5" y="1220" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="305.0" y="1420.0" font-family="Arial" font-size="13" text-anchor="middle">P04A - 600 x 400</text>
+<rect x="615" y="1220" width="600" height="400" fill="none" stroke="black" stroke-width=".3"/><text x="915.0" y="1420.0" font-family="Arial" font-size="13" text-anchor="middle">P04B - 600 x 400</text>
+<rect x="5" y="1640" width="60" height="360" fill="none" stroke="black" stroke-width=".3"/><text x="35.0" y="1820.0" font-family="Arial" font-size="13" text-anchor="middle">R01 - 60 x 360</text>
+<rect x="70" y="1640" width="60" height="360" fill="none" stroke="black" stroke-width=".3"/><text x="100.0" y="1820.0" font-family="Arial" font-size="13" text-anchor="middle">R02 - 60 x 360</text>
+<rect x="135" y="1640" width="60" height="360" fill="none" stroke="black" stroke-width=".3"/><text x="165.0" y="1820.0" font-family="Arial" font-size="13" text-anchor="middle">R03 - 60 x 360</text>
+<rect x="200" y="1640" width="60" height="360" fill="none" stroke="black" stroke-width=".3"/><text x="230.0" y="1820.0" font-family="Arial" font-size="13" text-anchor="middle">R04 - 60 x 360</text>
+</svg>

@@ -1,0 +1,241 @@
+{
+  "revision": "PA05",
+  "orientation": "square",
+  "faces": [
+    {
+      "code": "P01A",
+      "image": "assets/square-01-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        26,
+        20,
+        846,
+        846
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Soñar",
+      "theme": "Soñar"
+    },
+    {
+      "code": "P01B",
+      "image": "assets/square-01-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        903,
+        20,
+        846,
+        846
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Usar la imaginación",
+      "theme": "Usar la imaginación"
+    },
+    {
+      "code": "P02A",
+      "image": "assets/square-02-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        33,
+        27,
+        832,
+        832
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Ser feliz",
+      "theme": "Ser feliz"
+    },
+    {
+      "code": "P02B",
+      "image": "assets/square-02-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        909,
+        27,
+        832,
+        832
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Ositos de peluche",
+      "theme": "Ositos de peluche"
+    },
+    {
+      "code": "P03A",
+      "image": "assets/square-03-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        29,
+        24,
+        839,
+        839
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Comer helado",
+      "theme": "Comer helado"
+    },
+    {
+      "code": "P03B",
+      "image": "assets/square-03-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        906,
+        24,
+        839,
+        839
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Jugar",
+      "theme": "Jugar"
+    },
+    {
+      "code": "P04A",
+      "image": "assets/square-04-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        27,
+        24,
+        840,
+        840
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Perder el tiempo",
+      "theme": "Perder el tiempo"
+    },
+    {
+      "code": "P04B",
+      "image": "assets/square-04-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        906,
+        24,
+        840,
+        840
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+      "noText": true,
+      "strikeColor": "black",
+      "strikeDirection": "top-left-to-bottom-right",
+      "strikeWidthFactor": 2,
+      "title": "Usar lápices de colores",
+      "theme": "Usar lápices de colores"
+    },
+    {
+      "code": "EX01",
+      "image": "assets/square-05-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        27,
+        22,
+        843,
+        843
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "ad2ad49f7a98716b84409e34c0324f9c6623ff95c405db31558bcb7b99b5ec7f",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Pijamas navideñas",
+      "theme": "Pijamas navideñas",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    },
+    {
+      "code": "EX02",
+      "image": "assets/square-05-PA05.png",
+      "imageSizePx": [
+        1774,
+        887
+      ],
+      "cropPx": [
+        904,
+        22,
+        843,
+        843
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "ad2ad49f7a98716b84409e34c0324f9c6623ff95c405db31558bcb7b99b5ec7f",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Gestos de alegría",
+      "theme": "Gestos de alegría",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    }
+  ],
+  "note": "Recomposición con herramienta integrada image_gen; PNG completo intacto. Cada ventana tiene proporción exacta; sin estiramiento."
+}

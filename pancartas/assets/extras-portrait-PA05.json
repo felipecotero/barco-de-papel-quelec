@@ -1,0 +1,65 @@
+{
+  "revision": "PA05",
+  "orientation": "portrait",
+  "faces": [
+    {
+      "code": "EX01",
+      "image": "assets/portrait-extra-PA05.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        17,
+        19,
+        696,
+        1044
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "4623d021fb33f8d5ef88e9d583e36aaa6237993035101baf7a70e47a8408c450",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Pijamas navideñas",
+      "theme": "Pijamas navideñas",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    },
+    {
+      "code": "EX02",
+      "image": "assets/portrait-extra-PA05.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        735,
+        19,
+        696,
+        1044
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "4623d021fb33f8d5ef88e9d583e36aaa6237993035101baf7a70e47a8408c450",
+      "noText": true,
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1,
+      "title": "Gestos de alegría",
+      "theme": "Gestos de alegría",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "note": "Ilustración intercambiable adicional; no aumenta las cuatro pancartas físicas. Tema del libreto V2, página 4."
+    }
+  ],
+  "note": "Dos ilustraciones intercambiables adicionales; las ocho caras verticales aprobadas se conservan intactas."
+}

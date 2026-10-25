@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA04](pancartas/?rev=PA04)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA05](pancartas/?rev=PA05)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -76,22 +76,29 @@ La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No
 
 Los PDF y la estimación reservada se conservan como **base C01 anterior a este ajuste**; aún no se actualizan a las asas, lengüeta y bandas C02. El visor y el cuadro de documentos lo indican. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
-## Pancartas PA04
+## Pancartas PA05
 
-Cuatro pancartas verticales, con dos ilustraciones aprobadas por objeto y sin texto sobre las caras. Parejas: soñar/imaginación; felicidad y alegría/ositos; helado/jugar; perder el tiempo/lápices de colores. Las siete caras anteriores se conservan; P04B sustituye la repetición de jugar por lápices de colores y trazos de color tachados. La versión PA04 presenta ocho temas distintos. En P04B el tachón es negro, desciende de la esquina superior izquierda hacia la inferior derecha y tiene el doble de ancho que la primera versión negra. Las otras siete caras conservan sus dibujos y tachaduras rojas. El nuevo motivo adapta por decisión del equipo la orden del libreto sobre hacer tareas con lápices de colores. Las imágenes completas se conservan intactas: el visor selecciona cada cara por coordenadas UV y los artes de impresión usan un recuadro de la misma proporción. Los títulos, códigos y páginas son etiquetas de interfaz y de construcción; no se imprimen en las caras.
+Se conservan cuatro pancartas de dos caras, sin texto sobre los dibujos. Ahora se puede elegir formato vertical, horizontal o cuadrado y cambiar cada cara entre diez diseños. Las ocho imágenes verticales aprobadas siguen disponibles sin modificar sus archivos. Las nuevas composiciones horizontales y cuadradas mantienen los motivos derechos y sus proporciones. P04B conserva el tachón negro descendente de doble ancho; las otras imágenes llevan tachaduras rojas.
 
-Propuesta de montaje: dos tableros de 400 × 600 × 3 mm, una banda posterior de 60 × 560 × 3 mm y un mango de pino de 25 × 15 × 1800 mm, con solape de 350 mm. Alto total 2050 mm. Cuatro tacos de 15 × 50 × 30 mm separan la tapa para dejar el mango y los herrajes dentro. Caja nominal de 36 mm; papel y cabezas añaden un pequeño relieve. Ambas ilustraciones quedan libres de madera y tuercas.
+Los diez temas son soñar, imaginación, ser feliz, ositos, helado, jugar, perder el tiempo, lápices de colores, pijamas navideñas y gestos de alegría. Las dos últimas imágenes son opciones intercambiables: no requieren fabricar más pancartas. El visor muestra los nombres y páginas del guion fuera de las caras; no se imprimen palabras sobre los dibujos. «Dar color al mundo» es la adaptación solicitada por el equipo de la prohibición de hacer tareas con lápices de colores.
 
-Dos M4 × 30 por pancarta, arandelas Ø18 y casquillos Ø6/4,3 × 6 limitan el aplastamiento del tablero y la banda. Centros a X200 y Y100/220 desde la esquina inferior izquierda; PP Ø6,2 y madera Ø4,5. Los tacos reciben dos tornillos de madera Ø3 × 12 por cara, con arandelas Ø8: 16 por pancarta, 64 en total. Las caras de papel cubren las cabezas. Comprobar montaje, adhesión, lectura y manejo con prototipo y ensayo; la aprobación gráfica no certifica las fijaciones.
+| Formato | Tableros PP3 | Banda PP3 | Solape del mango | Altura total |
+| --- | --- | --- | --- | --- |
+| Vertical | 400 × 600 mm | 60 × 560 mm | 350 mm | 2050 mm |
+| Horizontal | 600 × 400 mm | 60 × 360 mm | 250 mm | 1950 mm |
+| Cuadrado | 450 × 450 mm | 60 × 410 mm | 275 mm | 1975 mm |
 
-Una lámina de 1220 × 2440 × 3 mm contiene ocho tableros y cuatro bandas; área neta 2,0544 m², sin solapamientos. El visor permite voltear, ampliar la ilustración, abrir el interior y separar las capas. La exportación guarda la pancarta seleccionada ensamblada, con ambas imágenes.
+Cada opción usa dos tableros por objeto, un mango de pino de 25 × 15 × 1800 mm y cuatro tacos de 15 × 50 × 30 mm. La cámara interior de 30 mm oculta mango y herrajes. Caja nominal de 36 mm; papel y cabezas añaden un pequeño relieve. Una lámina de 1220 × 2440 × 3 mm permite construir el juego de cuatro pancartas del formato elegido. No se suman las tres alternativas en una sola lámina.
 
-- [Plano técnico: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Blueprints-PA04.pdf).
-- [Guía visual: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Guia-visual-PA04.pdf).
-- [Ocho artes de impresión de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA04.pdf).
-- [Despiece 1:1 de la lámina](pancartas/downloads/Pancartas-Cortes-PA04.svg).
+Dos M4 × 30 por pancarta, arandelas Ø18 y casquillos Ø6/4,3 × 6 limitan el aplastamiento del tablero y la banda. Centros sobre el eje central, a 100 y 220 mm desde abajo; PP Ø6,2 y madera Ø4,5. Los tacos reciben dos tornillos de madera Ø3 × 12 por cara, con arandelas Ø8: 16 por pancarta, 64 en total. Las caras de papel cubren las cabezas. Comprobar montaje, adhesión, lectura y manejo con prototipo y ensayo.
 
-Los temas se relacionan con Escenas V2, 7 de octubre de 2026; cada ficha indica sus páginas. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts de las imágenes están en `pancartas/assets/prompts.json` y `pancartas/assets/prompt-color-PA03.json` y `pancartas/assets/prompt-color-PA04.json`; se generaron con la herramienta integrada y no se redibujan al aplicarlos. El panel reservado de los otros cuatro objetos se conserva; las pancartas aún no tienen estimación allí.
+El botón Guías y planos ofrece los documentos del formato seleccionado: un pliego técnico y uno de guía de 100 × 70 cm, diez artes a tamaño final (elegir ocho) y el despiece 1:1. Las exportaciones GLB, OBJ+MTL+texturas y STL guardan el formato y los dibujos elegidos, a escala. Compartir vista conserva también la selección de imágenes y el formato. Los enlaces antiguos sin formato siguen abriendo la versión vertical.
+
+- [Artes verticales, diez páginas de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA05-Vertical.pdf).
+- [Artes horizontales, diez páginas de 60 × 40 cm](pancartas/downloads/Pancartas-Artes-PA05-Horizontal.pdf).
+- [Artes cuadrados, diez páginas de 45 × 45 cm](pancartas/downloads/Pancartas-Artes-PA05-Cuadrada.pdf).
+
+Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. El panel reservado de los otros cuatro objetos no cambia; las pancartas aún no tienen estimación allí.
 
 ## Estimaciones reservadas I05
 

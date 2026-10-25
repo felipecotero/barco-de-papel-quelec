@@ -1,0 +1,99 @@
+{
+  "pass": true,
+  "revision": "PA05",
+  "date": "2026-10-25",
+  "defaultFormat": "portrait",
+  "verticalPA04GeometryPreserved": true,
+  "verticalPA04ArtworkPreserved": true,
+  "physicalSignsPerFormat": 4,
+  "physicalFacesPerFormat": 8,
+  "availableIllustrationsPerFormat": 10,
+  "quantitiesConsistent": true,
+  "profiles": {
+    "portrait": {
+      "orientation": "portrait",
+      "signs": 4,
+      "physicalFaces": 8,
+      "availableArt": 10,
+      "optionalArt": 2,
+      "artworkWindowsInsideSources": true,
+      "artworkAspectRatio": "2:3",
+      "dimensionsMm": {
+        "panel": [
+          400,
+          600,
+          3
+        ],
+        "overallHeight": 2050,
+        "poleOverlap": 350
+      },
+      "nesting": {
+        "sheetCount": 1,
+        "panels": 8,
+        "reinforcements": 4,
+        "noOverlap": true,
+        "minimumMarginMm": 5,
+        "minimumSeparationMm": 5,
+        "netAreaM2": 2.0544,
+        "utilizationPercent": 69.01370599301264
+      }
+    },
+    "landscape": {
+      "orientation": "landscape",
+      "signs": 4,
+      "physicalFaces": 8,
+      "availableArt": 10,
+      "optionalArt": 2,
+      "artworkWindowsInsideSources": true,
+      "artworkAspectRatio": "3:2",
+      "dimensionsMm": {
+        "panel": [
+          600,
+          400,
+          3
+        ],
+        "overallHeight": 1950,
+        "poleOverlap": 250
+      },
+      "nesting": {
+        "sheetCount": 1,
+        "panels": 8,
+        "reinforcements": 4,
+        "noOverlap": true,
+        "minimumMarginMm": 5,
+        "minimumSeparationMm": 5,
+        "netAreaM2": 2.0064,
+        "utilizationPercent": 67.40123622682076
+      }
+    },
+    "square": {
+      "orientation": "square",
+      "signs": 4,
+      "physicalFaces": 8,
+      "availableArt": 10,
+      "optionalArt": 2,
+      "artworkWindowsInsideSources": true,
+      "artworkAspectRatio": "1:1",
+      "dimensionsMm": {
+        "panel": [
+          450,
+          450,
+          3
+        ],
+        "overallHeight": 1975,
+        "poleOverlap": 275
+      },
+      "nesting": {
+        "sheetCount": 1,
+        "panels": 8,
+        "reinforcements": 4,
+        "noOverlap": true,
+        "minimumMarginMm": 5,
+        "minimumSeparationMm": 5,
+        "netAreaM2": 1.7184,
+        "utilizationPercent": 57.72641762966945
+      }
+    }
+  },
+  "limits": "Data and layout check; physical adhesion, joints, comfort and distance legibility remain to validate in prototype and rehearsal."
+}

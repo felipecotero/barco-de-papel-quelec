@@ -1,0 +1,2612 @@
+{
+  "revision": "PA05",
+  "title": "Pancartas de los Gruñones",
+  "count": 4,
+  "facesPerSign": 2,
+  "distinctThemes": 10,
+  "orientation": "portrait",
+  "textOnFaces": false,
+  "approval": {
+    "date": "2026-10-25",
+    "userStatement": "que la linea negra sea el doble de ancho",
+    "scope": "Aplicar las cuatro parejas de imágenes aprobadas a cuatro pancartas verticales de dos caras, sin texto en los frentes. P04B lleva lápices de colores con tachón negro descendente, del doble de ancho; las otras siete caras se conservan.",
+    "dimensionsStatus": "Medidas y detalles de montaje propuestos por el taller para comprobar en prototipo y ensayo."
+  },
+  "source": {
+    "title": "Quelec y la semilla del futuro - Escenas V2",
+    "date": "2026-10-07",
+    "pages": 40,
+    "scope": "Las páginas respaldan los temas prohibidos del diálogo. La forma, cantidad de pancartas y traducción visual son decisiones del diseño, no acotaciones literales del libreto.",
+    "imageStatus": "Siete caras conservan las imágenes originales PA02. P04B usa la ilustración de lápices de colores creada para la sustitución solicitada. Los PNG completos se conservan intactos; cada cara se selecciona por UV o ventana de impresión.",
+    "fullScriptPublished": false
+  },
+  "dimensionsMm": {
+    "panel": [
+      400,
+      600,
+      3
+    ],
+    "rearPanel": [
+      400,
+      600,
+      3
+    ],
+    "reinforcement": [
+      60,
+      560,
+      3
+    ],
+    "pole": [
+      25,
+      15,
+      1800
+    ],
+    "spacer": [
+      15,
+      50,
+      30
+    ],
+    "innerGap": 30,
+    "boxThickness": 36,
+    "overallHeight": 2050,
+    "panelBottom": 1450,
+    "panelCenterHeight": 1750,
+    "poleOverlap": 350,
+    "edgeRadius": 6,
+    "reinforcementTopBottomMargin": 20,
+    "holesFromPanelBottom": [
+      100,
+      220
+    ],
+    "holesFromPanelLeft": 200,
+    "holePitch": 120,
+    "holeDiameter": 6.2,
+    "poleHoleDiameter": 4.5,
+    "spacerCentersFromPanelMm": [
+      [
+        30,
+        40
+      ],
+      [
+        370,
+        40
+      ],
+      [
+        30,
+        560
+      ],
+      [
+        370,
+        560
+      ]
+    ],
+    "spacerScrewOffsetY": 12.5,
+    "spacerScrewDiameter": 3,
+    "spacerScrewLength": 12
+  },
+  "construction": {
+    "principle": "El mango y sus dos uniones quedan en el interior de una caja ligera de doble cara; la tapa posterior conserva su imagen completa.",
+    "layerOrderFrontToBack": [
+      "Papel ilustrado de cara A, sin texto",
+      "Tablero portante PP 3 mm",
+      "Banda central PP 3 mm",
+      "Mango 15 mm de espesor con dos fijaciones M4",
+      "Espacio libre para las tuercas y extremos protegidos",
+      "Tapa posterior PP 3 mm, a 30 mm de la cara interior del tablero delantero",
+      "Papel ilustrado de cara B, sin texto"
+    ],
+    "spacers": "Cuatro tacos de madera de 15 × 50 × 30 mm, uno cerca de cada esquina, mantienen la cámara de 30 mm. Los tornillos de fijación se cubren con el papel.",
+    "rearPanel": "La tapa es un cierre ligero. El listón y los herrajes permanecen dentro; no se montan sobre la ilustración trasera.",
+    "validation": "Comprobar prototipo, adherencia del papel al PP, ajuste sin aplastar, holgura de las tuercas bajo la tapa, agarre, balance y lectura en ensayo. Las pancartas no son soportes para personas."
+  },
+  "fasteners": {
+    "perSign": 2,
+    "bolt": "M4 × 30, cabeza redondeada",
+    "washers": "Ø18 mm, una por cara de la unión principal",
+    "sleeve": "Ø exterior 6 / interior 4,3 × largo 6 mm",
+    "sleevePurpose": "Limita el aplastamiento del tablero PP3 y su banda PP3. No apretar hasta hundir las caras.",
+    "nut": "M4 autofrenante; proteger el extremo y comprobar que no roce la tapa posterior",
+    "spacerScrews": "Tornillos para madera Ø3 × 12 mm, cabeza baja, con arandelas Ø8 mm",
+    "spacerScrewsPerBlockPerFace": 2,
+    "spacerScrewsPerSign": 16,
+    "spacerNotes": "Marcar en cada taco dos centros separados 25 mm, a ±12,5 mm de su centro. Fijar por ambas caras; las dos entradas de 12 mm no deben encontrarse dentro del taco de 30 mm."
+  },
+  "quantities": {
+    "sheetCount": 1,
+    "frontPanels": 4,
+    "rearPanels": 4,
+    "panelsTotal": 8,
+    "reinforcements": 4,
+    "poles": 4,
+    "spacers": 16,
+    "mainBoltsM4x30": 8,
+    "mainWashers18": 16,
+    "mainNutsM4": 8,
+    "mainSleeves6mm": 8,
+    "protectedMainEnds": 8,
+    "woodScrews3x12": 64,
+    "woodScrewWashers8": 64,
+    "paperFaces": 8
+  },
+  "materials": {
+    "sheet": "1 lámina de Cartón Plast 1220 × 2440 × 3 mm",
+    "poles": "4 listones rectos de pino de 25 × 15 × 1800 mm, lijados y rematados",
+    "spacers": "16 tacos de madera de 15 × 50 × 30 mm",
+    "faces": "8 caras ilustradas sobre papel mate de 400 × 600 mm, sin palabras",
+    "bond": "Cinta fina de doble cara o adhesivo específico compatible con PP; comprobar la adherencia con una probeta antes de aplicar el arte",
+    "finish": "Apariencia de papel y siluetas de color; siete tachaduras rojas y una negra descendente de doble ancho en P04B; no añadir nombres, códigos o leyendas sobre las imágenes"
+  },
+  "nesting": {
+    "sheetMm": [
+      1220,
+      2440,
+      3
+    ],
+    "sheetCount": 1,
+    "panelCount": 8,
+    "reinforcementCount": 4,
+    "netAreaM2": 2.0544,
+    "utilizationPercent": 69.01370599301264,
+    "minimumMarginMm": 5,
+    "minimumSeparationMm": 5,
+    "items": [
+      {
+        "id": "P01A",
+        "kind": "panel",
+        "role": "tablero portante",
+        "xMm": 5,
+        "yMm": 5,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P01B",
+        "kind": "panel",
+        "role": "tapa posterior",
+        "xMm": 410,
+        "yMm": 5,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P02A",
+        "kind": "panel",
+        "role": "tablero portante",
+        "xMm": 815,
+        "yMm": 5,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P02B",
+        "kind": "panel",
+        "role": "tapa posterior",
+        "xMm": 5,
+        "yMm": 610,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P03A",
+        "kind": "panel",
+        "role": "tablero portante",
+        "xMm": 410,
+        "yMm": 610,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P03B",
+        "kind": "panel",
+        "role": "tapa posterior",
+        "xMm": 815,
+        "yMm": 610,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P04A",
+        "kind": "panel",
+        "role": "tablero portante",
+        "xMm": 5,
+        "yMm": 1215,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "P04B",
+        "kind": "panel",
+        "role": "tapa posterior",
+        "xMm": 410,
+        "yMm": 1215,
+        "widthMm": 400,
+        "heightMm": 600,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "R01",
+        "kind": "reinforcement",
+        "role": "banda posterior del tablero portante",
+        "xMm": 5,
+        "yMm": 1820,
+        "widthMm": 60,
+        "heightMm": 560,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "R02",
+        "kind": "reinforcement",
+        "role": "banda posterior del tablero portante",
+        "xMm": 70,
+        "yMm": 1820,
+        "widthMm": 60,
+        "heightMm": 560,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "R03",
+        "kind": "reinforcement",
+        "role": "banda posterior del tablero portante",
+        "xMm": 135,
+        "yMm": 1820,
+        "widthMm": 60,
+        "heightMm": 560,
+        "quantity": 1,
+        "sheet": 1
+      },
+      {
+        "id": "R04",
+        "kind": "reinforcement",
+        "role": "banda posterior del tablero portante",
+        "xMm": 200,
+        "yMm": 1820,
+        "widthMm": 60,
+        "heightMm": 560,
+        "quantity": 1,
+        "sheet": 1
+      }
+    ],
+    "note": "Rectángulos de corte, sin solapamientos. Ocho paneles y cuatro bandas. Redondear después las esquinas R6. Orientar el canal paralelo al lado de 600 mm del panel."
+  },
+  "printing": {
+    "faceSizeMm": [
+      400,
+      600
+    ],
+    "count": 10,
+    "scale": "100 %, sin ajustar a página",
+    "sourceImagesIntact": true,
+    "cropAspectRatio": "2:3",
+    "cropNote": "Cada ventana selecciona el dibujo de su formato, sin deformarlo ni estirar la versión vertical.",
+    "resolutionNote": "Los artes conservan los píxeles aprobados. Revisar la muestra impresa a escala real antes de producir las ocho caras.",
+    "pageCount": 10,
+    "physicalFaces": 8,
+    "optionalDesigns": 2,
+    "catalogNote": "El PDF contiene diez diseños. Elegir ocho para las cuatro pancartas de dos caras; EX01 y EX02 son alternativas intercambiables, no dos pancartas adicionales."
+  },
+  "signs": [
+    {
+      "id": "P01",
+      "title": "Soñar / Usar la imaginación",
+      "faces": [
+        {
+          "id": "A",
+          "code": "P01A",
+          "title": "Soñar",
+          "theme": "Soñar",
+          "pages": [
+            3,
+            37
+          ],
+          "sourcePages": [
+            3,
+            37
+          ],
+          "image": "assets/pareja-01.png",
+          "imageSizePx": [
+            1449,
+            1086
+          ],
+          "cropPx": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+          "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde"
+        },
+        {
+          "id": "B",
+          "code": "P01B",
+          "title": "Usar la imaginación",
+          "theme": "Usar la imaginación",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/pareja-01.png",
+          "imageSizePx": [
+            1449,
+            1086
+          ],
+          "cropPx": [
+            743,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe usar la imaginación.",
+          "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde"
+        }
+      ],
+      "artwork": "assets/pareja-01.png",
+      "approvedImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde"
+    },
+    {
+      "id": "P02",
+      "title": "Ser feliz / Ositos de peluche",
+      "faces": [
+        {
+          "id": "A",
+          "code": "P02A",
+          "title": "Ser feliz",
+          "theme": "Ser feliz",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/pareja-02.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            22,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+          "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794"
+        },
+        {
+          "id": "B",
+          "code": "P02B",
+          "title": "Ositos de peluche",
+          "theme": "Ositos de peluche",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/pareja-02.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            739,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe los ositos de peluche.",
+          "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794"
+        }
+      ],
+      "artwork": "assets/pareja-02.png",
+      "approvedImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794"
+    },
+    {
+      "id": "P03",
+      "title": "Comer helado / Jugar",
+      "faces": [
+        {
+          "id": "A",
+          "code": "P03A",
+          "title": "Comer helado",
+          "theme": "Comer helado",
+          "pages": [
+            4,
+            5
+          ],
+          "sourcePages": [
+            4,
+            5
+          ],
+          "image": "assets/pareja-03.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden incluye cualquier sabor y presentación.",
+          "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3"
+        },
+        {
+          "id": "B",
+          "code": "P03B",
+          "title": "Jugar",
+          "theme": "Jugar",
+          "pages": [
+            15,
+            20
+          ],
+          "sourcePages": [
+            15,
+            20
+          ],
+          "image": "assets/pareja-03.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            740,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+          "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3"
+        }
+      ],
+      "artwork": "assets/pareja-03.png",
+      "approvedImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3"
+    },
+    {
+      "id": "P04",
+      "title": "Perder el tiempo / Usar lápices de colores",
+      "faces": [
+        {
+          "id": "A",
+          "code": "P04A",
+          "title": "Perder el tiempo",
+          "theme": "Perder el tiempo",
+          "pages": [
+            5
+          ],
+          "sourcePages": [
+            5
+          ],
+          "image": "assets/pareja-04.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            20,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+          "sourceImageSha256": "50849fc5c0c5e9cb82f2f110629f395828c6adce45af4a729c524f0fd7dfcad8"
+        },
+        {
+          "id": "B",
+          "code": "P04B",
+          "title": "Usar lápices de colores",
+          "theme": "Usar lápices de colores",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/pareja-04-color-PA04.png",
+          "imageSizePx": [
+            1448,
+            1086
+          ],
+          "cropPx": [
+            742,
+            26,
+            688,
+            1032
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+          "sourceImageSha256": "f35e6bbb8801a12d487b5775ad741027fba6bfadb00ea1ed9e0a1d81f8f6ba6c",
+          "strikeColor": "black",
+          "strikeDirection": "top-left-to-bottom-right",
+          "strikeWidthFactor": 2
+        }
+      ],
+      "artwork": "assets/pareja-04-color-PA04.png",
+      "approvedImageSha256": "f35e6bbb8801a12d487b5775ad741027fba6bfadb00ea1ed9e0a1d81f8f6ba6c"
+    }
+  ],
+  "assembly": [
+    "Cortar los ocho tableros verticales y las cuatro bandas de la lámina. Marcar las piezas únicamente por dentro.",
+    "Presentar el listón centrado con 350 mm de solape y la banda de 60 × 560 mm. Marcar los dos centros, a 100 y 220 mm desde abajo.",
+    "Perforar tablero y banda a Ø6,2, y madera a Ø4,5. Colocar los casquillos de 6 mm, dos M4 × 30 y arandelas Ø18. Ajustar sin hundir el PP y proteger los extremos.",
+    "Poner cuatro tacos separadores de 30 mm de profundidad. Fijar cada taco con dos tornillos para madera Ø3 × 12 y arandelas Ø8 desde el tablero delantero. Presentar y fijar la tapa trasera del mismo modo.",
+    "Aplicar las ilustraciones A y B en papel mate cubriendo las cabezas. Comprobar que el mango, tuercas y fijaciones quedan dentro y no rozan la tapa. Revisar lectura, balance y manipulación en ensayo."
+  ],
+  "designStatus": "PA05: cuatro pancartas y ocho caras en el formato elegido; diez dibujos seleccionables. Vertical PA04 conservada, más alternativas horizontal y cuadrada. Comprobar el montaje y la legibilidad en ensayo.",
+  "verticalRevision": "PA04",
+  "defaultVariant": "portrait",
+  "availableVariants": [
+    "portrait",
+    "landscape",
+    "square"
+  ],
+  "approvalPA05": {
+    "date": "2026-10-25",
+    "scope": "Conservar las cuatro pancartas verticales y añadir versiones horizontal y cuadrada. Ofrecer diez dibujos seleccionables para las ocho caras: ocho predeterminados y dos adicionales intercambiables, pijamas navideñas y gestos de alegría.",
+    "physicalSigns": 4,
+    "physicalFaces": 8,
+    "availableIllustrations": 10,
+    "dimensionsStatus": "Los formatos y detalles de taller son propuestas dimensionales para comprobar en prototipo y ensayo."
+  },
+  "defaultDistinctThemes": 8,
+  "artLibrary": [
+    {
+      "id": "A",
+      "code": "P01A",
+      "title": "Soñar",
+      "theme": "Soñar",
+      "pages": [
+        3,
+        37
+      ],
+      "sourcePages": [
+        3,
+        37
+      ],
+      "image": "assets/pareja-01.png",
+      "imageSizePx": [
+        1449,
+        1086
+      ],
+      "cropPx": [
+        20,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+      "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "B",
+      "code": "P01B",
+      "title": "Usar la imaginación",
+      "theme": "Usar la imaginación",
+      "pages": [
+        3
+      ],
+      "sourcePages": [
+        3
+      ],
+      "image": "assets/pareja-01.png",
+      "imageSizePx": [
+        1449,
+        1086
+      ],
+      "cropPx": [
+        743,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La orden prohíbe usar la imaginación.",
+      "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "A",
+      "code": "P02A",
+      "title": "Ser feliz",
+      "theme": "Ser feliz",
+      "pages": [
+        3
+      ],
+      "sourcePages": [
+        3
+      ],
+      "image": "assets/pareja-02.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        22,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+      "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "B",
+      "code": "P02B",
+      "title": "Ositos de peluche",
+      "theme": "Ositos de peluche",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "image": "assets/pareja-02.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        739,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La orden prohíbe los ositos de peluche.",
+      "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "A",
+      "code": "P03A",
+      "title": "Comer helado",
+      "theme": "Comer helado",
+      "pages": [
+        4,
+        5
+      ],
+      "sourcePages": [
+        4,
+        5
+      ],
+      "image": "assets/pareja-03.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        20,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La orden incluye cualquier sabor y presentación.",
+      "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "B",
+      "code": "P03B",
+      "title": "Jugar",
+      "theme": "Jugar",
+      "pages": [
+        15,
+        20
+      ],
+      "sourcePages": [
+        15,
+        20
+      ],
+      "image": "assets/pareja-03.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        740,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+      "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "A",
+      "code": "P04A",
+      "title": "Perder el tiempo",
+      "theme": "Perder el tiempo",
+      "pages": [
+        5
+      ],
+      "sourcePages": [
+        5
+      ],
+      "image": "assets/pareja-04.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        20,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+      "sourceImageSha256": "50849fc5c0c5e9cb82f2f110629f395828c6adce45af4a729c524f0fd7dfcad8",
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "B",
+      "code": "P04B",
+      "title": "Usar lápices de colores",
+      "theme": "Usar lápices de colores",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "image": "assets/pareja-04-color-PA04.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        742,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+      "sourceImageSha256": "f35e6bbb8801a12d487b5775ad741027fba6bfadb00ea1ed9e0a1d81f8f6ba6c",
+      "strikeColor": "black",
+      "strikeDirection": "top-left-to-bottom-right",
+      "strikeWidthFactor": 2,
+      "optional": false,
+      "libraryRole": "predeterminado"
+    },
+    {
+      "id": "EX01",
+      "code": "EX01",
+      "title": "Pijamas navideñas",
+      "theme": "Pijamas navideñas",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "noText": true,
+      "note": "Diseño adicional intercambiable, basado en la prohibición de usar pijamas navideñas.",
+      "optional": true,
+      "libraryRole": "intercambiable",
+      "image": "assets/portrait-extra-PA05.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        17,
+        19,
+        696,
+        1044
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "4623d021fb33f8d5ef88e9d583e36aaa6237993035101baf7a70e47a8408c450",
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1
+    },
+    {
+      "id": "EX02",
+      "code": "EX02",
+      "title": "Gestos de alegría",
+      "theme": "Gestos de alegría",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "noText": true,
+      "note": "Diseño adicional intercambiable, separado del tema ser feliz por decisión del usuario.",
+      "optional": true,
+      "libraryRole": "intercambiable",
+      "image": "assets/portrait-extra-PA05.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        735,
+        19,
+        696,
+        1044
+      ],
+      "cropOrigin": "top-left",
+      "sourceImageSha256": "4623d021fb33f8d5ef88e9d583e36aaa6237993035101baf7a70e47a8408c450",
+      "strikeColor": "red",
+      "strikeDirection": "bottom-left-to-top-right",
+      "strikeWidthFactor": 1
+    }
+  ],
+  "variants": {
+    "landscape": {
+      "revision": "PA05",
+      "orientation": "landscape",
+      "dimensionsMm": {
+        "panel": [
+          600,
+          400,
+          3
+        ],
+        "rearPanel": [
+          600,
+          400,
+          3
+        ],
+        "reinforcement": [
+          60,
+          360,
+          3
+        ],
+        "pole": [
+          25,
+          15,
+          1800
+        ],
+        "spacer": [
+          15,
+          50,
+          30
+        ],
+        "innerGap": 30,
+        "boxThickness": 36,
+        "overallHeight": 1950,
+        "panelBottom": 1550,
+        "panelCenterHeight": 1750,
+        "poleOverlap": 250,
+        "edgeRadius": 6,
+        "reinforcementTopBottomMargin": 20,
+        "holesFromPanelBottom": [
+          100,
+          220
+        ],
+        "holesFromPanelLeft": 300.0,
+        "holePitch": 120,
+        "holeDiameter": 6.2,
+        "poleHoleDiameter": 4.5,
+        "spacerCentersFromPanelMm": [
+          [
+            30,
+            40
+          ],
+          [
+            570,
+            40
+          ],
+          [
+            30,
+            360
+          ],
+          [
+            570,
+            360
+          ]
+        ],
+        "spacerScrewOffsetY": 12.5,
+        "spacerScrewDiameter": 3,
+        "spacerScrewLength": 12
+      },
+      "nesting": {
+        "sheetMm": [
+          1220,
+          2440,
+          3
+        ],
+        "sheetCount": 1,
+        "panelCount": 8,
+        "reinforcementCount": 4,
+        "netAreaM2": 2.0064,
+        "utilizationPercent": 67.40123622682076,
+        "minimumMarginMm": 5,
+        "minimumSeparationMm": 5,
+        "items": [
+          {
+            "id": "P01A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 5,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P01B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 615,
+            "yMm": 5,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P02A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 410,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P02B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 615,
+            "yMm": 410,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P03A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 815,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P03B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 615,
+            "yMm": 815,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P04A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 1220,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P04B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 615,
+            "yMm": 1220,
+            "widthMm": 600,
+            "heightMm": 400,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R01",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 5,
+            "yMm": 1640,
+            "widthMm": 60,
+            "heightMm": 360,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R02",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 70,
+            "yMm": 1640,
+            "widthMm": 60,
+            "heightMm": 360,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R03",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 135,
+            "yMm": 1640,
+            "widthMm": 60,
+            "heightMm": 360,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R04",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 200,
+            "yMm": 1640,
+            "widthMm": 60,
+            "heightMm": 360,
+            "quantity": 1,
+            "sheet": 1
+          }
+        ],
+        "note": "Rectángulos de corte, sin solapamientos. Ocho paneles y cuatro bandas. Redondear después las esquinas R6. Los canales siguen el alto de 400 mm de la pancarta montada, paralelo al lado largo de 2440 mm de la lámina en esta disposición."
+      },
+      "printing": {
+        "faceSizeMm": [
+          600,
+          400
+        ],
+        "count": 10,
+        "scale": "100 %, sin ajustar a página",
+        "sourceImagesIntact": true,
+        "cropAspectRatio": "3:2",
+        "cropNote": "Cada ventana selecciona el dibujo de su formato, sin deformarlo ni estirar la versión vertical.",
+        "resolutionNote": "Los artes conservan los píxeles aprobados. Revisar la muestra impresa a escala real antes de producir las ocho caras.",
+        "pageCount": 10,
+        "physicalFaces": 8,
+        "optionalDesigns": 2,
+        "catalogNote": "El PDF contiene diez diseños. Elegir ocho para las cuatro pancartas de dos caras; EX01 y EX02 son alternativas intercambiables, no dos pancartas adicionales."
+      },
+      "materials": {
+        "sheet": "1 lámina de Cartón Plast 1220 × 2440 × 3 mm",
+        "poles": "4 listones rectos de pino de 25 × 15 × 1800 mm, lijados y rematados",
+        "spacers": "16 tacos de madera de 15 × 50 × 30 mm",
+        "faces": "8 caras ilustradas elegidas de un catálogo de 10, sobre papel mate de 600 × 400 mm, sin palabras",
+        "bond": "Cinta fina de doble cara o adhesivo específico compatible con PP; comprobar la adherencia con una probeta antes de aplicar el arte",
+        "finish": "Apariencia de papel y siluetas de color; siete tachaduras rojas y una negra descendente de doble ancho en P04B; no añadir nombres, códigos o leyendas sobre las imágenes"
+      },
+      "assembly": [
+        "Cortar los ocho tableros horizontales y las cuatro bandas de la lámina. Marcar las piezas únicamente por dentro.",
+        "Presentar el listón centrado con 250 mm de solape y la banda de 60 × 360 mm. Marcar los dos centros, a 100 y 220 mm desde abajo.",
+        "Perforar tablero y banda a Ø6,2, y madera a Ø4,5. Colocar los casquillos de 6 mm, dos M4 × 30 y arandelas Ø18. Ajustar sin hundir el PP y proteger los extremos.",
+        "Poner cuatro tacos separadores de 30 mm de profundidad. Fijar cada taco con dos tornillos para madera Ø3 × 12 y arandelas Ø8 desde el tablero delantero. Presentar y fijar la tapa trasera del mismo modo.",
+        "Aplicar las ilustraciones A y B en papel mate cubriendo las cabezas. Comprobar que el mango, tuercas y fijaciones quedan dentro y no rozan la tapa. Revisar lectura, balance y manipulación en ensayo."
+      ],
+      "signs": [
+        {
+          "id": "P01",
+          "title": "Soñar / Usar la imaginación",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P01A",
+              "title": "Soñar",
+              "theme": "Soñar",
+              "pages": [
+                3,
+                37
+              ],
+              "sourcePages": [
+                3,
+                37
+              ],
+              "image": "assets/horizontal-01-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                19,
+                14,
+                1047,
+                698
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+              "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P01B",
+              "title": "Usar la imaginación",
+              "theme": "Usar la imaginación",
+              "pages": [
+                3
+              ],
+              "sourcePages": [
+                3
+              ],
+              "image": "assets/horizontal-01-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                18,
+                731,
+                1050,
+                700
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden prohíbe usar la imaginación.",
+              "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/horizontal-01-PA05.png",
+          "approvedImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca"
+        },
+        {
+          "id": "P02",
+          "title": "Ser feliz / Ositos de peluche",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P02A",
+              "title": "Ser feliz",
+              "theme": "Ser feliz",
+              "pages": [
+                3
+              ],
+              "sourcePages": [
+                3
+              ],
+              "image": "assets/horizontal-02-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                25,
+                18,
+                1035,
+                690
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+              "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P02B",
+              "title": "Ositos de peluche",
+              "theme": "Ositos de peluche",
+              "pages": [
+                4
+              ],
+              "sourcePages": [
+                4
+              ],
+              "image": "assets/horizontal-02-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                21,
+                730,
+                1044,
+                696
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden prohíbe los ositos de peluche.",
+              "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/horizontal-02-PA05.png",
+          "approvedImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9"
+        },
+        {
+          "id": "P03",
+          "title": "Comer helado / Jugar",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P03A",
+              "title": "Comer helado",
+              "theme": "Comer helado",
+              "pages": [
+                4,
+                5
+              ],
+              "sourcePages": [
+                4,
+                5
+              ],
+              "image": "assets/horizontal-03-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                21,
+                15,
+                1044,
+                696
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden incluye cualquier sabor y presentación.",
+              "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P03B",
+              "title": "Jugar",
+              "theme": "Jugar",
+              "pages": [
+                15,
+                20
+              ],
+              "sourcePages": [
+                15,
+                20
+              ],
+              "image": "assets/horizontal-03-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                29,
+                734,
+                1029,
+                686
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+              "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/horizontal-03-PA05.png",
+          "approvedImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8"
+        },
+        {
+          "id": "P04",
+          "title": "Perder el tiempo / Usar lápices de colores",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P04A",
+              "title": "Perder el tiempo",
+              "theme": "Perder el tiempo",
+              "pages": [
+                5
+              ],
+              "sourcePages": [
+                5
+              ],
+              "image": "assets/horizontal-04-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                23,
+                17,
+                1041,
+                694
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+              "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P04B",
+              "title": "Usar lápices de colores",
+              "theme": "Usar lápices de colores",
+              "pages": [
+                4
+              ],
+              "sourcePages": [
+                4
+              ],
+              "image": "assets/horizontal-04-PA05.png",
+              "imageSizePx": [
+                1086,
+                1448
+              ],
+              "cropPx": [
+                21,
+                733,
+                1044,
+                696
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+              "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+              "strikeColor": "black",
+              "strikeDirection": "top-left-to-bottom-right",
+              "strikeWidthFactor": 2
+            }
+          ],
+          "artwork": "assets/horizontal-04-PA05.png",
+          "approvedImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e"
+        }
+      ],
+      "artLibrary": [
+        {
+          "id": "A",
+          "code": "P01A",
+          "title": "Soñar",
+          "theme": "Soñar",
+          "pages": [
+            3,
+            37
+          ],
+          "sourcePages": [
+            3,
+            37
+          ],
+          "image": "assets/horizontal-01-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            19,
+            14,
+            1047,
+            698
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+          "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P01B",
+          "title": "Usar la imaginación",
+          "theme": "Usar la imaginación",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/horizontal-01-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            18,
+            731,
+            1050,
+            700
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe usar la imaginación.",
+          "sourceImageSha256": "c93ff6a50ff31652d4e78aac520387f676d325e785398b4988918aee630bdbca",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P02A",
+          "title": "Ser feliz",
+          "theme": "Ser feliz",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/horizontal-02-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            25,
+            18,
+            1035,
+            690
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+          "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P02B",
+          "title": "Ositos de peluche",
+          "theme": "Ositos de peluche",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/horizontal-02-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            21,
+            730,
+            1044,
+            696
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe los ositos de peluche.",
+          "sourceImageSha256": "2c3408c920f55e6e1fe40eace11453d4f9ad62b2faa3058694304460f5cea0b9",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P03A",
+          "title": "Comer helado",
+          "theme": "Comer helado",
+          "pages": [
+            4,
+            5
+          ],
+          "sourcePages": [
+            4,
+            5
+          ],
+          "image": "assets/horizontal-03-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            21,
+            15,
+            1044,
+            696
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden incluye cualquier sabor y presentación.",
+          "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P03B",
+          "title": "Jugar",
+          "theme": "Jugar",
+          "pages": [
+            15,
+            20
+          ],
+          "sourcePages": [
+            15,
+            20
+          ],
+          "image": "assets/horizontal-03-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            29,
+            734,
+            1029,
+            686
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+          "sourceImageSha256": "6bb0941adb36ded7f57bdce282d807f4a8f8020d12c0ad5b9d64284336d4c9d8",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P04A",
+          "title": "Perder el tiempo",
+          "theme": "Perder el tiempo",
+          "pages": [
+            5
+          ],
+          "sourcePages": [
+            5
+          ],
+          "image": "assets/horizontal-04-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            23,
+            17,
+            1041,
+            694
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+          "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P04B",
+          "title": "Usar lápices de colores",
+          "theme": "Usar lápices de colores",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/horizontal-04-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            21,
+            733,
+            1044,
+            696
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+          "sourceImageSha256": "f1b04880bd37c7ecbdb8c075e3ed44944af0872d340ccc9ffc896a228aa2e00e",
+          "strikeColor": "black",
+          "strikeDirection": "top-left-to-bottom-right",
+          "strikeWidthFactor": 2,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "EX01",
+          "code": "EX01",
+          "title": "Pijamas navideñas",
+          "theme": "Pijamas navideñas",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "noText": true,
+          "note": "Diseño adicional intercambiable, basado en la prohibición de usar pijamas navideñas.",
+          "optional": true,
+          "libraryRole": "intercambiable",
+          "image": "assets/horizontal-extra-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            25,
+            18,
+            1035,
+            690
+          ],
+          "cropOrigin": "top-left",
+          "sourceImageSha256": "fe0c2eee222eae0622c9d66fa2caa9c68cbd71442d651f184801b023a2be5d38",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1
+        },
+        {
+          "id": "EX02",
+          "code": "EX02",
+          "title": "Gestos de alegría",
+          "theme": "Gestos de alegría",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "noText": true,
+          "note": "Diseño adicional intercambiable, separado del tema ser feliz por decisión del usuario.",
+          "optional": true,
+          "libraryRole": "intercambiable",
+          "image": "assets/horizontal-extra-PA05.png",
+          "imageSizePx": [
+            1086,
+            1448
+          ],
+          "cropPx": [
+            21,
+            730,
+            1044,
+            696
+          ],
+          "cropOrigin": "top-left",
+          "sourceImageSha256": "fe0c2eee222eae0622c9d66fa2caa9c68cbd71442d651f184801b023a2be5d38",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1
+        }
+      ],
+      "imageManifest": "assets/horizontal-PA05.json",
+      "designStatus": "Alternativa landscape PA05. Cuatro pancartas de dos caras; ocho ilustraciones elegidas de diez. El montaje mantiene la caja interior y el mango oculto de la versión vertical."
+    },
+    "square": {
+      "revision": "PA05",
+      "orientation": "square",
+      "dimensionsMm": {
+        "panel": [
+          450,
+          450,
+          3
+        ],
+        "rearPanel": [
+          450,
+          450,
+          3
+        ],
+        "reinforcement": [
+          60,
+          410,
+          3
+        ],
+        "pole": [
+          25,
+          15,
+          1800
+        ],
+        "spacer": [
+          15,
+          50,
+          30
+        ],
+        "innerGap": 30,
+        "boxThickness": 36,
+        "overallHeight": 1975,
+        "panelBottom": 1525,
+        "panelCenterHeight": 1750,
+        "poleOverlap": 275,
+        "edgeRadius": 6,
+        "reinforcementTopBottomMargin": 20,
+        "holesFromPanelBottom": [
+          100,
+          220
+        ],
+        "holesFromPanelLeft": 225.0,
+        "holePitch": 120,
+        "holeDiameter": 6.2,
+        "poleHoleDiameter": 4.5,
+        "spacerCentersFromPanelMm": [
+          [
+            30,
+            40
+          ],
+          [
+            420,
+            40
+          ],
+          [
+            30,
+            410
+          ],
+          [
+            420,
+            410
+          ]
+        ],
+        "spacerScrewOffsetY": 12.5,
+        "spacerScrewDiameter": 3,
+        "spacerScrewLength": 12
+      },
+      "nesting": {
+        "sheetMm": [
+          1220,
+          2440,
+          3
+        ],
+        "sheetCount": 1,
+        "panelCount": 8,
+        "reinforcementCount": 4,
+        "netAreaM2": 1.7184,
+        "utilizationPercent": 57.72641762966945,
+        "minimumMarginMm": 5,
+        "minimumSeparationMm": 5,
+        "items": [
+          {
+            "id": "P01A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 5,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P01B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 460,
+            "yMm": 5,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P02A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 460,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P02B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 460,
+            "yMm": 460,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P03A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 915,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P03B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 460,
+            "yMm": 915,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P04A",
+            "kind": "panel",
+            "role": "tablero portante",
+            "xMm": 5,
+            "yMm": 1370,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "P04B",
+            "kind": "panel",
+            "role": "tapa posterior",
+            "xMm": 460,
+            "yMm": 1370,
+            "widthMm": 450,
+            "heightMm": 450,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R01",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 5,
+            "yMm": 1830,
+            "widthMm": 60,
+            "heightMm": 410,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R02",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 70,
+            "yMm": 1830,
+            "widthMm": 60,
+            "heightMm": 410,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R03",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 135,
+            "yMm": 1830,
+            "widthMm": 60,
+            "heightMm": 410,
+            "quantity": 1,
+            "sheet": 1
+          },
+          {
+            "id": "R04",
+            "kind": "reinforcement",
+            "role": "banda posterior del tablero portante",
+            "xMm": 200,
+            "yMm": 1830,
+            "widthMm": 60,
+            "heightMm": 410,
+            "quantity": 1,
+            "sheet": 1
+          }
+        ],
+        "note": "Rectángulos de corte, sin solapamientos. Ocho paneles y cuatro bandas. Redondear después las esquinas R6. Los canales siguen el alto de 450 mm de la pancarta montada, paralelo al lado largo de 2440 mm de la lámina en esta disposición."
+      },
+      "printing": {
+        "faceSizeMm": [
+          450,
+          450
+        ],
+        "count": 10,
+        "scale": "100 %, sin ajustar a página",
+        "sourceImagesIntact": true,
+        "cropAspectRatio": "1:1",
+        "cropNote": "Cada ventana selecciona el dibujo de su formato, sin deformarlo ni estirar la versión vertical.",
+        "resolutionNote": "Los artes conservan los píxeles aprobados. Revisar la muestra impresa a escala real antes de producir las ocho caras.",
+        "pageCount": 10,
+        "physicalFaces": 8,
+        "optionalDesigns": 2,
+        "catalogNote": "El PDF contiene diez diseños. Elegir ocho para las cuatro pancartas de dos caras; EX01 y EX02 son alternativas intercambiables, no dos pancartas adicionales."
+      },
+      "materials": {
+        "sheet": "1 lámina de Cartón Plast 1220 × 2440 × 3 mm",
+        "poles": "4 listones rectos de pino de 25 × 15 × 1800 mm, lijados y rematados",
+        "spacers": "16 tacos de madera de 15 × 50 × 30 mm",
+        "faces": "8 caras ilustradas elegidas de un catálogo de 10, sobre papel mate de 450 × 450 mm, sin palabras",
+        "bond": "Cinta fina de doble cara o adhesivo específico compatible con PP; comprobar la adherencia con una probeta antes de aplicar el arte",
+        "finish": "Apariencia de papel y siluetas de color; siete tachaduras rojas y una negra descendente de doble ancho en P04B; no añadir nombres, códigos o leyendas sobre las imágenes"
+      },
+      "assembly": [
+        "Cortar los ocho tableros cuadrados y las cuatro bandas de la lámina. Marcar las piezas únicamente por dentro.",
+        "Presentar el listón centrado con 275 mm de solape y la banda de 60 × 410 mm. Marcar los dos centros, a 100 y 220 mm desde abajo.",
+        "Perforar tablero y banda a Ø6,2, y madera a Ø4,5. Colocar los casquillos de 6 mm, dos M4 × 30 y arandelas Ø18. Ajustar sin hundir el PP y proteger los extremos.",
+        "Poner cuatro tacos separadores de 30 mm de profundidad. Fijar cada taco con dos tornillos para madera Ø3 × 12 y arandelas Ø8 desde el tablero delantero. Presentar y fijar la tapa trasera del mismo modo.",
+        "Aplicar las ilustraciones A y B en papel mate cubriendo las cabezas. Comprobar que el mango, tuercas y fijaciones quedan dentro y no rozan la tapa. Revisar lectura, balance y manipulación en ensayo."
+      ],
+      "signs": [
+        {
+          "id": "P01",
+          "title": "Soñar / Usar la imaginación",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P01A",
+              "title": "Soñar",
+              "theme": "Soñar",
+              "pages": [
+                3,
+                37
+              ],
+              "sourcePages": [
+                3,
+                37
+              ],
+              "image": "assets/square-01-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                26,
+                20,
+                846,
+                846
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+              "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P01B",
+              "title": "Usar la imaginación",
+              "theme": "Usar la imaginación",
+              "pages": [
+                3
+              ],
+              "sourcePages": [
+                3
+              ],
+              "image": "assets/square-01-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                903,
+                20,
+                846,
+                846
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden prohíbe usar la imaginación.",
+              "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/square-01-PA05.png",
+          "approvedImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896"
+        },
+        {
+          "id": "P02",
+          "title": "Ser feliz / Ositos de peluche",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P02A",
+              "title": "Ser feliz",
+              "theme": "Ser feliz",
+              "pages": [
+                3
+              ],
+              "sourcePages": [
+                3
+              ],
+              "image": "assets/square-02-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                33,
+                27,
+                832,
+                832
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+              "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P02B",
+              "title": "Ositos de peluche",
+              "theme": "Ositos de peluche",
+              "pages": [
+                4
+              ],
+              "sourcePages": [
+                4
+              ],
+              "image": "assets/square-02-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                909,
+                27,
+                832,
+                832
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden prohíbe los ositos de peluche.",
+              "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/square-02-PA05.png",
+          "approvedImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16"
+        },
+        {
+          "id": "P03",
+          "title": "Comer helado / Jugar",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P03A",
+              "title": "Comer helado",
+              "theme": "Comer helado",
+              "pages": [
+                4,
+                5
+              ],
+              "sourcePages": [
+                4,
+                5
+              ],
+              "image": "assets/square-03-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                29,
+                24,
+                839,
+                839
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La orden incluye cualquier sabor y presentación.",
+              "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P03B",
+              "title": "Jugar",
+              "theme": "Jugar",
+              "pages": [
+                15,
+                20
+              ],
+              "sourcePages": [
+                15,
+                20
+              ],
+              "image": "assets/square-03-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                906,
+                24,
+                839,
+                839
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+              "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            }
+          ],
+          "artwork": "assets/square-03-PA05.png",
+          "approvedImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837"
+        },
+        {
+          "id": "P04",
+          "title": "Perder el tiempo / Usar lápices de colores",
+          "faces": [
+            {
+              "id": "A",
+              "code": "P04A",
+              "title": "Perder el tiempo",
+              "theme": "Perder el tiempo",
+              "pages": [
+                5
+              ],
+              "sourcePages": [
+                5
+              ],
+              "image": "assets/square-04-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                27,
+                24,
+                840,
+                840
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+              "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+              "strikeColor": "red",
+              "strikeDirection": "bottom-left-to-top-right",
+              "strikeWidthFactor": 1
+            },
+            {
+              "id": "B",
+              "code": "P04B",
+              "title": "Usar lápices de colores",
+              "theme": "Usar lápices de colores",
+              "pages": [
+                4
+              ],
+              "sourcePages": [
+                4
+              ],
+              "image": "assets/square-04-PA05.png",
+              "imageSizePx": [
+                1774,
+                887
+              ],
+              "cropPx": [
+                906,
+                24,
+                840,
+                840
+              ],
+              "cropOrigin": "top-left",
+              "noText": true,
+              "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+              "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+              "strikeColor": "black",
+              "strikeDirection": "top-left-to-bottom-right",
+              "strikeWidthFactor": 2
+            }
+          ],
+          "artwork": "assets/square-04-PA05.png",
+          "approvedImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435"
+        }
+      ],
+      "artLibrary": [
+        {
+          "id": "A",
+          "code": "P01A",
+          "title": "Soñar",
+          "theme": "Soñar",
+          "pages": [
+            3,
+            37
+          ],
+          "sourcePages": [
+            3,
+            37
+          ],
+          "image": "assets/square-01-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            26,
+            20,
+            846,
+            846
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+          "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P01B",
+          "title": "Usar la imaginación",
+          "theme": "Usar la imaginación",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/square-01-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            903,
+            20,
+            846,
+            846
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe usar la imaginación.",
+          "sourceImageSha256": "08bdbd8d2dc1bd68533808e513fb03e291f2e87d8804e5c2d43ed69d60565896",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P02A",
+          "title": "Ser feliz",
+          "theme": "Ser feliz",
+          "pages": [
+            3
+          ],
+          "sourcePages": [
+            3
+          ],
+          "image": "assets/square-02-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            33,
+            27,
+            832,
+            832
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La imagen vertical PA04 se conserva. El tema se identifica como ser feliz; gestos de alegría está disponible como dibujo adicional EX02.",
+          "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P02B",
+          "title": "Ositos de peluche",
+          "theme": "Ositos de peluche",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/square-02-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            909,
+            27,
+            832,
+            832
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden prohíbe los ositos de peluche.",
+          "sourceImageSha256": "e4e9f393b1cf4b3f2547446bf3756ec76490331e44c522df440643684bafdf16",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P03A",
+          "title": "Comer helado",
+          "theme": "Comer helado",
+          "pages": [
+            4,
+            5
+          ],
+          "sourcePages": [
+            4,
+            5
+          ],
+          "image": "assets/square-03-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            29,
+            24,
+            839,
+            839
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La orden incluye cualquier sabor y presentación.",
+          "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P03B",
+          "title": "Jugar",
+          "theme": "Jugar",
+          "pages": [
+            15,
+            20
+          ],
+          "sourcePages": [
+            15,
+            20
+          ],
+          "image": "assets/square-03-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            906,
+            24,
+            839,
+            839
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+          "sourceImageSha256": "06681e8471c2fcd7c64b1e7248ff7388753fe61dc34800f28774d9ecb41c6837",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "A",
+          "code": "P04A",
+          "title": "Perder el tiempo",
+          "theme": "Perder el tiempo",
+          "pages": [
+            5
+          ],
+          "sourcePages": [
+            5
+          ],
+          "image": "assets/square-04-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            27,
+            24,
+            840,
+            840
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+          "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "B",
+          "code": "P04B",
+          "title": "Usar lápices de colores",
+          "theme": "Usar lápices de colores",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "image": "assets/square-04-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            906,
+            24,
+            840,
+            840
+          ],
+          "cropOrigin": "top-left",
+          "noText": true,
+          "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+          "sourceImageSha256": "bd647087c70eae55823c12ec23f4831bcf14020be9ea1eddd6247f3ca5e77435",
+          "strikeColor": "black",
+          "strikeDirection": "top-left-to-bottom-right",
+          "strikeWidthFactor": 2,
+          "optional": false,
+          "libraryRole": "predeterminado"
+        },
+        {
+          "id": "EX01",
+          "code": "EX01",
+          "title": "Pijamas navideñas",
+          "theme": "Pijamas navideñas",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "noText": true,
+          "note": "Diseño adicional intercambiable, basado en la prohibición de usar pijamas navideñas.",
+          "optional": true,
+          "libraryRole": "intercambiable",
+          "image": "assets/square-05-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            27,
+            22,
+            843,
+            843
+          ],
+          "cropOrigin": "top-left",
+          "sourceImageSha256": "ad2ad49f7a98716b84409e34c0324f9c6623ff95c405db31558bcb7b99b5ec7f",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1
+        },
+        {
+          "id": "EX02",
+          "code": "EX02",
+          "title": "Gestos de alegría",
+          "theme": "Gestos de alegría",
+          "pages": [
+            4
+          ],
+          "sourcePages": [
+            4
+          ],
+          "noText": true,
+          "note": "Diseño adicional intercambiable, separado del tema ser feliz por decisión del usuario.",
+          "optional": true,
+          "libraryRole": "intercambiable",
+          "image": "assets/square-05-PA05.png",
+          "imageSizePx": [
+            1774,
+            887
+          ],
+          "cropPx": [
+            904,
+            22,
+            843,
+            843
+          ],
+          "cropOrigin": "top-left",
+          "sourceImageSha256": "ad2ad49f7a98716b84409e34c0324f9c6623ff95c405db31558bcb7b99b5ec7f",
+          "strikeColor": "red",
+          "strikeDirection": "bottom-left-to-top-right",
+          "strikeWidthFactor": 1
+        }
+      ],
+      "imageManifest": "assets/square-PA05.json",
+      "designStatus": "Alternativa square PA05. Cuatro pancartas de dos caras; ocho ilustraciones elegidas de diez. El montaje mantiene la caja interior y el mango oculto de la versión vertical."
+    }
+  }
+}

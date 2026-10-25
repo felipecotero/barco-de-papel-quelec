@@ -1,0 +1,97 @@
+{
+  "revision": "PA05",
+  "tool": "image_gen.imagegen built-in",
+  "mode": "edit / precise-object-edit",
+  "note": "Versiones adicionales; originales verticales PA04 conservados. Los PNG completos se consumen mediante ventanas UV, sin editar sus píxeles.",
+  "jobs": [
+    {
+      "n": 1,
+      "refs": [
+        "assets/pareja-01.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final illustrated theatre protest poster artwork, two printable faces in a single sheet. Change the TWO VERTICAL panels in the reference into TWO HORIZONTAL landscape panels, each aspect ratio exactly 3:2, STACKED VERTICALLY, face A on top and face B below. Each landscape panel must be upright, not rotated, and its illustration newly composed across the wider width, not stretched. Preserve the recognizable subjects, warm ivory paper, strong hand-cut paper/gouache textures, childlike theatre style, dark outlines, colors and simple silhouette clarity visible from far away. Entire image should be a portrait 3:4 sheet containing just these two landscape panels with equal small margins and a thin dark indigo horizontal divider. No words, numbers, titles, captions, letters, logos, circular prohibition sign, or watermark. Keep all key imagery within each individual landscape panel, generous paper margin, no clipping. In each panel one broad red brush slash goes from lower LEFT to upper RIGHT, as in references. No other slash, no cross. Top face A: preserve the sleeping brown-haired child tucked under a forest-green blanket with blue pillow and a clearly connected dark blue dream cloud containing golden crescent moon and stars. Recompose sleeping child at lower left and dream cloud filling upper/right width, both large. Bottom face B: preserve the same brown-haired child in green shirt looking up with wonder at a green imagination cloud containing the angular blue, green and ochre origami crane. Recompose child's profile to one side, imagined crane large toward the other. Each scene crossed by its own red ascending slash.",
+      "output": "assets/horizontal-01-PA05.png"
+    },
+    {
+      "n": 2,
+      "refs": [
+        "assets/pareja-02.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final illustrated theatre protest poster artwork, two printable faces in a single sheet. Change the TWO VERTICAL panels in the reference into TWO HORIZONTAL landscape panels, each aspect ratio exactly 3:2, STACKED VERTICALLY, face A on top and face B below. Each landscape panel must be upright, not rotated, and its illustration newly composed across the wider width, not stretched. Preserve the recognizable subjects, warm ivory paper, strong hand-cut paper/gouache textures, childlike theatre style, dark outlines, colors and simple silhouette clarity visible from far away. Entire image should be a portrait 3:4 sheet containing just these two landscape panels with equal small margins and a thin dark indigo horizontal divider. No words, numbers, titles, captions, letters, logos, circular prohibition sign, or watermark. Keep all key imagery within each individual landscape panel, generous paper margin, no clipping. In each panel one broad red brush slash goes from lower LEFT to upper RIGHT, as in references. No other slash, no cross. Top face A: preserve the jubilant brown-haired child, green shirt, laughing open mouth, eyes shut with joy and BOTH open hands clearly visible. Wider composition across landscape panel, face centered and hands spread outward, energetic and instantly clear. Bottom face B: preserve the seated ochre-brown teddy bear with rounded ears, cream muzzle/belly, stitched patch belly, large soft paws. Teddy bear centered and upright with enough side breathing room; not cut off. Each scene crossed by its own red ascending slash.",
+      "output": "assets/horizontal-02-PA05.png"
+    },
+    {
+      "n": 3,
+      "refs": [
+        "assets/pareja-03.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final illustrated theatre protest poster artwork, two printable faces in a single sheet. Change the TWO VERTICAL panels in the reference into TWO HORIZONTAL landscape panels, each aspect ratio exactly 3:2, STACKED VERTICALLY, face A on top and face B below. Each landscape panel must be upright, not rotated, and its illustration newly composed across the wider width, not stretched. Preserve the recognizable subjects, warm ivory paper, strong hand-cut paper/gouache textures, childlike theatre style, dark outlines, colors and simple silhouette clarity visible from far away. Entire image should be a portrait 3:4 sheet containing just these two landscape panels with equal small margins and a thin dark indigo horizontal divider. No words, numbers, titles, captions, letters, logos, circular prohibition sign, or watermark. Keep all key imagery within each individual landscape panel, generous paper margin, no clipping. In each panel one broad red brush slash goes from lower LEFT to upper RIGHT, as in references. No other slash, no cross. Top face A: preserve the single big waffle cone ice cream with pink and cream scoops, dark outlines, instantly clear as an ice cream. Recompose centered to fit upright within landscape panel, do not make it sideways, keep cone and scoops complete. Bottom face B: preserve the happy brown-haired child in green shirt and blue shorts playing football with a large blue ball. Use wide landscape space for child on left, kicking leg extended toward large blue ball on right. Complete child and ball visible. Each scene crossed by its own red ascending slash.",
+      "output": "assets/horizontal-03-PA05.png"
+    },
+    {
+      "n": 4,
+      "refs": [
+        "assets/pareja-04.png",
+        "assets/pareja-04-color-PA04.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final illustrated theatre protest poster artwork, two printable faces in a single sheet. Change the TWO VERTICAL panels in the reference into TWO HORIZONTAL landscape panels, each aspect ratio exactly 3:2, STACKED VERTICALLY, face A on top and face B below. Each landscape panel must be upright, not rotated, and its illustration newly composed across the wider width, not stretched. Preserve the recognizable subjects, warm ivory paper, strong hand-cut paper/gouache textures, childlike theatre style, dark outlines, colors and simple silhouette clarity visible from far away. Entire image should be a portrait 3:4 sheet containing just these two landscape panels with equal small margins and a thin dark indigo horizontal divider. No words, numbers, titles, captions, letters, logos, circular prohibition sign, or watermark. Keep all key imagery within each individual landscape panel, generous paper margin, no clipping. In each panel one broad red brush slash goes from lower LEFT to upper RIGHT, as in references. No other slash, no cross. Exception to slash color/direction ONLY for bottom face B, specified below. Top face A comes from LEFT panel of image1 or2: large upright wood-framed hourglass with blue glass rim, ochre sand, and a relaxed brown-haired child in green shirt and blue trousers leaning back beside it with hands behind head. Recompose hourglass on left and relaxed child on right, instantly clear, one RED ascending slash from lower left to upper right. Bottom face B comes ONLY from RIGHT panel of image2: four big colored pencils blue, green, yellow, red, sharpened pointed ends up, bold saturated shafts leaving sweeping colored strokes. Recompose a fan across the landscape width. Bottom B has exactly ONE BLACK very broad brush slash from UPPER LEFT to LOWER RIGHT (descending backslash), preserving the reference's doubled thick width: thick black band around one-fifth of the landscape panel short height measured perpendicular to slash, textured edges, visibly much thicker than red slashes. No red slash anywhere on B. Do NOT include the football playing child from right panel of image1.",
+      "output": "assets/horizontal-04-PA05.png"
+    },
+    {
+      "key": "sq1",
+      "refs": [
+        "assets/horizontal-01-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final theatre protest poster illustrations. Change the two landscape panels stacked in reference into TWO PERFECT SQUARE illustration panels, SIDE BY SIDE: LEFT is face A (reference top), RIGHT face B (reference bottom). Final sheet aspect ratio 2:1 with two equal square panels and equal thin dark indigo margins and central divider. Recompose each picture to fit square, keep upright, do not stretch or rotate artwork. Preserve recognizable subjects, warm ivory paper, bold hand-cut paper/gouache grain, childlike theatre style, strong silhouettes and colors of reference. Complete imagery must remain visible within each square, no clipping. NO words, numbers, titles, captions, letters, watermarks or traffic-sign circles. Each face has just ONE RED painted brush slash ascending from LOWER LEFT to UPPER RIGHT.",
+      "output": "assets/square-01-PA05.png"
+    },
+    {
+      "key": "sq2",
+      "refs": [
+        "assets/horizontal-02-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final theatre protest poster illustrations. Change the two landscape panels stacked in reference into TWO PERFECT SQUARE illustration panels, SIDE BY SIDE: LEFT is face A (reference top), RIGHT face B (reference bottom). Final sheet aspect ratio 2:1 with two equal square panels and equal thin dark indigo margins and central divider. Recompose each picture to fit square, keep upright, do not stretch or rotate artwork. Preserve recognizable subjects, warm ivory paper, bold hand-cut paper/gouache grain, childlike theatre style, strong silhouettes and colors of reference. Complete imagery must remain visible within each square, no clipping. NO words, numbers, titles, captions, letters, watermarks or traffic-sign circles. Each face has just ONE RED painted brush slash ascending from LOWER LEFT to UPPER RIGHT.",
+      "output": "assets/square-02-PA05.png"
+    },
+    {
+      "key": "sq3",
+      "refs": [
+        "assets/horizontal-03-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final theatre protest poster illustrations. Change the two landscape panels stacked in reference into TWO PERFECT SQUARE illustration panels, SIDE BY SIDE: LEFT is face A (reference top), RIGHT face B (reference bottom). Final sheet aspect ratio 2:1 with two equal square panels and equal thin dark indigo margins and central divider. Recompose each picture to fit square, keep upright, do not stretch or rotate artwork. Preserve recognizable subjects, warm ivory paper, bold hand-cut paper/gouache grain, childlike theatre style, strong silhouettes and colors of reference. Complete imagery must remain visible within each square, no clipping. NO words, numbers, titles, captions, letters, watermarks or traffic-sign circles. Each face has just ONE RED painted brush slash ascending from LOWER LEFT to UPPER RIGHT.",
+      "output": "assets/square-03-PA05.png"
+    },
+    {
+      "key": "sq4",
+      "refs": [
+        "assets/horizontal-04-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Asset type: final theatre protest poster illustrations. Change the two landscape panels stacked in reference into TWO PERFECT SQUARE illustration panels, SIDE BY SIDE: LEFT is face A (reference top), RIGHT face B (reference bottom). Final sheet aspect ratio 2:1 with two equal square panels and equal thin dark indigo margins and central divider. Recompose each picture to fit square, keep upright, do not stretch or rotate artwork. Preserve recognizable subjects, warm ivory paper, bold hand-cut paper/gouache grain, childlike theatre style, strong silhouettes and colors of reference. Complete imagery must remain visible within each square, no clipping. NO words, numbers, titles, captions, letters, watermarks or traffic-sign circles. Each face has just ONE RED painted brush slash ascending from LOWER LEFT to UPPER RIGHT. For RIGHT square ONLY: preserve the reference's BLACK very thick descending backslash from UPPER LEFT to LOWER RIGHT over blue/green/yellow/red pencils, not red or ascending. Thickness roughly one-fifth square width measured perpendicular. LEFT square hourglass/relaxed child uses RED ascending slash.",
+      "output": "assets/square-04-PA05.png"
+    },
+    {
+      "key": "extra_h",
+      "refs": [
+        "assets/horizontal-02-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Use attached sheet solely as STYLE and layout reference; REPLACE subjects with the following two subjects. Create exactly TWO HORIZONTAL 3:2 landscape panels STACKED VERTICALLY, top A bottom B, whole sheet 3:4 with equal small dark indigo margins and divider. Recompose art upright and large in each wide panel, no clipping or stretching. Subjects for the two faces: A is PROHIBITED CHRISTMAS PAJAMAS: a big, immediately recognizable cozy two-piece Christmas pajama outfit, evergreen-green long-sleeved top and red trousers with cream stars and simple white snowflakes, matching red Santa nightcap nearby; no child needed, clothes laid out upright like paper cutouts so outfit clear from far away. B is PROHIBITED GESTURES OF JOY: a big warm ochre smiling open mouth with white teeth and red tongue, dark indigo bold outline, two small golden celebration sparkles beside it; simple very clear pictogram of delighted laughter, different from the existing jubilant full child. Each face must carry exactly ONE strong red brush slash from lower left to upper right; no text. Match reference's ivory paper and bold childlike Quelec cut-paper/gouache look with dark indigo outlines, limited warm palette and hand-painted grain. No stop-sign/octagon/circle, no fine details.",
+      "output": "assets/horizontal-extra-PA05.png"
+    },
+    {
+      "key": "extra_p",
+      "refs": [
+        "assets/pareja-02.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Use attached sheet solely as STYLE and layout reference; REPLACE subjects with the following two subjects. Create exactly TWO VERTICAL 2:3 portrait panels SIDE BY SIDE, left A right B, whole sheet 4:3 with equal small dark indigo margins and divider. Recompose art upright and large in each panel, no clipping or stretching. Subjects for the two faces: A is PROHIBITED CHRISTMAS PAJAMAS: a big, immediately recognizable cozy two-piece Christmas pajama outfit, evergreen-green long-sleeved top and red trousers with cream stars and simple white snowflakes, matching red Santa nightcap nearby; no child needed, clothes laid out upright like paper cutouts so outfit clear from far away. B is PROHIBITED GESTURES OF JOY: a big warm ochre smiling open mouth with white teeth and red tongue, dark indigo bold outline, two small golden celebration sparkles beside it; simple very clear pictogram of delighted laughter, different from the existing jubilant full child. Each face must carry exactly ONE strong red brush slash from lower left to upper right; no text. Match reference's ivory paper and bold childlike Quelec cut-paper/gouache look with dark indigo outlines, limited warm palette and hand-painted grain. No stop-sign/octagon/circle, no fine details.",
+      "output": "assets/portrait-extra-PA05.png"
+    },
+    {
+      "key": "sq5",
+      "refs": [
+        "assets/horizontal-02-PA05.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Use attached sheet solely as STYLE reference; REPLACE subjects. Create exactly TWO PERFECT SQUARE panels SIDE BY SIDE, left A right B, whole sheet2:1 with equal small dark indigo margins and divider. Recompose art upright and large in each square, no clipping or stretching. Subjects for the two faces: A is PROHIBITED CHRISTMAS PAJAMAS: a big, immediately recognizable cozy two-piece Christmas pajama outfit, evergreen-green long-sleeved top and red trousers with cream stars and simple white snowflakes, matching red Santa nightcap nearby; no child needed, clothes laid out upright like paper cutouts so outfit clear from far away. B is PROHIBITED GESTURES OF JOY: a big warm ochre smiling open mouth with white teeth and red tongue, dark indigo bold outline, two small golden celebration sparkles beside it; simple very clear pictogram of delighted laughter, different from the existing jubilant full child. Each face must carry exactly ONE strong red brush slash from lower left to upper right; no text. Match reference's ivory paper and bold childlike Quelec cut-paper/gouache look with dark indigo outlines, limited warm palette and hand-painted grain. No stop-sign/octagon/circle, no fine details.",
+      "output": "assets/square-05-PA05.png"
+    }
+  ]
+}
