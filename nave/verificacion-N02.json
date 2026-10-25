@@ -1,0 +1,124 @@
+{
+  "revision": "N02",
+  "date": "2026-10-24",
+  "pdfs": [
+    {
+      "file": "Nave-Blueprints-N02-4-pliegos-100x70.pdf",
+      "pages": 4,
+      "sizeMm": [
+        1000,
+        700
+      ],
+      "sha256": "6b092b5238fd0f016b8be76dd504cc6840a3ed96ba3b51637ce3b41f58ea208f"
+    },
+    {
+      "file": "Nave-Guia-visual-N02-4-pliegos-100x70.pdf",
+      "pages": 4,
+      "sizeMm": [
+        1000,
+        700
+      ],
+      "sha256": "f18704a387c6534e4d54e31452b8b54b17bbdfc19cfb930ab5038316db3101f9"
+    }
+  ],
+  "layout": {
+    "minimumTypePt": 22,
+    "trackedTextBoxes": 399,
+    "outsideSafeMargins": 0,
+    "overlappingTextBoxes": 0
+  },
+  "geometry": {
+    "nominalWallMm": 50,
+    "slabMm": 70,
+    "staves": 118,
+    "blanks": 140,
+    "slabs": 12,
+    "minGapMm": 4.999999999999999,
+    "stations": 11,
+    "sectionSVGs": 22,
+    "positiveEPSMeshes": 118,
+    "closedEPSVolumeM3": 0.2556143795797169,
+    "massBudget": {
+      "items": [
+        {
+          "name": "EPS esculpido, 50mm nominal - límite por área",
+          "kg": 5.4546
+        },
+        {
+          "name": "Bastidores Al20x20x1,5",
+          "kg": 5.4903
+        },
+        {
+          "name": "Mediacostillas Al25x3",
+          "kg": 1.1661
+        },
+        {
+          "name": "Agarres tuboAl32x1,5",
+          "kg": 0.7296
+        },
+        {
+          "name": "Aletas, propulsor y nariz EPS con cubiertaEVA",
+          "kg": 0.9
+        },
+        {
+          "name": "Peines PEHD6, topes y cinchas",
+          "kg": 0.65
+        },
+        {
+          "name": "Consolas, placas, tornillos, casquillos y cola",
+          "kg": 2.0
+        },
+        {
+          "name": "Tela y recubrimiento seco, limite de compra",
+          "kg": 1.6364
+        },
+        {
+          "name": "Pintura, aros EVA y acolchados",
+          "kg": 1.05
+        }
+      ],
+      "baseKg": 19.077,
+      "contingencyFraction": 0.15,
+      "withReserveKg": 21.939,
+      "optionalLEDAllowanceKg": 0.4,
+      "withLEDAndReserveKg": 22.399,
+      "status": "Estimación por área/perfiles y reservas, no pesaje ni certificación. Pesar cada mitad y conjunto con acabado seco."
+    }
+  },
+  "visualInspection": {
+    "pages": 8,
+    "renderPixels": [
+      2200,
+      1540
+    ],
+    "reviewed": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "G01",
+      "G02",
+      "G03",
+      "G04"
+    ],
+    "result": "Todas las páginas finales inspeccionadas; sin recortes ni superposiciones. Dos rutas ilustradas; referencias, cortes y masas N02 concordantes."
+  },
+  "costComparison": {
+    "encrypted": true,
+    "comparisonMethods": 2,
+    "vaciadoSeparateFromOtherWork": true,
+    "defaultUrbanTrips": 5,
+    "blockOriginSelectable": true,
+    "totalsReconciled": true,
+    "keyPublished": false,
+    "pricesInPublicPDFs": false
+  },
+  "runtime": {
+    "wallNormalMeasurement": "50mm; comprobado en ambos lados con tolerancia0,001mm",
+    "viewerAndCanonicalExportPassed": true,
+    "PDFAndZIPMatch": true,
+    "GLBValidatorErrors": 0,
+    "GLBValidatorWarnings": 0,
+    "privateArithmeticPassed": true
+  }
+}

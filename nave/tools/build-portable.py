@@ -18,8 +18,8 @@ def shared_assets(html,Q,prefix):
  privatejs=(Q/'shared/private-costs.js').read_text().replace('</script','<\\/script')
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/private-costs.js[^>]*></script>',lambda m:'<script>window.QUELEC_PRIVATE_ESTIMATE='+encrypted+';'+privatejs+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
- html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I03"',html)
- html=html.replace('href="../index.html"','href="'+site+'?rev=I03"').replace('href="index.html"','href="'+site+'?rev=I03"')
+ html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I04"',html)
+ html=html.replace('href="../index.html"','href="'+site+'?rev=I04"').replace('href="index.html"','href="'+site+'?rev=I04"')
  html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Nave.html"','href="'+site+'nave/Abrir-Nave.html"')
  html=html.replace('href="downloads/','href="'+site+'nave/downloads/')
  for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg']:

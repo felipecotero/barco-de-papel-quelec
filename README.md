@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I03) · [Barco R08](barco.html?rev=R08-I03) · [Grulla G04](grulla/?rev=G04-I03) · [Nave N01](nave/?rev=N01)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I04) · [Barco R08](barco.html?rev=R08-I04) · [Grulla G04](grulla/?rev=G04-I04) · [Nave N02](nave/?rev=N02)
 
 Índice oscuro con imágenes originales de los TDR. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -40,35 +40,31 @@ Cuatro ramales nacen en las esquinas y llegan a una argolla, sin cruceta ni carg
 
 Dos módulos comerciales LED de 5 V / 1 W máximo iluminan desde dentro las alas de PP natural translúcido y papel fino no opaco. La transmisión y la dispersión de la vista rápida son una aproximación de apariencia. Validar luz, adhesión, temperatura y cuelgue con el prototipo. Los documentos se conservan sin cambios en esta revisión.
 
-## Nave N01 · propuesta de prototipo
+## Nave N02 · pared de 50 mm
 
-Fuselaje nominal de 4000 mm de largo × 1000 mm de ancho × 800 mm de alto. La aleta llega a 1230 mm desde el borde inferior. Dos óvalos horizontales por costado, cuatro ventanas abiertas en total. Nariz roma: núcleos EPS con EVA de 10 mm y redondeo nominal R35 en planta; sin vástago metálico.
+Fuselaje exterior de 4000 × 1000 × 800 mm; aleta hasta 1230 mm. Dos mitades longitudinales independientes, cuatro portadores externos y cuatro gruñones que caminan sobre el escenario con la cauchera horizontal de 2000 × 800 mm. Dos ventanas abiertas por costado.
 
-Dos mitades longitudinales A/B, con dos portadores externos cada una. Los cuatro gruñones caminan sobre el piso del escenario y llevan una cauchera horizontal de 2 m con horqueta de 800 mm. La nave no eleva personas. Los cuerpos y la cauchera del visor son referencias de espacio, no una validación de ergonomía. La altura de porte es ajustable para preparar el ensayo con reparto, vestuario y objeto reales.
+La pared nominal del cuerpo pasa a **50 mm**. Los largueros L1/L2 se sitúan en Z ±385/±435 mm y L3 en Y729; medios aros a 62 mm hacia dentro desde la superficie. Los agarres conservan los extremos exteriores y las zonas acolchadas; tubos principales de 265 mm y controles de 205 mm. Las consolas mantienen M6 × 35 con casquillos L17. Los pasos de consolas y almas se recortan en el EPS, con cantos de EVA: la espuma no recibe el peso.
 
-La forma se esculpe sobre bastidores independientes de aluminio 20 × 20 × 1,5 mm y medios aros de 25 × 3 mm. Ninguna barra atraviesa a la otra mitad. Cada portador tiene agarre principal y control alto: Ø32 mm, zonas acolchadas de 120 y 100 mm, separación de 220 mm a lo largo y 200 mm en altura. Consolas con base de 80 × 80 × 3, frontal de 80 × 120 × 3, cartelas de 3 y M6 × 35 con casquillos de 17 mm en los tubos de 20. Replantear y validar el herraje real.
+- [Blueprints: cuatro pliegos de 100 × 70 cm](nave/downloads/Blueprints-N02.pdf).
+- [Guía visual: cuatro pliegos de 100 × 70 cm](nave/downloads/Guia-visual-N02.pdf).
+- [Paquete de cortes y gálibos 1:1](nave/downloads/Paquete-taller-N02.zip).
 
-El encaje usa tres pares de peines PEHD de 6 mm: G1 maestro, G2 con libertad longitudinal ±4 mm y G3 ±6 mm. Los dientes guían; dos cinchas de 50 mm con solape de Velcro cosido de 50 × 100 mm retienen posición. Los peines se fijan al ala de aluminio con M4 × 20; los soportes al tubo usan M4 × 35 y casquillos de 17 mm. Cubiertas blandas separadas por mitad protegen dientes y raíces. Liberar ambos cierres antes de desplazar las mitades; ensayar la apertura en marcha con señal común, conservando el control de cada mitad.
+Ruta P: **12 planchas de 1000 × 1000 × 70 mm**, 0,84 m³ de compra, con 140 blancos: 118 duelas y 22 accesorios. Margen 10 mm, separación 5 mm. Las planchas de 50 mm no dejan margen para tallar una pared curva de 50. Hay 22 gálibos A/B de once estaciones, en 1000 × 700 mm con regla de 100 mm. Los rectángulos son blancos para biselar y tallar, no desarrollos planos de la superficie.
 
-- [Blueprints: cuatro pliegos de 100 × 70 cm](nave/downloads/Blueprints-N01.pdf).
-- [Guía visual: cuatro pliegos de 100 × 70 cm](nave/downloads/Guia-visual-N01.pdf).
-- [Paquete de cortes y gálibos 1:1](nave/downloads/Paquete-taller-N01.zip).
+Ruta T: dos bloques de 4080 × 860 × 525 mm, girados, uno por mitad; 3,68424 m³. El [formato y densidades publicados por Precomprimidos](https://www.precomprimidos.com.co/Servicios/Geobloque) son una referencia de suministro, sin precio ni disponibilidad por unidad confirmados. Se perfila, vacía y remata cada carcasa; aprovechar sobrantes para la aleta y adornos. Ambos juegos de planos incluyen las dos rutas.
 
-Doce planchas nominales de EPS de 1000 × 1000 × 50 mm contienen 178 blancos: 154 duelas y 24 piezas para aletas, propulsor y nariz. Margen de 10 mm, separación de 5 mm, área de rectángulos de 9,680248 m². Los rectángulos se biselan y esculpen; no son el desarrollo plano de la piel curva. Espesor nominal terminado del cuerpo: 35 mm. Revestir y pintar cada mitad por separado: tela, cola y masilla no deben puentear la unión A/B. Los 28 SVG de sección S01–S14, A/B, están a tamaño real en 1000 × 700 mm y tienen un control de 100 mm. Imprimir solo los que se necesiten; varias secciones del cuerpo son iguales y pueden reutilizarse.
+Masa de planeación con reserva del 15 %: **21.939 kg**. Con LED opcionales: **22.399 kg**. Igual forma, densidad prevista y acabado dan la misma masa teórica final para ambas rutas; el volumen comprado no es el que se lleva a escena. Pesar cada mitad con acabado seco. La espuma usa un límite conservador de área × espesor, no una capacidad certificada.
 
-Masa de planeación con reserva del 15 %: **20,183 kg**. Con LED opcionales: **20,643 kg**. Las densidades, la masa seca del recubrimiento y las reservas deben comprobarse al comprar y pesar. Cada mitad requiere pesaje y ensayo de esfuerzo de los agarres; dividir el total entre cuatro no describe las cargas dinámicas ni los pares de giro.
+Tres pares de peines PEHD6 alinean; dos cinchas de 50 con Velcro cosido de 50 × 100 retienen posición. Montaje de guías en Y825, soportes anclados al raíl Y729; las dos cubiertas blandas se separan con sus mitades. Liberar ambos cierres antes de apartarlas. Ensayar alcance, control, trayectorias y apertura con reparto, vestuario y cauchera reales.
 
-Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo con driver integrado, dos por mitad. Dos baterías comerciales protegidas e independientes, cada una con fusible de 1 A e interruptor. Ningún cable cruza la apertura. Extraer las baterías para recargar y comprobar temperatura, luz y acceso con el reparto.
+Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo, dos por mitad. Dos baterías comerciales protegidas e independientes, con fusible 1 A e interruptor; ningún cable cruza la apertura. Recargar fuera. Validar producto, masa, temperatura y autonomía. Tela, recubrimiento acuoso compatible y pintura se aplican por separado a A/B, sin puentear la junta.
 
-La documentación define una propuesta para ensayar. Antes de fabricar la versión definitiva: maqueta de paso 1:1, pruebas de agarres y cierre, ensayo de trayectoria y apertura con las ocho personas y la cauchera. Seleccionar materiales, adhesivo y recubrimiento acuoso compatibles con EPS mediante probeta. El conjunto no tiene capacidad estructural certificada.
+[Encaje y liberación](nave/?rev=N02&demo=encaje), [talla](nave/?rev=N02&demo=talla), [ensamblaje de planchas](nave/?rev=N02&demo=planchas) y [corte de 50 mm](nave/?rev=N02&demo=pared) tienen animación, pausa y pasos. La fabricación es ilustrativa; no es una trayectoria de máquina ni una garantía de plazo.
 
-## Nave · demostraciones de apertura y fabricación
+## Estimaciones reservadas I04
 
-[Encaje y liberación](nave/?rev=N01-demo1&demo=encaje) ofrece cuatro pasos: dientes intercalados, ambas cinchas liberadas, retirada lateral de los peines y apertura con cuatro gruñones, cauchera y cuatro portadores. Azul/naranja distinguen las guías solo en el detalle; la descarga conserva sus materiales normales. La apertura es ilustrativa, sin simular biomecánica ni demostrar la maniobra de liberación real.
-
-La [talla en bloques](nave/?rev=N01-demo1&demo=talla) y el [ensamblaje de planchas](nave/?rev=N01-demo1&demo=planchas) se recorren con animación, pausa, deslizador y cuatro etapas. El [corte de pared](nave/?rev=N01-demo1&demo=pared) muestra los 35 mm normales a la superficie del cuerpo. Los remates de nariz y propulsor tienen sus espesores propios. El estudio no es una trayectoria CNC ni un presupuesto de tiempo.
-
-El formato de bloque publicado por [Precomprimidos](https://www.precomprimidos.com.co/Servicios/Geobloque) permite estudiar, girándolo, dos bloques de 4080 × 860 × 525 mm, uno por mitad. Su volumen de compra suma 3,68424 m³ frente a los 0,60 m³ de las doce planchas. Reduce juntas, pero la economía total depende del precio, vaciado, talla, transporte y aprovechamiento de sobrantes. El proveedor no publica precio: disponibilidad por unidad y densidad 20 kg/m³ por confirmar. Esta alternativa se muestra para evaluar; los documentos N01 y la estimación reservada se refieren al ensamblaje de planchas. En ambas rutas se mantienen bastidores independientes y el objetivo de carcasa hueca.
+El panel cifrado compara materiales, vaciado, trabajo específico de cada ruta, trabajo común y transporte de la nave. El vaciado de bloques no se vuelve a cobrar como montaje de planchas. Permite elegir origen de bloque y modificar los cinco trayectos urbanos indicados en los TDR. Un suministro local del formato largo se presenta como hipótesis por confirmar. Se separan provisiones propias de precios públicos; no hay cotizaciones recibidas ni proveedores contratados. Claves e importes no se distribuyen en texto abierto.
 
 ## Archivos y revisión
 

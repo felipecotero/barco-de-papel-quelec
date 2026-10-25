@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "errors": [],
+  "bad": [],
+  "exportBounds": {
+    "min": [
+      -2,
+      0,
+      -0.7017000002413988
+    ],
+    "max": [
+      2,
+      1.2300000190734863,
+      0.7017000002413988
+    ]
+  },
+  "exportSize": [
+    4,
+    1.2300000190734863,
+    1.4034000004827976
+  ],
+  "checks": [
+    "indexI04",
+    "modelN02",
+    "PDFAndZipByteIdentical",
+    "GLBExport",
+    "canonicalOrigin"
+  ],
+  "revision": "I04",
+  "date": "2026-10-24",
+  "privatePanel": {
+    "passed": true,
+    "checks": [
+      "encryptedDefault",
+      "wrongAndCorrectKey",
+      "twoMethods",
+      "noDoubleCountVacuum",
+      "defaultFiveTrips",
+      "originSwitch",
+      "tripsChange",
+      "cardAndTableTotalsMatch",
+      "clearOnClose"
+    ],
+    "javascriptErrors": 0,
+    "failedRequests": 0
+  },
+  "offline": {
+    "models": 3,
+    "studioPassed": true,
+    "privatePanelPassed": true,
+    "GLBDownloadPassed": true,
+    "externalRequests": 0,
+    "identicalEncryptedComparisonInAllThreeFiles": true
+  },
+  "GLBValidator": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "retained": [
+    {
+      "file": "model-r05.json",
+      "sha256": "97ebc062cf0dbed3e45196b2ebe97a5b89533569595e675982ac3d81cabf9586"
+    },
+    {
+      "file": "downloads/Planos-R08.pdf",
+      "sha256": "fef7975f3cf5c1c7435379fee65475fd161c41d045d4816c06062ed2df0e0a6b"
+    },
+    {
+      "file": "downloads/Guia-visual-R08.pdf",
+      "sha256": "637e567a914cb535dfa9409caf0d8441ca440694f90c525dcc40a873326bb498"
+    },
+    {
+      "file": "grulla/model.json",
+      "sha256": "1255f8c7bd6953cbb15073cd1f624da605cfdd5c802dc3ea7a66502d5e6f2d2a"
+    },
+    {
+      "file": "grulla/downloads/Grulla-Blueprints-G04.pdf",
+      "sha256": "1d267245674ae9604b3ae45fabefae51eb9db946aa88701b8bb6322112d11128"
+    },
+    {
+      "file": "grulla/downloads/Grulla-Guia-visual-G04.pdf",
+      "sha256": "a6bd8948e43f16601e1db7c9d1432e421dbba39fe7ca3e6d0142c0f751be12a4"
+    }
+  ]
+}
