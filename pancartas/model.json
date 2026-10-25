@@ -1,15 +1,15 @@
 {
-  "revision": "PA02",
+  "revision": "PA03",
   "title": "Pancartas de los Gruñones",
   "count": 4,
   "facesPerSign": 2,
-  "distinctThemes": 7,
+  "distinctThemes": 8,
   "orientation": "portrait",
   "textOnFaces": false,
   "approval": {
     "date": "2026-10-25",
-    "userStatement": "perfecto, usemoslas",
-    "scope": "Aplicar las cuatro parejas de imágenes aprobadas a cuatro pancartas verticales de dos caras, sin texto en los frentes. Jugar se repite en la octava cara.",
+    "userStatement": "pongamos una ilustración de prohibido usar lápices de colores",
+    "scope": "Aplicar las cuatro parejas de imágenes aprobadas a cuatro pancartas verticales de dos caras, sin texto en los frentes. La segunda imagen de jugar se sustituye por lápices de colores y trazos de color tachados.",
     "dimensionsStatus": "Medidas y detalles de montaje propuestos por el taller para comprobar en prototipo y ensayo."
   },
   "source": {
@@ -17,7 +17,7 @@
     "date": "2026-10-07",
     "pages": 40,
     "scope": "Las páginas respaldan los temas prohibidos del diálogo. La forma, cantidad de pancartas y traducción visual son decisiones del diseño, no acotaciones literales del libreto.",
-    "imageStatus": "Cuatro parejas ilustradas aprobadas por el usuario. Los PNG completos se conservan intactos; solo se selecciona por UV o recorte de impresión el rectángulo de cada cara.",
+    "imageStatus": "Siete caras conservan las imágenes originales PA02. P04B usa la ilustración de lápices de colores creada para la sustitución solicitada. Los PNG completos se conservan intactos; cada cara se selecciona por UV o ventana de impresión.",
     "fullScriptPublished": false
   },
   "dimensionsMm": {
@@ -328,7 +328,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor."
+          "note": "La orden de no soñar aparece al presentar la ciudad y vuelve cuando crece la flor.",
+          "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde"
         },
         {
           "id": "B",
@@ -354,7 +355,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "La orden prohíbe usar la imaginación."
+          "note": "La orden prohíbe usar la imaginación.",
+          "sourceImageSha256": "703e834b388d1726d4aca06a779fe8b631a148a8bdb4e9d545f334d245c45fde"
         }
       ],
       "artwork": "assets/pareja-01.png",
@@ -390,7 +392,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "Se combinan ser feliz y los gestos de alegría en una sola imagen, según decisión del usuario."
+          "note": "Se combinan ser feliz y los gestos de alegría en una sola imagen, según decisión del usuario.",
+          "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794"
         },
         {
           "id": "B",
@@ -416,7 +419,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "La orden prohíbe los ositos de peluche."
+          "note": "La orden prohíbe los ositos de peluche.",
+          "sourceImageSha256": "58112792f529e99d685d44d307ef32a4d7cde5bb86bad085b86ef366cb4a1794"
         }
       ],
       "artwork": "assets/pareja-02.png",
@@ -452,7 +456,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "La orden incluye cualquier sabor y presentación."
+          "note": "La orden incluye cualquier sabor y presentación.",
+          "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3"
         },
         {
           "id": "B",
@@ -480,7 +485,8 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "La prohibición de jugar se explica como parte del orden de la ciudad."
+          "note": "La prohibición de jugar se explica como parte del orden de la ciudad.",
+          "sourceImageSha256": "04950a17f25449db67af923070b292eaf64c9620c8d2c2a1c8eb9c914ef3bce3"
         }
       ],
       "artwork": "assets/pareja-03.png",
@@ -488,7 +494,7 @@
     },
     {
       "id": "P04",
-      "title": "Perder el tiempo / Jugar",
+      "title": "Perder el tiempo / Usar lápices de colores",
       "faces": [
         {
           "id": "A",
@@ -514,22 +520,21 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema."
+          "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+          "sourceImageSha256": "50849fc5c0c5e9cb82f2f110629f395828c6adce45af4a729c524f0fd7dfcad8"
         },
         {
           "id": "B",
           "code": "P04B",
-          "title": "Jugar",
-          "theme": "Jugar",
+          "title": "Usar lápices de colores",
+          "theme": "Usar lápices de colores",
           "pages": [
-            15,
-            20
+            4
           ],
           "sourcePages": [
-            15,
-            20
+            4
           ],
-          "image": "assets/pareja-04.png",
+          "image": "assets/pareja-04-color-PA03.png",
           "imageSizePx": [
             1448,
             1086
@@ -542,11 +547,12 @@
           ],
           "cropOrigin": "top-left",
           "noText": true,
-          "note": "El tema jugar se repite en la octava cara con la ilustración aprobada de esta pareja."
+          "note": "Dar color al mundo: adaptación visual solicitada por el equipo. En el libreto la orden se refiere a hacer las tareas con lápices de colores.",
+          "sourceImageSha256": "7624d63067a1d0d1839f37aa5a3ff5668c01fe0f769e1c3389bea3b3c0c38b89"
         }
       ],
-      "artwork": "assets/pareja-04.png",
-      "approvedImageSha256": "50849fc5c0c5e9cb82f2f110629f395828c6adce45af4a729c524f0fd7dfcad8"
+      "artwork": "assets/pareja-04-color-PA03.png",
+      "approvedImageSha256": "7624d63067a1d0d1839f37aa5a3ff5668c01fe0f769e1c3389bea3b3c0c38b89"
     }
   ],
   "assembly": [
@@ -556,5 +562,5 @@
     "Poner cuatro tacos separadores de 30 mm de profundidad. Fijar cada taco con dos tornillos para madera Ø3 × 12 y arandelas Ø8 desde el tablero delantero. Presentar y fijar la tapa trasera del mismo modo.",
     "Aplicar las ilustraciones A y B en papel mate cubriendo las cabezas. Comprobar que el mango, tuercas y fijaciones quedan dentro y no rozan la tapa. Revisar lectura, balance y manipulación en ensayo."
   ],
-  "designStatus": "PA02: imágenes, cantidad y orientación aprobadas; dimensiones y montaje son propuesta de construcción para validar con prototipo."
+  "designStatus": "PA03: ocho temas sin repetir jugar; sustitución gráfica solicitada; dimensiones y montaje son propuesta de construcción para validar con prototipo."
 }

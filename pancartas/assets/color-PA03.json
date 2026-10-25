@@ -1,0 +1,25 @@
+{
+  "title": "Usar lápices de colores",
+  "theme": "Usar lápices de colores",
+  "pages": [
+    4
+  ],
+  "sourcePages": [
+    4
+  ],
+  "image": "assets/pareja-04-color-PA03.png",
+  "imageSizePx": [
+    1448,
+    1086
+  ],
+  "cropPx": [
+    742,
+    26,
+    688,
+    1032
+  ],
+  "cropOrigin": "top-left",
+  "noText": true,
+  "note": "Dar color al mundo: adaptación visual solicitada por el equipo. En el libreto la orden se refiere a hacer las tareas con lápices de colores.",
+  "sourceImageSha256": "7624d63067a1d0d1839f37aa5a3ff5668c01fe0f769e1c3389bea3b3c0c38b89"
+}

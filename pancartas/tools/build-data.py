@@ -1,4 +1,4 @@
-"""Build PA02 metadata without modifying the approved raster images."""
+"""Build PA03 metadata without modifying the approved raster images."""
 from pathlib import Path
 import json, shutil, hashlib
 from PIL import Image
@@ -16,6 +16,13 @@ for i,(source,crops,themes) in enumerate(rows,1):
  for letter,crop,(title,pages,note) in zip('AB',crops,themes):
   faces.append({'id':letter,'code':f'P{i:02}{letter}','title':title,'theme':title,'pages':pages,'sourcePages':pages,'image':f'assets/pareja-{i:02}.png','imageSizePx':size,'cropPx':list(crop),'cropOrigin':'top-left','noText':True,'note':note})
  signs.append({'id':f'P{i:02}','title':themes[0][0]+' / '+themes[1][0],'faces':faces,'artwork':f'assets/pareja-{i:02}.png','approvedImageSha256':hashlib.sha256(target.read_bytes()).hexdigest()})
+override=json.loads((P/'assets/color-PA03.json').read_text())
+signs[3]['faces'][1].update(override)
+signs[3]['title']='Perder el tiempo / Usar lápices de colores'
+signs[3]['artwork']=override['image']
+signs[3]['approvedImageSha256']=override['sourceImageSha256']
+for sign in signs:
+ for face in sign['faces']:face['sourceImageSha256']=hashlib.sha256((P/face['image']).read_bytes()).hexdigest()
 items=[]
 for i in range(8):
  board=i//2+1;side='AB'[i%2]
@@ -23,9 +30,9 @@ for i in range(8):
 for i in range(4):items.append({'id':f'R{i+1:02}','kind':'reinforcement','role':'banda posterior del tablero portante','xMm':5+i*65,'yMm':1820,'widthMm':60,'heightMm':560,'quantity':1,'sheet':1})
 net=sum(q['widthMm']*q['heightMm'] for q in items)/1e6
 D={
-'revision':'PA02','title':'Pancartas de los Gruñones','count':4,'facesPerSign':2,'distinctThemes':7,'orientation':'portrait','textOnFaces':False,
-'approval':{'date':'2026-10-25','userStatement':'perfecto, usemoslas','scope':'Aplicar las cuatro parejas de imágenes aprobadas a cuatro pancartas verticales de dos caras, sin texto en los frentes. Jugar se repite en la octava cara.','dimensionsStatus':'Medidas y detalles de montaje propuestos por el taller para comprobar en prototipo y ensayo.'},
-'source':{'title':'Quelec y la semilla del futuro - Escenas V2','date':'2026-10-07','pages':40,'scope':'Las páginas respaldan los temas prohibidos del diálogo. La forma, cantidad de pancartas y traducción visual son decisiones del diseño, no acotaciones literales del libreto.','imageStatus':'Cuatro parejas ilustradas aprobadas por el usuario. Los PNG completos se conservan intactos; solo se selecciona por UV o recorte de impresión el rectángulo de cada cara.','fullScriptPublished':False},
+'revision':'PA03','title':'Pancartas de los Gruñones','count':4,'facesPerSign':2,'distinctThemes':8,'orientation':'portrait','textOnFaces':False,
+'approval':{'date':'2026-10-25','userStatement':'pongamos una ilustración de prohibido usar lápices de colores','scope':'Aplicar las cuatro parejas de imágenes aprobadas a cuatro pancartas verticales de dos caras, sin texto en los frentes. La segunda imagen de jugar se sustituye por lápices de colores y trazos de color tachados.','dimensionsStatus':'Medidas y detalles de montaje propuestos por el taller para comprobar en prototipo y ensayo.'},
+'source':{'title':'Quelec y la semilla del futuro - Escenas V2','date':'2026-10-07','pages':40,'scope':'Las páginas respaldan los temas prohibidos del diálogo. La forma, cantidad de pancartas y traducción visual son decisiones del diseño, no acotaciones literales del libreto.','imageStatus':'Siete caras conservan las imágenes originales PA02. P04B usa la ilustración de lápices de colores creada para la sustitución solicitada. Los PNG completos se conservan intactos; cada cara se selecciona por UV o ventana de impresión.','fullScriptPublished':False},
 'dimensionsMm':{'panel':[400,600,3],'rearPanel':[400,600,3],'reinforcement':[60,560,3],'pole':[25,15,1800],'spacer':[15,50,30],'innerGap':30,'boxThickness':36,'overallHeight':2050,'panelBottom':1450,'panelCenterHeight':1750,'poleOverlap':350,'edgeRadius':6,'reinforcementTopBottomMargin':20,'holesFromPanelBottom':[100,220],'holesFromPanelLeft':200,'holePitch':120,'holeDiameter':6.2,'poleHoleDiameter':4.5,'spacerCentersFromPanelMm':[[30,40],[370,40],[30,560],[370,560]],'spacerScrewOffsetY':12.5,'spacerScrewDiameter':3,'spacerScrewLength':12},
 'construction':{'principle':'El mango y sus dos uniones quedan en el interior de una caja ligera de doble cara; la tapa posterior conserva su imagen completa.','layerOrderFrontToBack':['Papel ilustrado de cara A, sin texto','Tablero portante PP 3 mm','Banda central PP 3 mm','Mango 15 mm de espesor con dos fijaciones M4','Espacio libre para las tuercas y extremos protegidos','Tapa posterior PP 3 mm, a 30 mm de la cara interior del tablero delantero','Papel ilustrado de cara B, sin texto'],'spacers':'Cuatro tacos de madera de 15 × 50 × 30 mm, uno cerca de cada esquina, mantienen la cámara de 30 mm. Los tornillos de fijación se cubren con el papel.','rearPanel':'La tapa es un cierre ligero. El listón y los herrajes permanecen dentro; no se montan sobre la ilustración trasera.','validation':'Comprobar prototipo, adherencia del papel al PP, ajuste sin aplastar, holgura de las tuercas bajo la tapa, agarre, balance y lectura en ensayo. Las pancartas no son soportes para personas.'},
 'fasteners':{'perSign':2,'bolt':'M4 × 30, cabeza redondeada','washers':'Ø18 mm, una por cara de la unión principal','sleeve':'Ø exterior 6 / interior 4,3 × largo 6 mm','sleevePurpose':'Limita el aplastamiento del tablero PP3 y su banda PP3. No apretar hasta hundir las caras.','nut':'M4 autofrenante; proteger el extremo y comprobar que no roce la tapa posterior','spacerScrews':'Tornillos para madera Ø3 × 12 mm, cabeza baja, con arandelas Ø8 mm','spacerScrewsPerBlockPerFace':2,'spacerScrewsPerSign':16,'spacerNotes':'Marcar en cada taco dos centros separados 25 mm, a ±12,5 mm de su centro. Fijar por ambas caras; las dos entradas de 12 mm no deben encontrarse dentro del taco de 30 mm.'},
@@ -35,8 +42,8 @@ D={
 'printing':{'faceSizeMm':[400,600],'count':8,'scale':'100 %, sin ajustar a página','sourceImagesIntact':True,'cropAspectRatio':'2:3','cropNote':'Los rectángulos de 688 × 1032 px excluyen el margen azul y el medianil de las imágenes de propuesta. No se repinta ni se deforma el motivo aprobado.','resolutionNote':'Los artes conservan los píxeles aprobados. Revisar la muestra impresa a escala real antes de producir las ocho caras.'},
 'signs':signs,
 'assembly':['Cortar los ocho tableros verticales y las cuatro bandas de la lámina. Marcar las piezas únicamente por dentro.','Presentar el listón centrado con 350 mm de solape y la banda de 60 × 560 mm. Marcar los dos centros, a 100 y 220 mm desde abajo.','Perforar tablero y banda a Ø6,2, y madera a Ø4,5. Colocar los casquillos de 6 mm, dos M4 × 30 y arandelas Ø18. Ajustar sin hundir el PP y proteger los extremos.','Poner cuatro tacos separadores de 30 mm de profundidad. Fijar cada taco con dos tornillos para madera Ø3 × 12 y arandelas Ø8 desde el tablero delantero. Presentar y fijar la tapa trasera del mismo modo.','Aplicar las ilustraciones A y B en papel mate cubriendo las cabezas. Comprobar que el mango, tuercas y fijaciones quedan dentro y no rozan la tapa. Revisar lectura, balance y manipulación en ensayo.'],
-'designStatus':'PA02: imágenes, cantidad y orientación aprobadas; dimensiones y montaje son propuesta de construcción para validar con prototipo.'
+'designStatus':'PA03: ocho temas sin repetir jugar; sustitución gráfica solicitada; dimensiones y montaje son propuesta de construcción para validar con prototipo.'
 }
 (P/'model.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
-(P/'downloads/Pancartas-PA02-datos.json').write_text((P/'model.json').read_text())
-print('PA02:',len(signs),'pancartas; 8 caras; neto',net,'m²; una lámina; imágenes completas intactas')
+(P/'downloads/Pancartas-PA03-datos.json').write_text((P/'model.json').read_text())
+print('PA03:',len(signs),'pancartas; 8 caras; neto',net,'m²; una lámina; imágenes completas intactas')

@@ -2,3 +2,5 @@
 
 .select-label{display:block;font:12px Montserrat,Arial;color:#bcd0c5;margin:8px 0}select{width:100%;background:#21373e;color:#edf2e8;border:1px solid #7b948a;border-radius:6px;padding:11px;font:13px Arial}.catalog-details{margin:15px 0}.catalog-details summary{cursor:pointer;color:#c9dcc2;font:12px Montserrat,Arial}.catalog-details[open] summary{margin-bottom:13px}
 .face-picker{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}.face-picker button{min-height:58px;line-height:1.4}.face-picker button[aria-pressed=true]{background:#c9deb8;color:#23382b;border-color:#c9deb8}.face-picker small{display:block;font:11px Arial;margin-top:4px}.views{margin:18px 0}.views button:last-child{grid-column:1/-1}.views button{font-size:11px}.catalog-details{margin:14px 0}#source-card{margin:16px 0}#source-card h2{font-size:27px}.tools button{min-height:43px}#catalog img{aspect-ratio:1.335}.technical p{font-size:12px}#dimensions{max-width:calc(100% - 35px)}
+
+.catalog-pair{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.catalog-face{aspect-ratio:2/3;background-repeat:no-repeat;border-radius:3px}

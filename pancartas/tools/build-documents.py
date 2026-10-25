@@ -1,4 +1,4 @@
-"""PA02 construction sheets and original approved raster artwork, cropped by PDF clipping only."""
+"""PA03 construction sheets and original approved raster artwork, cropped by PDF clipping only."""
 from pathlib import Path
 import json,math,html
 from reportlab.pdfgen import canvas
@@ -39,9 +39,9 @@ def header(c,title,sub,blue=True):
   for a in range(0,1001,20):c.line(a*mm,0,a*mm,H)
   for a in range(0,701,20):c.line(0,a*mm,W,a*mm)
  color=INK if blue else DARK
- txt(c,'QUELEC / TALLER DE OBJETOS / PA02',30,29,22,color,True);txt(c,title,30,62,56,color,True);txt(c,sub,30,85,25,color)
+ txt(c,'QUELEC / TALLER DE OBJETOS / PA03',30,29,22,color,True);txt(c,title,30,62,56,color,True);txt(c,sub,30,85,25,color)
  line(c,30,103,970,103,color)
- txt(c,'PROPUESTA CONSTRUCTIVA PA02 - 25 OCT 2026 - COTAS EN MM - PLIEGO 1000 x 700 MM',30,680,18,color);txt(c,'1 / 1',970,680,20,color,align='right')
+ txt(c,'PROPUESTA CONSTRUCTIVA PA03 - 25 OCT 2026 - COTAS EN MM - PLIEGO 1000 x 700 MM',30,680,18,color);txt(c,'1 / 1',970,680,20,color,align='right')
 def face_image(c,face,x,y,w,h,page_h=H):
  # Original pair is embedded unchanged. The PDF viewport selects the approved face.
  crop=face['cropPx'];cx,cy,cw,ch=crop;iw,ih=face['imageSizePx'];sx=w*mm/cw;sy=h*mm/ch
@@ -74,7 +74,7 @@ def front_view(c,x,y,k=.2,internal=False):
  return y+2050*k
 
 def build_blueprint():
- c=canvas.Canvas(str(O/'Pancartas-Blueprints-PA02.pdf'),pagesize=(W,H));c.setTitle('Quelec - Pancartas verticales de dos caras - Plano PA02');header(c,'Cuatro pancartas, ocho caras ilustradas','Tableros 400 x 600 x 3 - mango oculto entre caras - una sola lámina de PP3')
+ c=canvas.Canvas(str(O/'Pancartas-Blueprints-PA03.pdf'),pagesize=(W,H));c.setTitle('Quelec - Pancartas verticales de dos caras - Plano PA03');header(c,'Cuatro pancartas, ocho caras ilustradas','Tableros 400 x 600 x 3 - mango oculto entre caras - una sola lámina de PP3')
  txt(c,'A / ALZADOS Y ANCLAJES',30,124,26,INK,True)
  front_view(c,50,155);front_view(c,225,155,internal=True)
  txt(c,'Frente A',90,584,22,INK,True,'center');txt(c,'Interior sin tapa B',265,584,22,INK,True,'center')
@@ -135,7 +135,7 @@ def guide_diagram(c,n,x,y):
   txt(c,'A y B sin palabras',x+88,y+254,20,DARK,align='center')
 
 def build_guide():
- c=canvas.Canvas(str(O/'Pancartas-Guia-visual-PA02.pdf'),pagesize=(W,H));c.setTitle('Quelec - Pancartas - Guia de armado PA02');header(c,'Cuatro pancartas, el mismo montaje','Dos caras verticales por pancarta - el mango y las tuercas quedan por dentro',False)
+ c=canvas.Canvas(str(O/'Pancartas-Guia-visual-PA03.pdf'),pagesize=(W,H));c.setTitle('Quelec - Pancartas - Guia de armado PA03');header(c,'Cuatro pancartas, el mismo montaje','Dos caras verticales por pancarta - el mango y las tuercas quedan por dentro',False)
  positions=[(30,122),(520,122),(30,396),(520,396)]
  titles=['Corta las parejas','Sujeta el mango','Pon la tapa de atrás','Pega las imágenes']
  bodies=[
@@ -153,16 +153,16 @@ def build_guide():
  c.showPage();c.save()
 
 def build_art():
- pw,ph=400*mm,600*mm;c=canvas.Canvas(str(O/'Pancartas-Artes-PA02.pdf'),pagesize=(pw,ph));c.setTitle('Quelec - Pancartas PA02 - Ocho caras 400 x 600 mm sin texto')
+ pw,ph=400*mm,600*mm;c=canvas.Canvas(str(O/'Pancartas-Artes-PA03.pdf'),pagesize=(pw,ph));c.setTitle('Quelec - Pancartas PA03 - Ocho caras 400 x 600 mm sin texto')
  for sign in D['signs']:
   for face in sign['faces']:
    code=face.get('code',sign['id']+face['id']);c.bookmarkPage(code);c.addOutlineEntry(code+' '+face.get('theme',face.get('title','')),code,0,False);face_image(c,face,0,0,400,600,page_h=ph);c.showPage()
  c.save()
 
 def build_cut_svg():
- svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1220mm" height="2440mm" viewBox="0 0 1220 2440"><title>PA02 - cortes 1:1 - ocho tableros y cuatro bandas</title><rect width="1220" height="2440" fill="white" stroke="#577067" stroke-width=".4"/>']
+ svg=['<svg xmlns="http://www.w3.org/2000/svg" width="1220mm" height="2440mm" viewBox="0 0 1220 2440"><title>PA03 - cortes 1:1 - ocho tableros y cuatro bandas</title><rect width="1220" height="2440" fill="white" stroke="#577067" stroke-width=".4"/>']
  for q in D['nesting']['items']:
   x,y,w,h=[q[k] for k in ['xMm','yMm','widthMm','heightMm']];svg.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="none" stroke="black" stroke-width=".3"/><text x="{x+w/2}" y="{y+h/2}" font-family="Arial" font-size="13" text-anchor="middle">{html.escape(q["id"])} - {w} x {h}</text>')
- svg.append('</svg>');(O/'Pancartas-Cortes-PA02.svg').write_text('\n'.join(svg))
+ svg.append('</svg>');(O/'Pancartas-Cortes-PA03.svg').write_text('\n'.join(svg))
 if __name__=='__main__':
- build_blueprint();build_guide();build_art();build_cut_svg();print('PA02: 1 plano 1000x700; 1 guia 1000x700; 8 artes 400x600; corte SVG 1:1')
+ build_blueprint();build_guide();build_art();build_cut_svg();print('PA03: 1 plano 1000x700; 1 guia 1000x700; 8 artes 400x600; corte SVG 1:1')
