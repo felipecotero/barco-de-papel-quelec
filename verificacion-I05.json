@@ -1,0 +1,22 @@
+{
+  "revision": "I05",
+  "date": "2026-10-24",
+  "objects": [
+    "BarcoR08",
+    "GrullaG04",
+    "NaveN02",
+    "CaucheraC01"
+  ],
+  "checks": [
+    "FourIndexCards",
+    "CommonDarkBrand",
+    "CaucheraAndNaveSharedUGeometry",
+    "GLB_OBJ_STL_ScaleAndCanonicalState",
+    "EncryptedFourObjectPanel",
+    "NoPlaintextKey",
+    "FourOfflineViewers",
+    "C01PDFs2plus2Pliegos",
+    "MobileViewer"
+  ],
+  "pendingCaucheraElastic": true
+}

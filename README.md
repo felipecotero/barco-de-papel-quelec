@@ -1,12 +1,12 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I04) · [Barco R08](barco.html?rev=R08-I04) · [Grulla G04](grulla/?rev=G04-I04) · [Nave N02](nave/?rev=N02)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I05) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C01](cauchera/?rev=C01)
 
 Índice oscuro con imágenes originales de los TDR. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
 ## Ver los acabados sin esperar
 
-**Estudio rápido** está disponible en los tres objetos. Usa materiales PBR, iluminación de entorno local, luces de estudio y sombras suaves; no acumula muestras. Se puede girar, separar y examinar el modelo mientras se ve su acabado. La sombra de contacto es una aproximación gráfica, no un cálculo estructural ni fotométrico.
+**Estudio rápido** está disponible en los cuatro objetos. Usa materiales PBR, iluminación de entorno local, luces de estudio y sombras suaves; no acumula muestras. Se puede girar, separar y examinar el modelo mientras se ve su acabado. La sombra de contacto es una aproximación gráfica, no un cálculo estructural ni fotométrico.
 
 El trazado de rayos permanece como opción secundaria en barco y grulla. Es más lento, puede conservar ruido y necesita dejar quieta la cámara. La vista rápida no depende de ese proceso. La grulla conserva sus LED dentro de las alas; apagarlos devuelve la iluminación general.
 
@@ -16,7 +16,7 @@ El trazado de rayos permanece como opción secundaria en barco y grulla. Es más
 
 **Descargar 3D**, junto a **Guías y planos**, ofrece GLB con texturas integradas, OBJ+MTL+PNG en ZIP y STL sin texturas. GLB usa metros; OBJ/STL permiten elegir metros o milímetros y requieren seleccionar la misma unidad al importarlos. Escala 1:1, objeto ensamblado, sin suelo, cotas ni rótulos. STL reúne mallas y no implica una única pieza lista para imprimir.
 
-Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html** y **nave/Abrir-Nave.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
+Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html** **nave/Abrir-Nave.html** y **cauchera/Abrir-Cauchera.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
 
 ## Barco R08
 
@@ -62,9 +62,21 @@ Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo, dos po
 
 [Encaje y liberación](nave/?rev=N02&demo=encaje), [talla](nave/?rev=N02&demo=talla), [ensamblaje de planchas](nave/?rev=N02&demo=planchas) y [corte de 50 mm](nave/?rev=N02&demo=pared) tienen animación, pausa y pasos. La fabricación es ilustrativa; no es una trayectoria de máquina ni una garantía de plazo.
 
-## Estimaciones reservadas I04
+## Cauchera C01 · estudio para prototipo
 
-El panel cifrado compara materiales, vaciado, trabajo específico de cada ruta, trabajo común y transporte de la nave. El vaciado de bloques no se vuelve a cobrar como montaje de planchas. Permite elegir origen de bloque y modificar los cinco trayectos urbanos indicados en los TDR. Un suministro local del formato largo se presenta como hipótesis por confirmar. Se separan provisiones propias de precios públicos; no hay cotizaciones recibidas ni proveedores contratados. Claves e importes no se distribuyen en texto abierto.
+2000 mm de alto × 800 mm de ancho exterior, horqueta en U, dos asas cerradas bajo la horqueta y apoyo bajo desmontable para el pie. Apariencia de rama irregular de 80–100 mm: espuma flexible de PU, tela fina y pintura flexible mate. Núcleo preliminar de acero Ø exterior real25,4 × pared1,5 mm; no se ha comprobado frente a la tracción real. El apoyo posiciona al ras del escenario y no es un escalón para subirse.
+
+- [Blueprints de estudio: dos pliegos100×70cm](cauchera/downloads/Blueprints-C01.pdf).
+- [Guía visual: dos pliegos100×70cm](cauchera/downloads/Guia-visual-C01.pdf).
+- [Medidas y nomenclatura C01](cauchera/downloads/Cauchera-C01-datos.json).
+
+El visor separa los conjuntos C01–C07, muestra cinco etapas, remates, asas y apoyo. Comparte la misma geometría con la referencia de cauchera de la nave, excluida del peso y las exportaciones de la nave. Para llevarla horizontal se retira el apoyo. La espuma se reparte en seis blancos de una lámina nominal1000×2000×50mm, con juntas alternadas solo en el revestimiento del mango. Confirmar formato y densidad con el proveedor. Masa de planeación con reserva15%:7,7kg, no pesaje ni capacidad.
+
+El deslizador de hasta2,5m representa espacio provisional hacia atrás. No es una selección de banda, fuerza ni simulación de disparo. Faltan significado exacto del estiramiento, material y masa de las bolas y distancia al barco. Los TDR mencionan bolas luminosas de50cm y revisión por profesional idóneo para la cauchera. El núcleo y el apoyo requieren verificación con la tracción finalmente elegida.
+
+## Estimaciones reservadas I05
+
+El panel incluye la cauchera como cuarto objeto; su elástico es una provisión pendiente. El panel cifrado compara materiales, vaciado, trabajo específico de cada ruta, trabajo común y transporte de la nave. El vaciado de bloques no se vuelve a cobrar como montaje de planchas. Permite elegir origen de bloque y modificar los cinco trayectos urbanos indicados en los TDR. Un suministro local del formato largo se presenta como hipótesis por confirmar. Se separan provisiones propias de precios públicos; no hay cotizaciones recibidas ni proveedores contratados. Claves e importes no se distribuyen en texto abierto.
 
 ## Archivos y revisión
 
@@ -72,4 +84,4 @@ Los documentos antiguos quedan señalados como archivo y no corresponden a las v
 
 Las estimaciones del equipo se distribuyen cifradas; la clave se mantiene fuera del repositorio y de los planos compartidos. No se guardan claves en el navegador ni se muestran importes al abrir una página.
 
-Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` y `python3 nave/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.
+Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` `python3 nave/tools/build-portable.py` y `python3 cauchera/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.

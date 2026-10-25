@@ -1,0 +1,138 @@
+{
+  "revision": "C01",
+  "date": "2026-10-24",
+  "status": "Propuesta de forma y construcción; elástico y verificación física pendientes",
+  "pdfs": [
+    {
+      "file": "Blueprints-C01.pdf",
+      "pages": 2,
+      "sizeMm": [
+        1000,
+        700
+      ],
+      "sha256": "1a17aec78705886e365551f5896ce271556d7f59cee183a72878f08b3c2ccc12"
+    },
+    {
+      "file": "Guia-visual-C01.pdf",
+      "pages": 2,
+      "sizeMm": [
+        1000,
+        700
+      ],
+      "sha256": "cd85bcfa82dd7407bb549f4e2357e443d310d32bb0a064c2acecdfc49c7dba1b"
+    }
+  ],
+  "layout": {
+    "minimumTypePt": 22,
+    "overlappingTextBoxes": 0,
+    "outsideSafeMargins": 0,
+    "visuallyReviewedPages": 4
+  },
+  "stock": {
+    "material": "PU flexible, confirmar referencia y espesor",
+    "sizeMm": [
+      1000,
+      2000,
+      50
+    ],
+    "sheets": 1,
+    "blanks": 6,
+    "overlaps": 0
+  },
+  "viewer": {
+    "pass": true,
+    "exports": {
+      "before": {
+        "size": [
+          0.8040000200271606,
+          2.000000001817942,
+          0.3669999986886978
+        ],
+        "bounds": {
+          "min": [
+            -0.4020000100135803,
+            -1.0728836083440108e-09,
+            -0.052000001072883606
+          ],
+          "max": [
+            0.4020000100135803,
+            2.0000000007450582,
+            0.3149999976158142
+          ]
+        },
+        "meshes": 29,
+        "textures": 1
+      },
+      "carry": {
+        "size": [
+          804.0000200271606,
+          2000.000001817942,
+          366.9999986886978
+        ],
+        "bounds": {
+          "min": [
+            -402.0000100135803,
+            -1.0728835597717534e-06,
+            -52.000001072883606
+          ],
+          "max": [
+            402.0000100135803,
+            2000.0000007450583,
+            314.9999976158142
+          ]
+        },
+        "textures": 1
+      },
+      "draw": {
+        "size": [
+          0.8040000200271606,
+          2.000000001817942,
+          0.3669999986886978
+        ],
+        "bounds": {
+          "min": [
+            -0.4020000100135803,
+            -1.0728836083440108e-09,
+            -0.052000001072883606
+          ],
+          "max": [
+            0.4020000100135803,
+            2.0000000007450582,
+            0.3149999976158142
+          ]
+        }
+      }
+    },
+    "privateCards": 4,
+    "pdfDownloadsExact": true,
+    "mobile": true,
+    "errors": []
+  },
+  "tubes": {
+    "measuredCenterlinesM": {
+      "C01": 2.8257179782817285,
+      "C02": 1.2300500141826263,
+      "C03": 0.5651572541404126
+    },
+    "installedBudgetAllowanceM": 4.806,
+    "commercialStockM": 6,
+    "tubeGeometry": "Hollow outside25.4mm, wall1.5mm"
+  },
+  "offline": {
+    "modelsTested": 4,
+    "privateCards": 4,
+    "studioSamplesRequired": 0,
+    "externalRequests": 0
+  },
+  "pending": [
+    "Masa y material exactos de las bolas; TdR menciona esferas luminosas de50cm.",
+    "Distancia escénica y significado de los2,5m.",
+    "Selección comercial del elástico y bolsa; fuerza admisible y prueba del conjunto por profesional idóneo segúnTdR.",
+    "Prueba de agarres, apoyo de pie, recorrido y transporte en nave con vestuario."
+  ],
+  "geometryChecks": {
+    "finitePositiveVolumeMeshes": true,
+    "hollowRoundCoreAndHandles": true,
+    "nominalDimensionsVerified": true
+  }
+}
