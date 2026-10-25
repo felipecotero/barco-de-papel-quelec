@@ -180,7 +180,10 @@
     ],
     "measuresOccupiedEnvelopeOnly": true,
     "figuresAndBallExported": false,
-    "warning": "Estudio geométrico orientativo. No valida fuerza, equilibrio, seguridad ni aptitud del sistema para lanzar."
+    "warning": "Estudio geométrico orientativo. No valida fuerza, equilibrio, seguridad ni aptitud del sistema para lanzar.",
+    "orientation": "Frente a frente: quien sostiene mira hacia la bolsa; ambos cuerpos se inclinan hacia atrás en sentidos opuestos.",
+    "holderOnTongue": "Punta del pie izquierdo sobre la lengüeta, desde el lado opuesto a la bolsa",
+    "revision": "C02-r1"
   },
   "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02"
 }
