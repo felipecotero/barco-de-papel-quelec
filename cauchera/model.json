@@ -183,7 +183,12 @@
     "warning": "Estudio geométrico orientativo. No valida fuerza, equilibrio, seguridad ni aptitud del sistema para lanzar.",
     "orientation": "Frente a frente: quien sostiene mira hacia la bolsa; ambos cuerpos se inclinan hacia atrás en sentidos opuestos.",
     "holderOnTongue": "Punta del pie izquierdo sobre la lengüeta, desde el lado opuesto a la bolsa",
-    "revision": "C02-r1"
+    "revision": "C02-r2",
+    "humanFigures": {
+      "geometry": "Mallas anatómicas articuladas, con rostro, dedos, ropa y calzado",
+      "source": "MakeHuman core assets, CC0 1.0",
+      "use": "Referencia visual de postura y escala; no cálculo biomecánico"
+    }
   },
   "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02"
 }

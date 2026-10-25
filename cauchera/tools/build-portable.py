@@ -64,6 +64,13 @@ Q=P.parent if (P.parent/'shared/obj-export.js').exists() else P.parent/'barco-gi
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,Q,'../')
 html=re.sub(r'<script src="../shared/cauchera-model.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/cauchera-model.js').read_text().replace('</script','<\\/script')+'</script>',html)
+human=json.loads((P/'assets/personas/human.json').read_text())
+for m in human['meshes']:
+ f=P/m['texture'];mime='image/png' if f.suffix=='.png' else 'image/jpeg'
+ m['texture']='data:'+mime+';base64,'+base64.b64encode(f.read_bytes()).decode()
+humanjs='window.QUELEC_HUMAN_ASSET='+json.dumps(human,separators=(',',':'))+';'+(P/'humanos.js').read_text()
+html=re.sub(r'<script src="humanos.js[^"]*"></script>',lambda m:'<script>'+humanjs.replace('</script','<\\/script')+'</script>',html)
+html+='<!-- Human assets: MakeHuman core CC0 1.0. '+(P/'assets/personas/NOTICE.md').read_text().replace('--','- -')+' -->'
 html=re.sub(r'<script src="posturas.js[^"]*"></script>',lambda m:'<script>'+(P/'posturas.js').read_text().replace('</script','<\\/script')+'</script>',html)
 html=html.replace('href="referencia-C02.png"','href="https://felipecotero.github.io/barco-de-papel-quelec/cauchera/referencia-C02.png"')
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Cauchera.html').write_text(html)
