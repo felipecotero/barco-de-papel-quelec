@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I07) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA03](pancartas/?rev=PA03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA04](pancartas/?rev=PA04)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -76,9 +76,9 @@ La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No
 
 Los PDF y la estimación reservada se conservan como **base C01 anterior a este ajuste**; aún no se actualizan a las asas, lengüeta y bandas C02. El visor y el cuadro de documentos lo indican. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
-## Pancartas PA03
+## Pancartas PA04
 
-Cuatro pancartas verticales, con dos ilustraciones aprobadas por objeto y sin texto sobre las caras. Parejas: soñar/imaginación; felicidad y alegría/ositos; helado/jugar; perder el tiempo/lápices de colores. Las siete caras anteriores se conservan; P04B sustituye la repetición de jugar por lápices de colores y trazos de color tachados. La versión PA03 presenta ocho temas distintos. El nuevo motivo adapta por decisión del equipo la orden del libreto sobre hacer tareas con lápices de colores. Las imágenes completas se conservan intactas: el visor selecciona cada cara por coordenadas UV y los artes de impresión usan un recuadro de la misma proporción. Los títulos, códigos y páginas son etiquetas de interfaz y de construcción; no se imprimen en las caras.
+Cuatro pancartas verticales, con dos ilustraciones aprobadas por objeto y sin texto sobre las caras. Parejas: soñar/imaginación; felicidad y alegría/ositos; helado/jugar; perder el tiempo/lápices de colores. Las siete caras anteriores se conservan; P04B sustituye la repetición de jugar por lápices de colores y trazos de color tachados. La versión PA04 presenta ocho temas distintos. En P04B el tachón es negro, desciende de la esquina superior izquierda hacia la inferior derecha y tiene el doble de ancho que la primera versión negra. Las otras siete caras conservan sus dibujos y tachaduras rojas. El nuevo motivo adapta por decisión del equipo la orden del libreto sobre hacer tareas con lápices de colores. Las imágenes completas se conservan intactas: el visor selecciona cada cara por coordenadas UV y los artes de impresión usan un recuadro de la misma proporción. Los títulos, códigos y páginas son etiquetas de interfaz y de construcción; no se imprimen en las caras.
 
 Propuesta de montaje: dos tableros de 400 × 600 × 3 mm, una banda posterior de 60 × 560 × 3 mm y un mango de pino de 25 × 15 × 1800 mm, con solape de 350 mm. Alto total 2050 mm. Cuatro tacos de 15 × 50 × 30 mm separan la tapa para dejar el mango y los herrajes dentro. Caja nominal de 36 mm; papel y cabezas añaden un pequeño relieve. Ambas ilustraciones quedan libres de madera y tuercas.
 
@@ -86,12 +86,12 @@ Dos M4 × 30 por pancarta, arandelas Ø18 y casquillos Ø6/4,3 × 6 limitan el a
 
 Una lámina de 1220 × 2440 × 3 mm contiene ocho tableros y cuatro bandas; área neta 2,0544 m², sin solapamientos. El visor permite voltear, ampliar la ilustración, abrir el interior y separar las capas. La exportación guarda la pancarta seleccionada ensamblada, con ambas imágenes.
 
-- [Plano técnico: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Blueprints-PA03.pdf).
-- [Guía visual: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Guia-visual-PA03.pdf).
-- [Ocho artes de impresión de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA03.pdf).
-- [Despiece 1:1 de la lámina](pancartas/downloads/Pancartas-Cortes-PA03.svg).
+- [Plano técnico: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Blueprints-PA04.pdf).
+- [Guía visual: un pliego de 100 × 70 cm](pancartas/downloads/Pancartas-Guia-visual-PA04.pdf).
+- [Ocho artes de impresión de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA04.pdf).
+- [Despiece 1:1 de la lámina](pancartas/downloads/Pancartas-Cortes-PA04.svg).
 
-Los temas se relacionan con Escenas V2, 7 de octubre de 2026; cada ficha indica sus páginas. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts de las imágenes están en `pancartas/assets/prompts.json` y `pancartas/assets/prompt-color-PA03.json`; se generaron con la herramienta integrada y no se redibujan al aplicarlos. El panel reservado de los otros cuatro objetos se conserva; las pancartas aún no tienen estimación allí.
+Los temas se relacionan con Escenas V2, 7 de octubre de 2026; cada ficha indica sus páginas. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts de las imágenes están en `pancartas/assets/prompts.json` y `pancartas/assets/prompt-color-PA03.json` y `pancartas/assets/prompt-color-PA04.json`; se generaron con la herramienta integrada y no se redibujan al aplicarlos. El panel reservado de los otros cuatro objetos se conserva; las pancartas aún no tienen estimación allí.
 
 ## Estimaciones reservadas I05
 

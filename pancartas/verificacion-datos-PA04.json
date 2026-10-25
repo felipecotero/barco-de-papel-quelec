@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "revision": "PA04",
+  "date": "2026-10-25",
+  "signs": 4,
+  "faces": 8,
+  "sourcePngIntact": true,
+  "uvCropWindowsInsideImages": true,
+  "uvAspectRatio": "2:3",
+  "textOnFaces": false,
+  "nesting": {
+    "sheetCount": 1,
+    "panelCount": 8,
+    "reinforcementCount": 4,
+    "noOverlap": true,
+    "minimumMarginMm": 5,
+    "minimumSeparationMm": 5,
+    "netAreaM2": 2.0544,
+    "utilizationPercent": 69.01370599301264
+  },
+  "quantitiesConsistent": true,
+  "dimensionsConsistent": true,
+  "limits": "Data and layout check; physical adhesion, joints, comfort and distance legibility remain to validate in prototype and rehearsal."
+}

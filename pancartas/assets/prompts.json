@@ -1,6 +1,6 @@
 {
   "tool": "image_gen built-in",
-  "status": "Imágenes aplicadas: siete caras PA02 conservadas; P04B sustituida por lápices de colores en PA03.",
+  "status": "PA04: P04B con tachón negro descendente de doble ancho; las otras siete caras se conservan.",
   "prompts": [
     "Use case: illustration-story. Create ONE proposal board showing TWO separate VERTICAL rectangular poster faces side by side, equal size, each 2:3 portrait proportions, a narrow dark blue-gray gutter and outer margin. This is illustration artwork for children's theater protest placards in Quelec y la semilla del futuro, to be reviewed BEFORE any application to a 3D model. No poles, people carrying signs, physical mockups, perspective, or 3D renders. Each face has warm ivory matte paper background, extremely bold hand-cut-paper shapes, rich indigo and forest green, ochre and warm brown, chunky charcoal contours, subtle gouache/paper grain. Friendly theatrical childhood imagination, artisanal origami-world feel, NOT realistic photography or generic highway signage. Very simple large silhouettes, picture occupies most of each face and reads from far across a plaza. On EACH picture paint one very broad vivid red diagonal brush slash from lower left to upper right to mean forbidden; leave enough of the motif recognizable. Do not enclose the slash in a circle or a traffic-sign border. Absolutely NO TEXT, letters, numbers, captions, labels, logos or watermarks anywhere. Do not add decorative scenery or small details. LEFT face, forbidden DREAMING: an unmistakable sleeping child's head on a simple pillow, with one large dream cloud containing a big crescent moon and two big stars above it. RIGHT face, forbidden USING IMAGINATION: a child with open eye in profile, a very large colorful folded origami bird emerging from an open thought cloud above the head, a creative idea coming alive. Clearly distinct symbols. Keep both pictograms bold and sparse.",
     "Use case: illustration-story. Create ONE proposal board showing TWO separate VERTICAL rectangular poster faces side by side, equal size, each 2:3 portrait proportions, a narrow dark blue-gray gutter and outer margin. This is illustration artwork for children's theater protest placards in Quelec y la semilla del futuro, to be reviewed BEFORE any application to a 3D model. No poles, people carrying signs, physical mockups, perspective, or 3D renders. Each face has warm ivory matte paper background, extremely bold hand-cut-paper shapes, rich indigo and forest green, ochre and warm brown, chunky charcoal contours, subtle gouache/paper grain. Friendly theatrical childhood imagination, artisanal origami-world feel, NOT realistic photography or generic highway signage. Very simple large silhouettes, picture occupies most of each face and reads from far across a plaza. On EACH picture paint one very broad vivid red diagonal brush slash from lower left to upper right to mean forbidden; leave enough of the motif recognizable. Do not enclose the slash in a circle or a traffic-sign border. Absolutely NO TEXT, letters, numbers, captions, labels, logos or watermarks anywhere. Do not add decorative scenery or small details. LEFT face, forbidden HAPPINESS AND JOY combined: one giant expressive laughing child's face with clear huge smile and two raised hands in a joyous gesture. RIGHT face, forbidden TEDDY BEARS: one oversized cuddly warm ochre teddy bear sitting, broad round head, round ears, simple paws and large stitched belly patch. Both actions crossed by the same red paint slash. Very bold, emotionally legible, minimal shapes.",
@@ -13,6 +13,12 @@
       "face": "P04B",
       "promptFile": "prompt-color-PA03.json",
       "image": "pareja-04-color-PA03.png"
+    },
+    {
+      "revision": "PA04",
+      "face": "P04B",
+      "promptFile": "prompt-color-PA04.json",
+      "image": "pareja-04-color-PA04.png"
     }
   ]
 }

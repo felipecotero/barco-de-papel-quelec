@@ -1,0 +1,702 @@
+{
+  "pass": true,
+  "revision": "PA04",
+  "date": "2026-10-25",
+  "initial": {
+    "revision": "PA04",
+    "count": 4,
+    "themes": [
+      "Soñar",
+      "Usar la imaginación",
+      "Felicidad y gestos de alegría",
+      "Ositos de peluche",
+      "Comer helado",
+      "Jugar",
+      "Perder el tiempo",
+      "Usar lápices de colores"
+    ],
+    "distinctThemes": 8,
+    "paths": [
+      "assets/pareja-01.png",
+      "assets/pareja-02.png",
+      "assets/pareja-03.png",
+      "assets/pareja-04.png",
+      "assets/pareja-04-color-PA04.png"
+    ],
+    "faceP04B": {
+      "id": "B",
+      "code": "P04B",
+      "title": "Usar lápices de colores",
+      "theme": "Usar lápices de colores",
+      "pages": [
+        4
+      ],
+      "sourcePages": [
+        4
+      ],
+      "image": "assets/pareja-04-color-PA04.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        742,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+      "sourceImageSha256": "f35e6bbb8801a12d487b5775ad741027fba6bfadb00ea1ed9e0a1d81f8f6ba6c",
+      "strikeColor": "black",
+      "strikeDirection": "top-left-to-bottom-right",
+      "strikeWidthFactor": 2
+    },
+    "faceP04A": {
+      "id": "A",
+      "code": "P04A",
+      "title": "Perder el tiempo",
+      "theme": "Perder el tiempo",
+      "pages": [
+        5
+      ],
+      "sourcePages": [
+        5
+      ],
+      "image": "assets/pareja-04.png",
+      "imageSizePx": [
+        1448,
+        1086
+      ],
+      "cropPx": [
+        20,
+        26,
+        688,
+        1032
+      ],
+      "cropOrigin": "top-left",
+      "noText": true,
+      "note": "El reloj de arena y el niño sin prisa son la traducción gráfica aprobada del tema.",
+      "sourceImageSha256": "50849fc5c0c5e9cb82f2f110629f395828c6adce45af4a729c524f0fd7dfcad8"
+    }
+  },
+  "maps": [
+    {
+      "id": "A",
+      "path": "assets/pareja-04.png",
+      "src": "http://127.0.0.1:8765/pancartas/assets/pareja-04.png",
+      "imageSize": [
+        1448,
+        1086
+      ],
+      "rotationY": 0,
+      "offset": [
+        0.013812154696132596,
+        0.025782688766114226
+      ],
+      "repeat": [
+        0.47513812154696133,
+        0.9502762430939227
+      ],
+      "crop": [
+        20,
+        26,
+        688,
+        1032
+      ]
+    },
+    {
+      "id": "B",
+      "path": "assets/pareja-04-color-PA04.png",
+      "src": "http://127.0.0.1:8765/pancartas/assets/pareja-04-color-PA04.png",
+      "imageSize": [
+        1448,
+        1086
+      ],
+      "rotationY": 3.141592653589793,
+      "offset": [
+        0.5124309392265194,
+        0.025782688766114226
+      ],
+      "repeat": [
+        0.47513812154696133,
+        0.9502762430939227
+      ],
+      "crop": [
+        742,
+        26,
+        688,
+        1032
+      ]
+    }
+  ],
+  "catalog": [
+    {
+      "image": "url(\"assets/pareja-04.png\")",
+      "size": "210.465% 105.233%",
+      "position": "2.63158% 48.1481%"
+    },
+    {
+      "image": "url(\"assets/pareja-04-color-PA04.png\")",
+      "size": "210.465% 105.233%",
+      "position": "97.6316% 48.1481%"
+    }
+  ],
+  "flip": true,
+  "exports": {
+    "glb": {
+      "filename": "Quelec-Pancarta-PA04-GLB-m.glb",
+      "size": [
+        0.4000000059604645,
+        2.049999988079071,
+        0.04200000000000002
+      ],
+      "meshes": 72,
+      "textures": 3
+    },
+    "obj": {
+      "filename": "Quelec-Pancarta-PA04-OBJ-m.zip",
+      "size": [
+        0.4000000059604645,
+        2.049999988079071,
+        0.04200000000000002
+      ],
+      "meshes": 72,
+      "textures": 3
+    }
+  },
+  "glbArt": [
+    {
+      "face": "A",
+      "name": "P04_P04_ArteA_0",
+      "transform": {
+        "offset": [
+          0.013812154696132596,
+          0.025782688766114226
+        ],
+        "scale": [
+          0.47513812154696133,
+          0.9502762430939227
+        ]
+      },
+      "imageFile": "glb-image-A.png"
+    },
+    {
+      "face": "B",
+      "name": "P04_P04_ArteB_0",
+      "transform": {
+        "offset": [
+          0.5124309392265194,
+          0.025782688766114226
+        ],
+        "scale": [
+          0.47513812154696133,
+          0.9502762430939227
+        ]
+      },
+      "imageFile": "glb-image-B.png"
+    }
+  ],
+  "objArt": [
+    {
+      "face": "A",
+      "name": "P04_P04_ArteA_0",
+      "min": [
+        0.0138122,
+        0.0257827
+      ],
+      "max": [
+        0.4889503,
+        0.9760589
+      ],
+      "imageFile": "textura-2.png"
+    },
+    {
+      "face": "B",
+      "name": "P04_P04_ArteB_0",
+      "min": [
+        0.5124309,
+        0.0257827
+      ],
+      "max": [
+        0.9875691,
+        0.9760589
+      ],
+      "imageFile": "textura-3.png"
+    }
+  ],
+  "glbValidation": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 67,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/0/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/1/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/3/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/4/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/5/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/6/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/7/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/8/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/9/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/10/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/11/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/12/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/13/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/14/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/15/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/16/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/21/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/22/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/23/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/24/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/25/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/26/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/27/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/28/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/29/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/30/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/31/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/32/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/33/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/34/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/35/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/36/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/37/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/38/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/39/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/40/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/41/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/42/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/43/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/44/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/45/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/46/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/47/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/48/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/49/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/50/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/51/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/52/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/53/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/54/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/55/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/56/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/57/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/58/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/59/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/60/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/61/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/62/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/63/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/64/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/65/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/66/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/67/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/68/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/meshes/69/primitives/0/attributes/TEXCOORD_0"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 1448x1086.",
+        "severity": 2,
+        "pointer": "/images/1"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 1448x1086.",
+        "severity": 2,
+        "pointer": "/images/2"
+      }
+    ],
+    "truncated": false
+  },
+  "offline": {
+    "state": {
+      "mode": "single",
+      "selected": 3,
+      "faceIndex": 1,
+      "stage": 4,
+      "explode": 0,
+      "colors": false,
+      "labels": false,
+      "playing": false
+    },
+    "title": "Usar lápices de colores",
+    "images": 5,
+    "httpRequests": []
+  },
+  "errors": [],
+  "visualInspectionPending": false,
+  "visualInspection": {
+    "pass": true,
+    "files": [
+      "P04B-lapices-ampliada.png",
+      "catalogo-P04.png",
+      "offline-P04B.png"
+    ],
+    "findings": "P04B is crossed by one broad black descending brushstroke from upper left to lower right; the four colored pencils and trails remain recognizable; no letters or blue gutter are visible. Catalog and offline use this same new face. P04A retains the original hourglass."
+  },
+  "strikeCheck": {
+    "metadata": {
+      "color": "black",
+      "direction": "top-left-to-bottom-right",
+      "widthFactor": 2
+    },
+    "measuredWidth": {
+      "method": "Lectura de píxeles de la mancha oscura; ancho robusto entre percentiles 2 y 98 en franja central",
+      "originalBlackWidthPx": 69.29180443574376,
+      "doubleBlackWidthPx": 135.81744208052436,
+      "ratio": 1.9600794522023408,
+      "note": "Medida aproximada por textura de pincel; inspección visual requerida para confirmar el carácter de doble ancho."
+    },
+    "independentPixelDirection": {
+      "method": "PCA of dark pixels in central 70% of P04B",
+      "slopeYDownOverX": 1.371012709924826,
+      "topLeftToBottomRight": true
+    },
+    "visualDoubleWidthConfirmed": true
+  },
+  "exportPixelComparison": [
+    {
+      "face": "A",
+      "source": "assets/pareja-04.png",
+      "objPixelsMatch": true,
+      "glbFlippedPixelsMatch": true
+    },
+    {
+      "face": "B",
+      "source": "assets/pareja-04-color-PA04.png",
+      "objPixelsMatch": true,
+      "glbFlippedPixelsMatch": true
+    }
+  ],
+  "previousSevenFacesUnchanged": true,
+  "physicalGeometryAndInventoryUnchanged": true
+}

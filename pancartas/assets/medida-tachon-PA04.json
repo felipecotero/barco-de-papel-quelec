@@ -1,0 +1,7 @@
+{
+  "method": "Lectura de píxeles de la mancha oscura; ancho robusto entre percentiles 2 y 98 en franja central",
+  "originalBlackWidthPx": 69.29180443574376,
+  "doubleBlackWidthPx": 135.81744208052436,
+  "ratio": 1.9600794522023408,
+  "note": "Medida aproximada por textura de pincel; inspección visual requerida para confirmar el carácter de doble ancho."
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Usar lápices de colores",
+  "theme": "Usar lápices de colores",
+  "pages": [
+    4
+  ],
+  "sourcePages": [
+    4
+  ],
+  "image": "assets/pareja-04-color-PA04.png",
+  "imageSizePx": [
+    1448,
+    1086
+  ],
+  "cropPx": [
+    742,
+    26,
+    688,
+    1032
+  ],
+  "cropOrigin": "top-left",
+  "noText": true,
+  "note": "Dar color al mundo: lápices tachados con una línea negra descendente, de doble ancho. Adaptación solicitada de la orden del libreto sobre hacer tareas con lápices de colores.",
+  "sourceImageSha256": "f35e6bbb8801a12d487b5775ad741027fba6bfadb00ea1ed9e0a1d81f8f6ba6c",
+  "strikeColor": "black",
+  "strikeDirection": "top-left-to-bottom-right",
+  "strikeWidthFactor": 2
+}
