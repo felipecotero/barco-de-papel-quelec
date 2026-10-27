@@ -1,0 +1,236 @@
+{
+  "revision": "CP03",
+  "date": "2026-10-27",
+  "title": "Base documental del estudio de viento y materiales",
+  "scope": "Referencias técnicas verificadas y supuestos separados. No constituye aprobación de materiales, cálculo estructural ni condición de uso de la pieza.",
+  "entries": [
+    {
+      "id": "nasa-drag",
+      "title": "NASA Glenn · Drag Equation",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-equation/",
+      "kind": "primary-technical",
+      "verified": "2026-10-27",
+      "facts": [
+        "La fuerza de arrastre se expresa D=Cd·0,5·rho·V²·Aref.",
+        "El área de referencia y el coeficiente deben corresponder entre sí; el Cd se determina habitualmente mediante ensayos."
+      ],
+      "application": "Ecuación de comparación; el área de envolvente frontal se declara en el visor. La cola flexible no tiene Cd medido."
+    },
+    {
+      "id": "nasa-flat-plate",
+      "title": "NASA Glenn · Shape Effects on Drag",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/shape-effects-on-drag/",
+      "kind": "primary-technical",
+      "verified": "2026-10-27",
+      "facts": [
+        "Presenta Cd=1,28 como valor típico de una placa plana ensayada con el área frontal proyectada."
+      ],
+      "application": "Referencia del escenario inicial; no prueba que la cola, el arnés o la tela tengan ese coeficiente."
+    },
+    {
+      "id": "aps-porous-flexible",
+      "title": "Deformation of porous flexible strip in low and moderate Reynolds number flows",
+      "url": "https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.5.084103",
+      "doi": "10.1103/PhysRevFluids.5.084103",
+      "kind": "primary-research",
+      "verified": "2026-10-27",
+      "facts": [
+        "El estudio varía permeabilidad manteniendo porosidad; encuentra respuestas de arrastre distintas en el régimen estudiado."
+      ],
+      "application": "Motiva no convertir porcentaje visual de huecos en una reducción universal de fuerza. Sus coeficientes y ensayos no se trasladan a estas colas."
+    },
+    {
+      "id": "rbtr-ns50",
+      "title": "Ripstop by the Roll · 0.5 oz NS50 Noseeum Mesh",
+      "url": "https://ripstopbytheroll.com/products/0-5-oz-ns50-noseeum-mesh",
+      "kind": "primary-product",
+      "verified": "2026-10-27",
+      "facts": [
+        "El proveedor identifica malla de nylon 10D sin recubrimiento y peso de 0,5 oz/yd².",
+        "Su tabla también muestra «14 grams», sin que sea equivalente a 0,5 oz/yd² expresado en g/m²."
+      ],
+      "calculation": {
+        "input": 0.5,
+        "inputUnit": "oz/yd²",
+        "factorGm2PerOzYd2": 33.9057474748823,
+        "resultGm2": 16.95287373744115
+      },
+      "application": "Se usa la unidad areal explícita y su conversión (~16,95 g/m²), no se afirma sublimación compatible ni Cd conocido."
+    },
+    {
+      "id": "rbtr-membrane10",
+      "title": "Ripstop by the Roll · 0.66 oz MEMBRANE 10 Taffeta Nylon",
+      "url": "https://ripstopbytheroll.com/products/0-66-oz-membrane-10-taffeta-nylon-1",
+      "kind": "primary-product",
+      "verified": "2026-10-27",
+      "facts": [
+        "La ficha publica 22,4 g/m², nylon 10D, acabado calandrado con DWR.",
+        "El fabricante lo describe como respirable y resistente al viento."
+      ],
+      "application": "Referencia de tacto/masa ligera. Respirabilidad no da un factor numérico de descarga; la impresión debe ensayarse."
+    },
+    {
+      "id": "mylar-a12",
+      "title": "Mylar Specialty Films · Mylar A 12–75 micron, Made in USA",
+      "url": "https://mylar.com/wp-content/uploads/2025/08/mylar_a_12-75_micron_made_in_usa-1.pdf",
+      "kind": "primary-product-datasheet",
+      "verified": "2026-10-27",
+      "facts": [
+        "La ficha describe película transparente en 12 y 23 µm.",
+        "Para 12 µm da rendimiento típico 58,779 m²/kg, tabla de la segunda página."
+      ],
+      "calculation": {
+        "input": 58.779,
+        "inputUnit": "m²/kg",
+        "formula": "g/m²=1000/(m²/kg)",
+        "resultGm2": 17.012878749213154
+      },
+      "application": "17,01 g/m² es un valor derivado, antes de impresión/refuerzos. No se confirma aquí sublimación, cosido, ruido ni aptitud como objeto escénico."
+    },
+    {
+      "id": "showtex-voile",
+      "title": "ShowTex · Voile CS Print",
+      "url": "https://www.showtex.com/en/products/soft-goods/backdrops-ceilings/printables-lasercut/voile-cs-print",
+      "kind": "primary-product",
+      "verified": "2026-10-27",
+      "facts": [
+        "Tejido translúcido de 50 g/m², 100 % TCS, plegable.",
+        "Variante de 310 cm de ancho / 300 cm imprimibles: transferencia por sublimación o UV.",
+        "Variante de 505 cm de ancho / 500 cm imprimibles: impresión UV."
+      ],
+      "application": "Referencia con impresión confirmada. No se generaliza sublimación a un paño de 5 m; disponibilidad local y muestra final deben comprobarse."
+    },
+    {
+      "id": "mit-uniform-cantilever",
+      "title": "MIT OpenCourseWare · 1.050 Solid Mechanics, Fall 2004 · Problem Set 11, tabla de desplazamientos",
+      "url": "https://ocw.mit.edu/courses/1-050-solid-mechanics-fall-2004/fd4eff39aec922b8c07660006f40686e_pset04_11.pdf",
+      "kind": "primary-university-teaching",
+      "verified": "2026-10-27",
+      "location": "Página 2, Uniformly Loaded Cantilever",
+      "facts": [
+        "Tabla de voladizo bajo carga uniforme: δtip=wL⁴/(8EI).",
+        "La forma tabulada es v(x)=wL⁴/(24EI)·s²(s²−4s+6), con s=x/L."
+      ],
+      "application": "Con Fi=wL se deriva δtip=FiL³/(8EI) y forma normalizada g(s)=s²(6−4s+s²)/3. La fórmula supone un voladizo recto lineal; se utiliza como referencia visual equivalente, no como solución de una vena inicialmente curva."
+    }
+  ],
+  "equations": {
+    "dynamicPressurePa": "q=0.5*rho*(V*gustFactor)^2",
+    "projectedAreaM2": "Aproj=Aref*abs(dot(normal,windDirection))",
+    "forceN": "F=q*Cd*Aproj",
+    "groundMomentNm": "Msuelo=F*hCP",
+    "pivotMomentNm": "Mpivote=F*abs(hCP-hpivote)",
+    "skinMassKg": "m=skinAreaM2*(gramajeBase+gramajeAñadido)/1000",
+    "kgfEquivalent": "F/9.80665: equivalencia de fuerza, no masa ni carga admisible",
+    "ribTipDeflectionM": "δi=(Fnormal/n)*Li³/(8EI), equivalente a wiLi⁴/(8EI)",
+    "ribDeflectionShape": "g(s)=s²(6−4s+s²)/3; 0≤s≤1"
+  },
+  "assumptions": [
+    {
+      "parameter": "airDensity",
+      "default": 0.9,
+      "unit": "kg/m³",
+      "status": "Hipótesis ajustable; no lectura meteorológica ni valor medido en la plaza."
+    },
+    {
+      "parameter": "cd",
+      "default": 1.28,
+      "unit": "1",
+      "status": "Valor de placa rígida usado como referencia comparativa. Cd de cola real desconocido."
+    },
+    {
+      "parameter": "cdRange",
+      "default": [
+        0.8,
+        1.8
+      ],
+      "unit": "1",
+      "status": "Barrido de sensibilidad elegido para comparar. No es rango experimental, intervalo de confianza ni cota superior."
+    },
+    {
+      "parameter": "pressureHeightM",
+      "status": "Centro de resultante supuesto a partir de la geometría, sin medición de presión."
+    },
+    {
+      "parameter": "ventilationPct",
+      "status": "No modifica Cd ni F automáticamente. skinAreaM2 debe ser el material neto real para que su masa descuente recortes sin doble cuenta."
+    }
+  ],
+  "referenceAudit": {
+    "localReference": "output/COLAS DE PAVO/orquideas-3d.html",
+    "sha256": "808fcf38a4abbb4d0858fbe4fa2020000c9faf5cad8e0d7382a49cab7c86a138",
+    "finding": "Modelo de órganos vegetales en centímetros con tres modos, frecuencias y rigidez supuestas. No encontré enlaces bibliográficos en el script de aplicación revisado.",
+    "retained": "Inspiración visual de movimiento independiente de pétalos y lectura de nervaduras.",
+    "notTransferred": [
+      "E, densidad y diámetros de tallos biológicos",
+      "Frecuencias, amortiguamientos y gramajes de tejido vegetal",
+      "Malla de plantas en centímetros y masa natural",
+      "Resultados numéricos de una planta como si representaran una cola de seis metros"
+    ]
+  },
+  "notModelled": [
+    "Arrastre de varillas, herrajes, arnés y persona",
+    "Interacción entre cinco colas y estela",
+    "Picos de flameo, sustentación y succión",
+    "Rigidez real, resistencia y fatiga del mecanismo",
+    "Equilibrio, apoyos y estabilidad del intérprete",
+    "Presión local y efecto direccional de la envolvente curva"
+  ],
+  "visualAnimation": "CP03 representa seis venas curvas firmes, con una parábola de reposo hacia atrás en la parte alta y una pequeña flexión cuasiestática aproximada bajo la componente normal de fuerza. Sus centros van de −37,5° a +37,5° cada 15°. La membrana abarca 90° y conserva 7,5° libres a cada lado. La tela permanece anclada a las venas y presenta ondas entre ellas y en la punta libre; no se aplica ondulación acuosa a las venas. La curvatura posterior de 0,35 m y el sobrante de 0,25 m son propuestas de revisión incluidas en la altura total elegida. El suavizado temporal de 0,45 s es solo visual, sin frecuencia o amortiguamiento medidos.",
+  "nextEvidenceNeeded": [
+    "Muestras con impresión y uniones definitivas para pesar área conocida",
+    "Ensayo de arrastre de conjunto completo y distintas orientaciones",
+    "Medición de respuesta y carga sobre el soporte en la cola de prueba",
+    "Revisión técnica de varas, retén, arnés y control de apertura antes de uso con intérprete"
+  ],
+  "visualModel": {
+    "ribCount": 6,
+    "ribCenterAnglesDeg": [
+      -37.5,
+      -22.5,
+      -7.5,
+      7.5,
+      22.5,
+      37.5
+    ],
+    "ribSpacingDeg": 15,
+    "membraneSpanDeg": 90,
+    "freeEdgeEachSideDeg": 7.5,
+    "ribAnimation": "curvas firmes con pequeña flexión cuasiestática de referencia",
+    "clothAnimation": "ondas de tela anclada a las venas y en punta libre",
+    "status": "Ajuste del usuario: venas firmes ligeramente flexibles; arrastre estático y materiales sin cambios.",
+    "ribShape": "parábola fija hacia atrás en la parte alta",
+    "proposedBackCurveM": 0.35,
+    "proposedFreeTipM": 0.25,
+    "freeTipIncludedInTotalHeight": true,
+    "dimensionStatus": "0,35 m y 0,25 m son valores propuestos de estudio, no dimensiones de fabricación aprobadas."
+  },
+  "referenceAreaDefinition": {
+    "forceAreaM2": "Proyección XY de la envolvente curvada antes de corregir la dirección con una normal única de referencia. No se descuentan huecos automáticamente.",
+    "skinAreaM2": "Área neta real 3D de la membrana curvada para calcular masa.",
+    "pressureCenter": "Centro de la proyección geométrica usado como hipótesis de la resultante, sin medición de presiones.",
+    "limitation": "La referencia de placa plana y normal única no resuelve los ángulos locales ni la carga de las caras curvas a otras direcciones de viento. No es CFD."
+  },
+  "bendingModel": {
+    "model": "Voladizo recto lineal equivalente con carga transversal uniforme",
+    "forceComponent": "Componente normal firmada de la fuerza de superficie; reparto igual entre seis venas supuesto.",
+    "ribForceFormula": "Fi=Fnormal/6",
+    "lengthChoice": "Longitud de arco de cada vena usada como longitud de un voladizo recto equivalente.",
+    "flexuralRigidityNm2": 1000,
+    "rigidityStatus": "Hipótesis exploratoria ajustable. No procede de un material, sección ni ensayo seleccionado.",
+    "initialCurvature": "Se superpone una pequeña flexión de referencia a la curva de reposo; no se resuelve la elasticidad de una viga curva.",
+    "visualTipLimitRatio": 0.08,
+    "visualTipLimitStatus": "Solo recorte gráfico; no limita la carga física. La flecha calculada sin recorte se informa aparte.",
+    "linearRangeFlagRatio": 0.1,
+    "linearRangeFlagStatus": "Indicador elegido para señalar que la hipótesis de pequeñas deformaciones puede quedar fuera de alcance; no es límite admisible de material o persona.",
+    "relaxationTimeS": 0.45,
+    "dynamicsStatus": "Filtro temporal visual; no derivado de masa modal, frecuencia, amortiguamiento ni ensayo.",
+    "notSolved": [
+      "Rigidez real y material/sección de las venas",
+      "Empotramiento y reparto real de carga",
+      "Grandes deformaciones, curvatura inicial y acoplamiento con la membrana",
+      "Fatiga, pandeo, resistencia y capacidad de las uniones",
+      "Modos, resonancia, vibración o amortiguamiento reales"
+    ]
+  }
+}

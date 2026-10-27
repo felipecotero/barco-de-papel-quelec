@@ -1,0 +1,1030 @@
+{
+  "revision": "CP03",
+  "date": "2026-10-27",
+  "title": "Colas de pavo de Quelec",
+  "count": 5,
+  "status": "Estudio con seis venas curvas con rigidez y flexión suave acotada, y puntas textiles libres. Geometría de reposo, apertura y viento para prototipo; no libera fabricación de la serie.",
+  "defaults": {
+    "riseM": 5,
+    "widthM": 4.8,
+    "pivotHeightM": 1.05,
+    "personHeightM": 1.7,
+    "spreadDeg": 90,
+    "rodCount": 6,
+    "airDensity": 0.9,
+    "cd": 1.28,
+    "windSpeedMps": 3,
+    "gustFactor": 1.4,
+    "ventilationPct": 0,
+    "backCurveM": 0.35,
+    "tipOverhangM": 0.25,
+    "EI": 1000
+  },
+  "userConfirmed": {
+    "date": "2026-10-27",
+    "count": 5,
+    "pivotLandmark": "L1, primera vértebra lumbar",
+    "riseM": 5,
+    "riseReference": "Los 5 m desde L1 alcanzan la punta final de tela e incluyen el sobrante textil; no se añaden 25 cm por encima de esos 5 m.",
+    "spreadDeg": 90,
+    "spreadReference": "La envolvente de tela ocupa 90 grados totales. Las seis venas están separadas 15 grados entre centros, ocupando 75 grados entre las dos extremas; quedan 7,5 grados de borde libre a cada lado.",
+    "operation": "Se presenta cerrada; se libera un gancho y se abre. Permanece abierta el resto de su aparición.",
+    "movement": "Superficie extremadamente ligera, móvil, capaz de hincharse y deshincharse; estudiar gasa ligera o película plástica delgada resistente.",
+    "windRequirement": "Estudiar el aire y las ráfagas, la carga transmitida al intérprete y la ventilación de la superficie.",
+    "visualization": "Una cola, las cinco y detalles del mecanismo, sujeción, varillas y material; controles de viento.",
+    "veinAnglesDeg": [
+      -37.5,
+      -22.5,
+      -7.5,
+      7.5,
+      22.5,
+      37.5
+    ],
+    "veinBehavior": "Seis venas firmes y curvas hacia atrás. La forma de reposo tiene curvatura superior ligeramente parabólica; bajo viento pueden ceder un poco, sobre todo las más largas y en sus puntas, y recuperar de forma amortiguada. No deben moverse como agua.",
+    "membraneBehavior": "La membrana entre venas y sus bordes libres tienen más libertad de ondulación. La tela sobresale de las venas como punta de una pluma.",
+    "correction": "CP03: curva de reposo hacia atrás y sobrante de tela; la última aclaración admite pequeña flexión de las venas con rigidez, además del movimiento más libre de la membrana.",
+    "veinCount": 6
+  },
+  "proposed": {
+    "widthM": 4.8,
+    "pivotHeightM": 1.05,
+    "personHeightM": 1.7,
+    "overallHeightM": 6.05,
+    "heightNote": "6,05 m es una altura derivada al situar L1 a 1,05 m en una figura de 1,70 m. Medir sobre cada intérprete.",
+    "paletteAssignment": "Tres lilas y dos cálidas únicamente para la comparación del visor; el reparto de colores no está aprobado.",
+    "ventilationPct": 0,
+    "ventilationNote": "Piel continua como opción inicial. Las aberturas son una comparación opcional del visor; no se acredita reducción proporcional de fuerza por el porcentaje.",
+    "openingAssistance": "Asistencia elástica y amortiguamiento por dimensionar; velocidad de apertura visual, no ensayo del mecanismo.",
+    "closedLatch": "GAN: gancho cautivo de retención en cerrado con tirador accesible. Se libera una vez al entrar el efecto.",
+    "openLatch": "RET: retén positivo independiente y topes de apertura. Su detalle, capacidad y accionamiento se resolverán en la cola de prueba.",
+    "rodSections": "Sección, material final de cada vara, uniones y capacidad pendientes de dimensionamiento y prueba.",
+    "mass": "Sin peso total aprobado. La masa de la piel se calcula a partir del área y el gramaje; arnés, varas y herrajes requieren pesaje.",
+    "backCurveM": 0.35,
+    "tipOverhangM": 0.25,
+    "curveStatus": "Curva de reposo geométrica de 35 cm hacia atrás en la parte alta. Sobre ella se superpone una cesión elástica de estudio, sin sección ni material de vena aprobados.",
+    "tipOverhangStatus": "Sobrante de 25 cm en el perfil de patrón dentro de los 5 m finales sobre L1. No hay vena central: la diferencia vertical entre la vena más alta y la punta final de tela es mayor que esos 25 cm."
+  },
+  "parts": [
+    {
+      "id": "BAS",
+      "name": "Base dorsal acolchada",
+      "description": "Interfaz de la estructura con el arnés; el pivote geométrico se refiere a L1. Dimensiones y reparto de contacto pendientes de ajuste."
+    },
+    {
+      "id": "ARN",
+      "name": "Arnés y cinturón",
+      "description": "Soporte lumbar, cintas de cintura y pecho y tirantes. El contacto se ajusta a cada intérprete; no se asigna una capacidad por la animación."
+    },
+    {
+      "id": "EJE",
+      "name": "Casete del abanico",
+      "description": "Apoyos, eje y separadores de seis venas curvas. Sus raíces permanecen sujetas mientras abren y mientras ceden suavemente por el viento. Casete, secciones y fijaciones sin dimensionamiento final."
+    },
+    {
+      "id": "GAN",
+      "name": "Gancho de cerrado",
+      "description": "Mantiene el abanico recogido. Tirador accesible y elemento cautivo; liberarlo inicia la apertura controlada."
+    },
+    {
+      "id": "RET",
+      "name": "Retén de abierto y topes",
+      "description": "Mantiene la posición abierta sin que el intérprete sostenga una palanca. Es un sistema distinto del gancho de cerrado."
+    },
+    {
+      "id": "VAR",
+      "name": "Seis venas curvas con rigidez",
+      "description": "Seis venas en -37,5°, -22,5°, -7,5°, +7,5°, +22,5° y +37,5°, con curva de reposo hacia atrás. Bajo viento se añade una flexión suave de estudio, mayor en las largas y en las puntas, con recuperación amortiguada. Largos de arco distintos de su proyección frontal."
+    },
+    {
+      "id": "MEM",
+      "name": "Membrana y puntas libres",
+      "description": "Siete paños, dos bordes laterales libres y sobrante superior de patrón propuesto de 25 cm dentro de los 5 m sobre L1. La tela tiene movimiento más libre; las uniones siguen la posición de las venas sin desprenderse."
+    }
+  ],
+  "studyGeometry": {
+    "plane": "X ancho; Y altura; +Z hacia atrás. Curva de reposo fija en +Z y cesión elástica suave bajo viento.",
+    "thetaRangeDeg": [
+      -45,
+      45
+    ],
+    "spacingDeg": 15,
+    "contour": "Contorno elíptico radial truncado; el semieje horizontal de la elipse se ajusta para que la anchura real a 45 grados sea 4,8 m.",
+    "edgeRelativeToPivotM": [
+      2.4,
+      2.4
+    ],
+    "centerTipRelativeToPivotM": [
+      0,
+      5
+    ],
+    "areaSource": "Fuerza: área de envolvente proyectada en XY. Masa: área real 3D de la piel curva. No usar el área 3D en lugar de la proyección para la estimación frontal.",
+    "veinAnglesDeg": [
+      -37.5,
+      -22.5,
+      -7.5,
+      7.5,
+      22.5,
+      37.5
+    ],
+    "veinSpanDeg": 75,
+    "freeEdgeMarginDeg": 7.5,
+    "membraneSpanDeg": 90,
+    "membranePanelCount": 7,
+    "supportRiseM": 4.75,
+    "tipOverhangM": 0.25,
+    "backCurveM": 0.35,
+    "heightIncludesOverhang": true,
+    "rodLengthSource": "Longitudes siguiendo el arco de cada vena en reposo. No equivalen a su proyección frontal ni son largos finales de corte. El modelo de flexión usa esos arcos como vigas rectas equivalentes de estudio.",
+    "restContourRelativeM": [
+      [
+        -2.4,
+        2.4,
+        0.35
+      ],
+      [
+        -2.3795396,
+        2.4587124,
+        0.35
+      ],
+      [
+        -2.3582392,
+        2.5178664,
+        0.35
+      ],
+      [
+        -2.3360675,
+        2.5774533,
+        0.35
+      ],
+      [
+        -2.3129922,
+        2.6374622,
+        0.35
+      ],
+      [
+        -2.2889802,
+        2.6978794,
+        0.35
+      ],
+      [
+        -2.2639974,
+        2.7586888,
+        0.35
+      ],
+      [
+        -2.2380085,
+        2.8198706,
+        0.35
+      ],
+      [
+        -2.2109777,
+        2.8814023,
+        0.35
+      ],
+      [
+        -2.1828685,
+        2.9432574,
+        0.35
+      ],
+      [
+        -2.1536433,
+        3.0054057,
+        0.35
+      ],
+      [
+        -2.1232644,
+        3.067813,
+        0.35
+      ],
+      [
+        -2.0916933,
+        3.1304403,
+        0.35
+      ],
+      [
+        -2.0588916,
+        3.1932443,
+        0.35
+      ],
+      [
+        -2.0248205,
+        3.2561763,
+        0.35
+      ],
+      [
+        -1.9894415,
+        3.3191826,
+        0.35
+      ],
+      [
+        -1.9527162,
+        3.3822037,
+        0.35
+      ],
+      [
+        -1.914607,
+        3.4451742,
+        0.35
+      ],
+      [
+        -1.8750772,
+        3.5080227,
+        0.35
+      ],
+      [
+        -1.8340911,
+        3.5706713,
+        0.35
+      ],
+      [
+        -1.7916148,
+        3.6330354,
+        0.35
+      ],
+      [
+        -1.7476161,
+        3.6950239,
+        0.35
+      ],
+      [
+        -1.7020654,
+        3.7565385,
+        0.35
+      ],
+      [
+        -1.6549358,
+        3.8174741,
+        0.35
+      ],
+      [
+        -1.6062036,
+        3.8777185,
+        0.35
+      ],
+      [
+        -1.5558491,
+        3.9371529,
+        0.35
+      ],
+      [
+        -1.5038567,
+        3.9956513,
+        0.35
+      ],
+      [
+        -1.4502158,
+        4.0530816,
+        0.35
+      ],
+      [
+        -1.3949212,
+        4.1093053,
+        0.35
+      ],
+      [
+        -1.3379737,
+        4.1641786,
+        0.35
+      ],
+      [
+        -1.2793805,
+        4.2175523,
+        0.35
+      ],
+      [
+        -1.219156,
+        4.2692731,
+        0.35
+      ],
+      [
+        -1.1573219,
+        4.3191843,
+        0.35
+      ],
+      [
+        -1.0939083,
+        4.3671266,
+        0.35
+      ],
+      [
+        -1.0289532,
+        4.4129395,
+        0.35
+      ],
+      [
+        -0.9625037,
+        4.4564626,
+        0.35
+      ],
+      [
+        -0.8946157,
+        4.4975366,
+        0.35
+      ],
+      [
+        -0.8253542,
+        4.5360052,
+        0.35
+      ],
+      [
+        -0.7547934,
+        4.5717163,
+        0.35
+      ],
+      [
+        -0.6830166,
+        4.6045237,
+        0.35
+      ],
+      [
+        -0.6101157,
+        4.634289,
+        0.35
+      ],
+      [
+        -0.5361914,
+        4.6776294,
+        0.35
+      ],
+      [
+        -0.4613521,
+        4.7254216,
+        0.35
+      ],
+      [
+        -0.3857138,
+        4.7739471,
+        0.35
+      ],
+      [
+        -0.3093988,
+        4.8220456,
+        0.35
+      ],
+      [
+        -0.2325354,
+        4.8690684,
+        0.35
+      ],
+      [
+        -0.1552564,
+        4.9145891,
+        0.35
+      ],
+      [
+        -0.0776983,
+        4.9583061,
+        0.35
+      ],
+      [
+        0,
+        5,
+        0.35
+      ],
+      [
+        0.0776983,
+        4.9583061,
+        0.35
+      ],
+      [
+        0.1552564,
+        4.9145891,
+        0.35
+      ],
+      [
+        0.2325354,
+        4.8690684,
+        0.35
+      ],
+      [
+        0.3093988,
+        4.8220456,
+        0.35
+      ],
+      [
+        0.3857138,
+        4.7739471,
+        0.35
+      ],
+      [
+        0.4613521,
+        4.7254216,
+        0.35
+      ],
+      [
+        0.5361914,
+        4.6776294,
+        0.35
+      ],
+      [
+        0.6101157,
+        4.634289,
+        0.35
+      ],
+      [
+        0.6830166,
+        4.6045237,
+        0.35
+      ],
+      [
+        0.7547934,
+        4.5717163,
+        0.35
+      ],
+      [
+        0.8253542,
+        4.5360052,
+        0.35
+      ],
+      [
+        0.8946157,
+        4.4975366,
+        0.35
+      ],
+      [
+        0.9625037,
+        4.4564626,
+        0.35
+      ],
+      [
+        1.0289532,
+        4.4129395,
+        0.35
+      ],
+      [
+        1.0939083,
+        4.3671266,
+        0.35
+      ],
+      [
+        1.1573219,
+        4.3191843,
+        0.35
+      ],
+      [
+        1.219156,
+        4.2692731,
+        0.35
+      ],
+      [
+        1.2793805,
+        4.2175523,
+        0.35
+      ],
+      [
+        1.3379737,
+        4.1641786,
+        0.35
+      ],
+      [
+        1.3949212,
+        4.1093053,
+        0.35
+      ],
+      [
+        1.4502158,
+        4.0530816,
+        0.35
+      ],
+      [
+        1.5038567,
+        3.9956513,
+        0.35
+      ],
+      [
+        1.5558491,
+        3.9371529,
+        0.35
+      ],
+      [
+        1.6062036,
+        3.8777185,
+        0.35
+      ],
+      [
+        1.6549358,
+        3.8174741,
+        0.35
+      ],
+      [
+        1.7020654,
+        3.7565385,
+        0.35
+      ],
+      [
+        1.7476161,
+        3.6950239,
+        0.35
+      ],
+      [
+        1.7916148,
+        3.6330354,
+        0.35
+      ],
+      [
+        1.8340911,
+        3.5706713,
+        0.35
+      ],
+      [
+        1.8750772,
+        3.5080227,
+        0.35
+      ],
+      [
+        1.914607,
+        3.4451742,
+        0.35
+      ],
+      [
+        1.9527162,
+        3.3822037,
+        0.35
+      ],
+      [
+        1.9894415,
+        3.3191826,
+        0.35
+      ],
+      [
+        2.0248205,
+        3.2561763,
+        0.35
+      ],
+      [
+        2.0588916,
+        3.1932443,
+        0.35
+      ],
+      [
+        2.0916933,
+        3.1304403,
+        0.35
+      ],
+      [
+        2.1232644,
+        3.067813,
+        0.35
+      ],
+      [
+        2.1536433,
+        3.0054057,
+        0.35
+      ],
+      [
+        2.1828685,
+        2.9432574,
+        0.35
+      ],
+      [
+        2.2109777,
+        2.8814023,
+        0.35
+      ],
+      [
+        2.2380085,
+        2.8198706,
+        0.35
+      ],
+      [
+        2.2639974,
+        2.7586888,
+        0.35
+      ],
+      [
+        2.2889802,
+        2.6978794,
+        0.35
+      ],
+      [
+        2.3129922,
+        2.6374622,
+        0.35
+      ],
+      [
+        2.3360675,
+        2.5774533,
+        0.35
+      ],
+      [
+        2.3582392,
+        2.5178664,
+        0.35
+      ],
+      [
+        2.3795396,
+        2.4587124,
+        0.35
+      ],
+      [
+        2.4,
+        2.4,
+        0.35
+      ]
+    ],
+    "representativeVeinPolyline": [
+      [
+        0,
+        1.05,
+        0.33
+      ],
+      [
+        -0.0169477,
+        1.1787303,
+        0.3302701
+      ],
+      [
+        -0.0338953,
+        1.3074605,
+        0.3310802
+      ],
+      [
+        -0.050843,
+        1.4361908,
+        0.3324306
+      ],
+      [
+        -0.0677906,
+        1.564921,
+        0.334321
+      ],
+      [
+        -0.0847383,
+        1.6936513,
+        0.3367515
+      ],
+      [
+        -0.101686,
+        1.8223815,
+        0.3397222
+      ],
+      [
+        -0.1186336,
+        1.9511118,
+        0.343233
+      ],
+      [
+        -0.1355813,
+        2.079842,
+        0.347284
+      ],
+      [
+        -0.1525289,
+        2.2085723,
+        0.351875
+      ],
+      [
+        -0.1694766,
+        2.3373025,
+        0.3570062
+      ],
+      [
+        -0.1864242,
+        2.4660328,
+        0.3626775
+      ],
+      [
+        -0.2033719,
+        2.594763,
+        0.3688889
+      ],
+      [
+        -0.2203196,
+        2.7234933,
+        0.3756404
+      ],
+      [
+        -0.2372672,
+        2.8522235,
+        0.3829321
+      ],
+      [
+        -0.2542149,
+        2.9809538,
+        0.3907639
+      ],
+      [
+        -0.2711625,
+        3.109684,
+        0.3991358
+      ],
+      [
+        -0.2881102,
+        3.2384143,
+        0.4080478
+      ],
+      [
+        -0.3050579,
+        3.3671445,
+        0.4175
+      ],
+      [
+        -0.3220055,
+        3.4958748,
+        0.4274923
+      ],
+      [
+        -0.3389532,
+        3.624605,
+        0.4380247
+      ],
+      [
+        -0.3559008,
+        3.7533353,
+        0.4490972
+      ],
+      [
+        -0.3728485,
+        3.8820655,
+        0.4607099
+      ],
+      [
+        -0.3897962,
+        4.0107958,
+        0.4728627
+      ],
+      [
+        -0.4067438,
+        4.139526,
+        0.4855556
+      ],
+      [
+        -0.4236915,
+        4.2682563,
+        0.4987886
+      ],
+      [
+        -0.4406391,
+        4.3969865,
+        0.5125617
+      ],
+      [
+        -0.4575868,
+        4.5257168,
+        0.526875
+      ],
+      [
+        -0.4745345,
+        4.654447,
+        0.5417284
+      ],
+      [
+        -0.4914821,
+        4.7831773,
+        0.5571219
+      ],
+      [
+        -0.5084298,
+        4.9119075,
+        0.5730556
+      ],
+      [
+        -0.5253774,
+        5.0406378,
+        0.5895293
+      ],
+      [
+        -0.5423251,
+        5.169368,
+        0.6065432
+      ],
+      [
+        -0.5592727,
+        5.2980983,
+        0.6240972
+      ],
+      [
+        -0.5762204,
+        5.4268285,
+        0.6421914
+      ],
+      [
+        -0.5931681,
+        5.5555588,
+        0.6608256
+      ],
+      [
+        -0.6101157,
+        5.684289,
+        0.68
+      ]
+    ],
+    "representativeVeinIndex": 2,
+    "rodTipPositionsM": [
+      {
+        "x": -2.210977739091986,
+        "y": 3.9314022883717596,
+        "z": 0.6699999999999999
+      },
+      {
+        "x": -1.606203606900204,
+        "y": 4.927718531711055,
+        "z": 0.675
+      },
+      {
+        "x": -0.6101157270765207,
+        "y": 5.6842890431797795,
+        "z": 0.6799999999999999
+      },
+      {
+        "x": 0.6101157270765207,
+        "y": 5.6842890431797795,
+        "z": 0.685
+      },
+      {
+        "x": 1.606203606900204,
+        "y": 4.927718531711055,
+        "z": 0.69
+      },
+      {
+        "x": 2.2109777390919856,
+        "y": 3.9314022883717596,
+        "z": 0.6950000000000001
+      }
+    ]
+  },
+  "windStudy": {
+    "equation": "F = 0,5 × rho × V² × Cd × A_proyectada",
+    "nominalCd": 1.28,
+    "cdReference": "Referencia NASA de placa plana; no es un coeficiente medido para esta cola flexible.",
+    "cdSensitivity": [
+      0.8,
+      1.8
+    ],
+    "sensitivityNote": "Barrido de supuestos para comparar escenarios; no constituye un intervalo de confianza ni un rango garantizado.",
+    "airDensityKgM3": 0.9,
+    "densityNote": "Supuesto de estudio editable; no es una lectura meteorológica.",
+    "momentGround": "F × altura del centro de presión sobre el suelo",
+    "momentPivot": "F × distancia vertical entre el centro de presión y el pivote, para fuerza horizontal",
+    "ventilation": "Los huecos modifican geometría y masa de piel. Su efecto aerodinámico no se reduce automáticamente con 1 - porcentaje de huecos.",
+    "visualMotion": "La membrana ondula más libremente. Las venas curvas ceden suavemente con un modelo de viga de estudio y recuperación amortiguada, sin ondas de agua. La raíz queda sujeta. No se calcula equilibrio humano ni capacidad real.",
+    "excluded": [
+      "Respuesta biomecánica del intérprete",
+      "Resistencia y fatiga de varas y herrajes",
+      "Turbulencia real del lugar",
+      "Carga del cuerpo y del arnés",
+      "Umbral seguro de uso"
+    ],
+    "beamFlex": {
+      "EI_Nm2": 1000,
+      "rigidityStatus": "Supuesto editable de exploración; no pertenece a un fabricante, sección o material aprobado.",
+      "loadSplit": "Cada vena recibe F/6 como hipótesis de reparto uniforme de resultante; no es un reparto medido.",
+      "tipFormula": "delta_punta = (F/6) × L³ / (8 × EI)",
+      "shapeFormula": "g(t) = t² × (6 - 4t + t²) / 3",
+      "visualCapRelativeToLength": 0.08,
+      "capNote": "La pantalla limita la representación a 8 % de L. No representa un tope físico ni limita una deformación real.",
+      "linearValidityFlagRelativeToLength": 0.1,
+      "linearFlagNote": "La marca de deformación calculada mayor de 10 % de L señala el uso fuera del supuesto lineal; no es un umbral seguro para una persona.",
+      "sourceUrl": "https://ocw.mit.edu/courses/1-050-solid-mechanics-fall-2004/fd4eff39aec922b8c07660006f40686e_pset04_11.pdf",
+      "sourceNote": "MIT OCW: solución de viga recta en voladizo con carga uniforme. EI, reparto, arco equivalente y límites gráficos son hipótesis del taller."
+    }
+  },
+  "prototypeChecks": [
+    "Medir L1, ajuste del arnés y espacio corporal en los cinco intérpretes.",
+    "Resolver secciones y apoyos de las varas, casete, topes y retén para la carga calculada.",
+    "Probar una muestra estampada de cada superficie: masa real, luz, movilidad, desgarro, uniones y remates.",
+    "Comprobar apertura amortiguada, retención en abierto y recogida por el equipo fuera de escena.",
+    "Medir fuerza de viento y movimiento con la cola de prueba antes de autorizar la serie o fijar condiciones de uso."
+  ],
+  "sourceSummary": [
+    {
+      "title": "Cuaderno de utilería, 26 septiembre 2026",
+      "location": "Página 57",
+      "note": "Referencia visual de abanico dorsal y dos gamas. Su cantidad de seis y altura desde el suelo quedan superadas por especificaciones posteriores."
+    },
+    {
+      "title": "TdR de utilería, 8 octubre 2026",
+      "note": "Cinco colas; varas de fibra de vidrio, tela translúcida sublimada y una cola de prueba antes de serie."
+    },
+    {
+      "title": "Aclaraciones del usuario, 27 octubre 2026",
+      "note": "Cantidad cinco; pivote L1; cinco metros sobre cintura; apertura total de noventa grados; gancho de liberación y permanencia en abierto."
+    },
+    {
+      "title": "Estudio de orquídeas aportado por el usuario",
+      "note": "Referencia de formas y movimiento. Sus valores biológicos y escala no se tratan como propiedades de la utilería."
+    },
+    {
+      "title": "Corrección CP02 del usuario, 27 octubre 2026",
+      "note": "Etapa anterior, sustituida por CP03. Se conservan seis centros y su relación angular; la aclaración posterior admite una pequeña cesión elástica de las venas."
+    },
+    {
+      "title": "Refinamiento CP03 del usuario, 27 octubre 2026",
+      "note": "Curva de reposo hacia atrás y punta textil libre, con pequeña cesión elástica de las venas y recuperación amortiguada según la aclaración más reciente. Los 5 m sobre L1 incluyen el sobrante."
+    }
+  ],
+  "downloads": [
+    {
+      "title": "Planos de estudio y mecanismos",
+      "href": "downloads/Blueprints-CP03.pdf",
+      "pages": 2,
+      "sheetMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "title": "Guía visual de prototipo y operación",
+      "href": "downloads/Guia-visual-CP03.pdf",
+      "pages": 2,
+      "sheetMm": [
+        1000,
+        700
+      ]
+    }
+  ],
+  "referenceMaterials": [
+    {
+      "id": "mesh17",
+      "name": "Malla ultraligera",
+      "reference": "RBTR NS50, nylon 10D sin recubrimiento",
+      "arealDensityGm2": 16.95287373744115,
+      "thicknessMicron": null,
+      "printStatus": "Por probar",
+      "massStatus": "Conversión de 0,5 oz/yd² publicada por el proveedor",
+      "sourceId": "rbtr-ns50",
+      "sourceUrl": "https://ripstopbytheroll.com/products/0-5-oz-ns50-noseeum-mesh",
+      "note": "Malla abierta como referencia de ligereza. Sublimación y fidelidad del estampado no confirmadas. Su trama no proporciona por sí sola un Cd."
+    },
+    {
+      "id": "nylon22",
+      "name": "Tafetán ultraligero",
+      "reference": "RBTR MEMBRANE 10, nylon 10D calandrado con DWR",
+      "arealDensityGm2": 22.4,
+      "thicknessMicron": null,
+      "printStatus": "Por probar",
+      "massStatus": "Gramaje publicado por el proveedor",
+      "sourceId": "rbtr-membrane10",
+      "sourceUrl": "https://ripstopbytheroll.com/products/0-66-oz-membrane-10-taffeta-nylon-1",
+      "note": "Referencia de tacto muy ligero. El fabricante declara resistencia al viento; respirable no significa que descargue la vela. Sublimación no confirmada."
+    },
+    {
+      "id": "film17",
+      "name": "Película PET de 12 µm",
+      "reference": "Mylar A, 12 µm",
+      "arealDensityGm2": 17.012878749213154,
+      "thicknessMicron": 12,
+      "printStatus": "Por probar",
+      "massStatus": "Calculado como 1000/58,779 m²/kg de la ficha del fabricante",
+      "sourceId": "mylar-a12",
+      "sourceUrl": "https://mylar.com/wp-content/uploads/2025/08/mylar_a_12-75_micron_made_in_usa-1.pdf",
+      "note": "Película continua transparente, sin permeabilidad aerodinámica caracterizada aquí. Tinta, impresión, ruido, plegado y resistencia del borde requieren muestra. No se presupone sublimación."
+    },
+    {
+      "id": "voile50",
+      "name": "Voile escénico imprimible",
+      "reference": "ShowTex Voile CS Print, 100 % TCS",
+      "arealDensityGm2": 50,
+      "thicknessMicron": null,
+      "printStatus": "Transferencia/UV en 300 cm; UV en 500 cm",
+      "printWidthSublimationCm": 300,
+      "printWidthUvCm": 500,
+      "massStatus": "Gramaje publicado por el fabricante",
+      "sourceId": "showtex-voile",
+      "sourceUrl": "https://www.showtex.com/en/products/soft-goods/backdrops-ceilings/printables-lasercut/voile-cs-print",
+      "note": "Tela translúcida con impresión confirmada: variante de 310 cm/300 imprimibles admite transferencia y UV; variante de 505 cm/500 imprimibles solo UV. Pesa más que las otras referencias. La impresión no determina el Cd."
+    }
+  ],
+  "nominalMetrics": {
+    "envelopeAreaM2": 13.869153996451763,
+    "projectedXYAreaM2": 13.869153996451763,
+    "skinAreaM2": 13.987158480128935,
+    "grossSurfaceAreaM2": 13.98716187741592,
+    "ventilationActualPct": 0,
+    "cpHeightM": 3.6989102461083396,
+    "cpAbovePivotM": 2.64891024610834,
+    "rodLengthsM": [
+      3.6542902006640823,
+      4.21658926835394,
+      4.691691335350251,
+      4.691691335350251,
+      4.21658926835394,
+      3.6542902006640823
+    ],
+    "rodProjectedLengthsM": [
+      3.631928098158652,
+      4.197212293653321,
+      4.6742781406504115,
+      4.6742781406504115,
+      4.197212293653321,
+      3.631928098158652
+    ],
+    "anglesDeg": [
+      -37.5,
+      -22.5,
+      -7.499999999999997,
+      7.499999999999997,
+      22.5,
+      37.49999999999999
+    ],
+    "veinCount": 6,
+    "membranePanelCount": 7,
+    "note": "Métricas nominales en reposo: Aref proyectada XY para viento; superficie real 3D para masa. Seis venas con curva de reposo y cesión elástica suave de estudio. Altura final 5 m sobre L1 incluyendo el sobrante; no hay vena central."
+  },
+  "optionalVentilationStudy": {
+    "requestedPct": 12,
+    "actualPct": 12.085036555505601,
+    "skinAreaM2": 12.299169954869512,
+    "forceReductionCredit": false
+  }
+}

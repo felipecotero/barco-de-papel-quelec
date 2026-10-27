@@ -1,0 +1,128 @@
+{
+  "revision": "CP03",
+  "date": "2026-10-27",
+  "pass": true,
+  "status": "Estudio para una cola de prueba; no es aprobación de fabricación o uso con viento.",
+  "physicalCount": 5,
+  "veinCount": 6,
+  "clothSpreadDeg": 90,
+  "spacingDeg": 15,
+  "nominalMetrics": {
+    "envelopeAreaM2": 13.869153996451763,
+    "projectedXYAreaM2": 13.869153996451763,
+    "skinAreaM2": 13.987158480128935,
+    "grossSurfaceAreaM2": 13.98716187741592,
+    "ventilationActualPct": 0,
+    "cpHeightM": 3.6989102461083396,
+    "cpAbovePivotM": 2.64891024610834,
+    "rodLengthsM": [
+      3.6542902006640823,
+      4.21658926835394,
+      4.691691335350251,
+      4.691691335350251,
+      4.21658926835394,
+      3.6542902006640823
+    ],
+    "rodProjectedLengthsM": [
+      3.631928098158652,
+      4.197212293653321,
+      4.6742781406504115,
+      4.6742781406504115,
+      4.197212293653321,
+      3.631928098158652
+    ],
+    "anglesDeg": [
+      -37.5,
+      -22.5,
+      -7.499999999999997,
+      7.499999999999997,
+      22.5,
+      37.49999999999999
+    ],
+    "veinCount": 6,
+    "membranePanelCount": 7,
+    "note": "Métricas nominales en reposo: Aref proyectada XY para viento; superficie real 3D para masa. Seis venas con curva de reposo y cesión elástica suave de estudio. Altura final 5 m sobre L1 incluyendo el sobrante; no hay vena central."
+  },
+  "geometry": {
+    "parabolaError": 2.1869753563663608e-08,
+    "tipY": 6.050000190734863,
+    "anchor60": 0,
+    "shapeError": 2.849591732023704e-08,
+    "rootsFixed": true,
+    "monotone": true,
+    "anchorCapped": 0,
+    "filteredMonotone": true,
+    "restoreExact": true,
+    "unloadedExportError": 0,
+    "recoveryError": 0,
+    "exportMeshCount": 42
+  },
+  "flexuralScenario": "RigidezEI1000Nm² y reparto F/6 son hipótesis; forma continua de voladizo, cap gráfico0.08L y diagnóstico de alcance lineal, sin capacidad admisible.",
+  "offlineGeometryPass": true,
+  "exports": {
+    "glb": {
+      "filename": "Quelec-Cola-de-pavo-CP03-GLB-m.glb",
+      "size": [
+        4.800000190734863,
+        5.150000196695328,
+        0.8850212801155206
+      ],
+      "bounds": {
+        "min": [
+          -2.4000000953674316,
+          0.8999999940395356,
+          -0.1780212800112124
+        ],
+        "max": [
+          2.4000000953674316,
+          6.050000190734863,
+          0.7070000001043082
+        ]
+      },
+      "faces": 16384,
+      "meshes": 42,
+      "textures": 1
+    },
+    "obj": {
+      "filename": "Quelec-Cola-de-pavo-CP03-OBJ-m.zip",
+      "size": [
+        4.800000190734863,
+        5.150000196695328,
+        0.8850212801155206
+      ],
+      "bounds": {
+        "min": [
+          -2.4000000953674316,
+          0.8999999940395356,
+          -0.1780212800112124
+        ],
+        "max": [
+          2.4000000953674316,
+          6.050000190734863,
+          0.7070000001043082
+        ]
+      },
+      "faces": 16384,
+      "meshes": 42,
+      "textures": 1
+    }
+  },
+  "gltfIssues": {
+    "numErrors": 0,
+    "numWarnings": 0,
+    "numInfos": 32,
+    "numHints": 0
+  },
+  "docs": [
+    "downloads/Blueprints-CP03.pdf",
+    "downloads/Guia-visual-CP03.pdf",
+    "model.json",
+    "sources.json",
+    "Abrir-Colas.html?rev=CP03"
+  ],
+  "mobileNoOverflow": true,
+  "buttonsHaveTextAndHelp": true,
+  "shareNewPageRestoresSettingsAndCamera": true,
+  "otherFiveObjectsUnchanged": true,
+  "errors": []
+}

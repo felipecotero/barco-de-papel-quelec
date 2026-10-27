@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA05](pancartas/?rev=PA05)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA05](pancartas/?rev=PA05) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -16,7 +16,7 @@ El trazado de rayos permanece como opción secundaria en barco y grulla. Es más
 
 **Descargar 3D**, junto a **Guías y planos**, ofrece GLB con texturas integradas, OBJ+MTL+PNG en ZIP y STL sin texturas. GLB usa metros; OBJ/STL permiten elegir metros o milímetros y requieren seleccionar la misma unidad al importarlos. Escala 1:1, objeto ensamblado, sin suelo, cotas ni rótulos. STL reúne mallas y no implica una única pieza lista para imprimir.
 
-Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
+Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** y **colas-de-pavo/Abrir-Colas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
 
 ## Barco R08
 
@@ -111,3 +111,29 @@ Los documentos antiguos quedan señalados como archivo y no corresponden a las v
 Las estimaciones del equipo se distribuyen cifradas; la clave se mantiene fuera del repositorio y de los planos compartidos. No se guardan claves en el navegador ni se muestran importes al abrir una página.
 
 Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` `python3 nave/tools/build-portable.py` `python3 cauchera/tools/build-portable.py` y `python3 pancartas/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.
+
+## Colas de pavo CP03
+
+Estudio de una cola de prueba y cinco unidades visualizables. Decisiones del equipo del 27 de octubre: pivote a la altura de L1; cinco metros desde cintura/L1 hasta la punta; tela abierta de 90°; seis venas separadas 15°, con cinco intervalos entre centros que suman 75° y bordes libres de 7,5° por lado. Se libera un gancho, se abre y permanece desplegada. Las venas llevan una curvatura suave hacia atrás y algo de flexibilidad propia de piezas largas; el paño ondea con mayor libertad entre apoyos y en su punta libre.
+
+El ancho de 4,80 m y L1 a 1,05 m del suelo son propuestas, no medidas anatómicas deducidas. La punta queda a 6,05 m con ese ajuste. Se proponen 0,35 m de curva de reposo hacia atrás y 0,25 m de realce central de tela, incluidos en los cinco metros sobre L1. El realce es un parámetro de perfil, no la longitud de corte del sobrante. Los modelos CP01 y CP02 no se publicaron; sus documentos se archivan fuera del sitio para conservar la revisión.
+
+El visor ofrece una o cinco colas, mecanismo, arnés, membrana, ruta de carga, etapas y piezas separadas. Las dos gamas de orquídea son intercambiables por cola. El gancho de cerrado y el retén de abierto son elementos distintos; asistencia, amortiguación, secciones, topes y capacidades se dimensionan con una muestra. El arnés muestra un recorrido de carga y no calcula tensiones por cinta. Los diámetros dibujados son gráficos. La anatomía procede del recurso MakeHuman CC0 integrado previamente en la cauchera.
+
+El viento se compara con `F=0,5*rho*V²*Cd*Aref*|normal·dirección|`. La velocidad incluye el factor de ráfaga. El área de referencia es la proyección XY nominal de la envolvente a la apertura elegida, sin descontar ranuras. Cd=1,28 es una referencia de placa plana NASA, no un coeficiente medido de esta cola; rho=0,90 kg/m³ es un supuesto editable. El barrido Cd=0,8–1,8 no es una incertidumbre validada ni un límite seguro. Los pares se refieren a L1 y al suelo usando el centro geométrico proyectado como resultante supuesta. No se calcula estabilidad del intérprete, arrastre del cuerpo y varillas, sustentación, flameo o estelas. El cero ideal de canto no significa cero carga real, especialmente con una superficie curva.
+
+La flexión de las venas utiliza una aproximación unidireccional de voladizo con carga distribuida: `delta_i=(Fnormal/6)*L_i³/(8EI)`. EI=1000 N·m² es una hipótesis de exploración, sin sección o material resistente seleccionado. El campo permite variar EI y comparar la influencia de la longitud. La forma es continua, sin ondas longitudinales de varilla. El filtro temporal de 0,45 s es ilustrativo. La deformación representada se limita a 0,08L; la flecha bruta y el aviso de rango lineal se conservan visibles. Este límite gráfico no es un tope mecánico ni una capacidad. Los nodos del paño siguen sus apoyos sin deslizamiento relativo.
+
+El movimiento del paño es una animación acotada y no una respuesta de tejido calibrada. El archivo de orquídeas aportado por el equipo se revisó como referencia: sus constantes vegetales no se trasladaron a la pieza. Fuentes, ecuaciones y alcance están en `colas-de-pavo/sources.json`; la flexión de comparación referencia el material docente de MIT OCW.
+
+Para viento se usa el área proyectada; para masa, el área real 3D de piel curvada en reposo. La masa de membrana no disminuye al cerrar. Gramajes de referencia: malla 16,95, tafetán 22,4, PET de 12 µm 17,01 y voile 50 g/m². Impresión y acabado se añaden según muestra; varillas, arnés y herrajes quedan por pesar. Elegir material más ligero o abrir ranuras no descuenta empuje automáticamente. ShowTex confirma impresión en voile, con transferencia hasta 300 cm imprimibles y UV hasta 500 cm. Malla, nylon y película requieren muestra de gráfica, plegado y bordes.
+
+Descargar 3D exporta la cola seleccionada abierta y estática, sin flexión por viento, con la curva y punta elegidas. Conserva material y ranuras; excluye intérprete, suelo, flechas y cotas. Origen en el suelo bajo la persona: la caja del objeto comienza en el arnés dorsal. GLB en metros; OBJ/STL en metros o milímetros. Compartir guarda medidas, curvatura, punta, rigidez supuesta, apertura, viento, material, gamas y cámara.
+
+- [Estudio técnico, dos pliegos de 100 × 70 cm](colas-de-pavo/downloads/Blueprints-CP03.pdf).
+- [Guía de una cola de prueba, dos pliegos de 100 × 70 cm](colas-de-pavo/downloads/Guia-visual-CP03.pdf).
+- [Datos, decisiones y propuestas](colas-de-pavo/model.json).
+- [Fuentes y límites del estudio](colas-de-pavo/sources.json).
+- [Investigación de materiales](colas-de-pavo/materiales-research.json).
+
+El estudio no fija una velocidad admisible ni libera la fabricación de la serie. La cola de prueba debe definir perfil, membrana impresa, arnés, mecanismo, fuerza y masa reales. Las otras cinco secciones del taller y el panel reservado no cambian.

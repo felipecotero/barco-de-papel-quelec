@@ -1,0 +1,6 @@
+CP03 / 27 OCT 2026
+Dos PDF de dos pliegos de 1000 x 700 mm cada uno.
+Estudio de geometría, prototipo y operación. No libera fabricación de serie ni fija un límite seguro de viento.
+La cota confirmada es 5 m por encima de L1. La altura total depende de cada intérprete.
+Tela de 90 grados. Seis venas curvas con rigidez y pequeña cesión elástica: centros a -37,5/-22,5/-7,5/+7,5/+22,5/+37,5 grados. Curva posterior propuesta de 35 cm y sobrante de patrón de 25 cm incluido en los 5 m finales.
+Fuentes técnicas y materiales: sources.json y materiales-research.json en la sección del visor.

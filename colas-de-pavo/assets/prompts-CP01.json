@@ -1,0 +1,21 @@
+{
+  "revision": "CP01",
+  "date": "2026-10-27",
+  "tool": "image_gen.imagegen integrada",
+  "use": "Texturas de estudio, impresión y material reales pendientes de muestra",
+  "reference": "Cuaderno utilería, ficha57; original privado conservado fuera del sitio público",
+  "jobs": [
+    {
+      "family": "lila",
+      "path": "assets/orquidea-lila-CP01.png",
+      "prompt": "Superficie plana de orquídea para membrana escénica: vetas finas radiales desde el centro inferior, pigmento translúcido marfil, manchas alargadas irregulares concentradas abajo y dispersas arriba, textura delicada de tejido/pétalo. Sin texto, personas, herrajes, perspectiva ni marcos. Referencia: materialidad de la ficha de utilería p57. Lavanda, lilas, marfil y manchas violeta/ciruela.",
+      "sha256": "9de6fff22f17a60bcf0352bff42c2803c2e089db1aa409c01614911937a20b64"
+    },
+    {
+      "family": "calida",
+      "path": "assets/orquidea-calida-CP01.png",
+      "prompt": "Superficie plana de orquídea para membrana escénica: vetas finas radiales desde el centro inferior, pigmento translúcido marfil, manchas alargadas irregulares concentradas abajo y dispersas arriba, textura delicada de tejido/pétalo. Sin texto, personas, herrajes, perspectiva ni marcos. Referencia: materialidad de la ficha de utilería p57. Coral, naranja, marfil rosado, rojo y manchas carmín/burdeos.",
+      "sha256": "f6f253baaf086c497333fadc495c3f3393c2757e13de3f25f9f13106c23fd42b"
+    }
+  ]
+}

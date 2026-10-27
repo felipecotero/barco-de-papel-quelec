@@ -1,0 +1,91 @@
+{
+  "revision": "CP03",
+  "pass": true,
+  "date": "2026-10-27",
+  "visualInspection": "Cuatro páginas CP03 renderizadas e inspeccionadas. Alzado y perfil de reposo de vena -7,5°, seis venas curvas, sobrante textil incluido en los 5 m, cesión de ejemplo separada de la curva de reposo. Sin solapamientos ni recortes.",
+  "files": [
+    {
+      "path": "downloads/Blueprints-CP03.pdf",
+      "pages": 2,
+      "sizesMm": [
+        [
+          1000.0,
+          700.0
+        ],
+        [
+          1000.0,
+          700.0
+        ]
+      ],
+      "sha256": "42200348f031e1d0514a6d5bb40e53ce99640f8cc2f51a8d989985207bee982b",
+      "annotations": 5
+    },
+    {
+      "path": "downloads/Guia-visual-CP03.pdf",
+      "pages": 2,
+      "sizesMm": [
+        [
+          1000.0,
+          700.0
+        ],
+        [
+          1000.0,
+          700.0
+        ]
+      ],
+      "sha256": "dab0e98bbf322a3647d41548175c06c0348c22beec48aeecec7781db0942b426",
+      "annotations": 0
+    }
+  ],
+  "veinCount": 6,
+  "membranePanelCount": 7,
+  "nominalMetrics": {
+    "envelopeAreaM2": 13.869153996451763,
+    "projectedXYAreaM2": 13.869153996451763,
+    "skinAreaM2": 13.987158480128935,
+    "grossSurfaceAreaM2": 13.98716187741592,
+    "ventilationActualPct": 0,
+    "cpHeightM": 3.6989102461083396,
+    "cpAbovePivotM": 2.64891024610834,
+    "rodLengthsM": [
+      3.6542902006640823,
+      4.21658926835394,
+      4.691691335350251,
+      4.691691335350251,
+      4.21658926835394,
+      3.6542902006640823
+    ],
+    "rodProjectedLengthsM": [
+      3.631928098158652,
+      4.197212293653321,
+      4.6742781406504115,
+      4.6742781406504115,
+      4.197212293653321,
+      3.631928098158652
+    ],
+    "anglesDeg": [
+      -37.5,
+      -22.5,
+      -7.499999999999997,
+      7.499999999999997,
+      22.5,
+      37.49999999999999
+    ],
+    "veinCount": 6,
+    "membranePanelCount": 7,
+    "note": "Métricas nominales en reposo: Aref proyectada XY para viento; superficie real 3D para masa. Seis venas con curva de reposo y cesión elástica suave de estudio. Altura final 5 m sobre L1 incluyendo el sobrante; no hay vena central."
+  },
+  "flexModel": {
+    "EI_Nm2": 1000,
+    "rigidityStatus": "Supuesto editable de exploración; no pertenece a un fabricante, sección o material aprobado.",
+    "loadSplit": "Cada vena recibe F/6 como hipótesis de reparto uniforme de resultante; no es un reparto medido.",
+    "tipFormula": "delta_punta = (F/6) × L³ / (8 × EI)",
+    "shapeFormula": "g(t) = t² × (6 - 4t + t²) / 3",
+    "visualCapRelativeToLength": 0.08,
+    "capNote": "La pantalla limita la representación a 8 % de L. No representa un tope físico ni limita una deformación real.",
+    "linearValidityFlagRelativeToLength": 0.1,
+    "linearFlagNote": "La marca de deformación calculada mayor de 10 % de L señala el uso fuera del supuesto lineal; no es un umbral seguro para una persona.",
+    "sourceUrl": "https://ocw.mit.edu/courses/1-050-solid-mechanics-fall-2004/fd4eff39aec922b8c07660006f40686e_pset04_11.pdf",
+    "sourceNote": "MIT OCW: solución de viga recta en voladizo con carga uniforme. EI, reparto, arco equivalente y límites gráficos son hipótesis del taller."
+  }
+}
