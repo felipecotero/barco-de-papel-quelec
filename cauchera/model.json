@@ -165,7 +165,7 @@
     "Prueba de agarres, apoyo de pie, recorrido y transporte en nave con vestuario."
   ],
   "constructionDocumentsRevision": "C01",
-  "costEstimateBaseRevision": "C01",
+  "costEstimateBaseRevision": "C02-r2",
   "poseStudy": {
     "referenceHeightsMm": [
       1700,
@@ -190,5 +190,6 @@
       "use": "Referencia visual de postura y escala; no cálculo biomecánico"
     }
   },
-  "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02"
+  "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02",
+  "costEstimateRevision": "PC02"
 }

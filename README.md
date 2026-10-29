@@ -74,7 +74,7 @@ La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No
 - [Blueprints C01 anteriores: dos pliegos100×70cm](cauchera/downloads/Blueprints-C01.pdf).
 - [Guía visual C01 anterior: dos pliegos100×70cm](cauchera/downloads/Guia-visual-C01.pdf).
 
-Los PDF y la estimación reservada se conservan como **base C01 anterior a este ajuste**; aún no se actualizan a las asas, lengüeta y bandas C02. El visor y el cuadro de documentos lo indican. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
+Los PDF se conservan como **base C01 anterior a este ajuste**; todavía no actualizan las asas, lengüeta y bandas C02. El presupuesto PC02 sí sigue la revisión visual C02-r2. El visor y el cuadro de documentos distinguen ambas bases. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
 ## Pancartas PA05
 

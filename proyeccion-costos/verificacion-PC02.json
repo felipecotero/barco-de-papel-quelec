@@ -40,7 +40,8 @@
     "mobileNoOverflow": true,
     "retryWorks": true,
     "hiddenEntryAndReturn": true,
-    "modelsAndPDFsUnchanged": true
+    "geometryAndPDFsUnchanged": true,
+    "caucheraCostMetadataUpdated": true
   },
   "limit": "Precios públicos y provisiones propias, sin cotización recibida. El tope proyectado no es un máximo contratado."
 }
