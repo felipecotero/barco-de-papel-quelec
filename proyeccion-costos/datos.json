@@ -1,6 +1,6 @@
 {
-  "title": "Estimaciones reservadas Quelec I05 / Cauchera C01",
-  "date": "2026-10-24",
+  "title": "Quelec · Proyección de costos de seis objetos",
+  "date": "2026-10-29",
   "currency": "COP",
   "sources": [
     {
@@ -592,19 +592,167 @@
       "accessDate": "2026-10-24",
       "priceCOP": 46000,
       "note": "46.000COP publicados por lámina100×200cm. El sitio dice calibre5: confirmar explícitamente50mm antes de comprar, además de densidad y disponibilidad. Se presupuesta46–90mil como provisión; no se ha recibido cotización ni llamado al proveedor."
+    },
+    {
+      "id": "PC02-PA-PP3",
+      "vendor": "Open Mind, Bogotá",
+      "title": "Cartón Plast blanco 3 mm / 122 × 244 cm",
+      "url": "https://openmind.com.co/materiales/cartonplast/productos/",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "basis": "Catálogo del proveedor; sin tarifa pública",
+      "note": "Confirma calibre 3 mm y formato exacto de la lámina. No publica precio; la partida PP3 es una provisión propia, no cotización del proveedor."
+    },
+    {
+      "id": "PC02-PA-PP4REF",
+      "vendor": "Línea Gráfica",
+      "title": "PP corrugado blanco 122 × 244 cm, calibre 4 mm",
+      "url": "https://www.lineagrafica.com.co/collections/rigido/products/laminas-de-pp-corrugado-blanco-1-22-m-x-2-44-m",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 84954,
+      "basis": "Referencia minorista de OTRO espesor; no precio PP3",
+      "note": "La web muestra 84.954 COP para 4 mm y mensajes de disponibilidad contradictorios; no se considera una oferta disponible de PP3. Solo contrasta el orden de magnitud de la provisión; confirmar PP3 exacto antes de comprar."
+    },
+    {
+      "id": "PC02-PA-PINO",
+      "vendor": "Homecenter",
+      "title": "Pino cepillado 19 × 41 × 3200 mm Timbermac, código 70909",
+      "url": "https://www.homecenter.com.co/homecenter-co/product/70909/pino-cepillado-1x2-pulgadas-19x41cm-32m-timbermac/70909/",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 7900,
+      "basis": "Precio minorista publicado, madera antes de dimensionar",
+      "note": "Referencia de 7.900 COP por pieza de 3,2 m. Cuatro compras dan 31.600 COP; el presupuesto añade madera para tacos y selección. No equivale a listones ya acabados de 25 × 15 mm: dimensionado y lijado están en mano de obra."
+    },
+    {
+      "id": "PC02-PA-PRINT",
+      "vendor": "Grupo SRM / Impresión-Arte, Bogotá",
+      "title": "Impresión gran formato sobre bond 75 g y opalina 180 g",
+      "url": "https://tiendasrm.com/es/588-impresi%C3%B3n-y-plotter",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "publishedPricesCOPperM2": {
+        "bond75": 49500,
+        "opalina180": 52800
+      },
+      "basis": "Tarifas minoristas públicas por metro cuadrado",
+      "note": "Bond 49.500 y opalina 52.800 COP/m². Ocho caras de 0,40 × 0,60 m suman 1,92 m²; se provisionan 2,20 m² de impresión y un mínimo/cambio de papel pendiente. 2,20 × 49.500 = 108.900 COP, redondeado a 110.000 como base. La banda de 110–180 mil es de planeación; no es una cotización de ocho piezas. Confirmar acabado mate y comportamiento frente a humedad."
+    },
+    {
+      "id": "PC02-C-TUBO",
+      "vendor": "Homecenter",
+      "title": "Tubo de cerramiento negro 1 pulgada × 1,5 mm × 6 m, código 24413",
+      "url": "https://www.homecenter.com.co/homecenter-co/product/24413/tubo-cerramiento-negro-1-x-15mm-x-6m/24413/",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 38700,
+      "basis": "Referencia minorista, equivalencia dimensional pendiente",
+      "note": "Precio publicado 38.700 COP. La ficha no acredita Ø exterior real 25,4 mm. Se mantiene una provisión distinta de 65–120 mil para comprar tubo mecánico de diámetro y pared comprobados. No se deduce capacidad de uso del precio."
+    },
+    {
+      "id": "PC02-C-TUBO2",
+      "vendor": "G&J, Cota/Bogotá",
+      "title": "Tubería estructural redonda negra 1 pulgada × 1,50 mm × 6 m",
+      "url": "https://gyj.com.co/cota/tuberia-estructural-redondo-bogota-65.html",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 57166,
+      "basis": "Precio de catálogo publicado; aparece no disponible",
+      "note": "Referencia 57.166 COP por 6 m; la variante exacta aparece no disponible. El diámetro nominal debe verificarse y no se trata como el tubo mecánico definitivo."
+    },
+    {
+      "id": "PC02-C-PU",
+      "vendor": "SUMDECAR",
+      "title": "Espuma de poliuretano D18 calibre 5",
+      "url": "https://sumdecar.com/espuma-de-poliuretano-d18-calibre-5",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 46000,
+      "basis": "Precio minorista publicado; presentación por confirmar",
+      "note": "La ficha muestra 46.000 COP. La base de diseño compra 100 × 200 × 5 cm; confirmar por escrito que calibre 5 corresponde a 50 mm, además de la medida de la lámina y densidad. La provisión 46–90 mil no presupone oferta firme."
+    },
+    {
+      "id": "PC02-C-LATEX",
+      "vendor": "Cyclewear / Sportfitness",
+      "title": "Rollo de banda elástica plana roja, tensión media, 25 m × 15 cm × 0,45 mm",
+      "url": "https://cyclewear.com.co/products/rollo-de-banda-elastica-plana-t-media-sportfitness-rojo",
+      "date": "2026-10-29",
+      "accessDate": "2026-10-29",
+      "priceCOP": 118000,
+      "basis": "Precio de ficha comercial indexada; referencia de muestras, no selección técnica",
+      "note": "La ficha comercial indexada publica 118.000 COP y dimensiones 25 m × 15 cm × 0,45 mm; lectura directa falló por caché. Un rollo completo sirve solo como referencia presupuestaria para muestras y alternativas. Las bandas de 80 mm y 8 mm dibujadas son visuales: NO se ordenan en ese calibre ni se asume que esta banda de ejercicio sirva para lanzar. Fuerza, recorrido y montaje siguen pendientes."
+    },
+    {
+      "id": "PC02-CP-CHIFFON",
+      "title": "Textti · Chiffon 40 g/m² y 150 cm",
+      "url": "https://www.textti.com/tienda/chiffon/",
+      "date": "2026-10-29",
+      "basis": "Ficha del vendedor y precio mostrado en copia guardada",
+      "note": "Ficha:100% poliéster,40 g/m², ancho 150 cm, apto para sublimar. Mostró 19.600 COP/m y aviso de copia guardada/precios sujetos a cambio. No es precio actual confirmado ni cotización. Se usa solo como ancla para provisión propia 20–30 milCOP/m; el material final requiere muestra."
+    },
+    {
+      "id": "PC02-CP-ORGANZA",
+      "title": "Casatextil · Organza 23 g/m², 150 cm",
+      "url": "https://casatextil.com.co/collections/telas-online/products/tela-organza-x-metros",
+      "date": "2026-10-29",
+      "basis": "Ficha y catálogo del vendedor",
+      "note": "Publicado 7.000 COP/m,23 g/m²,150 cm,100% poliéster y sublimable. Se describe rígida; no se selecciona por defecto para el movimiento pedido. Referencia de alternativa ligera para comparar en muestra, no garantía de comportamiento ni sustitución aprobada."
+    },
+    {
+      "id": "PC02-CP-PRINT-LOW",
+      "title": "DISENCO Bogotá · Sublimación textil",
+      "url": "https://disencopg.com.co/servicios/sublimacion",
+      "date": "2026-10-29",
+      "basis": "Precio publicado por metro lineal",
+      "note": "Ancho calandra 1.60 m; anuncia 8.500 COP/m desde 10 m (primer metro 16.000; desde 2 m 12.000). Es impresión, no suministro de la tela. La aceptación de un tejido muy ligero y su encogimiento deben validarse antes de serie."
+    },
+    {
+      "id": "PC02-CP-PRINT-HIGH",
+      "title": "Textti · Servicio de sublimación textil",
+      "url": "https://textti.com/tienda/servicio-de-sublimacion-textil/",
+      "date": "2026-10-29",
+      "basis": "Precio público mostrado con aviso de copia guardada",
+      "note": "Mostró 25.000 COP por metro de servicio, tela aparte, con aviso de copia guardada. Referencia superior de planeación; no cotización del encargo ni fecha de entrega confirmada."
+    },
+    {
+      "id": "PC02-CP-HORN",
+      "title": "HORN · Perfiles PRFV",
+      "url": "https://hornfrp.com.co/perfiles-prfv/",
+      "date": "2026-10-29",
+      "basis": "Fabricante colombiano, sin precio público",
+      "note": "Catálogo con perfiles de pultrusión, incluidos tubos redondos y varillas. No publica precio para 30 venas curvas de 4–5 m, ni acredita una sección apropiada para estas colas. La partida de perfiles es provisión propia, pendiente de definir y cotizar."
+    },
+    {
+      "id": "PC02-CP-REFORPLAS",
+      "title": "Reforplas Bogotá · Pultrusión",
+      "url": "https://www.reforplas.com/wordpress/pultrusion/",
+      "date": "2026-10-29",
+      "basis": "Fabricante colombiano, sin precio público",
+      "note": "Confirma fabricación de perfiles compuestos con fibra de vidrio y resina. No publica precio ni valida curvar en frío una sección específica. La curvatura, masa y capacidad de las venas requieren desarrollo de la cola de prueba."
+    },
+    {
+      "id": "PC02-CP-EKA",
+      "title": "Eka Corporación · Reatas de poliéster",
+      "url": "https://ekazipper.com/productos/reatas/reatas-poliester/",
+      "date": "2026-10-29",
+      "basis": "Fabricante colombiano, sin precio público",
+      "note": "Referencia local de suministro textil. No acredita el arnés ni sus costuras para la carga de las colas; materiales y herrajes se presupuestan como juegos por ajustar al intérprete."
     }
   ],
   "exclusions": [
-    "Semilla o escultura cargada, repuestos y accesorios fuera de las partidas.",
-    "Impresión de pliegos, embalajes o cajas de viaje, almacenamiento y seguro.",
-    "Revisión o certificación por ingeniero, cálculo estructural, ensayos acreditados y clasificación de fuego del conjunto.",
-    "Alquiler de sala, ensayos artísticos, portadores, intérpretes y operador durante funciones.",
-    "Rediseño no especificado y demoras de suministro. Se estima la construcción de un prototipo nuevo a partir de la documentación actual.",
-    "Una estructura que eleve a las personas dentro de la nave.",
-    "Aplicador nuevo de DP8005 y equipos excepcionales: partida aparte. Las herramientas normales del taller se suponen incluidas en la tarifa horaria.",
-    "Transporte del barco y la grulla fuera de sus tarjetas. La comparación de nave sí incluye la llegada delEPS y cinco trayectos urbanos dedicados; no duplicar ese flete si se consolida el conjunto.",
-    "IVA adicional que aplique a la oferta del constructor; confirmar régimen y total contractual, sin volver a sumar el IVA ya contenido en precios minoristas.",
-    "CaucheraC01: bolas luminosas y su batería/núcleo, capacidad de lanzamiento, ensayo con proyectiles y revisión profesional no incluidos. El elástico es una provisión hasta confirmar masa/material/distancia. El coste de la nave no incluía fabricar la cauchera, por eso se añade aparte. Si comparte furgón con nave, prorratear el flete ya contado; no sumar otros cinco viajes."
+    "Alcance: un barco R08, una grulla G04, una nave N02, una cauchera C02-r2, un juego de cuatro pancartas PA05 en un solo formato y cinco colas CP03, incluida la primera de prueba. No son seis unidades físicas: son seis grupos de objetos.",
+    "Los costos de barco, grulla y nave conservan la base del 24 de octubre de 2026. Las nuevas bases de pancartas, cauchera y colas son del 29 de octubre. Son precios de referencia y provisiones propias; no hay cotizaciones recibidas ni contratos.",
+    "IVA adicional que aplique a la oferta del constructor por confirmar; no se debe sumar otra vez el IVA ya incluido en precios minoristas. Los totales no incorporan un IVA general sobre toda la mano de obra.",
+    "La nave incluye la llegada del EPS y los trayectos urbanos seleccionados. Las colas incluyen llegada de perfiles/tela y un recargo de capacidad por esos mismos trayectos: no se cobran otros cinco viajes completos. Se supone carga consolidada de los demás objetos; confirmar volumen, origen y vehículo útil cercano a 5 m. Un segundo vehículo, rutas o viajes extra se cotizan aparte.",
+    "Impresión de planos y guías, cajas rígidas de viaje, almacenamiento, seguros, repuestos de temporada y transporte adicional no especificado quedan fuera. Las protecciones blandas y muestras expresamente listadas sí están incluidas.",
+    "No incluye honorarios de ingeniería, cálculo o validación profesional, ensayos acreditados ni clasificación de fuego del conjunto. Las pruebas de taller incluidas no sustituyen esas revisiones.",
+    "Los perfiles curvos, membrana, arnés y mecanismos de las colas siguen sin selección técnica aprobada. Se presupuestan con asignaciones explícitas: no se fija el EI del visor como sección de compra ni se cambia la piel ultraligera por gasa de 40 g/m² sin muestra. El desarrollo especial, importación o un rediseño importante pueden superar el rango.",
+    "La primera cola de prueba es una de las cinco, seguida de cuatro repeticiones. Las muestras y horas de desarrollo se cuentan una sola vez; no se añade una sexta cola completa.",
+    "Pancartas: se incluyen cuatro objetos y ocho impresiones en un formato, escogidas entre diez artes. Los formatos vertical, horizontal y cuadrado son alternativas; comprar los tres juegos o imprimir los dos artes adicionales es opcional y no está sumado.",
+    "Cauchera: costos actualizados al visor C02-r2; los PDF constructivos siguen en C01. Incluye muestras y provisión de bandas, no un sistema elástico validado. Bola, iluminación, batería, repuestos, ensayo con proyectiles, capacidad de lanzamiento y revisión profesional quedan fuera.",
+    "Semilla o escultura cargada, impresión de nuevos artes, alquiler de sala, ensayos artísticos, portadores, intérpretes y operación durante funciones no están incluidos. Tampoco una estructura que eleve personas dentro de la nave.",
+    "Aplicador nuevo DP8005 y equipos excepcionales se cotizan aparte; las herramientas ordinarias de taller se suponen incluidas en la tarifa de trabajo. LED opcionales de la nave no se suman por defecto."
   ],
   "objects": [
     {
@@ -783,7 +931,10 @@
         }
       ],
       "laborNote": "Horas y tarifas propias de planeación; no cotización recibida.",
-      "note": "Transporte eIVA adicional pendientes, fuera del total. Mano de obra estimada."
+      "note": "Materiales, mano de obra estimada y reserva del 15 %. No tiene flete dedicado en esta tarjeta: el total del conjunto supone carga compartida en los viajes previstos con nave, sujeta a confirmar capacidad. IVA adicional según oferta.",
+      "budgetDate": "2026-10-24",
+      "quantity": 1,
+      "scopeLabel": "Un barco completo · R08"
     },
     {
       "id": "grulla",
@@ -932,7 +1083,10 @@
         }
       ],
       "laborNote": "Horas y tarifas propias de planeación; no cotización recibida.",
-      "note": "Transporte eIVA adicional pendientes, fuera del total. Mano de obra estimada."
+      "note": "Materiales, mano de obra estimada y reserva del 15 %. No tiene flete dedicado en esta tarjeta: el total del conjunto supone carga compartida en los viajes previstos con nave, sujeta a confirmar capacidad. IVA adicional según oferta.",
+      "budgetDate": "2026-10-24",
+      "quantity": 1,
+      "scopeLabel": "Una grulla con iluminación interior · G04"
     },
     {
       "id": "nave",
@@ -1214,106 +1368,771 @@
         }
       ],
       "laborNote": "Ver comparación por proceso: horas-persona de especialistas y apoyo, asignadas para planear.",
-      "note": "Tarjeta: ruta de planchas con transporte yreserva. Compara abajo la talla enbloques. LEDopcionales aparte; no es cotización."
+      "note": "Tarjeta: ruta de planchas con transporte yreserva. Compara abajo la talla enbloques. LEDopcionales aparte; no es cotización.",
+      "budgetDate": "2026-10-24",
+      "quantity": 1,
+      "scopeLabel": "Una nave · N02 · ruta seleccionable"
     },
     {
       "id": "cauchera",
       "title": "Cauchera gigante",
-      "revision": "C01",
-      "materialRangeCOP": [
-        411000,
-        865000
-      ],
-      "laborRangeCOP": [
-        1000000,
-        2320000
-      ],
-      "contingencyRangeCOP": [
-        211650,
-        477750
-      ],
-      "totalRangeCOP": [
-        1622650,
-        3662750
-      ],
+      "revision": "C02-r2",
+      "quantity": 1,
+      "scopeLabel": "Una cauchera de 2 m con asas compactas, lengüeta y bolsa",
+      "budgetDate": "2026-10-29",
+      "sourceBaseDate": "2026-10-29",
+      "estimateStatus": "Proyección actualizada al modelo visual C02-r2; sistema elástico y verificación mecánica pendientes",
+      "note": "Actualiza la base C01 a las dos asas compactas, lengüeta estrecha, bandas visualmente anchas y bolsa cóncava de C02-r2. Reserva 15 % una sola vez. Incluye muestras del sistema de bandas, no una capacidad de lanzamiento certificada. No incluye bola ni iluminación de bola.",
+      "laborNote": "Planeación propia: 25–37 h de especialista a 35–50 mil COP/h y 10–16 h de apoyo a 20–30 mil COP/h. Incluye metal, talla blanda, acabado de rama, bolsa y pruebas de manipulación sin lanzamiento. Tarifa y horas son hipótesis de presupuesto, no una cotización recibida. No se usa el diámetro de la bola de referencia como masa ni fuerza.",
       "items": [
         {
-          "id": "C-M01",
-          "description": "Tubo mecánico de acero,Øreal25,4×1,5",
-          "quantityBasis": "Una barra6m; instalación aproximada4.806m",
-          "lowCOP": 60000,
+          "id": "C02-M01",
+          "description": "Tubo mecánico para núcleo, U y asas compactas",
+          "quantityBasis": "Compra de una barra de 6 m; Ø exterior real 25,4 mm × pared 1,5 mm de la base geométrica",
+          "lowCOP": 65000,
           "highCOP": 120000,
           "sourceIds": [
-            "C01-TUBO"
+            "PC02-C-TUBO",
+            "PC02-C-TUBO2"
           ],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": "Incluye merma de curvado. Precio de compra exacta por confirmar; no usar tubo cortinero o diámetro nominal de agua como equivalente."
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "La medida nominal de cerramiento no garantiza diámetro exterior de 25,4. Compra definitiva y cantidad instalada requieren verificación del taller; el precio publicado más bajo no se trata como cotización del tubo mecánico correcto."
         },
         {
-          "id": "C-M02",
-          "description": "Herraje del apoyo y uniones de taller",
-          "quantityBasis": "Dos abrazaderas bipartidas, placa200×120×2, remates y tornillería de estudio",
+          "id": "C02-M02",
+          "description": "Herraje y acero de la lengüeta desmontable",
+          "quantityBasis": "Dos abrazaderas bipartidas al núcleo, brazo diagonal, placa nominal 180 × 70 × 2 mm, tornillería y topes",
           "lowCOP": 80000,
-          "highCOP": 180000,
+          "highCOP": 160000,
           "sourceIds": [],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": "Fijación y tamaño final se ajustan después de verificar la carga de uso. Herramientas normales en mano de obra."
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Sustituye la placa grande de la base C01. Incluye compra de recorte comercial, fijaciones y cubierta de extremos; corte y soldadura están en mano de obra."
         },
         {
-          "id": "C-M03",
-          "description": "PU flexible D18 de50mm",
-          "quantityBasis": "Una lámina1000×2000×50; dosblancosU y cuatrotramosmango",
+          "id": "C02-M03",
+          "description": "PU flexible para tallar la rama",
+          "quantityBasis": "Una lámina prevista 1000 × 2000 × 50 mm, D18 de referencia",
           "lowCOP": 46000,
           "highCOP": 90000,
           "sourceIds": [
-            "C01-PU"
+            "PC02-C-PU"
           ],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": "Confirmar espesor50mm. Volumen comprado0,10m³; no todo se instala."
+          "priceBasis": "Referencia minorista + provisión por presentación/espesor",
+          "note": "Confirmar dimensión y que calibre 5 sea 50 mm. No se instala toda la lámina ni se prescribe espuma expansiva rígida."
         },
         {
-          "id": "C-M04",
-          "description": "Acolchado y superficie antideslizante",
-          "quantityBasis": "Dos asas140mm, pie y extremo inferior",
-          "lowCOP": 35000,
-          "highCOP": 70000,
+          "id": "C02-M04",
+          "description": "Acolchado de asas, lengüeta y apoyos",
+          "quantityBasis": "Dos agarres útiles de 140 mm, Ø exterior visual 40 mm; apoyo de pie 180 × 70 y remates blandos",
+          "lowCOP": 30000,
+          "highCOP": 60000,
           "sourceIds": [],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": ""
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "La anchura general visual de asas es 260 mm, centros a 220 mm. Provisión para EVA/PU y superficie antideslizante."
         },
         {
-          "id": "C-M05",
-          "description": "Tela fina, adhesivo compatible y pintura flexible",
-          "quantityBasis": "Provisión para~1m² y retoques de rama",
+          "id": "C02-M05",
+          "description": "Tela, adhesivos y acabado flexible de madera",
+          "quantityBasis": "Lote para aproximadamente 1 m² de piel y retoques",
           "lowCOP": 85000,
           "highCOP": 160000,
           "sourceIds": [],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": "El pegamento y acabado se prueban sobre la espuma elegida; conservar flexibilidad y accesos de inspección."
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Acabado orgánico de rama y accesos de inspección; probar compatibilidad y flexibilidad sobre el PU."
         },
         {
-          "id": "C-M06",
-          "description": "Elástico visible y bolsa, partida pendiente",
-          "quantityBasis": "Una unidad escénica comercial por seleccionar",
-          "lowCOP": 70000,
-          "highCOP": 180000,
+          "id": "C02-M06",
+          "description": "Provisión de bandas y muestras de material",
+          "quantityBasis": "Un rollo comercial de referencia para muestras y dos ramales visibles; longitud de corte pendiente",
+          "lowCOP": 118000,
+          "highCOP": 220000,
+          "sourceIds": [
+            "PC02-C-LATEX"
+          ],
+          "priceBasis": "Referencia comercial para muestras + provisión de alternativas",
+          "note": "La referencia publicada cuesta 118.000 por un rollo de 25 m. No se presupone aptitud de una banda de ejercicio para lanzar. Ancho 80 mm y espesor 8 mm del visor son visuales, no orden de compra; fuerza, sección y anclajes reales siguen por definir."
+        },
+        {
+          "id": "C02-M07",
+          "description": "Material de bolsa cóncava de apariencia de cuero",
+          "quantityBasis": "Una bolsa para la bola de referencia Ø350 mm; volumen visual de bolsa Ø380 mm",
+          "lowCOP": 50000,
+          "highCOP": 110000,
           "sourceIds": [],
-          "priceBasis": "provision_propia_no_cotizada",
-          "note": "SOLO provisión presupuestaria. No se ha elegido sección, rigidez ni capacidad. No incluye un sistema de lanzamiento homologado; puede variar al definir las bolas."
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Tela resistente, apariencia cuero y refuerzo blando por seleccionar. No incluye bola de espuma, luces ni su batería. Confección está en mano de obra."
         },
         {
-          "id": "C-M07",
-          "description": "Protección de transporte y consumibles",
-          "quantityBasis": "Funda sencilla, etiquetas y material de taller",
+          "id": "C02-M08",
+          "description": "Uniones de bandas y zonas de servicio",
+          "quantityBasis": "Lote de cinchas textiles, cubiertas y fijaciones de estudio",
           "lowCOP": 35000,
-          "highCOP": 65000,
+          "highCOP": 80000,
           "sourceIds": [],
-          "priceBasis": "provision_propia_no_cotizada",
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Partida pendiente de la tracción real; no declara una unión de lanzamiento homologada."
+        },
+        {
+          "id": "C02-M09",
+          "description": "Protección de transporte y consumibles finales",
+          "quantityBasis": "Funda blanda sencilla, etiquetas y material de protección",
+          "lowCOP": 35000,
+          "highCOP": 70000,
+          "sourceIds": [],
+          "priceBasis": "Provisión propia por cotizar",
           "note": ""
         }
       ],
-      "laborNote": "Planeación propia:24–38h de especialista a35–50milCOP/h, más8–14h de apoyo a20–30milCOP/h. No cotización recibida. Incluye prueba de manipulación, no ensayo balístico, elenco, certificación profesional ni prueba de lanzamiento. La provisión de elástico puede cambiar al definir las bolas.",
-      "note": "Estudio de2m×0,80m. Reserva15% una sola vez. Transporte compartido, IVA adicional que aplique y revisión profesional fuera del total; elástico como provisión pendiente."
+      "laborItems": [
+        {
+          "id": "C02-L01",
+          "description": "Plantilla, presentación y revisión de agarres compactos",
+          "quantityBasis": "2–3 h especialista × 35–50 mil COP/h + 1–2 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            2,
+            3
+          ],
+          "assistantHours": [
+            1,
+            2
+          ],
+          "lowCOP": 90000,
+          "highCOP": 210000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "C02-L02",
+          "description": "Cortar, curvar y unir núcleo, U, asas y lengüeta",
+          "quantityBasis": "8–12 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            8,
+            12
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 320000,
+          "highCOP": 690000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "C02-L03",
+          "description": "Preparar, pegar y tallar el volumen de espuma",
+          "quantityBasis": "6–8 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            6,
+            8
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 250000,
+          "highCOP": 490000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "C02-L04",
+          "description": "Aplicar piel y pintar la textura de rama",
+          "quantityBasis": "4–6 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            4,
+            6
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 180000,
+          "highCOP": 390000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "C02-L05",
+          "description": "Confeccionar bolsa y presentar bandas y cubiertas",
+          "quantityBasis": "3–5 h especialista × 35–50 mil COP/h + 1–2 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            3,
+            5
+          ],
+          "assistantHours": [
+            1,
+            2
+          ],
+          "lowCOP": 125000,
+          "highCOP": 310000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "C02-L06",
+          "description": "Comprobar agarre, apoyo, plegado de bandas y transporte",
+          "quantityBasis": "2–3 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            2,
+            3
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 110000,
+          "highCOP": 240000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "Pruebas de manipulación sin proyectil, no ensayo balístico ni certificación.",
+          "sourceIds": []
+        }
+      ],
+      "transportRangeCOP": [
+        30000,
+        70000
+      ],
+      "transportNote": "Asignación de compra/entrega de material al taller; la cauchera de 2 m comparte el transporte escénico presupuestado con la nave. No se añaden otros cinco viajes.",
+      "uncertainties": [
+        "Sistema elástico, bolsa y anclajes definitivos pendientes de masa/material de la bola y fuerza de ensayo.",
+        "Los PDF de fabricación siguen en C01: esta estimación usa el último modelo visual C02-r2, sin actualizar ni aprobar esos planos.",
+        "Perfil, longitud instalada final y capacidad del núcleo requieren revisión física; los 6 m son compra de estudio.",
+        "Distancia bolsa–horqueta de 1,2–2,5 m es una posición del visor, no elongación ni fuerza del caucho real."
+      ],
+      "optionalNotIncluded": [
+        "Bola escénica, núcleo luminoso, batería de bola y repuestos de temporada.",
+        "Cálculo/certificación por profesional, ensayo balístico, elenco y pruebas de lanzamiento."
+      ],
+      "materialRangeCOP": [
+        544000,
+        1070000
+      ],
+      "laborRangeCOP": [
+        1075000,
+        2330000
+      ],
+      "contingencyRangeCOP": [
+        247350,
+        520500
+      ],
+      "totalRangeCOP": [
+        1896350,
+        3990500
+      ],
+      "contingencyRate": 0.15
+    },
+    {
+      "id": "pancartas",
+      "title": "Pancartas de los Gruñones",
+      "revision": "PA05",
+      "quantity": 4,
+      "scopeLabel": "Juego de cuatro pancartas de dos caras · ocho impresiones",
+      "budgetDate": "2026-10-29",
+      "sourceBaseDate": "2026-10-29",
+      "estimateStatus": "Proyección PA05 con compras y horas de taller por confirmar",
+      "note": "Cuatro pancartas, ocho caras impresas; formato vertical de referencia. Horizontal y cuadrado son alternativas del mismo juego, no otros ocho objetos. Reserva 15 % aplicada una sola vez. Traslados menores de compra incluidos; viajes escénicos compartidos con la nave, sin duplicarlos.",
+      "laborNote": "Planeación propia para el juego completo: 14–20 h de especialista a 35–50 mil COP/h y 8–12 h de apoyo a 20–30 mil COP/h. Incluye preparación de los ocho archivos aprobados, corte, montaje, aplicación de papel y prueba de lectura/agarre. No incluye crear nuevas ilustraciones ni honorarios del elenco.",
+      "items": [
+        {
+          "id": "PA-M01",
+          "description": "Lámina de Cartón Plast blanco de 3 mm",
+          "quantityBasis": "Una lámina 1220 × 2440: ocho paneles 400 × 600 y cuatro bandas 60 × 560 mm",
+          "lowCOP": 60000,
+          "highCOP": 100000,
+          "sourceIds": [
+            "PC02-PA-PP3",
+            "PC02-PA-PP4REF"
+          ],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "El formato PP3 está confirmado en catálogo; precio propio por cotizar. No cambiar el despiece a 4 mm por usar una referencia comercial de contraste."
+        },
+        {
+          "id": "PA-M02",
+          "description": "Pino para mangos y tacos interiores",
+          "quantityBasis": "Cuatro mangos acabados 25 × 15 × 1800 mm y dieciséis tacos 15 × 50 × 30 mm",
+          "lowCOP": 45000,
+          "highCOP": 80000,
+          "sourceIds": [
+            "PC02-PA-PINO"
+          ],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Incluye compra comercial con merma, selección y madera adicional para tacos. El dimensionado y lijado se pagan en mano de obra."
+        },
+        {
+          "id": "PA-M03",
+          "description": "Fijaciones interiores y protección de extremos",
+          "quantityBasis": "8 M4 × 30; 16 arandelas Ø18; 8 tuercas autofrenantes; 8 casquillos; 64 tornillos madera Ø3 × 12 con 64 arandelas Ø8",
+          "lowCOP": 40000,
+          "highCOP": 75000,
+          "sourceIds": [],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Provisión por lote; verificar precios y casquillos. No sumar herrajes externos sobre las imágenes."
+        },
+        {
+          "id": "PA-M04",
+          "description": "Ocho impresiones a color sobre papel mate",
+          "quantityBasis": "Ocho caras 400 × 600 mm = 1,92 m² netos; compra prevista 2,20 m²",
+          "lowCOP": 110000,
+          "highCOP": 180000,
+          "sourceIds": [
+            "PC02-PA-PRINT"
+          ],
+          "priceBasis": "Referencia pública + provisión de pedido y acabado por cotizar",
+          "note": "Base calculada con impresión bond a 49.500 COP/m² y redondeo. Tope de partida contempla papel/acabado mate y mínimos; confirmar muestra. Ocho impresiones elegidas de diez diseños, no imprimir automáticamente diez."
+        },
+        {
+          "id": "PA-M05",
+          "description": "Adhesión del papel y bandas de montaje",
+          "quantityBasis": "Un lote de cinta fina/adhesivo compatible con PP para ocho caras y probetas",
+          "lowCOP": 55000,
+          "highCOP": 110000,
+          "sourceIds": [],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "Comprobar adherencia y apariencia mate antes de aplicar el arte; no se prescribe una cinta genérica que deba pegar sobre PP sin prueba."
+        },
+        {
+          "id": "PA-M06",
+          "description": "Lija, remates de cantos y consumibles",
+          "quantityBasis": "Lote para cuatro objetos; esquinas R6 y mangos suaves",
+          "lowCOP": 25000,
+          "highCOP": 50000,
+          "sourceIds": [],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": ""
+        },
+        {
+          "id": "PA-M07",
+          "description": "Protección sencilla para traslado",
+          "quantityBasis": "Separadores blandos, etiquetas interiores y envoltura del juego",
+          "lowCOP": 25000,
+          "highCOP": 45000,
+          "sourceIds": [],
+          "priceBasis": "Provisión propia por cotizar",
+          "note": "No es una caja rígida de viaje ni almacenamiento de temporada."
+        }
+      ],
+      "laborItems": [
+        {
+          "id": "PA-L01",
+          "description": "Preparar archivos y muestra de lectura/color",
+          "quantityBasis": "2–3 h especialista × 35–50 mil COP/h + 0–0 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            2,
+            3
+          ],
+          "assistantHours": [
+            0,
+            0
+          ],
+          "lowCOP": 70000,
+          "highCOP": 150000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "Artes existentes, ocho seleccionados. No vuelve a cobrar diseño de diez ilustraciones.",
+          "sourceIds": []
+        },
+        {
+          "id": "PA-L02",
+          "description": "Trazar, cortar, dimensionar madera y perforar",
+          "quantityBasis": "3–5 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            3,
+            5
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 145000,
+          "highCOP": 340000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "PA-L03",
+          "description": "Ensamblar cuatro cajas y fijaciones ocultas",
+          "quantityBasis": "6–8 h especialista × 35–50 mil COP/h + 4–6 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            6,
+            8
+          ],
+          "assistantHours": [
+            4,
+            6
+          ],
+          "lowCOP": 290000,
+          "highCOP": 580000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        },
+        {
+          "id": "PA-L04",
+          "description": "Aplicar imágenes, rematar y comprobar manipulación",
+          "quantityBasis": "3–4 h especialista × 35–50 mil COP/h + 2–3 h apoyo × 20–30 mil COP/h",
+          "specialistHours": [
+            3,
+            4
+          ],
+          "assistantHours": [
+            2,
+            3
+          ],
+          "lowCOP": 145000,
+          "highCOP": 290000,
+          "priceBasis": "Horas y tarifas propias de planeación; sin cotización recibida",
+          "note": "",
+          "sourceIds": []
+        }
+      ],
+      "transportRangeCOP": [
+        30000,
+        80000
+      ],
+      "transportNote": "Asignación para recolección/entrega de materiales e imprenta al taller. Los cinco viajes de escena de la nave no se cobran de nuevo. Si compras se consolidan, reemplazar estas asignaciones por el costo compartido real, no sumarlo además.",
+      "uncertainties": [
+        "Confirmar cotización de PP3 1220 × 2440 y lote de fijaciones.",
+        "Papel mate y adhesión deben probarse en el PP elegido.",
+        "Presupuesto base vertical: elegir solo un formato. Ocho caras de papel, aunque el catálogo ofrezca diez diseños."
+      ],
+      "formats": {
+        "selectedBudget": "portrait",
+        "alternativesNotAdded": [
+          "landscape",
+          "square"
+        ],
+        "portraitPrintAreaM2": 1.92,
+        "landscapePrintAreaM2": 1.92,
+        "squarePrintAreaM2": 1.62,
+        "stockSheetsPerChosenSet": 1
+      },
+      "optionalNotIncluded": [
+        "Dos impresiones adicionales para disponer de los diez dibujos, reimpresiones de temporada y nuevo arte no están incluidos.",
+        "Los tres juegos de formatos a la vez no están incluidos."
+      ],
+      "materialRangeCOP": [
+        360000,
+        640000
+      ],
+      "laborRangeCOP": [
+        650000,
+        1360000
+      ],
+      "contingencyRangeCOP": [
+        156000,
+        312000
+      ],
+      "totalRangeCOP": [
+        1196000,
+        2392000
+      ],
+      "contingencyRate": 0.15
+    },
+    {
+      "id": "colas",
+      "title": "Cinco colas de pavo",
+      "revision": "CP03",
+      "quantity": 5,
+      "scopeLabel": "Cinco colas completas: una cola de prueba + cuatro repeticiones",
+      "budgetDate": "2026-10-29",
+      "sourceBaseDate": "2026-10-29",
+      "estimateStatus": "Provisión económica CP03 para cinco colas, sujeta a cola de prueba y cotización. La referencia de gasa poliéster de 40 g/m² NO selecciona ni sustituye las pieles ultraligeras de 17–22 g/m² del estudio.",
+      "materialRangeCOP": [
+        9670000,
+        21000000
+      ],
+      "laborRangeCOP": [
+        6860000,
+        15580000
+      ],
+      "transportFixedRangeCOP": [
+        300000,
+        600000
+      ],
+      "transportPerUrbanTripRangeCOP": [
+        100000,
+        200000
+      ],
+      "defaultUrbanTrips": 5,
+      "transportRangeCOP": [
+        800000,
+        1600000
+      ],
+      "contingencyRangeCOP": [
+        2599500,
+        5727000
+      ],
+      "totalRangeCOP": [
+        19929500,
+        43907000
+      ],
+      "reserveRate": 0.15,
+      "note": "Importe por las cinco colas: una cola de prueba + cuatro repeticiones. Incluye materiales, impresión, montaje y reserva del 15 % una sola vez. La gasa poliéster de 40 g/m² es una referencia económica para cotizar muestras, aproximadamente el doble de gramaje de las pieles ultraligeras del estudio; no está aprobada como sustitución. Perfiles, arneses y mecanismos siguen por definir. El tope es una proyección condicionada, no un precio contractual máximo.",
+      "laborNote": "148–236 h de especialista y 84–126 h de apoyo en total. Tarifas propias 35–50 mil y 20–30 milCOP/h. La primera cola de prueba está dentro de las cinco; el desarrollo se cobra una sola vez. No incluye ingeniería, cálculo/validación profesional ni ensayos acreditados.",
+      "transportNote": "Llegada al taller 300–600 milCOP, más recargo propio 100–200 mil por cada uno de los mismos 5 trayectos urbanos compartidos con la nave. No se suman otros 5 fletes. Las venas no tienen desarme aprobado; prever paquete próximo a 4,7 m, vehículo de largo útil≈5 m y confirmar volumen real de las cinco antes de contratar.",
+      "items": [
+        {
+          "description": "Membrana translúcida ligera para las cinco colas",
+          "quantityBasis": "60 m lineales×1,50 m=90 m² comprados;69,936 m² netos para 5 colas. Provisión 20.000–30.000 COP/m.",
+          "lowCOP": 1200000,
+          "highCOP": 1800000,
+          "priceBasis": "provision_propia_con_referencia_publicada",
+          "note": "Provisión de compra un 28,7 % sobre el área neta para paños, márgenes y merma; no es un anidado de corte validado. Se toma como referencia económica local una gasa de poliéster de 40 g/m². NO sustituye ni aprueba mesh 17, nylon 22 ni film 17: equivale a unos 560 g de piel neta por cola, antes de tinta y remates, frente a unos 237–313 g de las referencias de 17–22,4 g/m². Confirmar masa, movilidad, transparencia y paso de aire sobre muestra antes de elegir.",
+          "sourceIds": [
+            "PC02-CP-CHIFFON",
+            "PC02-CP-ORGANZA"
+          ]
+        },
+        {
+          "description": "Impresión de motivos de orquídea",
+          "quantityBasis": "60 m lineales×8.500–25.000 COP/m de servicio; una cara sobre tela translúcida.",
+          "lowCOP": 510000,
+          "highCOP": 1500000,
+          "priceBasis": "precio_publicado_de_servicio_y_referencia",
+          "note": "Servicio separado del suministro de tela. La compatibilidad con sublimación, la transparencia, la porosidad, el encogimiento y la saturación deben validarse con muestra; no se asume inflado, impermeabilidad ni reducción de fuerza de viento. No presupone una capa DTF que añada película. Una segunda cara/pasada no está duplicada por defecto.",
+          "sourceIds": [
+            "PC02-CP-PRINT-LOW",
+            "PC02-CP-PRINT-HIGH"
+          ]
+        },
+        {
+          "description": "Muestras de impresión y uniones textiles",
+          "quantityBasis": "Un lote pequeño de cupones y pruebas de color/encogimiento/arrancamiento.",
+          "lowCOP": 250000,
+          "highCOP": 600000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Materiales de muestra y reimpresiones pequeñas previas; no una sexta cola completa. Trabajo de preparación y prueba se cuenta en mano de obra.",
+          "sourceIds": []
+        },
+        {
+          "description": "Perfiles de las treinta nervaduras",
+          "quantityBasis": "150 m de compra presupuestada×30.000–70.000 COP/m;125,626 m de arcos nominales para 30 venas.",
+          "lowCOP": 4500000,
+          "highCOP": 10500000,
+          "priceBasis": "provision_propia_sin_precio_cotizado",
+          "note": "Sección, material, uniones y fabricación de la curva SIN aprobar.19,4% adicional de metraje para cortes y muestras. Esta asignación económica no se deriva deEI = 1000 del visor, ni equivale a especificar varilla maciza delgada. Un desarrollo especial puede superar el rango.",
+          "sourceIds": [
+            "PC02-CP-HORN",
+            "PC02-CP-REFORPLAS"
+          ]
+        },
+        {
+          "description": "Raíces y conectores de las treinta venas",
+          "quantityBasis": "30 juegos×10.000–25.000 COP; bujes, manguitos, aislantes y fijaciones de raíz.",
+          "lowCOP": 300000,
+          "highCOP": 750000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Material y herrajes; taladrado y ajuste en labor mecánica. Los 30 juegos no incorporan un desarme longitudinal aprobado de las venas.",
+          "sourceIds": []
+        },
+        {
+          "description": "Casete, gancho de cerrado y retén de abierto",
+          "quantityBasis": "5 juegos de material/herrajes×200.000–450.000 COP.",
+          "lowCOP": 1000000,
+          "highCOP": 2250000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Eje, separadores, topes, gancho cautivo, retén independiente y protección. La asistencia y amortiguamiento siguen por dimensionar; rango para desarrollo ordinario, no mecanismo certificado. Mecanizado y montaje en labor.",
+          "sourceIds": []
+        },
+        {
+          "description": "Bases dorsales, arneses y acolchados",
+          "quantityBasis": "5 juegos de material×180.000–320.000 COP.",
+          "lowCOP": 900000,
+          "highCOP": 1600000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Placa dorsal, reata, tirantes, cinturón, hebillas, tejido y espuma. Cada arnés se adapta al intérprete. No se confunde con equipo anticaídas ni se asigna capacidad; confección y ajuste en labor.",
+          "sourceIds": [
+            "PC02-CP-EKA"
+          ]
+        },
+        {
+          "description": "Mangas textiles, refuerzos y fijación del paño",
+          "quantityBasis": "5 juegos×100.000–180.000 COP.",
+          "lowCOP": 500000,
+          "highCOP": 900000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Bies, cintas, refuerzos locales, hilo y cierres del textil. No añade otra piel completa. Puntadas y confección en labor.",
+          "sourceIds": []
+        },
+        {
+          "description": "Protectores blandos de las puntas de vena",
+          "quantityBasis": "30 piezas×2.000–5.000 COP.",
+          "lowCOP": 60000,
+          "highCOP": 150000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Tapas y amortiguación en extremos; geometría final y método de retención por probar.",
+          "sourceIds": []
+        },
+        {
+          "description": "Adhesivos, acabado y consumibles de taller",
+          "quantityBasis": "Un lote para las cinco colas.",
+          "lowCOP": 250000,
+          "highCOP": 500000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Insumos habituales de acabado y montaje; herramienta normal incluida en tarifa, no maquinaria nueva.",
+          "sourceIds": []
+        },
+        {
+          "description": "Materiales de plantilla y útil de montaje",
+          "quantityBasis": "Un lote compartido para el prototipo y las otras cuatro unidades.",
+          "lowCOP": 200000,
+          "highCOP": 450000,
+          "priceBasis": "provision_propia_por_cotizar",
+          "note": "Plantilla a escala, guías y soportes de fabricación. Se cobra una sola vez para toda la serie; horas de desarrollo en labor.",
+          "sourceIds": []
+        }
+      ],
+      "laborItems": [
+        {
+          "description": "Patrones, arte por paños y preparación de la prueba",
+          "quantityBasis": "18–28 h especialista×35.000–50.000 COP/h +0–0 h apoyo×20.000–30.000 COP/h.",
+          "specialistHours": [
+            18,
+            28
+          ],
+          "assistantHours": [
+            0,
+            0
+          ],
+          "lowCOP": 630000,
+          "highCOP": 1400000,
+          "priceBasis": "estimacion_propia_de_horas_y_tarifas",
+          "note": "Trabajo de desarrollo único para la serie; no se cobra diseño completo cinco veces.",
+          "sourceIds": []
+        },
+        {
+          "description": "Mecánica y montaje de la primera cola de prueba",
+          "quantityBasis": "24–40 h especialista×35.000–50.000 COP/h +16–24 h apoyo×20.000–30.000 COP/h.",
+          "specialistHours": [
+            24,
+            40
+          ],
+          "assistantHours": [
+            16,
+            24
+          ],
+          "lowCOP": 1160000,
+          "highCOP": 2720000,
+          "priceBasis": "estimacion_propia_de_horas_y_tarifas",
+          "note": "Una de las cinco unidades finales; no sexta cola adicional. Incluye ajuste inicial de perfil, casete y arnés, sin ingeniería certificada.",
+          "sourceIds": []
+        },
+        {
+          "description": "Mecánica y montaje de las otras cuatro colas",
+          "quantityBasis": "40–64 h especialista×35.000–50.000 COP/h +32–48 h apoyo×20.000–30.000 COP/h.",
+          "specialistHours": [
+            40,
+            64
+          ],
+          "assistantHours": [
+            32,
+            48
+          ],
+          "lowCOP": 2040000,
+          "highCOP": 4640000,
+          "priceBasis": "estimacion_propia_de_horas_y_tarifas",
+          "note": "Por unidad 10–16 h especialista y 8–12 h apoyo; repetición del sistema que pase la prueba.",
+          "sourceIds": []
+        },
+        {
+          "description": "Corte, confección y sujeción de cinco membranas",
+          "quantityBasis": "50–80 h especialista×35.000–50.000 COP/h +20–30 h apoyo×20.000–30.000 COP/h.",
+          "specialistHours": [
+            50,
+            80
+          ],
+          "assistantHours": [
+            20,
+            30
+          ],
+          "lowCOP": 2150000,
+          "highCOP": 4900000,
+          "priceBasis": "estimacion_propia_de_horas_y_tarifas",
+          "note": "Para 35 paños nominales y sus remates/mangas; impresión ya cobrada como servicio en materiales.",
+          "sourceIds": []
+        },
+        {
+          "description": "Ajuste a cinco intérpretes y prueba de funcionamiento",
+          "quantityBasis": "16–24 h especialista×35.000–50.000 COP/h +16–24 h apoyo×20.000–30.000 COP/h.",
+          "specialistHours": [
+            16,
+            24
+          ],
+          "assistantHours": [
+            16,
+            24
+          ],
+          "lowCOP": 880000,
+          "highCOP": 1920000,
+          "priceBasis": "estimacion_propia_de_horas_y_tarifas",
+          "note": "Montar, abrir/cerrar y corregir detalles. Ensayo de taller, no ensayo acreditado de cargas, viento o ergonomía.",
+          "sourceIds": []
+        }
+      ],
+      "laborRates": {
+        "specialistRangeCOPperHour": [
+          35000,
+          50000
+        ],
+        "assistantRangeCOPperHour": [
+          20000,
+          30000
+        ],
+        "basis": "Hipótesis propia de planeación I05 conservada del24octubre2026; no tarifa cotizada ni estudio salarial."
+      },
+      "transportItems": [
+        {
+          "description": "Llegada de perfiles/tela al taller",
+          "quantityBasis": "Una provisión de suministro local de materiales largos",
+          "lowCOP": 300000,
+          "highCOP": 600000,
+          "note": "No tarifa cotizada; confirmar origen y embalaje. Importación directa de material especial fuera de esta base."
+        },
+        {
+          "description": "Recargo por capacidad para los trayectos compartidos",
+          "quantityBasis": "5 trayectos×100.000–200.000 COP, adicionales a la base de nave",
+          "lowCOP": 500000,
+          "highCOP": 1000000,
+          "note": "No son cinco fletes completos nuevos. Vehículo útil≈5 m por longitud de vena sin desarme aprobado. El recargo se vuelve a calcular si cambia el número de trayectos de nave."
+        }
+      ],
+      "geometryBasis": {
+        "modelRevision": "CP03",
+        "modelSHA256": "3ed93d2aaf359e41159a59eb76aa9a7ca303deed4495c8e80af24f0de1265371",
+        "skinAreaEachM2": 13.987158480128935,
+        "skinAreaFiveM2": 69.93579240064467,
+        "rodArcLengthsEachM": [
+          3.6542902006640823,
+          4.21658926835394,
+          4.691691335350251,
+          4.691691335350251,
+          4.21658926835394,
+          3.6542902006640823
+        ],
+        "rodArcLengthTotalM": 125.62570804368275,
+        "rodPurchaseAllowanceM": 150,
+        "fabricPurchaseLinearM": 60,
+        "fabricReferenceWidthM": 1.5,
+        "fabricPurchaseAreaM2": 90,
+        "fabricAllowancePercent": 28.68946916968138,
+        "ribAllowancePercent": 19.402312103062357,
+        "finalNestingValidated": false
+      },
+      "uncertainties": [
+        "No existe sección, material, masa ni capacidad de las venas aprobada. EI = 1000Nm² del visor es un supuesto y no dimensiona una compra. Los 150 m son provisión de metraje, no largos finales de corte.",
+        "La geometría de 5 m sobreL1 y 4,8 m de ancho sigue siendo estudio de prototipo; la aprobación de cinco unidades no valida cargas humanas ni viento.",
+        "La membrana no está seleccionada. La gasa poliéster local de 40 g/m² es solo una ruta económica para cotizar muestras y es aproximadamente el doble de gramaje de las pieles de 17–22 g/m² del visor. No autoriza sustituir mesh 17, nylon 22 o film 17. Comprobar masa, movilidad, sublimación, transparencia y porosidad; no se infiere capacidad aerodinámica, inflado o impermeabilidad. Importación o impresión de nylon/PET técnico y tratamientos especiales requieren recotizar.",
+        "La compra de 60 m de tela incluye margen de paños y merma, pero no es un anidado validado ni autoriza fabricar. Un rediseño mayor o rehacer una cola completa tras fallo no está garantizado dentro de esa merma.",
+        "Casete, asistencia, retén, arnés y apoyoL1 requieren selección y prueba. Los rangos propios son asignaciones de presupuesto, no cotizaciones recibidas.",
+        "Se computa una cola de prueba dentro de las cinco y cuatro repeticiones. Los materiales de cupones y las horas de desarrollo no constituyen una sexta unidad completa.",
+        "Sin desarme en tramos aprobado, el bulto se acerca a 4,7 m. Los 5 trayectos base de nave requieren ampliar capacidad; el recargo incluido no es tarifa de transporte confirmada.",
+        "IVA adicional que aplique a la oferta del constructor, ingeniería/revisión profesional, ensayos acreditados, seguro, almacenamiento y operación durante funciones fuera del importe; no volver a sumar impuestos ya contenidos en precios minoristas."
+      ]
     }
   ],
   "naveComparison": {
@@ -1717,7 +2536,7 @@
       600000,
       900000
     ],
-    "scope": "Fabricación enBogotá. Incluye EPS, demás materiales, talla/ensamblaje, vaciado separado en bloques, trabajo común, llegadaEPS al taller y cinco trayectos de nave terminada. Mismo exterior y pared50mm; misma densidad20 y acabado.",
+    "scope": "Alcance de referencia en Bogotá: mismo exterior N02 y pared de 50 mm. Incluye EPS, demás materiales, talla o ensamblaje, vaciado de bloques, trabajo común y transporte de la nave. El selector indica los trayectos actuales; las colas agregan su recargo de capacidad por separado en su tarjeta.",
     "rowDefinitions": [
       {
         "key": "eps",
@@ -1841,5 +2660,19 @@
         ]
       }
     }
-  }
+  },
+  "revision": "PC02",
+  "baseDate": "2026-10-24",
+  "scopeNote": "Dos escenarios del mismo alcance: fabricación de seis grupos de objetos, transportes presupuestados y reserva del 15 %. El tope es el extremo alto proyectado, no un máximo contratado: depende de cotizaciones y de la cola de prueba. Barco, grulla y nave conservan sus bases del 24 de octubre; las otras tres bases se actualizaron el 29.",
+  "scenarioDefinitions": {
+    "low": "Extremos bajos de compra y horas; reserva 15 % incluida una vez.",
+    "high": "Extremos altos de compra y horas; reserva 15 % incluida una vez. Es un tope proyectado, sujeto a cotización y prototipo.",
+    "defaultNaveRoute": "slabs",
+    "defaultUrbanTrips": 5,
+    "defaultBlockOrigin": "itaguí"
+  },
+  "scenarioTotalsDefaultCOP": [
+    38095309,
+    81718170
+  ]
 }

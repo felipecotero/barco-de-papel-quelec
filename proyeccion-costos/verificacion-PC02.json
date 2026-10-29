@@ -1,0 +1,46 @@
+{
+  "revision": "PC02",
+  "date": "2026-10-29",
+  "objectCount": 6,
+  "physicalUnitCount": 13,
+  "pricedRevisions": [
+    "R08",
+    "G04",
+    "N02",
+    "C02-r2",
+    "PA05",
+    "CP03"
+  ],
+  "defaultNaveRoute": "slabs",
+  "defaultUrbanTrips": 5,
+  "defaultScenarioTotalsCOP": [
+    38095309,
+    81718170
+  ],
+  "tabs": [
+    "Escenario bajo",
+    "Tope proyectado"
+  ],
+  "reserveRate": 0.15,
+  "dataChecks": 67,
+  "browserChecks": 102,
+  "sourceDateChecks": 56,
+  "errorsJS": 0,
+  "errorsCSP": 0,
+  "checks": {
+    "amountsBarcoGrullaNaveUnchanged": true,
+    "allSixIncluded": true,
+    "fiveTailsIncludesPrototype": true,
+    "pancartasFourEightPrintsSingleFormat": true,
+    "caucheraCurrentVisualRevision": true,
+    "noDoubleReserve": true,
+    "noDuplicateFullTransports": true,
+    "tailCapacitySurchargeTracksTripCount": true,
+    "tabsKeyboardAndReload": true,
+    "mobileNoOverflow": true,
+    "retryWorks": true,
+    "hiddenEntryAndReturn": true,
+    "modelsAndPDFsUnchanged": true
+  },
+  "limit": "Precios públicos y provisiones propias, sin cotización recibida. El tope proyectado no es un máximo contratado."
+}

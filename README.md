@@ -100,13 +100,15 @@ El botón Guías y planos ofrece los documentos del formato seleccionado: un pli
 
 Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. Las pancartas aún no tienen una estimación de costos consolidada.
 
-## Proyección de costos PC01
+## Proyección de costos PC02
 
-Página independiente de consulta, con enlace de regreso al taller. A petición expresa del usuario se abre sin clave y tiene un acceso discreto desde la esquina inferior derecha del índice (también Alt + Mayús + P). No aparece en el menú ni en los visores. `noindex` solicita que los buscadores no la indexen; no constituye una restricción de acceso. Quien tenga o encuentre la dirección puede consultar los valores. El usuario confirmó esta condición el 29 de octubre de 2026.
+Página independiente con dos pestañas: **Escenario bajo** y **Tope proyectado**. Cada una presenta su extremo de materiales, mano de obra, transportes previstos, reserva y total para los seis grupos: un barco, una grulla, una nave, una cauchera, cuatro pancartas y cinco colas de pavo. El tope es una proyección condicionada a cotización y prototipo, no un máximo contratado.
 
-La base I05 del 24 de octubre se conserva sin modificar importes: barco R08, grulla G04, nave N02 y cauchera C01. La cauchera requiere actualizar costos a C02-r2. Pancartas PA05 y cinco colas CP03 figuran por estimar y se excluyen del subtotal. No hay nuevas cotizaciones ni actualización de precios por abrir esta página.
+Pancartas PA05 se presupuestan con cuatro objetos y ocho impresiones en un único formato; los tres formatos no se suman. La cauchera usa la revisión visual C02-r2 (asas compactas, lengüeta y bolsa); su elástico sigue como provisión de muestras y los PDF C01 no se modifican. Cinco colas CP03 incluyen la primera de prueba y cuatro repeticiones; materiales, perfiles, mecanismos, arnés y horas de desarrollo están provisionados, sin aprobar secciones ni reemplazar la piel ultraligera por la gasa económica de referencia. Barco R08, grulla G04 y nave N02 conservan las bases del 24 de octubre; las otras tres bases y sus referencias se actualizaron el 29.
 
-La comparación de nave permite elegir planchas o bloques, el origen de los bloques y los trayectos urbanos. Tarjeta, materiales, trabajo, transporte, reserva y subtotal parcial se recalculan juntos; la reserva se aplica una sola vez. LED opcionales, impuestos y fletes pendientes se explican en el alcance. El acceso antiguo con clave y sus copias dentro de portátiles se retiraron. No se publica ninguna clave, libreto completo ni memoria privada.
+El plan por defecto usa la nave en planchas y cinco trayectos; sus totales se muestran únicamente en la página de proyección, con reserva del 15 % una vez. El selector de ruta, origen de bloques y trayectos recalcula tarjeta de nave, recargo de capacidad de las colas y total de ambos escenarios. Las colas prevén transporte fijo de suministros y un recargo de capacidad por los mismos trayectos, no otra serie de fletes completos. La consolidación de cargas, impuestos adicionales y exclusiones deben confirmarse.
+
+La página abre sin clave por decisión expresa confirmada del usuario. Tiene un punto discreto en la esquina inferior derecha del índice (también Alt + Mayús + P) y permite volver al taller. No aparece en el menú ni en los visores. `noindex` no constituye acceso privado: quien tenga o encuentre la dirección puede consultar los valores. No se publican claves, libreto íntegro ni memoria privada. Las fuentes y provisiones se distinguen en las partidas; no hubo contacto con proveedores ni cotizaciones recibidas.
 
 ## Archivos y revisión
 
