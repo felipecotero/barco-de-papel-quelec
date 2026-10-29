@@ -1,0 +1,42 @@
+{
+  "revision": "PC01",
+  "date": "2026-10-29",
+  "baseRevision": "I05",
+  "baseDate": "2026-10-24",
+  "access": {
+    "password": false,
+    "publicByURLAcceptedByUser": true,
+    "indexEntry": "Punto discreto inferior derecho; Alt+Mayús+P",
+    "visibleMenuEntry": false,
+    "returnToWorkshop": true,
+    "searchEngineOptOut": "noindex,nofollow,noarchive; no es una restricción de acceso"
+  },
+  "dataScope": {
+    "pricedObjects": 4,
+    "pendingObjects": [
+      "Pancartas PA05",
+      "Cinco colas de pavo CP03"
+    ],
+    "caucheraBase": "C01, anterior a visor C02-r2",
+    "totalLabel": "Subtotal de cuatro objetos",
+    "newPricesResearched": false
+  },
+  "checks": {
+    "localPathsInCostData": false,
+    "emailLikeInCostData": 0,
+    "credentialAbsent": true,
+    "costBaseUnchanged": true
+  },
+  "qa": {
+    "dataAndComparisonArithmetic": "pass",
+    "browserChecks": 62,
+    "discreetEntryChecks": 7,
+    "consoleErrors": 0,
+    "cspErrors": 0,
+    "mobile390NoOverflow": true,
+    "loadFailureAndRetry": true,
+    "portableFilesWithoutOldPanel": 7,
+    "viewerGeometryUnchanged": true,
+    "pdfsUnchanged": true
+  }
+}

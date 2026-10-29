@@ -98,17 +98,21 @@ El botón Guías y planos ofrece los documentos del formato seleccionado: un pli
 - [Artes horizontales, diez páginas de 60 × 40 cm](pancartas/downloads/Pancartas-Artes-PA05-Horizontal.pdf).
 - [Artes cuadrados, diez páginas de 45 × 45 cm](pancartas/downloads/Pancartas-Artes-PA05-Cuadrada.pdf).
 
-Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. El panel reservado de los otros cuatro objetos no cambia; las pancartas aún no tienen estimación allí.
+Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. Las pancartas aún no tienen una estimación de costos consolidada.
 
-## Estimaciones reservadas I05
+## Proyección de costos PC01
 
-El panel incluye la cauchera como cuarto objeto; su elástico es una provisión pendiente. El panel cifrado compara materiales, vaciado, trabajo específico de cada ruta, trabajo común y transporte de la nave. El vaciado de bloques no se vuelve a cobrar como montaje de planchas. Permite elegir origen de bloque y modificar los cinco trayectos urbanos indicados en los TDR. Un suministro local del formato largo se presenta como hipótesis por confirmar. Se separan provisiones propias de precios públicos; no hay cotizaciones recibidas ni proveedores contratados. Claves e importes no se distribuyen en texto abierto.
+Página independiente de consulta, con enlace de regreso al taller. A petición expresa del usuario se abre sin clave y tiene un acceso discreto desde la esquina inferior derecha del índice (también Alt + Mayús + P). No aparece en el menú ni en los visores. `noindex` solicita que los buscadores no la indexen; no constituye una restricción de acceso. Quien tenga o encuentre la dirección puede consultar los valores. El usuario confirmó esta condición el 29 de octubre de 2026.
+
+La base I05 del 24 de octubre se conserva sin modificar importes: barco R08, grulla G04, nave N02 y cauchera C01. La cauchera requiere actualizar costos a C02-r2. Pancartas PA05 y cinco colas CP03 figuran por estimar y se excluyen del subtotal. No hay nuevas cotizaciones ni actualización de precios por abrir esta página.
+
+La comparación de nave permite elegir planchas o bloques, el origen de los bloques y los trayectos urbanos. Tarjeta, materiales, trabajo, transporte, reserva y subtotal parcial se recalculan juntos; la reserva se aplica una sola vez. LED opcionales, impuestos y fletes pendientes se explican en el alcance. El acceso antiguo con clave y sus copias dentro de portátiles se retiraron. No se publica ninguna clave, libreto completo ni memoria privada.
 
 ## Archivos y revisión
 
 Los documentos antiguos quedan señalados como archivo y no corresponden a las versiones vigentes. Los enlaces antiguos a R05–R08 en la raíz conservan su redirección al barco. Three.js y las bibliotecas de render se distribuyen con sus licencias MIT; Montserrat con OFL. Quiche se usa mediante instalación local.
 
-Las estimaciones del equipo se distribuyen cifradas; la clave se mantiene fuera del repositorio y de los planos compartidos. No se guardan claves en el navegador ni se muestran importes al abrir una página.
+Los costos se consultan en una página separada; los planos y visores descargables no incorporan el antiguo panel de estimaciones. La memoria privada, las claves antiguas y el libreto completo permanecen fuera del repositorio.
 
 Regenerar portátiles con `python3 tools/build-portable.py`, `python3 grulla/tools/build-portable.py` `python3 nave/tools/build-portable.py` `python3 cauchera/tools/build-portable.py` y `python3 pancartas/tools/build-portable.py`. El modelo/corte de nave se genera con `nave/tools/build-model.py` (NumPy y Shapely). `SHA256SUMS` registra los entregables; cada objeto tiene su verificación. `model-r05.json` conserva su nombre por compatibilidad y contiene R08.
 

@@ -1,0 +1,1845 @@
+{
+  "title": "Estimaciones reservadas Quelec I05 / Cauchera C01",
+  "date": "2026-10-24",
+  "currency": "COP",
+  "sources": [
+    {
+      "id": "EPS-01",
+      "vendor": "Comercial Papelera",
+      "item": "Lámina EPS 1000×1000×50 mm",
+      "url": "https://www.comercialpapelera.com.co/tienda/lamina-de-icopor-5-cm-100-x-100-cm-1-und-p777570718",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 28500,
+      "unit": "lámina",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "La página muestra 14 unidades y solo recogida en tienda. Densidad y sede por confirmar. Equivalente aritmético570.000COP/m³, sin ser precio de bloque a medida.",
+      "verification": "Página de proveedor consultada en web",
+      "specification": {
+        "sizeMm": [
+          1000,
+          1000,
+          50
+        ],
+        "volumeM3": 0.05
+      }
+    },
+    {
+      "id": "EPS-02",
+      "vendor": "GBP Ferretería",
+      "item": "Lámina EPS 1000×1000×50 mm",
+      "url": "https://gbpferreteria.com/producto/lamina-de-icopor-100-x-100-cm-x-50-mm-325.html",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 19900,
+      "unit": "lámina",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Despacho desde Barranquilla",
+      "status": "Precio público observado; no es cotización",
+      "note": "El propio catálogo dice precio de referencia; confirmar disponibilidad, flete y condiciones. Densidad10–15kg/m³ según referencia, no certificada para esta unidad. Equivalente398.000COP/m³.",
+      "verification": "Página de proveedor consultada en web",
+      "specification": {
+        "sizeMm": [
+          1000,
+          1000,
+          50
+        ],
+        "volumeM3": 0.05
+      }
+    },
+    {
+      "id": "EPS-03",
+      "vendor": "QOOL ENGINE SAS / QESA",
+      "item": "EPS densidad10, lámina1000×1000×50 mm",
+      "url": "https://www.qesa.co/lamina-plana-aislamiento-acustico",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 11600,
+      "unit": "lámina",
+      "vat": "Impuestos incluidos",
+      "location": "Zipaquirá, Cundinamarca",
+      "status": "Precio público observado; no es cotización",
+      "note": "Mínimo60láminas, entregadas en fábrica. Compra mínima696.000COP por3m³. No usar11.600como precio minorista para12–24láminas; transporte adicional cotizable.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EPS-04",
+      "vendor": "Giossep SAS",
+      "item": "Geobloques y cortes EPS",
+      "url": "https://giossepsas.com/servicios/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Calle57D78M–46sur, Bogotá",
+      "status": "Proveedor identificado; precio por cotizar",
+      "note": "Geobloques con densidades15–35kg/m³; láminas y dimensiones a solicitar. No hay precio ni formato de bloque publicado.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EPS-05",
+      "vendor": "IKOPORTEX",
+      "item": "Bloque macizo EPS termocortado / corte sobre planos",
+      "url": "https://ikoportex.n.nu/productos",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Bogotá",
+      "status": "Proveedor identificado; precio por cotizar",
+      "note": "Declara8–14kg/m³ y corte sobre planos, con contenido reciclado. Confirmar uniformidad superficial, disponibilidad y acabado de muestra; no es cotización.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EPS-06",
+      "vendor": "Isopor",
+      "item": "Geobloque EPS200×125×65cm",
+      "url": "https://isopor.com.co/wp-content/uploads/2025/10/Geobloques-ficha-tecnica_compressed_compressed_compressed.pdf",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Ficha técnica, sin precio",
+      "note": "Referencia de disponibilidad industrial; ficha muestra200×125×65cm y29kg/m³. Un bloque entero1,625m³ pesa teóricamente47,1kg antes de tallar. No es la elección de densidad ligera del presupuesto.",
+      "verification": "Ficha técnica encontrada en índice web; acceso directo intermitente"
+    },
+    {
+      "id": "PP-04",
+      "vendor": "Línea Gráfica",
+      "item": "PP corrugado blanco2440×1220×4mm",
+      "url": "https://www.lineagrafica.com.co/collections/rigido/products/laminas-de-pp-corrugado-blanco-1-22-m-x-2-44-m",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 84954,
+      "unit": "lámina",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "La web muestra simultáneamente En Stock y Agotado; confirmar. Precio varía conTRM del día. Gramaje no publicado: para barco exigir600–700g/m² y pesar antes de aceptar, no basta espesor4mm.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "PP-02",
+      "vendor": "Compañía de Empaques, catálogo distribuido por ISEIN",
+      "item": "Láminas Cartonplast1–5mm",
+      "url": "https://isein.com.co/wp-content/uploads/2024/12/Catalogo-Compania-empaques-2024.pdf",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Catálogo técnico, PP2 por cotizar",
+      "note": "Declara espesores1–5mm y gramajes variables; sin precio público exacto para2440×1220×2mm natural translúcido. No sustituir porPP4. Confirmar formato, gramaje, translucidez y mínimo de compra.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AL-01",
+      "vendor": "Homecenter / Alfer",
+      "item": "Tubo cuadrado15,5×15,5×1,5mm, L1000mm",
+      "url": "https://www.homecenter.com.co/homecenter-co/product/898425/tubo-cuadrado-155x15/898425/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 34900,
+      "unit": "pieza1m",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Referencia minorista de precio; NO coincide con15×15×1mm del barco/grulla. Su sustitución aumenta peso y exige revisar casquillos, taladros y planos. No se propone como compra equivalente.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AL-02",
+      "vendor": "Metrópolis Center",
+      "item": "Tubo aluminio anodizado1pulgada×6m",
+      "url": "https://www.metropoliscenter.com.co/p/tubo-aluminio-anonizado-1-x-6-mt/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 46500,
+      "unit": "barra6m",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Espesor no publicado; solo referencia de mercado. No corresponde al tuboØ40×2 del barco ni alØ32×1 de bandera. Envío a calcular.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AL-03",
+      "vendor": "Metrópolis Center",
+      "item": "Ángulo aluminio3/4×3/4×1/16×6m",
+      "url": "https://www.metropoliscenter.com.co/c/ferreteria/perfileria-en-aluminio/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 19599,
+      "unit": "barra6m",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Sección aproximada19,05×19,05×1,59mm. Referencia para escuadras; replantear con sección real. No sustituye perfiles cuadrados.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AL-04",
+      "vendor": "Grupo Roldán",
+      "item": "Tubos aluminio cuadrados y redondos",
+      "url": "https://www.gruporoldan.com.co/?mapa=1",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Medellín / cobertura Colombia",
+      "status": "Catálogo; perfiles exactos por cotizar",
+      "note": "Ofrece cuadrados1/2,5/8,3/4,1pulgada y tubos circulares de varios diámetros/paredes. Confirmar equivalencias exactas15×15×1/Ø40×2/Ø32×1 y corte mínimo; precios no publicados.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AD-01",
+      "vendor": "Empaquetaduras y Empaques / 3M",
+      "item": "DP8005, cartucho45ml",
+      "url": "https://www.empaquetadurasyempaques.com/shop/071000982-adhesivo-estructural-dp-8005-45-ml-8688",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 159950,
+      "unit": "cartucho45ml",
+      "vat": "Más IVA:190.340,50COP con19%",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Precio listado local; disponibilidad a confirmar, la página indexada dice Esta combinación no existe. Dos cartuchos=380.681COPIVAincluido. Requiere aplicador10:1 y boquillas compatibles; no incluidos.",
+      "verification": "Precio y producto en resultado web; reapertura directa respondió429"
+    },
+    {
+      "id": "AD-02",
+      "vendor": "Yaxa / 3M",
+      "item": "DP8005 negro, cartucho45ml",
+      "url": "https://yaxa.co/products/3m-scotch-weld-adhesivo-estructural-plastico-dp8005-negro-45-ml-duo-pak-99352-yaxa-1",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 359777,
+      "unit": "cartucho45ml",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Referencia importada con envío anunciado gratis. Variantes359.777/365.777COP. No confirma aplicador ni boquillas incluidos; validar fecha de vencimiento y cantidad.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AD-03",
+      "vendor": "Tecno Importaciones / Gaffer Power",
+      "item": "Gaffer blanco50mm×27m",
+      "url": "https://tecnoimportaciones.com/accesorios/gaffer/gaffer-blanco/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 169000,
+      "unit": "rollo",
+      "vat": "IVA incluido",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Anuncia1unidad disponible y entrega1–3días. Gaffer presenta/remata; no es unión portante dePP ni cuelgue. Para juntas25mm de grulla se puede comprar ancho correcto o recortar piezas del rollo ancho; costo presupuestado es rollo completo.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AD-04",
+      "vendor": "Roxvan / Carpincol",
+      "item": "Colbón madera4000g",
+      "url": "https://roxvan.com/categoria-producto/ferreteria/page/114/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 89310,
+      "unit": "envase4kg",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Precio mostrado para unidad;75.050aparece como base/descuento mayorista12+. No asumir descuento comprando1–2. PVA de referencia para vendaje/papel; ensayo de adhesión aEPS y secado antes de adoptar. No es adhesivoPP-LSE.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AD-05",
+      "vendor": "IDEALL / Soudal",
+      "item": "Sin Clavos ni Tornillos Interior100g135589",
+      "url": "https://www.ideall.com.co/producto/sin-clavos-ni-tornillos-interior-100g-soudal-30927",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 14900,
+      "unit": "envase100g",
+      "vat": "IVA19% incluido",
+      "location": "Cali / envío nacional",
+      "status": "Precio público observado; no es cotización",
+      "note": "Producto de baseagua compatible con adornosEPS según ficha del distribuidor Dyna. Precio por unidad, caja12unidades. No cargar estructura a través delEPS.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "AD-06",
+      "vendor": "Dyna / Soudal",
+      "item": "Compatibilidad baseagua conEPS del adhesivo135589",
+      "url": "https://dyna.com.co/public/producto/46269/sin-clavos-ni-tornillos-adhesivo-de-montaje-100-grs-blanco-135589/UND",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Ficha de compatibilidad, sin precio",
+      "note": "Indica baseagua para interior y adhesión de adornos deicopor; usar con la cantidad/recomendaciones del fabricante y probeta. No especifica revestimiento textil completo.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "TX-01",
+      "vendor": "Casatextil",
+      "item": "Lienzo Oliver crudo",
+      "url": "https://casatextil.com.co/collections/telas-para-manualidades/products/tela-lienzo-oliver-x-metros",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 13000,
+      "unit": "metro lineal ancho155cm",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Alquería, Bogotá",
+      "status": "Precio público observado; no es cotización",
+      "note": "Ficha:100%algodón160g/m² y155cm ancho. Precio por metro; envío se calcula al pagar. Una capa10m² seca pesa1,6kg sin cola. Evitar capas pesadas innecesarias.",
+      "verification": "Página de proveedor consultada en web",
+      "specification": {
+        "widthM": 1.55,
+        "gsm": 160
+      }
+    },
+    {
+      "id": "TX-02",
+      "vendor": "MiCursoDigital",
+      "item": "FoamyEVA5mm55×43cm",
+      "url": "https://www.micursodigital.com/goma-eva-foamy-s-22/foamy-5mm-goma-eva-fomi-55-cm-x-43-cm-unicolor-para-manualidades/1454",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 9000,
+      "unit": "lámina55×43cm",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Referencia de acolchado. No coincide con todas las mangas deOD44/30 y su masa máxima88g del barco: hay que seleccionar densidad, espesor y retención según planos, no envolver con material pesado sin pesarlo.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "TX-03",
+      "vendor": "SUIMTEC",
+      "item": "FoamyEVA industrial",
+      "url": "https://suimtec.com/wp-content/uploads/2024/06/12.-Caucho-Foamy_Suimtec.pdf",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Carvajal, Bogotá",
+      "status": "Ficha/proveedor; precio por cotizar",
+      "note": "Planchas1,5×3m y espesores3,6,10mm en adelante. Dureza25/30ShoreA. No comprar plancha completa si venden retal suficiente para ocho mangas.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "FI-01",
+      "vendor": "Homecenter / Pintuco",
+      "item": "Viniltex Advance blanco puro1galón",
+      "url": "https://www.homecenter.com.co/homecenter-co/k/viniltex-galon",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 99900,
+      "unit": "galón3,785L",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Referencia de pintura para superficie preparada. No implica compatibilidad certificada directaEPS oPP. ParaEPS usar sistema libre de solventes probado; paraPPacabado delgado y adherencia ensayada, respetando presupuesto de masa.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "FI-02",
+      "vendor": "Rosco",
+      "item": "FoamCoat, recubrimiento paraEPS baseagua",
+      "url": "https://emea.rosco.com/es/product/foamcoattm",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Ficha técnica; precio/distribución Colombia por cotizar",
+      "note": "Recubrimiento baseagua para poliestireno, lijable y tallable. No se encontró precioCOP verificable. No se convierte precio extranjero ni se incluye como producto cotizado en presupuesto. No da certificación al objeto completo.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "PU-01",
+      "vendor": "Yaxa / Smooth-On",
+      "item": "FOAM-iT!5, unidadgalón",
+      "url": "https://yaxa.co/products/foam-it-5-espuma-rigida-de-poliuretano-unidad-de-galon",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 803777,
+      "unit": "unidadgalón",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Alternativa importada, envío anunciado gratis. Confirmar SKU/contenido: fabricante declara6,8kgpor unidadgalón, no asumir que equivale a1galón líquido total ni aEPS ligero.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "PU-02",
+      "vendor": "Smooth-On",
+      "item": "FichaFOAM-iT!5",
+      "url": "https://www.smooth-on.com/products/foam-it-5/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Fabricante EEUU",
+      "status": "Ficha técnica primaria; sin precioColombia",
+      "note": "Unidadgalón6,8kg; densidad0,08g/cc≈80kg/m³; volumen específico315in³/lb. Rendimiento teórico≈0,085m³/unidad, sin merma/contrapresión. A803.777COP/unidad resulta≈9,46millonesCOP/m³ de espuma; no recomendar como equivalente económico deEPS.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "PU-03",
+      "vendor": "ISOLCRUZ",
+      "item": "Kit expansivo isocianato+poliol",
+      "url": "https://www.isolcruz.com/Productos/kit-expansivo",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "ProveedorColombia; precio/densidad/rendimiento por cotizar",
+      "note": "Presentaciones1/2/5kg. El sistema es espuma rígida de alta densidad, no se puede presupuestar volumen sin ficha de densidad y expansión. No usar aerosol de relleno para formar todo el casco.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EL-01",
+      "vendor": "Tecnonacho / Steren",
+      "item": "PowerbankPB-C010NE10000mAh",
+      "url": "https://tecnonacho.com/producto/power-bank-steren-pb-c010ne-10000-mah-qc18w-pd20w-incorpora-cables-usb-c-lightning-micro-usb-y-usb/",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 115000,
+      "unit": "unidad",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "La web muestra3disponibles. Referencia de precio, no selección cerrada: confirmar dimensiones para envolvente110×75×35mm deG04 y salida5V/2A, protecciones y activación estable con carga baja.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EL-02",
+      "vendor": "SterenColombia",
+      "item": "CargadorUSBdobleELI-713",
+      "url": "https://www.steren.com.co/cargador-usb-express-doble.html",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 21900,
+      "unit": "unidad",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "Salida5V/2A usando un puerto. La web diceNO DISPONIBLE. Precio de referencia, buscar equivalente comercial protegido disponible; no presupuestar como compra garantizada.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EL-03",
+      "vendor": "SHEINColombia",
+      "item": "Mini focoUSB5V de aluminio con cable1,5m",
+      "url": "https://www.shein.com.co/1pc-Mini-Spotlight%2C-Aluminum-USB-5V-LED-Spotlight-With-4.92ft-Cable%2C-Small-Decorative-Light-For-Painting%2C-Picture%2C-Plant%2C-Jewelry-Display-Cabinet%2C-Showcase-Lighting-p-174342180.html",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 38690,
+      "unit": "foco",
+      "vat": "No indicado claramente; confirmar al cotizar",
+      "location": "Colombia",
+      "status": "Precio público observado; no es cotización",
+      "note": "La página diceAgotado. Referencia de precio, NO producto seleccionado: confirmar3000K, potencia≤1W, disipador/difusor y dimensiones. No asumir que un focoUSB cualquiera cumpleG04.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "EL-04",
+      "vendor": "EstilosM&F",
+      "item": "TiraUSB5V blanca1m coninterruptor",
+      "url": "https://estilosmyf.com/pc-tecnologia-/211-tira-led-usb-con-switch-color-blanco-1-metro.html",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": 14000,
+      "unit": "tira1m",
+      "vat": "Sin impuestos:16.660COPsi19%",
+      "location": "Engativá, Bogotá",
+      "status": "Precio público observado; no es cotización",
+      "note": "6500K/60LED por metro. Solo referencia de LEDopcionales nave, NO sustituye los2focos puntuales3000K deG04. Últimas unidades anunciadas.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "HE-01",
+      "vendor": "Proeléctrico Representaciones",
+      "item": "Guía de varillaM6 y cierre1/4devuelta, catálogo2026",
+      "url": "https://www.proelectrico.com/wp-content/uploads/2026/02/Lista-de-precios_2026-2.pdf",
+      "accessDate": "2026-10-24",
+      "currency": "COP",
+      "priceCOP": null,
+      "unit": null,
+      "vat": "Precios no incluyenIVA, sujetos a cambios",
+      "location": "Colombia",
+      "status": "Catálogo2026; selección de herraje por definir",
+      "note": "Páginas108/114 delPDF: cierres de1/4devuelta MS3357/58 listados26.600COP y guías CY.1.26/CY.1.20 listadas6.300/5.980COP. Son referencias de precio para herrajes guiados; NO se seleccionan automáticamente para la nave y no son herrajes de izaje. Replantear liberación, acceso y protección contra pellizco.",
+      "verification": "Página de proveedor consultada en web"
+    },
+    {
+      "id": "PE-01",
+      "vendor": "Metal-Plast",
+      "item": "Polietileno de alta densidad PEAD / PEHD en lámina, 6 mm y cortes a medida",
+      "url": "https://metal-plast.com.co/products/polietileno-alta-densidad-pead-blanco",
+      "location": "Carrera 28 #12A-49, Bogotá; sede también en Medellín",
+      "priceCOP": null,
+      "unit": "retal de 6 mm por cotizar",
+      "currency": "COP",
+      "vat": "Por cotizar",
+      "status": "Proveedor y formato identificados, sin precio útil",
+      "note": "El catálogo muestra $0,00 y Agotado; no es un precio gratuito ni una confirmación de inventario. Declara corte personalizado. Pedir PEHD de 6,0 mm reales: 1/4 de pulgada nominal puede ser 6,35 mm y alterar el encaje.",
+      "accessDate": "2026-10-24",
+      "verification": "Página del proveedor recuperada mediante búsqueda web; sin contacto ni cotización."
+    },
+    {
+      "id": "TX-04",
+      "vendor": "La Mina Adornos",
+      "item": "Velcro fino de 50 mm para coser",
+      "url": "https://www.lamina.com.co/products/velcro-fino-50-mm",
+      "location": "Colombia",
+      "priceCOP": 9500,
+      "unit": "metro, variante publicada",
+      "currency": "COP",
+      "vat": "No aclarado en el texto recuperado; confirmar",
+      "status": "Precio público observado, no cotización",
+      "note": "Confirmar que la compra incluye ambas caras, gancho y bucle. Para N01 se requieren dos contactos de 50 × 100 mm. El precio no acredita una fuerza específica de pelado ni retención.",
+      "accessDate": "2026-10-24",
+      "verification": "Página de la tienda recuperada mediante búsqueda web; sin contacto ni cotización."
+    },
+    {
+      "id": "TX-05",
+      "vendor": "Coser en Línea",
+      "item": "Reata de polipropileno de 50 mm, rollo de 50 m",
+      "url": "https://coserenlinea.com.co/products/cinta-reata-polipropileno-50mm-x50m-multiusos",
+      "location": "Colombia, envío nacional",
+      "priceCOP": 62242,
+      "unit": "rollo de 50 m",
+      "currency": "COP",
+      "vat": "Impuestos incluidos",
+      "status": "Precio público observado, no cotización",
+      "note": "La página mezcla Agotado y En existencias: confirmar disponibilidad. No extrapolar que venden 2 m al precio prorrateado. El extremo alto del kit contempla comprar el rollo; si venden por metro se puede reducir el desembolso.",
+      "accessDate": "2026-10-24",
+      "verification": "Página de la tienda recuperada mediante búsqueda web; sin contacto ni cotización."
+    },
+    {
+      "id": "EPS-N02-70",
+      "vendor": "Homecenter / Formapor",
+      "item": "Paquete5 planchas1x1m de7cm, densidad10",
+      "url": "https://www.homecenter.com.co/homecenter-co/product/769592/lamina-pura-icopor-densidad-10-de-1-m-x-1-m-x-7-cm-5-unidades-formapor/769592/",
+      "accessDate": "2026-10-24",
+      "priceCOP": 165900,
+      "note": "Precio del paquete de5, observado en página de producto; vigencia10–28oct2026. Es densidad10, no material20 exacto. Solo verifica formato y orden minorista de magnitud; no sustituir densidad ni presentar como cotización N02."
+    },
+    {
+      "id": "EPS-N02-B",
+      "vendor": "Precomprimidos",
+      "item": "Bloque4,08x0,86–1,24x0,525m; densidad20 o30",
+      "url": "https://www.precomprimidos.com.co/Servicios/Geobloque",
+      "accessDate": "2026-10-24",
+      "priceCOP": null,
+      "note": "Formato rotado4,08Lx0,525Wx0,86H. Empresa en Itagüí. Precio por unidad, origen real, densidad20 y entrega por cotizar. No hay precio de bloque publicado."
+    },
+    {
+      "id": "T-N02-U",
+      "vendor": "Trasteos El Velódromo",
+      "item": "Flota y precios de partida locales",
+      "url": "https://trasteoselvelodromo.com/mudanzas-bogota-la-calera/",
+      "accessDate": "2026-10-24",
+      "note": "NPR25m³ desde330.000COP; camioneta hasta6m³ desde100.000COP. Son precios de partida para mudanza, no cotización de utilería. Reserva propia330–700mil por viaje de nave; confirmar largo útil≥4,20m, accesos y protección."
+    },
+    {
+      "id": "T-N02-N",
+      "vendor": "Mudanzas El Velódromo",
+      "item": "Ruta Bogotá–Medellín, camión dedicado",
+      "url": "https://mudanzaselvelodromo.com/mudanzas-nacionales-medellin/",
+      "accessDate": "2026-10-24",
+      "note": "Publica referencia2026 de2,8–4,2millonesCOP para mudanza dedicada. Se usa como provisión del vehículo para bloques de4,08m; no es oferta EPS ni flete por kg. OrigenItagüí/Bogotá, vehículo y tarifa exactos por confirmar. Cupo compartido puede costar menos si admite el largo."
+    },
+    {
+      "id": "CORTE-N02",
+      "vendor": "CNC Center Bogotá",
+      "item": "Tallado3D por desbaste y cotización",
+      "url": "https://www.cnccenter.co/cnc-router/",
+      "accessDate": "2026-10-24",
+      "note": "Declara mecanizadoEPS y tallado3D; no publica tarifa ni capacidad4,08m. El cálculo usa horas manuales de taller, sin sumar además un servicioCNC. Si se cotiza mecanizado externo, reemplazar esas horas."
+    },
+    {
+      "id": "C01-TUBO",
+      "vendor": "Homecenter",
+      "title": "Tubo negro1pulgada×1,5mm×6m",
+      "url": "https://www.homecenter.com.co/homecenter-co/product/24413/tubo-cerramiento-negro-1-x-15mm-x-6m/24413/",
+      "accessDate": "2026-10-24",
+      "priceCOP": 38700,
+      "note": "Referencia minorista de tubo de cerramiento de6m,38.700COP. La ficha NO acredita que el diámetro exterior sea25,4mm ni un cálculo de rigidez para la cauchera. La compra definitiva es tubo mecánico de diámetro real y pared comprobados; el presupuesto es provisión distinta, no multiplicación de una referencia incompatible."
+    },
+    {
+      "id": "C01-PU",
+      "vendor": "SUMDECAR",
+      "title": "PU flexible D18 calibre5, lámina100×200cm",
+      "url": "https://sumdecar.com/espuma-de-poliuretano-d18-calibre-5",
+      "accessDate": "2026-10-24",
+      "priceCOP": 46000,
+      "note": "46.000COP publicados por lámina100×200cm. El sitio dice calibre5: confirmar explícitamente50mm antes de comprar, además de densidad y disponibilidad. Se presupuesta46–90mil como provisión; no se ha recibido cotización ni llamado al proveedor."
+    }
+  ],
+  "exclusions": [
+    "Semilla o escultura cargada, repuestos y accesorios fuera de las partidas.",
+    "Impresión de pliegos, embalajes o cajas de viaje, almacenamiento y seguro.",
+    "Revisión o certificación por ingeniero, cálculo estructural, ensayos acreditados y clasificación de fuego del conjunto.",
+    "Alquiler de sala, ensayos artísticos, portadores, intérpretes y operador durante funciones.",
+    "Rediseño no especificado y demoras de suministro. Se estima la construcción de un prototipo nuevo a partir de la documentación actual.",
+    "Una estructura que eleve a las personas dentro de la nave.",
+    "Aplicador nuevo de DP8005 y equipos excepcionales: partida aparte. Las herramientas normales del taller se suponen incluidas en la tarifa horaria.",
+    "Transporte del barco y la grulla fuera de sus tarjetas. La comparación de nave sí incluye la llegada delEPS y cinco trayectos urbanos dedicados; no duplicar ese flete si se consolida el conjunto.",
+    "IVA adicional que aplique a la oferta del constructor; confirmar régimen y total contractual, sin volver a sumar el IVA ya contenido en precios minoristas.",
+    "CaucheraC01: bolas luminosas y su batería/núcleo, capacidad de lanzamiento, ensayo con proyectiles y revisión profesional no incluidos. El elástico es una provisión hasta confirmar masa/material/distancia. El coste de la nave no incluía fabricar la cauchera, por eso se añade aparte. Si comparte furgón con nave, prorratear el flete ya contado; no sumar otros cinco viajes."
+  ],
+  "objects": [
+    {
+      "id": "barco",
+      "title": "Barco de papel",
+      "revision": "R08",
+      "materialRangeCOP": [
+        2316405,
+        3752278
+      ],
+      "laborRangeCOP": [
+        2240000,
+        4800000
+      ],
+      "contingencyRangeCOP": [
+        683461,
+        1282842
+      ],
+      "totalRangeCOP": [
+        5239866,
+        9835120
+      ],
+      "items": [
+        {
+          "id": "B01",
+          "description": "Seis láminas de PP de 4 mm",
+          "quantityBasis": "6 × 84.954 COP",
+          "lowCOP": 509724,
+          "highCOP": 509724,
+          "sourceIds": [
+            "PP-04"
+          ],
+          "priceBasis": "precio_publico_cantidad_del_modelo",
+          "note": "El IVA no está aclarado. Si se confirma que es más IVA, añadir 96.847,56 COP. Existencias y gramaje pendientes."
+        },
+        {
+          "id": "B02",
+          "description": "Perfil cuadrado de 15 × 15 × 1 mm para bastidor y bandera",
+          "quantityBasis": "10,213 m instalados; reserva de compra de 12 m",
+          "lowCOP": 168000,
+          "highCOP": 420000,
+          "sourceIds": [
+            "AL-01",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Cotizar la sección exacta. El producto Alfer de referencia tiene otras dimensiones y espesor; no se adopta como sustituto."
+        },
+        {
+          "id": "B03",
+          "description": "Barras principales de Ø40 × 2 mm",
+          "quantityBasis": "3,271 m instalados; largos comerciales por definir",
+          "lowCOP": 180000,
+          "highCOP": 360000,
+          "sourceIds": [
+            "AL-02",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "No se encontró precio público del tubo calibrado exacto; esta cifra es una reserva propia."
+        },
+        {
+          "id": "B04",
+          "description": "Tubo de bandera Ø32 × 1 mm y auxiliares Ø16 × 1 mm",
+          "quantityBasis": "1,603 m y 2,515 m instalados, más recortes de compra",
+          "lowCOP": 135000,
+          "highCOP": 270000,
+          "sourceIds": [
+            "AL-02",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Cotizar diámetros, paredes y largos comerciales exactos; las referencias de precio no son sustitutos automáticos."
+        },
+        {
+          "id": "B05",
+          "description": "Placas, ángulos, cuatro cunas, abrazaderas y cartelas",
+          "quantityBasis": "Seis brazos de 0,577 m totales, cuatro brazos de casco de 1,314 m totales y piezas planas",
+          "lowCOP": 150000,
+          "highCOP": 260000,
+          "sourceIds": [
+            "AL-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Solo materiales y herrajes. La fabricación está dentro de la mano de obra y no se suma dos veces."
+        },
+        {
+          "id": "B06",
+          "description": "Tornillería de nylon y metal, arandelas y casquillos",
+          "quantityBasis": "92 kits de bandas, 28 pestañas TP, 12 soportes VC y fijaciones de los planos",
+          "lowCOP": 220000,
+          "highCOP": 380000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Provisión por lotes. Cerrar el número de tornillos y sus largos después de verificar las pilas de material."
+        },
+        {
+          "id": "B07",
+          "description": "Adhesivo DP8005 para fondo y encuentros",
+          "quantityBasis": "Dos cartuchos de 45 ml como provisión de compra",
+          "lowCOP": 380681,
+          "highCOP": 719554,
+          "sourceIds": [
+            "AD-01",
+            "AD-02"
+          ],
+          "priceBasis": "rango_de_precios_publicos_cantidad_propuesta",
+          "note": "Los 60 g instalados son un límite de masa. Dos cartuchos no certifican rendimiento; considerar purga y boquillas. Aplicador y boquillas se separan como equipo."
+        },
+        {
+          "id": "B08",
+          "description": "Gaffer blanco para presentación y remates",
+          "quantityBasis": "Dos rollos de 50 mm × 27 m; 54 m de compra",
+          "lowCOP": 338000,
+          "highCOP": 338000,
+          "sourceIds": [
+            "AD-03"
+          ],
+          "priceBasis": "precio_publico_cantidad_de_planeacion",
+          "note": "Cantidad de planeación para presentar y rematar. La cinta no reemplaza las fijaciones portantes."
+        },
+        {
+          "id": "B09",
+          "description": "Velcro, fundas textiles y retención",
+          "quantityBasis": "Seis parejas, doce caras y sus fundas",
+          "lowCOP": 25000,
+          "highCOP": 55000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Contacto inicial de 20 × 15 mm por pareja. Comprar el material necesario y no una tira continua de unión."
+        },
+        {
+          "id": "B10",
+          "description": "Acolchados y remates blandos",
+          "quantityBasis": "Ocho mangas y ocho remates",
+          "lowCOP": 30000,
+          "highCOP": 70000,
+          "sourceIds": [
+            "TX-02",
+            "TX-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Seleccionar densidad y retención para respetar los 88 g de la partida de mangas y remates."
+        },
+        {
+          "id": "B11",
+          "description": "Asta y bandera",
+          "quantityBasis": "Un conjunto",
+          "lowCOP": 60000,
+          "highCOP": 120000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        },
+        {
+          "id": "B12",
+          "description": "Apariencia de papel y acabado delgado",
+          "quantityBasis": "10,356 m² de PP instalado",
+          "lowCOP": 70000,
+          "highCOP": 150000,
+          "sourceIds": [
+            "FI-01"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "El acabado tiene un límite de masa de 300 g. Ensayar adhesión sobre PP; no aplicar litros de pintura pesada."
+        },
+        {
+          "id": "B13",
+          "description": "Brocas, lijas, cuchillas y consumibles",
+          "quantityBasis": "Un lote",
+          "lowCOP": 50000,
+          "highCOP": 100000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        }
+      ],
+      "laborNote": "Horas y tarifas propias de planeación; no cotización recibida.",
+      "note": "Transporte eIVA adicional pendientes, fuera del total. Mano de obra estimada."
+    },
+    {
+      "id": "grulla",
+      "title": "Grulla de origami",
+      "revision": "G04",
+      "materialRangeCOP": [
+        766900,
+        1534000
+      ],
+      "laborRangeCOP": [
+        840000,
+        2000000
+      ],
+      "contingencyRangeCOP": [
+        241035,
+        530100
+      ],
+      "totalRangeCOP": [
+        1847935,
+        4064100
+      ],
+      "items": [
+        {
+          "id": "G01",
+          "description": "PP natural o translúcido de 2 mm",
+          "quantityBasis": "Una lámina de 2440 × 1220 mm",
+          "lowCOP": 45000,
+          "highCOP": 95000,
+          "sourceIds": [
+            "PP-02"
+          ],
+          "priceBasis": "provision_sin_precio_publico_exacto",
+          "note": "Cotizar compra unitaria, formato y translucidez. No usar PP de 4 mm como sustituto."
+        },
+        {
+          "id": "G02",
+          "description": "Bandeja de aluminio, perfil, montantes, cerco y cartelas",
+          "quantityBasis": "Bandeja de 304 × 304 × 1 mm; perfil de 1,65 m; ángulos de 0,432 m y pletinas de 1,216 m",
+          "lowCOP": 80000,
+          "highCOP": 170000,
+          "sourceIds": [
+            "AL-01",
+            "AL-03",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        },
+        {
+          "id": "G03",
+          "description": "Cuelgue completo con capacidad declarada",
+          "quantityBasis": "Cuatro ojos articulados M6, anilla, 4 m de cuerda y terminales",
+          "lowCOP": 150000,
+          "highCOP": 420000,
+          "sourceIds": [],
+          "priceBasis": "provision_critica_por_cotizar",
+          "note": "No se seleccionaron ojos con ficha de capacidad para tiro oblicuo. Los cáncamos genéricos no son sustitutos. Este rango puede cambiar al cerrar la selección."
+        },
+        {
+          "id": "G04",
+          "description": "Cinta interior de juntas",
+          "quantityBasis": "71 juntas; longitud nominal de 20,261 m y ancho de 25 mm, más recortes",
+          "lowCOP": 100000,
+          "highCOP": 169000,
+          "sourceIds": [
+            "AD-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Compra aproximada de 25–30 m. Un rollo de 50 mm × 27 m tiene área suficiente si se cortan las piezas de 25 mm. Ensayar adherencia sobre PP."
+        },
+        {
+          "id": "G05",
+          "description": "Nylon, arandelas, casquillos y herrajes del bastidor",
+          "quantityBasis": "Cuatro fijaciones de base, montajes M4 de metal y cuatro fijaciones M3 de lámparas",
+          "lowCOP": 70000,
+          "highCOP": 140000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        },
+        {
+          "id": "G06",
+          "description": "Papel fino, acabado y adhesivo de muestra",
+          "quantityBasis": "0,999 m² de PP instalado",
+          "lowCOP": 35000,
+          "highCOP": 85000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Mantener las alas translúcidas mediante papel fino y acabado no opaco."
+        },
+        {
+          "id": "G07",
+          "description": "Dos módulos LED puntuales USB de 3000 K y máximo 1 W",
+          "quantityBasis": "Dos focos con driver, difusor y disipador",
+          "lowCOP": 80000,
+          "highCOP": 160000,
+          "sourceIds": [
+            "EL-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Provisión, no luminaria seleccionada. La referencia de precio está agotada y no confirma potencia ni dimensiones."
+        },
+        {
+          "id": "G08",
+          "description": "Power bank protegido",
+          "quantityBasis": "Una unidad de 5 V / 2 A con dimensiones compatibles",
+          "lowCOP": 115000,
+          "highCOP": 115000,
+          "sourceIds": [
+            "EL-01"
+          ],
+          "priceBasis": "precio_publico_referencia_dimension_por_confirmar",
+          "note": ""
+        },
+        {
+          "id": "G09",
+          "description": "Cargador compatible de 5 V / 2 A",
+          "quantityBasis": "Una unidad",
+          "lowCOP": 21900,
+          "highCOP": 40000,
+          "sourceIds": [
+            "EL-02"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "El producto publicado está no disponible; localizar y verificar un equivalente."
+        },
+        {
+          "id": "G10",
+          "description": "Interruptor, fusible, cables, conectores, cuna y protección",
+          "quantityBasis": "Un circuito con fusible de 1 A",
+          "lowCOP": 45000,
+          "highCOP": 90000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        },
+        {
+          "id": "G11",
+          "description": "Consumibles de corte y montaje",
+          "quantityBasis": "Un lote",
+          "lowCOP": 25000,
+          "highCOP": 50000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        }
+      ],
+      "laborNote": "Horas y tarifas propias de planeación; no cotización recibida.",
+      "note": "Transporte eIVA adicional pendientes, fuera del total. Mano de obra estimada."
+    },
+    {
+      "id": "nave",
+      "title": "Nave escénica de EPS",
+      "revision": "N02",
+      "materialRangeCOP": [
+        1692000,
+        3204000
+      ],
+      "laborRangeCOP": [
+        3502050,
+        8289000
+      ],
+      "transportRangeCOP": [
+        1750000,
+        3750000
+      ],
+      "contingencyRangeCOP": [
+        1041608,
+        2286450
+      ],
+      "totalRangeCOP": [
+        7985658,
+        17529450
+      ],
+      "items": [
+        {
+          "id": "N01",
+          "description": "EPS de20kg/m³, ruta de doce planchas N02",
+          "quantityBasis": "12 planchas1000×1000×70mm;140blancos,118duelas y22accesorios",
+          "lowCOP": 504000,
+          "highCOP": 756000,
+          "sourceIds": [
+            "EPS-N02-70",
+            "EPS-03",
+            "EPS-N02-B"
+          ],
+          "priceBasis": "provision_propia_no_cotizada_del_material_D20",
+          "note": "Unidad de planeación600.000–900.000COP/m³ en ambas rutas, sin asumir descuento industrial. El producto minorista de referencia esD10 y NO acredita el precioD20. Pedir12planchasD20 por unidad; confirmar mínimo de venta. El rango no es una cotización recibida.",
+          "quantity": {
+            "count": 12,
+            "sizeMm": [
+              1000,
+              1000,
+              70
+            ],
+            "purchasedVolumeM3": 0.84,
+            "densityKgM3": 20,
+            "blankCount": 140,
+            "skinStaveCount": 118
+          }
+        },
+        {
+          "id": "N02",
+          "description": "Largueros y diagonales de aluminio 20 × 20 × 1,5 mm",
+          "quantityBasis": "6 largueros de 2850 mm y 4 diagonales de 304,836 mm; total 18.319344 m",
+          "lowCOP": 308000,
+          "highCOP": 720000,
+          "sourceIds": [
+            "AL-01",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Sección exacta sin sustitución por perfiles de otro tamaño o pared. Compra mínima práctica si venden cortes: tres barras de 6 m y un corte adicional de 1,25 m. Si solo venden barras completas, reservar cuatro barras de 6 m. Los sobrantes nominales de 300 mm después de dos largueros no admiten una diagonal de 304,836 mm, aun antes del kerf. Precio del calibre exacto por cotizar.",
+          "quantity": {
+            "kind": "square",
+            "sectionMm": [
+              20,
+              20,
+              1.5
+            ],
+            "count": 10,
+            "installedLengthM": 18.319344085974098,
+            "fullBars6mAlternative": 4,
+            "cutPurchaseAlternativeM": [
+              6,
+              6,
+              6,
+              1.25
+            ],
+            "nominalPurchasedLengthMRange": [
+              19.25,
+              24
+            ]
+          }
+        },
+        {
+          "id": "N03",
+          "description": "Seis mediosaros de pletina de aluminio 25 × 3 mm",
+          "quantityBasis": "Seis medios aros con offset interior62mm; largo total5.758317m",
+          "lowCOP": 80000,
+          "highCOP": 180000,
+          "sourceIds": [
+            "AL-03",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Cotizar pletina exacta de 25 × 3 mm y doblado; no cambiar sección ni metal para ajustar precio. Seis metros cubren las longitudes nominales con poco margen. Confirmar despuntes, kerf y longitud extra del proceso de doblado. El trabajo de curvado se cuenta en mano de obra, no dos veces.",
+          "quantity": {
+            "kind": "halfHoop",
+            "sectionMm": [
+              25,
+              3
+            ],
+            "count": 6,
+            "installedLengthM": 5.758316633197995,
+            "nominalPurchaseM": 6
+          }
+        },
+        {
+          "id": "N04",
+          "description": "Ocho tubos de agarre de aluminio Ø32 × 1,5 mm",
+          "quantityBasis": "Cuatro principales de265mm y cuatro controles de205mm;1,880m instalados",
+          "lowCOP": 80000,
+          "highCOP": 160000,
+          "sourceIds": [
+            "AL-02",
+            "AL-04"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Reserva de compra de 2 m del tubo exacto, sujeta al largo comercial. Acolchados y tapones están en otra partida. No sustituir por tubo de 1 pulgada ni pared más gruesa.",
+          "quantity": {
+            "kind": "grip",
+            "sectionMm": [
+              32,
+              1.5
+            ],
+            "count": 8,
+            "mainCount": 4,
+            "mainLengthMm": 265,
+            "controlCount": 4,
+            "controlLengthMm": 205,
+            "installedLengthM": 1.88,
+            "nominalPurchaseM": 2
+          }
+        },
+        {
+          "id": "N05",
+          "description": "Placas, tornillería, arandelas, casquillos y soportes de bastidor",
+          "quantityBasis": "Montaje de ocho asas y tres parejas de guías, según N01",
+          "lowCOP": 140000,
+          "highCOP": 280000,
+          "sourceIds": [
+            "AL-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Provisión de materiales, no lista de compra certificada. Conservar placas Al de 80 × 120 × 3 mm, M6 × 35, arandelas Ø18 y casquillos Ø8/6,5 × 17 mm de los agarres; soportes y fijaciones M4 de los peines según sus pilas reales. No transferir estas cargas al EPS."
+        },
+        {
+          "id": "N06",
+          "description": "Tres parejas de peines de PEHD de 6 mm y topes",
+          "quantityBasis": "Seis peines: cuerpo de 150 × 30 mm y dientes de 70 mm, con cubiertas blandas por mitad",
+          "lowCOP": 80000,
+          "highCOP": 160000,
+          "sourceIds": [
+            "PE-01"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Presupuestar un retal aproximado de 350 × 350 × 6 mm para seis contornos nominales de 150 × 100 mm, sujeto a plantilla y kerf. El PEHD va atornillado a los soportes del bastidor. No se añaden cuatro guías metálicas ni cierres de palanca de la estimación anterior.",
+          "quantity": {
+            "pairs": 3,
+            "parts": 6,
+            "material": "PEHD",
+            "thicknessMm": 6,
+            "bodyMm": [
+              150,
+              30
+            ],
+            "toothLengthMm": 70,
+            "nominalPartEnvelopeMm": [
+              150,
+              100,
+              6
+            ],
+            "provisionalPurchaseRetalMm": [
+              350,
+              350,
+              6
+            ]
+          }
+        },
+        {
+          "id": "N07",
+          "description": "Dos cinchas de 50 mm con velcro cosido y tiradores",
+          "quantityBasis": "Dos cinchas de 250 mm; dos tiradores de 450 mm; dos contactos gancho/bucle de 50 × 100 mm",
+          "lowCOP": 35000,
+          "highCOP": 90000,
+          "sourceIds": [
+            "TX-04",
+            "TX-05"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Reserva de compra de unos 2 m de reata y material de gancho y bucle para coser. Si hay que comprar el rollo completo de 50 m, su precio publicado es 62.242 COP; confirmar si el velcro por metro incluye las dos caras. No añadir cierres de palanca. La costura está en mano de obra y la apertura se ensaya con el producto real.",
+          "quantity": {
+            "closures": 2,
+            "widthMm": 50,
+            "strapLengthMm": 250,
+            "releaseTailMm": 450,
+            "contactPerPairMm": [
+              50,
+              100
+            ],
+            "nominalStrapAndTailLengthM": 1.4,
+            "purchaseAllowanceM": 2
+          }
+        },
+        {
+          "id": "N08",
+          "description": "Tela ligera para la superficie del casco",
+          "quantityBasis": "5.454636m² instalados; compra5–6m×1,55m",
+          "lowCOP": 65000,
+          "highCOP": 78000,
+          "sourceIds": [
+            "TX-01"
+          ],
+          "priceBasis": "precio_publico_cantidad_de_planeacion_sujeta_a_probeta",
+          "note": "Tela y recubrimiento seco juntos: límite de0,30kg/m². Probar adhesión y masa real; los envases comprados no se instalan completos.",
+          "quantity": {
+            "installedAreaM2": 5.4546362204817935,
+            "referenceGsm": 160,
+            "referenceWidthM": 1.55,
+            "purchaseLinearMRange": [
+              5,
+              6
+            ],
+            "drySkinBudgetKgPerM2": 0.3,
+            "drySkinBudgetKg": 1.636390866144538
+          }
+        },
+        {
+          "id": "N09",
+          "description": "Adhesivo EPS de base agua y PVA del vendaje",
+          "quantityBasis": "Cantidad de compra según rendimiento y probeta, sin descargar envases completos sobre la pieza",
+          "lowCOP": 120000,
+          "highCOP": 220000,
+          "sourceIds": [
+            "AD-04",
+            "AD-05",
+            "AD-06"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Provisión de compra; el excedente queda como material de taller. Pesar la masa seca instalada y mantener las reservas de N02. No asignar función estructural a la cola ni emplear productos que ataquen el EPS."
+        },
+        {
+          "id": "N10",
+          "description": "Sellado y pintura acuosa de fantasía",
+          "quantityBasis": "Blanco/plata, rojo y azul, en capas delgadas sobre sistema probado",
+          "lowCOP": 100000,
+          "highCOP": 220000,
+          "sourceIds": [
+            "FI-01",
+            "FI-02"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Provisión de compra basada en un galón de referencia y colores de detalle; no significa instalar todo su contenido. El FoamCoat importado no tiene precio COP cerrado y no se presupuestó como producto específico. Respetar masa seca y ensayo de compatibilidad."
+        },
+        {
+          "id": "N11",
+          "description": "EVA y protección blanda de asas, cantos, peines y cubierta de nariz",
+          "quantityBasis": "Ocho asas acolchadas, remates redondos y cubierta de EVA de 10 mm sobre nariz de EPS",
+          "lowCOP": 80000,
+          "highCOP": 160000,
+          "sourceIds": [
+            "TX-02",
+            "TX-03"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "EVA10, ocho asas, remates y pasos de tubo/guías protegidos. Nariz: cuatro núcleosEPS140×280×70, dospor mitad, desde la materia prima ya contada. Replantear pasos sin cargar la espuma."
+        },
+        {
+          "id": "N12",
+          "description": "Cuchillas, lijas, protección y otros consumibles",
+          "quantityBasis": "Lote de corte, talla y montaje de140blancos; herramientas normales incluidas en tarifa horaria.",
+          "lowCOP": 100000,
+          "highCOP": 180000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Las herramientas normales se suponen incluidas en la tarifa de taller; no se suman otra vez como compra de maquinaria."
+        }
+      ],
+      "laborNote": "Ver comparación por proceso: horas-persona de especialistas y apoyo, asignadas para planear.",
+      "note": "Tarjeta: ruta de planchas con transporte yreserva. Compara abajo la talla enbloques. LEDopcionales aparte; no es cotización."
+    },
+    {
+      "id": "cauchera",
+      "title": "Cauchera gigante",
+      "revision": "C01",
+      "materialRangeCOP": [
+        411000,
+        865000
+      ],
+      "laborRangeCOP": [
+        1000000,
+        2320000
+      ],
+      "contingencyRangeCOP": [
+        211650,
+        477750
+      ],
+      "totalRangeCOP": [
+        1622650,
+        3662750
+      ],
+      "items": [
+        {
+          "id": "C-M01",
+          "description": "Tubo mecánico de acero,Øreal25,4×1,5",
+          "quantityBasis": "Una barra6m; instalación aproximada4.806m",
+          "lowCOP": 60000,
+          "highCOP": 120000,
+          "sourceIds": [
+            "C01-TUBO"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Incluye merma de curvado. Precio de compra exacta por confirmar; no usar tubo cortinero o diámetro nominal de agua como equivalente."
+        },
+        {
+          "id": "C-M02",
+          "description": "Herraje del apoyo y uniones de taller",
+          "quantityBasis": "Dos abrazaderas bipartidas, placa200×120×2, remates y tornillería de estudio",
+          "lowCOP": 80000,
+          "highCOP": 180000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Fijación y tamaño final se ajustan después de verificar la carga de uso. Herramientas normales en mano de obra."
+        },
+        {
+          "id": "C-M03",
+          "description": "PU flexible D18 de50mm",
+          "quantityBasis": "Una lámina1000×2000×50; dosblancosU y cuatrotramosmango",
+          "lowCOP": 46000,
+          "highCOP": 90000,
+          "sourceIds": [
+            "C01-PU"
+          ],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "Confirmar espesor50mm. Volumen comprado0,10m³; no todo se instala."
+        },
+        {
+          "id": "C-M04",
+          "description": "Acolchado y superficie antideslizante",
+          "quantityBasis": "Dos asas140mm, pie y extremo inferior",
+          "lowCOP": 35000,
+          "highCOP": 70000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        },
+        {
+          "id": "C-M05",
+          "description": "Tela fina, adhesivo compatible y pintura flexible",
+          "quantityBasis": "Provisión para~1m² y retoques de rama",
+          "lowCOP": 85000,
+          "highCOP": 160000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "El pegamento y acabado se prueban sobre la espuma elegida; conservar flexibilidad y accesos de inspección."
+        },
+        {
+          "id": "C-M06",
+          "description": "Elástico visible y bolsa, partida pendiente",
+          "quantityBasis": "Una unidad escénica comercial por seleccionar",
+          "lowCOP": 70000,
+          "highCOP": 180000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": "SOLO provisión presupuestaria. No se ha elegido sección, rigidez ni capacidad. No incluye un sistema de lanzamiento homologado; puede variar al definir las bolas."
+        },
+        {
+          "id": "C-M07",
+          "description": "Protección de transporte y consumibles",
+          "quantityBasis": "Funda sencilla, etiquetas y material de taller",
+          "lowCOP": 35000,
+          "highCOP": 65000,
+          "sourceIds": [],
+          "priceBasis": "provision_propia_no_cotizada",
+          "note": ""
+        }
+      ],
+      "laborNote": "Planeación propia:24–38h de especialista a35–50milCOP/h, más8–14h de apoyo a20–30milCOP/h. No cotización recibida. Incluye prueba de manipulación, no ensayo balístico, elenco, certificación profesional ni prueba de lanzamiento. La provisión de elástico puede cambiar al definir las bolas.",
+      "note": "Estudio de2m×0,80m. Reserva15% una sola vez. Transporte compartido, IVA adicional que aplique y revisión profesional fuera del total; elástico como provisión pendiente."
+    }
+  ],
+  "naveComparison": {
+    "revision": "N02",
+    "title": "Nave de50mm: dos rutas de fabricación",
+    "date": "2026-10-24",
+    "defaultUrbanTrips": 5,
+    "urbanRateRangeCOP": [
+      330000,
+      700000
+    ],
+    "urbanScope": "Cinco trayectos urbanos indicados porTdR PlanA, con vehículo de largo útil mínimo4,20m. Se provisionan como viajes dedicados de la nave; si comparte vehículo con barco/grulla, prorratear una sola vez. No sumar otros cinco viajes por cada objeto.",
+    "defaultOrigin": "itaguí",
+    "blockOrigins": [
+      {
+        "id": "itaguí",
+        "label": "Itagüí → Bogotá · referencia publicada",
+        "rangeCOP": [
+          2800000,
+          4200000
+        ],
+        "note": "Referencia del formato de bloques encontrada en proveedor deItagüí. Reserva de vehículo dedicado; no es fleteEPS cotizado. Confirmar origen de despacho y cupo compartido."
+      },
+      {
+        "id": "local",
+        "label": "Proveedor local · suministro por confirmar",
+        "rangeCOP": [
+          330000,
+          700000
+        ],
+        "note": "Hipótesis si un fabricanteBogotá/Sabana confirma bloquesenteros4,08m aD20. No supone que ese formato esté disponible localmente."
+      }
+    ],
+    "methods": [
+      {
+        "id": "slabs",
+        "title": "12 planchas de70mm",
+        "purchaseVolumeM3": 0.84,
+        "rows": {
+          "eps": [
+            504000,
+            756000
+          ],
+          "otherMaterials": [
+            1188000,
+            2448000
+          ],
+          "shapeLabor": [
+            1282050,
+            3289000
+          ],
+          "vacuumLabor": [
+            0,
+            0
+          ],
+          "commonLabor": [
+            2220000,
+            5000000
+          ]
+        },
+        "laborItems": [
+          {
+            "description": "Trazar y cortar140blancos",
+            "specialistHours": [
+              8.4,
+              14
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              374000,
+              940000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Asignación0,06–0,10h especialista por blanco; verificar productividad con primera sección."
+          },
+          {
+            "description": "Biselar, presentar y unir118duelas",
+            "specialistHours": [
+              11.8,
+              21.24
+            ],
+            "assistantHours": [
+              6,
+              12
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              533000,
+              1422000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Asignación0,10–0,18h por duela; herramientas normales incluidas."
+          },
+          {
+            "description": "Talla final, cuatro ventanas y pasos",
+            "specialistHours": [
+              8.43,
+              13.74
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              375050,
+              927000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Afinado70→50mm y remates; no hay vaciado de un núcleo macizo."
+          },
+          {
+            "description": "Bastidores, consolas, agarres y cierres",
+            "specialistHours": [
+              28,
+              40
+            ],
+            "assistantHours": [
+              8,
+              16
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              1140000,
+              2480000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Metal y anclajes independientes; incluye curvado y montaje del herraje."
+          },
+          {
+            "description": "Tela, recubrimiento y pintura",
+            "specialistHours": [
+              16,
+              24
+            ],
+            "assistantHours": [
+              8,
+              16
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              720000,
+              1680000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Misma área y acabado en ambas rutas; secado no cobrado como trabajo continuo."
+          },
+          {
+            "description": "Montaje final, pesaje y ensayo técnico",
+            "specialistHours": [
+              8,
+              12
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              360000,
+              840000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Prototipo y ajustes; no incluye elenco artístico, alquiler de sala ni certificación."
+          }
+        ],
+        "incomingRangeCOP": [
+          100000,
+          250000
+        ],
+        "incomingNote": "Un traslado local del EPS en camioneta, procedenciaBogotá/Sabana por confirmar."
+      },
+      {
+        "id": "blocks",
+        "title": "2 bloques largos tallados",
+        "purchaseVolumeM3": 3.68424,
+        "rows": {
+          "eps": [
+            2210544,
+            3315816
+          ],
+          "otherMaterials": [
+            1188000,
+            2448000
+          ],
+          "shapeLabor": [
+            580000,
+            1480000
+          ],
+          "vacuumLabor": [
+            720000,
+            1880000
+          ],
+          "commonLabor": [
+            2220000,
+            5000000
+          ]
+        },
+        "laborItems": [
+          {
+            "description": "Replantear y perfilar dos exteriores",
+            "specialistHours": [
+              6,
+              10
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              290000,
+              740000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Trabajo de taller con gálibos; no es tiempoCNC confirmado."
+          },
+          {
+            "description": "Vaciar dos bloques a pared50mm",
+            "specialistHours": [
+              16,
+              28
+            ],
+            "assistantHours": [
+              8,
+              16
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              720000,
+              1880000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "8–14h de especialista por mitad más apoyo. Incertidumbre alta: probar herramienta y primera zona antes de contratar a precio cerrado."
+          },
+          {
+            "description": "Ventanas, pasos, ajuste de carcasas",
+            "specialistHours": [
+              6,
+              10
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              290000,
+              740000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Remates contra el bastidor; aprovechar sobrantes para aleta y adornos."
+          },
+          {
+            "description": "Bastidores, consolas, agarres y cierres",
+            "specialistHours": [
+              28,
+              40
+            ],
+            "assistantHours": [
+              8,
+              16
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              1140000,
+              2480000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Metal y anclajes independientes; incluye curvado y montaje del herraje."
+          },
+          {
+            "description": "Tela, recubrimiento y pintura",
+            "specialistHours": [
+              16,
+              24
+            ],
+            "assistantHours": [
+              8,
+              16
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              720000,
+              1680000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Misma área y acabado en ambas rutas; secado no cobrado como trabajo continuo."
+          },
+          {
+            "description": "Montaje final, pesaje y ensayo técnico",
+            "specialistHours": [
+              8,
+              12
+            ],
+            "assistantHours": [
+              4,
+              8
+            ],
+            "specialistRateCOP": [
+              35000,
+              50000
+            ],
+            "assistantRateCOP": [
+              20000,
+              30000
+            ],
+            "rangeCOP": [
+              360000,
+              840000
+            ],
+            "priceBasis": "horas_y_tarifas_propias_de_planeacion_no_cotizadas",
+            "note": "Prototipo y ajustes; no incluye elenco artístico, alquiler de sala ni certificación."
+          }
+        ]
+      }
+    ],
+    "reserveRate": 0.15,
+    "unitEPSRangeCOPperM3": [
+      600000,
+      900000
+    ],
+    "scope": "Fabricación enBogotá. Incluye EPS, demás materiales, talla/ensamblaje, vaciado separado en bloques, trabajo común, llegadaEPS al taller y cinco trayectos de nave terminada. Mismo exterior y pared50mm; misma densidad20 y acabado.",
+    "rowDefinitions": [
+      {
+        "key": "eps",
+        "label": "EPS comprado",
+        "note": "Doce planchas:0,84m³; dosbloques:3,68424m³. UnidadD20 de planeación, no precio confirmado."
+      },
+      {
+        "key": "otherMaterials",
+        "label": "Otros materiales",
+        "note": "Bastidores, consolas, agarres, guías, cinchas, EVA, tela, adhesivos y pintura; mismas provisiones en ambas rutas."
+      },
+      {
+        "key": "shapeLabor",
+        "label": "Corte, talla o ensamblaje",
+        "note": "Trabajo propio de cada ruta, excluido el vaciado y el trabajo común."
+      },
+      {
+        "key": "vacuumLabor",
+        "label": "Vaciado del núcleo",
+        "note": "Solo bloques. Las planchas forman una carcasa hueca desde el montaje."
+      },
+      {
+        "key": "commonLabor",
+        "label": "Trabajo común",
+        "note": "Bastidores/herrajes, recubrimiento, pintura, montaje y ensayo. Incluye especialista y apoyo."
+      }
+    ],
+    "notes": [
+      "Todos los importes son rangos de planeación, no cotizaciones recibidas. No se ha contactado ni contratado proveedores.",
+      "El precioD20 exacto no está publicado: mismo rango unitario600.000–900.000COP/m³ para comparar sin inventar descuento mayorista. Cotizar bloque y plancha con la misma densidad.",
+      "Horas-persona, no horas de calendario. Las tarifas de especialista35.000–50.000/h y apoyo20.000–30.000/h son asignaciones propias.",
+      "Vaciado manual con herramientas normales del taller. Un servicioCNC externo sustituiría esa mano de obra; no se suman ambos métodos sobre la misma tarea. No hay máquina de4,08m confirmada.",
+      "Reserva15% aplicada una vez a materiales, mano de obra y logística. LED opcionales aparte; IVA adicional según oferta/régimen, sin duplicar impuestos ya incluidos en referencias minoristas.",
+      "El bloque puede ahorrar juntas; los rangos de horas se solapan y no demuestran ahorro de plazo. La decisión necesita precio deEPS, primera prueba de vaciado y flete real."
+    ],
+    "sources": [
+      "EPS-N02-70",
+      "EPS-N02-B",
+      "EPS-03",
+      "T-N02-U",
+      "T-N02-N",
+      "CORTE-N02"
+    ],
+    "totalsForQA": {
+      "slabs": {
+        "materials": [
+          1692000,
+          3204000
+        ],
+        "labor": [
+          3502050,
+          8289000
+        ],
+        "transport": [
+          1750000,
+          3750000
+        ],
+        "subtotal": [
+          6944050,
+          15243000
+        ],
+        "reserve": [
+          1041608,
+          2286450
+        ],
+        "total": [
+          7985658,
+          17529450
+        ]
+      },
+      "blocksItagui": {
+        "materials": [
+          3398544,
+          5763816
+        ],
+        "labor": [
+          3520000,
+          8360000
+        ],
+        "transport": [
+          4450000,
+          7700000
+        ],
+        "subtotal": [
+          11368544,
+          21823816
+        ],
+        "reserve": [
+          1705282,
+          3273572
+        ],
+        "total": [
+          13073826,
+          25097388
+        ]
+      },
+      "blocksLocal": {
+        "materials": [
+          3398544,
+          5763816
+        ],
+        "labor": [
+          3520000,
+          8360000
+        ],
+        "transport": [
+          1980000,
+          4200000
+        ],
+        "subtotal": [
+          8898544,
+          18323816
+        ],
+        "reserve": [
+          1334782,
+          2748572
+        ],
+        "total": [
+          10233326,
+          21072388
+        ]
+      }
+    }
+  }
+}

@@ -4,3 +4,5 @@
 @media(min-width:741px){.objects{grid-template-columns:repeat(2,minmax(0,1fr))}.picture{height:300px}.card-copy h2{font-size:36px}}
 
 @media(min-width:741px){.object:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.object:last-child:nth-child(odd) .picture{height:100%;min-height:350px;border-bottom:0;border-right:1px solid #3b4c52}}
+
+.team-access-dot{position:fixed;right:7px;bottom:6px;width:12px;height:12px;border-radius:50%;background:#92a6a6;opacity:.18;z-index:70;cursor:pointer}.team-access-dot:hover,.team-access-dot:focus-visible{opacity:.9;outline:2px solid #b9d7cf;outline-offset:3px}
