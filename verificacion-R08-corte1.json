@@ -1,0 +1,48 @@
+{
+  "revision": "R08-CORTE-01",
+  "date": "2026-11-03",
+  "workshopRevision": "I13",
+  "designRevision": "R08",
+  "shareRoute": "barco.html?rev=R08-corte1&descargas=corte",
+  "assets": [
+    {
+      "path": "downloads/Cortes-laminas-R08.pdf",
+      "bytes": 268442,
+      "sha256": "bf1d55b74677648aab05f5350a3dbdb7436c9354ebd82471aa3a6e8f5545315d",
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "downloads/Detalles-corte-R08.pdf",
+      "bytes": 88391,
+      "sha256": "65d303067079d19bb6600bdd9364af94a0be0689eb39c8660046c0b7ac2104cc",
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "downloads/Paquete-corte-R08.zip",
+      "bytes": 1464544,
+      "sha256": "56ba296b6808c9cb29d56ab714c2656f7cd56746da632e05a19cd8b56a8becbe"
+    }
+  ],
+  "checks": {
+    "assetsMatchApprovedLocalDelivery": true,
+    "packageCRC287Files": true,
+    "twoPortableDownloadSectionsUpdated": true,
+    "directDownloadSectionOpens": true,
+    "legacyGuidesAndBlueprintsRetained": true,
+    "localChecks": 24,
+    "jsErrors": 0,
+    "httpErrors": 0,
+    "mobile390NoOverflow": true,
+    "geometryAnd3DAppUnchanged": true,
+    "noPrivateDataOrKeys": true
+  },
+  "cutStage": "Corte inicial; separación escénica posterior disponible en el paquete técnico de montaje R08."
+}

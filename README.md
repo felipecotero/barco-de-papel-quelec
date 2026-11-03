@@ -25,6 +25,11 @@ Casco de 4 m, vela de cuatro caras con 270 mm de profundidad, bastidores propios
 - [Blueprints: ocho pliegos de 100 × 70 cm](downloads/Planos-R08.pdf).
 - [Guía visual: ocho pliegos de 100 × 70 cm](downloads/Guia-visual-R08.pdf).
 - [Paquete técnico SVG/DXF y tablas](downloads/Paquete-tecnico-R08.zip).
+- [Corte inicial: seis láminas en dos pliegos, escala 1:5](downloads/Cortes-laminas-R08.pdf).
+- [Anexo de corte: cotas, vértices y ángulos en dos pliegos](downloads/Detalles-corte-R08.pdf).
+- [Paquete completo de corte: ambos PDF, SVG/DXF 1:1 y tablas](downloads/Paquete-corte-R08.zip).
+
+El suplemento R08-CORTE-01 del 3 de noviembre conserva las seis láminas y los 133 blancos. Sus vectores omiten `CORTE_ESCENICO`, que se aplica después de montar y comprobar el barco completo; los archivos originales de montaje permanecen disponibles. [Abrir directamente las descargas de corte](barco.html?rev=R08-corte1&descargas=corte).
 
 Se conservan geometría y documentos. Seis láminas de 2440 × 1220 × 4 mm, 133 blancos, margen de 10 mm y separación de 6 mm. Masa presupuestada: 13,738 kg con PP de 600 g/m² o 14,774 kg con PP de 700 g/m², sujeto a límites de compra y pesaje final. Máximo autorizado: 15 kg. Cada bastidor sostiene su mitad; el velcro retiene posición. Ensayar apertura, retenciones y maniobra con los portadores reales.
 

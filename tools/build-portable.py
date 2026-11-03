@@ -12,6 +12,7 @@ def shared_assets(html,Q,prefix):
   css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())
  html=re.sub(r'<link rel="stylesheet" href="'+re.escape(prefix)+r'shared/brand.css[^"]*">',lambda m:'<style>'+css+'</style>',html)
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/dimensions.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/dimensions.js').read_text()+'</script>',html)
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/boat-downloads.js[^>]*></script>',lambda m:'<script defer>'+'document.addEventListener("DOMContentLoaded",()=>{'+(Q/'shared/boat-downloads.js').read_text()+'});</script>',html)
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/studio-render.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/studio-render.js').read_text().replace('</script','<\\/script')+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
  html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I05"',html)
