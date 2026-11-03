@@ -1,0 +1,88 @@
+{
+  "revision": "R08-CORTE-02",
+  "date": "2026-11-03",
+  "workshopRevision": "I14",
+  "designRevision": "R08",
+  "shareRoute": "barco.html?rev=R08-corte2&descargas=corte",
+  "assets": [
+    {
+      "path": "downloads/Cortes-completos-R08.pdf",
+      "bytes": 579904,
+      "sha256": "9ee3de66eb3a9c88e1b673732391303b0e0e5e076bcf84d2bc1d6c19fa85ff4b",
+      "pages": 10,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "downloads/Cortes-laminas-R08.pdf",
+      "bytes": 266352,
+      "sha256": "4c715200c601ee7039917bec07b8b861640cd745c81ad3520d86bfe0c234c34b",
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "downloads/Detalles-corte-R08.pdf",
+      "bytes": 579904,
+      "sha256": "9ee3de66eb3a9c88e1b673732391303b0e0e5e076bcf84d2bc1d6c19fa85ff4b",
+      "pages": 10,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "downloads/Paquete-corte-R08.zip",
+      "bytes": 1883437,
+      "sha256": "458c3770246a34f2386e91b4a04e20d24e974c5a889bb4a9696ca3265e6ed872"
+    }
+  ],
+  "blackLinesOnWhite": true,
+  "stockMm": [
+    2440,
+    1220,
+    4
+  ],
+  "sheetCount": 6,
+  "pieceCount": 133,
+  "completePdfPages": 10,
+  "scales": {
+    "map": "1:5",
+    "mainCards": "1:10",
+    "P10AndMarkedEnlargements": "1:1"
+  },
+  "print": "1000 x 700 mm, 100 %, sin ajustar a página; comprobar barras de control",
+  "coverage": {
+    "realActiveRecords": 686,
+    "holesAndVoids": 509,
+    "edgeReliefs": 8,
+    "atlasCards": 27,
+    "curvedProfilesAtFullScale": 12
+  },
+  "checks": {
+    "all133PartsCovered": true,
+    "all686ActiveOperationsMatched": true,
+    "all395TableRowsMatched": true,
+    "allEightEdgeReliefsIncluded": true,
+    "circlesEllipsesAndCompositeVoidsLocated": true,
+    "scalesVerifiedOnPDFGeometry": true,
+    "tenMergedPagesPreserveVerifiedSourceContent": true,
+    "blackAndWhiteOnly": true,
+    "allPagesVisuallyReviewed": true,
+    "noTextClippingOrOverlap": true,
+    "package288FilesCRCAnd287ManifestHashesPass": true,
+    "localDesktopAndMobilePass": true,
+    "fourDownloadsHTTP200ByteExact": true,
+    "legacyDetailsAliasIsCompletePDF": true,
+    "geometryAnd3DAppUnchanged": true,
+    "noPrivateDataOrKeys": true,
+    "jsErrors": 0,
+    "httpErrors": 0
+  },
+  "supersedes": "R08-CORTE-01: complete dimensioning of real edge reliefs and openings added; geometry unchanged.",
+  "cutStage": "Corte inicial; separación escénica posterior disponible en el paquete técnico de montaje R08."
+}

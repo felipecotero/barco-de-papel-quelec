@@ -7,7 +7,7 @@
   for (const id of ['close-docs', 'close-docs-bottom']) document.getElementById(id)?.addEventListener('click', () => dialog.close());
   if (new URLSearchParams(location.search).get('descargas') === 'corte') {
     if (!dialog.open) dialog.showModal();
-    document.getElementById('download-cut-package')?.focus({ preventScroll: true });
+    (document.getElementById('download-cut-complete') || document.getElementById('download-cut-package'))?.focus({ preventScroll: true });
     dialog.scrollTop = 0;
   }
 })();
