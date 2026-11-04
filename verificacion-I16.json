@@ -1,0 +1,127 @@
+{
+  "revision": "I16 / PA07",
+  "date": "2026-11-04",
+  "previousRevision": "I15",
+  "assets": [
+    {
+      "path": "downloads/Maqueta-paneles-grandes-R08.pdf",
+      "sha256": "002bd50559be664fec19b26db9c07bf5c385c3f1d8a7755d3a98c4a1b0ae6485",
+      "bytes": 55956,
+      "pages": 3,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf",
+      "sha256": "a0e83430c1712647c277e11fb7d386bf0555e6d4887a9fa92c1896e08224ccde",
+      "bytes": 78317,
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "grulla/downloads/Grulla-G04-Corte-completo-acotado.pdf",
+      "sha256": "eb1c8a8c317b701f04dd2c1816ff7689e79af53f9b894e65b5874492946b4b0b",
+      "bytes": 108322,
+      "pages": 6,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.pdf",
+      "sha256": "ce79607ccce53551fbe392ca2ccca29cc71ed4d2c879e335d63e830018a5c349",
+      "bytes": 24576612,
+      "pages": 10,
+      "pageMm": [
+        700,
+        1000
+      ]
+    },
+    {
+      "path": "cauchera/downloads/Cauchera-C03-PVC-estudio.pdf",
+      "sha256": "ee0913cfcd632ac8fe1e2b73f6a468e2520256d9367c938bfbe2f2d9b20292a5",
+      "bytes": 9644,
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.zip",
+      "sha256": "c550af0d18a51be87ac029cd46693235e1a0e508437c3705e1557cb11dd8ada8",
+      "bytes": 30889786
+    },
+    {
+      "path": "cauchera/downloads/Cauchera-C03-PVC-datos.json",
+      "sha256": "1983a00eee9fda726f81c452bc53e2421f3d4e7430626d27c292734702625aa7",
+      "bytes": 6166
+    },
+    {
+      "path": "pancartas/downloads/Pancartas-PA07-datos.json",
+      "bytes": 118383,
+      "sha256": "2df8107e8a95313b5015e5c65add0420fdbbefce141988e1036a870e7c5e344d"
+    }
+  ],
+  "scope": "Conserva entregas I15 y cambia el modelo 3D de pancartas al pliego de 700 x 1000 mm por petición expresa del usuario.",
+  "pancartas": {
+    "revision": "PA07",
+    "defaultOrientation": "pliego",
+    "panelMm": [
+      700,
+      1000,
+      3
+    ],
+    "totalHeightMm": 2300,
+    "poleMm": [
+      25,
+      15,
+      1800
+    ],
+    "overlapMm": 500,
+    "twoFaces": true,
+    "objects": 4,
+    "artChoices": 10,
+    "whiteSideMarginsMm": 16.666666666666668,
+    "artSource": "PA05, impresión PA06",
+    "oldFormatsRetained": [
+      "portrait",
+      "landscape",
+      "square"
+    ],
+    "sheetCount": 3,
+    "eightPanelDistribution": [
+      3,
+      3,
+      2
+    ],
+    "netPPm2": 5.8304,
+    "structuralMountingValidated": false,
+    "PA05BlueprintsNotForPliego": true,
+    "PC02CostsBeforePliego": true
+  },
+  "checks": {
+    "independentData22ChecksPass": true,
+    "independentUIAndExport31ChecksPass": true,
+    "oldThreeProfilesExactlyPreserved": true,
+    "originalArtworkPixelsAndCropsPreserved": true,
+    "allI15PDFsUnchanged": true,
+    "stockThreeSheetsNoOverlap": true,
+    "tenExportTexturesPixelExactContain": true,
+    "OBJMetresAndMillimetresGLBAndSTLValidated": true,
+    "sharedStateAndLegacyFormatsRestored": true,
+    "desktopMobileNoOverflow": true,
+    "local99LinksAndFivePortablesCompile": true
+  },
+  "sourceSHA256": {
+    "model": "2df8107e8a95313b5015e5c65add0420fdbbefce141988e1036a870e7c5e344d",
+    "app": "11bc7cd74b0cf039688444d13c26401fef71e4012b523d6c094f7dba4ac4eb5a"
+  },
+  "print": "1000 x 700 mm planos / 700 x 1000 mm artes; 100 % sin ajustar; cotas reales en mm."
+}

@@ -18,5 +18,6 @@ paths=sorted({f['image'] for d in [model,*model.get('variants',{}).values()] for
 art={path:'data:image/png;base64,'+base64.b64encode((P/path).read_bytes()).decode()for path in paths}
 bundle=core+mod+orb+'window.PANCARTAS_DATA='+(P/'model.json').read_text()+';window.PANCARTAS_ART='+json.dumps(art)+';\n(()=>{'+app+'})();'
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle.replace('</script','<\\/script')+'</script>',html)
-site='https://felipecotero.github.io/barco-de-papel-quelec/';html=html.replace('href="../index.html?rev=I09"','href="'+site+'?rev=I09"').replace('href="./"','href="'+site+'pancartas/?rev=PA05"').replace('href="downloads/','href="'+site+'pancartas/downloads/').replace('href="Abrir-Pancartas.html?rev=PA05"','href="'+site+'pancartas/Abrir-Pancartas.html?rev=PA05"')
+site='https://felipecotero.github.io/barco-de-papel-quelec/'
+html=re.sub(r'href="../index.html[^\"]*"','href="'+site+'?rev=I16"',html).replace('href="./"','href="'+site+'pancartas/?rev=PA07"').replace('href="downloads/','href="'+site+'pancartas/downloads/').replace('href="Abrir-Pancartas.html?rev=PA07"','href="'+site+'pancartas/Abrir-Pancartas.html?rev=PA07"')
 html+='<!-- Montserrat: SIL OFL 1.1. '+(Q/'assets/fonts/OFL-Montserrat.txt').read_text().replace('--','- -')+' -->';(P/'Abrir-Pancartas.html').write_text(html);print('Visor sin conexión:',len(html.encode()),'bytes')

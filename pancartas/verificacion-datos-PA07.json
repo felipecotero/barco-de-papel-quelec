@@ -1,0 +1,47 @@
+{
+  "revision": "PA07",
+  "date": "2026-11-04",
+  "pass": true,
+  "default": "pliego",
+  "pageAndPanelMm": [
+    700,
+    1000
+  ],
+  "physicalSigns": 4,
+  "physicalFaces": 8,
+  "illustrations": 10,
+  "sourceArtworkPixelsUnchanged": true,
+  "P04BBlackDescendingDoubleWidthPreserved": true,
+  "PA05ThreeAlternativeGeometryAndArtworkExact": true,
+  "viewerCanvasPx": [
+    700,
+    1000
+  ],
+  "artRectangleMm": [
+    16.6666666667,
+    0,
+    666.6666666667,
+    1000
+  ],
+  "uniformArtScale": true,
+  "nominalHeightMm": 2300,
+  "poleOverlapMm": 500,
+  "reinforcementMm": [
+    60,
+    960,
+    3
+  ],
+  "sheetCount": 3,
+  "minimumSheetCountGeometric": 3,
+  "panelDistribution": [
+    3,
+    3,
+    2
+  ],
+  "netAreaM2": 5.8304,
+  "noOverlap": true,
+  "minimumGapMm": 5,
+  "minimumMarginMm": 5,
+  "constructionStatus": "Referencia de volumen y ensamble, herrajes PA05 sin dimensionar para el formato mayor.",
+  "PDFPA05NotForPliego": true
+}

@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I15) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H01) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA05 / artes PA06](pancartas/?rev=PA06) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I15) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H01) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -83,9 +83,9 @@ La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No
 
 Los PDF se conservan como **base C01 anterior a este ajuste**; todavía no actualizan las asas, lengüeta y bandas C02. El presupuesto PC02 sí sigue la revisión visual C02-r2. El visor y el cuadro de documentos distinguen ambas bases. La geometría y los datos C01 están archivados en `cauchera/archivo-C01`. No fabricar C02 con los planos anteriores. Falta seleccionar el sistema elástico a partir de material y masa reales de las bolas y comprobar núcleo, apoyo y maniobra en prototipo.
 
-## Pancartas PA05
+## Alternativas anteriores de pancartas PA05
 
-Se conservan cuatro pancartas de dos caras, sin texto sobre los dibujos. Ahora se puede elegir formato vertical, horizontal o cuadrado y cambiar cada cara entre diez diseños. Las ocho imágenes verticales aprobadas siguen disponibles sin modificar sus archivos. Las nuevas composiciones horizontales y cuadradas mantienen los motivos derechos y sus proporciones. P04B conserva el tachón negro descendente de doble ancho; las otras imágenes llevan tachaduras rojas.
+Se conservan cuatro pancartas de dos caras, sin texto sobre los dibujos. Como alternativas se puede elegir formato vertical pequeño, horizontal o cuadrado y cambiar cada cara entre diez diseños. Las ocho imágenes verticales aprobadas siguen disponibles sin modificar sus archivos. Las nuevas composiciones horizontales y cuadradas mantienen los motivos derechos y sus proporciones. P04B conserva el tachón negro descendente de doble ancho; las otras imágenes llevan tachaduras rojas.
 
 Los diez temas son soñar, imaginación, ser feliz, ositos, helado, jugar, perder el tiempo, lápices de colores, pijamas navideñas y gestos de alegría. Las dos últimas imágenes son opciones intercambiables: no requieren fabricar más pancartas. El visor muestra los nombres y páginas del guion fuera de las caras; no se imprimen palabras sobre los dibujos. «Dar color al mundo» es la adaptación solicitada por el equipo de la prohibición de hacer tareas con lápices de colores.
 
@@ -99,13 +99,13 @@ Cada opción usa dos tableros por objeto, un mango de pino de 25 × 15 × 1800 m
 
 Dos M4 × 30 por pancarta, arandelas Ø18 y casquillos Ø6/4,3 × 6 limitan el aplastamiento del tablero y la banda. Centros sobre el eje central, a 100 y 220 mm desde abajo; PP Ø6,2 y madera Ø4,5. Los tacos reciben dos tornillos de madera Ø3 × 12 por cara, con arandelas Ø8: 16 por pancarta, 64 en total. Las caras de papel cubren las cabezas. Comprobar montaje, adhesión, lectura y manejo con prototipo y ensayo.
 
-El botón Guías y planos ofrece los documentos del formato seleccionado: un pliego técnico y uno de guía de 100 × 70 cm, diez artes a tamaño final (elegir ocho) y el despiece 1:1. Las exportaciones GLB, OBJ+MTL+texturas y STL guardan el formato y los dibujos elegidos, a escala. Compartir vista conserva también la selección de imágenes y el formato. Los enlaces antiguos sin formato siguen abriendo la versión vertical.
+El botón Guías y planos ofrece los documentos del formato seleccionado: un pliego técnico y uno de guía de 100 × 70 cm, diez artes a tamaño final (elegir ocho) y el despiece 1:1. Las exportaciones GLB, OBJ+MTL+texturas y STL guardan el formato y los dibujos elegidos, a escala. Compartir vista conserva también la selección de imágenes y el formato. Los enlaces compartidos que especifican uno de estos formatos conservan su selección; la entrada actual sin formato abre el pliego PA07.
 
 - [Artes verticales, diez páginas de 40 × 60 cm](pancartas/downloads/Pancartas-Artes-PA05-Vertical.pdf).
 - [Artes horizontales, diez páginas de 60 × 40 cm](pancartas/downloads/Pancartas-Artes-PA05-Horizontal.pdf).
 - [Artes cuadrados, diez páginas de 45 × 45 cm](pancartas/downloads/Pancartas-Artes-PA05-Cuadrada.pdf).
 
-Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. Las pancartas aún no tienen una estimación de costos consolidada.
+Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto completo y la memoria del proyecto se conservan fuera del repositorio público. Los prompts y las referencias de imagen están en `pancartas/assets/`; las nuevas composiciones se generaron con la herramienta integrada de imágenes. PC02 estima estos formatos PA05; el pliego PA07 requiere una actualización propia de materiales, montaje y presupuesto.
 
 ## Proyección de costos PC02
 
@@ -161,3 +161,11 @@ El estudio no fija una velocidad admisible ni libera la fabricación de la serie
 - [Cauchera C03-PVC](cauchera/?rev=C03-PVC): cubierta no portante de PVC de ventilación nominal 4 pulgadas sobre el núcleo de metal; conserva asas compactas y lengüeta. Vista de espiga desmontable y base dura a 20 cm, según dato del usuario. Penetración visual de 120 mm y sección de 12 mm solo para comparar; suelo, receptor y resistencia requieren ensayo. Masa y costos PC02 corresponden a C02 anterior, no al PVC. [Ficha de estudio en 2 pliegos](cauchera/downloads/Cauchera-C03-PVC-estudio.pdf).
 
 Los planos de volumen y corte nuevos se imprimen en negro sobre blanco, papel 1000 x 700 mm al 100 %, sin ajustar; los artes de pancartas en color se imprimen en papel 700 x 1000 mm. Cada dibujo declara su escala y las cotas siempre corresponden al objeto real. La nave mantiene la referencia de cauchera C02; la mayor cubierta C03 debe comprobarse físicamente antes de sustituir esa referencia.
+
++
++## I16 / Pancartas PA07 en pliego / 4 de noviembre de 2026
++
++Por petición posterior del usuario, el visor abre ahora con paneles de **700 x 1000 mm verticales** y las ilustraciones de pliego PA06. Los formatos PA05 pequeños siguen como alternativas. Cuatro objetos, dos caras por objeto y diez ilustraciones intercambiables. El dibujo conserva su proporción: 16,667 mm blancos por lado, como en el PDF de impresión; P04B conserva el tachón negro descendente de doble ancho.
++
++La geometría de referencia conserva mango de 1800 mm y cámara de 30 mm; propone solape de 500 mm, altura total de 2300 mm y banda de 60 x 960 mm. Es una ampliación para estudiar forma y manejo, no una aprobación del herraje anterior para la mayor superficie al viento. Ocho tableros y cuatro bandas requieren **tres láminas de 1220 x 2440 x 3 mm** en el anidado de referencia. Los PDF técnicos PA05 de una lámina corresponden a sus tres tamaños anteriores, no al pliego. Los artes PA06 sí se imprimen a tamaño final 700 x 1000 mm. Masa, soporte y costo del pliego pendientes de muestra y revisión del montaje.
++

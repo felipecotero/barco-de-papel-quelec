@@ -6,7 +6,7 @@ from reportlab.lib.colors import HexColor,Color
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.utils import ImageReader
-P=Path(__file__).resolve().parents[1];O=P/'downloads';O.mkdir(exist_ok=True);M=json.loads((P/'model.json').read_text());D=M;mm=72/25.4;W,H=1000*mm,700*mm
+P=Path(__file__).resolve().parents[1];O=P/'downloads';O.mkdir(exist_ok=True);M=json.loads((P/'downloads/Pancartas-PA05-datos.json').read_text());D=M;mm=72/25.4;W,H=1000*mm,700*mm
 REV='PA05';LABEL='Vertical';SUFFIX=f'{REV}-{LABEL}'
 PLURALS={'Vertical':'verticales','Horizontal':'horizontales','Cuadrada':'cuadradas'}
 pdfmetrics.registerFont(TTFont('Arial','/System/Library/Fonts/Supplemental/Arial.ttf'));pdfmetrics.registerFont(TTFont('Arial-Bold','/System/Library/Fonts/Supplemental/Arial Bold.ttf'))

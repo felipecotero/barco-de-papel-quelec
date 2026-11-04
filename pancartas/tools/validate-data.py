@@ -6,6 +6,10 @@ from PIL import Image
 
 P=Path(__file__).resolve().parents[1]
 D=json.loads((P/'model.json').read_text())
+if D['revision']=='PA07':
+ import runpy
+ runpy.run_path(str(P/'tools/validate-data-PA07.py'),run_name='__main__')
+ raise SystemExit(0)
 B=json.loads((P/'downloads/Pancartas-PA04-datos.json').read_text())
 assert D['revision']=='PA05' and D['count']==4 and D['facesPerSign']==2
 assert D['defaultVariant']=='portrait' and D['orientation']=='portrait'

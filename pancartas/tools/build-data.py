@@ -10,6 +10,7 @@ import json
 from PIL import Image
 
 P=Path(__file__).resolve().parents[1]
+ACTIVE_REVISION=json.loads((P/'model.json').read_text()).get('revision') if (P/'model.json').exists() else None
 BASE=P/'downloads/Pancartas-PA04-datos.json'
 MANIFESTS={
  'portrait':P/'assets/extras-portrait-PA05.json',
@@ -135,6 +136,10 @@ for a,b in zip(D['signs'],B['signs']):
  for x,y in zip(a['faces'],b['faces']):
   for key in IMAGE_KEYS:
    assert x.get(key)==y.get(key),(x['code'],key)
-(P/'model.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
-(P/'downloads/Pancartas-PA05-datos.json').write_text((P/'model.json').read_text())
+(P/'downloads/Pancartas-PA05-datos.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
+if ACTIVE_REVISION=='PA07':
+ import runpy
+ runpy.run_path(str(P/'tools/build-data-PA07.py'),run_name='__main__')
+else:
+ (P/'model.json').write_text((P/'downloads/Pancartas-PA05-datos.json').read_text())
 print('PA05: vertical PA04 conservada; alternativas horizontal y cuadrada; cuatro pancartas, ocho caras y diez dibujos por formato.')
