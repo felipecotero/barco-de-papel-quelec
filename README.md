@@ -162,13 +162,13 @@ El estudio no fija una velocidad admisible ni libera la fabricación de la serie
 
 Los planos de volumen y corte nuevos se imprimen en negro sobre blanco, papel 1000 x 700 mm al 100 %, sin ajustar; los artes de pancartas en color se imprimen en papel 700 x 1000 mm. Cada dibujo declara su escala y las cotas siempre corresponden al objeto real. La nave mantiene la referencia de cauchera C02; la mayor cubierta C03 debe comprobarse físicamente antes de sustituir esa referencia.
 
-+
-+## I16 / Pancartas PA07 en pliego / 4 de noviembre de 2026
-+
-+Por petición posterior del usuario, el visor abre ahora con paneles de **700 x 1000 mm verticales** y las ilustraciones de pliego PA06. Los formatos PA05 pequeños siguen como alternativas. Cuatro objetos, dos caras por objeto y diez ilustraciones intercambiables. El dibujo conserva su proporción: 16,667 mm blancos por lado, como en el PDF de impresión; P04B conserva el tachón negro descendente de doble ancho.
-+
-+La geometría de referencia conserva mango de 1800 mm y cámara de 30 mm; propone solape de 500 mm, altura total de 2300 mm y banda de 60 x 960 mm. Es una ampliación para estudiar forma y manejo, no una aprobación del herraje anterior para la mayor superficie al viento. Ocho tableros y cuatro bandas requieren **tres láminas de 1220 x 2440 x 3 mm** en el anidado de referencia. Los PDF técnicos PA05 de una lámina corresponden a sus tres tamaños anteriores, no al pliego. Los artes PA06 sí se imprimen a tamaño final 700 x 1000 mm. Masa, soporte y costo del pliego pendientes de muestra y revisión del montaje.
-+
+
+## I16 / Pancartas PA07 en pliego / 4 de noviembre de 2026
+
+Por petición posterior del usuario, el visor abre ahora con paneles de **700 x 1000 mm verticales** y las ilustraciones de pliego PA06. Los formatos PA05 pequeños siguen como alternativas. Cuatro objetos, dos caras por objeto y diez ilustraciones intercambiables. El dibujo conserva su proporción: 16,667 mm blancos por lado, como en el PDF de impresión; P04B conserva el tachón negro descendente de doble ancho.
+
+La geometría de referencia conserva mango de 1800 mm y cámara de 30 mm; propone solape de 500 mm, altura total de 2300 mm y banda de 60 x 960 mm. Es una ampliación para estudiar forma y manejo, no una aprobación del herraje anterior para la mayor superficie al viento. Ocho tableros y cuatro bandas requieren **tres láminas de 1220 x 2440 x 3 mm** en el anidado de referencia. Los PDF técnicos PA05 de una lámina corresponden a sus tres tamaños anteriores, no al pliego. Los artes PA06 sí se imprimen a tamaño final 700 x 1000 mm. Masa, soporte y costo del pliego pendientes de muestra y revisión del montaje.
+
 
 ## I17 / Grulla: ubicación de las piezas en isométrica / 4 de noviembre de 2026
 
