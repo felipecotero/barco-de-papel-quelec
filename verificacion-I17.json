@@ -1,0 +1,28 @@
+{
+  "revision": "I17 / G04-H02",
+  "date": "2026-11-04",
+  "scope": "Añade ubicación isométrica de las 36 pieles de la grulla a su PDF de maqueta. Sustituye solo este descargable H01 de la entrega I16.",
+  "asset": {
+    "path": "grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf",
+    "bytes": 162443,
+    "sha256": "56b9f070718cbf25ad6e307d65e1cf8dedbf07d36fcf94bf8406a8683c4a70f5"
+  },
+  "pages": 4,
+  "pageMm": [
+    1000,
+    700
+  ],
+  "checks": {
+    "firstTwoDimensionedPagesExact": true,
+    "all36PanelIDsLocated": true,
+    "nineIsometricViewsVerified": true,
+    "fiftyCalloutsOnCorrectVisibleFaces": true,
+    "sixAssemblyArrowsOnRealEdges": true,
+    "noTriangulationLines": true,
+    "blackWhiteAndNoClipping": true,
+    "geometryAndOtherDocsUnchanged": true,
+    "latestPNGVisualReviewPass": true
+  },
+  "previousRevision": "I16 / PA07",
+  "shareRoute": "grulla/?rev=G04-H02&descargas=maqueta"
+}

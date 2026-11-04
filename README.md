@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I15) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H01) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I17) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -155,7 +155,7 @@ El estudio no fija una velocidad admisible ni libera la fabricación de la serie
 ## I15 / Maquetas para Henry, artes en pliego y variante PVC / 4 de noviembre de 2026
 
 - [Barco: paneles grandes para maqueta](downloads/Maqueta-paneles-grandes-R08.pdf): 3 pliegos, cotas reales en mm, dibujos 1:10. Sin soportes ni distribución en láminas; geometría R08 conservada.
-- [Grulla: paneles grandes para maqueta](grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf): 2 pliegos, cotas reales, dibujos 1:4. Para maqueta 1:10 dividir las cotas entre diez; 18 familias representan 36 pieles exteriores.
+- [Grulla: paneles grandes para maqueta](grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf): H02, cuatro pliegos: dos de cotas reales 1:4 y dos de isométricas y despiece identificado. Para maqueta 1:10 dividir las cotas entre diez; 18 familias representan 36 pieles exteriores.
 - [Grulla: corte completo acotado](grulla/downloads/Grulla-G04-Corte-completo-acotado.pdf): 6 pliegos, mapa de una lámina 1:3 y 41 fichas 1:6. Los constructivos de montaje G04 existentes se conservan.
 - [Pancartas: diez artes verticales 70 x 100 cm](pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.pdf): imágenes aprobadas sin estirar ni recortar, con márgenes blancos laterales. Son artes, no un nuevo montaje de pancartas. Resolución efectiva de los originales: unos 26 ppp; revisar muestra impresa. Cuatro pancartas / ocho caras y formatos PA05 conservados.
 - [Cauchera C03-PVC](cauchera/?rev=C03-PVC): cubierta no portante de PVC de ventilación nominal 4 pulgadas sobre el núcleo de metal; conserva asas compactas y lengüeta. Vista de espiga desmontable y base dura a 20 cm, según dato del usuario. Penetración visual de 120 mm y sección de 12 mm solo para comparar; suelo, receptor y resistencia requieren ensayo. Masa y costos PC02 corresponden a C02 anterior, no al PVC. [Ficha de estudio en 2 pliegos](cauchera/downloads/Cauchera-C03-PVC-estudio.pdf).
@@ -169,3 +169,7 @@ Los planos de volumen y corte nuevos se imprimen en negro sobre blanco, papel 10
 +
 +La geometría de referencia conserva mango de 1800 mm y cámara de 30 mm; propone solape de 500 mm, altura total de 2300 mm y banda de 60 x 960 mm. Es una ampliación para estudiar forma y manejo, no una aprobación del herraje anterior para la mayor superficie al viento. Ocho tableros y cuatro bandas requieren **tres láminas de 1220 x 2440 x 3 mm** en el anidado de referencia. Los PDF técnicos PA05 de una lámina corresponden a sus tres tamaños anteriores, no al pliego. Los artes PA06 sí se imprimen a tamaño final 700 x 1000 mm. Masa, soporte y costo del pliego pendientes de muestra y revisión del montaje.
 +
+
+## I17 / Grulla: ubicación de las piezas en isométrica / 4 de noviembre de 2026
+
+La maqueta G04-H02 añade a sus dos pliegos acotados una isométrica de conjunto con separación por módulos y un pliego de caras separadas, incluidos los paneles inferiores. Los 36 códigos de la piel se corresponden con las 18 familias de las fichas; las llamadas indican qué panel pertenece a canasta, vientre, alas, cola, cuello y pico. Las isométricas son esquemas de ubicación, sin escala de replanteo. Las dos páginas de cotas conservan sus dibujos 1:4, sus medidas y las notas para maqueta 1:10. Papel 1000 x 700 mm, negro sobre blanco, imprimir al 100 % sin ajustar. No se cambian la geometría G04, los seis pliegos de corte ni los documentos de soporte/cuelgue/LED.

@@ -1,0 +1,35 @@
+{
+  "revision": "G04-H02",
+  "date": "2026-11-04",
+  "workshopRevision": "I17",
+  "designRevision": "G04",
+  "geometryChanged": false,
+  "skinPanels": 36,
+  "flatFamilies": 18,
+  "pages": 4,
+  "pageMm": [
+    1000,
+    700
+  ],
+  "blackOnWhite": true,
+  "flatDrawingScale": "1:4, páginas1-2",
+  "isometricScale": "esquemas de ubicación; no medir",
+  "description": "Conjunto y módulos separados más seis detalles de caras con códigos que remiten a las dos páginas de formas acotadas.",
+  "asset": {
+    "path": "grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf",
+    "bytes": 162443,
+    "sha256": "56b9f070718cbf25ad6e307d65e1cf8dedbf07d36fcf94bf8406a8683c4a70f5"
+  },
+  "checks": {
+    "originalTwoDimensionedPagesPreserved": true,
+    "same36PanelIDsAnd18Families": true,
+    "noHardwareIncluded": true,
+    "sourceGeometryUnchanged": true,
+    "independentVisualAndMappingReviewPassed": true,
+    "allPages1000x700": true,
+    "allPagesBlackWhite": true,
+    "noTextClippingOrOverlap": true
+  },
+  "sourceModelSHA256": "1255f8c7bd6953cbb15073cd1f624da605cfdd5c802dc3ea7a66502d5e6f2d2a",
+  "shareRoute": "grulla/?rev=G04-H02&descargas=maqueta"
+}
