@@ -1,0 +1,33 @@
+{
+  "revision": "C03-PVC",
+  "date": "2026-11-04",
+  "geometrySourceSHA256": "e70ccc41ad894dabff110bbcb3a2939e3e25a0090cbcf973fb11f11cfc75ecf5",
+  "modelSHA256": "1983a00eee9fda726f81c452bc53e2421f3d4e7430626d27c292734702625aa7",
+  "checks": {
+    "C02ReferenceForNavePreserved": true,
+    "C02NoExtraAnchorGroups": true,
+    "C02NominalBoundsUnchanged": true,
+    "C03NineParts": true,
+    "C03Variant": true,
+    "C03StageOneCoreOnly": true,
+    "C03StageTwoNoCoverOrSpacers": true,
+    "C03StageThreeSpacersNoElastic": true,
+    "C03StageFiveAllParts": true,
+    "AnchoredTipVisibleCapOff": true,
+    "NoCumulativeAnchorTranslation": true,
+    "RemovedAnchorCapped": true,
+    "RemovedAnchorShiftCorrect": true,
+    "CarryAnchorHidden": true,
+    "AnchorHonorsOnlyFilter": true,
+    "ExportRestoresAllState": true,
+    "ExportCopiesAllNineGroups": true,
+    "ExportNoReferenceHumanOrBall": true,
+    "ExportFinite": true,
+    "ExportVerticalDespiteCarry": true
+  },
+  "C02ReferencePreserved": true,
+  "soilDepthMm": 200,
+  "anchorShownMm": 120,
+  "anchorCapacityValidated": false,
+  "notes": "PVC es cubierta; herrajes al acero. Receptor, penetración, sección y masa final pendientes de ensayo. PC02 estima C02, no C03."
+}

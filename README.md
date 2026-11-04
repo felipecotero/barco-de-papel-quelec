@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I08) · [Barco R08](barco.html?rev=R08-I05) · [Grulla G04](grulla/?rev=G04-I05) · [Nave N02](nave/?rev=N02) · [Cauchera C02](cauchera/?rev=C02-r2&vista=posture) · [Pancartas PA05](pancartas/?rev=PA05) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I15) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H01) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA05 / artes PA06](pancartas/?rev=PA06) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -69,11 +69,11 @@ Luz opcional apagada por defecto: cuatro módulos de 5 V / 0,5 W máximo, dos po
 
 [Encaje y liberación](nave/?rev=N02&demo=encaje), [talla](nave/?rev=N02&demo=talla), [ensamblaje de planchas](nave/?rev=N02&demo=planchas) y [corte de 50 mm](nave/?rev=N02&demo=pared) tienen animación, pausa y pasos. La fabricación es ilustrativa; no es una trayectoria de máquina ni una garantía de plazo.
 
-## Cauchera C02 · apariencia y postura
+## Antecedente C02 · apariencia y postura
 
-La revisión visual C02 conserva la U de 2000 × 800 mm y la rama de 80–100 mm. Acerca las asas al tronco: ancho total aproximado260mm, con 140mm de zona acolchada. Cambia la plataforma por una lengüeta lateral redondeada de180×70mm, a unos25mm del suelo, para la punta del pie. El apoyo se retira al llevar la cauchera en la nave.
+El visor actual añade la cubierta PVC C03, descrita al final. Este apartado documenta su antecedente C02 y la referencia que todavía aparece en la nave. La revisión visual C02 conserva la U de 2000 × 800 mm y la rama de 80–100 mm. Acerca las asas al tronco: ancho total aproximado260mm, con 140mm de zona acolchada. Cambia la plataforma por una lengüeta lateral redondeada de180×70mm, a unos25mm del suelo, para la punta del pie. El apoyo se retira al llevar la cauchera en la nave.
 
-[Ver las dos personas](cauchera/?rev=C02-r2&vista=posture): ambas figuras están frente a frente. Una toma las dos asas y coloca la punta del pie; la otra toma la bolsa cóncava. Sus cuerpos se inclinan hacia atrás en sentidos opuestos, como representación cualitativa del gesto. Las bandas son más largas y visualmente anchas, rojas, siguiendo el boceto del usuario. Bola de referencia ajustable30–50cm, por defecto35cm; se puede quitar. Distancia bolsa–horqueta1,20–2,50m, por defecto1,80m, y altura de bolsa70–120cm. Las estaturas también se ajustan. La animación conserva las manos en la bolsa y termina sin soltarla.
+[Ver las dos personas en la variante actual C03](cauchera/?rev=C03-PVC&vista=posture): ambas figuras están frente a frente. Una toma las dos asas y coloca la punta del pie; la otra toma la bolsa cóncava. Sus cuerpos se inclinan hacia atrás en sentidos opuestos, como representación cualitativa del gesto. Las bandas son más largas y visualmente anchas, rojas, siguiendo el boceto del usuario. Bola de referencia ajustable30–50cm, por defecto35cm; se puede quitar. Distancia bolsa–horqueta1,20–2,50m, por defecto1,80m, y altura de bolsa70–120cm. Las estaturas también se ajustan. La animación conserva las manos en la bolsa y termina sin soltarla.
 
 La huella mide la envolvente ocupada por geometría y figuras, sin márgenes. No es una zona de seguridad ni una validación ergonómica o de lanzamiento. Las referencias C02-r2 usan mallas anatómicas articuladas con rostro, dedos, ropa y calzado, procedentes de los recursos CC0 de MakeHuman. Los contactos de manos se resuelven geométricamente, sin fuerzas. La misma base corporal se escala para comparar estaturas; no representa diversidad antropométrica ni valida ergonomía. Ver [procedencia y licencia](cauchera/assets/personas/NOTICE.md). Los controles y el encuadre se comparten en el enlace. Las exportaciones C02 son del objeto en reposo, sin figuras, bola, huella o cotas. La referencia dentro de la nave usa la misma geometría C02, con bandas recogidas y sin lengüeta.
 
@@ -150,3 +150,14 @@ Descargar 3D exporta la cola seleccionada abierta y estática, sin flexión por 
 - [Investigación de materiales](colas-de-pavo/materiales-research.json).
 
 El estudio no fija una velocidad admisible ni libera la fabricación de la serie. La cola de prueba debe definir perfil, membrana impresa, arnés, mecanismo, fuerza y masa reales. Las otras cinco secciones del taller y el panel reservado no cambian.
+
+
+## I15 / Maquetas para Henry, artes en pliego y variante PVC / 4 de noviembre de 2026
+
+- [Barco: paneles grandes para maqueta](downloads/Maqueta-paneles-grandes-R08.pdf): 3 pliegos, cotas reales en mm, dibujos 1:10. Sin soportes ni distribución en láminas; geometría R08 conservada.
+- [Grulla: paneles grandes para maqueta](grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf): 2 pliegos, cotas reales, dibujos 1:4. Para maqueta 1:10 dividir las cotas entre diez; 18 familias representan 36 pieles exteriores.
+- [Grulla: corte completo acotado](grulla/downloads/Grulla-G04-Corte-completo-acotado.pdf): 6 pliegos, mapa de una lámina 1:3 y 41 fichas 1:6. Los constructivos de montaje G04 existentes se conservan.
+- [Pancartas: diez artes verticales 70 x 100 cm](pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.pdf): imágenes aprobadas sin estirar ni recortar, con márgenes blancos laterales. Son artes, no un nuevo montaje de pancartas. Resolución efectiva de los originales: unos 26 ppp; revisar muestra impresa. Cuatro pancartas / ocho caras y formatos PA05 conservados.
+- [Cauchera C03-PVC](cauchera/?rev=C03-PVC): cubierta no portante de PVC de ventilación nominal 4 pulgadas sobre el núcleo de metal; conserva asas compactas y lengüeta. Vista de espiga desmontable y base dura a 20 cm, según dato del usuario. Penetración visual de 120 mm y sección de 12 mm solo para comparar; suelo, receptor y resistencia requieren ensayo. Masa y costos PC02 corresponden a C02 anterior, no al PVC. [Ficha de estudio en 2 pliegos](cauchera/downloads/Cauchera-C03-PVC-estudio.pdf).
+
+Los planos de volumen y corte nuevos se imprimen en negro sobre blanco, papel 1000 x 700 mm al 100 %, sin ajustar; los artes de pancartas en color se imprimen en papel 700 x 1000 mm. Cada dibujo declara su escala y las cotas siempre corresponden al objeto real. La nave mantiene la referencia de cauchera C02; la mayor cubierta C03 debe comprobarse físicamente antes de sustituir esa referencia.

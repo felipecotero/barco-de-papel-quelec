@@ -1,17 +1,17 @@
 {
-  "revision": "C02",
-  "date": "2026-10-25",
+  "revision": "C03-PVC",
+  "date": "2026-11-04",
   "title": "Cauchera de Quelec",
-  "status": "Revisión visual de asas compactas, lengüeta, bandas, bola y postura con dos personas",
+  "status": "Variante de estudio con cubierta PVC, asas C02, lengüeta y anclaje desmontable para arena",
   "units": "mm",
   "dimensions": {
-    "height": 2000,
-    "width": 800,
-    "depthWithFoot": 140,
+    "height": 2007.15,
+    "width": 814.3,
+    "depthWithFoot": 141,
     "depthCarry": 250,
     "woodDiameterRange": [
-      80,
-      100
+      107,
+      114.3
     ],
     "forkCentersWidth": 700,
     "forkRootY": 1340,
@@ -36,64 +36,7 @@
     "note": "Curvado y uniones según taller y verificación de tracción real. No capacidad de lanzamiento acreditada."
   },
   "foam": {
-    "material": "Poliuretano flexible en lámina, densidad de planeación18kg/m³",
-    "stockMm": [
-      1000,
-      2000,
-      50
-    ],
-    "stockSheets": 1,
-    "roughBlanks": [
-      {
-        "id": "F-U-A",
-        "sizeMm": [
-          800,
-          720,
-          50
-        ]
-      },
-      {
-        "id": "F-U-B",
-        "sizeMm": [
-          800,
-          720,
-          50
-        ]
-      },
-      {
-        "id": "F-M-A1",
-        "sizeMm": [
-          100,
-          650,
-          50
-        ]
-      },
-      {
-        "id": "F-M-A2",
-        "sizeMm": [
-          100,
-          690,
-          50
-        ]
-      },
-      {
-        "id": "F-M-B1",
-        "sizeMm": [
-          100,
-          690,
-          50
-        ]
-      },
-      {
-        "id": "F-M-B2",
-        "sizeMm": [
-          100,
-          650,
-          50
-        ]
-      }
-    ],
-    "note": "Los rectángulos son blancos para tallar, no desarrollos. El mango blando se arma por tramos con juntas alternadas; el núcleo sigue continuo. Confirmar que calibre5 corresponde a50mm con el vendedor."
+    "status": "No utilizada como cubierta en C03-PVC; alternativa anterior documentada en los archivos C01 y C02."
   },
   "parts": [
     {
@@ -117,13 +60,13 @@
     {
       "id": "C04",
       "name": "Mango de rama",
-      "material": "PU flexible, tela ligera y pintura flexible",
+      "material": "Cubierta no estructural PVC nominal4pulgadas, tela fina y pintura mate",
       "quantity": 1
     },
     {
       "id": "C05",
       "name": "Horqueta de rama",
-      "material": "PU flexible, tela ligera y pintura flexible",
+      "material": "Cubierta no estructural PVC nominal4pulgadas, tela fina y pintura mate",
       "quantity": 1
     },
     {
@@ -137,20 +80,28 @@
       "name": "Remates y zonas de servicio",
       "material": "Espuma/EVA y tela de acceso",
       "quantity": 1
+    },
+    {
+      "id": "C08",
+      "name": "Espiga desmontable y capuchón",
+      "material": "Metal al núcleo; sección y bloqueo pendientes",
+      "quantity": 1
+    },
+    {
+      "id": "C09",
+      "name": "Separadores y registros",
+      "material": "Aros de centrado abiertos sobre abrazaderas al núcleo",
+      "quantity": "a ajustar en muestra"
     }
   ],
   "massBudget": {
-    "steelTubeKg": 4.249,
-    "footPlateKg": 0.377,
-    "foamInstalledAllowanceKg": 0.45,
-    "fabricAndFinishKg": 0.65,
-    "paddingAndCapsKg": 0.25,
-    "fastenersAndMountsKg": 0.35,
-    "elasticAndPouchAllowanceKg": 0.35,
-    "note": "Planeación con cantidades de estudio; no pesaje ni capacidad. Ajustar núcleo y elástico después de definir las bolas.",
-    "subtotalKg": 6.676,
-    "withReserve15Kg": 7.677,
-    "status": "Archivo de planeación C01, no actualizado ni validado para las bandas y bolsa visuales C02"
+    "status": "Pendiente de consolidar y pesar para C03-PVC",
+    "referenceBudget": "PC02/C02-r2 anterior, disponible como antecedente; no trasladar su masa a PVC",
+    "pending": [
+      "Metraje real de cubierta PVC y separadores",
+      "Espiga, receptor, bloqueo, acabado y piezas finales",
+      "Pesaje del conjunto terminado"
+    ]
   },
   "elastic": {
     "status": "Pendiente",
@@ -164,7 +115,7 @@
     "Selección comercial del elástico y bolsa; fuerza admisible y prueba del conjunto por profesional idóneo segúnTdR.",
     "Prueba de agarres, apoyo de pie, recorrido y transporte en nave con vestuario."
   ],
-  "constructionDocumentsRevision": "C01",
+  "constructionDocumentsRevision": "C03-estudio",
   "costEstimateBaseRevision": "C02-r2",
   "poseStudy": {
     "referenceHeightsMm": [
@@ -190,6 +141,32 @@
       "use": "Referencia visual de postura y escala; no cálculo biomecánico"
     }
   },
-  "quantitiesStatus": "Núcleo y compras de base C01; metraje total, peso y sistema elástico pendientes de consolidar tras revisar C02",
-  "costEstimateRevision": "PC02"
+  "quantitiesStatus": "C03 es estudio; cubierta y anclaje pendientes de consolidar, masa y costo PC02 anteriores no actualizados",
+  "costEstimateRevision": "PC02-anterior-a-PVC",
+  "cover": {
+    "material": "PVC-U ventilación, 4 pulgadas nominales",
+    "outsideDiameterMm": 114.3,
+    "referenceWallMm": 2.11,
+    "referenceKgPerM": 1.2,
+    "source": "https://pavcowavin.com.co/files/descargas/Fichas_tecnicas/Ficha_Te%CC%81cnica_PVC_Sanitaria_v1.pdf",
+    "sourceDate": "consultado 2026-11-04",
+    "construction": "Medias cañas desmontables, U segmentada sobre plantilla y separadores al metal; piel sin función portante",
+    "quantityStatus": "Metraje y masa finales pendientes de muestra; no usar presupuesto de espuma C01/C02"
+  },
+  "anchor": {
+    "type": "Espiga desmontable conectada a receptor en núcleo metálico",
+    "shownPenetrationMm": 120,
+    "shownDiameterMm": 12,
+    "shownDimensionsAreForVisualizationOnly": true,
+    "soilDepthKnown": true,
+    "capacityValidated": false,
+    "transport": "Retirar espiga y colocar capuchón cautivo cubriendo toda la punta; retirar lengüeta para transporte en nave",
+    "pending": [
+      "Confirmar localmente la capa de 200 mm y revisar base inferior",
+      "Resistencia de suelo, sección, profundidad y bloqueo",
+      "Muestreo de postura y retención con responsable técnico"
+    ],
+    "soilDepthMm": 200,
+    "soilDepthSource": "Usuario, 04.11.2026; pendiente verificación local"
+  }
 }

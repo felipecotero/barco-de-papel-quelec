@@ -56,5 +56,6 @@ bundle=core+mod+orb+inline_path_backend(Q)+'window.GRULLA_MODEL='+ (P/'model.jso
 Q=P.parent if (P.parent/'shared/obj-export.js').exists() else P.parent/'barco-github'
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,Q,'../')
+html=re.sub(r'<script src="../shared/boat-downloads.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/boat-downloads.js').read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Grulla.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Grulla.html').stat().st_size)

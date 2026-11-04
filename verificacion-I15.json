@@ -1,0 +1,118 @@
+{
+  "revision": "I15",
+  "date": "2026-11-04",
+  "assets": [
+    {
+      "path": "downloads/Maqueta-paneles-grandes-R08.pdf",
+      "sha256": "002bd50559be664fec19b26db9c07bf5c385c3f1d8a7755d3a98c4a1b0ae6485",
+      "bytes": 55956,
+      "pages": 3,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "grulla/downloads/Grulla-G04-Maqueta-paneles-grandes.pdf",
+      "sha256": "a0e83430c1712647c277e11fb7d386bf0555e6d4887a9fa92c1896e08224ccde",
+      "bytes": 78317,
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "grulla/downloads/Grulla-G04-Corte-completo-acotado.pdf",
+      "sha256": "eb1c8a8c317b701f04dd2c1816ff7689e79af53f9b894e65b5874492946b4b0b",
+      "bytes": 108322,
+      "pages": 6,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.pdf",
+      "sha256": "ce79607ccce53551fbe392ca2ccca29cc71ed4d2c879e335d63e830018a5c349",
+      "bytes": 24576612,
+      "pages": 10,
+      "pageMm": [
+        700,
+        1000
+      ]
+    },
+    {
+      "path": "cauchera/downloads/Cauchera-C03-PVC-estudio.pdf",
+      "sha256": "ee0913cfcd632ac8fe1e2b73f6a468e2520256d9367c938bfbe2f2d9b20292a5",
+      "bytes": 9644,
+      "pages": 2,
+      "pageMm": [
+        1000,
+        700
+      ]
+    },
+    {
+      "path": "pancartas/downloads/Pancartas-PA06-Artes-70x100-vertical.zip",
+      "sha256": "c550af0d18a51be87ac029cd46693235e1a0e508437c3705e1557cb11dd8ada8",
+      "bytes": 30889786
+    },
+    {
+      "path": "cauchera/downloads/Cauchera-C03-PVC-datos.json",
+      "sha256": "1983a00eee9fda726f81c452bc53e2421f3d4e7430626d27c292734702625aa7",
+      "bytes": 6166
+    }
+  ],
+  "scope": "Maquetas de volumen R08/G04, detalle de corte G04, artes PA06 y variante PVC C03",
+  "checks": {
+    "boatAndCraneGeometryUnchanged": true,
+    "PA05ModelAndArtSourcesPreserved": true,
+    "C02NaveReferenceGeometryExactIn11States": true,
+    "PDFScalesCheckedOnGeometry": true,
+    "allPDFPagesRenderedAndInspected": true,
+    "crossReviewOfBoatAndCranePassed": true,
+    "grulla41PiecesFitOneSheet": true,
+    "all98LocalLinksExist": true,
+    "fivePortableInlineScriptsCompile": true,
+    "C03AnchorProtectedOrPresented": true,
+    "C03Soil200MmConfirmedByUser": true,
+    "localDesktopMobileDownloadDialogsPass": true,
+    "C03RotateStagesExplodePostureAnchorAndCapObserved": true,
+    "allSevenNewHTTPDownloadsPass": true
+  },
+  "modelScales": {
+    "boatMaquette": "1:10",
+    "grullaMaquette": "1:4",
+    "grullaStockMap": "1:3",
+    "grullaDetail": "1:6",
+    "caucheraFront": "1:5",
+    "caucheraSection": "1:1",
+    "caucheraAnchorConcept": "1:2"
+  },
+  "pancartas": {
+    "printMm": [
+      700,
+      1000
+    ],
+    "pages": 10,
+    "fourPhysicalSignsPreserved": true,
+    "effectiveSourcePpi": [
+      26.2128,
+      26.5176
+    ],
+    "pixelsPreserved": true,
+    "whiteSideMarginsMm": 16.6666667,
+    "newStructuralSignFormat": false
+  },
+  "cauchera": {
+    "variant": "C03-PVC",
+    "PVCOuterDiameterMm": 114.3,
+    "referenceWallMm": 2.11,
+    "soilDepthMm": 200,
+    "shownAnchorMm": 120,
+    "anchorIsConceptNotValidated": true,
+    "costAndMassPC02ArePreviousC02": true
+  },
+  "print": "1000 x 700 mm planos / 700 x 1000 mm artes; 100 % sin ajustar; cotas reales en mm.",
+  "browserVerificationLimit": "La interfaz de GLB confirmó 49 piezas y una textura; el entorno de navegador no devolvió la ruta de descarga. Se comprobaron las geometrías exportables y la restauración de estado por separado."
+}
