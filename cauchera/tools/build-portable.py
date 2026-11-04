@@ -15,8 +15,8 @@ def shared_assets(html,Q,prefix):
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/dimensions.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/dimensions.js').read_text()+'</script>',html)
  html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/studio-render.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/studio-render.js').read_text().replace('</script','<\\/script')+'</script>',html)
  site='https://felipecotero.github.io/barco-de-papel-quelec/'
- html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I05-C02"',html)
- html=html.replace('href="../index.html"','href="'+site+'?rev=I05-C02"').replace('href="index.html"','href="'+site+'?rev=I05-C02"')
+ html=re.sub(r'href="(?:\.\./)?index.html(?:\?[^"]*)?"',lambda m:'href="'+site+'?rev=I18"',html)
+ html=html.replace('href="../index.html"','href="'+site+'?rev=I18"').replace('href="index.html"','href="'+site+'?rev=I18"')
  html=html.replace('href="Abrir-Barco.html"','href="'+site+'Abrir-Barco.html"').replace('href="Abrir-Cauchera.html"','href="'+site+'cauchera/Abrir-Cauchera.html"')
  html=html.replace('href="downloads/','href="'+site+'cauchera/downloads/')
  for f in [Q/'assets/logo-barco.svg',Q/'assets/logo-grulla.svg',Q/'assets/logo-nave.svg',Q/'assets/logo-cauchera.svg']:
@@ -60,6 +60,8 @@ bundle=core+mod+orb+'window.CAUCHERA_DATA='+ (P/'model.json').read_text()+';\n((
 Q=P.parent if (P.parent/'shared/obj-export.js').exists() else P.parent/'barco-github'
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text()+'</script>',html)
 html=shared_assets(html,Q,'../')
+for module in ['anchor-preview.js','virtual-game.js']:
+ html=re.sub(r'<script src="'+re.escape(module)+r'[^"]*"></script>',lambda m:'<script>'+(P/module).read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script src="../shared/cauchera-model.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/cauchera-model.js').read_text().replace('</script','<\\/script')+'</script>',html)
 human=json.loads((P/'assets/personas/human.json').read_text())
 for m in human['meshes']:

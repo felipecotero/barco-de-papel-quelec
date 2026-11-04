@@ -167,6 +167,17 @@
       "Muestreo de postura y retención con responsable técnico"
     ],
     "soilDepthMm": 200,
-    "soilDepthSource": "Usuario, 04.11.2026; pendiente verificación local"
+    "soilDepthSource": "Usuario, 04.11.2026; pendiente verificación local",
+    "visibleByDefaultInViewer": true
+  },
+  "viewerRevision": "C04-virtual",
+  "viewerGame": {
+    "kind": "Juego ficticio de arrastrar y soltar",
+    "units": "u del juego",
+    "parameters": "Impulso0–100 y respuesta ligera/media/pesada son ajustes inventados del juego",
+    "realElasticCalibration": false,
+    "realMassInput": false,
+    "realWorldRangePrediction": false,
+    "doesNotValidateAnchorOrLaunch": true
   }
 }

@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I17) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera C03-PVC](cauchera/?rev=C03-PVC) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I18) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -173,3 +173,12 @@ La geometría de referencia conserva mango de 1800 mm y cámara de 30 mm; propon
 ## I17 / Grulla: ubicación de las piezas en isométrica / 4 de noviembre de 2026
 
 La maqueta G04-H02 añade a sus dos pliegos acotados una isométrica de conjunto con separación por módulos y un pliego de caras separadas, incluidos los paneles inferiores. Los 36 códigos de la piel se corresponden con las 18 familias de las fichas; las llamadas indican qué panel pertenece a canasta, vientre, alas, cola, cuello y pico. Las isométricas son esquemas de ubicación, sin escala de replanteo. Las dos páginas de cotas conservan sus dibujos 1:4, sus medidas y las notas para maqueta 1:10. Papel 1000 x 700 mm, negro sobre blanco, imprimir al 100 % sin ajustar. No se cambian la geometría G04, los seis pliegos de corte ni los documentos de soporte/cuelgue/LED.
+
+
+## I18 / Cauchera: juego virtual y ancla visible / 4 de noviembre de 2026
+
+El [visor C04](cauchera/?rev=C04-virtual) incorpora un [juego ficticio de arrastrar y soltar la bolsa](cauchera/?rev=C04-virtual&vista=game), con guía de trayectoria, recorrido y resultado en **u del juego**. Los ajustes son inventados para la interacción y no predicen el alcance de la cauchera física. Se puede pausar el vuelo, preparar otra bola y encuadrar el recorrido.
+
+El botón [Ver el ancla en la arena](cauchera/?rev=C04-virtual&vista=anchor) muestra una sección del terreno: 20 cm de arena hasta la base dura y la espiga conceptual de 12 cm dentro de ella. La sección se puede mostrar u ocultar y la espiga se puede presentar instalada o retirada. Es una vista para entender la pieza; su retención sigue pendiente de ensayo.
+
+La construcción, el modelo exportable y la ficha en dos pliegos siguen siendo **C03-PVC**. La descarga 3D omite el juego y sus trayectorias. Se conservan los planos, maquetas y versiones vigentes de los otros objetos, incluida la maqueta de grulla G04-H02 de cuatro pliegos.
