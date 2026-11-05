@@ -1,0 +1,116 @@
+{
+  "revision": "I23 / F06",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "userDecision": "Discard F05 articulated design for complexity,keep as antecedent.Return to a whole folded petal,minimize motors.",
+  "route": "flor-central/flex.html?rev=F06",
+  "previousArticulatedRoute": "flor-central/petalo.html?rev=F05",
+  "previousWholeFlowerReference": "flor-central/?rev=F04",
+  "status": "One continuous petal kinematic candidate; not calibrated elastic recovery or approved fabrication.",
+  "newMotorsProposed": 0,
+  "manualOperatorsForPrototype": 2,
+  "automaticDeploymentValidated": false,
+  "measuredRecoveryEnergy": false,
+  "materialSelected": false,
+  "fivePetalDeploymentSolved": false,
+  "geometry": {
+    "nominalHoopEnvelopeM": [
+      4,
+      3.5
+    ],
+    "fabricPatternM": [
+      3.994,
+      3.494
+    ],
+    "fabricAreaM2": 10.960259644545275,
+    "continuousSkin": true,
+    "continuousHoop": true,
+    "petalHinges": 0,
+    "foldedPetalEnvelopeM": [
+      3.5,
+      1.875,
+      0.488383145
+    ],
+    "highestStoredAssemblyPointM": 2.5473831450141393,
+    "closedHatchGapM": 0.022616854985860524,
+    "hatchRiseEdgeGapM": 0.1976123897059654,
+    "ropeLengthEachM": 18
+  },
+  "checks": {
+    "browser": {
+      "loads": true,
+      "oneContinuousSkin": true,
+      "noMotors": true,
+      "twoCablesFixed": true,
+      "partsConstant": true,
+      "retentionBeforeOpening": true,
+      "skinHides": true,
+      "labelsOn": true,
+      "labelsOff": true,
+      "measuresOn": true,
+      "mobileNoOverflow": true,
+      "noErrors": true
+    },
+    "geometryPoses": 201,
+    "continuousProofs": [
+      "Developable surface isometry,root fixed and convex profile noncrossing.",
+      "Finite hoop remote self-clearance.",
+      "Fixed fabric pattern to finite hoop clearances.",
+      "Cables to petal,hoop,bar andcradle via complete lateral separation."
+    ],
+    "terminalAndClampsPoses": 201,
+    "groundDeviceWirePoses": 61,
+    "retainingCatchPoses": 41,
+    "wholeContextTimes": 121,
+    "completeContinuousHardwareSweepCertified": false
+  },
+  "pending": [
+    "Recovery energy and opening torque with actual hoop/fabric.",
+    "Remote latch-trigger cord and its final guides.",
+    "Two-operator coordination,brake capacity,materials,loads,tolerances andwind.",
+    "Final integration and deployment of five petals."
+  ],
+  "assets": [
+    {
+      "path": "flor-central/flex.html",
+      "bytes": 9956,
+      "sha256": "02de463b37b316aeb7f4cc4b7a2e36693b134ec12d3a83077373c39527f8850d"
+    },
+    {
+      "path": "flor-central/flex.css",
+      "bytes": 5937,
+      "sha256": "7c4249d56c2b7ebc5eb7125a230267a330a3ce35c742c9bb7cdcc2d6de55bc34"
+    },
+    {
+      "path": "flor-central/flex-app.js",
+      "bytes": 11864,
+      "sha256": "09de4cd176e174a7d748dc0b351e0162db001718db0c62d650fc04471eb6a630"
+    },
+    {
+      "path": "flor-central/ufold-geometry.js",
+      "bytes": 6991,
+      "sha256": "7b2816e7b868ac8461aa8411a01d7f6360f931eeb700c0b05a1a9b631aabb33b"
+    },
+    {
+      "path": "flor-central/cassette-hardware.js",
+      "bytes": 10423,
+      "sha256": "fee5b74004ac47ffa0a7b7b65bbd1170decded0b71e4ea359ac167cd89c96fde"
+    },
+    {
+      "path": "flor-central/continuous-petal.js",
+      "bytes": 7686,
+      "sha256": "6a2ed15668b80e6208122a41cece577dcfca21afdccdd81906b7fb92885b14f5"
+    },
+    {
+      "path": "flor-central/manual-control.js",
+      "bytes": 3463,
+      "sha256": "51fa6fc64d229d4162319f6981e89ba710d8d363fc1b9966b6f39f4d28225356"
+    },
+    {
+      "path": "flor-central/flex-estudio.json",
+      "bytes": 3606,
+      "sha256": "181f6f3512ee8f6c0a787cf486a4d4046844cb090f701b74c7bc1333ef3d8416"
+    }
+  ],
+  "costs": "Six previous groups andPC02 preserved; flower not budgeted."
+}

@@ -1,0 +1,38 @@
+import {createPetalAnchor} from './anchor-geometry.js';
+// One continuous skin and hoop. A single removable crossbar carries two control lines.
+export function createContinuousPetal({THREE,model,texture=null,clockingDegRight=180,clockingDegLeft=180}={}){
+ const group=new THREE.Group(),clothMat=new THREE.MeshStandardMaterial({color:0xf1e2b9,map:texture,side:THREE.DoubleSide,roughness:.94,metalness:0}),metalMat=new THREE.MeshStandardMaterial({color:0x667e88,metalness:.55,roughness:.4});
+ let state=model.state(0),geometries=[];const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(state.positions,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(state.uv,2));g.setIndex(state.indices);g.computeVertexNormals();
+ const fabric=new THREE.Mesh(g,clothMat);fabric.name='ONE_continuous_fabric';fabric.castShadow=true;fabric.receiveShadow=true;group.add(fabric);
+ function hoopGeometry(points){const curve=new THREE.CatmullRomCurve3(points.slice(0,-1).map(p=>new THREE.Vector3(...p)),true,'centripetal');return new THREE.TubeGeometry(curve,1024,.002,6,true);}
+ const hoop=new THREE.Mesh(hoopGeometry(state.hoop),metalMat);hoop.name='ONE_continuous_hoop_envelope';hoop.castShadow=true;group.add(hoop);
+ const clamps=[],clampMeshes=[];
+ function sector(axis,radialA,radialB,inner,outer,length,start,end,name,parent){const N=40,row=N+1,p=[],idx=[];for(const radius of[outer,inner])for(const u of[-length/2,length/2])for(let j=0;j<=N;j++){const a=start+(end-start)*j/N,P=axis.clone().multiplyScalar(u).addScaledVector(radialA,radius*Math.cos(a)).addScaledVector(radialB,radius*Math.sin(a));p.push(P.x,P.y,P.z);}for(let j=0;j<N;j++){const k=j+1;idx.push(j,row+j,row+k,j,row+k,k,2*row+j,2*row+k,3*row+k,2*row+j,3*row+k,3*row+j,j,k,2*row+k,j,2*row+k,2*row+j,row+j,3*row+j,3*row+k,row+j,3*row+k,row+k);}for(const j of[0,N])idx.push(j,2*row+j,3*row+j,j,3*row+j,row+j);const gg=new THREE.BufferGeometry();gg.setAttribute('position',new THREE.Float32BufferAttribute(p,3));gg.setIndex(idx);gg.computeVertexNormals();const o=new THREE.Mesh(gg,metalMat);o.name=name;o.castShadow=true;o.userData={kind:'removable-clamp',bodyId:'control-crossbar-clamp',referenceGeometry:true,loadRated:false};parent.add(o);clampMeshes.push(o);return o;}
+ function clampRod(A,B,r,name,parent){const a=new THREE.Vector3(...A),b=new THREE.Vector3(...B),o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,a.distanceTo(b),10),metalMat);o.position.copy(a).add(b).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),b.sub(a).normalize());o.name=name;o.userData={kind:'removable-clamp',bodyId:'control-crossbar-clamp',referenceGeometry:true,loadRated:false};parent.add(o);clampMeshes.push(o);return o;}
+ // Two split/sliding clamp envelopes retain the removable bar without drilling
+ // or welding the spring hoop. Bores are real. Sections/preload remain unchosen.
+ // Only the external fastener heads are shown; threaded shafts/holes inside
+ // the clamp are omitted from this envelope, not drawn through solid material.
+ const station=3.306,h=model.halfWidth(station),a=model.config.lengthM/2,b=model.config.widthM/2,dh=-b*(station-a)/(a*a*Math.sqrt(1-((station-a)/a)**2));
+ for(const side of[1,-1]){const holder=new THREE.Group();holder.name='Removable_crossbar_clamp_'+side;holder.matrixAutoUpdate=false;group.add(holder);const X=new THREE.Vector3(1,0,0),N=new THREE.Vector3(0,1,0),T=new THREE.Vector3(0,0,1),H=new THREE.Vector3(side*dh,0,1).normalize(),W=new THREE.Vector3().crossVectors(N,H).normalize();const rim=sector(H,N,W,.00225,.0027,.008,-2*Math.PI/3,2*Math.PI/3,'Split_hoop_collar_'+side,holder);rim.position.x=side*h;const lower=sector(X,N,T,.0045,.0064,.012,65*Math.PI/180,295*Math.PI/180,'Open_top_crossbar_collar_'+side,holder);lower.position.set(side*h,-.0062,0);for(const sign of[-1,1]){const phi=sign*2*Math.PI/3,A=N.clone().multiplyScalar(.0027*Math.cos(phi)).addScaledVector(W,.0027*Math.sin(phi));A.x+=side*h;const B=new THREE.Vector3(A.x,-.0062+.0064*Math.cos(65*Math.PI/180),Math.sign(A.z)*.0064*Math.sin(65*Math.PI/180));clampRod(A.toArray(),B.toArray(),.0005,'Clamp_bridge_'+side+'_'+sign,holder);}clampRod([side*h,.0043,0],[side*h,.0027,0],.00075,'Hoop_clamp_fastener_head_'+side,holder);clampRod([side*h,-.0142,0],[side*h,-.0126,0],.0011,'Crossbar_clamp_fastener_head_'+side,holder);clamps.push(holder);}
+ const bar=new THREE.Mesh(new THREE.CylinderGeometry(.0042,.0042,3.50036,12),metalMat);bar.name='Removable_control_crossbar';bar.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),new THREE.Vector3(1,0,0));bar.castShadow=true;group.add(bar);
+ const stationaryAdapter={state:()=>({faceTransforms:[{faceId:'MF_3_3',rotationColumns:[[1,0,0],[0,1,0],[0,0,1]],translationM:[0,0,0]}]})};
+ const anchors=[1,-1].map(side=>{const a=createPetalAnchor({THREE,model:stationaryAdapter}),holder=new THREE.Group();holder.matrixAutoUpdate=false;holder.add(a.group);group.add(holder);a.setPose({fold:0,pitchRad:0});return{side,a,holder};});
+ const Q=[1.8939533467850118,1.7782921918309074,-.0022],B=[1.899927107438256,1.6784707803819716,-.0022],perm=new THREE.Matrix4().set(0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,1),invPerm=perm.clone().invert();
+ // The fixed180degree assembly clock keeps the entire cable cone clear of the
+ // support crank. Rotating about BASE→Q preserves BOTH endpoints and every
+ // rigid part length; it is a manufactured orientation, not an animated joint.
+ let endpointRoots=[];
+ function update(q){state=model.state(q);g.attributes.position.array.set(state.positions);g.attributes.position.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();hoop.geometry.dispose();hoop.geometry=hoopGeometry(state.hoop);
+  const s=station,T=new THREE.Vector3(...state.tangentAt(s)),N=new THREE.Vector3(...state.normalAt(s)),C=new THREE.Vector3(...state.pointAt(s)).addScaledVector(N,-.0062);bar.position.copy(C);for(const holder of clamps){holder.matrix.makeBasis(new THREE.Vector3(1,0,0),N,T);holder.matrix.setPosition(new THREE.Vector3(...state.pointAt(s)));}endpointRoots=[];
+  for(const A of anchors){const X=new THREE.Vector3(A.side,0,0),t=T.clone(),n=N.clone();if(A.side<0){t.negate();} // Manufactured mirrored terminal; each body remains rigid.
+   const basis=new THREE.Matrix4().makeBasis(t,X,n);if(A.side<0)basis.makeBasis(T,X,N.clone().negate());
+   const clock=(A.side>0?clockingDegRight:clockingDegLeft)*Math.PI/180,clockAxis=new THREE.Vector3(...Q).sub(new THREE.Vector3(...B)).normalize();basis.multiply(new THREE.Matrix4().makeRotationAxis(clockAxis,clock));
+   const base=C.clone().addScaledVector(X,1.75018),offset=new THREE.Vector3(...B).applyMatrix4(basis),trans=base.sub(offset);basis.setPosition(trans);A.holder.matrix.copy(basis).multiply(invPerm);A.holder.updateMatrixWorld(true);endpointRoots.push(new THREE.Vector3(...Q).applyMatrix4(basis).toArray());
+  }group.updateMatrixWorld(true);return state;
+ }
+ function setCableDirection(index,worldDir){const A=anchors[index],rot=new THREE.Matrix4().extractRotation(A.holder.matrixWorld).invert(),v=new THREE.Vector3(...worldDir).transformDirection(rot);A.a.setCableDirection(v.toArray());}
+ function endpointsWorld(){group.updateMatrixWorld(true);return endpointRoots.map(p=>new THREE.Vector3(...p).applyMatrix4(group.matrixWorld).toArray());}
+ function getMeshes(){return[fabric,hoop,bar,...clampMeshes,...anchors.flatMap(a=>a.a.getMeshes())];}
+ update(0);return{group,fabric,hoop,bar,update,setCableDirection,endpointsWorld,getState:()=>state,getMeshes,dispose(){g.dispose();hoop.geometry.dispose();clothMat.dispose();metalMat.dispose();anchors.forEach(a=>a.a.dispose());clampMeshes.forEach(m=>m.geometry.dispose());}};
+}

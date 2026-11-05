@@ -1,0 +1,102 @@
+{
+  "revision": "F06",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "userDecision": "F05 articulado descartado por complejidad; conservar como antecedente. Retomar pétalo continuo y minimizar motores.",
+  "status": "Estudio de una pieza; recuperación, fuerzas, material y conjunto cinco todavía sin validar.",
+  "geometry": {
+    "nominalHoopEnvelopeM": [
+      4,
+      3.5
+    ],
+    "fabricPatternM": [
+      3.994,
+      3.494
+    ],
+    "fabricAreaM2": 10.960259644545275,
+    "petalMechanicalHinges": 0,
+    "continuousHoop": true,
+    "continuousSheet": true,
+    "proposedAdditionalMotors": 0,
+    "foldedEnvelopeM": [
+      3.5,
+      1.875,
+      0.4884
+    ],
+    "openCurvatureMInv": 0.07,
+    "fixedRoot": true,
+    "maximumTransientPetalHeightAboveRootM": 2.174,
+    "closedCatchHeightAboveRootM": 0.547383145,
+    "proposedDeckUndersideM": 2.57,
+    "sampledClosedDeckGapM": 0.022616855,
+    "sampledClearOpeningEdgeGapM": 0.19761239,
+    "fabricHoopGapContinuousM": 0.000893287,
+    "longitudinalSurfaceBendRadiusM": 0.2,
+    "hoopSectionSelected": false,
+    "hingeMountProposal": "Hatch doors pivot at lower outside corners,so their open thickness stays outside the aperture; not approved construction."
+  },
+  "manualControl": {
+    "groundOperated": true,
+    "winches": 2,
+    "cableLengthEachM": 18,
+    "automaticSynchronization": false,
+    "latch": "Manual withdrawal of pin; counterweighted lid opens after pin clears. Remote trigger line to be detailed in prototype.",
+    "prototypeOperators": 2
+  },
+  "physicalLimits": {
+    "selectedFleje": false,
+    "selectedFabric": false,
+    "measuredRecoveryEnergy": false,
+    "gravityClothDynamics": false,
+    "windDynamics": false,
+    "strengthApproved": false,
+    "completeFivePetalDeployment": false
+  },
+  "validation": {
+    "surfaceIsometry": true,
+    "continuousIdealNoSelfCrossing": true,
+    "continuousHoopSelfClearance": true,
+    "continuousFabricToHoopClearanceM": 0.000893287,
+    "hardwareIntegration": {
+      "continuousSkinAndHoopGeometry": true,
+      "cableToSkinHoopBarCradle": "Continuous slab separation proof,minimum33mm to cradle.",
+      "cableToTerminalsAndClamps": {
+        "poses": 201,
+        "intersections": 0,
+        "minimumGapM": 0.000222196
+      },
+      "cableToOwnGroundDevices": {
+        "poses": 61,
+        "intersections": 0,
+        "method": "Adaptive arc-length bounds; declared exact support contacts.",
+        "minimumNonSupportGapM": 0.000797956
+      },
+      "cradleAndRetainingCatch": {
+        "poses": 41,
+        "intersections": 0
+      },
+      "wholeContext": {
+        "sampledTimes": 121,
+        "penetrationsOutsideDeclaredMountContacts": 0
+      },
+      "fullContinuousHardwareSweepCertified": false
+    }
+  },
+  "sources": [
+    {
+      "title": "NASA/JPL · passive deployment controlled by lanyard and damping",
+      "url": "https://ntrs.nasa.gov/api/citations/20100028127/downloads/20100028127.pdf",
+      "limit": "Does not validate the large flower, materials or a30s automatic opening."
+    },
+    {
+      "title": "Mouthuy et al · Overcurvature describes the buckling and folding of rings",
+      "url": "https://www.nature.com/articles/ncomms2311",
+      "limit": "Ring energy and fold paths must be measured; U path here is prescribed geometry."
+    },
+    {
+      "title": "Discrete Elastic Rods · Columbia Computer Graphics",
+      "url": "https://www.cs.columbia.edu/cg/rods/",
+      "limit": "Bending and torsion are material properties, not consequences of a surface isometry; no constants are taken for the flower."
+    }
+  ]
+}
