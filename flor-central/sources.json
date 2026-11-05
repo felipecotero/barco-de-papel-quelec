@@ -1,0 +1,89 @@
+{
+  "revision": "F02",
+  "date": "2026-11-05",
+  "localStudyOnly": false,
+  "webSources": [
+    {
+      "title": "Manfrotto LL LR3031 reflector plegable75cm",
+      "url": "https://www.manfrotto.com/global-es/collapsible-reflector-76cm-silver-white-ll-lr3031/",
+      "summary": "El fabricante describe borde/anillo de acero y plegado a un tercio del tamaño original. Es un reflector75cm, no evidencia de que un pétalo4m pueda copiar sección, plegarse igual o abrir durante30segundos."
+    },
+    {
+      "title": "Westcott University: cómo plegar un reflector",
+      "url": "https://westcottu.com/how-to-fold-a-reflector",
+      "summary": "Documenta métodos twist y taco; advierte que torsión/plegado incorrectos pueden deformar el marco. Sirve para una animación cinemática conceptual, no para calcular tensiones ni energía del aro4m."
+    },
+    {
+      "title": "Westcott University: Essential Guide to Photo Reflectors",
+      "url": "https://westcottu.com/photo-reflectors-guide",
+      "summary": "El fabricante ofrece reflectores que colapsan a un tercio de tamaño para transporte. No se extrapola automáticamente ese factor a un diseño especial gigante."
+    },
+    {
+      "title": "NASA Glenn: Drag Equation",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-equation/",
+      "summary": "D=0,5ρV²CdA. Cd y referencia de área deben corresponder al objeto y normalmente se determinan experimentalmente. Esta fórmula no certifica el comportamiento de un conjunto de membranas flexibles superpuestas."
+    },
+    {
+      "title": "NASA Glenn: Drag Coefficient",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/drag-coefficient/",
+      "summary": "El coeficiente depende de forma, inclinación y condiciones de flujo. No asignar a franjas superpuestas una reducción de viento igual a un porcentaje de huecos sin ensayo."
+    },
+    {
+      "title": "Haulotte Iberica: Compact12, ficha técnica actual",
+      "url": "https://www.haulotte.com.es/es_ES/productos/compact-12",
+      "referenceOnly": true,
+      "summary": "Ficha actual: piso9,75m, trabajo11,75m, plataforma2,40×1,17m, altura2,47m con barandillas y1,77m con barandillas abajo. No sustituye la ficha del año/serie del equipo concreto."
+    },
+    {
+      "title": "Haulotte France: Compact12, confirma barandillas relevées/abaissées",
+      "url": "https://www.haulotte.fr/fr_FR/produit/compact-12",
+      "summary": "La página francesa identifica explícitamente2,47m garde-corps relevés y1,77m garde-corps abaissés, evitando interpretar el dato español sin barandillas como permiso para quitarlas."
+    },
+    {
+      "title": "Haulotte Community: The influence of wind on lifting activities",
+      "url": "https://haulotte-community.haulotte.com/a/the-influence-of-wind-on-lifting-activities/",
+      "summary": "Haulotte indica que grandes paneles/superficies pueden afectar gravemente la estabilidad y que las PEMP no están diseñadas para sostener pancartas. Consultar manual y placa de máquina. Su cifra genérica de viento no se aplica como umbral validado a una flor añadida."
+    },
+    {
+      "title": "Haulotte Service: manuales oficiales",
+      "url": "https://www.haulotte-service.com/Front-ETI",
+      "summary": "Portal oficial de manuales, dinámico. No se descargó un manual específico aplicable a la unidad. Hace falta año/número de serie/manual del proveedor antes de decidir configuración de barandillas y accesorios."
+    }
+  ],
+  "localSources": [
+    {
+      "title": "Quelec: cuaderno de utilería y desarrollo de flores, septiembre de2026",
+      "role": "Silueta y familia cromática; no mecanismo fabricable."
+    },
+    {
+      "title": "TDR flores y mecanismos, octubre de2026; acta8octubre",
+      "role": "Cinco pétalos, dos bore, tallo con aros y alternativas de paños; medidas anteriores reemplazadas por precisión actual."
+    },
+    {
+      "title": "Estudio privado orquideas-3d del proyecto",
+      "role": "Referencia de forma y de movimiento por órganos. Constantes biológicas no medidas: no se trasladan a tela o fleje escénico."
+    }
+  ],
+  "assumptions": {
+    "physicalFabricSimulation": false,
+    "displayModel": "Cinemática progresiva de pétalos desde raíz a punta, aro firme y paños anclados; sin torsión/recuperación resistente del fleje.",
+    "stabilityCalculated": false,
+    "fabricationApproved": false,
+    "operatingWindLimit": null,
+    "reductionCreditForStrips": false,
+    "digitalInterlockOnly": true,
+    "trapMechanism": "Dos paneles rígidos UP90°, bisagras, actuación telescópica conceptual, topes y retención. Sin dimensionamiento resistente.",
+    "stageGeometry": "Centro plano4.8x4.3, hueco4.2x3.7, base2m, centro2.75m, pendientes10–15°; crece la huella total."
+  },
+  "publicDesignStudy": true,
+  "heightReference": {
+    "requestedPlatformFloorM": 10,
+    "shownPlatformFloorM": 9.75,
+    "shownCrownM": 10.15,
+    "centerStageM": 2.75,
+    "floorAboveCenterM": 7,
+    "sourceDate": "2026-11-05",
+    "exactUnitYearSerialKnown": false,
+    "source": "https://www.haulotte.com.es/es_ES/productos/compact-12"
+  }
+}

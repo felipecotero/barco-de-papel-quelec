@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I18) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I19) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F02](flor-central/?rev=F02)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -16,7 +16,7 @@ El trazado de rayos permanece como opción secundaria en barco y grulla. Es más
 
 **Descargar 3D**, junto a **Guías y planos**, ofrece GLB con texturas integradas, OBJ+MTL+PNG en ZIP y STL sin texturas. GLB usa metros; OBJ/STL permiten elegir metros o milímetros y requieren seleccionar la misma unidad al importarlos. Escala 1:1, objeto ensamblado, sin suelo, cotas ni rótulos. STL reúne mallas y no implica una única pieza lista para imprimir.
 
-Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** y **colas-de-pavo/Abrir-Colas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor muestra el modelo constructivo vigente.
+Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** y **colas-de-pavo/Abrir-Colas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor identifica su versión de diseño y el estado de sus constructivos. La flor F02 es una propuesta de mecanismo, sin constructivo aprobado.
 
 ## Barco R08
 
@@ -109,7 +109,7 @@ Las revisiones PA02–PA04 permanecen como archivos históricos. El libreto comp
 
 ## Proyección de costos PC02
 
-Página independiente con dos pestañas: **Escenario bajo** y **Tope proyectado**. Cada una presenta su extremo de materiales, mano de obra, transportes previstos, reserva y total para los seis grupos: un barco, una grulla, una nave, una cauchera, cuatro pancartas y cinco colas de pavo. El tope es una proyección condicionada a cotización y prototipo, no un máximo contratado.
+Página independiente con dos pestañas: **Escenario bajo** y **Tope proyectado**. Cada una presenta su extremo de materiales, mano de obra, transportes previstos, reserva y total para los seis grupos: un barco, una grulla, una nave, una cauchera, cuatro pancartas y cinco colas de pavo. El tope es una proyección condicionada a cotización y prototipo, no un máximo contratado. La flor central F02 no está incluida: su costo sigue pendiente de desarrollar.
 
 Pancartas PA05 se presupuestan con cuatro objetos y ocho impresiones en un único formato; los tres formatos no se suman. La cauchera usa la revisión visual C02-r2 (asas compactas, lengüeta y bolsa); su elástico sigue como provisión de muestras y los PDF C01 no se modifican. Cinco colas CP03 incluyen la primera de prueba y cuatro repeticiones; materiales, perfiles, mecanismos, arnés y horas de desarrollo están provisionados, sin aprobar secciones ni reemplazar la piel ultraligera por la gasa económica de referencia. Barco R08, grulla G04 y nave N02 conservan las bases del 24 de octubre; las otras tres bases y sus referencias se actualizaron el 29.
 
@@ -182,3 +182,12 @@ El [visor C04](cauchera/?rev=C04-virtual) incorpora un [juego ficticio de arrast
 El botón [Ver el ancla en la arena](cauchera/?rev=C04-virtual&vista=anchor) muestra una sección del terreno: 20 cm de arena hasta la base dura y la espiga conceptual de 12 cm dentro de ella. La sección se puede mostrar u ocultar y la espiga se puede presentar instalada o retirada. Es una vista para entender la pieza; su retención sigue pendiente de ensayo.
 
 La construcción, el modelo exportable y la ficha en dos pliegos siguen siendo **C03-PVC**. La descarga 3D omite el juego y sus trayectorias. Se conservan los planos, maquetas y versiones vigentes de los otros objetos, incluida la maqueta de grulla G04-H02 de cuatro pliegos.
+
+
+## I19 / Flor central: forma orgánica y trampa previa a la elevación / 5 de noviembre de 2026
+
+La [flor central F02](flor-central/?rev=F02&vista=whole) añade el séptimo objeto del taller como **propuesta de diseño**, con cinco pétalos de **4 × 3,5 m**, apertura desde el centro hacia afuera, aros de proporciones elípticas distintas, tallo textil y dos hojas de bore con volumen. La [vista de trampa](flor-central/?rev=F02&vista=trap) muestra dos hojas rígidas que abren hacia arriba, sus bisagras, accionamiento esquemático, topes y retención. La secuencia completa espera a la apertura antes de elevar y mantiene la trampa abierta durante la escena; no desaparecen los paneles.
+
+La [vista de tarimas](flor-central/?rev=F02&vista=stage) conserva el centro horizontal y permite comparar pendientes de **10–15°** alrededor, ampliando la huella. La zona central de **2,75 m** es una propuesta; la base exterior permanece a 2 m. Los **10 m solicitados** se distinguen de la cota de piso **9,75 m** publicada para la Compact 12 de referencia: sobre el centro a 2,75 m, esta última deja **7 m**. La altura de trabajo de la máquina es otra magnitud y no se usa como altura del piso. Año, serie y configuración concreta siguen por comprobar.
+
+**Descargar 3D** exporta solo la flor conceptual; omite elevadora, tarimas y ayudas. El movimiento de telas y la comparación de viento no validan el plegado del fleje, fijaciones, actuadores, retenciones ni estabilidad del accesorio. No hay planos de fabricación aprobados para F02. Las versiones y documentos de los seis objetos anteriores se conservan, incluida la proyección PC02, que continúa cubriendo esos seis grupos y **no incluye la flor**.

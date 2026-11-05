@@ -1,0 +1,119 @@
+{
+  "revision": "I19 / F02",
+  "date": "2026-11-05",
+  "previousRevision": "I18 / C04-virtual",
+  "scope": "Séptimo objeto: flor central orgánica, elipses variables, pétalos con cuenco y apertura raíz→punta, tarimas con centro plano y pendientes10–15°, dos tapas UP con bisagras/actuación/topes/retención antes de elevar.",
+  "requestedPlatformFloorM": 10,
+  "shownReferenceFloorM": 9.75,
+  "centralStageM": 2.75,
+  "floorAboveCentralM": 7,
+  "shownCrownM": 10.15,
+  "openingSeconds": 30,
+  "sequenceSeconds": 85,
+  "actualPhysicalControlConnected": false,
+  "physicalApproval": false,
+  "steelFoldRecoverySolved": false,
+  "safetyOrWindCapacityValidated": false,
+  "costRevision": "PC02 conserva seis grupos previos; flor sin presupuesto incorporado.",
+  "assets": [
+    {
+      "path": "flor-central/Abrir-Flor-Central-F02.html",
+      "bytes": 3333636,
+      "sha256": "eb37762e9c4f6d254a8bcdd4688becebb6501f50dcc54e0e212e0b4c6dd636fc"
+    },
+    {
+      "path": "flor-central/app.js",
+      "bytes": 38826,
+      "sha256": "83497abb26cdb15c6f50925668cab3309a55e58529622d54589ea82c6f91a6a2"
+    },
+    {
+      "path": "flor-central/assets/copper.jpg",
+      "bytes": 99380,
+      "sha256": "5e26e20e5d01eaa96a607dddbfa5b7e2cf07c27961f8d2503340b30b71323c70"
+    },
+    {
+      "path": "flor-central/assets/corolla_iso.png",
+      "bytes": 1974264,
+      "sha256": "812b7e6e1d1ca31f3ed00c957939c532da7dd11a64266c6972f732f844ba8047"
+    },
+    {
+      "path": "flor-central/assets/cream.jpg",
+      "bytes": 39010,
+      "sha256": "dbdc55ef15dba412e5e6c5253d54eb6939fc4316dbf4e43535aa42ed32898620"
+    },
+    {
+      "path": "flor-central/assets/magenta.jpg",
+      "bytes": 28110,
+      "sha256": "8b263a73ebb1625d0a034889813895aa4cdbea93d3f60ad3ca55a0088279df35"
+    },
+    {
+      "path": "flor-central/assets/referencia-tallo-ui.jpg",
+      "bytes": 182892,
+      "sha256": "db0ef3d2437c4a3c558cbba88e26c3d3388c102848101156ec50fa82f4c660a7"
+    },
+    {
+      "path": "flor-central/favicon.svg",
+      "bytes": 309,
+      "sha256": "6449ddb1d93bd8afe4d88f6c737c72a8b77c52df429aaec27e7e5fe654e0945c"
+    },
+    {
+      "path": "flor-central/index.html",
+      "bytes": 21836,
+      "sha256": "57fc91ee8f4aef82c19268d642573294baa34547f8ead308c0f2634ab4b58ae4"
+    },
+    {
+      "path": "flor-central/model.json",
+      "bytes": 4642,
+      "sha256": "c3b01802a62ca5ae975901729defa8ff14d02114576d4bd8e62e3521e8b6454c"
+    },
+    {
+      "path": "flor-central/scene.js",
+      "bytes": 40187,
+      "sha256": "a5270a897d051bfea21b49d77c396671fdca7ec6e6e41a0298ca9bd7a89cc758"
+    },
+    {
+      "path": "flor-central/simulation.js",
+      "bytes": 19730,
+      "sha256": "cadff01c85a7e5b8df867d592ad22b0d9f5e9fa7375dfb464c94ee4c144c0c72"
+    },
+    {
+      "path": "flor-central/sources.json",
+      "bytes": 5163,
+      "sha256": "a50e2be3d63b9057814a2b937d7e30bb1af01b708fa3e3a793625e79974e52f6"
+    },
+    {
+      "path": "flor-central/stage-trap.js",
+      "bytes": 19402,
+      "sha256": "dede07fd7cc72d645f7bcfc66c0928ee9604ba9d344ba544ad1b87d68262480c"
+    },
+    {
+      "path": "flor-central/style.css",
+      "bytes": 14508,
+      "sha256": "e99c0adcbe9fd592523db5c51f80f62566c16146cf00541a2d7dccab0dd46305"
+    },
+    {
+      "path": "flor-central/tools/build-portable.py",
+      "bytes": 5381,
+      "sha256": "008a37f86434652d95875967dd77874a5afed70642e9ac57598dc43b1d527d2a"
+    }
+  ],
+  "checks": {
+    "pureSequenceWindAndGeometry": 33,
+    "stageTrapChecks": 22,
+    "stageTrapStates": 60,
+    "sceneChecks": 27,
+    "sceneStates": 50,
+    "sampledPassageCases": 126,
+    "browserDesktopMobileChecks": 25,
+    "contentAndPrivacyChecks": 36,
+    "publicMirrorChecks": 3,
+    "offlineFinalChecks": 5,
+    "actualGLBAndOBJmMmExportsPass": true,
+    "consoleAndRequestErrors": 0,
+    "sixPreviousCardsAndObjectsPreserved": true,
+    "privateContentExcluded": true
+  },
+  "route": "flor-central/?rev=F02",
+  "trapRoute": "flor-central/?rev=F02&vista=trap",
+  "stageRoute": "flor-central/?rev=F02&vista=stage"
+}

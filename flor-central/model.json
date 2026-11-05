@@ -1,0 +1,145 @@
+{
+  "revision": "F02",
+  "date": "2026-11-05",
+  "publication": "Publicación de estudio de diseño autorizada por el usuario. No es plano de fabricación aprobado.",
+  "userConfirmed": {
+    "petalCount": 5,
+    "petalLengthM": 4,
+    "petalWidthM": 3.5,
+    "machine": "Haulotte Compact12",
+    "peopleAbove": 0,
+    "projectStowedOverallM": 1.77,
+    "projectRailConfiguration": "sin barandillas, según el usuario; no se acredita aprobación del accesorio",
+    "initialStageTopM": 2,
+    "openingDurationS": 30,
+    "holdOpenForRestOfAppearance": true,
+    "requestedPlatformFloorM": 10,
+    "originalStageWidthM": 8,
+    "surroundingStageTreatment": "Ampliar hacia los laterales con pendientes suaves y centro plano en la trampa.",
+    "openingDirection": "Desde el centro hacia afuera; pétalos con volumen, no planos",
+    "organicHoops": "Proporciones elípticas variables, alrededor de la envolvente mínima de plataforma",
+    "slopeMaximumDeg": 15,
+    "slopePreferredDeg": 10
+  },
+  "newUnapprovedOption": {
+    "localStorageChamberM": [
+      2.5,
+      3.0
+    ],
+    "defaultPreviewM": 2.75,
+    "changesWholeStageHeight": false,
+    "interpretation": "Centro plano de trampa; alrededor, planos inclinados suaves que descienden a2m. Geometría en desarrollo.",
+    "centralFlat": true,
+    "surroundingRamps": true,
+    "wholeStageHeightRaised": false
+  },
+  "referenceCurrentHaulotte": {
+    "platformLengthM": 2.4,
+    "platformWidthM": 1.17,
+    "stowedWithRailsM": 2.47,
+    "stowedRailsDownM": 1.77,
+    "maximumFloorM": 9.75,
+    "maximumWorkingM": 11.75,
+    "exactYearAndSerialUnknown": true,
+    "sourceDate": "2026-11-05",
+    "source": "https://www.haulotte.com.es/es_ES/productos/compact-12",
+    "shownPlatformFloorM": 9.75,
+    "requestedPlatformFloorM": 10,
+    "floorAboveRaisedStageM": 7,
+    "crownHeightM": 10.15
+  },
+  "proposedNotApproved": {
+    "stemHoops": 6,
+    "verticalStrips": 12,
+    "packHeightM": 0.3,
+    "packFoldingVerified": false,
+    "crownOffsetAboveFloorM": 0.4,
+    "compactFloorProxyM": 1.37,
+    "deckThicknessM": 0.18,
+    "leafReleaseDuringLift": true,
+    "cordRoute": "exterior esquemático; no cálculo ni selección de aparejo",
+    "closedLoopMechanics": "no resueltas con este visor",
+    "originalStageBaseDepthM": 6,
+    "crownAxesM": [
+      3.6,
+      2.0
+    ],
+    "hoops": "Seis elipses distintas, comprobación gráfica de cuatro esquinas de plataforma+8cm declarados; no holgura acreditada.",
+    "stageFlatM": [
+      4.8,
+      4.3
+    ],
+    "trapOpeningM": [
+      4.2,
+      3.7
+    ],
+    "trapLeaves": 2,
+    "trapLeafClosedM": [
+      2.1,
+      3.7
+    ],
+    "trapOpenAngleDeg": 90,
+    "trapOpeningDirection": "upward",
+    "trapActuators": "Esquema telescópico, sin tipo/carrera/fuerza seleccionados",
+    "trapRetention": "Tope y retención abierta esquemáticos, sin capacidad seleccionada",
+    "slopeDegRange": [
+      10,
+      15
+    ],
+    "defaultSlopeDeg": 10,
+    "defaultOverallStageM": [
+      13.306922729426564,
+      12.806922729426564
+    ],
+    "at15DegOverallStageM": [
+      10.398076211353317,
+      9.898076211353317
+    ],
+    "leafSizesM": [
+      [
+        3,
+        2.25
+      ],
+      [
+        2.75,
+        2.15
+      ]
+    ],
+    "bloomKinematics": "Brote erguido, despliegue por segmentos raíz→punta, cuenco transversal y caída de labelo; no solución elástica."
+  },
+  "visuals": {
+    "colors": "dos crema moteadosvioleta, dos cobrizos y labelomagenta; tallo verdeazulado, dos bore",
+    "originalArtIntact": true,
+    "sourceUserAdditionalImages": 5,
+    "stem": "Verde azulado, pliegues y óvalos variables; doce franjas o manga continua."
+  },
+  "limits": [
+    "No dimensiona fleje, fuerza de recuperación ni retenciones.",
+    "No calcula estabilidad, carga admisible o umbral de viento.",
+    "No demuestra interferencias resueltas.",
+    "Configuración de elevadora y accesorios por confirmar con proveedor/fabricante.",
+    "El paquete dibujado no demuestra un plegado real de cinco piezas4x3.5m."
+  ],
+  "sequence": {
+    "trapOpeningS": 8,
+    "liftS": 45,
+    "pauseS": 2,
+    "petalOpeningS": 30,
+    "totalS": 85,
+    "holdsOpen": true,
+    "resetMeansNextPerformance": true,
+    "digitalInterlockOnly": true,
+    "liftAfterTrapFullyOpen": true,
+    "trapCannotCloseWithRaisedSet": true
+  },
+  "delivery": {
+    "route": "flor-central/?rev=F02",
+    "portable": "Abrir-Flor-Central-F02.html",
+    "formats": [
+      "GLB-m",
+      "OBJ-MTL-PNG-m/mm",
+      "STL-m/mm"
+    ],
+    "exportScope": "Solo flor abierta y estática; sin elevadora, tarima, trampa, ayudas o viento. Modelo conceptual."
+  }
+}
