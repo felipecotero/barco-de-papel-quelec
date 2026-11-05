@@ -1,0 +1,155 @@
+{
+  "revision": "I20 / F03",
+  "date": "2026-11-05",
+  "previousRevision": "I19 / F02",
+  "scope": "Se corrige el crecimiento geométrico F02. Laboratorio de un pétalo completo con raíz articulada y cabo conectado; sin simular recuperación compacta. Tarima de dos rampas y franja plana completa de8m.",
+  "petalM": [
+    4,
+    3.5
+  ],
+  "readyRootAngleDeg": 70,
+  "finalRootAngleDeg": 0,
+  "rootRotationCadenceS": 30,
+  "dynamicResponseCalculated": false,
+  "compactRecoverySolved": false,
+  "fullDeploymentAnimated": false,
+  "stageFlatM": [
+    8,
+    4.3
+  ],
+  "defaultOverallStageM": [
+    8,
+    12.806922729426564
+  ],
+  "guideCenterAtStowedM": 2.68,
+  "guideOuterTopAtStowedM": 2.735,
+  "guideOverrunDefaultUndersideM": 0.165,
+  "guideFoldSolved": false,
+  "structuralApproval": false,
+  "safetyOrWindCapacityValidated": false,
+  "costRevision": "PC02 seis grupos previos; flor sin costo incorporado.",
+  "assets": [
+    {
+      "path": "flor-central/Abrir-Flor-Central-F03.html",
+      "bytes": 3359345,
+      "sha256": "98827c88031cd4dcf8eaffc66cb45e0d97eb063d395cf674ec597d5ded9ca06b"
+    },
+    {
+      "path": "flor-central/app.js",
+      "bytes": 40213,
+      "sha256": "f880b9b1da8d7a082788c75c3845882c3c3d098d9518af1ebf22b3045c8049b1"
+    },
+    {
+      "path": "flor-central/assets/copper.jpg",
+      "bytes": 99380,
+      "sha256": "5e26e20e5d01eaa96a607dddbfa5b7e2cf07c27961f8d2503340b30b71323c70"
+    },
+    {
+      "path": "flor-central/assets/corolla_iso.png",
+      "bytes": 1974264,
+      "sha256": "812b7e6e1d1ca31f3ed00c957939c532da7dd11a64266c6972f732f844ba8047"
+    },
+    {
+      "path": "flor-central/assets/cream.jpg",
+      "bytes": 39010,
+      "sha256": "dbdc55ef15dba412e5e6c5253d54eb6939fc4316dbf4e43535aa42ed32898620"
+    },
+    {
+      "path": "flor-central/assets/magenta.jpg",
+      "bytes": 28110,
+      "sha256": "8b263a73ebb1625d0a034889813895aa4cdbea93d3f60ad3ca55a0088279df35"
+    },
+    {
+      "path": "flor-central/assets/referencia-tallo-ui.jpg",
+      "bytes": 182892,
+      "sha256": "db0ef3d2437c4a3c558cbba88e26c3d3388c102848101156ec50fa82f4c660a7"
+    },
+    {
+      "path": "flor-central/favicon.svg",
+      "bytes": 309,
+      "sha256": "6449ddb1d93bd8afe4d88f6c737c72a8b77c52df429aaec27e7e5fe654e0945c"
+    },
+    {
+      "path": "flor-central/index.html",
+      "bytes": 24383,
+      "sha256": "cc0b02e7201fa3a4d849d616a2136d79a87c92fae6614411020abcf9d618f961"
+    },
+    {
+      "path": "flor-central/mecanismo.json",
+      "bytes": 3563,
+      "sha256": "7c56adbe6ee8c04aba0ce21bab3aa0c9a1d152b2ff971407362d029107d537e0"
+    },
+    {
+      "path": "flor-central/model.json",
+      "bytes": 9646,
+      "sha256": "e994159a560297cd41626f4817132f0b634bc8287c174be04eb2161dc0ed4661"
+    },
+    {
+      "path": "flor-central/scene.js",
+      "bytes": 44050,
+      "sha256": "e8164c97419fdc69ca5e6c589f3625b3fc1a1e5ec27060566c322aa82cdd6e06"
+    },
+    {
+      "path": "flor-central/simulation.js",
+      "bytes": 16434,
+      "sha256": "75a0e75ba2b935b5839cc2ba1e7b6cd8697ade877bb1f367c4fef337c23088a4"
+    },
+    {
+      "path": "flor-central/sources.json",
+      "bytes": 7738,
+      "sha256": "b51956548830a3be4a75159ce289c934fac8c3cf8047bb29555548e86a34bee4"
+    },
+    {
+      "path": "flor-central/stage-trap.js",
+      "bytes": 21050,
+      "sha256": "25202f7578ef68fdab8902f1351fea29fe655981207b4cfff0b4a41cfb82a36c"
+    },
+    {
+      "path": "flor-central/style.css",
+      "bytes": 16600,
+      "sha256": "39f0259a7df830ff2fd0436c2c9025685875f550f7e8b7f61665940933371bd8"
+    },
+    {
+      "path": "flor-central/tools/build-portable.py",
+      "bytes": 5368,
+      "sha256": "b228c3b150f20ecc2353f255779d5c10cef6bd8ab007dc6933f956dfb04c1aba"
+    }
+  ],
+  "checks": {
+    "scene-qa": {
+      "allPass": true,
+      "checks": 38
+    },
+    "stage-trap-qa": {
+      "allPass": true,
+      "checks": 28
+    },
+    "stage-layout-consistency": {
+      "allPass": true,
+      "checks": 5
+    },
+    "content-qa": {
+      "allPass": true,
+      "checks": 43
+    },
+    "ui-smoke": {
+      "allPass": true,
+      "checks": 28
+    },
+    "ui-extra": {
+      "allPass": true,
+      "checks": 21
+    },
+    "portable-source-qa": {
+      "allPass": true,
+      "checks": 3
+    },
+    "portable-browser-qa": {
+      "allPass": true,
+      "checks": 10
+    }
+  },
+  "route": "flor-central/?rev=F03",
+  "mechanismRoute": "flor-central/?rev=F03&vista=mechanism",
+  "stageRoute": "flor-central/?rev=F03&vista=stage"
+}

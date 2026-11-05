@@ -1,7 +1,7 @@
-/* F02 · study in metres. Opening/folding and fabric motion are illustrative kinematics,
+/* F03 · study in metres. Root rotation preserves the complete frame; compact recovery is NOT animated. Fabric motion is illustrative,
    not an elastic-hoop solution, lift accessory approval or a stability analysis. */
 import * as THREE from 'three';
-import {createStageTrap} from './stage-trap.js?v=F02';
+import {createStageTrap} from './stage-trap.js?v=F03';
 
 const TAU = Math.PI * 2, UP = new THREE.Vector3(0, 1, 0);
 const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, Number(v) || 0));
@@ -19,7 +19,7 @@ const DEFAULTS = Object.freeze({
   scissorBarLengthM: 2.2, scissorStages: 5, machineBaseTopM: .45,
   crownDiameterM: 3.0, lowerRingDiameterM: 3.2, ringCount: 6,
   keepoutLengthM: 2.5, keepoutWidthM: 1.1, packHeightM: .30,
-  petalLengthM: 4, petalWidthM: 3.5
+  petalLengthM: 4, petalWidthM: 3.5, petalRootReadyDeg: 70
 });
 
 function paramGeometry(nu, nv) {
@@ -136,10 +136,10 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
   ].map(p=>fitEllipse(p,cfg.platformLengthM,cfg.platformWidthM));
   const crownProfile=hoopProfiles[5];
   function profileAt(v){const t=clamp(v)*5,j=Math.min(4,Math.floor(t)),f=smooth(t-j),a=hoopProfiles[j],b=hoopProfiles[j+1];return fitEllipse({a:mix(a.a,b.a,f),b:mix(a.b,b.b,f),cx:mix(a.cx,b.cx,f),cz:mix(a.cz,b.cz,f),yaw:mix(a.yaw,b.yaw,f)},cfg.platformLengthM,cfg.platformWidthM);}
-  const root = new THREE.Group(); root.name = 'Flor_central_F02_ESTUDIO';
+  const root = new THREE.Group(); root.name = 'Flor_central_F03_ESTUDIO';
   const objectRoot = new THREE.Group(); objectRoot.name = 'Flor_y_vestido_conceptuales'; root.add(objectRoot);
   const groups = {}, parts = [], ownedMaterials = new Set(), originalMaterials = new Map(), clothMeshes = [];
-  const palette = {COR:'#f8cb8a', ARO:'#e6e0cb', PET:'#dc94e8', TAL:'#6ab19a', HOJ:'#8ab55f', CTL:'#e6ae63', ANT:'#c97f73', ELEV:'#d7ad48', TAR:'#566471', CAM:'#c6b69a', EXC:'#f49c7e'};
+  const palette = {COR:'#f8cb8a', ARO:'#e6e0cb', PET:'#dc94e8', TAL:'#6ab19a', HOJ:'#8ab55f', CTL:'#e6ae63', ANT:'#c97f73', ELEV:'#d7ad48', TAR:'#566471', CAM:'#c6b69a', EXC:'#f49c7e', RAI:'#64d4cf'};
   const group = (code, title, parent = objectRoot, description = '') => {
     const g = new THREE.Group(); g.name = code; g.userData = {code, title, description, proposed:true};
     groups[code] = g; parts.push(g); parent.add(g); return g;
@@ -205,18 +205,12 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
   packEnvelopeCircle.scale.set(crownProfile.a,1,crownProfile.b);packEnvelopeCircle.rotation.y=crownProfile.yaw;
   packEnvelopeCircle.userData.noColors=packEnvelopeBox.userData.noColors=true;
   packEnvelopeCircle.castShadow=false;packEnvelopeBox.castShadow=false;
-  const packet = new THREE.Group();packet.name='Paquete_representativo_NO_SOLUCION_ELASTICA';COR.add(packet);
-  const packetLoops=[];
-  for(let i=0;i<5;i++)for(let k=0;k<3;k++) {
-    const loop=mesh(packet,new THREE.TorusGeometry(.46,.009,6,64),i<2?creamMat:i<4?copperMat:magentaMat);
-    loop.rotation.x=Math.PI/2;loop.rotation.z=(i-2)*.07;loop.scale.set(1.22,.88,1);packetLoops.push({loop,i,k});
-  }
-  const packetCloth=[];
-  for(let i=0;i<5;i++) {
-    const f=mesh(packet,paramGeometry(28,12),i<2?creamMat:i<4?copperMat:magentaMat);f.castShadow=false;packetCloth.push(f);
-  }
-
-  const ARO = group('ARO','Aros periféricos de pétalos',objectRoot,'Aro firme con contorno textil. El plegado se representa por transiciones geométricas, sin calcular cinta elástica ni torsión.');
+  // Storage target is an empty, dashed envelope: not a second object masquerading as the petal.
+  const storageEdges=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(crownProfile.a*2,1,crownProfile.b*2)),new THREE.LineDashedMaterial({color:'#efb76f',dashSize:.10,gapSize:.07,transparent:true,opacity:.85}));
+  storageEdges.name='Objetivo_de_guardado_NO_PAQUETE_RESUELTO';ownedMaterials.add(storageEdges.material);COR.add(storageEdges);
+  const guideGhostGeometry=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(),new THREE.Vector3()]);
+  const guideGhost=new THREE.Line(guideGhostGeometry,new THREE.LineDashedMaterial({color:'#f3aa77',dashSize:.07,gapSize:.05,depthTest:false}));guideGhost.name='Guia_fija_del_ensayo_NO_PLEGADA';const guideGhostCap=new THREE.Mesh(new THREE.SphereGeometry(.055,12,8),new THREE.MeshBasicMaterial({color:'#f3aa77',wireframe:true,depthTest:false}));guideGhostCap.name='Limite_exterior_guia_ensayo_NO_GUARDADA';ownedMaterials.add(guideGhostCap.material);COR.add(guideGhostCap);guideGhost.renderOrder=5;ownedMaterials.add(guideGhost.material);COR.add(guideGhost);
+  const ARO = group('ARO','Aros periféricos de pétalos',objectRoot,'El mismo contorno conserva su tamaño en todo el giro de raíz. La recuperación torsional de un aro compacto no se simula ni se da por resuelta.');
   const PET = group('PET','Cinco piezas de la corola',objectRoot,'Cinco pétalos con envolvente local4x3.5m confirmada: dos crema moteados, dos cobre y un labelo magenta. Se diferencian sus perfiles y curvaturas. No hay semilla ni intérprete.');
   const petalDefs = [
     {name:'Pétalo crema izquierdo',length:cfg.petalLengthM,width:cfg.petalWidthM,angle:-76,mat:creamMat,curl:.4},
@@ -243,12 +237,26 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     const vein=mesh(HOJ,dynamicTube(40,6,.018),cuffMat);vein.name='HOJ_Vena_'+(i+1);return{...d,index:i,surface,vein};
   });
 
-  const CTL=group('CTL','Cordones exteriores: esquema de control',objectRoot,'Los recorridos están fuera del volumen de tijeras. Guías, esfuerzo, freno y operación real pendientes de diseño y aprobación. Los diámetros dibujados no son prescripciones de fabricación.');
-  const ropeMeshes=petals.map((p,i)=>mesh(CTL,dynamicTube(32,5,.006),cordMat));
-  const station=box(CTL,[.32,.08,.22],dark,[-2.2,.82,1.9]);station.name='Estacion_de_control_ESQUEMA';
-  for(let i=0;i<3;i++)sphere(CTL,.027,mat(i===2?'#c58575':'#c3c6a3'),[-2.28+i*.08,.88,1.9]);
-  const ANT=group('ANT','Retención abierta: concepto',objectRoot,'El estado abierto se mantiene. Estos topes explican la función; no son herrajes dimensionados ni un dispositivo fabricable.');
-  const retainers=petals.map((p,i)=> {const k=box(ANT,[.10,.055,.11],mat('#b7b3a1'));k.name='ANT_Tope_conceptual_'+(i+1);return k;});
+  const RAI=group('RAI','Raíz articulada: propuesta geométrica',objectRoot,'Dos apoyos y un eje tangencial fijan la raíz a una corona; una cuna móvil conecta los dos lados del marco. El pétalo gira completo: ninguna pieza crece. Dibujos sin secciones, capacidades ni fijación seleccionadas.');
+  const CTL=group('CTL','Cabo, guía elevada y freno: propuesta',objectRoot,'El cabo se une a un travesaño del marco y llega a una guía elevada con freno esquemático. Soltar controladamente no equivale a demostrar una apertura de30s: no se calculan masas, tensiones ni amortiguación. Accionamiento remoto pendiente.');
+  const ANT=group('ANT','Tirante final y tope: propuesta',objectRoot,'La rienda final sostiene el estado abierto independientemente del cabo de maniobra. Se representa recta solo cerca del estado final; almacenaje, tensado y capacidad quedan pendientes. No es herraje para fabricar.');
+  const mechanics=petals.map((d,i)=>{
+    const r=new THREE.Group(),c=new THREE.Group(),a=new THREE.Group();r.name='RAI_'+(i+1);c.name='CTL_'+(i+1);a.name='ANT_'+(i+1);RAI.add(r);CTL.add(c);ANT.add(a);
+    const axis=mesh(r,new THREE.CylinderGeometry(.032,.032,.62,12),steel);axis.name='Eje_tangencial_ESQUEMA';axis.rotation.z=Math.PI/2;
+    const bearings=[-.22,.22].map(x=>box(r,[.12,.14,.17],dark));
+    const rootBase=box(r,[.7,.045,.42],dark);
+    const cradles=Array.from({length:2},()=>mesh(r,dynamicTube(1,5,.016),steel));
+    const crossbar=mesh(r,dynamicTube(1,6,.016),steel);crossbar.name='Travesano_del_marco_anclaje_cabo';
+    const eye=sphere(r,.035,mat('#f0b65f'));eye.name='Anclaje_cabo_al_marco';
+    const post=mesh(c,dynamicTube(1,6,.023),dark);post.name='Soporte_guia_sin_dimensionar';
+    const guide=sphere(c,.055,mat('#efbd6c'));guide.name='Guia_elevada';
+    const drum=box(c,[.13,.16,.12],dark);drum.name='Freno_conceptual_accionamiento_pendiente';
+    const rope=mesh(c,dynamicTube(1,5,.009),cordMat);rope.name='Cabo_unido_al_marco';
+    const stay=mesh(a,dynamicTube(1,5,.008),mat('#8bd6d0'));stay.name='Rienda_final_derecha_INDEPENDIENTE';
+    const stayLeft=mesh(a,dynamicTube(1,5,.008),mat('#8bd6d0'));stayLeft.name='Rienda_final_izquierda_INDEPENDIENTE';
+    const stop=box(a,[.18,.06,.16],mat('#c2bb9a'));stop.name='Tope_final_SIN_CAPACIDAD';
+    return{r,c,a,axis,bearings,rootBase,cradles,crossbar,eye,post,guide,drum,rope,stay,stayLeft,stop};
+  });
   const colorMaterials={};for(const [code,color]of Object.entries(palette))colorMaterials[code]=mat(color,{roughness:.75});
 
   let state={liftProgress:0,opening:0,leafProgress:0,trapProgress:0,slopeDeg:10,stemMode:'strips',windOn:false,speed:3,azimuth:0,gust:1.4,time:0,showSkin:true,showMachine:true,showStage:true,cutaway:true,showKeepout:false,colors:false,showRopes:true,view:'whole',packMode:'organic',packHeightM:cfg.packHeightM,storageRailsFolded:false,chamberTopM:cfg.chamberTopM,deckThicknessM:cfg.deckThicknessM};
@@ -262,35 +270,31 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
   function rotateLocal(x,y,z,angle,rootRadius=.44,extraY=0) {
     const a=angle*Math.PI/180;return new THREE.Vector3(x*Math.cos(a)+(z+rootRadius)*Math.sin(a),crownY+extraY+y,-x*Math.sin(a)+(z+rootRadius)*Math.cos(a));
   }
-  function releaseAt(q,opening=state.opening){const p=smooth(clamp((opening-.10)/.90));return smooth(clamp((p*1.32-q)/.32));}
+  const laboratory=()=>['petal','mechanism'].includes(state.view);
+  const rotationAngle=()=>laboratory()?cfg.petalRootReadyDeg*(1-state.opening)*Math.PI/180:0;
   function petalRestY(d,q){return d.curl*Math.sin(Math.PI*q)-.34*q*q+(d.label?-.9*q**4:0);}
-  let pathOpening=-1;
-  function updatePetalPaths(){
-    if(pathOpening===state.opening)return;pathOpening=state.opening;
-    const emerging=smooth(clamp(state.opening/.18)),budHeight=mix(.14,2.35,emerging);
-    const by=q=>budHeight*(q+.05*Math.sin(Math.PI*q)),bz=q=>.18*Math.sin(Math.PI*q)+.04*q;
-    for(const d of petals){
-      const points=[{y:0,z:0}],N=80;
-      for(let i=1;i<=N;i++){
-        const a=(i-1)/N,b=i/N,r=releaseAt((a+b)/2),prev=points[i-1];
-        points.push({y:prev.y+mix(by(b)-by(a),petalRestY(d,b)-petalRestY(d,a),r),z:prev.z+mix(bz(b)-bz(a),d.length/N,r)});
-      }
-      d.path=points;
-    }
-  }
   function petalPoint(d,u,v,opening=state.opening,wind=true) {
-    const q=clamp(v),s=u*2-1,profile=pinnedSine(q)**(d.copper?1.45:d.label?.62:.68),released=releaseAt(q,opening);
-    const t=q*80,j=Math.min(79,Math.floor(t)),f=t-j,path=d.path||[{y:0,z:0}],a=path[j]||path[0],b=path[j+1]||a;
-    // Integrating the tangent transition releases the base before the distal section.
-    // This is a visual growth path, not a spring-strip torsion/energy calculation.
-    const x=s*d.width*.5*profile*mix(.09,1,released);
-    const cup=mix(.30,d.label?.72:d.copper?.52:.64,released),asym=.065*s*Math.sin(q*Math.PI*2+d.index*.45)*pinnedSine(q);
-    let y=mix(a.y,b.y,f)+cup*s*s*pinnedSine(q)+asym;
-    const z=mix(a.z,b.z,f);
+    const q=clamp(v),s=u*2-1,profile=pinnedSine(q)**(d.copper?1.45:d.label?.62:.68);
+    const x=s*d.width*.5*profile,cup=d.label?.72:d.copper?.52:.64;
+    let y=petalRestY(d,q)+cup*s*s*pinnedSine(q)+.065*s*Math.sin(q*Math.PI*2+d.index*.45)*pinnedSine(q),z=d.length*q;
+    // Fabric can move ONLY inside its fixed boundary; frame never changes size or length.
     if(wind)y+=windWave(q,s,d.index*.8)*pinnedSine(q)*pinnedSine(u);
-    return rotateLocal(x,y,z,d.angle,.44,.06);
+    const angle=laboratory()?cfg.petalRootReadyDeg*(1-opening)*Math.PI/180:0;
+    const yy=y*Math.cos(angle)+z*Math.sin(angle),zz=z*Math.cos(angle)-y*Math.sin(angle);
+    return rotateLocal(x,yy,zz,d.angle,.44,.06);
   }
-  function outlinePoint(d,t) {return t<=.5?petalPoint(d,1,t*2):petalPoint(d,0,(1-t)*2);}
+  function outlinePoint(d,t) {return t<=.5?petalPoint(d,1,t*2,state.opening,false):petalPoint(d,0,(1-t)*2,state.opening,false);}
+  const lineAt=(a,b,t)=>a.clone().lerp(b,t);
+  function mechanismPoints(d) {
+    const root=rotateLocal(0,0,0,d.angle,.44,.06),guide=rotateLocal(0,.85,-.36,d.angle,.44,.06);
+    const left=petalPoint(d,0,.32,state.opening,false),right=petalPoint(d,1,.32,state.opening,false);
+    return{root,guide,left,right,attachment:left.clone().add(right).multiplyScalar(.5),stayPoint:petalPoint(d,1,.68,state.opening,false)};
+  }
+  function frameLength(d,opening=state.opening) {
+    let length=0,prev=null;
+    for(let k=0;k<=256;k++){const t=k/256,p=t<=.5?petalPoint(d,1,t*2,opening,false):petalPoint(d,0,(1-t)*2,opening,false);if(prev)length+=p.distanceTo(prev);prev=p;}
+    return length;
+  }
   function stemPoint(u,v,stripIndex=null) {
     const n=5,t=clamp(v)*n,j=Math.min(n-1,Math.floor(t)),f=t-j;
     const y=mix(ringYs[j],ringYs[j+1],f),profile=profileAt(v);
@@ -341,16 +345,13 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     const boxMode=state.packMode==='box';crownCircle.visible=crownCircleRim.visible=!boxMode;crownBox.visible=crownBoxEdges.visible=boxMode;
     crownCircle.position.set(crownProfile.cx,crownY+.015,crownProfile.cz);crownCircleRim.position.y=crownY+.015;
     crownBox.position.y=crownBoxEdges.position.y=crownY+.015;
-    packEnvelopeCircle.visible=!boxMode&&state.opening<.98;packEnvelopeBox.visible=boxMode&&state.opening<.98;
-    for(const e of [packEnvelopeCircle,packEnvelopeBox]){e.position.y=crownY+state.packHeightM/2;e.scale.y=state.packHeightM;}
-    packEnvelopeCircle.position.x=crownProfile.cx;packEnvelopeCircle.position.z=crownProfile.cz;
-    packet.visible=state.opening<.16&&state.showSkin;
-    const packetFade=1-smooth(state.opening/.16);
-    for(const {loop,i,k}of packetLoops) {const sign=i%2?1:-1;loop.position.set(sign*(i===4?0:.34),crownY+.04+state.packHeightM*(.12+i*.12+k*.055),.10*Math.sin(i*2));loop.scale.y=.88;loop.visible=packetFade>.015;}
-    for(let i=0;i<packetCloth.length;i++)updateParam(packetCloth[i].geometry,(u,v)=>new THREE.Vector3((u-.5)*1.22+Math.sin(i*2)*.28,crownY+.04+state.packHeightM*(.12+i*.13)+.026*Math.sin(u*22+v*25+i), (v-.5)*.69+Math.cos(i*2)*.15));
-    updatePetalPaths();
-    for(const d of petals) {d.surface.visible=state.showSkin&&state.opening>.012;d.surface.castShadow=state.showSkin;d.edge.visible=state.opening>.012;d.edge.castShadow=!state.showSkin;updateParam(d.surface.geometry,(u,v)=>petalPoint(d,u,v));updateTube(d.edge.geometry,t=>outlinePoint(d,t));}
-    throat.position.set(0,crownY+.19,.32);throat.visible=state.opening>.30&&state.showSkin;
+    const storageView=state.view==='folded';
+    packEnvelopeCircle.visible=false;packEnvelopeBox.visible=false;
+    storageEdges.visible=storageView;storageEdges.position.set(crownProfile.cx,crownY+state.packHeightM/2,crownProfile.cz);storageEdges.scale.y=state.packHeightM;storageEdges.computeLineDistances();
+    guideGhost.visible=guideGhostCap.visible=storageView;const gp=mechanismPoints(petals[0]),foot=rotateLocal(0,0,-.36,petals[0].angle,.44,.06),gg=guideGhostGeometry.attributes.position;gg.setXYZ(0,foot.x,foot.y,foot.z);gg.setXYZ(1,gp.guide.x,gp.guide.y,gp.guide.z);gg.needsUpdate=true;guideGhostGeometry.computeBoundingBox();guideGhostGeometry.computeBoundingSphere();guideGhost.computeLineDistances();guideGhostCap.position.copy(gp.guide);
+    const showPetals=!['folded','stage','trap','stem','leaves'].includes(state.view);
+    for(const d of petals) {const selected=showPetals&&(!laboratory()||d.index===0);d.surface.visible=selected&&state.showSkin;d.surface.castShadow=state.showSkin;d.edge.visible=selected;d.edge.castShadow=!state.showSkin;updateParam(d.surface.geometry,(u,v)=>petalPoint(d,u,v));updateTube(d.edge.geometry,t=>outlinePoint(d,t));}
+    throat.position.set(0,crownY+.19,.32);throat.visible=showPetals&&!laboratory()&&state.showSkin;
     const ringFractions=[0,.24,.48,.78,.90,1];
     ringYs=Array.from({length:6},(_,i)=>i===5?crownY:mix(.20+i*.06,.20+(crownY-.20)*ringFractions[i],state.liftProgress));
     for(let i=0;i<6;i++){stemRings[i].position.y=ringYs[i];stemRings[i].castShadow=!state.showSkin;}
@@ -358,14 +359,19 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     continuous.castShadow=state.showSkin;for(const p of strips)p.castShadow=state.showSkin;
     updateParam(continuous.geometry,(u,v)=>stemPoint(u,v));for(let i=0;i<strips.length;i++)updateParam(strips[i].geometry,(u,v)=>stemPoint(u,v,i));
     for(const d of leaves){d.surface.visible=state.showSkin;d.surface.castShadow=state.showSkin;d.vein.castShadow=!state.showSkin;updateParam(d.surface.geometry,(u,v)=>leafPoint(d,u,v));updateTube(d.vein.geometry,t=>leafPoint(d,.5,t,false));}
-    CTL.visible=state.showRopes;for(let i=0;i<ropeMeshes.length;i++) {
-      const a=petalDefs[i].angle*Math.PI/180,start=rotateLocal(0,.04,.15,petalDefs[i].angle,cfg.crownDiameterM/2),route=[start,new THREE.Vector3(Math.sin(a)*1.70,crownY-.18,Math.cos(a)*1.70),new THREE.Vector3(Math.sin(a)*1.70,.35,Math.cos(a)*1.70)];
-      const stationAngle=Math.atan2(-2.2,1.9);let delta=stationAngle-a;while(delta>Math.PI)delta-=TAU;while(delta<-Math.PI)delta+=TAU;
-      for(let j=1;j<=8;j++){const angle=a+delta*j/8;route.push(new THREE.Vector3(Math.sin(angle)*1.70,.35,Math.cos(angle)*1.70));}route.push(new THREE.Vector3(-2.2,.84,1.9));
-      const curve=new THREE.CatmullRomCurve3(route);updateTube(ropeMeshes[i].geometry,t=>curve.getPoint(t));
+    RAI.visible=showPetals&&(laboratory()||state.showRopes);CTL.visible=showPetals&&state.showRopes;ANT.visible=showPetals&&state.showRopes;
+    for(let i=0;i<mechanics.length;i++){
+      const d=petals[i],m=mechanics[i],v=mechanismPoints(d),selected=!laboratory()||i===0;
+      m.r.visible=m.c.visible=m.a.visible=selected;
+      m.axis.position.copy(v.root);m.axis.rotation.set(0,d.angle*Math.PI/180,Math.PI/2);
+      m.rootBase.position.copy(rotateLocal(0,-.10,0,d.angle,.44,.06));m.rootBase.rotation.y=d.angle*Math.PI/180;
+      for(let j=0;j<2;j++){m.bearings[j].position.copy(rotateLocal((j?1:-1)*.22,-.055,0,d.angle,.44,.06));m.bearings[j].rotation.y=d.angle*Math.PI/180;updateTube(m.cradles[j].geometry,t=>lineAt(v.root,petalPoint(d,j,.08,state.opening,false),t));}
+      updateTube(m.crossbar.geometry,t=>lineAt(v.left,v.right,t));m.eye.position.copy(v.attachment);
+      const foot=rotateLocal(0,0,-.36,d.angle,.44,.06);updateTube(m.post.geometry,t=>lineAt(foot,v.guide,t));m.guide.position.copy(v.guide);m.drum.position.copy(v.guide).add(new THREE.Vector3(0,-.14,0));
+      updateTube(m.rope.geometry,t=>lineAt(v.attachment,v.guide,t));
+      m.stay.visible=m.stayLeft.visible=rotationAngle()<5*Math.PI/180;updateTube(m.stay.geometry,t=>lineAt(v.stayPoint,v.guide,t));updateTube(m.stayLeft.geometry,t=>lineAt(petalPoint(d,0,.68,state.opening,false),v.guide,t));m.stop.position.copy(rotateLocal(0,-.08,.15,d.angle,.44,.06));m.stop.rotation.y=d.angle*Math.PI/180;
     }
-    ANT.visible=state.opening>.80;for(let i=0;i<retainers.length;i++)retainers[i].position.copy(rotateLocal(0,.025,0,petalDefs[i].angle,.53));
-    focusPoints.whole=[0,crownY*.47,0];focusPoints.folded=[0,crownY+state.packHeightM/2,0];focusPoints.petal=[-1.7,crownY+.5,1];focusPoints.stem=[0,crownY*.48,0];focusPoints.leaves=[-1.9,ringYs[3]+.65,1];focusPoints.mechanism=[0,crownY+.10,.5];focusPoints.trap=[0,state.chamberTopM+.45,0];focusPoints.stage=[0,state.chamberTopM,0];
+    focusPoints.whole=[0,crownY*.47,0];focusPoints.folded=[0,crownY+state.packHeightM/2,0];focusPoints.petal=[-1.7,crownY+1.7,1];focusPoints.stem=[0,crownY*.48,0];focusPoints.leaves=[-1.9,ringYs[3]+.65,1];focusPoints.mechanism=[-1.7,crownY+1.6,1];focusPoints.trap=[0,state.chamberTopM+.45,0];focusPoints.stage=[0,state.chamberTopM,0];
     applyColors();root.updateMatrixWorld(true);
   }
   function setState(next={}) {
@@ -387,7 +393,7 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
       if(!sb.isEmpty())return sb;
       return new THREE.Box3(new THREE.Vector3(-2.5,0,-2.25),new THREE.Vector3(2.5,state.chamberTopM+2.3,2.25));
     }
-    if(focus==='petal'){add(PET);add(ARO);}else if(focus==='stem')add(TAL);else if(focus==='leaves')add(HOJ);else if(focus==='folded'){add(COR);if(state.showMachine)add(ELEV);if(state.showStage)add(stageTrap.root)}else if(focus==='mechanism'){add(COR);add(ANT);if(state.showRopes)add(CTL);}else{add(objectRoot);if(state.showMachine)add(ELEV);if(state.showStage)add(stageTrap.root)}
+    if(focus==='petal'){add(PET);add(ARO);add(RAI);add(CTL);add(ANT);}else if(focus==='stem')add(TAL);else if(focus==='leaves')add(HOJ);else if(focus==='folded'){add(COR);if(state.showMachine)add(ELEV);if(state.showStage)add(stageTrap.root)}else if(focus==='mechanism'){add(PET);add(ARO);add(RAI);add(CTL);add(ANT);}else{add(objectRoot);if(state.showMachine)add(ELEV);if(state.showStage)add(stageTrap.root)}
     if(b.isEmpty()){const r=cfg.crownDiameterM/2+.1;b.set(new THREE.Vector3(-r,crownY-.1,-r),new THREE.Vector3(r,crownY+state.packHeightM+.1,r));}return b;
   }
   function getMetrics() {
@@ -397,17 +403,19 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     const spanH=(floorY-cfg.machineBaseTopM)/cfg.scissorStages,actualBar=Math.hypot(Math.sqrt(Math.max(.001,cfg.scissorBarLengthM**2-spanH**2)),spanH);
     const stageMetrics=stageTrap.getMetrics();
     const hoopBox=new THREE.Box3();for(const hp of hoopProfiles)for(let i=0;i<128;i++)hoopBox.expandByPoint(ellipsePoint(hp,i/128*TAU));
-    return {revision:'F02',illustrativeOnly:true,currentBounds:{min:b.min.toArray(),max:b.max.toArray()},petalCount:5,
+    return {revision:'F03',illustrativeOnly:true,currentBounds:{min:b.min.toArray(),max:b.max.toArray()},petalCount:5,
       petalAreasM2:nominalPetalAreas.length?nominalPetalAreas:[p.area],petalAreaM2:nominalPetalAreas.length?nominalPetalAreas.reduce((a,b)=>a+b,0):p.area,
       stemAreaM2:nominalStemAreas[state.stemMode==='strips'?'strips':'continuous']||s.area,
       leafAreaM2:nominalLeafArea||l.area,currentSurfaceAreaM2:p.area+s.area+l.area,
       projectedAreaM2:proj,projectedAreas:{petals:p.projected,stem:s.projected,leaves:l.projected},projectedCentroidYM:proj?(p.weightedY+s.weightedY+l.weightedY)/proj:0,forceHeightM:proj?(p.weightedY+s.weightedY+l.weightedY)/proj:0,
       areaBasis:'Superficie nominal abierta para pétalos/hojas; tallo nominal extendido. Proyección sumada de triángulos actuales, sin descontar solapes/oclusiones, sin validación aerodinámica. Mostrar/ocultar piel no retira material del escenario.',
+      foldedPackageSolved:false,foldedPackageIsEmptyTarget:true,
       foldedPackageM:state.packMode==='box'?[2.3,state.packHeightM,.9]:[crownProfile.a*2,state.packHeightM,crownProfile.b*2],
       ringDiameterM:{top:Math.max(crownProfile.a,crownProfile.b)*2,bottom:Math.max(hoopProfiles[0].a,hoopProfiles[0].b)*2},
       hoops:hoopProfiles.map((h,i)=>({index:i+1,axesM:[h.a*2,h.b*2],centerM:[h.cx,ringYs[i],h.cz],yawDeg:h.yaw*180/Math.PI,cornerFactor:h.cornerFactor,declaredCornerMarginM:h.marginM,containsDeclaredPlatformCorners:h.cornerFactor<=1})),
       crownAxesM:[crownProfile.a*2,crownProfile.b*2],hoopPassageEnvelopeM:{min:hoopBox.min.toArray(),max:hoopBox.max.toArray(),clearLengthUsedM:stageMetrics.openingLengthM-state.deckThicknessM,clearWidthUsedM:stageMetrics.openingWidthM,insideDrawnOpening:Math.max(Math.abs(hoopBox.min.x),Math.abs(hoopBox.max.x))+.023<(stageMetrics.openingLengthM-state.deckThicknessM)/2&&Math.max(Math.abs(hoopBox.min.z),Math.abs(hoopBox.max.z))+.023<stageMetrics.openingWidthM/2,geometricOnly:true},
-      bloomRelease:{mode:'Base a punta; brote erguido y apertura por segmentos, sin solución de cinta elástica',base:releaseAt(.10),middle:releaseAt(.50),tip:releaseAt(.90)},
+      bloomRelease:{mode:'NO se simula recuperación compacta; solo giro de raíz de un pétalo extendido',compactionSolved:false},
+      petalMechanism:(()=>{const d=petals[0],v=mechanismPoints(d),perimeter=frameLength(d);return{model:'rigid-root-rotation',angleDeg:rotationAngle()*180/Math.PI,rootM:v.root.toArray(),attachmentM:v.attachment.toArray(),guideM:v.guide.toArray(),controlLengthM:v.attachment.distanceTo(v.guide),framePerimeterM:perimeter,referencePerimeterM:frameLength(d,1),framePerimetersM:petals.map(p=>frameLength(p)),guideAddedHeightM:.85,guideRadiusM:.055,guideCenterHeightM:crownY+.91,guideTopM:crownY+.965,stowedGuideCenterM:cfg.machineCompactTopM+.91,stowedGuideTopM:cfg.machineCompactTopM+.965,fixedGuideStorageOverrunM:Math.max(0,cfg.machineCompactTopM+.965-(state.chamberTopM-state.deckThicknessM)),hypotheticalVerticalTipNotStored:true,stowedExtendedTipM:cfg.machineCompactTopM+.06+cfg.petalLengthM,compactionSolved:false,storageTransitionAnimated:false,wholeFlowerOpeningAnimated:false,guideAndRootHardwareSized:false,ropeForcesCalculated:false,gravityDrivenStart:'Already extended and leaning outward70deg; not folded inward',durationIsPacingOnly:true};})(),
       scissorBarLengthM:actualBar,configuredScissorBarLengthM:cfg.scissorBarLengthM,
       machineCompactTopM:cfg.machineCompactTopM,officialCompactTopM:cfg.officialCompactTopM,compactPlatformFloorM:cfg.compactPlatformFloorM,crownOffsetM:cfg.crownOffsetM,railMode:cfg.railMode,storageTopM:cfg.storageTopM,storageRailsFolded:state.storageRailsFolded,shownMachineRailTopM:floorY+(cfg.railMode==='project'?0:state.storageRailsFolded?storageRailHeight:cfg.railHeightM),crownHeightM:crownY,platformFloorM:floorY,railHeightM:cfg.railHeightM,
       petalDimensionsM:petalDefs.map(d=>({length:d.length,width:d.width})),
@@ -415,7 +423,7 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
       chamberTopM:state.chamberTopM,trapOpen:state.trapProgress>=.999,chamberRaisedM:state.chamberTopM-cfg.stageTopM,chamberFootprintM:[stageMetrics.flatLengthM,stageMetrics.flatWidthM],deckThicknessM:state.deckThicknessM,stageLayout:stageMetrics,
       nominalNoDeckGapM:state.chamberTopM-(cfg.machineCompactTopM+state.packHeightM),stageUndersideM:cfg.stageTopM-state.deckThicknessM,chamberUndersideM:state.chamberTopM-state.deckThicknessM,stageThicknessM:state.deckThicknessM,
       nominalStageOverheadGapM:cfg.stageTopM-state.deckThicknessM-(cfg.machineCompactTopM+state.packHeightM),nominalOverheadGapM:state.chamberTopM-state.deckThicknessM-(cfg.machineCompactTopM+state.packHeightM),
-      safetyStatus:'Forma, paquete plegado, aros, cordones, retención y elevadora son conceptos sin aprobación resistente o de fabricante. Viento de comparación; no predice estabilidad ni sensores.'};
+      safetyStatus:'Guardado sin resolver. Giro rígido de raíz, guías, cordones, retención y elevadora son conceptos sin aprobación resistente o de fabricante. Viento de comparación; no predice estabilidad ni sensores.'};
   }
   function dispose(){stageTrap.dispose();const geos=new Set();root.traverse(o=>{if(o.geometry)geos.add(o.geometry);});geos.forEach(g=>g.dispose());ownedMaterials.forEach(m=>m.dispose());root.removeFromParent();}
   // Record nominal, open surfaces once; do not treat a display toggle or folded morph as lost material.

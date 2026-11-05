@@ -1,5 +1,5 @@
 /**
- * Flor central F02: cinemática y comparaciones geométricas de estudio.
+ * Flor central F03: cinemática y comparaciones geométricas de estudio.
  * No modela una elevadora concreta, el plegado elástico de acero ni su estabilidad.
  * Magnitudes SI cuando la función las pide expresamente en m, s, kg/m³ y m/s.
  */
@@ -9,7 +9,7 @@ export const DEFAULT_CONFIG = Object.freeze({
   chamberTopM: 2.75,
   slopeDeg: 10,
   maxSlopeDeg: 15,
-  trapFlatLengthM: 4.8,
+  trapFlatLengthM: 8,
   trapFlatWidthM: 4.3,
   trapOpeningLengthM: 4.2,
   trapOpeningWidthM: 3.7,
@@ -31,6 +31,7 @@ export const DEFAULT_CONFIG = Object.freeze({
   platformWidthM: 1.17,
   petalLengthM: 4,
   petalWidthM: 3.5,
+  petalRootReadyDeg: 70,
   crownDiameterM: 3,
   packHeightM: .30,
   packMode: 'organic'
@@ -44,7 +45,7 @@ export const DEFAULT_CONFIG_SOURCES = Object.freeze({
   peopleOnPlatform: false,
   requestedPlatformFloorM: 'El usuario pide aproximadamente10m de piso para obtener unos7m sobre la zona central elevada.',
   targetPlatformFloorM: '9,75m de piso según la ficha oficial actual de Compact12. Con centro2,75m da7,00m sobre el centro. La solicitud10m se muestra aparte, sin representar una elevación mayor al límite de referencia.',
-  chamberTopM: 'Zona central plana propuesta a2,75m; la tarima general sigue a2m. Pendiente y anchura derivadas son de estudio, no aprobación estructural.',
+  chamberTopM: 'Franja plana propuesta a2,75m que cruza los8m de ancho. Dos rampas, delante y detrás, bajan a2m; no hay pendientes laterales. Geometría de estudio, no aprobación estructural.',
   guardrailHeightM: '1,10m propuestos únicamente para comparación con barandillas; no se imponen en la propuesta visual principal.',
   targetCrownM: '10,15m derivados de9,75m de piso más0,40m de soporte propuesto. No es cota de fabricante ni unión aprobada.',
   machineCompactTopM: '1,77m sin barandillas y sin personas, configuración propuesta y confirmada por el usuario para el estudio. No se afirma que esté autorizada para operación.',
@@ -56,7 +57,7 @@ export const DEFAULT_CONFIG_SOURCES = Object.freeze({
   referenceStorageTopM: 1.77,
   platformLengthM: '2,40m de la ficha oficial actual; confirmar dimensiones de la unidad real. El dato previo del usuario se conserva en userInput.',
   platformWidthM: '1,17m de la ficha oficial actual; confirmar dimensiones de la unidad real. El dato previo del usuario se conserva en userInput.',
-  crownDiameterM: '3,00m conservados como referencia circular histórica. F02 usa aros orgánicos con ejes propios comprobados geométricamente; no un accesorio aprobado por fabricante.',
+  crownDiameterM: '3,00m conservados como referencia circular histórica. F03 usa aros orgánicos con ejes propios comprobados geométricamente; no un accesorio aprobado por fabricante.',
   packMode: 'organic usa envolventes elípticas de la escena; la comparación de altura no demuestra encaje horizontal.',
   petalDimensions: 'Cada pétalo4m de largo por3,5m de ancho, confirmado por el usuario.',
   actualMachineMeasurementPending: true,
@@ -69,92 +70,8 @@ const finite = value => typeof value === 'number' && Number.isFinite(value);
 const smooth = x => { const t = clamp(x); return t * t * (3 - 2 * t); };
 const duration = (value, fallback) => finite(value) && value >= 0 ? value : fallback;
 
-/**
- * Cinemática de estudio. La trampa abre antes de que avance la elevación.
- * El estado final se mantiene abierto; reset representa preparar otra función.
- * No es un mando de máquina, sensor físico ni autorización para operar el conjunto.
- */
-export function createSequence(options = {}) {
-  let durations = {
-    trapDurationS: duration(options.trapDurationS, 8),
-    liftDurationS: duration(options.liftDurationS, 45),
-    openingDurationS: duration(options.openingDurationS, 30),
-    delayS: duration(options.delayS, 2)
-  };
-  let timeS = 0, playing = false;
-  const total = () => durations.trapDurationS + durations.liftDurationS + durations.delayS + durations.openingDurationS;
-  function edges() {
-    const { trapDurationS: trap, liftDurationS: lift, delayS: delay } = durations;
-    return [0, trap, trap + lift, trap + lift + delay, total()];
-  }
-  const canonicalTime = value => {
-    const t = clamp(value, 0, total());
-    for (const edge of edges()) if (Math.abs(t - edge) < 1e-9) return edge;
-    return t;
-  };
-  function getState() {
-    const { trapDurationS: trap, liftDurationS: lift, delayS: delay, openingDurationS: open } = durations;
-    const totalDurationS = total();
-    const trapProgress = trap > 0 ? clamp(timeS / trap) : 1;
-    const afterTrap = Math.max(0, timeS - trap);
-    // Even a zero-duration lift remains blocked until the trampa has fully opened.
-    const trapFullyOpen = trapProgress >= 1;
-    const liftProgress = !trapFullyOpen ? 0 : lift > 0 ? clamp(afterTrap / lift) : 1;
-    const openStarts = trap + lift + delay;
-    const opening = open > 0 ? clamp((timeS - openStarts) / open) : timeS >= openStarts ? 1 : 0;
-    let phase;
-    if (timeS >= totalDurationS) phase = 'open';
-    else if (timeS === 0 && trap > 0) phase = 'compact';
-    else if (timeS < trap) phase = 'trap-opening';
-    else if (timeS < trap + lift) phase = 'lifting';
-    else if (timeS < openStarts) phase = 'waiting';
-    else phase = 'opening';
-    return {
-      timeS, phase, playing, trapProgress, trapFullyOpen,
-      liftProgress, opening, leafProgress: smooth((liftProgress - .4) / .6),
-      totalDurationS, liftInterlockSatisfied: trapFullyOpen || liftProgress === 0
-    };
-  }
-  function play() { playing = timeS < total(); return getState(); }
-  function pause() { playing = false; return getState(); }
-  function reset() { timeS = 0; playing = false; return getState(); }
-  function seek(nextTimeS) {
-    if (finite(nextTimeS)) {
-      timeS = canonicalTime(nextTimeS);
-      if (timeS >= total()) playing = false;
-    }
-    return getState();
-  }
-  function update(dt) {
-    if (playing && finite(dt) && dt > 0) {
-      timeS = canonicalTime(timeS + dt);
-      if (timeS >= total()) playing = false;
-    }
-    return getState();
-  }
-  /** Preserve relative position within the current phase when durations change. */
-  function setDurations(next = {}) {
-    const old = durations, s = getState();
-    durations = {
-      trapDurationS: duration(next.trapDurationS, old.trapDurationS),
-      liftDurationS: duration(next.liftDurationS, old.liftDurationS),
-      openingDurationS: duration(next.openingDurationS, old.openingDurationS),
-      delayS: duration(next.delayS, old.delayS)
-    };
-    const { trapDurationS: trap, liftDurationS: lift, delayS: delay, openingDurationS: open } = durations;
-    if (s.phase === 'open') timeS = total();
-    else if (s.phase === 'compact' || s.phase === 'trap-opening') timeS = s.trapProgress * trap;
-    else if (s.phase === 'lifting') timeS = trap + s.liftProgress * lift;
-    else if (s.phase === 'waiting') {
-      const fraction = old.delayS > 0 ? clamp((s.timeS - old.trapDurationS - old.liftDurationS) / old.delayS) : 0;
-      timeS = trap + lift + fraction * delay;
-    } else timeS = trap + lift + delay + s.opening * open;
-    timeS = canonicalTime(timeS);
-    if (timeS >= total()) playing = false;
-    return getState();
-  }
-  return { play, pause, reset, seek, update, getState, setDurations, getDurations: () => ({ ...durations }) };
-}
+/** F03: the complete trap/lift/petal sequence was withdrawn.
+ * Root-only timing lives in app.js and does not assert compact recovery. */
 
 /**
  * Guard only for the digital study. It cannot replace a physical interlock.
@@ -184,32 +101,44 @@ export function ensureLiftInterlock({ liftProgress = 0, trapProgress = 0, previo
   };
 }
 
-/** Derived dimensions of the proposed raised local stage; no structure approved. */
+/** Two ramps along Z and an elevated flat band across the entire X width.
+ * No side ramps: the width never grows to accommodate the rise. Only the depth
+ * grows when the slope requires it. Geometry only, with no structure approved.
+ * flatLengthM remains an accepted legacy input but cannot shorten the full band.
+ */
 export function evaluateStageLayout({
-  baseHeightM = 2, centralHeightM = 2.75, flatLengthM = 4.8, flatWidthM = 4.3,
+  baseHeightM = 2, centralHeightM = 2.75, flatLengthM = 8, flatWidthM = 4.3,
   slopeDeg = 10, baseWidth = 8, baseDepth = 6
 } = {}) {
   const values = [baseHeightM, centralHeightM, flatLengthM, flatWidthM, slopeDeg, baseWidth, baseDepth];
   if (!values.every(finite) || baseHeightM < 0 || centralHeightM < baseHeightM || flatLengthM <= 0 || flatWidthM <= 0 || baseWidth <= 0 || baseDepth <= 0 || slopeDeg < 10 || slopeDeg > 15) return null;
   const riseM = centralHeightM - baseHeightM;
   const runM = riseM > 0 ? riseM / Math.tan(slopeDeg * Math.PI / 180) : 0;
-  const overallLengthM = Math.max(baseWidth, flatLengthM + 2 * runM);
+  const bandLengthM = baseWidth;
+  const overallLengthM = baseWidth;
   const overallWidthM = Math.max(baseDepth, flatWidthM + 2 * runM);
-  const runXM = (overallLengthM - flatLengthM) / 2;
   const runZM = (overallWidthM - flatWidthM) / 2;
-  const actualSlopeDegX = riseM ? Math.atan2(riseM, runXM) * 180 / Math.PI : 0;
   const actualSlopeDegZ = riseM ? Math.atan2(riseM, runZM) * 180 / Math.PI : 0;
+  const x = bandLengthM / 2, z = flatWidthM / 2, oz = overallWidthM / 2;
   return {
-    baseHeightM, centralHeightM, riseM, flatLengthM, flatWidthM,
+    layoutType: 'two-ramps-full-width-band', rampCount: 2,
+    flatAcrossWidth: true, noXSlopes: true,
+    baseHeightM, centralHeightM, riseM, flatLengthM: bandLengthM, flatWidthM,
+    requestedFlatLengthM: flatLengthM,
     requestedSlopeDeg: slopeDeg, slopeDeg, runM, rampRunM: runM,
-    actualRunXM: runXM, actualRunZM: runZM,
-    actualSlopeDegX, actualSlopeDegZ, maxActualSlopeDeg: Math.max(actualSlopeDegX, actualSlopeDegZ),
+    actualRunXM: 0, actualRunZM: runZM,
+    actualSlopeDegX: 0, actualSlopeDegZ, maxActualSlopeDeg: actualSlopeDegZ,
     overallLengthM, overallWidthM,
-    addedWidthM: Math.max(0, overallLengthM - baseWidth),
+    addedWidthM: 0,
     addedDepthM: Math.max(0, overallWidthM - baseDepth),
+    flatBandBoundsM: {min: [-x, centralHeightM, -z], max: [x, centralHeightM, z]},
+    rampTopPolygonsM: [-1, 1].map(s => [
+      [-x, centralHeightM, s*z], [-x, baseHeightM, s*oz],
+      [x, baseHeightM, s*oz], [x, centralHeightM, s*z]
+    ]),
     centralFlat: true, proposedOnly: true, structuralApproval: false,
     accessibilityApproved: false,
-    note: 'Dimensiones geométricas de tarimas propuestas. La pendiente no es una certificación de circulación o accesibilidad y la estructura no está dimensionada.'
+    note: 'Franja plana de extremo a extremo y solo dos rampas, delante y detrás. Dimensiones geométricas propuestas; pendiente, circulación, accesibilidad y estructura no están aprobadas.'
   };
 }
 

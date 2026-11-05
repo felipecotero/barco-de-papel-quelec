@@ -1,4 +1,4 @@
-/* F02 — stage and upward-opening trap kinematics, in metres.
+/* F03 — two-ramp stage and upward-opening trap kinematics, in metres.
  * Dimensions are scene proposals. This is not a structural design, a selected
  * actuator, a load rating, or an approved modification of stage/lift equipment.
  */
@@ -23,7 +23,9 @@ export function createStageTrap({config = {}} = {}) {
     slopeDeg: finite(config.slopeDeg, 10),
     deckThicknessM: finite(config.deckThicknessM ?? config.stageThicknessM, .18)
   };
-  cfg.flatLengthM = Math.max(cfg.openingLengthM + .3, cfg.flatLengthM);
+  // The elevated band runs across the entire stage width (X). No X ramps.
+  cfg.originalBaseLengthM = Math.max(cfg.openingLengthM + .3, cfg.originalBaseLengthM);
+  cfg.flatLengthM = cfg.originalBaseLengthM;
   cfg.flatWidthM = Math.max(cfg.openingWidthM + .3, cfg.flatWidthM);
   let state = {
     chamberTopM: Math.max(cfg.stageBaseTopM, cfg.centralTopM),
@@ -36,15 +38,15 @@ export function createStageTrap({config = {}} = {}) {
     mechanismFocus: false
   };
   const root = new THREE.Group();
-  root.name = 'F02_Tarima_y_trampa_CINEMATICA_PROPUESTA';
+  root.name = 'F03_Tarima_dos_rampas_y_trampa_CINEMATICA_PROPUESTA';
   const groups = {}, parts = [], materials = new Set(), originalMaterials = new Map();
   const group = (code, title, description) => {
     const g = new THREE.Group();
     g.name = code; g.userData = {code, title, description, proposed: true};
     root.add(g); groups[code] = g; parts.push(g); return g;
   };
-  const TAR = group('TAR', 'Tarimas con pendientes suaves', 'Superficies de escena a 2 m, con rampas de 10 a 15 grados hacia el centro plano. La huella se amplía según la pendiente. Estructura, accesos y capacidad de las tarimas pendientes de diseño.');
-  const CAM = group('CAM', 'Zona central plana de la trampa', 'La zona central permanece horizontal a la cota elegida. El aro de piso y el marco representados son una propuesta de espacio, no una sección ni un soporte dimensionado.');
+  const TAR = group('TAR', 'Dos rampas y franja elevada', 'Una franja plana cruza los 8 m de ancho de la tarima a la altura de la trampa. Solo hay dos rampas, delante y detrás, que descienden a 2 m con 10 a 15 grados. No hay rampas laterales ni pirámide. Estructura, circulación y capacidad pendientes de diseño.');
+  const CAM = group('CAM', 'Franja plana de extremo a extremo', 'La franja elevada permanece horizontal y ocupa todo el ancho de la tarima. Contiene la trampa en su centro. El marco y los apoyos representados explican el espacio; no son secciones dimensionadas.');
   const TRP = group('TRP', 'Dos hojas rígidas de trampa', 'Dos hojas abren hacia arriba sobre bisagras laterales. Se detienen a 90 grados antes de elevar la flor y permanecen abiertas durante la escena. El cierre se prepara después de recoger la flor, no con ella levantada.');
   const HIN = group('HIN', 'Bisagras y ejes laterales', 'Los ejes de giro permanecen fijos. La trampa no desaparece: cada hoja conserva sus dimensiones durante la apertura. Secciones, anclajes y capacidad por definir.');
   const ACT = group('ACT', 'Accionamiento independiente: esquema', 'Elementos telescópicos muestran cómo aplicar un giro desde un marco fijo. No son una selección de actuadores, un circuito ni una prescripción de montaje. El control de la trampa es independiente de la elevadora.');
@@ -105,11 +107,34 @@ export function createStageTrap({config = {}} = {}) {
     geometry.attributes.position.array.set(vertices); geometry.attributes.position.needsUpdate = true;
     geometry.computeVertexNormals(); geometry.computeBoundingBox(); geometry.computeBoundingSphere();
   }
-  const ramps = [-1, 1].flatMap(sign => [
-    {axis: 'x', sign, mesh: addMesh(TAR, quadPrism(), stageMat, `TAR_Rampa_X_${sign}`)},
-    {axis: 'z', sign, mesh: addMesh(TAR, quadPrism(), stageMat, `TAR_Rampa_Z_${sign}`)}
-  ]);
-  const fascias = ['left', 'right', 'back', 'front'].map(side => ({side, mesh: unitBox(TAR, fasciaMat, 'TAR_Fascia_' + side)}));
+  const ramps = [-1, 1].map(sign => ({
+    axis: 'z', sign, mesh: addMesh(TAR, quadPrism(), stageMat, `TAR_Rampa_Z_${sign}`)
+  }));
+  const fascias = ['back', 'front'].map(side => ({side, mesh: unitBox(TAR, fasciaMat, 'TAR_Fascia_' + side)}));
+  // Side skirts follow the two-ramp section; they are vertical, not side ramps.
+  const sideSkirts = [-1, 1].map(sign => {
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position',new THREE.BufferAttribute(new Float32Array(60*3),3));
+    return {sign,mesh:addMesh(TAR,geometry,fasciaMat,'TAR_Faldon_lateral_'+sign)};
+  });
+  function updateSideSkirt(geometry,sign,halfLength,halfFlatDepth,halfDepth,top,base) {
+    const contour=[[-halfDepth,base],[-halfFlatDepth,top],[halfFlatDepth,top],[halfDepth,base],[halfDepth,0],[-halfDepth,0]];
+    const outer=contour.map(([z,y])=>V([sign*(halfLength+.0225),y,z]));
+    const inner=contour.map(([z,y])=>V([sign*(halfLength-.0225),y,z]));
+    const positions=[];
+    const tri=(a,b,c)=>positions.push(...a.toArray(),...b.toArray(),...c.toArray());
+    for(let j=1;j<5;j++) {
+      if(sign>0){tri(outer[0],outer[j+1],outer[j]);tri(inner[0],inner[j],inner[j+1]);}
+      else{tri(outer[0],outer[j],outer[j+1]);tri(inner[0],inner[j+1],inner[j]);}
+    }
+    for(let j=0;j<6;j++){
+      const k=(j+1)%6;
+      if(sign>0){tri(outer[j],inner[j],inner[k]);tri(outer[j],inner[k],outer[k]);}
+      else{tri(outer[j],inner[k],inner[j]);tri(outer[j],outer[k],inner[k]);}
+    }
+    geometry.attributes.position.array.set(positions);geometry.attributes.position.needsUpdate=true;
+    geometry.computeVertexNormals();geometry.computeBoundingBox();geometry.computeBoundingSphere();
+  }
   const legs = [-1, 1].flatMap(x => [-1, 1].map(z => ({x, z, mesh: unitBox(TAR, frameMat, `TAR_Apoyo_contexto_${x}_${z}`)})));
   const centralDeck = [-1, 1].flatMap(sign => [
     {axis: 'x', sign, mesh: unitBox(CAM, stageMat, `CAM_Margen_X_${sign}`)},
@@ -175,7 +200,7 @@ export function createStageTrap({config = {}} = {}) {
   function layout() {
     const top = state.chamberTopM, base = cfg.stageBaseTopM, t = state.deckThicknessM;
     const rise = Math.max(0, top - base), run = rise / Math.tan(state.slopeDeg * D2R);
-    const L = Math.max(cfg.originalBaseLengthM, cfg.flatLengthM + 2 * run);
+    const L = cfg.flatLengthM;
     const W = Math.max(cfg.originalBaseWidthM, cfg.flatWidthM + 2 * run);
     const x = cfg.flatLengthM / 2, z = cfg.flatWidthM / 2, ox = L / 2, oz = W / 2;
     const hingeY = top - t / 2, angle = state.trapProgress * Math.PI / 2;
@@ -183,14 +208,8 @@ export function createStageTrap({config = {}} = {}) {
     TAR.visible = !state.mechanismFocus;
     CAM.visible = TRP.visible = HIN.visible = ACT.visible = RET.visible = true;
     for (const ramp of ramps) {
-      let points;
-      if (ramp.axis === 'x') {
-        const s = ramp.sign;
-        points = [V([s*x,top,-z]), V([s*x,top,z]), V([s*ox,base,oz]), V([s*ox,base,-oz])];
-      } else {
-        const s = ramp.sign;
-        points = [V([-x,top,s*z]), V([-ox,base,s*oz]), V([ox,base,s*oz]), V([x,top,s*z])];
-      }
+      const s = ramp.sign;
+      const points = [V([-x,top,s*z]), V([-ox,base,s*oz]), V([ox,base,s*oz]), V([x,top,s*z])];
       // Keep front-facing winding for either side; both top and sides are still
       // solid prisms, not infinitely thin sheets.
       if (ramp.sign < 0) points.reverse();
@@ -203,6 +222,7 @@ export function createStageTrap({config = {}} = {}) {
       else boxTransform(f.mesh, 0, (base - t) / 2, (side === 'front' ? 1 : -1) * oz, L, base - t, .045);
       f.mesh.visible = !(state.cutaway && side === 'front');
     }
+    for (const skirt of sideSkirts) updateSideSkirt(skirt.mesh.geometry,skirt.sign,x,z,oz,top,base);
     for (const leg of legs) {
       boxTransform(leg.mesh, leg.x*(ox-.2), (base-t)/2, leg.z*(oz-.2), .085, base-t, .085);
       leg.mesh.visible = !(state.cutaway && leg.z > 0);
@@ -269,13 +289,15 @@ export function createStageTrap({config = {}} = {}) {
     root.updateMatrixWorld(true);
     const doorBounds = doors.map(d=>{const b=new THREE.Box3().setFromObject(d.leaf);return{min:b.min.toArray(),max:b.max.toArray()};});
     metrics = {
-      revision:'F02',geometricOnly:true,structuralApproval:false,actuatorSelected:false,trapOpeningDirection:'upward',
+      revision:'F03',layoutType:'two-ramps-full-width-band',rampCount:2,flatAcrossWidth:true,noXSlopes:true,geometricOnly:true,structuralApproval:false,actuatorSelected:false,trapOpeningDirection:'upward',
       baseTopM:base,centralTopM:top,centralPlateauHorizontal:true,deckThicknessM:t,
       flatLengthM:cfg.flatLengthM,flatWidthM:cfg.flatWidthM,
       openingLengthM:cfg.openingLengthM,openingWidthM:cfg.openingWidthM,
       riseM:rise,runM:run,overallLengthM:L,overallWidthM:W,
+      flatBandBoundsM:{min:[-x,top,-z],max:[x,top,z]},
+      rampTopPolygonsM:ramps.map(r=>{const s=r.sign;return[[-x,top,s*z],[-ox,base,s*oz],[ox,base,s*oz],[x,top,s*z]];}),
       slopeDeg:state.slopeDeg,
-      actualSlopeXDeg:Math.atan2(rise,Math.max(.000001,(L-cfg.flatLengthM)/2))/D2R,
+      actualSlopeXDeg:0,
       actualSlopeZDeg:Math.atan2(rise,Math.max(.000001,(W-cfg.flatWidthM)/2))/D2R,
       doorAnglesDeg:[state.trapProgress*90,state.trapProgress*90],
       signedDoorAnglesDeg:[state.trapProgress*90,-state.trapProgress*90],

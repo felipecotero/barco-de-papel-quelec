@@ -1,5 +1,5 @@
 {
-  "revision": "F02",
+  "revision": "F03",
   "date": "2026-11-05",
   "localStudyOnly": false,
   "webSources": [
@@ -7,16 +7,6 @@
       "title": "Manfrotto LL LR3031 reflector plegable75cm",
       "url": "https://www.manfrotto.com/global-es/collapsible-reflector-76cm-silver-white-ll-lr3031/",
       "summary": "El fabricante describe borde/anillo de acero y plegado a un tercio del tamaño original. Es un reflector75cm, no evidencia de que un pétalo4m pueda copiar sección, plegarse igual o abrir durante30segundos."
-    },
-    {
-      "title": "Westcott University: cómo plegar un reflector",
-      "url": "https://westcottu.com/how-to-fold-a-reflector",
-      "summary": "Documenta métodos twist y taco; advierte que torsión/plegado incorrectos pueden deformar el marco. Sirve para una animación cinemática conceptual, no para calcular tensiones ni energía del aro4m."
-    },
-    {
-      "title": "Westcott University: Essential Guide to Photo Reflectors",
-      "url": "https://westcottu.com/photo-reflectors-guide",
-      "summary": "El fabricante ofrece reflectores que colapsan a un tercio de tamaño para transporte. No se extrapola automáticamente ese factor a un diseño especial gigante."
     },
     {
       "title": "NASA Glenn: Drag Equation",
@@ -48,32 +38,68 @@
       "title": "Haulotte Service: manuales oficiales",
       "url": "https://www.haulotte-service.com/Front-ETI",
       "summary": "Portal oficial de manuales, dinámico. No se descargó un manual específico aplicable a la unidad. Hace falta año/número de serie/manual del proveedor antes de decidir configuración de barandillas y accesorios."
+    },
+    {
+      "id": "ring2012",
+      "title": "Overcurvature describes the buckling and folding of rings from curved origami to foldable tents",
+      "url": "https://www.nature.com/articles/ncomms2311",
+      "kind": "Investigación experimental y modelo; Nature Communications,2012",
+      "summary": "El aro se pliega mediante una transición tridimensional conservando longitud. La geometría y la anisotropía de sección influyen en el acceso a tres bucles. No valida nuestro pétalo4×3,5m con tela y raíz ni un tiempo de apertura."
+    },
+    {
+      "id": "ring2023",
+      "title": "On the elastic stability of folded rings in circular and straight states",
+      "url": "https://zhaolab.stanford.edu/sites/g/files/sbiybj21256/files/media/file/1-s2.0-s099775382300133x-main.pdf",
+      "doi": "10.1016/j.euromechsol.2023.105041",
+      "kind": "Artículo primario; Leanza,Zhao y Hutchinson,Stanford/Harvard",
+      "summary": "Estudia estados de equilibrio de aros y muestra dependencia de curvatura natural y rigideces de flexión/torsión. Declara que la transición entre estados no se estudia en este artículo: no proporciona nuestra trayectoria ni velocidad de recuperación."
+    },
+    {
+      "id": "panoramic4",
+      "title": "Manfrotto Panoramic Background4m Granite LL LB7901",
+      "url": "https://www.manfrotto.com/global-en/panoramic-background-4m-granite-ll-lb7901/",
+      "kind": "Fabricante",
+      "summary": "El ejemplo comercial de4m usa tres paneles de aluminio y se monta en minutos. No es un aro ovalado continuo que se recupere solo; su paquete no puede trasladarse al pétalo."
+    },
+    {
+      "id": "jpl_control",
+      "title": "NASA/JPL: Boom Deploys With Controlled Energy Release",
+      "url": "https://ntrs.nasa.gov/citations/19820000295",
+      "kind": "Descripción técnica del organismo desarrollador",
+      "summary": "Un cabo y un amortiguador viscoso dosifican el gasto de energía elástica en una estructura desplegable. Sirve como principio de control; no se trasladan al pétalo sus cargas, materiales o dimensiones."
     }
   ],
   "localSources": [
     {
-      "title": "Quelec: cuaderno de utilería y desarrollo de flores, septiembre de2026",
-      "role": "Silueta y familia cromática; no mecanismo fabricable."
+      "title": "Desarrollo artístico de flores de Quelec,2026",
+      "role": "Silueta de cinco piezas, familia cromática, tallo y dos hojas. No especifica un mecanismo fabricable."
     },
     {
-      "title": "TDR flores y mecanismos, octubre de2026; acta8octubre",
-      "role": "Cinco pétalos, dos bore, tallo con aros y alternativas de paños; medidas anteriores reemplazadas por precisión actual."
-    },
-    {
-      "title": "Estudio privado orquideas-3d del proyecto",
-      "role": "Referencia de forma y de movimiento por órganos. Constantes biológicas no medidas: no se trasladan a tela o fleje escénico."
+      "title": "Conversaciones y precisiones actuales de diseño",
+      "role": "Pétalos4×3,5m, apertura lenta, elevadora sin personas y alternativa de zona alta2,50–3m. Son decisiones de proyecto diferenciadas de validaciones técnicas."
     }
   ],
   "assumptions": {
     "physicalFabricSimulation": false,
-    "displayModel": "Cinemática progresiva de pétalos desde raíz a punta, aro firme y paños anclados; sin torsión/recuperación resistente del fleje.",
+    "finiteElementAnalysis": false,
+    "dynamicDeploymentSimulation": false,
+    "displayModel": "Laboratorio geométrico: un marco4×3,5m de escala constante gira en raíz70°hacia afuera→0°. Forma final fija de cinco pétalos en vista conjunta.",
+    "flexRecoveryAnimated": false,
+    "compactPackageValidated": false,
+    "fullTrapLiftBloomSequenceValidated": false,
+    "rootActuatorSelected": false,
+    "rootCableCapacityCalculated": false,
+    "shownSectionsSelected": false,
+    "opening30s": "Cadencia visual solicitada; no tiempo mecánico calculado.",
     "stabilityCalculated": false,
     "fabricationApproved": false,
     "operatingWindLimit": null,
     "reductionCreditForStrips": false,
-    "digitalInterlockOnly": true,
-    "trapMechanism": "Dos paneles rígidos UP90°, bisagras, actuación telescópica conceptual, topes y retención. Sin dimensionamiento resistente.",
-    "stageGeometry": "Centro plano4.8x4.3, hueco4.2x3.7, base2m, centro2.75m, pendientes10–15°; crece la huella total."
+    "wind": "Comparación con presión dinámica y área proyectada bajo supuestos declarados; no calcula capacidad ni umbral de operación.",
+    "trapMechanism": "Dos hojasUP90° con bisagras, actuación, topes y retención esquemáticos. Se inspecciona de forma independiente; sin dimensionamiento ni paso de pétalos demostrado.",
+    "stageGeometry": "Franja plana8×4,3m a2,75m y base2m; dos rampas enZ. Con10°, huella8×12,8069m; con15°,8×9,8981m.",
+    "storageEnvelope": "Objetivo vacío discontinuo de0,30m de alto. No representa tela/aro ya plegados ni comprueba cabida.",
+    "leaves": "Estilizadas; plegado y despliegue pendientes."
   },
   "publicDesignStudy": true,
   "heightReference": {
@@ -85,5 +111,12 @@
     "sourceDate": "2026-11-05",
     "exactUnitYearSerialKnown": false,
     "source": "https://www.haulotte.com.es/es_ES/productos/compact-12"
+  },
+  "scope": "geometric-root-laboratory",
+  "mechanicalInterpretation": {
+    "rootVsFlex": "La raíz orienta el pétalo completo; recuperar un aro plegado es otro problema.",
+    "inwardRotation": "Girar hacia dentro no reduce el tamaño. Un cable que sólo tira no prueba la salida hacia fuera desde esa posición.",
+    "selectedRoute": "Aro tipo flex como hipótesis a ensayar; bastidor articulado segmentado como alternativa de construcción, sin aprobación.",
+    "firstVerification": "Un pétalo1:1 en suelo; después paquete, accionamiento, cinco piezas y paso por trampa."
   }
 }

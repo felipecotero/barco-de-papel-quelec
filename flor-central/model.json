@@ -1,7 +1,7 @@
 {
-  "revision": "F02",
+  "revision": "F03",
   "date": "2026-11-05",
-  "publication": "Publicación de estudio de diseño autorizada por el usuario. No es plano de fabricación aprobado.",
+  "publication": "Actualización del estudio público dentro de la autorización previa del usuario. Laboratorio geométrico; no plano de fabricación aprobado.",
   "userConfirmed": {
     "petalCount": 5,
     "petalLengthM": 4,
@@ -15,8 +15,8 @@
     "holdOpenForRestOfAppearance": true,
     "requestedPlatformFloorM": 10,
     "originalStageWidthM": 8,
-    "surroundingStageTreatment": "Ampliar hacia los laterales con pendientes suaves y centro plano en la trampa.",
-    "openingDirection": "Desde el centro hacia afuera; pétalos con volumen, no planos",
+    "surroundingStageTreatment": "Dos rampas opuestas llegan a una franja plana que cruza los8m completos de ancho; geometría de zigurat, sin pendientes en los otros dos bordes.",
+    "openingDirection": "Intención escénica: flor desde el centro hacia afuera con pétalos volumétricos. F03 separa esta intención de la recuperación del aro, que no está resuelta.",
     "organicHoops": "Proporciones elípticas variables, alrededor de la envolvente mínima de plataforma",
     "slopeMaximumDeg": 15,
     "slopePreferredDeg": 10
@@ -28,10 +28,15 @@
     ],
     "defaultPreviewM": 2.75,
     "changesWholeStageHeight": false,
-    "interpretation": "Centro plano de trampa; alrededor, planos inclinados suaves que descienden a2m. Geometría en desarrollo.",
+    "interpretation": "Franja superior plana de8×4,3m a2,75m; dos rampas opuestas descienden a la cota base2m. La altura bajo trampa2,50–3,00m sigue siendo una opción sin aprobar.",
     "centralFlat": true,
     "surroundingRamps": true,
-    "wholeStageHeightRaised": false
+    "wholeStageHeightRaised": false,
+    "fullWidthFlatStrip": true,
+    "rampCount": 2,
+    "rampAxis": "Z",
+    "flatWidthM": 8,
+    "flatDepthM": 4.3
   },
   "referenceCurrentHaulotte": {
     "platformLengthM": 2.4,
@@ -56,17 +61,16 @@
     "crownOffsetAboveFloorM": 0.4,
     "compactFloorProxyM": 1.37,
     "deckThicknessM": 0.18,
-    "leafReleaseDuringLift": true,
-    "cordRoute": "exterior esquemático; no cálculo ni selección de aparejo",
-    "closedLoopMechanics": "no resueltas con este visor",
-    "originalStageBaseDepthM": 6,
+    "leafReleaseDuringLift": false,
+    "cordRoute": "Raíz: cable local entre travesaño y guía elevada, con tambor/freno esquemático. Accionamiento remoto, recorrido y dimensionamiento pendientes.",
+    "closedLoopMechanics": "Aro continuo: recuperación por torsión y bucles por ensayar. No se anima su compactación ni su recuperación.",
     "crownAxesM": [
       3.6,
       2.0
     ],
     "hoops": "Seis elipses distintas, comprobación gráfica de cuatro esquinas de plataforma+8cm declarados; no holgura acreditada.",
     "stageFlatM": [
-      4.8,
+      8,
       4.3
     ],
     "trapOpeningM": [
@@ -88,11 +92,11 @@
     ],
     "defaultSlopeDeg": 10,
     "defaultOverallStageM": [
-      13.306922729426564,
+      8,
       12.806922729426564
     ],
     "at15DegOverallStageM": [
-      10.398076211353317,
+      8,
       9.898076211353317
     ],
     "leafSizesM": [
@@ -105,41 +109,113 @@
         2.15
       ]
     ],
-    "bloomKinematics": "Brote erguido, despliegue por segmentos raíz→punta, cuenco transversal y caída de labelo; no solución elástica."
+    "bloomKinematics": "Laboratorio de UN pétalo completo4×3,5m con escala constante. Articulación de raíz gira desde70° inclinado hacia afuera hasta0°. Es orientación de un marco ya recuperado, no estado guardado ni apertura elástica.",
+    "packRepresentation": "Envolvente objetivo vacía y discontinua de0,30m de alto; no paquete físico ni prueba de que los cinco pétalos quepan.",
+    "leafPresentation": "Forma y ubicación estilizadas; no se demuestra mecanismo de despliegue de hojas.",
+    "stageGeometry": "Franja plana continua a todo el ancho8m, profundidad4,3m; dos rampas enZ, base2m y zona alta2,75m. Sin cuatro pendientes ni pirámide.",
+    "wholeFlowerMode": "Cinco pétalos en la forma final fija; conserva estética y volumen. No secuencia causal de compactación–trampa–subida–florecimiento.",
+    "sectionSelection": "Tubos, flejes, ejes y cables dibujados son representaciones; materiales y secciones no seleccionados.",
+    "fixedGuideAddedHeightM": 0.85,
+    "fixedGuideTopStowedM": 2.735,
+    "fixedGuideOverrunsDefaultUndersideM": 0.165,
+    "fixedGuideStorageMechanismSolved": false,
+    "fixedGuideCenterStowedM": 2.68,
+    "guideSphereRadiusForDisplayM": 0.055
   },
   "visuals": {
     "colors": "dos crema moteadosvioleta, dos cobrizos y labelomagenta; tallo verdeazulado, dos bore",
     "originalArtIntact": true,
     "sourceUserAdditionalImages": 5,
-    "stem": "Verde azulado, pliegues y óvalos variables; doce franjas o manga continua."
+    "stem": "Verde azulado, pliegues y óvalos variables; doce franjas o manga continua.",
+    "petals": "Cinco formas finales fijas en conjunto; un pétalo de tamaño completo en laboratorio. Sin crecimiento por escala ni sustitución por espiras animadas.",
+    "leaves": "Dos bore con forma estilizada; su plegado y liberación no se presentan como mecanismos resueltos."
   },
   "limits": [
-    "No dimensiona fleje, fuerza de recuperación ni retenciones.",
-    "No calcula estabilidad, carga admisible o umbral de viento.",
-    "No demuestra interferencias resueltas.",
-    "Configuración de elevadora y accesorios por confirmar con proveedor/fabricante.",
-    "El paquete dibujado no demuestra un plegado real de cinco piezas4x3.5m."
+    "F03 explica el giro geométrico de una raíz con un pétalo ya recuperado; no reproduce la recuperación del aro tipo flex.",
+    "Los30s son una cadencia de demostración. No proceden de fuerzas, fricción, amortiguación ni ensayos.",
+    "No demuestra guardado, compactación de cinco pétalos, paso por trampa ni una secuencia completa ejecutable.",
+    "Fleje, herrajes, cables y accionamiento remoto quedan por seleccionar y medir; no se calculan capacidades ni viento seguro.",
+    "Alturas y máquina son referencias de proyecto; la unidad y el accesorio requieren confirmación del proveedor."
   ],
   "sequence": {
-    "trapOpeningS": 8,
-    "liftS": 45,
-    "pauseS": 2,
+    "scope": "geometric-root-laboratory",
+    "states": [
+      "ready",
+      "moving",
+      "open"
+    ],
+    "rootRotationS": 30,
     "petalOpeningS": 30,
-    "totalS": 85,
+    "totalS": 30,
+    "cadenceOnly": true,
+    "readyMeans": "Pétalo completo a70° hacia afuera; no paquete guardado.",
+    "openMeans": "Mismo pétalo completo a0°, cerca de su posición final.",
     "holdsOpen": true,
     "resetMeansNextPerformance": true,
-    "digitalInterlockOnly": true,
-    "liftAfterTrapFullyOpen": true,
-    "trapCannotCloseWithRaisedSet": true
+    "completeFlowerDeploymentSolved": false,
+    "automaticTrapLiftPetalChain": false,
+    "replacesF02Claim": "Se retira la secuencia causal85s de F02; trampa, altura de referencia y forma final se inspeccionan por separado."
   },
   "delivery": {
-    "route": "flor-central/?rev=F02",
-    "portable": "Abrir-Flor-Central-F02.html",
+    "route": "flor-central/?rev=F03",
+    "portable": "Abrir-Flor-Central-F03.html",
     "formats": [
       "GLB-m",
       "OBJ-MTL-PNG-m/mm",
       "STL-m/mm"
     ],
-    "exportScope": "Solo flor abierta y estática; sin elevadora, tarima, trampa, ayudas o viento. Modelo conceptual."
-  }
+    "exportScope": "Solo flor abierta y estática; sin elevadora, tarima, trampa, laboratorio, ayudas o viento. Modelo conceptual a escala.",
+    "mechanism": "mecanismo.json"
+  },
+  "scope": "geometric-root-laboratory",
+  "rootLaboratory": {
+    "scope": "geometric-root-laboratory",
+    "petalCount": 1,
+    "petalEnvelopeM": [
+      4,
+      3.5
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "angleDeg": {
+      "ready": 70,
+      "open": 0,
+      "direction": "Hacia afuera respecto de la raíz;70° no es guardado compacto."
+    },
+    "rootPosition": {
+      "radiusM": 0.44,
+      "heightAboveCrownM": 0.06
+    },
+    "cradle": "Cuna y eje de giro identificables en la corona; interfaz y herrajes sin dimensionar.",
+    "crossbarAtNormalizedPetalLength": 0.32,
+    "control": {
+      "attachment": "Centro del travesaño situado en parámetro longitudinalv=0,32.",
+      "guideAboveHingeM": 0.85,
+      "localDrumBrake": "Esquema local de tambor y freno; no producto ni capacidad seleccionados.",
+      "remoteActuation": "Pendiente: mando desde suelo, retorno, disipación y transmisión del movimiento.",
+      "driveLimit": "El cable sólo transmite tracción. No prueba que pueda empujar un pétalo hacia afuera desde una posición inclinada hacia dentro ni cruzar el punto de equilibrio; requeriría accionamiento positivo o geometría/energía comprobados."
+    },
+    "finalStays": {
+      "count": 2,
+      "atNormalizedPetalLength": 0.68,
+      "function": "Dos riendas finales independientes del cable de control muestran la función de sostener la forma abierta.",
+      "visibility": "Se dibujan cerca de abierto; recorrido durante el movimiento, toma de carga y anclajes por resolver."
+    },
+    "conservation": "El marco y la superficie mantienen su tamaño. El giro de raíz no compacta el pétalo.",
+    "notSimulated": [
+      "Torsión y recuperación del aro tipo flex.",
+      "Acción de gravedad, fuerzas y energía del mecanismo.",
+      "Colisiones de cinco pétalos guardados y paso del conjunto por la trampa.",
+      "Dimensionamiento resistente, cargas de cables y amortiguación."
+    ]
+  },
+  "workingNextSteps": [
+    "Probar UN pétalo1:1 a nivel del suelo, con aro, paño y raíz del proveedor.",
+    "Medir configuraciones, paquete, trayectoria, energía/reacción de apertura y comportamiento bajo peso propio; verificar repetición.",
+    "Resolver retención, accionamiento y riendas con las mediciones; después comprobar cinco pétalos, envolventes y paso de trampa.",
+    "Seleccionar herrajes, materiales y secciones con el responsable de fabricación antes de producir planos definitivos."
+  ]
 }
