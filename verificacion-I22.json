@@ -1,0 +1,121 @@
+{
+  "revision": "I22 / F05",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "userAcceptedComparison": true,
+  "alternativeAdoptedAsFinalDesign": false,
+  "continuousFlexDeploymentSolved": false,
+  "mechanismReadyForConstruction": false,
+  "materialsSelected": false,
+  "scope": "One articulated petal only; fixed patterns, real joints, supported tangent cable. Positive actuation is prescribed. No calibrated material/load model.",
+  "geometry": {
+    "nominalPetalM": [
+      4,
+      3.5
+    ],
+    "panels": 28,
+    "hinges": 44,
+    "braces": 60,
+    "actualFabricAreaM2": 8.388241697,
+    "realHingeSlotsM": 0.06,
+    "cableTotalM": 7,
+    "stowedAssemblyTopM": 2.479636218345038,
+    "closedDeckGapM": 0.09036378165496206,
+    "minHatchEdgeGapM": 0.6480000001192092
+  },
+  "checks": {
+    "viewer": {
+      "loaded": true,
+      "allPosesValid": true,
+      "constantCable": true,
+      "noAnimatedScale": true,
+      "constantPartCount": true,
+      "skinToggle": true,
+      "labels": true,
+      "labelsHide": true,
+      "cotas": true,
+      "mobileNoOverflow": true,
+      "noErrors": true
+    },
+    "hardwareVsSkinAndFrames": {
+      "sampledPoses": 93,
+      "intersections": 0
+    },
+    "metalVsDifferentMovingBodies": {
+      "sampledPoses": 93,
+      "meshPairsTested": 39655,
+      "intersections": 0
+    },
+    "deviceVsPetal": {
+      "sampledPoses": 121,
+      "intersections": 0
+    },
+    "carrierAndTrap": {
+      "sampledTimes": 121,
+      "intersectionsOutsideDeclaredMounts": 0
+    },
+    "continuousPartialProofs": [
+      "Rigid facet isometry and injective ideal-surface projection.",
+      "Finite frames/pins and skin separation.",
+      "Hinge-tab to skin clearances."
+    ],
+    "completeContinuousHardwareSweepCertified": false,
+    "strengthApproved": false,
+    "fivePetalStorageChecked": false
+  },
+  "route": "flor-central/petalo.html?rev=F05",
+  "previousWholeFlower": "flor-central/?rev=F04",
+  "assets": [
+    {
+      "path": "flor-central/petalo.html",
+      "bytes": 9626,
+      "sha256": "99fa1191e29116a5bcd8cfe3ada7c3269e595cd1a2cb9e0aabea7d13170000f4"
+    },
+    {
+      "path": "flor-central/petalo.css",
+      "bytes": 5772,
+      "sha256": "250727480ffb395b741fc0250d032c27c124f9b87863914426cfd2ad1dca534b"
+    },
+    {
+      "path": "flor-central/petalo-app.js",
+      "bytes": 13318,
+      "sha256": "ed91974c3d6ba91c4fd1d33e40f26272515b7fca34052fa21f0d3c7282fce99e"
+    },
+    {
+      "path": "flor-central/petal-sequence.js",
+      "bytes": 2019,
+      "sha256": "29deabc5fa81d18eb874cd97027a5d638b93163c4a2a06ee33eebc863362cccc"
+    },
+    {
+      "path": "flor-central/fold-mechanism.js",
+      "bytes": 15099,
+      "sha256": "2c449a5d83410f8cd70000d8604cfde997bd5bd2323a89cecfaf712f0254276d"
+    },
+    {
+      "path": "flor-central/cable-route.js",
+      "bytes": 12033,
+      "sha256": "6de41bec24236cb9ec966b4437371eed77c021a1d9defa2451991d4533523b36"
+    },
+    {
+      "path": "flor-central/cable-hardware.js",
+      "bytes": 21923,
+      "sha256": "87fb9f12316900944fc1fce0d4f9c4a185b82fe67079de7ca22be0f30d9ea7fd"
+    },
+    {
+      "path": "flor-central/petal-hardware.js",
+      "bytes": 14124,
+      "sha256": "6df15d9680fd9602ee3edd75ecb6367ac082daeb091694e627129ca407a0ec57"
+    },
+    {
+      "path": "flor-central/anchor-geometry.js",
+      "bytes": 7163,
+      "sha256": "3da60596e9d91610fea76bbb3704ad336d32bcf51a7f66e813fb4b774b508dc4"
+    },
+    {
+      "path": "flor-central/petalo-estudio.json",
+      "bytes": 5487,
+      "sha256": "cf9b23548e63c2c3cfc6c6c3fd0e4ea56729671e6ec4b43c88ebd8c99014f09c"
+    }
+  ],
+  "costs": "PC02 unchanged; flower not budgeted."
+}

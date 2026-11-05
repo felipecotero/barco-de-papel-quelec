@@ -1,0 +1,158 @@
+{
+  "revision": "F05",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "scope": "ONE articulated comparison petal, not a continuous flex recovery or the complete five-petal flower",
+  "userDecision": "Sí, comparar la alternativa articulada. Esto no adopta automáticamente esa alternativa.",
+  "materialSelected": false,
+  "approvedForFabrication": false,
+  "nominalPetalM": [
+    4,
+    3.5
+  ],
+  "kinematics": {
+    "grid": [
+      8,
+      4
+    ],
+    "alphaDeg": 80,
+    "phiDeg": [
+      79,
+      12
+    ],
+    "heightSign": -1,
+    "outlineSamples": 24,
+    "clothPanels": 28,
+    "frames": 28,
+    "frameBraces": 60,
+    "hinges": 44,
+    "staticPatternAreaM2": 8.388241697,
+    "rootFabricNeckM": 0.12,
+    "hingeFabricInsetM": 0.03,
+    "frameInsetM": 0.065,
+    "framePlaneOffsetM": -0.0022,
+    "referenceFrameDiameterM": 0.004,
+    "referencePinDiameterM": 0.006,
+    "referenceKnuckleOutsideDiameterM": 0.01,
+    "noAnimatedMetalScaling": true,
+    "fabricIsSeparatePanels": true,
+    "visiblePleatsRemainOpen": true,
+    "drive": "Two-axis root cardan, one positive crease drive, controlled winch/brake. Payout does not push a petal upward.",
+    "openHingeSlotM": 0.06,
+    "terminalServiceCutM": 0.05,
+    "newShapeAcknowledged": "Open 60mm hinge slots, neck and terminal service cut are real static cuts; no resizing. The smooth flex shape is not silently substituted."
+  },
+  "sequence": {
+    "totalS": 41,
+    "hatchS": [
+      0,
+      3
+    ],
+    "riseS": [
+      3,
+      11
+    ],
+    "orientS": [
+      11,
+      17
+    ],
+    "unfoldS": [
+      17,
+      29
+    ],
+    "outwardPitchS": [
+      29,
+      41
+    ],
+    "floweringS": 30,
+    "nominalMotion": "Prescribed; not measured motor or lift speed.",
+    "stowedCrownM": 1.77,
+    "raisedCrownM": 10.15,
+    "rootAboveCrownM": 0.23,
+    "rootStowedM": 2,
+    "rootRaisedM": 10.38,
+    "platformFloorM": [
+      1.37,
+      9.75
+    ],
+    "raisedStageTopM": 2.75,
+    "deckM": 0.18,
+    "hatchOpeningM": [
+      4.2,
+      3.7
+    ],
+    "transientVerticalPeakMApprox": 14.4,
+    "fivePetalsSimultaneouslyChecked": false,
+    "minimumSampledClosedHatchGapM": 0.090364,
+    "minimumSampledOpeningEdgeGapM": 0.648
+  },
+  "cable": {
+    "totalM": 7,
+    "diameterReferenceM": 0.006,
+    "drumPitchRadiusM": 0.07,
+    "sheavePitchRadiusM": 0.09,
+    "groovePitchM": 0.01,
+    "maxReserveTurns": 16,
+    "minReserveTurns": 2,
+    "singleLayer": true,
+    "topology": "Rigid terminal → straight tangent → supported sheave arc → helix tangent lead → supported reserve helix → anchored end on rotating drum",
+    "realJoints": [
+      "Rotating drum",
+      "Linear level wind",
+      "Swivelling sheave fork",
+      "Rotating sheave",
+      "Lead screw matched to groove pitch"
+    ],
+    "hardwareSelected": false,
+    "capacitiesCalculated": false
+  },
+  "validated": {
+    "faceIsometriesAndConstantMembers": true,
+    "continuousIdealClothNonCrossing": true,
+    "continuousFrameAndPinGapProof": true,
+    "continuousTabToClothGapProof": true,
+    "deviceSelfCable121Poses": true,
+    "deviceToPetal121Poses": true,
+    "context121Times": true,
+    "continuousWholeAssemblySweepCertified": false,
+    "physicalMaterialModel": false
+  },
+  "pending": [
+    "Finite hardware integration inspected at discrete poses; full continuous swept-volume proof not certified.",
+    "Material selection, actual skin deformation, joints, masses, motor/brake torque and stiffness.",
+    "Whole-flower five-petal storage and sequence.",
+    "Lift accessory interface and outdoor operation review."
+  ],
+  "sources": [
+    {
+      "title": "CERTEX: Drums, sheaves and fleet angles",
+      "url": "https://www.certex.dk/en/knowhow/articles-about-steel-wire-rope/drums-sheaves-fleet-angles",
+      "supports": "Physical support in rope grooves and importance of fleet angle and groove dimensions.",
+      "limit": "Steel wire-rope guidance; no selected rope exists for Quelec, so no generic radius, capacity or lifetime is approved."
+    },
+    {
+      "title": "LeBus International: Fleet Angle Compensator",
+      "url": "https://lebus-intl.com/products/20074/Fleet-Angle-Compensator",
+      "supports": "A compensation device is distinct from actual controlled drum grooving. The groove supports spooling.",
+      "limit": "The proposed small, single-layer level-wind is not a LeBus product or validated mechanism."
+    },
+    {
+      "title": "Ingersoll Rand: Fleet Angle Calculations",
+      "url": "https://liftingsolutions.ingersollrand.com/en/resources/winch-selection-support/fleet-angle-calculations/",
+      "supports": "Rope/sheave/drum alignment is a genuine mechanical requirement.",
+      "limit": "No manufacturer dimensions or capacities transferred to the candidate."
+    },
+    {
+      "title": "Schenk & Guest · Geometry of Miura-folded metamaterials · PNAS 2013",
+      "url": "https://doi.org/10.1073/pnas.1217998110",
+      "supports": "Cinemática de facetas rígidas Miura y sus parámetros geométricos.",
+      "limit": "El patrón recortado, bisagras y accionamientos F05 son una propuesta derivada; el artículo no valida este accesorio."
+    },
+    {
+      "title": "Haulotte · Compact 12",
+      "url": "https://www.haulotte.com.es/es_ES/productos/compact-12",
+      "supports": "Dimensiones de referencia y piso máximo de 9,75 m.",
+      "limit": "Unidad, año, configuración sin barandillas y accesorio superior del proyecto aún por identificar/revisar."
+    }
+  ]
+}

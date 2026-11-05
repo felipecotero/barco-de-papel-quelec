@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I21) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F04](flor-central/?rev=F04)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I22) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F05 · un pétalo](flor-central/petalo.html?rev=F05)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -16,7 +16,7 @@ El trazado de rayos permanece como opción secundaria en barco y grulla. Es más
 
 **Descargar 3D**, junto a **Guías y planos**, ofrece GLB con texturas integradas, OBJ+MTL+PNG en ZIP y STL sin texturas. GLB usa metros; OBJ/STL permiten elegir metros o milímetros y requieren seleccionar la misma unidad al importarlos. Escala 1:1, objeto ensamblado, sin suelo, cotas ni rótulos. STL reúne mallas y no implica una única pieza lista para imprimir.
 
-Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** y **colas-de-pavo/Abrir-Colas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor identifica su versión de diseño y el estado de sus constructivos. La flor F04 es una revisión mecánica: el recorrido completo, el accionamiento y el guardado siguen pendientes; no hay constructivo aprobado.
+Los portátiles **Abrir-Barco.html**, **grulla/Abrir-Grulla.html**, **nave/Abrir-Nave.html**, **cauchera/Abrir-Cauchera.html** y **pancartas/Abrir-Pancartas.html** y **colas-de-pavo/Abrir-Colas.html** contienen geometría, bibliotecas, texturas, estudio y exportación. Los PDF se consultan en la web. No hay analítica ni servicios externos para renderizar o exportar. Las referencias de los TDR son imágenes artísticas; cada visor identifica su versión de diseño y el estado de sus constructivos. La flor F05 compara un pétalo articulado con el antecedente F04 de flex continuo. No hay constructivo aprobado; materiales, esfuerzos y cinco pétalos en conjunto siguen pendientes.
 
 ## Barco R08
 
@@ -201,3 +201,15 @@ La [ficha mecánica para Jahir](flor-central/mecanica.html) se puede imprimir en
 La [tarima](flor-central/?rev=F04&vista=stage) mantiene dos rampas y una franja plana de8×4,30m. Piso de plataforma9,75m de referencia, frente a10m pedidos; la configuración y el accesorio requieren identificación y revisión con el proveedor/fabricante. La guía fija del candidato alcanzaría aproximadamente2,858m al bajar: invade28,8cm el intradós2,57m de la opción a2,75m. Su recogida y el paquete de cinco pétalos no están resueltos.
 
 [Visor portátil F04](flor-central/Abrir-Flor-Central-F04.html). La descarga3D es una envolvente de estudio estática, no un mecanismo listo para construir. Los seis objetos anteriores y la proyecciónPC02 se conservan; **la flor sigue sin presupuesto incorporado**.
+
+## I22 / F05 · Un pétalo: guardado, subida y apertura / 5 noviembre 2026
+
+[Visor del pétalo F05](flor-central/petalo.html?rev=F05). Comparación articulada autorizada por el usuario, para **Jahir Santos**. No sustituye automáticamente el aro continuo tipo flex. Una pieza de4×3,5m nominales, con28paños,28marcos y44bisagras, conserva sus dimensiones; se guarda hacia dentro, sube compacta, gira a la vertical, se despliega y abre hacia fuera.
+
+La alternativa necesita ranuras fijas de60mm entre paños junto a las bisagras y un recorte de servicio para el terminal. Esos huecos son reales y permanecen en el estado abierto. Añade dos ejes en la raíz y un accionamiento positivo de plegado. Dar cabo no empuja un pétalo hacia arriba. Las geometrías de accionamiento son propuestas; no se han seleccionado motores ni capacidades.
+
+El cabo de7m tiene dos tangentes reales a una roldana con garganta y una tangente a la hélice apoyada en un tambor de una sola capa. El carro devanador y la horquilla orientable son piezas móviles explícitas. El detalle se puede acercar en el visor. La cuna tiene un desvío exterior real para dejar libre el dispositivo.
+
+La secuencia dibuja3s de apertura de trampa,8s de subida y30s de florecimiento. Son tiempos prescritos, no prestaciones calculadas de la máquina o los motores. Con piso de plataforma9,75m y raíz10,38m, el pétalo alcanza temporalmente más de14m al desplegarse vertical. El visor lo muestra, sin reducirlo para ocultar esa altura.
+
+[Alcance, geometría y comprobaciones](flor-central/petalo-estudio.json). Las pruebas geométricas no dimensionan esfuerzos, fatiga, tela, viento, frenos o estabilidad de la elevadora. Se trata de **un pétalo**, no del guardado y apertura de cinco. El flex continuo y la flor completaF04 se mantienen como antecedentes identificados; no se anima una recuperación material desconocida. Los seis objetos anteriores y costosPC02 no cambian; flor sin presupuesto incorporado.
