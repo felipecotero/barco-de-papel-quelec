@@ -1,0 +1,185 @@
+{
+  "revision": "I21 / F04",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "materialsSelected": false,
+  "mechanismReadyForConstruction": false,
+  "wholeDeploymentSolved": false,
+  "fullRootPathAdmitted": false,
+  "forceRoutingValidated": false,
+  "physicalTensionPrediction": false,
+  "softwareChecks": {
+    "physics-core-qa": {
+      "checks": 44,
+      "softwarePass": true
+    },
+    "contact-guard-qa": {
+      "checks": 29,
+      "softwarePass": true
+    },
+    "candidate-invariants": {
+      "checks": 12,
+      "softwarePass": true
+    },
+    "app-ui-qa": {
+      "checks": 20,
+      "softwarePass": true
+    },
+    "guide-qa": {
+      "checks": 14,
+      "softwarePass": true
+    },
+    "content-qa": {
+      "checks": 52,
+      "softwarePass": true
+    },
+    "portable-browser-qa": {
+      "checks": 28,
+      "softwarePass": true
+    },
+    "portable-source-qa": {
+      "checks": 3,
+      "softwarePass": true
+    }
+  },
+  "scope": "Revisión mecánica y contactos de una candidata de flor; se bloquean intervalos no demostrados. No se presenta como un mecanismo funcional.",
+  "negativeFinding": {
+    "caseOpening": 0.5,
+    "rootAngleDeg": 35,
+    "pair": "P1_LEAD_0 / P1_RESERVA_0",
+    "modeledOverlapM": 0.0024566207997309027,
+    "basis": "Grosor de cable dibujado, no material comprado."
+  },
+  "geometry": {
+    "petalReferenceM": [
+      4,
+      3.5
+    ],
+    "outerFrameFootprintApproxM": [
+      11.6,
+      9.94
+    ],
+    "stageFlatM": [
+      8,
+      4.3
+    ],
+    "stowedGuideTopM": 2.858,
+    "proposedUndersideM": 2.57,
+    "guideOverrunM": 0.288
+  },
+  "guide": {
+    "route": "flor-central/mecanica.html",
+    "sheets": 4,
+    "print": "A3 horizontal, negro sobre blanco",
+    "purpose": "Arquitectura, interfaces, pruebas y reacción de roldana/tambor que Jahir debe resolver antes de fabricación."
+  },
+  "assets": [
+    {
+      "path": "flor-central/Abrir-Flor-Central-F04.html",
+      "bytes": 3611113,
+      "sha256": "b27ae2839c73dff82cd6e360edd2ee4eca92e05d24c024c46726f82862f021ab"
+    },
+    {
+      "path": "flor-central/app.js",
+      "bytes": 56345,
+      "sha256": "4d98388e6293579c54c07e4759d5a9028f9e539d73cab588ee7374e68f57e439"
+    },
+    {
+      "path": "flor-central/assets/copper.jpg",
+      "bytes": 99380,
+      "sha256": "5e26e20e5d01eaa96a607dddbfa5b7e2cf07c27961f8d2503340b30b71323c70"
+    },
+    {
+      "path": "flor-central/assets/corolla_iso.png",
+      "bytes": 1974264,
+      "sha256": "812b7e6e1d1ca31f3ed00c957939c532da7dd11a64266c6972f732f844ba8047"
+    },
+    {
+      "path": "flor-central/assets/cream.jpg",
+      "bytes": 39010,
+      "sha256": "dbdc55ef15dba412e5e6c5253d54eb6939fc4316dbf4e43535aa42ed32898620"
+    },
+    {
+      "path": "flor-central/assets/magenta.jpg",
+      "bytes": 28110,
+      "sha256": "8b263a73ebb1625d0a034889813895aa4cdbea93d3f60ad3ca55a0088279df35"
+    },
+    {
+      "path": "flor-central/assets/referencia-tallo-ui.jpg",
+      "bytes": 182892,
+      "sha256": "db0ef3d2437c4a3c558cbba88e26c3d3388c102848101156ec50fa82f4c660a7"
+    },
+    {
+      "path": "flor-central/contact-guard.js",
+      "bytes": 23860,
+      "sha256": "415bd95129c4f790ca0b5b0476bc18c4453a0ae75219b8ef8a41926f02ad23cb"
+    },
+    {
+      "path": "flor-central/diagnostico-contactos.json",
+      "bytes": 4730,
+      "sha256": "2ddf79f0149c801438782536cfe6066a0b4a2c41d7a3d15a061ca10bf290e223"
+    },
+    {
+      "path": "flor-central/favicon.svg",
+      "bytes": 309,
+      "sha256": "6449ddb1d93bd8afe4d88f6c737c72a8b77c52df429aaec27e7e5fe654e0945c"
+    },
+    {
+      "path": "flor-central/index.html",
+      "bytes": 30531,
+      "sha256": "161c460bd7aa9a91c2e23b1292a2202f48fd785178efeeda8ec451f536324bf5"
+    },
+    {
+      "path": "flor-central/mecanica.html",
+      "bytes": 54770,
+      "sha256": "b0d8872557ac00653015c59f7722a99bd5bbb18c213a950f937f486e15e96c2a"
+    },
+    {
+      "path": "flor-central/mechanics-guide.json",
+      "bytes": 16013,
+      "sha256": "0681215be32a8e78f80887823ed7a1e00eab25e233a41e17fe32a5faf06c1db0"
+    },
+    {
+      "path": "flor-central/model.json",
+      "bytes": 5867,
+      "sha256": "45e9208f74ef7f228d309de8afd235dd7f69a8cb3a99be3b95be3865c0db7fb9"
+    },
+    {
+      "path": "flor-central/physics-core.js",
+      "bytes": 17583,
+      "sha256": "2b8cfc06143bcd53503592a37d65574b80e07762bcd82d9525ae5ebd99d676df"
+    },
+    {
+      "path": "flor-central/scene.js",
+      "bytes": 59938,
+      "sha256": "678b38c6cb2c6572f8926f60b656ee671d0a0b028af0aa251dc0f9bdeb58dc8f"
+    },
+    {
+      "path": "flor-central/simulation.js",
+      "bytes": 16434,
+      "sha256": "fc1e657c4bfcfd80bfc06a9f0898e3b1d2b8276c565ff6d5351c5d8fc14e29e5"
+    },
+    {
+      "path": "flor-central/sources.json",
+      "bytes": 9413,
+      "sha256": "9195dfd97e79dcd678b889b65f77a8850e5a7b89a1bda6e6a6bc8cc5e0206385"
+    },
+    {
+      "path": "flor-central/stage-trap.js",
+      "bytes": 21050,
+      "sha256": "008a37d7abf78a0bb75e65c037dec9fad6837edb7f9b9b34412f01ed4d0632a9"
+    },
+    {
+      "path": "flor-central/style.css",
+      "bytes": 20035,
+      "sha256": "c6550fda0c3ce23286f5f8276d01555c89ed4b81087b79b8db580293d8b5fdad"
+    },
+    {
+      "path": "flor-central/tools/build-portable.py",
+      "bytes": 6612,
+      "sha256": "860b39871f4046a9ca1342aa6839201d3a5c3f60348d1f6d896263927516c75f"
+    }
+  ],
+  "route": "flor-central/?rev=F04&vista=mechanism",
+  "costs": "PC02 conserva los seis grupos anteriores. Flor no presupuestada."
+}

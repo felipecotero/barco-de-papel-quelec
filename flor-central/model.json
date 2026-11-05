@@ -1,44 +1,24 @@
 {
-  "revision": "F03",
+  "revision": "F04",
   "date": "2026-11-05",
-  "publication": "Actualización del estudio público dentro de la autorización previa del usuario. Laboratorio geométrico; no plano de fabricación aprobado.",
+  "builder": "Jahir Santos",
+  "scope": "mechanical-feasibility-audit-and-collision-guard",
+  "status": "Recorrido completo NO demostrado: el guardia impide avanzar por contactos o intervalos sin prueba. Estudio para resolver un prototipo, no orden de fabricación.",
   "userConfirmed": {
-    "petalCount": 5,
+    "petals": 5,
     "petalLengthM": 4,
     "petalWidthM": 3.5,
     "machine": "Haulotte Compact12",
     "peopleAbove": 0,
     "projectStowedOverallM": 1.77,
-    "projectRailConfiguration": "sin barandillas, según el usuario; no se acredita aprobación del accesorio",
-    "initialStageTopM": 2,
-    "openingDurationS": 30,
-    "holdOpenForRestOfAppearance": true,
-    "requestedPlatformFloorM": 10,
     "originalStageWidthM": 8,
-    "surroundingStageTreatment": "Dos rampas opuestas llegan a una franja plana que cruza los8m completos de ancho; geometría de zigurat, sin pendientes en los otros dos bordes.",
-    "openingDirection": "Intención escénica: flor desde el centro hacia afuera con pétalos volumétricos. F03 separa esta intención de la recuperación del aro, que no está resuelta.",
-    "organicHoops": "Proporciones elípticas variables, alrededor de la envolvente mínima de plataforma",
-    "slopeMaximumDeg": 15,
-    "slopePreferredDeg": 10
+    "baseStageTopM": 2,
+    "openingTargetS": 30,
+    "materialsSelected": false,
+    "materialAnswer": "Aún no hay materiales elegidos.",
+    "builder": "Jahir Santos"
   },
-  "newUnapprovedOption": {
-    "localStorageChamberM": [
-      2.5,
-      3.0
-    ],
-    "defaultPreviewM": 2.75,
-    "changesWholeStageHeight": false,
-    "interpretation": "Franja superior plana de8×4,3m a2,75m; dos rampas opuestas descienden a la cota base2m. La altura bajo trampa2,50–3,00m sigue siendo una opción sin aprobar.",
-    "centralFlat": true,
-    "surroundingRamps": true,
-    "wholeStageHeightRaised": false,
-    "fullWidthFlatStrip": true,
-    "rampCount": 2,
-    "rampAxis": "Z",
-    "flatWidthM": 8,
-    "flatDepthM": 4.3
-  },
-  "referenceCurrentHaulotte": {
+  "referenceMachine": {
     "platformLengthM": 2.4,
     "platformWidthM": 1.17,
     "stowedWithRailsM": 2.47,
@@ -53,169 +33,127 @@
     "floorAboveRaisedStageM": 7,
     "crownHeightM": 10.15
   },
-  "proposedNotApproved": {
-    "stemHoops": 6,
-    "verticalStrips": 12,
-    "packHeightM": 0.3,
-    "packFoldingVerified": false,
-    "crownOffsetAboveFloorM": 0.4,
-    "compactFloorProxyM": 1.37,
-    "deckThicknessM": 0.18,
-    "leafReleaseDuringLift": false,
-    "cordRoute": "Raíz: cable local entre travesaño y guía elevada, con tambor/freno esquemático. Accionamiento remoto, recorrido y dimensionamiento pendientes.",
-    "closedLoopMechanics": "Aro continuo: recuperación por torsión y bucles por ensayar. No se anima su compactación ni su recuperación.",
+  "proposal": {
     "crownAxesM": [
       3.6,
       2.0
     ],
-    "hoops": "Seis elipses distintas, comprobación gráfica de cuatro esquinas de plataforma+8cm declarados; no holgura acreditada.",
+    "supportAbovePlatformM": 0.4,
+    "rootAtPerimeter": true,
+    "rootRadialOffsetBeyondEllipseM": 0.15,
+    "rootHeightAboveCrownM": 0.18,
+    "rigidCarrierSeatM": 0.12,
+    "realClothRootCutM": 0.34,
+    "frameEnvelopeM": [
+      4,
+      3.5
+    ],
+    "stayEyeNormalOffsetM": 0.3,
+    "rigidCreamCrossbarM": 3.11957641811493,
+    "crossbarFoldingSolved": false,
+    "cablesPerPetal": 3,
+    "visibleCableParts": [
+      "Tramo activo",
+      "Conector de recorrido",
+      "Reserva helicoidal"
+    ],
+    "wireTotalLengthConstant": true,
+    "wireForceRouteValidated": false,
+    "wireRouteRole": "Plantilla geométrica de ocupación; la curva libre y una hélice sin apoyo no acreditan fuerzas. Debe sustituirse por roldana/tangentes y bobinado apoyado reales.",
     "stageFlatM": [
       8,
       4.3
     ],
+    "stageBaseM": 2,
+    "stageTopM": 2.75,
+    "deckThicknessM": 0.18,
+    "stageUndersideM": 2.57,
+    "grossSpaceAboveStowedCrownM": 0.8,
+    "targetPackM": 0.3,
+    "targetPackVerified": false,
     "trapOpeningM": [
       4.2,
       3.7
     ],
-    "trapLeaves": 2,
-    "trapLeafClosedM": [
-      2.1,
-      3.7
-    ],
-    "trapOpenAngleDeg": 90,
-    "trapOpeningDirection": "upward",
-    "trapActuators": "Esquema telescópico, sin tipo/carrera/fuerza seleccionados",
-    "trapRetention": "Tope y retención abierta esquemáticos, sin capacidad seleccionada",
-    "slopeDegRange": [
+    "rampCount": 2,
+    "rampSlopeDegRange": [
       10,
       15
     ],
-    "defaultSlopeDeg": 10,
-    "defaultOverallStageM": [
+    "stageOverallAt10DegM": [
       8,
       12.806922729426564
     ],
-    "at15DegOverallStageM": [
+    "stageOverallAt15DegM": [
       8,
       9.898076211353317
     ],
-    "leafSizesM": [
-      [
-        3,
-        2.25
-      ],
-      [
-        2.75,
-        2.15
-      ]
+    "unfoldedPetalFootprintApproxM": [
+      11.59595585,
+      9.94440317
     ],
-    "bloomKinematics": "Laboratorio de UN pétalo completo4×3,5m con escala constante. Articulación de raíz gira desde70° inclinado hacia afuera hasta0°. Es orientación de un marco ya recuperado, no estado guardado ni apertura elástica.",
-    "packRepresentation": "Envolvente objetivo vacía y discontinua de0,30m de alto; no paquete físico ni prueba de que los cinco pétalos quepan.",
-    "leafPresentation": "Forma y ubicación estilizadas; no se demuestra mecanismo de despliegue de hojas.",
-    "stageGeometry": "Franja plana continua a todo el ancho8m, profundidad4,3m; dos rampas enZ, base2m y zona alta2,75m. Sin cuatro pendientes ni pirámide.",
-    "wholeFlowerMode": "Cinco pétalos en la forma final fija; conserva estética y volumen. No secuencia causal de compactación–trampa–subida–florecimiento.",
-    "sectionSelection": "Tubos, flejes, ejes y cables dibujados son representaciones; materiales y secciones no seleccionados.",
-    "fixedGuideAddedHeightM": 0.85,
-    "fixedGuideTopStowedM": 2.735,
-    "fixedGuideOverrunsDefaultUndersideM": 0.165,
-    "fixedGuideStorageMechanismSolved": false,
-    "fixedGuideCenterStowedM": 2.68,
-    "guideSphereRadiusForDisplayM": 0.055
+    "fixedGuideTopStowedM": 2.858,
+    "fixedGuideOverrunM": 0.288,
+    "guideFoldingSolved": false,
+    "footprintBasis": "Envolvente de paños y aros con su grosor dibujado; no incluye una zona de operación o una holgura con público.",
+    "frameEnvelopeBasis": "4×3,5m nominales de referencia del contorno; el grosor, asiento y otros herrajes añaden volumen."
   },
-  "visuals": {
-    "colors": "dos crema moteadosvioleta, dos cobrizos y labelomagenta; tallo verdeazulado, dos bore",
-    "originalArtIntact": true,
-    "sourceUserAdditionalImages": 5,
-    "stem": "Verde azulado, pliegues y óvalos variables; doce franjas o manga continua.",
-    "petals": "Cinco formas finales fijas en conjunto; un pétalo de tamaño completo en laboratorio. Sin crecimiento por escala ni sustitución por espiras animadas.",
-    "leaves": "Dos bore con forma estilizada; su plegado y liberación no se presentan como mecanismos resueltos."
+  "contactStudy": {
+    "method": "BVH de triángulos, contacto entre cuerpos móviles, sólidos cerrados y barrido conservador por cota de desplazamiento.",
+    "scope": "Primer pétalo recuperado y sus piezas móviles frente al mundo estático declarado y las parejas relativas incluidas en contactSnapshot.",
+    "allFiveMovingTogether": false,
+    "materialStiffnessSolved": false,
+    "flexRecoverySolved": false,
+    "foldedClothSelfContactSolved": false,
+    "nominalFreeClearanceM": 0.005,
+    "bearingAndContiguousCableMarginsM": 0,
+    "marginsAreFabricationApproval": false,
+    "unprovenIntervalsBlocked": true,
+    "wholePathCertified": false,
+    "actualMidPathFinding": "El tramo LEAD0 corta una vuelta de su propia reserva cerca de la posición intermedia. No se amplían excepciones para ocultarlo.",
+    "inputVisibilityRemovesColliders": false,
+    "midPathModeledCableOverlapM": 0.0024566207997309027,
+    "overlapBasis": "Modelo de tubo con radio3mm; no cable seleccionado. Comprobación de distancia entre segmentos centrales fuera de la unión local."
   },
-  "limits": [
-    "F03 explica el giro geométrico de una raíz con un pétalo ya recuperado; no reproduce la recuperación del aro tipo flex.",
-    "Los30s son una cadencia de demostración. No proceden de fuerzas, fricción, amortiguación ni ensayos.",
-    "No demuestra guardado, compactación de cinco pétalos, paso por trampa ni una secuencia completa ejecutable.",
-    "Fleje, herrajes, cables y accionamiento remoto quedan por seleccionar y medir; no se calculan capacidades ni viento seguro.",
-    "Alturas y máquina son referencias de proyecto; la unidad y el accesorio requieren confirmación del proveedor."
-  ],
-  "sequence": {
-    "scope": "geometric-root-laboratory",
-    "states": [
-      "ready",
-      "moving",
-      "open"
-    ],
-    "rootRotationS": 30,
-    "petalOpeningS": 30,
-    "totalS": 30,
-    "cadenceOnly": true,
-    "readyMeans": "Pétalo completo a70° hacia afuera; no paquete guardado.",
-    "openMeans": "Mismo pétalo completo a0°, cerca de su posición final.",
-    "holdsOpen": true,
-    "resetMeansNextPerformance": true,
-    "completeFlowerDeploymentSolved": false,
-    "automaticTrapLiftPetalChain": false,
-    "replacesF02Claim": "Se retira la secuencia causal85s de F02; trampa, altura de referencia y forma final se inspeccionan por separado."
-  },
-  "delivery": {
-    "route": "flor-central/?rev=F03",
-    "portable": "Abrir-Flor-Central-F03.html",
-    "formats": [
-      "GLB-m",
-      "OBJ-MTL-PNG-m/mm",
-      "STL-m/mm"
-    ],
-    "exportScope": "Solo flor abierta y estática; sin elevadora, tarima, trampa, laboratorio, ayudas o viento. Modelo conceptual a escala.",
-    "mechanism": "mecanismo.json"
-  },
-  "scope": "geometric-root-laboratory",
-  "rootLaboratory": {
-    "scope": "geometric-root-laboratory",
-    "petalCount": 1,
-    "petalEnvelopeM": [
-      4,
-      3.5
-    ],
-    "scale": [
-      1,
-      1,
-      1
-    ],
-    "angleDeg": {
-      "ready": 70,
-      "open": 0,
-      "direction": "Hacia afuera respecto de la raíz;70° no es guardado compacto."
-    },
-    "rootPosition": {
-      "radiusM": 0.44,
-      "heightAboveCrownM": 0.06
-    },
-    "cradle": "Cuna y eje de giro identificables en la corona; interfaz y herrajes sin dimensionar.",
-    "crossbarAtNormalizedPetalLength": 0.32,
-    "control": {
-      "attachment": "Centro del travesaño situado en parámetro longitudinalv=0,32.",
-      "guideAboveHingeM": 0.85,
-      "localDrumBrake": "Esquema local de tambor y freno; no producto ni capacidad seleccionados.",
-      "remoteActuation": "Pendiente: mando desde suelo, retorno, disipación y transmisión del movimiento.",
-      "driveLimit": "El cable sólo transmite tracción. No prueba que pueda empujar un pétalo hacia afuera desde una posición inclinada hacia dentro ni cruzar el punto de equilibrio; requeriría accionamiento positivo o geometría/energía comprobados."
-    },
-    "finalStays": {
-      "count": 2,
-      "atNormalizedPetalLength": 0.68,
-      "function": "Dos riendas finales independientes del cable de control muestran la función de sostener la forma abierta.",
-      "visibility": "Se dibujan cerca de abierto; recorrido durante el movimiento, toma de carga y anclajes por resolver."
-    },
-    "conservation": "El marco y la superficie mantienen su tamaño. El giro de raíz no compacta el pétalo.",
-    "notSimulated": [
-      "Torsión y recuperación del aro tipo flex.",
-      "Acción de gravedad, fuerzas y energía del mecanismo.",
-      "Colisiones de cinco pétalos guardados y paso del conjunto por la trampa.",
-      "Dimensionamiento resistente, cargas de cables y amortiguación."
+  "gravity": {
+    "model": "Par gravitatorio cuasiestático sobre una bisagra, con masa y centro de gravedad introducidos.",
+    "massDefaultKg": null,
+    "centerOfGravityDefaultM": null,
+    "gravityMps2": 9.80665,
+    "tensionPredictionN": null,
+    "forceRoutingValidated": false,
+    "dynamicIntegration": false,
+    "requiredBeforeForceRoute": [
+      "Roldana con garganta y tangencias reales",
+      "Bobinado apoyado en tambor y extremo fijado",
+      "Freno/retractor/mando reales",
+      "Reparto entre tres cabos y toma de carga final"
     ]
   },
-  "workingNextSteps": [
-    "Probar UN pétalo1:1 a nivel del suelo, con aro, paño y raíz del proveedor.",
-    "Medir configuraciones, paquete, trayectoria, energía/reacción de apertura y comportamiento bajo peso propio; verificar repetición.",
-    "Resolver retención, accionamiento y riendas con las mediciones; después comprobar cinco pétalos, envolventes y paso de trampa.",
-    "Seleccionar herrajes, materiales y secciones con el responsable de fabricación antes de producir planos definitivos."
-  ]
+  "withdrawnArtificialMotion": [
+    "Escalado de los pétalos desde otro paquete",
+    "Cambio de longitud de nervaduras",
+    "Cambio de área de manga y hojas para simular recogida",
+    "Viento por deformación sin contacto ni material",
+    "Aparición de riendas sólo al final"
+  ],
+  "remainingPrototypeWork": [
+    "Elegir fleje, sección, curvatura natural y paño",
+    "Plegar el mismo aro con raíz y herrajes reales",
+    "Resolver recogida del travesaño, guía y separadores",
+    "Medir paquete de cinco unidades y paso retenido",
+    "Resolver recuperación contenida antes del giro",
+    "Seleccionar y probar roldanas, tambor, freno y recuperadores",
+    "Medir cargas, deformación, repetición e interfaz con la máquina"
+  ],
+  "delivery": {
+    "route": "flor-central/?rev=F04",
+    "mechanicalGuide": "mecanica.html",
+    "mechanism": "mechanics-guide.json",
+    "portable": "Abrir-Flor-Central-F04.html",
+    "report": "JSON del estado, intentos de recorrido y datos de gravedad, desde el visor",
+    "exportScope": "Envolvente estática de flor de estudio; no fabricación ni mecanismo de recuperación validado."
+  },
+  "physicalApproval": false,
+  "costs": "PC02 conserva seis grupos anteriores. La flor no está presupuestada."
 }

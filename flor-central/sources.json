@@ -1,5 +1,5 @@
 {
-  "revision": "F03",
+  "revision": "F04",
   "date": "2026-11-05",
   "localStudyOnly": false,
   "webSources": [
@@ -67,6 +67,21 @@
       "url": "https://ntrs.nasa.gov/citations/19820000295",
       "kind": "Descripción técnica del organismo desarrollador",
       "summary": "Un cabo y un amortiguador viscoso dosifican el gasto de energía elástica en una estructura desplegable. Sirve como principio de control; no se trasladan al pétalo sus cargas, materiales o dimensiones."
+    },
+    {
+      "title": "Bergou et al.: Discrete Elastic Rods (SIGGRAPH2008)",
+      "url": "https://www.cs.columbia.edu/cg/rods/",
+      "summary": "Modelo primario de varillas con flexión, torsión y orientación de sección; incluye acoplamiento a cuerpos rígidos e inextensibilidad. Define el tipo de problema pendiente del aro flex, no un modelo ya calibrado de este pétalo."
+    },
+    {
+      "title": "Bridson, Fedkiw y Anderson: contacto y fricción de tela (SIGGRAPH2002)",
+      "url": "https://www.graphics.stanford.edu/papers/cloth-sig02/",
+      "summary": "Trabajo primario de contacto, espesor y fricción de tela. Un control de trayectoria rígida no reproduce por sí solo el plegado ni la autocolisión de la membrana."
+    },
+    {
+      "title": "Rapier: cuerpos rígidos y cinemáticos, documentación oficial",
+      "url": "https://rapier.rs/docs/user_guides/javascript/rigid_bodies/",
+      "summary": "Explica que los cuerpos cinemáticos no responden automáticamente a fuerzas de contacto; el programador debe consultar obstáculos o usar controladores apropiados. No se añade ese motor para afirmar una física inexistente."
     }
   ],
   "localSources": [
@@ -83,7 +98,7 @@
     "physicalFabricSimulation": false,
     "finiteElementAnalysis": false,
     "dynamicDeploymentSimulation": false,
-    "displayModel": "Laboratorio geométrico: un marco4×3,5m de escala constante gira en raíz70°hacia afuera→0°. Forma final fija de cinco pétalos en vista conjunta.",
+    "displayModel": "Candidato con formas de reposo fijas, contactos y bloqueos. El recorrido completo sigue bloqueado; las reservas dibujadas no acreditan reacción ni accionamiento.",
     "flexRecoveryAnimated": false,
     "compactPackageValidated": false,
     "fullTrapLiftBloomSequenceValidated": false,
@@ -99,7 +114,20 @@
     "trapMechanism": "Dos hojasUP90° con bisagras, actuación, topes y retención esquemáticos. Se inspecciona de forma independiente; sin dimensionamiento ni paso de pétalos demostrado.",
     "stageGeometry": "Franja plana8×4,3m a2,75m y base2m; dos rampas enZ. Con10°, huella8×12,8069m; con15°,8×9,8981m.",
     "storageEnvelope": "Objetivo vacío discontinuo de0,30m de alto. No representa tela/aro ya plegados ni comprueba cabida.",
-    "leaves": "Estilizadas; plegado y despliegue pendientes."
+    "leaves": "Estilizadas; plegado y despliegue pendientes.",
+    "fullAssemblyCollisionFreeCertified": false,
+    "rigidRootContactGuard": true,
+    "gravityEquilibriumRequiresMassAndCOM": true,
+    "realMaterialFoldingMeasured": false,
+    "stalkMaterialMorphDisabled": true,
+    "leafMaterialMorphDisabled": true,
+    "windAnimationDisabled": true,
+    "minimumClearanceM": 0.005,
+    "clearanceIsSafetyMargin": false,
+    "wholePathCertified": false,
+    "forceRoutingValidated": false,
+    "dynamicIntegration": false,
+    "movingRelativePairsChecked": true
   },
   "publicDesignStudy": true,
   "heightReference": {

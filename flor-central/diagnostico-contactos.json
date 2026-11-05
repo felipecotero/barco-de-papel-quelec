@@ -1,0 +1,164 @@
+{
+  "revision": "F04",
+  "date": "2026-11-05",
+  "builder": "Jahir Santos",
+  "scope": "Tres estados estáticos consultados, no certificación de un barrido completo.",
+  "mechanismOperational": false,
+  "fullPathAdmitted": false,
+  "forceRoutingValidated": false,
+  "sourceHashes": {
+    "scene.js": "678b38c6cb2c6572f8926f60b656ee671d0a0b028af0aa251dc0f9bdeb58dc8f",
+    "physics-core.js": "2b8cfc06143bcd53503592a37d65574b80e07762bcd82d9525ae5ebd99d676df",
+    "contact-guard.js": "415bd95129c4f790ca0b5b0476bc18c4453a0ae75219b8ef8a41926f02ad23cb"
+  },
+  "cases": [
+    {
+      "opening": 0,
+      "pairId": "P1_RIENDA_DER / P1_FIJO_13",
+      "movingLabel": "Rienda_final_derecha_INDEPENDIENTE",
+      "colliderLabel": "Ojo_fijo_hueco_rienda_derecha",
+      "rawGapM": 0.004492748796128074,
+      "requiredMarginM": 0.005,
+      "geometryClear": false,
+      "nearestTriangles": [
+        [
+          [
+            -1.0183255672454834,
+            11.24721622467041,
+            0.5253799557685852
+          ],
+          [
+            -1.0111297369003296,
+            11.213607788085938,
+            0.5020107626914978
+          ],
+          [
+            -1.020985722541809,
+            11.245536804199219,
+            0.5269748568534851
+          ]
+        ],
+        [
+          [
+            -1.007795461115787,
+            11.219517976343631,
+            0.5052200492143448
+          ],
+          [
+            -1.0097833187843295,
+            11.223910019099712,
+            0.49724718757877145
+          ],
+          [
+            -1.0073337925215056,
+            11.220214501321315,
+            0.4950588559171172
+          ]
+        ]
+      ],
+      "rootAngleDeg": 70,
+      "interpretation": "La separación existe, pero no alcanza la reserva de ensayo propuesta."
+    },
+    {
+      "opening": 0.5,
+      "pairId": "P1_LEAD_0 / P1_RESERVA_0",
+      "movingLabel": "Cabo_guia_a_carrete_mando",
+      "colliderLabel": "Reserva_helicoidal_CON_LONGITUD_CONSTANTE_mando",
+      "rawGapM": 0,
+      "requiredMarginM": 0,
+      "geometryClear": false,
+      "nearestTriangles": [
+        [
+          [
+            -0.9112467169761658,
+            11.170533180236816,
+            0.22469797730445862
+          ],
+          [
+            -0.9038022756576538,
+            11.171222686767578,
+            0.22629864513874054
+          ],
+          [
+            -0.9048938751220703,
+            11.172272682189941,
+            0.2231140285730362
+          ]
+        ],
+        [
+          [
+            -0.9059212803840637,
+            11.172471046447754,
+            0.2249271273612976
+          ],
+          [
+            -0.9015417695045471,
+            11.17237377166748,
+            0.2253105789422989
+          ],
+          [
+            -0.9057279229164124,
+            11.169618606567383,
+            0.2228621542453766
+          ]
+        ]
+      ],
+      "rootAngleDeg": 35.0,
+      "interpretation": "Intersección geométrica real en el estado consultado.",
+      "thicknessCrossCheck": {
+        "centerlineDistanceM": 0.0035433792002690975,
+        "tubeRadiusEachM": 0.003,
+        "modeledOverlapM": 0.0024566207997309027,
+        "basis": "Grosor dibujado del tubo, fuera de la continuidad local de15mm. No es una medición de un cable comprado."
+      }
+    },
+    {
+      "opening": 1,
+      "pairId": "P1_EJE_MOVIL / P1_FIJO_0",
+      "movingLabel": "Eje_tangencial_ESQUEMA",
+      "colliderLabel": "Cojinete_anular_CON_HUECO",
+      "rawGapM": 0.0009914431579232242,
+      "requiredMarginM": 0,
+      "geometryClear": true,
+      "nearestTriangles": [
+        [
+          [
+            -1.8627413759533855,
+            10.362000001519919,
+            0.14494335952417353
+          ],
+          [
+            -1.7127497995280176,
+            10.362000001519919,
+            0.7465267144420218
+          ],
+          [
+            -1.8472166435955844,
+            10.357712812647224,
+            0.14107260901072805
+          ]
+        ],
+        [
+          [
+            -1.8409684047726285,
+            10.362999999821186,
+            0.23226997720237846
+          ],
+          [
+            -1.8385510367703612,
+            10.366246709525585,
+            0.24196551069521147
+          ],
+          [
+            -1.849255728657551,
+            10.361875550746918,
+            0.2343362391155208
+          ]
+        ]
+      ],
+      "rootAngleDeg": 0,
+      "interpretation": "Estado libre en el alcance consultado; no valida el recorrido ni el accionamiento."
+    }
+  ],
+  "requiredCorrection": "Resolver una roldana con garganta y tangencias, bobinado apoyado y freno/retractores reales. La Bézier libre y una reserva en el aire no acreditan reacción. Probar con los materiales aún por elegir."
+}

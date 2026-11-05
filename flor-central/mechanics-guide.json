@@ -1,0 +1,275 @@
+{
+  "revision": "F04",
+  "date": "2026-11-05",
+  "title": "Flor central: mecanismo que debe poder construirse",
+  "status": "Propuesta de arquitectura y ficha de comprobación. El desplegado continuo del aro no está demostrado.",
+  "purpose": "Definir piezas, uniones, recorridos, contactos y ensayos con los que el constructor pueda resolver una salida real. Un dibujo sin intersecciones no acredita resistencia ni desplegado.",
+  "states": {
+    "confirmed": [
+      "Cinco pétalos de 4 × 3,5 m",
+      "Haulotte Compact 12 sin personas arriba",
+      "Apertura deseada deunos30 s y permanencia abierta"
+    ],
+    "proposed": [
+      "Franja central de tarima a 2,75 m y piso supuesto18 cm",
+      "Corona aproximada3,60 × 2,00 m",
+      "Casete retenido que pasa cerrado antes de recuperar cada aro",
+      "Raíz articulada, guía/freno y riendas de forma"
+    ],
+    "unresolved": [
+      "Producto/sección/curvatura del fleje y paño real",
+      "Plegado del aro con raíz y costuras conectadas",
+      "Espacio cerrado de cinco unidades y de sus guías",
+      "Recorrido, fuerzas, disipación y tomas de carga",
+      "Interfaz admitida por la elevadora y operación del accesorio"
+    ]
+  },
+  "geometry": {
+    "unit": "m",
+    "stageTopM": 2.75,
+    "deckThicknessM": 0.18,
+    "stageUndersideM": 2.57,
+    "stowedCrownReferenceM": 1.77,
+    "grossHeightAboveCrownM": 0.8,
+    "targetPackageHeightM": 0.3,
+    "targetPackageVerified": false,
+    "arithmeticRemainderIfTargetM": 0.5,
+    "crownAxesCandidateM": [
+      3.6,
+      2.0
+    ],
+    "openingCandidateM": [
+      4.2,
+      3.7
+    ],
+    "guideCenterStowedM": 2.8,
+    "guideExteriorTopStowedM": 2.858,
+    "guideOverrunM": 0.288,
+    "creamRigidCrossbarAtV032M": 3.11957641811493,
+    "copperRigidCrossbarAtV032M": 2.7384777514099197,
+    "note": "Cotas de estudio.0,80m es espacio bruto, no altura aceptada de mecanismo; soportes, herrajes, paño, reserva y paso deben medirse. El cuerpo de la guía invade la tapa cerrada en esta configuración.",
+    "guideDimensionsBasis": "Envolvente geométrica de la propuestaF04; no demuestra un apoyo físico del cabo ni el accionamiento.",
+    "historicalF03": {
+      "guideCenterM": 2.68,
+      "guideTopM": 2.735,
+      "overrunM": 0.165
+    },
+    "outerPetalAndHoopCandidateM": [
+      11.6,
+      9.94
+    ],
+    "outerPetalAndHoopCandidateBasis": "Envolvente del dibujo F04 desplegado, incluidos tubos de aro; no área aerodinámica ni capacidad acreditada."
+  },
+  "architecture": [
+    {
+      "step": 1,
+      "name": "Guardar y retener",
+      "function": "El mismo aro y la misma tela se recogen dentro de un casete o bolsillo de contención; las retenciones identificadas impiden que un bucle escape.",
+      "condition": "El plegado con raíz, travesaño y guías debe existir físicamente. No dibujar un paquete ficticio.",
+      "status": "Propuesto; tamaño real por medir"
+    },
+    {
+      "step": 2,
+      "name": "Pasar por un hueco real",
+      "function": "La elevadora eleva el casete todavía cerrado a través de la trampa completamente abierta.",
+      "condition": "El conjunto íntegro y su tela pasan sin tocar tapas, corona, aros de tallo, tijeras ni otros paquetes.",
+      "status": "Recorrido por comprobar"
+    },
+    {
+      "step": 3,
+      "name": "Dejar libre el volumen de recuperación",
+      "function": "El casete no se abre hasta que el barrido completo del aro pueda ocurrir fuera de los obstáculos.",
+      "condition": "La altura mínima se obtiene del volumen barrido, no sólo de la cota de la raíz. Ninguna parte debe recuperarse atravesando una tapa.",
+      "status": "Volumen aún por determinar"
+    },
+    {
+      "step": 4,
+      "name": "Recuperar el aro con control",
+      "function": "Las retenciones ceden de forma coordinada y el sistema dosifica la energía almacenada sin liberar un salto no controlado.",
+      "condition": "Elegir puntos de captura, recorrido de líneas y dispositivo de control a partir del ensayo del aro con tela. Una única cuerda no se supone suficiente.",
+      "status": "Mecanismo por ensayar"
+    },
+    {
+      "step": 5,
+      "name": "Orientar desde una raíz",
+      "function": "Una cuna articulada conecta el pétalo recuperado con la corona y dirige su giro hacia afuera.",
+      "condition": "Si el peso queda hacia dentro del eje, hace falta una acción que lo lleve hacia afuera. Un cabo flojo no empuja.",
+      "status": "Cinemática propuesta; esfuerzos sin dimensionar"
+    },
+    {
+      "step": 6,
+      "name": "Sostener la flor abierta",
+      "function": "Raíz, apoyos y riendas finales reciben el peso y conservan la forma. El cabo de maniobra tiene una función distinta.",
+      "condition": "Comprobar transferencia de carga, bloqueo, deformación y continuidad del sostén. La textura no da rigidez al pétalo.",
+      "status": "Toma de carga por definir"
+    }
+  ],
+  "interfaceProposals": [
+    {
+      "id": "C",
+      "part": "Casete de transporte",
+      "solution": "Contención con zonas de inspección y retenciones accesibles; se transporta cerrado.",
+      "stillRequired": "Dimensiones interiores, aberturas reales, soporte y retirada/recogida de retenciones; sin puntas o aristas que enganchen el paño."
+    },
+    {
+      "id": "R",
+      "part": "Raíz",
+      "solution": "Separar la captura necesaria para la recuperación del aro del eje que orienta el pétalo ya recuperado.",
+      "stillRequired": "Elegir si la raíz debe permitir giro/torsión o cuándo se bloquea. Una mordaza fija modifica el plegado y debe estar presente en el ensayo."
+    },
+    {
+      "id": "T",
+      "part": "Travesaño ancho",
+      "solution": "Estudiar dos ramas articuladas con bloqueo final, o sustituir la función por una brida de tracción.",
+      "stillRequired": "Las dos ramas, su eje y bloqueo tienen que aparecer también guardados. La brida sólo tira y puede enredarse; no se presume equivalente a un travesaño a compresión."
+    },
+    {
+      "id": "G",
+      "part": "Guía y freno",
+      "solution": "Tres circuitos de orientación como hipótesis geométrica. Para transmitir fuerzas deben reemplazarse las curvas en el vacío por roldanas tangentes con garganta, y el bobinado suspendido por un tambor apoyado con freno/retractor.",
+      "stillRequired": "No hay material o producto seleccionado. La envolvente F04 de guía alcanza2,858m guardada e invade28,8cm del intradós2,57m; la recogida y las nuevas piezas también deben resolverse."
+    },
+    {
+      "id": "S",
+      "part": "Sostén final",
+      "solution": "Dos riendas con reserva enrollada y recogida durante todo el recorrido; bloqueo final separado del freno del cabo de maniobra.",
+      "stillRequired": "Fuerza, anclajes, holgura de tela y transición de carga; ningún elemento aparece de golpe al terminar."
+    },
+    {
+      "id": "P",
+      "part": "Paño",
+      "solution": "Patronaje y dobladillos que acompañen el plegado real; zonas de recogida y roce identificadas.",
+      "stillRequired": "Masa, deformación, fricción, costuras y permeabilidad. Si cruza una pieza, ésta necesita una abertura física; transparencia no es un hueco."
+    }
+  ],
+  "gateTable": [
+    {
+      "gate": "G1",
+      "task": "Materiales y forma de reposo",
+      "inputs": "Referencia de fleje, sección, temple o laminado, unión, curvatura natural; paño, masa por área, patrón y costuras.",
+      "record": "Masa/longitud, respuesta al doblar y torcer, recuperación, deformación permanente y fuerza–desplazamiento del paño.",
+      "acceptance": "El responsable de fabricación fija límites a partir de productos y muestras. No se copia una rigidez genérica ni un radio seguro inventado."
+    },
+    {
+      "gate": "G2",
+      "task": "Un pétalo completo y su guardado",
+      "inputs": "Aro 4 × 3,5 m con paño, raíz, travesaño o brida, guía y retenciones propuestos.",
+      "record": "Video con marcas de material; dimensiones de paquete y envolvente; contactos y reacciones en cada intento, incluidos los fallidos.",
+      "acceptance": "Existe un recorrido físico repetible del mismo material. Entra en el espacio disponible con la reserva declarada por el responsable; nada se retira u oculta sin indicar cómo."
+    },
+    {
+      "gate": "G3",
+      "task": "Apoyos, recuperación y mando",
+      "inputs": "Prototipo real con roldanas/gargantas, tangentes, arco apoyado, tambor/bobinado apoyados, retenciones y accionamiento/freno por seleccionar.",
+      "record": "Reacciones de guía, fuerza de línea, par de raíz, velocidad y reserva; pausas, bobinado y reparto entre tres cabos bajo carga.",
+      "acceptance": "El cabo transmite carga por superficies y ejes reales, sin curvas sostenidas en el vacío ni hélices sin apoyo. El control se detiene y sostiene sin escapes. Capacidades documentadas y objetivo de30s por comprobar."
+    },
+    {
+      "gate": "G4",
+      "task": "Paso y contactos",
+      "inputs": "Maqueta 1:1 del hueco y tapas, aros de tallo, paños y paquetes vecinos con espesores reales.",
+      "record": "Barrido entero, holguras mínimas, roce, enganches y estado al quedar retenido.",
+      "acceptance": "No hay penetración ni pinzamiento no resuelto. El responsable declara las holguras exigidas; un muestreo gráfico no las sustituye."
+    },
+    {
+      "gate": "G5",
+      "task": "Orientación y sostén abierto",
+      "inputs": "Raíz, cuna, riendas, apoyos/topes y distribución real de masas.",
+      "record": "Dirección de gravedad, esfuerzos, flecha, transición del cabo a los apoyos y liberación de la energía almacenada.",
+      "acceptance": "Existe una cadena de carga continua hasta el soporte. Secciones, uniones, bloqueos y capacidades se seleccionan después de medir; no a partir del dibujo."
+    },
+    {
+      "gate": "G6",
+      "task": "Cinco unidades y accesorio completo",
+      "inputs": "Secuencia de los cinco pétalos, soporte, tallo, hojas y máquina identificada con su proveedor.",
+      "record": "Orden de guardado/apertura, envolventes conjuntas, masa/centro de gravedad, repetición y condiciones de operación.",
+      "acceptance": "El equipo responsable acepta el mecanismo y la interfaz con la elevadora. El viento y los ciclos se ensayan con criterios fijados por ese equipo; la animación no crea un umbral autorizado."
+    }
+  ],
+  "simulationContract": {
+    "rod": "Longitud material constante; flexión y torsión de la sección, curvatura de reposo y contactos.",
+    "cloth": "Misma superficie material con deformación medida, gravedad, espesor, costuras y fricción; autocolisión.",
+    "contact": "Vértice–cara y arista–arista durante el recorrido, no sólo posiciones finales. Huecos reales en geometría.",
+    "rigidMembers": "Cada tramo conserva dimensiones; cambios sólo mediante articulaciones visibles y límites definidos.",
+    "cables": "Sólo tracción, con estados tenso/flojo y ruta real.",
+    "energy": "Peso, energía elástica, trabajo del mando y disipación deben explicar el movimiento.",
+    "failure": "Detener y señalar el estado bloqueado o no resuelto; no atravesar, estirar, borrar piezas o desactivar colisionadores para continuar."
+  },
+  "alternative": {
+    "title": "Bastidor articulado como otra ruta",
+    "status": "Alternativa no adoptada",
+    "principle": "Espina y nervios divididos en tramos de longitud fija, bisagras, cableado y bloqueos. Se recoge tanto el largo4 m como el ancho3,5 m.",
+    "benefit": "Permite prescribir y comprobar cada articulación sin atribuirle una recuperación de fleje que no se ha calculado.",
+    "tradeoff": "Añade juntas, masa, tolerancias y zonas de pinzamiento. El patrón de tela y el paquete también deben resolverse.",
+    "decision": "Compararla con el aro continuo tras el prototipo; no reemplazar silenciosamente la construcción elegida."
+  },
+  "sources": [
+    {
+      "id": "ring",
+      "title": "Plegado de anillos por curvatura y torsión — investigación experimental",
+      "url": "https://www.nature.com/articles/ncomms2311",
+      "supports": "El plegado de un aro es una deformación 3D de la misma longitud de material.",
+      "limit": "No demuestra este pétalo, su raíz, membrana o apertura30 s."
+    },
+    {
+      "id": "der",
+      "title": "Discrete Elastic Rods — autores, Columbia",
+      "url": "https://www.cs.columbia.edu/cg/rods/",
+      "supports": "Modelo de varillas con orientación material, flexión/torsión e inextensibilidad.",
+      "limit": "Necesita parámetros e implementación contrastados; no certifica el visor por citarlo."
+    },
+    {
+      "id": "cloth",
+      "title": "Colisiones, contacto y fricción en telas — Stanford",
+      "url": "https://www.graphics.stanford.edu/papers/cloth-sig02/",
+      "supports": "Espesor, fricción y contacto de tela a lo largo del movimiento.",
+      "limit": "Un colisionador simplificado no equivale a implementar este método."
+    },
+    {
+      "id": "nasa",
+      "title": "Diseño y ensayo de despliegue con tape springs — NASA",
+      "url": "https://ntrs.nasa.gov/citations/20150004083",
+      "supports": "Importancia de interfaces, restricciones y ensayos en un mecanismo elástico de despliegue.",
+      "limit": "No se transfieren materiales, medidas o capacidades espaciales a esta utilería."
+    },
+    {
+      "id": "haulotte",
+      "title": "Compact12 — ficha oficial de referencia",
+      "url": "https://www.haulotte.fr/fr_FR/produit/compact-12",
+      "supports": "Dimensiones de referencia actuales de la plataforma y máquina.",
+      "limit": "Falta identificar año/serie y validar con proveedor la configuración y el accesorio concreto."
+    }
+  ],
+  "classification": "Documento público de diseño propuesto, sin costos, claves, memoria privada ni libreto.",
+  "chosenOrientationStudy": {
+    "status": "Opción de ocupación geométrica de tres circuitos; su transmisión de fuerzas NO está validada.",
+    "circuitsPerPetal": 3,
+    "circuits": [
+      "Un cabo de maniobra con freno",
+      "Dos riendas finales con recogida y bloqueo propios"
+    ],
+    "lengthAccounting": "Cada cabo conserva longitud total: tramo activo más reserva enrollada visible. La reserva no se borra al pagar cabo.",
+    "forceAccounting": "Los cambios de dirección y el bobinado dibujados todavía no tienen apoyo físico demostrado. No se calculan tensiones reales. Cada cabo sólo puede transmitir tracción mediante un recorrido y apoyos materiales definidos.",
+    "hold": "El bloqueo de las riendas finales tiene función separada del freno de maniobra. Cargas, toma de carga y caso de pérdida de mando por resolver.",
+    "scopeLimit": "Los tres circuitos estudian la orientación del pétalo ya recuperado. No resuelven por sí solos el plegado ni la recuperación torsional del aro."
+  },
+  "constructor": "Jahir Santos",
+  "audience": "Jahir Santos y el equipo de Quelec",
+  "actuationCriticalFinding": {
+    "status": "Sin resolver",
+    "forceRoutingValidated": false,
+    "physicalTensionPrediction": false,
+    "tensionN": null,
+    "guideIssue": "Una curva de cabo dentro de un hueco sin tocar una superficie no obtiene reacción para cambiar de dirección bajo tensión.",
+    "windingIssue": "La hélice dibujada está separada del núcleo; contabilizar su longitud no demuestra un bobinado apoyado.",
+    "drawingGapApproxM": 0.004,
+    "proposedPhysicalReplacement": [
+      "Roldana con garganta, entrada y salida tangentes y arco del cabo apoyado.",
+      "Eje y soporte que transmitan la reacción de la roldana a la estructura.",
+      "Tambor con bobinado apoyado, fijación del extremo y reserva de longitud real.",
+      "Retractor o accionamiento, freno y transmisión remota definidos.",
+      "Reparto de fuerzas de los tres cabos, pausas y bloqueo final comprobados."
+    ],
+    "stillRequired": "Seleccionar productos o diseñar y ensayar esas piezas; no se afirman elegidos materiales, radios, capacidad, motor o freno."
+  }
+}

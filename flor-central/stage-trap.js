@@ -1,4 +1,4 @@
-/* F03 — two-ramp stage and upward-opening trap kinematics, in metres.
+/* F04 — two-ramp stage and upward-opening trap kinematics, in metres.
  * Dimensions are scene proposals. This is not a structural design, a selected
  * actuator, a load rating, or an approved modification of stage/lift equipment.
  */
@@ -38,7 +38,7 @@ export function createStageTrap({config = {}} = {}) {
     mechanismFocus: false
   };
   const root = new THREE.Group();
-  root.name = 'F03_Tarima_dos_rampas_y_trampa_CINEMATICA_PROPUESTA';
+  root.name = 'F04_Tarima_dos_rampas_y_trampa_CINEMATICA_PROPUESTA';
   const groups = {}, parts = [], materials = new Set(), originalMaterials = new Map();
   const group = (code, title, description) => {
     const g = new THREE.Group();
@@ -289,7 +289,7 @@ export function createStageTrap({config = {}} = {}) {
     root.updateMatrixWorld(true);
     const doorBounds = doors.map(d=>{const b=new THREE.Box3().setFromObject(d.leaf);return{min:b.min.toArray(),max:b.max.toArray()};});
     metrics = {
-      revision:'F03',layoutType:'two-ramps-full-width-band',rampCount:2,flatAcrossWidth:true,noXSlopes:true,geometricOnly:true,structuralApproval:false,actuatorSelected:false,trapOpeningDirection:'upward',
+      revision:'F04',layoutType:'two-ramps-full-width-band',rampCount:2,flatAcrossWidth:true,noXSlopes:true,geometricOnly:true,structuralApproval:false,actuatorSelected:false,trapOpeningDirection:'upward',
       baseTopM:base,centralTopM:top,centralPlateauHorizontal:true,deckThicknessM:t,
       flatLengthM:cfg.flatLengthM,flatWidthM:cfg.flatWidthM,
       openingLengthM:cfg.openingLengthM,openingWidthM:cfg.openingWidthM,

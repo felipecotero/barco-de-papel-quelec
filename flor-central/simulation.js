@@ -1,5 +1,5 @@
 /**
- * Flor central F03: cinemática y comparaciones geométricas de estudio.
+ * Flor central F04: cinemática y comparaciones geométricas de estudio.
  * No modela una elevadora concreta, el plegado elástico de acero ni su estabilidad.
  * Magnitudes SI cuando la función las pide expresamente en m, s, kg/m³ y m/s.
  */
@@ -57,7 +57,7 @@ export const DEFAULT_CONFIG_SOURCES = Object.freeze({
   referenceStorageTopM: 1.77,
   platformLengthM: '2,40m de la ficha oficial actual; confirmar dimensiones de la unidad real. El dato previo del usuario se conserva en userInput.',
   platformWidthM: '1,17m de la ficha oficial actual; confirmar dimensiones de la unidad real. El dato previo del usuario se conserva en userInput.',
-  crownDiameterM: '3,00m conservados como referencia circular histórica. F03 usa aros orgánicos con ejes propios comprobados geométricamente; no un accesorio aprobado por fabricante.',
+  crownDiameterM: '3,00m conservados como referencia circular histórica. F04 usa aros orgánicos con ejes propios comprobados geométricamente; no un accesorio aprobado por fabricante.',
   packMode: 'organic usa envolventes elípticas de la escena; la comparación de altura no demuestra encaje horizontal.',
   petalDimensions: 'Cada pétalo4m de largo por3,5m de ancho, confirmado por el usuario.',
   actualMachineMeasurementPending: true,
@@ -70,7 +70,7 @@ const finite = value => typeof value === 'number' && Number.isFinite(value);
 const smooth = x => { const t = clamp(x); return t * t * (3 - 2 * t); };
 const duration = (value, fallback) => finite(value) && value >= 0 ? value : fallback;
 
-/** F03: the complete trap/lift/petal sequence was withdrawn.
+/** F04: the complete trap/lift/petal sequence was withdrawn.
  * Root-only timing lives in app.js and does not assert compact recovery. */
 
 /**
