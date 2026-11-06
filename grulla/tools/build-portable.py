@@ -7,6 +7,7 @@ def names(text):
 def shared_assets(html,Q,prefix):
  import base64
  from pathlib import Path
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/surface-transparency.js[^\"]*\"></script>',lambda m:'<script>'+(Q/'shared/surface-transparency.js').read_text().replace('</script','<\\/script')+'</script>',html)
  css=(Q/'shared/brand.css').read_text()
  for f in (Q/'assets/fonts').glob('*.woff2'):
   css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())

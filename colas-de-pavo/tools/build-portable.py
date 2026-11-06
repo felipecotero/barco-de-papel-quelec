@@ -15,7 +15,7 @@ html=(P/'index.html').read_text();html=re.sub(r'<script type="importmap">.*?</sc
 css=(Q/'shared/brand.css').read_text()
 for f in(Q/'assets/fonts').glob('*.woff2'):css=css.replace('../assets/fonts/'+f.name,data_uri(f))
 for pattern,contents in[(r'<link rel="stylesheet" href="style.css[^"]*">',(P/'style.css').read_text()),(r'<link rel="stylesheet" href="../shared/brand.css[^"]*">',css)]:html=re.sub(pattern,lambda m:'<style>'+contents+'</style>',html)
-for f in['obj-export.js','dimensions.js','studio-render.js']:html=re.sub(r'<script src="../shared/'+re.escape(f)+r'[^"]*"></script>',lambda m:'<script>'+(Q/'shared'/f).read_text().replace('</script','<\\/script')+'</script>',html)
+for f in['obj-export.js','dimensions.js','studio-render.js','surface-transparency.js']:html=re.sub(r'<script src="../shared/'+re.escape(f)+r'[^"]*"></script>',lambda m:'<script>'+(Q/'shared'/f).read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script src="../cauchera/humanos.js[^"]*"></script>',lambda m:'<script>'+(Q/'cauchera/humanos.js').read_text().replace('</script','<\\/script')+'</script>',html)
 logo=data_uri(Q/'assets/logo-colas.svg');html=html.replace('../assets/logo-colas.svg',logo)
 human=json.loads((Q/'cauchera/assets/personas/human.json').read_text());ht={m['texture']:data_uri(Q/'cauchera'/m['texture'])for m in human['meshes']}

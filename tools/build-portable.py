@@ -7,6 +7,7 @@ def names(text):
 def shared_assets(html,Q,prefix):
  import base64
  from pathlib import Path
+ html=re.sub(r'<script src="'+re.escape(prefix)+r'shared/surface-transparency.js[^\"]*\"></script>',lambda m:'<script>'+(Q/'shared/surface-transparency.js').read_text().replace('</script','<\\/script')+'</script>',html)
  css=(Q/'shared/brand.css').read_text()
  for f in (Q/'assets/fonts').glob('*.woff2'):
   css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())
@@ -58,7 +59,7 @@ bundle=core+mod+orb+inline_path_backend(Q)+'window.BARCO_MODEL='+ (P/'model-r05.
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle+'</script>',html);html='\n'.join(re.sub(r'^([ \t]+)',lambda m:re.sub(r' +\t','\t',m.group(1)),line).rstrip() for line in html.splitlines())+'\n';(P/'Abrir-Barco.html').write_text(html)
 print('Portable HTML:',(P/'Abrir-Barco.html').stat().st_size)
 
-if json.loads((P/"model-r05.json").read_text()).get("auxRevision",{}).get("id")=="M02":
+if json.loads((P/"model-r05.json").read_text()).get("auxRevision",{}).get("id")=="M02" and json.loads((P/"model-r05.json").read_text()).get("revision")!="R08":
  (P/"Barco-Agarres-M02.html").write_text(html)
 
 if json.loads((P/"model-r05.json").read_text()).get("revision")=="R06":

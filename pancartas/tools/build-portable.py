@@ -11,7 +11,7 @@ html=(P/'index.html').read_text();html=re.sub(r'<script type="importmap">.*?</sc
 css=(Q/'shared/brand.css').read_text()
 for f in(Q/'assets/fonts').glob('*.woff2'):css=css.replace('../assets/fonts/'+f.name,'data:font/woff2;base64,'+base64.b64encode(f.read_bytes()).decode())
 for pattern,contents in[(r'<link rel="stylesheet" href="style.css[^"]*">',(P/'style.css').read_text()),(r'<link rel="stylesheet" href="../shared/brand.css[^"]*">',css)]:html=re.sub(pattern,lambda m:'<style>'+contents+'</style>',html)
-for f in['obj-export.js','dimensions.js','studio-render.js']:html=re.sub(r'<script src="../shared/'+re.escape(f)+r'[^"]*"></script>',lambda m:'<script>'+(Q/'shared'/f).read_text().replace('</script','<\\/script')+'</script>',html)
+for f in['obj-export.js','dimensions.js','studio-render.js','surface-transparency.js']:html=re.sub(r'<script src="../shared/'+re.escape(f)+r'[^"]*"></script>',lambda m:'<script>'+(Q/'shared'/f).read_text().replace('</script','<\\/script')+'</script>',html)
 logo='data:image/svg+xml;base64,'+base64.b64encode((Q/'assets/logo-pancartas.svg').read_bytes()).decode();html=html.replace('../assets/logo-pancartas.svg',logo)
 model=json.loads((P/'model.json').read_text())
 paths=sorted({f['image'] for d in [model,*model.get('variants',{}).values()] for f in d['artLibrary']})

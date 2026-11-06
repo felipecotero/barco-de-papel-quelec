@@ -5,7 +5,7 @@ P=Path(__file__).resolve().parents[1];Q=P.parent;D=Path(args.qa_directory)if arg
 def data(path,mime):
  payload=path.read_bytes()
  if path.name=='mecanica.html':
-  guide=payload.decode().replace('href="./?rev=F04&amp;vista=mechanism"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/?rev=F04&amp;vista=mechanism"').replace('← Volver al visor','← Ver visor en la web')
+  guide=payload.decode().replace('href="./?rev=F04&amp;vista=mechanism"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/?rev=F04&amp;vista=mechanism"').replace('← Volver al visor','← Ver visor en la web').replace('href="flex.html?rev=F06"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/flex.html?rev=F06"')
   payload=guide.encode()
  return 'data:'+mime+';base64,'+base64.b64encode(payload).decode()
 def names(text):return ','.join((lambda a:f'{a[-1]}:{a[0]}')(x.strip().split(' as '))for x in text.split(',')if x.strip())
@@ -23,6 +23,8 @@ app=app.replace("loader.loadAsync('assets/'+key+'.jpg')","loader.loadAsync(__FLO
 app=app.replace("await fetch('sources.json').then(r=>r.json())",'__FLOR_SOURCES')
 bundle=core+mod+orb+stage+scene+sim+physics+contact+'const __FLOR_TEXTURES='+json.dumps(textures)+';const __FLOR_SOURCES='+(P/'sources.json').read_text()+';\n(()=>{'+app+'})();'
 html=(P/'index.html').read_text();html=re.sub(r'<script type="importmap">.*?</script>','',html)
+html=re.sub(r'<script>const r=new URL\(location.href\).*?</script>','',html,count=1)
+html=html.replace('href="flex.html?rev=F06"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/flex.html?rev=F06"').replace('href="./?rev=F04"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/?rev=F04"')
 html=re.sub(r'<link rel="stylesheet" href="style.css[^"]*">',lambda m:'<style>'+(P/'style.css').read_text()+'</style>',html)
 brand=(Q/'shared/brand.css').read_text()
 for f in(Q/'assets/fonts').glob('*.woff2'):brand=brand.replace('../assets/fonts/'+f.name,data(f,'font/woff2'))
@@ -32,6 +34,7 @@ html=html.replace('href="favicon.svg?v=F04"','href="'+data(P/'favicon.svg','imag
 for filename in['model.json','sources.json','mechanics-guide.json','diagnostico-contactos.json']:html=html.replace('href="'+filename+'" download','href="'+data(P/filename,'application/json')+'" download="Flor-F04-'+filename+'"')
 html=re.sub(r'<script src="../shared/obj-export.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/obj-export.js').read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script src="../shared/studio-render.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/studio-render.js').read_text().replace('</script','<\\/script')+'</script>',html)
+html=re.sub(r'<script src="../shared/surface-transparency.js[^"]*"></script>',lambda m:'<script>'+(Q/'shared/surface-transparency.js').read_text().replace('</script','<\\/script')+'</script>',html)
 html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<script>'+bundle.replace('</script','<\\/script')+'</script>',html)
 html=html.replace('href="mecanica.html"','href="'+data(P/'mecanica.html','text/html')+'" download="Flor-F04-Mecanica.html"')
 html+='\n<!-- Three.js license: '+(Q/'vendor/LICENSE-three.txt').read_text().replace('--','- -')+' -->\n<!-- Montserrat SIL OFL: '+(Q/'assets/fonts/OFL-Montserrat.txt').read_text().replace('--','- -')+' -->\n'

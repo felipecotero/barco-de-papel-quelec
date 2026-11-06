@@ -1,8 +1,14 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I23) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F06 · pétalo continuo](flor-central/flex.html?rev=F06)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I24) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F06 · pétalo continuo](flor-central/flex.html?rev=F06)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
+
+## Transparencia de las superficies
+
+Los siete visores incluyen un deslizador **Transparencia**: cartón Plast del barco y la grulla; láminas e ilustraciones de las pancartas; carcasa de la nave; cubierta de PVC de la cauchera; telas de las colas y de la flor. **0 %** conserva el acabado original, **100 %** permite ver a través, y **Restablecer** vuelve al original. Los bastidores, agarres, cuerdas, personas y luces conservan sus materiales.
+
+El ajuste sólo afecta a la vista: no cambia geometrías, medidas, planos, cálculos ni materiales de las descargas 3D. Se mantiene durante montaje, apertura, viento, cambios de acabado y juego. También está incorporado en los visores autónomos activos. Las vistas anteriores de la flor F04 y F05 conservan su condición de antecedentes y reciben el mismo control para sus paños.
 
 ## Ver los acabados sin esperar
 
@@ -223,3 +229,9 @@ Cuna abierta, collar con hueco para el paño, pasador y tapa de retención con c
 **Cero motores adicionales es una propuesta condicionada a la recuperación del aro real.** Dar cabo sólo retiene o permite moverse; no suministra la fuerza inicial de apertura. El visor muestra una trayectoria prescrita, no una solución dinámica del fleje ni una apertura automática calculada. No se asigna una rigidez, masa, sección resistente o fuerza real sin seleccionar materiales y medir el prototipo conJahirSantos.
 
 [Datos y alcance F06](flor-central/flex-estudio.json). Pétalo nominal4×3,5m; pañoúnico3,994×3,494m y10,96026m² para dejar un borde fijo antes de la envolvente del aro. El dobladillo flexible es una unión aparte. Las longitudes y métrica tienen comprobaciones continuas; la integración del herraje y contexto se revisa por posiciones. Máxima altura intermedia del pétalo≈2,174m sobre raíz. Cinco paquetes, orientación radial, viento, tela real y resistencia siguen pendientes; no se declara resuelto el conjunto. F04 conserva la referencia formal de flor completa. Los seis objetos anteriores y PC02 no cambian; flor sin presupuesto.
+
+## I24 · Transparencia visual / 6 noviembre 2026
+
+Control común de transparencia0–100% en los siete objetos, con etiqueta del material, porcentaje y botón de restauración. El cero conserva exactamente la apariencia de partida, incluida la translucidez que ya tuviera el material. Sólo se cambian materiales temporales al dibujar; las animaciones y exportaciones leen los originales. Los detalles y piezas que se reconstruyen al cambiar opciones se vuelven a seleccionar automáticamente.
+
+La grulla deja ver su bastidor existente al traslucir la piel, sin cambiar de forma permanente el estado de «Ver interior». El estudio rápido actualiza su sombra de contacto y las escenas de trazado de rayos opcional de barco/grulla respetan el mismo porcentaje. Los HTML autónomos activos se han regenerado con el control incorporado y sin peticiones de red al iniciar. No se alteran las versiones de diseño, sus advertencias de fabricación, documentos técnicos, pesos, materiales elegidos o PC02.

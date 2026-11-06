@@ -10,7 +10,7 @@ function install(c){
  workspace.append(controls);const mobile=window.matchMedia('(max-width:680px)');controls.querySelector('#factory-info').open=!mobile.matches;mobile.addEventListener('change',e=>{q('#factory-info').open=!e.matches;if(active)fit();});
  const q=s=>controls.querySelector(s),tags=[];
  for(const side of['A','B']){const el=document.createElement('div');el.className='factory-thickness';el.hidden=true;el.textContent=side+' · 50 mm';workspace.append(el);tags.push({side,el});}
- function mat(color){return new T.MeshStandardMaterial({color,roughness:.9,side:T.DoubleSide});}
+ function mat(color){const m=new T.MeshStandardMaterial({color,roughness:.9,side:T.DoubleSide});m.userData.quelecSurface=true;return m;}
  function mesh(g,m,parent){const o=new T.Mesh(g,m);o.castShadow=true;parent.add(o);return o;}
  function cloneMaterials(o){o.traverse(n=>{if(n.isMesh){n.material=Array.isArray(n.material)?n.material.map(m=>m.clone()):n.material.clone();for(const m of Array.isArray(n.material)?n.material:[n.material]){m.clippingPlanes=null;m.transparent=false;m.opacity=1;m.depthWrite=true;if(m.userData.guideDemo)m.color.set('#dae5cf');}n.visible=true;}});return o;}
  function fade(o,a){o.visible=a>.001;if(!o.visible)return;o.traverse(n=>{if(n.isMesh)for(const m of Array.isArray(n.material)?n.material:[n.material]){m.transparent=a<.999;m.opacity=a;m.depthWrite=a>=.999;}});}

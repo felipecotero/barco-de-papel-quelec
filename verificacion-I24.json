@@ -1,0 +1,381 @@
+{
+  "revision": "I24",
+  "date": "2026-11-06",
+  "scope": "Visual surface transparency only; seven current objects plus F04/F05 flower antecedents.",
+  "controls": {
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "meaning": "Additional transparency: 0 preserves the original finish; 100 makes selected surfaces transparent.",
+    "reset": true,
+    "affectsExports": false,
+    "affectsGeometryOrPhysics": false,
+    "controlsAnimationState": false,
+    "temporaryMaterialSwapsRestoredAfterRender": true
+  },
+  "objects": [
+    {
+      "object": "Barco",
+      "design": "R08",
+      "surfaces": "Cartón Plast, including real PP details and stock sheets",
+      "excludes": "Metal, grips, fasteners, velcro, labels and people",
+      "route": "barco.html?rev=R08-H01&ui=I24"
+    },
+    {
+      "object": "Grulla",
+      "design": "G04",
+      "surfaces": "41 Cartón Plast parts",
+      "excludes": "Structure, cables, lights and labels",
+      "note": "The existing internal frame is revealed temporarily during translucent rendering; its original visibility is then restored.",
+      "route": "grulla/?rev=G04&ui=I24"
+    },
+    {
+      "object": "Pancartas",
+      "design": "PA07",
+      "surfaces": "Panels, covers, reinforcement bands and illustrated paper in all four formats",
+      "excludes": "Posts, blocks, fixings and labels",
+      "route": "pancartas/?rev=PA07&ui=I24"
+    },
+    {
+      "object": "Cauchera",
+      "design": "C04 / PVC C03",
+      "surfaces": "15 PVC cover meshes",
+      "excludes": "Metal core, handles, elastic bands, ties, balls, people and anchor",
+      "route": "cauchera/?rev=C04-virtual&ui=I24"
+    },
+    {
+      "object": "Nave",
+      "design": "N02",
+      "surfaces": "EPS shell and accessories, stock and fabrication blanks",
+      "excludes": "Frames, people, handles, lighting and fixings",
+      "route": "nave/?rev=N02&ui=I24"
+    },
+    {
+      "object": "Colas de pavo",
+      "design": "CP03",
+      "surfaces": "Five cloth membranes, including rebuilt meshes",
+      "excludes": "Ribs, harnesses, people and mechanisms",
+      "route": "colas-de-pavo/?rev=CP03&ui=I24"
+    },
+    {
+      "object": "Flor",
+      "design": "F06; F04 and F05 antecedents preserved",
+      "surfaces": "F06 single cloth; F04 petal, stem and leaf fabrics; F05 cloth panels",
+      "excludes": "Hoops, ribs, cables, cradle, latch, platform and stage",
+      "route": "flor-central/flex.html?rev=F06&ui=I24"
+    }
+  ],
+  "qa": [
+    {
+      "name": "helper-qa",
+      "checks": 19,
+      "allPass": true
+    },
+    {
+      "name": "fans-flower-qa",
+      "checks": 38,
+      "allPass": true
+    },
+    {
+      "name": "fans-flower-portable-qa",
+      "checks": 10,
+      "allPass": true
+    },
+    {
+      "name": "boat-crane-ship",
+      "checks": 36,
+      "allPass": true
+    },
+    {
+      "name": "boat-crane-ship-portable",
+      "checks": 24,
+      "allPass": true
+    },
+    {
+      "name": "signs-cauchera-qa",
+      "checks": 20,
+      "allPass": true
+    },
+    {
+      "name": "signs-cauchera-portable-qa",
+      "checks": 8,
+      "allPass": true
+    }
+  ],
+  "totalChecks": 155,
+  "criticalDesignSources": [
+    {
+      "path": "model-r05.json",
+      "sha256": "97ebc062cf0dbed3e45196b2ebe97a5b89533569595e675982ac3d81cabf9586",
+      "unchanged": true
+    },
+    {
+      "path": "grulla/model.json",
+      "sha256": "1255f8c7bd6953cbb15073cd1f624da605cfdd5c802dc3ea7a66502d5e6f2d2a",
+      "unchanged": true
+    },
+    {
+      "path": "nave/model.json",
+      "sha256": "dc0fc5d7a3417aba08a52c3e2744ddf87c83befdbb426697426312e458ea1eb5",
+      "unchanged": true
+    },
+    {
+      "path": "pancartas/model.json",
+      "sha256": "2df8107e8a95313b5015e5c65add0420fdbbefce141988e1036a870e7c5e344d",
+      "unchanged": true
+    },
+    {
+      "path": "cauchera/model.json",
+      "sha256": "4691e4d1a49b59087910ad94e71bcedc682d58741a28ee76c240993cdbb9828f",
+      "unchanged": true
+    },
+    {
+      "path": "colas-de-pavo/model.json",
+      "sha256": "3ed93d2aaf359e41159a59eb76aa9a7ca303deed4495c8e80af24f0de1265371",
+      "unchanged": true
+    },
+    {
+      "path": "flor-central/model.json",
+      "sha256": "45e9208f74ef7f228d309de8afd235dd7f69a8cb3a99be3b95be3865c0db7fb9",
+      "unchanged": true
+    },
+    {
+      "path": "flor-central/flex-estudio.json",
+      "sha256": "181f6f3512ee8f6c0a787cf486a4d4046844cb090f701b74c7bc1333ef3d8416",
+      "unchanged": true
+    },
+    {
+      "path": "shared/cauchera-model.js",
+      "sha256": "e70ccc41ad894dabff110bbcb3a2939e3e25a0090cbcf973fb11f11cfc75ecf5",
+      "unchanged": true
+    },
+    {
+      "path": "flor-central/ufold-geometry.js",
+      "sha256": "7b2816e7b868ac8461aa8411a01d7f6360f931eeb700c0b05a1a9b631aabb33b",
+      "unchanged": true
+    },
+    {
+      "path": "flor-central/physics-core.js",
+      "sha256": "2b8cfc06143bcd53503592a37d65574b80e07762bcd82d9525ae5ebd99d676df",
+      "unchanged": true
+    },
+    {
+      "path": "flor-central/scene.js",
+      "sha256": "678b38c6cb2c6572f8926f60b656ee671d0a0b028af0aa251dc0f9bdeb58dc8f",
+      "unchanged": true
+    },
+    {
+      "path": "colas-de-pavo/scene.js",
+      "sha256": "74a01e7bb6ebf37c437a311866a11b266fd18fda8c469d4fcae49011d424c5d3",
+      "unchanged": true
+    }
+  ],
+  "standaloneHTML": [
+    "Abrir-Barco.html",
+    "Barco-R08.html",
+    "grulla/Abrir-Grulla.html",
+    "nave/Abrir-Nave.html",
+    "pancartas/Abrir-Pancartas.html",
+    "cauchera/Abrir-Cauchera.html",
+    "colas-de-pavo/Abrir-Colas.html",
+    "flor-central/Abrir-Flor-Central-F04.html"
+  ],
+  "assets": [
+    {
+      "path": "Abrir-Barco.html",
+      "bytes": 4785543,
+      "sha256": "5b83c22703f2f9def9063bc449107ed83e1b0bc10c9bf8021b88b9c32735a482"
+    },
+    {
+      "path": "Barco-R08.html",
+      "bytes": 4785543,
+      "sha256": "5b83c22703f2f9def9063bc449107ed83e1b0bc10c9bf8021b88b9c32735a482"
+    },
+    {
+      "path": "README.md",
+      "bytes": 38037,
+      "sha256": "cf71e945deaa38352873ff58f11b23cdf0a837f51370d109536efff0f68abffe"
+    },
+    {
+      "path": "REVISION.txt",
+      "bytes": 336,
+      "sha256": "d4b407849d7cd78c391fda4b00709fa02830ca702a6f2d41de3cff276782f019"
+    },
+    {
+      "path": "app.js",
+      "bytes": 90849,
+      "sha256": "52205e3c101620a1c450a6c6a09e11828b3495a180d2549bcfc550764684845e"
+    },
+    {
+      "path": "barco.html",
+      "bytes": 13154,
+      "sha256": "5689f3e905fa77be81d164b59204985e993884061a42f65390fb0a9430f185f1"
+    },
+    {
+      "path": "cauchera/Abrir-Cauchera.html",
+      "bytes": 7363050,
+      "sha256": "46f1f017249a52fd5961ce173695d15ec5b454eabe33c168c23d6dba23cd973e"
+    },
+    {
+      "path": "cauchera/app.js",
+      "bytes": 25981,
+      "sha256": "2595dd85e66f62df3996658e7808d2f228261d8b8a171e2b4b82523b04e5b4d0"
+    },
+    {
+      "path": "cauchera/index.html",
+      "bytes": 18296,
+      "sha256": "39550400d5c812ff35d33e67f883cea7f55e5b335f1a2b135cf65f088d63f1d2"
+    },
+    {
+      "path": "cauchera/tools/build-portable.py",
+      "bytes": 7527,
+      "sha256": "cbbca9ba776c2c6a593a71d6eff75e496a27d95bc18c2be7c62bc6586ca855f0"
+    },
+    {
+      "path": "colas-de-pavo/Abrir-Colas.html",
+      "bytes": 16190766,
+      "sha256": "05bae626c477ea0e88e36dac46b1330049e8ed8addce1ccf614deb3b0531746f"
+    },
+    {
+      "path": "colas-de-pavo/app.js",
+      "bytes": 29397,
+      "sha256": "94bcdcddf240150d274572f5c2c4a5d2d913f2037c264ff548fc904b0ae69c16"
+    },
+    {
+      "path": "colas-de-pavo/index.html",
+      "bytes": 15619,
+      "sha256": "76f4cb660dc7f15f7eb14f99dbb33178bfc9f80b3d63fd8cb819e0c8100bf425"
+    },
+    {
+      "path": "colas-de-pavo/tools/build-portable.py",
+      "bytes": 4287,
+      "sha256": "3450ab7749113226248694f7029f168cea05cfadbbba0a9b04c6d1822d28e9a2"
+    },
+    {
+      "path": "flor-central/Abrir-Flor-Central-F04.html",
+      "bytes": 3620656,
+      "sha256": "e9dce4349ca4a95d75665cff3654b5d22cd49b0a54dfd4b363ddb4ec8be95240"
+    },
+    {
+      "path": "flor-central/app.js",
+      "bytes": 56634,
+      "sha256": "029f311f3a7cb47d40d94721d4f04dade85da070b7ebd9d191fd76a161b3a6e8"
+    },
+    {
+      "path": "flor-central/flex-app.js",
+      "bytes": 12035,
+      "sha256": "e5d6e72a3feeb827d286ee2db7fac154a7c76d6ccb271ddbfac999e2f3edbabc"
+    },
+    {
+      "path": "flor-central/flex.html",
+      "bytes": 10030,
+      "sha256": "21d7c724920dbef0d811b3ce87a3f90da2516280977b0ee7dd767d09093a7ca2"
+    },
+    {
+      "path": "flor-central/index.html",
+      "bytes": 31027,
+      "sha256": "3eea892da80cef0242b79d140382f08a6aac04cfa430371d39dc19cd83a36203"
+    },
+    {
+      "path": "flor-central/petalo-app.js",
+      "bytes": 13505,
+      "sha256": "a30211b4af859b328605a07c310f21e23646e5a412a0f5ee608323f5da24b248"
+    },
+    {
+      "path": "flor-central/petalo.html",
+      "bytes": 9993,
+      "sha256": "51c41386949f8a5d9412b2630fafca8683a6d9aca132b505b78b6d76e63b7abf"
+    },
+    {
+      "path": "flor-central/tools/build-portable.py",
+      "bytes": 7276,
+      "sha256": "3efe983ce979cdb1bdf9eeca1e2c0b7d405675cd8619442145cddcb36fe407a4"
+    },
+    {
+      "path": "grulla/Abrir-Grulla.html",
+      "bytes": 3964375,
+      "sha256": "dc0018f5b1f998027840e8a9e88cae4313de1a1717df0832e7c8f499eb93177e"
+    },
+    {
+      "path": "grulla/app.js",
+      "bytes": 36101,
+      "sha256": "499d2c6cfcfcd5f4f7f690c0c340aeecf3676ec8f66d4b39c8acd03bed4511e9"
+    },
+    {
+      "path": "grulla/index.html",
+      "bytes": 13361,
+      "sha256": "36f272f915b85b4e0d4f6cf9b6335d2d50f4978c4606449e7194d6f3b9428149"
+    },
+    {
+      "path": "grulla/tools/build-portable.py",
+      "bytes": 6215,
+      "sha256": "4935a275c3ce17d048437e3e3b06cb4483218868bc7fa262f69d1bc71a537018"
+    },
+    {
+      "path": "index.html",
+      "bytes": 10007,
+      "sha256": "9f91408a81e8e53e965443ffd76a02b489554b4e31a3d1435026f545d49f329c"
+    },
+    {
+      "path": "nave/Abrir-Nave.html",
+      "bytes": 4596547,
+      "sha256": "85a44bce695292a1eab620e0a2193795bc5b9c4d11a50b76e376236647e4518a"
+    },
+    {
+      "path": "nave/app.js",
+      "bytes": 42464,
+      "sha256": "d3e5dac71e7316f8872f1f105ccc677f19be30423300a7c7879c8f4f27b6a74f"
+    },
+    {
+      "path": "nave/fabricacion.js",
+      "bytes": 14964,
+      "sha256": "6411edab7ff58f8824a248c8ac3a10dcdac43872281281489cc2be6c33b369ce"
+    },
+    {
+      "path": "nave/index.html",
+      "bytes": 11874,
+      "sha256": "ff245c0dd88db44484bf7650d36da90e98b9a3d7cfa9dae0dca254f93ec28371"
+    },
+    {
+      "path": "nave/tools/build-portable.py",
+      "bytes": 6400,
+      "sha256": "44a50a000567eb3479448703393dc60d489bc3eabe7aeb6873fb85ac61541424"
+    },
+    {
+      "path": "pancartas/Abrir-Pancartas.html",
+      "bytes": 54288574,
+      "sha256": "d45cb2ec274001d33aa0957422795144ba17513a9f9ded298743bec7c0766d7e"
+    },
+    {
+      "path": "pancartas/app.js",
+      "bytes": 32804,
+      "sha256": "158ff918537405fd206c3fd2d9e4e291aadb42a445821382a063080eaea9f634"
+    },
+    {
+      "path": "pancartas/index.html",
+      "bytes": 12285,
+      "sha256": "da6109a6fc27c602687d9bb3f8bfec7ebfa3a29fadb5808f18cfcdafb729f9d7"
+    },
+    {
+      "path": "pancartas/tools/build-portable.py",
+      "bytes": 3210,
+      "sha256": "d8579b47882212579773c60cf27e837dc89236e3373c825c7eeeb4a8467ee15e"
+    },
+    {
+      "path": "shared/studio-render.js",
+      "bytes": 17678,
+      "sha256": "c423dde99a13930dec52c32d902fb5520790d47a84a48cdc580b8569060f8e8f"
+    },
+    {
+      "path": "shared/surface-transparency.js",
+      "bytes": 7639,
+      "sha256": "2d8a0ae8baef2377100681f576aaf3d5c3eef35bb8365f34b184d612691e826a"
+    },
+    {
+      "path": "tools/build-portable.py",
+      "bytes": 6364,
+      "sha256": "b6bc70d83d7e2873a106e6fb3b851aa9fa20679fa77b6ecf2cae629e43015b37"
+    }
+  ],
+  "costsAndDocuments": "No changes; PC02 and all prior construction caveats retained."
+}

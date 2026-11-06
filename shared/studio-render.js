@@ -273,8 +273,8 @@ return new RoomEnvironment();
    const opts={minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,format:THREE.RGBAFormat,depthBuffer:true};
    const source=new THREE.WebGLRenderTarget(w,w,opts),blurA=new THREE.WebGLRenderTarget(w,w,{...opts,depthBuffer:false}),blurB=new THREE.WebGLRenderTarget(w,w,{...opts,depthBuffer:false});
    const depth=new THREE.MeshDepthMaterial({depthPacking:THREE.BasicDepthPacking,side:THREE.DoubleSide});
-   depth.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('gl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );','gl_FragColor = vec4(0.0,0.0,0.0,pow(1.0-fragCoordZ,2.0)*0.9);');};
-   depth.depthWrite=true;depth.blending=THREE.NoBlending;
+   depth.onBeforeCompile=shader=>{shader.fragmentShader=shader.fragmentShader.replace('gl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );','gl_FragColor = vec4(0.0,0.0,0.0,pow(1.0-fragCoordZ,2.0)*0.9*opacity);');};
+   depth.depthWrite=true;depth.blending=THREE.NoBlending;depth.userData.quelecContactDepth=true;
    const camera=new THREE.OrthographicCamera(-1,1,1,-1,.001,2);camera.up.set(0,0,1);
    const blur=new THREE.ShaderMaterial({uniforms:{map:{value:null},direction:{value:new THREE.Vector2()}},depthTest:false,depthWrite:false,
     vertexShader:'varying vec2 vUv; void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}',
