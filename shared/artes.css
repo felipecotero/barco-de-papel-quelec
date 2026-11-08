@@ -1,0 +1,36 @@
+:root {
+  color-scheme: dark;
+  --background: #101b22;
+  --panel: #192830;
+  --line: #354951;
+  --ink: #f2f2e9;
+  --muted: #b7c6c9;
+  --accent: #e6c99e;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--ink); font: 16px/1.5 Arial, sans-serif; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.gallery { max-width: 1250px; margin: auto; padding: 28px clamp(16px, 4vw, 48px) 50px; }
+.gallery-nav { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-bottom: 28px; }
+.gallery-nav a { text-underline-offset: 4px; }
+.gallery-intro { max-width: 740px; }
+.gallery-kicker { color: var(--accent); letter-spacing: .12em; font: 600 .78rem/1.4 Montserrat, Arial, sans-serif; }
+.gallery h1 { margin: .2em 0 .35em; font: 400 clamp(2.15rem, 5vw, 4rem)/1.03 'Quelec Quiche', Georgia, serif; }
+.gallery h2 { margin: 0 0 4px; font: 400 clamp(1.55rem, 3vw, 2.3rem)/1.2 'Quelec Quiche', Georgia, serif; }
+.gallery p { margin: 0 0 16px; color: var(--muted); }
+.art-group { margin-top: 30px; }
+.art-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 178px), 1fr)); gap: 12px; }
+.art-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.art-card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; background: #14222a; }
+.art-card h3 { margin: 0; font: 600 .96rem/1.4 Montserrat, Arial, sans-serif; }
+.art-card p { margin: 5px 0 12px; font-size: .83rem; }
+.art-meta { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 12px; }
+.art-download { margin-top: auto; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-weight: 600; text-decoration: none; }
+.art-download:hover { background: #293e47; }
+.gallery-foot { margin-top: 30px; }
+
+@media (min-width: 800px) {
+  .art-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}

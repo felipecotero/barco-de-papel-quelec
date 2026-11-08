@@ -11,3 +11,6 @@ header{gap:18px}main{grid-template-columns:minmax(300px,1fr) 405px}aside{padding
 .views button:last-child{grid-column:auto}
 
 .bend-reading{padding:12px 14px;border:1px solid #7c8493;border-radius:7px;margin-top:14px;font:12px/1.5 Arial;color:#cededc}.bend-reading strong{font:600 20px Montserrat,Arial;color:#e4deed}.bend-reading p{font-size:11px;margin:7px 0 0}
+
+.header-actions .artes-action { display: inline-flex; align-items: center; padding: 8px 10px; color: var(--ink, #edf2ed); border: 1px solid var(--line, #3b4c55); border-radius: 6px; text-decoration: none; }
+.header-actions .artes-action:hover { background: #293e47; }

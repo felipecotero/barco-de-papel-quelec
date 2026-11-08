@@ -1,1 +1,1 @@
-I24 / 06.11.2026 / Control visual de transparencia0–100% en barco,grulla,pancartas,cauchera,nave,colaspavo yflor, incluidos antecedentesF04/F05 yvisoresautónomosactivos. Animaciones,geometrías,planos,cálculos,materiales deexportación ycostosPC02 conservados. Versionesdediseño: R08/G04/N02/C04-PVCC03/PA07/CP03/F06 sinmodificar.
+I25 / 08.11.2026 / Descargas de sublimación: 5 artes de la flor central, 3 de flores pequeñas y 2 de colas de pavo. Miniaturas en las galerías y JPG originales a 150 ppp en la entrega artes-sublimacion-2026-11-08 de GitHub.
