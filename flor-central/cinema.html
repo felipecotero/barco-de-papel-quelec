@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10191e">
+  <title>Flor central · Apertura radial F07 · Quelec</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="../shared/brand.css?v=I05">
+  <link rel="stylesheet" href="cinema.css?v=F07">
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../"><img src="favicon.svg" alt=""><span>Quelec<small>TALLER DE OBJETOS</small></span></a>
+    <nav aria-label="Enlaces del taller">
+      <a href="../flores-pequenas/referencia.html?rev=I30">Flores pequeñas ↗</a>
+      <a href="artes.html?rev=I25">Artes de la flor ↓</a>
+      <a href="../">← Taller</a>
+    </nav>
+  </header>
+  <main>
+    <section class="viewer" aria-label="Simulación interactiva de la flor central">
+      <div class="viewport" id="viewport">
+        <div id="loading" role="status">Preparando el visor…</div>
+      </div>
+      <div class="sequence">
+        <div class="playback">
+          <button class="primary" id="play" type="button">▶ Ciclo completo</button>
+          <button id="reset" type="button" title="Volver al inicio">↶ Inicio</button>
+          <output id="progress" for="timeline">0 %</output>
+        </div>
+        <label class="visually-hidden" for="timeline">Recorrido de la flor</label>
+        <input id="timeline" type="range" min="0" max="1000" value="0" aria-valuetext="0 %, guardada">
+        <div class="stages" aria-label="Posiciones de revisión">
+          <button data-stage="0" aria-pressed="true">Guardada</button>
+          <button data-stage="1" aria-pressed="false">Salida plegada</button>
+          <button data-stage="2" aria-pressed="false">Apertura radial</button>
+          <button data-stage="3" aria-pressed="false">Abierta</button>
+        </div>
+      </div>
+    </section>
+    <aside class="panel">
+      <span class="eyebrow">ESTUDIO F07 · CINEMA 4D</span>
+      <h1>Flor central</h1>
+      <p class="intro">Cinco pétalos continuos. Cada punta vuelve sobre el centro al plegarse y se extiende hacia su propio lado al abrir.</p>
+      <div class="view-tools" aria-label="Cámaras">
+        <button data-view="crown" aria-pressed="true" title="Seguir los pétalos durante el ciclo">✿ Corona</button>
+        <button data-view="side" aria-pressed="false" title="Mirar de lado para leer la U">◫ Perfil</button>
+        <button data-view="top" aria-pressed="false" title="Mirar el reparto radial desde arriba">⊙ Planta</button>
+        <button data-view="stage" aria-pressed="false" title="Ver la elevación y la abertura de la tarima">▰ Escena</button>
+      </div>
+      <div class="inspection">
+        <label for="inspect">Pétalos visibles</label>
+        <select id="inspect">
+          <option value="all">Los cinco</option>
+          <option value="0">01 · Crema moteado</option>
+          <option value="1">02 · Cobre óxido</option>
+          <option value="2">03 · Labelo magenta</option>
+          <option value="3">04 · Crema con veta violeta</option>
+          <option value="4">05 · Cobre terracota</option>
+        </select>
+        <label for="opacity">Opacidad del paño <output id="opacity-value" for="opacity">100 %</output></label>
+        <input id="opacity" type="range" min="0" max="100" value="100">
+        <label class="toggle"><input id="context" type="checkbox" checked> Mostrar tarima y elevación</label>
+      </div>
+      <section class="phase" aria-live="polite">
+        <span class="eyebrow" id="phase-kicker">ETAPA 01 / 04</span>
+        <h2 id="phase-title">Guardada</h2>
+        <p id="phase-text"></p>
+      </section>
+      <dl class="readings">
+        <div><dt>Contorno nominal</dt><dd>4,00 × 3,50 m</dd></div>
+        <div><dt>Pliegue desde la raíz</dt><dd>≈ ⅓</dd></div>
+        <div><dt>Piso de la plataforma</dt><dd id="lift-height">—</dd></div>
+        <div><dt>Boca libre del estudio</dt><dd id="opening-size">—</dd></div>
+      </dl>
+      <p class="scope" id="stage-scope"></p>
+      <details>
+        <summary>Alcance de la simulación</summary>
+        <p>El pliegue se mueve sobre el mismo material del pétalo. La punta termina con caída suave. Al regresar se recorre la misma trayectoria en sentido inverso.</p>
+        <p>El soporte de dos aros y los niveles de sujeción reproducen la lógica de la referencia como un montaje de estudio. La separación física, las guías, la recuperación del fleje y el accionamiento requieren prototipo.</p>
+        <a href="flex.html?rev=F06">Ver el estudio de un pétalo F06 ↗</a>
+      </details>
+    </aside>
+  </main>
+  <script type="module" src="cinema-app.js?v=F07"></script>
+</body>
+</html>

@@ -17,6 +17,7 @@ const readout = document.getElementById('position');
 const cycle = document.getElementById('cycle');
 const inspection = document.getElementById('inspection');
 const caseSize = document.getElementById('case-size');
+const review = document.documentElement.dataset.review === 'I30';
 
 async function start() {
   const scene = new THREE.Scene();
@@ -44,11 +45,14 @@ async function start() {
   scene.add(gltf.scene);
   scene.updateMatrixWorld(true);
 
-  const mechanism = createMechanism(THREE, root);
+  const buildMechanism = review ? (await import('./c4d-corolla.js?v=I30')).createC4DMechanism : createMechanism;
+  const mechanism = buildMechanism(THREE, root);
   await mechanism.ready;
   const {crown, caseLocal, boxOuterM} = mechanism.data;
   const format = new Intl.NumberFormat('es-CO', {maximumFractionDigits: 2});
   caseSize.textContent = boxOuterM.map(value => format.format(value)).join(' × ') + ' m';
+  const layerSize = document.getElementById('layer-size');
+  if (layerSize) layerSize.textContent = `${format.format(crown.layerPitchM * 1000)} mm`;
   const localBounds = new THREE.Box3(
     new THREE.Vector3().fromArray(caseLocal.min).addScalar(-1),
     new THREE.Vector3().fromArray(caseLocal.max).addScalar(1),
@@ -74,7 +78,7 @@ async function start() {
     const sphere = bounds.getBoundingSphere(new THREE.Sphere());
     const vertical = THREE.MathUtils.degToRad(camera.fov / 2);
     const angle = Math.min(vertical, Math.atan(Math.tan(vertical) * camera.aspect));
-    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : .88);
+    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : (review ? .98 : .88));
     const direction = showAll
       ? new THREE.Vector3(.85, 1.55, 1.15)
       : new THREE.Vector3(.95, 1.03, 1.25);

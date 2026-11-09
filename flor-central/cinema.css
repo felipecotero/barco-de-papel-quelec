@@ -1,0 +1,63 @@
+:root {
+  color-scheme: dark;
+  --bg: #101b20;
+  --panel: #17272e;
+  --ink: #edf1e9;
+  --muted: #aec0c0;
+  --line: #354b52;
+  --gold: #f1cc91;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--bg); font: 15px/1.5 Arial, sans-serif; }
+button, select { font: inherit; color: inherit; cursor: pointer; border: 1px solid var(--line); background: #1d3139; border-radius: 8px; padding: 8px 10px; }
+a { color: var(--gold); text-decoration: none; }
+button:hover, button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 14px 25px; border-bottom: 1px solid var(--line); min-height: 72px; }
+.brand { display: flex; gap: 10px; align-items: center; font: 26px/1 Quiche, Georgia, serif; color: var(--ink); }
+.brand img { width: 42px; height: 42px; }
+.brand small { display: block; color: var(--muted); font: 9px/1.6 Arial, sans-serif; letter-spacing: .16em; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 18px; font-size: 13px; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) clamp(320px, 28vw, 420px); min-height: calc(100dvh - 72px); }
+.viewer { display: grid; grid-template-rows: minmax(500px, 1fr) auto; min-width: 0; }
+.viewport { position: relative; min-height: 0; overflow: hidden; background: radial-gradient(ellipse at 50% 35%, #324952, #101b20 78%); }
+.viewport canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; touch-action: none; }
+#loading { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; }
+.sequence { border-top: 1px solid var(--line); padding: 14px clamp(12px, 3vw, 35px) 16px; background: #132229; }
+.playback { display: flex; align-items: center; gap: 8px; }
+.playback output { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--muted); }
+.primary { background: var(--gold); border-color: var(--gold); color: #19262a; font-weight: 700; }
+.primary:hover { color: #19262a; background: #ffdaa1; }
+input[type="range"] { width: 100%; accent-color: var(--gold); cursor: pointer; }
+.sequence input { margin: 12px 0; }
+.stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.stages button { font-size: 12px; }
+.panel { min-width: 0; background: var(--panel); border-left: 1px solid var(--line); padding: 25px clamp(16px, 2.4vw, 34px); }
+.eyebrow { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
+h1, h2 { font-family: Quiche, Georgia, serif; line-height: 1.05; font-weight: 400; margin: 8px 0; }
+h1 { font-size: clamp(32px, 3.5vw, 52px); }
+h2 { font-size: 28px; }
+p { margin: 8px 0; }
+.intro { color: #d1ddda; }
+.view-tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin: 18px 0; }
+.inspection { display: grid; gap: 6px; margin-bottom: 15px; }
+.inspection label { font-size: 13px; color: var(--muted); }
+.inspection output { float: right; }
+.inspection .toggle { display: flex; gap: 6px; align-items: center; }
+.phase { border-left: 2px solid var(--gold); background: #112128; padding: 10px 13px; }
+.phase p, .scope, details { font-size: 13px; color: var(--muted); }
+.readings { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 13px 0; }
+.readings div { background: #122128; border-radius: 6px; padding: 8px; }
+.readings dt { font-size: 11px; color: var(--muted); }
+.readings dd { margin: 2px 0 0; color: var(--gold); font-size: 16px; }
+details { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 8px; }
+summary { color: var(--gold); cursor: pointer; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+@media (max-width: 750px) {
+  .site-header { padding: 11px; }
+  nav { gap: 5px 8px; font-size: 11px; }
+  main { display: block; }
+  .viewer { grid-template-rows: clamp(345px, 57dvh, 500px) auto; }
+  .panel { border-left: 0; border-top: 1px solid var(--line); }
+  .stages button { font-size: 10px; padding: 6px 2px; }
+}

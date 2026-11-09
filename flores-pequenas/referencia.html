@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es" data-review="I30">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10191e">
+  <meta name="description" content="Flores pequeñas de Quelec. Vista de una unidad o las seis, ciclo de apertura y guardado con aros flex y artes para sublimación.">
+  <title>Flores pequeñas · Revisión I30 · Quelec</title>
+  <link rel="icon" href="../flor-central/favicon.svg">
+  <link rel="stylesheet" href="../shared/brand.css?v=I05">
+  <link rel="stylesheet" href="../shared/artes.css?v=I25">
+  <link rel="stylesheet" href="style.css?v=I30">
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main>
+    <nav class="breadcrumbs" aria-label="Navegación">
+      <a href="../?rev=I29">← Taller de objetos</a>
+      <a href="./?rev=I29">Versión anterior I29</a>
+      <a href="../flor-central/cinema.html?rev=F07">Flor central F07</a>
+      <a href="#artes">Descargar artes</a>
+    </nav>
+    <div class="kicker">QUELEC · FLORECIMIENTO · REVISIÓN I30</div>
+    <h1>Flores pequeñas</h1>
+    <div class="viewer-tools">
+      <div class="view-actions" role="group" aria-label="Vistas de las flores">
+        <button id="one" type="button" aria-pressed="true" disabled>Una flor</button>
+        <button id="six" type="button" aria-pressed="false" disabled>Las seis</button>
+        <button id="fit" type="button" disabled>Centrar vista</button>
+      </div>
+      <div class="mechanism" role="group" aria-label="Ciclo completo de florecimiento">
+        <label for="travel">Recorrido del ciclo · <output id="position" for="travel">0 % · Guardada</output></label>
+        <input id="travel" type="range" min="0" max="100" value="0" disabled>
+        <div class="motion-actions">
+          <button id="cycle" class="primary-action" type="button" disabled>▶ Ciclo completo</button>
+          <button id="raise" type="button" disabled>↑ Subir y abrir</button>
+          <button id="lower" type="button" disabled>↓ Plegar y bajar</button>
+          <button id="pause" type="button" disabled>Pausar</button>
+        </div>
+      </div>
+    </div>
+    <label class="inspection"><input id="inspection" type="checkbox" checked disabled> Ver dentro de la caja</label>
+    <div id="stage">
+      <img id="poster" src="preview.png?v=I29" width="1172" height="664" alt="Flor pequeña desplegada, sobre su tijera y caja">
+      <p id="status" role="status">Abriendo la revisión del movimiento…</p>
+    </div>
+    <p class="viewer-note">Arrastra para girar y usa la rueda o el gesto de pinza para acercarte.</p>
+    <p class="viewer-note">Los cinco pétalos salen plegados y orientados hacia sus propios lados. Al despejar la boca, la curva en U avanza hacia cada punta y la flor se abre. Para guardarla, el movimiento se reproduce en sentido inverso.</p>
+    <details class="study-note">
+      <summary>Alcance del estudio y tamaño de la caja</summary>
+      <p>La caja ampliada para esta propuesta mide <strong id="case-size">…</strong> por fuera (ancho × fondo × alto). El glTF de Cinema 4D aporta las poses de referencia. En este estudio, el pliegue cerrado se centra a un tercio del largo y cada pétalo conserva su propio rumbo. Los cinco niveles tienen un paso de <strong id="layer-size">…</strong>. Los aros y paños conservan su longitud en la trayectoria del modelo.</p>
+      <p>Es una simulación geométrica para revisar la forma y el recorrido. La transmisión, el fleje, la tela y el montaje se desarrollarán después de revisar este movimiento.</p>
+    </details>
+    <section class="art-group" id="artes" aria-labelledby="title-FP">
+        <h2 id="title-FP">Artes para sublimación</h2>
+        <p>Lienzo de 203,2 × 203,2 cm · 12.000 × 12.000 px · 150 ppp · sRGB</p>
+        <div class="art-grid">
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP01.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP01 · Crema moteado</h3>
+              <p>JPG original · 23,5 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP01-Crema-moteado.jpg" aria-label="Descargar JPG original de FP01 · Crema moteado">↓ Descargar JPG</a>
+            </div>
+          </article>
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP02.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP02 · Cobre ocre</h3>
+              <p>JPG original · 32,2 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP02-Cobre-ocre.jpg" aria-label="Descargar JPG original de FP02 · Cobre ocre">↓ Descargar JPG</a>
+            </div>
+          </article>
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP03.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP03 · Labelo frambuesa</h3>
+              <p>JPG original · 25,1 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP03-Labelo-frambuesa.jpg" aria-label="Descargar JPG original de FP03 · Labelo frambuesa">↓ Descargar JPG</a>
+            </div>
+          </article>
+        </div>
+      </section>
+  </main>
+  <script type="module" src="app.js?v=I30"></script>
+</body>
+</html>

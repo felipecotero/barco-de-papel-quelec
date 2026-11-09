@@ -218,9 +218,9 @@ function buildLift(THREE, unit, design, materials, shapes) {
   return { rig, top, guides, axles, crosses, rods };
 }
 
-export function createMechanism(THREE, root) {
+export function createMechanism(THREE, root, createCorollas = createFlexCorollas) {
   const units = root.children.map(readCadUnit);
-  const flex = createFlexCorollas(THREE, units);
+  const flex = createCorollas(THREE, units);
   const design = designFor(flex.data, units[0].scissor);
   const materials = {
     wall: new THREE.MeshStandardMaterial({ color: 0x886343, roughness: .89 }),
@@ -301,8 +301,8 @@ export function createMechanism(THREE, root) {
     state = {
       progress, opening, bend, fan, liftM: (shift - design.storedShift) * M,
       phase: progress === 0 ? 'Guardada' : progress === 1 ? 'Abierta'
-        : progress <= design.openAt ? 'Pila plegada · salida de la caja'
-          : bend < 1 ? 'Pétalos desdoblándose' : 'Giro de los pétalos alrededor del centro',
+        : flex.describePhase?.(opening) ?? (progress <= design.openAt ? 'Pila plegada · salida de la caja'
+          : bend < 1 ? 'Pétalos desdoblándose' : 'Giro de los pétalos alrededor del centro'),
     };
     return state;
   }
