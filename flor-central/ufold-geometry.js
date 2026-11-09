@@ -14,8 +14,9 @@ const G32=gaussLegendre(32),G64=gaussLegendre(64);
 export function createUFoldPetal(options={}){
  const cfg={lengthM:4,widthM:3.5,minBendRadiusM:.2,openCurvaturePerM:.07,fabricEdgeInsetM:.003,nx:256,ny:64,perimeterSamples:1024,skinHalfThicknessM:.0001,hoopEnvelopeRadiusM:.002,...options};
  if(options.bendRadiusM!==undefined&&options.minBendRadiusM===undefined)cfg.minBendRadiusM=options.bendRadiusM;
- const L=cfg.lengthM,W=cfg.widthM,ell=TAU*cfg.minBendRadiusM,arm=(L-ell)/2,K=cfg.openCurvaturePerM,d=cfg.fabricEdgeInsetM,FL=L-2*d,FW=W-2*d;
+ const L=cfg.lengthM,W=cfg.widthM,ell=TAU*cfg.minBendRadiusM,arm=cfg.foldStartM??(L-ell)/2,K=cfg.openCurvaturePerM,d=cfg.fabricEdgeInsetM,FL=L-2*d,FW=W-2*d;
  if(!(L>0&&W>0&&ell>0&&ell<L&&K>=0&&K*L<Math.PI/2&&d>=0&&FL>0&&FW>0))throw Error('Use positive sizes,0<2πR<L,valid fixed fabric inset,and nonnegative open camber below90degrees.');
+ if(!(arm>=0&&arm+ell<=L))throw Error('The continuous fold band must stay inside the material length.');
  const outlineAt=t=>[L/2*(1-Math.cos(t)),W/2*Math.sin(t)],halfWidth=s=>W/2*Math.sqrt(Math.max(0,1-(2*clamp(s,0,L)/L-1)**2));
  // The membrane is one FIXED, slightly smaller ellipse. Its edge stops before
  // the steel envelope instead of slicing through the centre of the metal.

@@ -1,19 +1,24 @@
-import {createUFoldPetal} from '../flor-central/ufold-geometry.js';
+import {createLanceolatePetal} from './lanceolate-petal.js?v=I28';
 
 const inchesPerMeter = 1 / 0.0254;
-const rootRadiusM = 0.36;
-const rootHeightM = 0.06;
+const oldRootRadiusM = 0.36;
+const rootHeightM = 0.24;
+const layerPitchM = 0.018;
+const postRadiusM = 0.006;
+const postReachM = 0.68;
+const footDepthM = 0.018;
+const armDepthM = 0.006;
 const hoopRadiusM = 0.0022;
 const flangeApothemM = 0.071;
 const flangeBoreRadiusM = 0.051;
-const armTopM = -0.005;
+const armTopM = -0.0045;
 const mountZInches = 56.15;
 const perimeterSamples = 128;
 const tubeSides = 8;
 const design = {
-  labelo: {art: 'FP03', fallback: 0xa63366, lengthM: 0.75, widthM: 0.54, minBendRadiusM: 0.09},
-  copper: {art: 'FP02', fallback: 0xb86328, lengthM: 0.73, widthM: 0.62, minBendRadiusM: 0.09},
-  cream: {art: 'FP01', fallback: 0xe8cebb, lengthM: 0.70, widthM: 0.78, minBendRadiusM: 0.095},
+  labelo: {art: 'FP03', fallback: 0xa63366, lengthM: 1.50, widthM: 0.54},
+  copper: {art: 'FP02', fallback: 0xb86328, lengthM: 1.46, widthM: 0.62},
+  cream: {art: 'FP01', fallback: 0xe8cebb, lengthM: 1.40, widthM: 0.70},
 };
 const layout = [
   ['labelo', 'labelo', 180],
@@ -21,7 +26,11 @@ const layout = [
   ['copper-a', 'copper', 36],
   ['copper-b', 'copper', -36],
   ['cream-b', 'cream', -108],
-].map(([id, type, azimuthDeg]) => ({id, type, azimuthDeg, azimuth: azimuthDeg * Math.PI / 180}));
+].map(([id, type, azimuthDeg], level) => ({
+  id, type, azimuthDeg, azimuth: azimuthDeg * Math.PI / 180,
+  heightM: rootHeightM + level * layerPitchM,
+  rootM: oldRootRadiusM - design[type].lengthM / 2,
+}));
 
 function materialFor(THREE, specification) {
   const material = new THREE.MeshStandardMaterial({
@@ -41,9 +50,10 @@ function materialFor(THREE, specification) {
 }
 
 function buildVariant(THREE, specification) {
-  const model = createUFoldPetal({
-    ...specification, openCurvaturePerM: 0, fabricEdgeInsetM: 0.005,
-    hoopEnvelopeRadiusM: hoopRadiusM, nx: 38, ny: 12, perimeterSamples,
+  const model = createLanceolatePetal({
+    ...specification, foldStartM: specification.lengthM * 0.71, minBendRadiusM: 0.06,
+    openCurvaturePerM: 0, fabricEdgeInsetM: 0.008,
+    hoopEnvelopeRadiusM: hoopRadiusM, nx: 76, ny: 12, perimeterSamples,
   });
   const original = model.state(0);
   const skin = new THREE.BufferGeometry();
@@ -108,28 +118,77 @@ function buildVariant(THREE, specification) {
   return {model, skin, hoop, ...materialFor(THREE, specification), update};
 }
 
-function measure(variants, centerX, centerY, rootZ, nucleusBounds) {
-  function empty() {
-    return {min: nucleusBounds.min.slice(), max: nucleusBounds.max.slice()};
+// Outside the shared flat center each petal is confined to its own wedge.
+// Within the center all overlapping material stays on fixed, staggered planes.
+function measureSeparation(variants) {
+  const halfSector = 34.5 * Math.PI / 180;
+  const steps = 2048;
+  let sharedDiskM = 0;
+  let curvedNearM = Infinity;
+  let curvedSectorGapM = Infinity;
+  for (const {type, rootM} of layout) {
+    const model = variants[type].model;
+    const {lengthM, widthM, foldStartM} = model.config;
+    const state = model.state(0);
+    const shoulder = Math.acos(1 - 2 * foldStartM / lengthM);
+    const sampleMargin = Math.hypot(lengthM, widthM) * Math.PI / (4 * steps);
+    for (const [start, end, curved] of [[0, shoulder, false], [shoulder, Math.PI, true]]) {
+      for (let i = 0; i <= steps; i++) {
+        const angle = start + (end - start) * i / steps;
+        const [s, width] = model.outlineAt(angle);
+        const radial = rootM + state.sectionAt(s).point[0];
+        const sideDistance = radial * Math.sin(halfSector) - Math.abs(width) * Math.cos(halfSector);
+        const margin = sampleMargin + hoopRadiusM;
+        if (curved) {
+          curvedNearM = Math.min(curvedNearM, radial - margin);
+          curvedSectorGapM = Math.min(curvedSectorGapM, sideDistance - margin);
+        } else if (sideDistance <= margin) {
+          sharedDiskM = Math.max(sharedDiskM, Math.hypot(radial, width) + margin);
+        }
+      }
+    }
   }
-  function add(box, axis, value, radius = 0) {
+  const sharedLayerGapM = layerPitchM - 2 * hoopRadiusM;
+  const lowerSupportGapM = layerPitchM + armTopM - armDepthM - hoopRadiusM;
+  const postSectorGapM = postReachM * Math.sin(Math.PI / 5 - halfSector) - postRadiusM;
+  const returnArmSectorGapM = Math.min(...layout.map(p => -p.rootM))
+    * Math.sin(Math.PI / 5 - halfSector) - .006;
+  if (!(curvedNearM > sharedDiskM && curvedSectorGapM > 0 && sharedLayerGapM > 0
+      && lowerSupportGapM > 0 && postReachM - postRadiusM > sharedDiskM
+      && postSectorGapM > 0 && returnArmSectorGapM > 0)) {
+    throw new Error('El contorno propuesto excede el espacio de las capas y los aros.');
+  }
+  return {sharedDiskM, curvedNearM, curvedSectorGapM, sharedLayerGapM,
+    lowerSupportGapM, postSectorGapM, returnArmSectorGapM};
+}
+
+function measure(variants, centerX, centerY, nucleusBounds) {
+  const supportReach = (postReachM + postRadiusM) * inchesPerMeter;
+  const supportTop = mountZInches + (rootHeightM + layerPitchM * (layout.length - 1)) * inchesPerMeter;
+  function empty() {
+    return {
+      min: [Math.min(nucleusBounds.min[0], centerX - supportReach),
+        Math.min(nucleusBounds.min[1], centerY - supportReach), mountZInches],
+      max: [Math.max(nucleusBounds.max[0], centerX + supportReach),
+        Math.max(nucleusBounds.max[1], centerY + supportReach), Math.max(supportTop, nucleusBounds.max[2])],
+    };
+  }
+  function add(box, axis, value, radius) {
     box.min[axis] = Math.min(box.min[axis], value - radius);
     box.max[axis] = Math.max(box.max[axis], value + radius);
   }
+  const speed = Math.hypot(1.50, 0.70) / 2;
+  const margin = (speed * Math.PI / perimeterSamples + hoopRadiusM) * inchesPerMeter;
   function pose(q) {
     const box = empty();
     const states = Object.fromEntries(Object.entries(variants).map(([type, variant]) => [type, variant.model.state(q)]));
-    // For horizontal footprint the derivative with respect to ellipse angle
-    // is bounded by max(L,W)/2. Include the unsampled interval and tube radius.
-    const planMarginInches = (0.78 * Math.PI / (2 * perimeterSamples) + hoopRadiusM) * inchesPerMeter;
-    for (const {type, azimuth} of layout) {
-      const sin = Math.sin(azimuth);
-      const cos = Math.cos(azimuth);
+    for (const {type, azimuth, rootM, heightM} of layout) {
+      const sin = Math.sin(azimuth), cos = Math.cos(azimuth);
       for (const [across, height, length] of states[type].hoop) {
-        const outward = rootRadiusM + length;
-        add(box, 0, centerX + (cos * outward - sin * across) * inchesPerMeter, planMarginInches);
-        add(box, 1, centerY + (sin * outward + cos * across) * inchesPerMeter, planMarginInches);
-        add(box, 2, rootZ + height * inchesPerMeter, hoopRadiusM * inchesPerMeter);
+        const outward = rootM + length;
+        add(box, 0, centerX + (cos * outward - sin * across) * inchesPerMeter, margin);
+        add(box, 1, centerY + (sin * outward + cos * across) * inchesPerMeter, margin);
+        add(box, 2, mountZInches + (heightM + height) * inchesPerMeter, margin);
       }
     }
     return box;
@@ -137,41 +196,23 @@ function measure(variants, centerX, centerY, rootZ, nucleusBounds) {
   const folded = pose(0);
   const open = pose(1);
   const sweep = empty();
-  // For a fixed material point the outward distance is nondecreasing in q,
-  // because 0 <= its tangent angle <= pi and that angle falls with q.
-  for (let axis = 0; axis < 3; axis += 1) {
+  // At a fixed material point the horizontal directrix coordinate increases
+  // monotonically as the fold angle relaxes from pi to zero.
+  for (let axis = 0; axis < 3; axis++) {
     sweep.min[axis] = Math.min(folded.min[axis], open.min[axis]);
     sweep.max[axis] = Math.max(folded.max[axis], open.max[axis]);
   }
   const steps = 64;
-  for (let i = 1; i < steps; i += 1) sweep.max[2] = Math.max(sweep.max[2], pose(i / steps).max[2]);
-  // Height can peak mid-opening. |d height / d q| <= pi L; add the
-  // half-step of this sweep and the unsampled ellipse interval.
-  sweep.max[2] += (Math.PI * 0.75 / (2 * steps) + Math.PI * 0.78 / (2 * perimeterSamples)) * inchesPerMeter;
-  folded.max[2] += Math.PI * 0.78 / (2 * perimeterSamples) * inchesPerMeter;
+  for (let i = 1; i < steps; i++) sweep.max[2] = Math.max(sweep.max[2], pose(i / steps).max[2]);
+  sweep.max[2] += Math.PI * 1.50 / (2 * steps) * inchesPerMeter;
 
-  let maximumAngle = 0;
-  const sectorSteps = 1024;
-  for (const {model} of Object.values(variants)) {
-    const state = model.state(0);
-    for (let i = 0; i <= sectorSteps; i += 1) {
-      const [s, width] = model.outlineAt(i * Math.PI / sectorSteps);
-      const radius = rootRadiusM + state.sectionAt(s).point[0];
-      maximumAngle = Math.max(maximumAngle, Math.atan2(Math.abs(width), radius));
-    }
-  }
-  // Add the hoop radius and a derivative bound for the unmeasured half-step
-  // of the polar angle. q=0 is the widest azimuth for each material point.
-  maximumAngle += Math.asin(hoopRadiusM / rootRadiusM)
-    + 0.78 / (2 * rootRadiusM) * Math.PI / (2 * sectorSteps);
+  const nucleusGapM = (mountZInches + rootHeightM * inchesPerMeter - nucleusBounds.max[2]) / inchesPerMeter - hoopRadiusM;
+  if (nucleusGapM <= 0) throw new Error('El núcleo toca la capa inferior.');
   return {
     folded, open, sweep, baseZ: sweep.min[2], mountZ: mountZInches,
-    rootRadiusM, unitsPerMeter: inchesPerMeter,
-    maxSectorHalfDeg: maximumAngle * 180 / Math.PI,
-    sectorMarginDeg: 36 - maximumAngle * 180 / Math.PI,
-    petals: layout.map(({id, type, azimuthDeg}) => ({
-      id, azimuthDeg, art: design[type].art, ...variants[type].model.design,
-      minBendRadiusM: variants[type].model.config.minBendRadiusM,
+    layerPitchM, nucleusGapM, ...measureSeparation(variants),
+    petals: layout.map(({id, type, azimuthDeg, rootM, heightM}) => ({
+      id, azimuthDeg, art: design[type].art, rootM, heightM, ...variants[type].model.design,
     })),
   };
 }
@@ -183,7 +224,7 @@ export function createFlexCorollas(THREE, units) {
   const flangeShape = new THREE.Shape();
   const flangeVertexRadius = flangeApothemM / Math.cos(Math.PI / 5);
   for (const [index, {azimuth}] of [...layout].reverse().entries()) {
-    const corner = azimuth + Math.PI / 5;
+    const corner = azimuth + Math.PI + Math.PI / 5;
     const x = flangeVertexRadius * Math.cos(corner);
     const y = flangeVertexRadius * Math.sin(corner);
     if (index === 0) flangeShape.moveTo(x, y);
@@ -194,7 +235,7 @@ export function createFlexCorollas(THREE, units) {
   flangeHole.absarc(0, 0, flangeBoreRadiusM, 0, 2 * Math.PI, true);
   flangeShape.holes.push(flangeHole);
   const flangeGeometry = new THREE.ExtrudeGeometry(flangeShape, {depth: 0.052, bevelEnabled: false, curveSegments: 48});
-  const carrierArmGeometry = new THREE.BoxGeometry(rootRadiusM - flangeApothemM, 0.024, 0.020);
+  const footGeometry = new THREE.BoxGeometry(postReachM - flangeApothemM + postRadiusM, .022, footDepthM);
   const saddleHeightM = -hoopRadiusM - armTopM;
   const saddleGeometry = new THREE.BoxGeometry(0.016, 0.022, saddleHeightM);
 
@@ -206,7 +247,6 @@ export function createFlexCorollas(THREE, units) {
     const sourceBounds = source.geometry.boundingBox.clone().applyMatrix4(source.matrix);
     const center = sourceBounds.getCenter(new THREE.Vector3()).add(unit.corolla.position);
     const plateTopZ = mountZInches;
-    const rootZ = plateTopZ + rootHeightM * inchesPerMeter;
 
     const carrier = new THREE.Group();
     carrier.name = 'Corola de estudio con cinco aros flex';
@@ -220,31 +260,41 @@ export function createFlexCorollas(THREE, units) {
 
     const flex = new THREE.Group();
     flex.name = 'Portacorolas radial con un paño por pétalo';
-    flex.position.set(center.x, center.y, rootZ);
+    flex.position.set(center.x, center.y, plateTopZ);
     flex.scale.setScalar(inchesPerMeter);
     carrier.add(flex);
     const flange = new THREE.Mesh(flangeGeometry, carrierMaterial);
     flange.name = 'Collar central con hueco alrededor del núcleo';
-    flange.position.z = -rootHeightM;
     flex.add(flange);
 
-    const petals = layout.map(({id, type, azimuth}) => {
+    const petals = layout.map(({id, type, azimuth, rootM, heightM}) => {
       const radial = new THREE.Group();
       radial.name = id;
       radial.rotation.z = azimuth;
       flex.add(radial);
 
-      const carrierArm = new THREE.Mesh(carrierArmGeometry, carrierMaterial);
-      carrierArm.name = 'Brazo radial bajo la raíz';
-      carrierArm.position.set((flangeApothemM + rootRadiusM) / 2, 0, armTopM - 0.010);
+      const foot = new THREE.Mesh(footGeometry, carrierMaterial);
+      foot.name = 'Base radial del soporte de capa';
+      foot.position.set(-(flangeApothemM + postReachM + postRadiusM) / 2, 0, footDepthM / 2);
+      radial.add(foot);
+      const topZ = heightM + armTopM;
+      const postGeometry = new THREE.CylinderGeometry(postRadiusM, postRadiusM, topZ - footDepthM, 16).rotateX(Math.PI / 2);
+      const post = new THREE.Mesh(postGeometry, carrierMaterial);
+      post.name = 'Montante exterior a los pétalos';
+      post.position.set(-postReachM, 0, (topZ + footDepthM) / 2);
+      radial.add(post);
+      const armLength = postReachM - postRadiusM + rootM;
+      const carrierArm = new THREE.Mesh(new THREE.BoxGeometry(armLength, .012, armDepthM), carrierMaterial);
+      carrierArm.name = 'Soporte horizontal de capa';
+      carrierArm.position.set((rootM - postReachM + postRadiusM) / 2, 0, topZ - armDepthM / 2);
       radial.add(carrierArm);
       const collar = new THREE.Mesh(saddleGeometry, carrierMaterial);
       collar.name = 'Silla tangente bajo la raíz del aro';
-      collar.position.set(rootRadiusM - 0.004, 0, armTopM + saddleHeightM / 2);
+      collar.position.set(rootM - 0.004, 0, topZ + saddleHeightM / 2);
       radial.add(collar);
 
       const group = new THREE.Group();
-      group.position.x = rootRadiusM;
+      group.position.set(rootM, 0, heightM);
       // F06 [across, up, outward] → CAD [outward, across, up].
       group.rotation.set(Math.PI / 2, 0, Math.PI / 2, 'ZYX');
       radial.add(group);
@@ -255,17 +305,17 @@ export function createFlexCorollas(THREE, units) {
       hoop.name = 'Aro continuo sin bisagras';
       cloth.castShadow = cloth.receiveShadow = hoop.castShadow = true;
       group.add(cloth, hoop);
-      return {id, type, group, cloth, hoop, collar, carrierArm};
+      return {id, type, group, cloth, hoop, collar, carrierArm, post, foot};
     });
 
     unit.corolla.visible = false;
-    return {carrier, flex, nucleus, petals, centerX: center.x, centerY: center.y, rootZ,
+    return {carrier, flex, nucleus, petals, centerX: center.x, centerY: center.y,
       nucleusBounds: {min: nucleusBounds.min.toArray(), max: nucleusBounds.max.toArray()}};
   }
 
   const corollas = units.map(instance);
   const first = corollas[0];
-  const data = Object.freeze(measure(variants, first.centerX, first.centerY, first.rootZ, first.nucleusBounds));
+  const data = Object.freeze(measure(variants, first.centerX, first.centerY, first.nucleusBounds));
   let currentOpening = 0;
   function setOpening(value) {
     if (!Number.isFinite(value)) return currentOpening;

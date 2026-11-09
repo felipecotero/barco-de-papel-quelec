@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from '../vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { createMechanism } from './mechanism.js?v=I27';
+import { createMechanism } from './mechanism.js?v=I28';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -37,7 +37,7 @@ async function start() {
   key.position.set(-3, 8, 5);
   scene.add(key);
 
-  const gltf = await new GLTFLoader().loadAsync('Flores-pequenas.glb?v=I27');
+  const gltf = await new GLTFLoader().loadAsync('Flores-pequenas.glb?v=I28');
   const root = gltf.scene.children[0];
   const flowers = root.children.slice();
   if (flowers.length !== 6) throw new Error('Se esperaban seis flores en el modelo.');
@@ -74,10 +74,10 @@ async function start() {
     const sphere = bounds.getBoundingSphere(new THREE.Sphere());
     const vertical = THREE.MathUtils.degToRad(camera.fov / 2);
     const angle = Math.min(vertical, Math.atan(Math.tan(vertical) * camera.aspect));
-    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : .89);
+    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : .97);
     const direction = showAll
       ? new THREE.Vector3(.85, 1.55, 1.15)
-      : new THREE.Vector3(.95, .68, 1.25);
+      : new THREE.Vector3(.95, 1.03, 1.25);
     controls.target.copy(sphere.center);
     camera.position.copy(sphere.center).addScaledVector(direction.normalize(), distance);
     camera.near = Math.max(.01, sphere.radius / 120);
