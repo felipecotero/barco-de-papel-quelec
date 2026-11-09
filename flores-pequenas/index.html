@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#10191e">
-  <meta name="description" content="Flores pequeñas de Quelec. Vista de una unidad o las seis, recorrido de la tijera y artes para sublimación.">
+  <meta name="description" content="Flores pequeñas de Quelec. Vista de una unidad o las seis, ciclo de apertura y guardado con aros flex y artes para sublimación.">
   <title>Flores pequeñas · Quelec</title>
   <link rel="icon" href="../flor-central/favicon.svg">
   <link rel="stylesheet" href="../shared/brand.css?v=I05">
   <link rel="stylesheet" href="../shared/artes.css?v=I25">
-  <link rel="stylesheet" href="style.css?v=I26">
+  <link rel="stylesheet" href="style.css?v=I27">
   <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
 </head>
 <body>
   <main>
     <nav class="breadcrumbs" aria-label="Navegación">
-      <a href="../?rev=I26">← Taller de objetos</a>
+      <a href="../?rev=I27">← Taller de objetos</a>
       <a href="#artes">Descargar artes</a>
     </nav>
     <div class="kicker">QUELEC · FLORECIMIENTO</div>
@@ -26,22 +26,29 @@
         <button id="six" type="button" aria-pressed="false" disabled>Las seis</button>
         <button id="fit" type="button" disabled>Centrar vista</button>
       </div>
-      <div class="mechanism" role="group" aria-label="Mecanismo de tijera">
-        <label for="travel">Recorrido de la tijera · <output id="position" for="travel">100 % · Desplegada</output></label>
-        <input id="travel" type="range" min="0" max="100" value="100" disabled>
+      <div class="mechanism" role="group" aria-label="Ciclo completo de florecimiento">
+        <label for="travel">Recorrido del ciclo · <output id="position" for="travel">0 % · Guardada</output></label>
+        <input id="travel" type="range" min="0" max="100" value="0" disabled>
         <div class="motion-actions">
-          <button id="raise" type="button" disabled>↑ Elevar</button>
-          <button id="lower" type="button" disabled>↓ Bajar</button>
+          <button id="cycle" class="primary-action" type="button" disabled>▶ Ciclo completo</button>
+          <button id="raise" type="button" disabled>↑ Subir y abrir</button>
+          <button id="lower" type="button" disabled>↓ Plegar y bajar</button>
           <button id="pause" type="button" disabled>Pausar</button>
         </div>
       </div>
     </div>
+    <label class="inspection"><input id="inspection" type="checkbox" checked disabled> Ver dentro de la caja</label>
     <div id="stage">
-      <img id="poster" src="preview.png" width="1154" height="644" alt="Flor pequeña desplegada, sobre su tijera y caja">
-      <p id="status" role="status">Abriendo el modelo original…</p>
+      <img id="poster" src="preview.png?v=I27" width="1172" height="664" alt="Flor pequeña desplegada, sobre su tijera y caja">
+      <p id="status" role="status">Abriendo el estudio de los aros flex…</p>
     </div>
     <p class="viewer-note">Arrastra para girar y usa la rueda o el gesto de pinza para acercarte.</p>
-    <p class="viewer-note">El visor muestra cómo la tijera eleva y baja la corola entre la posición baja de ensayo y la desplegada. El guardado completo y la apertura de los pétalos quedan pendientes de prueba.</p>
+    <p class="viewer-note">La tijera saca los cinco pétalos plegados en U. Los aros se abren mientras siguen subiendo, una vez sobre el borde. Al bajar se pliegan antes de volver a entrar.</p>
+    <details class="study-note">
+      <summary>Alcance del estudio y tamaño de la caja</summary>
+      <p>La caja ampliada para esta propuesta mide <strong id="case-size">…</strong> por fuera (ancho × fondo × alto). Los aros son continuos, como los de un reflector flex. Esta trayectoria usa un pliegue en U y conserva las dimensiones del paño.</p>
+      <p>El visor comprueba holguras geométricas en esta trayectoria. La compactación en vueltas, el sistema que plegará los aros, el fleje y la tela deben probarse en un prototipo.</p>
+    </details>
     <section class="art-group" id="artes" aria-labelledby="title-FP">
         <h2 id="title-FP">Artes para sublimación</h2>
         <p>Lienzo de 203,2 × 203,2 cm · 12.000 × 12.000 px · 150 ppp · sRGB</p>
@@ -73,6 +80,6 @@
         </div>
       </section>
   </main>
-  <script type="module" src="app.js?v=I26"></script>
+  <script type="module" src="app.js?v=I27"></script>
 </body>
 </html>

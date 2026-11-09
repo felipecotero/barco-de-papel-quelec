@@ -34,3 +34,10 @@ button:disabled { opacity: .53; cursor: default; }
 .viewer-note { margin: 12px 0 0; color: var(--muted); }
 #artes { margin: 30px 0 0; }
 #artes .art-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); max-width: 840px; }
+
+.primary-action { background: #cbdcbc; border-color: #cbdcbc; color: #21352b; font-weight: 600; }
+.inspection { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; }
+.inspection input { accent-color: var(--accent); }
+.study-note { margin-top: 15px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 7px; }
+.study-note summary { color: var(--accent); cursor: pointer; }
+.study-note p { margin: 8px 0 0; color: var(--muted); }

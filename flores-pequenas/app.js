@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from '../vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { createMechanism } from './mechanism.js?v=I26';
+import { createMechanism } from './mechanism.js?v=I27';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -14,6 +14,9 @@ const lower = document.getElementById('lower');
 const pause = document.getElementById('pause');
 const travel = document.getElementById('travel');
 const readout = document.getElementById('position');
+const cycle = document.getElementById('cycle');
+const inspection = document.getElementById('inspection');
+const caseSize = document.getElementById('case-size');
 
 async function start() {
   const scene = new THREE.Scene();
@@ -34,24 +37,37 @@ async function start() {
   key.position.set(-3, 8, 5);
   scene.add(key);
 
-  const gltf = await new GLTFLoader().loadAsync('Flores-pequenas.glb?v=I26');
+  const gltf = await new GLTFLoader().loadAsync('Flores-pequenas.glb?v=I27');
   const root = gltf.scene.children[0];
   const flowers = root.children.slice();
   if (flowers.length !== 6) throw new Error('Se esperaban seis flores en el modelo.');
   scene.add(gltf.scene);
   scene.updateMatrixWorld(true);
 
-  const individualBounds = new THREE.Box3().setFromObject(flowers[0], true);
-  const groupBounds = new THREE.Box3().setFromObject(root, true);
   const mechanism = createMechanism(THREE, root);
+  await mechanism.ready;
+  const {crown, caseLocal, boxOuterM} = mechanism.data;
+  const format = new Intl.NumberFormat('es-CO', {maximumFractionDigits: 2});
+  caseSize.textContent = boxOuterM.map(value => format.format(value)).join(' × ') + ' m';
+  const localBounds = new THREE.Box3(
+    new THREE.Vector3().fromArray(caseLocal.min).addScalar(-1),
+    new THREE.Vector3().fromArray(caseLocal.max).addScalar(1),
+  );
+  localBounds.union(new THREE.Box3(new THREE.Vector3().fromArray(crown.sweep.min),
+    new THREE.Vector3().fromArray(crown.sweep.max)));
+  const unitBounds = flowers.map(flower => localBounds.clone().applyMatrix4(flower.matrixWorld));
+  const individualBounds = unitBounds[0];
+  const groupBounds = new THREE.Box3();
+  unitBounds.forEach(bounds => groupBounds.union(bounds));
   const grid = new THREE.GridHelper(12, 24, '#516871', '#324a53');
   scene.add(grid);
   stage.appendChild(renderer.domElement);
   poster.hidden = true;
 
   let showAll = false;
-  let progress = 1;
+  let progress = 0;
   let animation = 0;
+  let hold = 0;
 
   function centerView() {
     const bounds = showAll ? groupBounds : individualBounds;
@@ -85,12 +101,10 @@ async function start() {
 
   function setProgress(value) {
     progress = THREE.MathUtils.clamp(value, 0, 1);
-    mechanism.setProgress(progress);
+    const state = mechanism.setProgress(progress);
     const percent = Math.round(progress * 100);
     travel.value = String(percent);
-    let label = percent + ' %';
-    if (progress === 0) label += ' · Posición baja';
-    if (progress === 1) label += ' · Desplegada';
+    const label = percent + ' % · ' + state.phase;
     readout.textContent = label;
     travel.setAttribute('aria-valuetext', label);
     raise.disabled = progress === 1;
@@ -99,30 +113,41 @@ async function start() {
   }
 
   function stopAnimation() {
-    if (animation) cancelAnimationFrame(animation);
-    animation = 0;
+    cancelAnimationFrame(animation);
+    clearTimeout(hold);
+    animation = hold = 0;
     pause.disabled = true;
   }
 
-  function moveTo(target) {
+  function run(targets) {
     stopAnimation();
-    const from = progress;
-    if (target === from) return;
-    const duration = Math.max(500, Math.abs(target - from) * 4000);
-    const began = performance.now();
     pause.disabled = false;
-    const frame = now => {
-      const t = Math.min(1, (now - began) / duration);
-      if (t >= 1) {
-        setProgress(target);
+    const queue = targets.slice();
+    function next() {
+      while (queue.length && queue[0] === progress) queue.shift();
+      if (!queue.length) {
         stopAnimation();
         return;
       }
-      const eased = t * t * (3 - 2 * t);
-      setProgress(THREE.MathUtils.lerp(from, target, eased));
+      const target = queue.shift();
+      const from = progress;
+      const duration = Math.max(500, Math.abs(target - from) * 6800);
+      const began = performance.now();
+      function frame(now) {
+        const t = Math.min(1, (now - began) / duration);
+        if (t === 1) {
+          setProgress(target);
+          if (target === 1 && queue.length) hold = setTimeout(next, 850);
+          else next();
+          return;
+        }
+        const eased = t * t * (3 - 2 * t);
+        setProgress(THREE.MathUtils.lerp(from, target, eased));
+        animation = requestAnimationFrame(frame);
+      }
       animation = requestAnimationFrame(frame);
-    };
-    animation = requestAnimationFrame(frame);
+    }
+    next();
   }
 
   function resize() {
@@ -138,9 +163,14 @@ async function start() {
   one.onclick = () => setView(false);
   six.onclick = () => setView(true);
   fit.onclick = centerView;
-  raise.onclick = () => moveTo(1);
-  lower.onclick = () => moveTo(0);
+  raise.onclick = () => run([1]);
+  lower.onclick = () => run([0]);
+  cycle.onclick = () => run([0, 1, 0]);
   pause.onclick = stopAnimation;
+  inspection.onchange = () => {
+    mechanism.setInspection(inspection.checked);
+    draw();
+  };
   travel.oninput = () => {
     const value = Number(travel.value);
     stopAnimation();
@@ -149,9 +179,11 @@ async function start() {
 
   resize();
   setView(false);
-  setProgress(1);
+  setProgress(0);
+  mechanism.setInspection(inspection.checked);
+  draw();
   new ResizeObserver(resize).observe(stage);
-  for (const control of [one, six, fit, travel]) control.disabled = false;
+  for (const control of [one, six, fit, travel, cycle, inspection]) control.disabled = false;
   status.hidden = true;
   stage.dataset.ready = 'true';
 }
