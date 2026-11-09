@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from '../vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { createMechanism } from './mechanism.js?v=I28.1';
+import { createMechanism } from './mechanism.js?v=I29';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -74,7 +74,7 @@ async function start() {
     const sphere = bounds.getBoundingSphere(new THREE.Sphere());
     const vertical = THREE.MathUtils.degToRad(camera.fov / 2);
     const angle = Math.min(vertical, Math.atan(Math.tan(vertical) * camera.aspect));
-    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : .97);
+    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : .88);
     const direction = showAll
       ? new THREE.Vector3(.85, 1.55, 1.15)
       : new THREE.Vector3(.95, 1.03, 1.25);

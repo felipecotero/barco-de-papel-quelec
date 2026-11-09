@@ -1,4 +1,4 @@
-import { createFlexCorollas } from './flex-corolla.js?v=I28.1';
+import { createFlexCorollas } from './flex-corolla.js?v=I29';
 
 const M = 0.0254; // Local coordinates of each CAD instance are inches.
 const LEVELS = 5;
@@ -62,7 +62,7 @@ function designFor(data, scissor) {
   ];
   // The same threshold is used on the way down. Every moving crown point is
   // already above the rim before its horizontal envelope may leave the mouth.
-  const openAt = (RIM_Z + CLEARANCE - sweep.min[2] - storedShift) / -storedShift;
+  const openAt = (RIM_Z + CLEARANCE - data.openingMinZ - storedShift) / -storedShift;
   const parallelGap = Math.min(
     LOW_RISE * (FIXED_X - lowX) / length,
     openRise * (FIXED_X - OPEN_X) / length,
@@ -270,9 +270,9 @@ export function createMechanism(THREE, root) {
     const x = design.sliderAt(rise);
     const span = FIXED_X - x;
     const center = (x + FIXED_X) / 2;
-    const opening = THREE.MathUtils.smoothstep(progress, design.openAt, 1);
+    const opening = THREE.MathUtils.clamp((progress - design.openAt) / (1 - design.openAt), 0, 1);
 
-    flex.setOpening(opening);
+    const {bend, fan} = flex.setOpening(opening);
     flex.setLift(shift);
     for (const {lift} of units) {
       lift.top.position.z = liftZ;
@@ -299,9 +299,10 @@ export function createMechanism(THREE, root) {
       }
     }
     state = {
-      progress, opening, liftM: (shift - design.storedShift) * M,
+      progress, opening, bend, fan, liftM: (shift - design.storedShift) * M,
       phase: progress === 0 ? 'Guardada' : progress === 1 ? 'Abierta'
-        : progress <= design.openAt ? 'Paso por la boca · plegada' : 'Pétalos sobre la boca',
+        : progress <= design.openAt ? 'Pila plegada · salida de la caja'
+          : bend < 1 ? 'Pétalos desdoblándose' : 'Giro de los pétalos alrededor del centro',
     };
     return state;
   }

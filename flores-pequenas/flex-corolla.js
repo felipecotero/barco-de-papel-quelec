@@ -1,20 +1,22 @@
-import {createLanceolatePetal} from './lanceolate-petal.js?v=I28.1';
+import {createNestedFold} from './nested-fold.js?v=I29';
 
 const inchesPerMeter = 1 / 0.0254;
-const oldRootRadiusM = 0.36;
-const rootHeightM = 0.24;
+const bottomLayerM = 0.24;
 const layerPitchM = 0.018;
-const postRadiusM = 0.006;
-const postReachM = 0.68;
-const footDepthM = 0.018;
-const armDepthM = 0.006;
+const foldStartM = 0.32;
+const bendRadiusM = 0.058;
+const pivotStationM = 0.255;
+const referenceLengthM = 1.57;
+const pivotHalfM = 0.033;
+const shaftRadiusM = 0.022;
+const boreRadiusM = 0.0225;
+const capHeightM = 0.010;
 const hoopRadiusM = 0.0022;
-const flangeApothemM = 0.071;
-const flangeBoreRadiusM = 0.051;
-const armTopM = -0.0045;
 const mountZInches = 56.15;
-const perimeterSamples = 128;
+const perimeterSamples = 160;
 const tubeSides = 8;
+const foldedAzimuth = -36 * Math.PI / 180;
+const unfoldEnd = 0.62;
 const design = {
   labelo: {art: 'FP03', fallback: 0xa63366, lengthM: 1.50, widthM: 0.54},
   copper: {art: 'FP02', fallback: 0xb86328, lengthM: 1.46, widthM: 0.62},
@@ -26,11 +28,17 @@ const layout = [
   ['copper-a', 'copper', 36],
   ['copper-b', 'copper', -36],
   ['cream-b', 'cream', -108],
-].map(([id, type, azimuthDeg], level) => ({
-  id, type, azimuthDeg, azimuth: azimuthDeg * Math.PI / 180,
-  heightM: rootHeightM + level * layerPitchM,
-  rootM: oldRootRadiusM - design[type].lengthM / 2,
-}));
+].map(([id, type, azimuthDeg], level) => {
+  const delta = azimuthDeg * Math.PI / 180 - foldedAzimuth;
+  const layerOffsetM = level * layerPitchM;
+  // Cut each leaf's material stations along its offset curve so the peak
+  // curvature of the folded leaf is exactly at its own first third.
+  const materialStartM = foldStartM + Math.PI * bendRadiusM + layerOffsetM * Math.PI / 2
+    - design[type].lengthM / 3;
+  return {id, type, azimuthDeg, delta: Math.atan2(Math.sin(delta), Math.cos(delta)),
+    layerOffsetM, materialStartM, localPivotM: pivotStationM - materialStartM};
+});
+const topLayerM = bottomLayerM + (layout.length - 1) * layerPitchM;
 
 function materialFor(THREE, specification) {
   const material = new THREE.MeshStandardMaterial({
@@ -49,11 +57,12 @@ function materialFor(THREE, specification) {
   return {material, ready};
 }
 
-function buildVariant(THREE, specification) {
-  const model = createLanceolatePetal({
-    ...specification, foldStartM: specification.lengthM * 0.71, minBendRadiusM: 0.06,
-    openCurvaturePerM: 0, fabricEdgeInsetM: 0.008,
-    hoopEnvelopeRadiusM: hoopRadiusM, nx: 76, ny: 12, perimeterSamples,
+function buildVariant(THREE, specification, petal) {
+  const model = createNestedFold({
+    ...specification, referenceLengthM, layerOffsetM: petal.layerOffsetM, materialStartM: petal.materialStartM,
+    foldStartM, minBendRadiusM: bendRadiusM, pivotStationM: petal.localPivotM, pivotHalfM,
+    fabricEdgeInsetM: 0.008, hoopEnvelopeRadiusM: hoopRadiusM,
+    nx: 76, ny: 12, perimeterSamples,
   });
   const original = model.state(0);
   const skin = new THREE.BufferGeometry();
@@ -118,126 +127,112 @@ function buildVariant(THREE, specification) {
   return {model, skin, hoop, ...materialFor(THREE, specification), update};
 }
 
-// Outside the shared flat center each petal is confined to its own wedge.
-// Within the center all overlapping material stays on fixed, staggered planes.
-function measureSeparation(variants) {
-  const halfSector = 34.5 * Math.PI / 180;
-  const steps = 2048;
-  let sharedDiskM = 0;
-  let curvedNearM = Infinity;
-  let curvedSectorGapM = Infinity;
-  for (const {type, rootM} of layout) {
-    const model = variants[type].model;
-    const {lengthM, widthM, foldStartM} = model.config;
-    const state = model.state(0);
-    const shoulder = Math.acos(1 - 2 * foldStartM / lengthM);
-    const sampleMargin = Math.hypot(lengthM, widthM) * Math.PI / (4 * steps);
-    for (const [start, end, curved] of [[0, shoulder, false], [shoulder, Math.PI, true]]) {
-      for (let i = 0; i <= steps; i++) {
-        const angle = start + (end - start) * i / steps;
-        const [s, width] = model.outlineAt(angle);
-        const radial = rootM + state.sectionAt(s).point[0];
-        const sideDistance = radial * Math.sin(halfSector) - Math.abs(width) * Math.cos(halfSector);
-        const margin = sampleMargin + hoopRadiusM;
-        if (curved) {
-          curvedNearM = Math.min(curvedNearM, radial - margin);
-          curvedSectorGapM = Math.min(curvedSectorGapM, sideDistance - margin);
-        } else if (sideDistance <= margin) {
-          sharedDiskM = Math.max(sharedDiskM, Math.hypot(radial, width) + margin);
-        }
-      }
-    }
-  }
-  const sharedLayerGapM = layerPitchM - 2 * hoopRadiusM;
-  const lowerSupportGapM = layerPitchM + armTopM - armDepthM - hoopRadiusM;
-  const postSectorGapM = postReachM * Math.sin(Math.PI / 5 - halfSector) - postRadiusM;
-  const returnArmSectorGapM = Math.min(...layout.map(p => -p.rootM))
-    * Math.sin(Math.PI / 5 - halfSector) - .006;
-  if (!(curvedNearM > sharedDiskM && curvedSectorGapM > 0 && sharedLayerGapM > 0
-      && lowerSupportGapM > 0 && postReachM - postRadiusM > sharedDiskM
-      && postSectorGapM > 0 && returnArmSectorGapM > 0)) {
-    throw new Error('El contorno propuesto excede el espacio de las capas y los aros.');
-  }
-  return {sharedDiskM, curvedNearM, curvedSectorGapM, sharedLayerGapM,
-    lowerSupportGapM, postSectorGapM, returnArmSectorGapM};
-}
-
 function measure(variants, centerX, centerY, nucleusBounds) {
-  const supportReach = (postReachM + postRadiusM) * inchesPerMeter;
-  const supportTop = mountZInches + (rootHeightM + layerPitchM * (layout.length - 1)) * inchesPerMeter;
+  const collarReachM = Math.SQRT2 * pivotHalfM;
+  // For a monotone turn with curvature at most 1/R, a returning arm
+  // can get behind the start of the bend only after rising at least 2R.
+  // The rigid central hardware ends below that return even in the lowest layer.
+  const spindlePlanGapM = foldStartM - pivotStationM - collarReachM - hoopRadiusM;
+  const spindleReturnGapM = 2 * bendRadiusM - (topLayerM - bottomLayerM)
+    - capHeightM - hoopRadiusM;
+  const layerGapM = layerPitchM - 2 * hoopRadiusM;
+  const nucleusGapM = mountZInches + (bottomLayerM - hoopRadiusM) * inchesPerMeter - nucleusBounds.max[2];
+  if (!(spindlePlanGapM > 0 && spindleReturnGapM > 0 && layerGapM > 0 && nucleusGapM > 0)) {
+    throw new Error('El eje o los aros exceden su espacio en la pila.');
+  }
+  const hardwareTop = mountZInches + (topLayerM + capHeightM) * inchesPerMeter;
+  const speedBound = Math.hypot(1.50, 0.70) / 2;
+  const margin = (speedBound * Math.PI / perimeterSamples + hoopRadiusM) * inchesPerMeter;
   function empty() {
     return {
-      min: [Math.min(nucleusBounds.min[0], centerX - supportReach),
-        Math.min(nucleusBounds.min[1], centerY - supportReach), mountZInches],
-      max: [Math.max(nucleusBounds.max[0], centerX + supportReach),
-        Math.max(nucleusBounds.max[1], centerY + supportReach), Math.max(supportTop, nucleusBounds.max[2])],
+      min: [nucleusBounds.min[0], nucleusBounds.min[1], mountZInches],
+      max: [nucleusBounds.max[0], nucleusBounds.max[1], Math.max(hardwareTop, nucleusBounds.max[2])],
     };
   }
-  function add(box, axis, value, radius) {
-    box.min[axis] = Math.min(box.min[axis], value - radius);
-    box.max[axis] = Math.max(box.max[axis], value + radius);
+  function add(box, x, y, z) {
+    [x, y, z].forEach((value, axis) => {
+      box.min[axis] = Math.min(box.min[axis], value - margin);
+      box.max[axis] = Math.max(box.max[axis], value + margin);
+    });
   }
-  const speed = Math.hypot(1.50, 0.70) / 2;
-  const margin = (speed * Math.PI / perimeterSamples + hoopRadiusM) * inchesPerMeter;
-  function pose(q) {
+  function pose(q, fanning) {
     const box = empty();
-    const states = Object.fromEntries(Object.entries(variants).map(([type, variant]) => [type, variant.model.state(q)]));
-    for (const {type, azimuth, rootM, heightM} of layout) {
-      const sin = Math.sin(azimuth), cos = Math.cos(azimuth);
-      for (const [across, height, length] of states[type].hoop) {
-        const outward = rootM + length;
-        add(box, 0, centerX + (cos * outward - sin * across) * inchesPerMeter, margin);
-        add(box, 1, centerY + (sin * outward + cos * across) * inchesPerMeter, margin);
-        add(box, 2, mountZInches + (heightM + height) * inchesPerMeter, margin);
+    for (const petal of layout) {
+      const angle = foldedAzimuth + petal.delta * fanning;
+      const sin = Math.sin(angle);
+      const cos = Math.cos(angle);
+      for (const [across, height, s] of variants[petal.id].model.state(q).hoop) {
+        const along = s - petal.localPivotM;
+        add(box, centerX + (cos * along - sin * across) * inchesPerMeter,
+          centerY + (sin * along + cos * across) * inchesPerMeter,
+          mountZInches + (topLayerM + height) * inchesPerMeter);
       }
     }
     return box;
   }
-  const folded = pose(0);
-  const open = pose(1);
+  const folded = pose(0, 0);
+  const open = pose(1, 1);
   const sweep = empty();
-  // At a fixed material point the horizontal directrix coordinate increases
-  // monotonically as the fold angle relaxes from pi to zero.
-  for (let axis = 0; axis < 3; axis++) {
-    sweep.min[axis] = Math.min(folded.min[axis], open.min[axis]);
-    sweep.max[axis] = Math.max(folded.max[axis], open.max[axis]);
-  }
+  // During the unfolding phase the azimuth is fixed. Bound every
+  // interpolated pose from the arc-length profile's temporal derivative.
   const steps = 64;
-  for (let i = 1; i < steps; i++) sweep.max[2] = Math.max(sweep.max[2], pose(i / steps).max[2]);
-  sweep.max[2] += Math.PI * 1.50 / (2 * steps) * inchesPerMeter;
-
-  const nucleusGapM = (mountZInches + rootHeightM * inchesPerMeter - nucleusBounds.max[2]) / inchesPerMeter - hoopRadiusM;
-  if (nucleusGapM <= 0) throw new Error('El núcleo toca la capa inferior.');
+  for (let i = 0; i <= steps; i++) {
+    const box = pose(i / steps, 0);
+    for (let axis = 0; axis < 3; axis++) {
+      sweep.min[axis] = Math.min(sweep.min[axis], box.min[axis]);
+      sweep.max[axis] = Math.max(sweep.max[axis], box.max[axis]);
+    }
+  }
+  const motionMargin = Math.PI * (referenceLengthM + 2 * (topLayerM - bottomLayerM))
+    / (2 * steps) * inchesPerMeter;
+  // In the fan phase every petal is flat, and turns about the same shaft
+  // within the disc swept by its farthest material point.
+  const fanReach = Math.hypot(referenceLengthM - pivotStationM, .35) * inchesPerMeter + margin;
+  sweep.min[0] = Math.min(sweep.min[0] - motionMargin, centerX - fanReach);
+  sweep.min[1] = Math.min(sweep.min[1] - motionMargin, centerY - fanReach);
+  sweep.max[0] = Math.max(sweep.max[0] + motionMargin, centerX + fanReach);
+  sweep.max[1] = Math.max(sweep.max[1] + motionMargin, centerY + fanReach);
+  sweep.max[2] += motionMargin;
+  sweep.min[2] = mountZInches;
   return {
-    folded, open, sweep, baseZ: sweep.min[2], mountZ: mountZInches,
-    layerPitchM, nucleusGapM, ...measureSeparation(variants),
-    petals: layout.map(({id, type, azimuthDeg, rootM, heightM}) => ({
-      id, azimuthDeg, art: design[type].art, rootM, heightM, ...variants[type].model.design,
+    folded, open, sweep, baseZ: mountZInches, mountZ: mountZInches,
+    openingMinZ: mountZInches + (bottomLayerM - hoopRadiusM) * inchesPerMeter,
+    foldStartM, bendCenterM: foldStartM + Math.PI * bendRadiusM,
+    layerPitchM, layerGapM, spindlePlanGapM, spindleReturnGapM,
+    petals: layout.map(({id, type, azimuthDeg, layerOffsetM}) => ({
+      id, azimuthDeg, art: design[type].art, layerOffsetM, ...variants[id].model.design,
     })),
   };
 }
 
+function collarGeometry(THREE) {
+  const shape = new THREE.Shape();
+  shape.moveTo(-pivotHalfM, -pivotHalfM);
+  shape.lineTo(pivotHalfM, -pivotHalfM);
+  shape.lineTo(pivotHalfM, pivotHalfM);
+  shape.lineTo(-pivotHalfM, pivotHalfM);
+  shape.closePath();
+  const bore = new THREE.Path();
+  bore.absarc(0, 0, boreRadiusM, 0, Math.PI * 2, true);
+  shape.holes.push(bore);
+  return new THREE.ExtrudeGeometry(shape, {depth: .004, bevelEnabled: false, curveSegments: 24})
+    .translate(0, 0, -.002);
+}
+
 export function createFlexCorollas(THREE, units) {
-  const variants = Object.fromEntries(Object.entries(design).map(([type, specification]) => [type, buildVariant(THREE, specification)]));
+  const variants = Object.fromEntries(layout.map(petal => [
+    petal.id, buildVariant(THREE, design[petal.type], petal),
+  ]));
   const hoopMaterial = new THREE.MeshStandardMaterial({color: 0x737d79, metalness: 0.48, roughness: 0.43, side: THREE.DoubleSide});
   const carrierMaterial = new THREE.MeshStandardMaterial({color: 0x535a52, metalness: 0.42, roughness: 0.56});
-  const flangeShape = new THREE.Shape();
-  const flangeVertexRadius = flangeApothemM / Math.cos(Math.PI / 5);
-  for (const [index, {azimuth}] of [...layout].reverse().entries()) {
-    const corner = azimuth + Math.PI + Math.PI / 5;
-    const x = flangeVertexRadius * Math.cos(corner);
-    const y = flangeVertexRadius * Math.sin(corner);
-    if (index === 0) flangeShape.moveTo(x, y);
-    else flangeShape.lineTo(x, y);
-  }
-  flangeShape.closePath();
-  const flangeHole = new THREE.Path();
-  flangeHole.absarc(0, 0, flangeBoreRadiusM, 0, 2 * Math.PI, true);
-  flangeShape.holes.push(flangeHole);
-  const flangeGeometry = new THREE.ExtrudeGeometry(flangeShape, {depth: 0.052, bevelEnabled: false, curveSegments: 48});
-  const footGeometry = new THREE.BoxGeometry(postReachM - flangeApothemM + postRadiusM, .022, footDepthM);
-  const saddleHeightM = -hoopRadiusM - armTopM;
-  const saddleGeometry = new THREE.BoxGeometry(0.016, 0.022, saddleHeightM);
+  const collar = collarGeometry(THREE);
+  const stopShape = new THREE.Shape();
+  stopShape.absarc(0, 0, .029, 0, Math.PI * 2, false);
+  const stopBore = new THREE.Path();
+  stopBore.absarc(0, 0, shaftRadiusM + .0002, 0, Math.PI * 2, true);
+  stopShape.holes.push(stopBore);
+  const stopGeometry = new THREE.ExtrudeGeometry(stopShape,
+    {depth: .003, bevelEnabled: false, curveSegments: 24});
 
   function instance(unit) {
     const source = unit.corolla.children.find(mesh => mesh.geometry?.getAttribute('position').count === 902);
@@ -246,88 +241,86 @@ export function createFlexCorollas(THREE, units) {
     source.geometry.computeBoundingBox();
     const sourceBounds = source.geometry.boundingBox.clone().applyMatrix4(source.matrix);
     const center = sourceBounds.getCenter(new THREE.Vector3()).add(unit.corolla.position);
-    const plateTopZ = mountZInches;
-
     const carrier = new THREE.Group();
-    carrier.name = 'Corola de estudio con cinco aros flex';
+    carrier.name = 'Corola de cinco aros anidados con eje central';
     unit.group.add(carrier);
     const nucleus = source.clone(false);
     nucleus.name = 'Núcleo original sobre plataforma';
     nucleus.position.add(unit.corolla.position);
-    nucleus.position.z += plateTopZ - (sourceBounds.min.z + unit.corolla.position.z);
+    nucleus.position.z += mountZInches - (sourceBounds.min.z + unit.corolla.position.z);
     const nucleusBounds = sourceBounds.translate(nucleus.position.clone().sub(source.position));
     carrier.add(nucleus);
 
     const flex = new THREE.Group();
-    flex.name = 'Portacorolas radial con un paño por pétalo';
-    flex.position.set(center.x, center.y, plateTopZ);
+    flex.name = 'Eje y cinco capas independientes';
+    flex.position.set(center.x, center.y, mountZInches);
     flex.scale.setScalar(inchesPerMeter);
     carrier.add(flex);
-    const flange = new THREE.Mesh(flangeGeometry, carrierMaterial);
-    flange.name = 'Collar central con hueco alrededor del núcleo';
-    flex.add(flange);
+    const shaftBottom = (nucleusBounds.max.z - mountZInches) / inchesPerMeter;
+    const shaftTop = topLayerM + capHeightM;
+    const shaftGeometry = new THREE.CylinderGeometry(shaftRadiusM, shaftRadiusM, shaftTop - shaftBottom, 32)
+      .rotateX(Math.PI / 2);
+    const shaft = new THREE.Mesh(shaftGeometry, carrierMaterial);
+    shaft.name = 'Eje central dentro de los ojales';
+    shaft.position.z = (shaftTop + shaftBottom) / 2;
+    flex.add(shaft);
 
-    const petals = layout.map(({id, type, azimuth, rootM, heightM}) => {
-      const radial = new THREE.Group();
-      radial.name = id;
-      radial.rotation.z = azimuth;
-      flex.add(radial);
+    const petals = layout.map(({id, delta, layerOffsetM, localPivotM}) => {
+      const turn = new THREE.Group();
+      turn.name = id;
+      turn.rotation.z = foldedAzimuth;
+      flex.add(turn);
+      const bearing = new THREE.Mesh(collar, carrierMaterial);
+      bearing.name = 'Ojal de giro con taladro para el eje';
+      bearing.position.z = topLayerM - layerOffsetM;
+      turn.add(bearing);
+      const stop = new THREE.Mesh(stopGeometry, carrierMaterial);
+      stop.name = 'Apoyo axial debajo del ojal';
+      stop.position.z = bearing.position.z - .005;
+      flex.add(stop);
 
-      const foot = new THREE.Mesh(footGeometry, carrierMaterial);
-      foot.name = 'Base radial del soporte de capa';
-      foot.position.set(-(flangeApothemM + postReachM + postRadiusM) / 2, 0, footDepthM / 2);
-      radial.add(foot);
-      const topZ = heightM + armTopM;
-      const postGeometry = new THREE.CylinderGeometry(postRadiusM, postRadiusM, topZ - footDepthM, 16).rotateX(Math.PI / 2);
-      const post = new THREE.Mesh(postGeometry, carrierMaterial);
-      post.name = 'Montante exterior a los pétalos';
-      post.position.set(-postReachM, 0, (topZ + footDepthM) / 2);
-      radial.add(post);
-      const armLength = postReachM - postRadiusM + rootM;
-      const carrierArm = new THREE.Mesh(new THREE.BoxGeometry(armLength, .012, armDepthM), carrierMaterial);
-      carrierArm.name = 'Soporte horizontal de capa';
-      carrierArm.position.set((rootM - postReachM + postRadiusM) / 2, 0, topZ - armDepthM / 2);
-      radial.add(carrierArm);
-      const collar = new THREE.Mesh(saddleGeometry, carrierMaterial);
-      collar.name = 'Silla tangente bajo la raíz del aro';
-      collar.position.set(rootM - 0.004, 0, topZ + saddleHeightM / 2);
-      radial.add(collar);
-
-      const group = new THREE.Group();
-      group.position.set(rootM, 0, heightM);
-      // F06 [across, up, outward] → CAD [outward, across, up].
-      group.rotation.set(Math.PI / 2, 0, Math.PI / 2, 'ZYX');
-      radial.add(group);
-      const variant = variants[type];
+      const petal = new THREE.Group();
+      petal.position.set(-localPivotM, 0, topLayerM);
+      // [transverse, up, longitudinal] → CAD [longitudinal, transverse, up].
+      petal.rotation.set(Math.PI / 2, 0, Math.PI / 2, 'ZYX');
+      turn.add(petal);
+      const variant = variants[id];
       const cloth = new THREE.Mesh(variant.skin, variant.material);
       const hoop = new THREE.Mesh(variant.hoop, hoopMaterial);
-      cloth.name = 'Paño continuo sin estiramiento';
-      hoop.name = 'Aro continuo sin bisagras';
-      cloth.castShadow = cloth.receiveShadow = hoop.castShadow = true;
-      group.add(cloth, hoop);
-      return {id, type, group, cloth, hoop, collar, carrierArm, post, foot};
+      cloth.name = 'Paño lanceolado con ojal central';
+      hoop.name = 'Aro continuo con pliegue al primer tercio';
+      petal.add(cloth, hoop);
+      return {id, delta, turn, cloth, hoop, bearing};
     });
 
     unit.corolla.visible = false;
-    return {carrier, flex, nucleus, petals, centerX: center.x, centerY: center.y,
+    return {carrier, petals, centerX: center.x, centerY: center.y,
       nucleusBounds: {min: nucleusBounds.min.toArray(), max: nucleusBounds.max.toArray()}};
   }
 
   const corollas = units.map(instance);
   const first = corollas[0];
   const data = Object.freeze(measure(variants, first.centerX, first.centerY, first.nucleusBounds));
-  let currentOpening = 0;
+  let lastBend = 0;
+  let lastFan = 0;
   function setOpening(value) {
-    if (!Number.isFinite(value)) return currentOpening;
-    const opening = Math.max(0, Math.min(1, value));
-    if (opening === currentOpening) return currentOpening;
-    for (const variant of Object.values(variants)) variant.update(opening);
-    currentOpening = opening;
-    return opening;
+    const opening = THREE.MathUtils.clamp(value, 0, 1);
+    const bend = THREE.MathUtils.smoothstep(opening, 0, unfoldEnd);
+    const fan = THREE.MathUtils.smoothstep(opening, unfoldEnd, 1);
+    if (bend !== lastBend) {
+      for (const variant of Object.values(variants)) variant.update(bend);
+      lastBend = bend;
+    }
+    if (fan !== lastFan) {
+      for (const unit of corollas) {
+        for (const {turn, delta} of unit.petals) turn.rotation.z = foldedAzimuth + fan * delta;
+      }
+      lastFan = fan;
+    }
+    return {bend, fan};
   }
 
   function setLift(shiftInches) {
-    if (!Number.isFinite(shiftInches)) return;
     for (const unit of corollas) unit.carrier.position.z = shiftInches;
   }
   const ready = Promise.all(Object.values(variants).map(variant => variant.ready));
