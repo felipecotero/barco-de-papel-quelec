@@ -1,0 +1,36 @@
+:root {
+  color-scheme: dark;
+  --background: #10191e;
+  --panel: #192830;
+  --line: #3a515b;
+  --ink: #f0efe7;
+  --muted: #b9c9ca;
+  --accent: #e5c799;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--background); font: 16px/1.5 Arial, sans-serif; }
+main { max-width: 1260px; margin: auto; padding: clamp(16px, 3.5vw, 44px); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.breadcrumbs, .view-actions, .motion-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.breadcrumbs { gap: 10px 22px; margin-bottom: 18px; }
+.kicker { color: var(--accent); font: 600 .75rem/1.4 Montserrat, Arial, sans-serif; letter-spacing: .13em; }
+h1 { margin: .12em 0 .45em; font: 400 clamp(2rem, 4.5vw, 3.65rem)/1.1 'Quelec Quiche', Georgia, serif; }
+h2 { margin: 0 0 8px; font: 400 clamp(1.4rem, 3vw, 2.2rem)/1.2 'Quelec Quiche', Georgia, serif; }
+button { min-height: 39px; padding: 6px 11px; color: inherit; background: #1d2f36; border: 1px solid var(--line); border-radius: 6px; font: inherit; cursor: pointer; }
+button[aria-pressed="true"] { color: #202a28; background: var(--accent); border-color: var(--accent); }
+button:disabled { opacity: .53; cursor: default; }
+.viewer-tools { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.mechanism { flex: 1 1 340px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+.mechanism label { display: block; font-weight: 600; }
+.mechanism output { color: var(--accent); font-variant-numeric: tabular-nums; }
+.mechanism input { display: block; width: 100%; min-height: 28px; margin: 4px 0; accent-color: var(--accent); }
+#stage { position: relative; height: clamp(320px, 65vh, 730px); overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #17282f; }
+#stage canvas, #poster { display: block; width: 100%; height: 100%; }
+#stage canvas { touch-action: none; }
+#poster { object-fit: contain; }
+#poster[hidden], #status[hidden] { display: none; }
+#status { position: absolute; z-index: 1; inset: 12px auto auto 12px; max-width: calc(100% - 24px); margin: 0; padding: 7px 10px; border-radius: 6px; background: var(--background); }
+.viewer-note { margin: 12px 0 0; color: var(--muted); }
+#artes { margin: 30px 0 0; }
+#artes .art-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); max-width: 840px; }

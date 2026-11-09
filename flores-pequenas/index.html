@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10191e">
+  <meta name="description" content="Flores pequeñas de Quelec. Vista de una unidad o las seis, recorrido de la tijera y artes para sublimación.">
+  <title>Flores pequeñas · Quelec</title>
+  <link rel="icon" href="../flor-central/favicon.svg">
+  <link rel="stylesheet" href="../shared/brand.css?v=I05">
+  <link rel="stylesheet" href="../shared/artes.css?v=I25">
+  <link rel="stylesheet" href="style.css?v=I26">
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main>
+    <nav class="breadcrumbs" aria-label="Navegación">
+      <a href="../?rev=I26">← Taller de objetos</a>
+      <a href="#artes">Descargar artes</a>
+    </nav>
+    <div class="kicker">QUELEC · FLORECIMIENTO</div>
+    <h1>Flores pequeñas</h1>
+    <div class="viewer-tools">
+      <div class="view-actions" role="group" aria-label="Vistas de las flores">
+        <button id="one" type="button" aria-pressed="true" disabled>Una flor</button>
+        <button id="six" type="button" aria-pressed="false" disabled>Las seis</button>
+        <button id="fit" type="button" disabled>Centrar vista</button>
+      </div>
+      <div class="mechanism" role="group" aria-label="Mecanismo de tijera">
+        <label for="travel">Recorrido de la tijera · <output id="position" for="travel">100 % · Desplegada</output></label>
+        <input id="travel" type="range" min="0" max="100" value="100" disabled>
+        <div class="motion-actions">
+          <button id="raise" type="button" disabled>↑ Elevar</button>
+          <button id="lower" type="button" disabled>↓ Bajar</button>
+          <button id="pause" type="button" disabled>Pausar</button>
+        </div>
+      </div>
+    </div>
+    <div id="stage">
+      <img id="poster" src="preview.png" width="1154" height="644" alt="Flor pequeña desplegada, sobre su tijera y caja">
+      <p id="status" role="status">Abriendo el modelo original…</p>
+    </div>
+    <p class="viewer-note">Arrastra para girar y usa la rueda o el gesto de pinza para acercarte.</p>
+    <p class="viewer-note">El visor muestra cómo la tijera eleva y baja la corola entre la posición baja de ensayo y la desplegada. El guardado completo y la apertura de los pétalos quedan pendientes de prueba.</p>
+    <section class="art-group" id="artes" aria-labelledby="title-FP">
+        <h2 id="title-FP">Artes para sublimación</h2>
+        <p>Lienzo de 203,2 × 203,2 cm · 12.000 × 12.000 px · 150 ppp · sRGB</p>
+        <div class="art-grid">
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP01.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP01 · Crema moteado</h3>
+              <p>JPG original · 23,5 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP01-Crema-moteado.jpg" aria-label="Descargar JPG original de FP01 · Crema moteado">↓ Descargar JPG</a>
+            </div>
+          </article>
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP02.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP02 · Cobre ocre</h3>
+              <p>JPG original · 32,2 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP02-Cobre-ocre.jpg" aria-label="Descargar JPG original de FP02 · Cobre ocre">↓ Descargar JPG</a>
+            </div>
+          </article>
+          <article class="art-card">
+            <img src="../flor-central/artes-preview/FP03.webp" alt="" width="480" height="480" loading="lazy">
+            <div class="art-meta">
+              <h3>FP03 · Labelo frambuesa</h3>
+              <p>JPG original · 25,1 MB</p>
+              <a class="art-download" href="https://github.com/felipecotero/barco-de-papel-quelec/releases/download/artes-sublimacion-2026-11-08/Quelec_FP03-Labelo-frambuesa.jpg" aria-label="Descargar JPG original de FP03 · Labelo frambuesa">↓ Descargar JPG</a>
+            </div>
+          </article>
+        </div>
+      </section>
+  </main>
+  <script type="module" src="app.js?v=I26"></script>
+</body>
+</html>
