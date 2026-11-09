@@ -17,7 +17,11 @@ const readout = document.getElementById('position');
 const cycle = document.getElementById('cycle');
 const inspection = document.getElementById('inspection');
 const caseSize = document.getElementById('case-size');
-const review = document.documentElement.dataset.review === 'I30';
+const peak = document.getElementById('peak');
+const side = document.getElementById('side-view');
+const review = document.documentElement.dataset.review;
+const bloom = review === 'I31';
+const radialStudy = bloom || review === 'I30';
 
 async function start() {
   const scene = new THREE.Scene();
@@ -45,8 +49,9 @@ async function start() {
   scene.add(gltf.scene);
   scene.updateMatrixWorld(true);
 
-  const buildMechanism = review ? (await import('./c4d-corolla.js?v=I30')).createC4DMechanism : createMechanism;
-  const mechanism = buildMechanism(THREE, root);
+  const mechanism = radialStudy
+    ? (await import(`./c4d-corolla.js?v=${review}`)).createC4DMechanism(THREE, root, { bloom })
+    : createMechanism(THREE, root);
   await mechanism.ready;
   const {crown, caseLocal, boxOuterM} = mechanism.data;
   const format = new Intl.NumberFormat('es-CO', {maximumFractionDigits: 2});
@@ -73,15 +78,15 @@ async function start() {
   let animation = 0;
   let hold = 0;
 
-  function centerView() {
+  function centerView(profile = false) {
     const bounds = showAll ? groupBounds : individualBounds;
     const sphere = bounds.getBoundingSphere(new THREE.Sphere());
     const vertical = THREE.MathUtils.degToRad(camera.fov / 2);
     const angle = Math.min(vertical, Math.atan(Math.tan(vertical) * camera.aspect));
-    const distance = sphere.radius / Math.sin(angle) * (showAll ? .98 : (review ? .98 : .88));
-    const direction = showAll
+    const distance = sphere.radius / Math.sin(angle) * (showAll || radialStudy ? .98 : .88);
+    const direction = profile && !showAll ? new THREE.Vector3(-.588, .20, .809) : showAll
       ? new THREE.Vector3(.85, 1.55, 1.15)
-      : new THREE.Vector3(.95, 1.03, 1.25);
+      : new THREE.Vector3(.95, bloom ? .68 : 1.03, 1.25);
     controls.target.copy(sphere.center);
     camera.position.copy(sphere.center).addScaledVector(direction.normalize(), distance);
     camera.near = Math.max(.01, sphere.radius / 120);
@@ -166,11 +171,16 @@ async function start() {
 
   one.onclick = () => setView(false);
   six.onclick = () => setView(true);
-  fit.onclick = centerView;
+  fit.onclick = () => centerView();
   raise.onclick = () => run([1]);
   lower.onclick = () => run([0]);
   cycle.onclick = () => run([0, 1, 0]);
   pause.onclick = stopAnimation;
+  if (side) side.onclick = () => centerView(true);
+  if (peak) peak.onclick = () => {
+    stopAnimation();
+    setProgress(mechanism.data.openAt + (1 - mechanism.data.openAt) * crown.peakOpening);
+  };
   inspection.onchange = () => {
     mechanism.setInspection(inspection.checked);
     draw();
@@ -188,6 +198,8 @@ async function start() {
   draw();
   new ResizeObserver(resize).observe(stage);
   for (const control of [one, six, fit, travel, cycle, inspection]) control.disabled = false;
+  if (peak) peak.disabled = false;
+  if (side) side.disabled = false;
   status.hidden = true;
   stage.dataset.ready = 'true';
 }

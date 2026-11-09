@@ -1,20 +1,34 @@
 import * as THREE from 'three';
 import {OrbitControls} from '../vendor/OrbitControls.js';
-import {createC4DPetalMotion} from './c4d-petal-motion.js?v=I30';
+import {createC4DPetalMotion} from './c4d-petal-motion.js?v=I31';
 import {buildCinemaStage, buildCinemaCarrier} from './cinema-stage.js?v=F07';
 
 const $ = selector => document.querySelector(selector);
+const bloom = new URLSearchParams(location.search).get('rev') !== 'F07';
 const format = value => value.toLocaleString('es-CO', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const stages = [
   ['Guardada', 'Los cinco paños tienen su pliegue en el primer tercio. Sus puntas vuelven sobre el centro y cada raíz conserva su dirección.'],
   ['Salida plegada', 'La plataforma eleva el conjunto. El pliegue queda retenido mientras los pétalos atraviesan la boca.'],
-  ['Apertura radial', 'Fuera de la boca, la curva avanza hacia la punta en cada pétalo. Los paños se extienden en cinco direcciones desde sus raíces.'],
+  bloom
+    ? ['Puntas arriba', 'Fuera de la boca, los pétalos despejan el centro. Cada punta sube hasta que su tramo final queda casi vertical y luego se abre hacia afuera.']
+    : ['Apertura radial', 'Fuera de la boca, la curva avanza hacia la punta en cada pétalo. Los paños se extienden en cinco direcciones desde sus raíces.'],
   ['Abierta', 'La punta de cada pétalo termina con una caída suave. En el retorno, los pétalos recuperan el pliegue antes de bajar.'],
 ];
 const palette = [0xe7d7b4, 0xc6774a, 0xaa3b68, 0xe1cdd8, 0xb56238];
-const stops = [0, .11, .71, 1];
+const liftEnd = .48;
 const platformLow = 1.77;
 const platformHigh = 9.75;
+
+if (!bloom) {
+  document.title = 'Flor central · Apertura radial F07 · Quelec';
+  $('#revision').textContent = 'ESTUDIO F07 · CINEMA 4D';
+  $('#intro').textContent = 'Cinco pétalos continuos. Cada punta vuelve sobre el centro al plegarse y se extiende hacia su propio lado al abrir.';
+  $('[data-stage="2"]').textContent = 'Apertura radial';
+  $('#motion-description').textContent = 'El pliegue se mueve sobre el mismo material del pétalo. La punta termina con caída suave. El regreso invierte la trayectoria.';
+  $('#small-flowers').href = '../flores-pequenas/referencia.html?rev=I30';
+  $('#previous-motion').href = 'cinema.html?rev=F08';
+  $('#previous-motion').textContent = 'Ver la apertura hacia arriba F08 ↗';
+}
 const bendRadius = .055;
 const hoopRadius = .0035;
 const supportRadius = 1.90;
@@ -55,6 +69,7 @@ light(0xc4e9fb, 1.75, [-7, 13, -9]);
 const model = createC4DPetalMotion({
   lengthM: 4, widthM: 3.5, minBendRadiusM: bendRadius, hoopEnvelopeRadiusM: hoopRadius,
   foldStartM: 4 / 3 - Math.PI * bendRadius, nx: 144, ny: 12, perimeterSamples: 384,
+  ...(bloom ? {openingMode: 'bloom', bloomGateM: 3.04, bloomAt: .30, releaseAt: .88} : {}),
 });
 const carrier = buildCinemaCarrier({layers: petals, supportRadius, supportTubeRadius, supportBelowRoot});
 scene.add(carrier.group);
@@ -151,12 +166,23 @@ $('#stage-scope').textContent = 'Montaje de estudio. La tarima se dibuja a ' + f
 
 const slider = $('#timeline');
 const viewDirection = {
-  crown: new THREE.Vector3(1, .68, 1.13),
+  crown: new THREE.Vector3(1, bloom ? .54 : .68, 1.13),
   side: new THREE.Vector3(.32, .10, 1),
   top: new THREE.Vector3(0, 1, .0004),
   stage: new THREE.Vector3(1, .57, 1.42),
 };
 const easing = value => value * value * (3 - 2 * value);
+function timelineForOpening(opening) {
+  let low = 0;
+  let high = 1;
+  for (let i = 0; i < 20; i += 1) {
+    const middle = (low + high) / 2;
+    if (easing(middle) < opening) low = middle;
+    else high = middle;
+  }
+  return liftEnd + (1 - liftEnd) * (low + high) / 2;
+}
+const stops = [0, .11, bloom ? timelineForOpening(model.envelope.bloomPeakAt) : .71, 1];
 let view = 'crown';
 let progress = 0;
 let currentPhase = -1;
@@ -165,6 +191,7 @@ let playing = false;
 let turningAt = 0;
 let lastTime = 0;
 let lastOpening = 0;
+let profile = initial;
 let inspect = 'all';
 let manualCamera = false;
 let previousPlatformY = platformLow;
@@ -187,8 +214,8 @@ function focus() {
 
 function apply(next) {
   progress = THREE.MathUtils.clamp(next, 0, 1);
-  const raised = easing(THREE.MathUtils.clamp(progress / .48, 0, 1));
-  const opening = easing(THREE.MathUtils.clamp((progress - .48) / .52, 0, 1));
+  const raised = easing(THREE.MathUtils.clamp(progress / liftEnd, 0, 1));
+  const opening = easing(THREE.MathUtils.clamp((progress - liftEnd) / (1 - liftEnd), 0, 1));
   const platformY = THREE.MathUtils.lerp(platformLow, platformHigh, raised);
   const dy = platformY - previousPlatformY;
   if (view !== 'stage') {
@@ -199,11 +226,12 @@ function apply(next) {
   carrier.group.position.y = platformY;
   stage.update(platformY);
   if (opening !== lastOpening) {
-    deform(model.state(opening));
+    profile = model.state(opening);
+    deform(profile);
     lastOpening = opening;
   }
 
-  const phase = progress === 0 ? 0 : progress <= .48 ? 1 : progress < 1 ? 2 : 3;
+  const phase = progress === 0 ? 0 : progress <= liftEnd ? 1 : progress < 1 ? 2 : 3;
   if (phase !== currentPhase) {
     $('#phase-kicker').textContent = 'ETAPA 0' + (phase + 1) + ' / 04';
     $('#phase-title').textContent = stages[phase][0];
@@ -214,6 +242,9 @@ function apply(next) {
     currentPhase = phase;
   }
   $('#lift-height').textContent = format(platformY) + ' m';
+  const tipHeight = $('#tip-height');
+  tipHeight.hidden = !bloom || phase !== 2 || profile.tipM[1] <= 0;
+  if (!tipHeight.hidden) tipHeight.textContent = 'Punta sobre su raíz · ' + format(profile.tipM[1]) + ' m';
   const percent = Math.round(progress * 100) + ' %';
   $('#progress').textContent = percent;
   slider.value = Math.round(progress * 1000);
@@ -324,5 +355,6 @@ requestAnimationFrame(frame);
 
 window.__FLOR_CINEMA = {scene, model, petals, carrier, stage, packed, openingHalfX, openingHalfZ,
   seek,
-  getState() { return {progress, opening: lastOpening, platformY: previousPlatformY, playing}; },
+  getState() { return {progress, opening: lastOpening, platformY: previousPlatformY, playing,
+    tip: profile.tipM, profilePhase: profile.phase}; },
 };

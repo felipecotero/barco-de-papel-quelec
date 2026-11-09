@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10191e">
-  <title>Flor central · Apertura radial F07 · Quelec</title>
+  <title>Flor central · Apertura hacia arriba F08 · Quelec</title>
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="../shared/brand.css?v=I05">
   <link rel="stylesheet" href="cinema.css?v=F07">
@@ -14,7 +14,7 @@
   <header class="site-header">
     <a class="brand" href="../"><img src="favicon.svg" alt=""><span>Quelec<small>TALLER DE OBJETOS</small></span></a>
     <nav aria-label="Enlaces del taller">
-      <a href="../flores-pequenas/referencia.html?rev=I30">Flores pequeñas ↗</a>
+      <a id="small-flowers" href="../flores-pequenas/apertura.html?rev=I31">Flores pequeñas ↗</a>
       <a href="artes.html?rev=I25">Artes de la flor ↓</a>
       <a href="../">← Taller</a>
     </nav>
@@ -35,15 +35,15 @@
         <div class="stages" aria-label="Posiciones de revisión">
           <button data-stage="0" aria-pressed="true">Guardada</button>
           <button data-stage="1" aria-pressed="false">Salida plegada</button>
-          <button data-stage="2" aria-pressed="false">Apertura radial</button>
+          <button data-stage="2" aria-pressed="false">Puntas arriba</button>
           <button data-stage="3" aria-pressed="false">Abierta</button>
         </div>
       </div>
     </section>
     <aside class="panel">
-      <span class="eyebrow">ESTUDIO F07 · CINEMA 4D</span>
+      <span class="eyebrow" id="revision">ESTUDIO F08 · CINEMA 4D</span>
       <h1>Flor central</h1>
-      <p class="intro">Cinco pétalos continuos. Cada punta vuelve sobre el centro al plegarse y se extiende hacia su propio lado al abrir.</p>
+      <p class="intro" id="intro">Cinco pétalos continuos. Cada punta se levanta al desdoblarse y después se abre hacia su propio lado.</p>
       <div class="view-tools" aria-label="Cámaras">
         <button data-view="crown" aria-pressed="true" title="Seguir los pétalos durante el ciclo">✿ Corona</button>
         <button data-view="side" aria-pressed="false" title="Mirar de lado para leer la U">◫ Perfil</button>
@@ -68,6 +68,7 @@
         <span class="eyebrow" id="phase-kicker">ETAPA 01 / 04</span>
         <h2 id="phase-title">Guardada</h2>
         <p id="phase-text"></p>
+        <p id="tip-height" hidden></p>
       </section>
       <dl class="readings">
         <div><dt>Contorno nominal</dt><dd>4,00 × 3,50 m</dd></div>
@@ -78,12 +79,13 @@
       <p class="scope" id="stage-scope"></p>
       <details>
         <summary>Alcance de la simulación</summary>
-        <p>El pliegue se mueve sobre el mismo material del pétalo. La punta termina con caída suave. Al regresar se recorre la misma trayectoria en sentido inverso.</p>
+        <p id="motion-description">El pliegue conserva el largo de los aros y paños. En la apertura, las puntas suben, se extienden hacia afuera y caen suavemente al final. Al regresar se recorre la misma trayectoria en sentido inverso.</p>
         <p>El soporte de dos aros y los niveles de sujeción reproducen la lógica de la referencia como un montaje de estudio. La separación física, las guías, la recuperación del fleje y el accionamiento requieren prototipo.</p>
+        <a id="previous-motion" href="cinema.html?rev=F07">Ver la apertura anterior F07 ↗</a><br>
         <a href="flex.html?rev=F06">Ver el estudio de un pétalo F06 ↗</a>
       </details>
     </aside>
   </main>
-  <script type="module" src="cinema-app.js?v=F07"></script>
+  <script type="module" src="cinema-app.js?v=F08"></script>
 </body>
 </html>

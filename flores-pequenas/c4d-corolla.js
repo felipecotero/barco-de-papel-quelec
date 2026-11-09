@@ -1,5 +1,5 @@
-import { createC4DPetalMotion } from '../flor-central/c4d-petal-motion.js?v=I30';
-import { createMechanism } from './mechanism.js?v=I30';
+import { createC4DPetalMotion } from '../flor-central/c4d-petal-motion.js?v=I31';
+import { createMechanism } from './mechanism.js?v=I31';
 
 const unitsPerMeter = 1 / 0.0254;
 const mountZ = 56.15;
@@ -34,12 +34,13 @@ function textureFor(THREE, spec) {
   return { material, ready };
 }
 
-function createSurface(THREE, spec) {
+function createSurface(THREE, spec, bloom) {
   const profile = createC4DPetalMotion({
     lengthM:spec.length, widthM:spec.width, minBendRadiusM:bendRadius,
     foldStartM:spec.length / 3 - Math.PI * bendRadius,
     hoopEnvelopeRadiusM:hoopRadius, fabricEdgeInsetM:.008,
     nx:88, ny:12, perimeterSamples,
+    ...(bloom ? { openingMode:'bloom', bloomGateM:spec.length * .71, bloomAt:.32, releaseAt:.86 } : {}),
   });
   const initial = profile.state(0);
   const cloth = new THREE.BufferGeometry();
@@ -176,9 +177,11 @@ function addSupport(THREE, radial, height, material) {
     rootRadius + .003, armTop + saddleHeight / 2);
 }
 
-function createReferenceCorollas(THREE, units) {
+function createReferenceCorollas(THREE, units, bloom) {
   const surfaces = new Map();
-  for (const spec of layout) if (!surfaces.has(spec.art)) surfaces.set(spec.art, createSurface(THREE, spec));
+  for (const spec of layout) if (!surfaces.has(spec.art)) surfaces.set(spec.art, createSurface(THREE, spec, bloom));
+  const profiles = [...surfaces.values()].map(surface => surface.profile);
+  const phaseProfile = profiles[0];
   const envelopeWidth = Math.max(...[...surfaces.values()].map(({ profile }) =>
     Math.max(profile.envelope.foldHeightM, -profile.envelope.open.min[1])));
   // All petals share one phase. While rolling they stay above their plane;
@@ -235,6 +238,22 @@ function createReferenceCorollas(THREE, units) {
     }
     data ??= geometryData(center, nucleusBounds, entries, pitch);
   }
+  if (bloom) {
+    // In the uplift phase only distal material moves. Its radial distance is
+    // bounded below, so the projected transverse distance from any adjacent
+    // petal exceeds that petal's maximum width. Opposite directions lie behind
+    // the other petal's fixed root, outside its positive radial footprint.
+    const radialFloor = rootRadius + Math.min(...profiles.map(profile => profile.envelope.bloomMinimumOutwardM)) - hoopRadius;
+    const halfWidth = Math.max(...layout.map(spec => spec.width / 2)) + hoopRadius;
+    const halfSector = Math.atan2(halfWidth, radialFloor);
+    const sideGap = radialFloor * Math.sin(2 * Math.PI / 5 - halfSector) - halfWidth;
+    if (!(halfSector < Math.PI / 5 && sideGap > 0)) {
+      throw new Error('El tramo que sube invade el sector de otro pétalo.');
+    }
+    data.peakOpening = phaseProfile.envelope.bloomVerticalAt;
+    data.upliftSectorGapM = sideGap;
+    data.upliftRadialFloorM = radialFloor;
+  }
   let opening = 0;
   return {
     data,
@@ -249,11 +268,17 @@ function createReferenceCorollas(THREE, units) {
     setLift(shift) { for (const carrier of carriers) carrier.position.z = shift; },
     describePhase(p) {
       if (p === 0) return 'Pétalos plegados · salida de la caja';
+      if (bloom) {
+        if (p < phaseProfile.config.bloomAt) return 'Avanza la U en cada pétalo';
+        if (p <= data.peakOpening + 1e-8) return 'Las puntas se levantan';
+        if (p < phaseProfile.config.releaseAt) return 'Los pétalos abren hacia afuera';
+        return 'Caída suave de las puntas';
+      }
       return p < .8 ? 'Cada pétalo se desdobla hacia su lado' : 'Caída suave de las puntas';
     },
   };
 }
 
-export function createC4DMechanism(THREE, root) {
-  return createMechanism(THREE, root, createReferenceCorollas);
+export function createC4DMechanism(THREE, root, { bloom = false } = {}) {
+  return createMechanism(THREE, root, (Three, units) => createReferenceCorollas(Three, units, bloom));
 }

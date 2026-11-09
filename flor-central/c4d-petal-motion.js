@@ -26,6 +26,10 @@ function integrate(u, angle, span) {
   return [x * u * span / 2, y * u * span / 2];
 }
 
+function eased(t) {
+  return t * t * (3 - 2 * t);
+}
+
 // F06 frame [across, up, outward]. The same fixed planar material pattern
 // becomes r(t,s) = [t, y(s), x(s)]. Its metric is the identity because the
 // section integrates a unit tangent. No piece is scaled or turned in azimuth.
@@ -39,12 +43,21 @@ export function createC4DPetalMotion(options = {}) {
   const releaseAt = options.releaseAt ?? 0.80;
   const hoopEnvelopeRadiusM = options.hoopEnvelopeRadiusM ?? 0.0022;
   const layerClearanceM = options.layerClearanceM ?? 0.012;
+  const openingMode = options.openingMode ?? 'rolling';
+  const bloomingEnabled = openingMode === 'bloom';
+  const bloomAt = options.bloomAt ?? 0.43;
+  const bloomGateM = options.bloomGateM ?? 0.76 * lengthM;
   const foldSpan = 2 * PI * minBendRadiusM;
   const fallSpan = lengthM - fallStartM;
   if (!(foldStartM >= 0 && minBendRadiusM > 0 && 2 * foldStartM + foldSpan < lengthM
       && fallStartM > foldStartM && fallSpan > 0 && fallAngleRad >= 0 && fallAngleRad < PI / 2
       && releaseAt > 0 && releaseAt < 1 && hoopEnvelopeRadiusM > 0 && layerClearanceM >= 0)) {
     throw new Error('El perfil necesita una U de retorno que cruce la raíz y una caída terminal menor de 90 grados.');
+  }
+  if ((openingMode !== 'rolling' && !bloomingEnabled) || (bloomingEnabled
+      && !(0 < bloomAt && bloomAt < releaseAt && foldStartM < bloomGateM && bloomGateM + foldSpan < lengthM
+        && 2 * bloomGateM + foldSpan > lengthM))) {
+    throw new Error('La subida necesita una banda U completa al llegar a la estación de despeje.');
   }
 
   const pattern = createLanceolatePetal({
@@ -56,7 +69,8 @@ export function createC4DPetalMotion(options = {}) {
   const flat = pattern.state(1);
   const config = {
     ...pattern.config, lengthM, widthM, minBendRadiusM, foldStartM, fallStartM, fallAngleRad, releaseAt,
-    hoopEnvelopeRadiusM, layerClearanceM,
+    hoopEnvelopeRadiusM, layerClearanceM, openingMode,
+    ...(bloomingEnabled ? {bloomAt, bloomGateM} : {}),
   };
   const clothPattern = [];
   for (let i = 0; i < flat.positions.length; i += 3) {
@@ -70,17 +84,79 @@ export function createC4DPetalMotion(options = {}) {
   const openTipSection = integrate(1, -fallAngleRad, fallSpan);
   const storedTipX = 2 * foldStartM + foldSpan - lengthM;
   const maxStoredOutwardM = foldStartM + integrate(0.5, PI, foldSpan)[0];
+  const bloomMinimumOutwardM = 2 * bloomGateM + foldSpan - lengthM;
+
+  function bloomSection(t) {
+    if (t === 0) return {start: bloomGateM, bend: PI};
+    const bend = PI * (1 - eased(t));
+    if (bend <= PI / 2) return {start: bloomMinimumOutwardM, bend};
+    const [offsetX] = integrate(1, bend, foldSpan);
+    const cos = Math.cos(bend);
+    // For turns >90°, the minimum outward coordinate in the moving interval
+    // is the smaller of its stationary shoulder and its returning tip.
+    // Solve the exact tip constraint for the shoulder, then smooth the maximum.
+    const tipRequiredStart = (bloomMinimumOutwardM - offsetX - (lengthM - foldSpan) * cos) / (1 - cos);
+    const softWidth = Math.min(0.012, offsetX / 2);
+    const deficit = Math.max(0, softWidth - Math.abs(tipRequiredStart - bloomMinimumOutwardM));
+    const safety = deficit > 0 ? deficit ** 2 / (4 * softWidth) : 0;
+    const start = Math.min(bloomGateM, Math.max(bloomMinimumOutwardM, tipRequiredStart) + safety);
+    return {start, bend};
+  }
+
+  function measureBloom() {
+    if (!bloomingEnabled) return {};
+    function tipHeight(t) {
+      const {start, bend} = bloomSection(t);
+      return integrate(1, bend, foldSpan)[1] + (lengthM - start - foldSpan) * Math.sin(bend);
+    }
+    let peakT = 0;
+    let peak = 0;
+    const steps = 256;
+    for (let i = 0; i <= steps; i += 1) {
+      const candidate = tipHeight(i / steps);
+      if (candidate > peak) {
+        peak = candidate;
+        peakT = i / steps;
+      }
+    }
+    let lower = Math.max(0, peakT - 1 / steps);
+    let upper = Math.min(1, peakT + 1 / steps);
+    for (let i = 0; i < 24; i += 1) {
+      const left = lower + (upper - lower) / 3;
+      const right = upper - (upper - lower) / 3;
+      if (tipHeight(left) < tipHeight(right)) lower = left;
+      else upper = right;
+    }
+    peakT = (lower + upper) / 2;
+    return {
+      bloomAt, bloomGateM, bloomMinimumOutwardM,
+      bloomMaxHeightM: lengthM - bloomMinimumOutwardM,
+      bloomPeakHeightM: tipHeight(peakT),
+      bloomPeakAt: bloomAt + (releaseAt - bloomAt) * peakT,
+      bloomVerticalAt: (bloomAt + releaseAt) / 2,
+      requiresBloomSectorClearance: true,
+    };
+  }
+
+  const bloom = measureBloom();
 
   function state(opening = 0) {
     const progress = clamp(Number(opening) || 0);
-    const rolling = progress < releaseAt;
-    const release = rolling ? progress / releaseAt : 1;
-    const fall = rolling ? 0 : (progress - releaseAt) / (1 - releaseAt);
-    const rise = release * release * (3 - 2 * release);
-    const drop = fall * fall * (3 - 2 * fall);
-    const start = rolling ? foldStartM + (lengthM - foldStartM) * rise : fallStartM;
-    const span = rolling ? foldSpan : fallSpan;
-    const bend = rolling ? PI : -fallAngleRad * drop;
+    const rollingEnd = bloomingEnabled ? bloomAt : releaseAt;
+    const rolling = progress < rollingEnd;
+    const blooming = bloomingEnabled && !rolling && progress < releaseAt;
+    const rollTarget = bloomingEnabled ? bloomGateM : lengthM;
+    let start = fallStartM;
+    let span = fallSpan;
+    let bend = -fallAngleRad * eased(clamp((progress - releaseAt) / (1 - releaseAt)));
+    if (rolling) {
+      start = foldStartM + (rollTarget - foldStartM) * eased(progress / rollingEnd);
+      span = foldSpan;
+      bend = PI;
+    } else if (blooming) {
+      ({start, bend} = bloomSection((progress - bloomAt) / (releaseAt - bloomAt)));
+      span = foldSpan;
+    }
     const cache = new Map();
 
     function sectionAt(station) {
@@ -93,8 +169,8 @@ export function createC4DPetalMotion(options = {}) {
       const tail = Math.max(0, s - start - span);
       const point = s <= start
         ? [s, 0]
-        : [start + (rolling && u === 1 ? 0 : x) + tail * Math.cos(angleRad),
-          (rolling && u === 1 ? foldHeightM : y) + tail * Math.sin(angleRad)];
+        : [start + (bend === PI && u === 1 ? 0 : x) + tail * Math.cos(angleRad),
+          (bend === PI && u === 1 ? foldHeightM : y) + tail * Math.sin(angleRad)];
       const section = {point, angleRad, curvaturePerM};
       cache.set(s, section);
       return section;
@@ -130,7 +206,7 @@ export function createC4DPetalMotion(options = {}) {
     const tipM = pointAt(lengthM);
     const maxCurvaturePerM = 2 * Math.abs(bend) / span;
     return {
-      progress, phase: rolling ? 'rolling' : 'terminal', positions, uv: flat.uv, indices: flat.indices,
+      progress, phase: rolling ? 'rolling' : blooming ? 'bloom' : 'terminal', positions, uv: flat.uv, indices: flat.indices,
       hoop, perimeterPointsM: hoop, fabricPerimeterPointsM, centerlinePointsM,
       pointAt, sectionAt, angleAt, curvatureAt, tangentAt, normalAt,
       path: t => pointAt(clamp(t) * lengthM),
@@ -142,7 +218,9 @@ export function createC4DPetalMotion(options = {}) {
       hoopLengthM: pattern.design.hoopLengthM,
       metrics: {
         ...flat.metrics, maxCurvaturePerM, minInstantaneousRadiusM: maxCurvaturePerM > 0 ? 1 / maxCurvaturePerM : Infinity,
-        scope: 'Inextensible rolling U followed by terminal droop. Kinematic interpretation of the two C4D reference poses.',
+        scope: bloomingEnabled
+          ? 'Inextensible rolling U, upward sweep and terminal droop. Kinematic interpretation of the C4D poses.'
+          : 'Inextensible rolling U followed by terminal droop. Kinematic interpretation of the two C4D reference poses.',
       },
     };
   }
@@ -150,16 +228,16 @@ export function createC4DPetalMotion(options = {}) {
   const envelope = {
     folded: {min: [-widthM / 2, 0, storedTipX], max: [widthM / 2, foldHeightM, maxStoredOutwardM]},
     open: {min: [-widthM / 2, openTipSection[1], 0], max: [widthM / 2, 0, fallStartM + openTipSection[0]]},
-    sweep: {min: [-widthM / 2, openTipSection[1], storedTipX], max: [widthM / 2, foldHeightM, lengthM]},
+    sweep: {min: [-widthM / 2, openTipSection[1], storedTipX], max: [widthM / 2, Math.max(foldHeightM, bloom.bloomMaxHeightM ?? 0), lengthM]},
     foldHeightM, storedTipX, maxStoredOutwardM,
     minimumLayerPitchM: foldHeightM + 2 * hoopEnvelopeRadiusM + layerClearanceM,
-    hoopEnvelopeRadiusM, releaseAt,
+    hoopEnvelopeRadiusM, releaseAt, ...bloom,
   };
   const design = {
     ...pattern.design, armLengthM: foldStartM, foldBandLengthM: foldSpan,
     maxStoredOutwardM, storedTipX, foldHeightM, fallStartM, fallAngleRad, releaseAt,
-    minimumLayerPitchM: envelope.minimumLayerPitchM,
-    continuousIdealInjectivity: 'The rolling U has nondecreasing tangent angle between 0 and pi, with horizontal branches at different heights. In the terminal phase, the outward coordinate is strictly increasing. Each shape is extruded transversely.',
+    minimumLayerPitchM: envelope.minimumLayerPitchM, ...bloom,
+    continuousIdealInjectivity: 'A nondecreasing tangent angle between 0 and pi gives the U and the upward sweep. In the terminal phase, the outward coordinate is strictly increasing. Each shape is extruded transversely.',
   };
   return {
     config, design, envelope, state, outlineAt: pattern.outlineAt, halfWidth: pattern.halfWidth,
