@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from '../vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
-import { createMechanism } from './mechanism.js?v=I28';
+import { createMechanism } from './mechanism.js?v=I28.1';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');

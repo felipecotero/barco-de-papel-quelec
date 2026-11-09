@@ -1,4 +1,4 @@
-import {createUFoldPetal} from '../flor-central/ufold-geometry.js';
+import {createUFoldPetal} from '../flor-central/ufold-geometry.js?v=I28.1';
 
 const taper = 0.55;
 const minimumInsetM = 0.008;
