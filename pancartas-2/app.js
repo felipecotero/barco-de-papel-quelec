@@ -1,6 +1,6 @@
 import * as THREE from '../vendor/three.module.js';
 import { OrbitControls } from '../vendor/OrbitControls.js';
-import { buildPlacards, DEFAULT_DESIGNS, sheetSize, placeArtwork } from './model.js?v=PA2-02';
+import { buildPlacards, DEFAULT_DESIGNS, sheetSize, placeArtwork } from './model.js?v=PA2-03';
 
 const $ = selector => document.querySelector(selector);
 const V = a => new THREE.Vector3(...a);
@@ -45,7 +45,7 @@ scene.add(floor);
 let model = null, boards = [], homes = [], selected = 0, mode = 'collection', face = 0;
 let explode = 0, stage = 4, labelsOn = false, playing = false, playStart = 0;
 let needsFrame = true, dimensions = null, transparency = null, exporter = null;
-let tween = null, labelItems = [], textures = [];
+let tween = null, labelItems = [], textures = [], artFocused = false;
 const designs = DEFAULT_DESIGNS.map(d => ({ ...d }));
 const images = new Map();
 const invalidate = () => { needsFrame = true; };
@@ -66,11 +66,14 @@ function textureFor(design) {
   if (!im) throw new Error('Falta la ilustración de ' + (design.name || design.id));
   const { width, height } = sheetSize(design.orientation);
   const canvas = document.createElement('canvas');
-  const edge = 1600;
+  const rect = placeArtwork(THREE, design, im.naturalWidth, im.naturalHeight);
+  // Keep at least one texture pixel per source pixel for the lossless artwork,
+  // including when rotated to a different sheet format in the viewer.
+  const nativeEdge = Math.ceil(Math.max(im.naturalWidth / (rect.w * width), im.naturalHeight / (rect.h * height)));
+  const edge = design.artUrl.endsWith('.png') ? Math.min(renderer.capabilities.maxTextureSize, Math.max(1600, nativeEdge)) : 1600;
   canvas.width = Math.round(edge * width);
   canvas.height = Math.round(edge * height);
   const ctx = canvas.getContext('2d');
-  const rect = placeArtwork(THREE, design, im.naturalWidth, im.naturalHeight);
   ctx.fillStyle = rect.paperColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(im, rect.x * canvas.width, rect.y * canvas.height, rect.w * canvas.width, rect.h * canvas.height);
@@ -95,12 +98,19 @@ function targetCamera(position, target) {
 }
 function fit(direction = null, artwork = false) {
   if (!boards.length) return;
+  artFocused = artwork && mode === 'single';
   let box = bounds();
-  if (artwork && mode !== 'collection') {
-    box = new THREE.Box3();
-    for (const m of boards[selected].faceMeshes) box.expandByObject(m);
+  if (artFocused) {
+    const board = boards[selected];
+    const mesh = board.faceMeshes[face];
+    const rect = mesh.userData.baseMaterial.map.userData.sourceRectUV;
+    const halfWidth = board.width * rect.width / 2, halfHeight = board.height * rect.height / 2;
+    box = new THREE.Box3().setFromPoints([
+      mesh.localToWorld(new THREE.Vector3(-halfWidth, -halfHeight, 0)),
+      mesh.localToWorld(new THREE.Vector3(halfWidth, halfHeight, 0)),
+    ]);
   }
-  const center = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
+  const center = box.getCenter(new THREE.Vector3());
   const vertical = THREE.MathUtils.degToRad(camera.fov / 2);
   const horizontal = Math.atan(Math.tan(vertical) * camera.aspect);
   const dir = direction ? V(direction).normalize() : V([face ? -.15 : .15, .035, face ? -1 : 1]).normalize();
@@ -171,7 +181,7 @@ function update() {
   const board = boards[selected], design = designs[selected];
   $('#piece-code').textContent = (board.code || design.code || board.id) + ' · DOS CARAS';
   $('#piece-title').textContent = board.name;
-  $('#selected-jpg').href = design.artUrl;
+  $('#selected-jpg').href = design.jpgUrl || design.artUrl;
   $('#selected-jpg').textContent = '↓ Descargar «' + board.name + '» en JPG';
   $('#piece-size').textContent = Math.round(board.width * 100) + ' × ' + Math.round(board.height * 100) + ' cm · ' + (board.orientation === 'landscape' ? 'horizontal' : 'vertical');
   $('#piece-note').textContent = board.description || 'Contorno orgánico y dibujo completo, sin estirar ni recortar la ilustración.';
@@ -216,7 +226,14 @@ function choose(index) {
 function setFace(value) {
   face = value ? 1 : 0;
   if (mode === 'inside') { mode = 'single'; stage = 4; explode = 0; }
-  update(); fit();
+  update();
+  if (artFocused) fit([0, 0, face ? -1 : 1], true);
+  else fit();
+}
+function focusIllustration() {
+  mode = 'single'; playing = false; stage = 4; explode = 0;
+  update();
+  fit([0, 0, face ? -1 : 1], true);
 }
 function records() {
   const b = boards[selected];
@@ -256,9 +273,9 @@ function bind() {
   $('#front').onclick = () => setFace(0);
   $('#back').onclick = () => setFace(1);
   $('#flip').onclick = () => setFace(1 - face);
-  $('#art-focus').onclick = () => { if (mode !== 'single') { mode = 'single'; stage = 4; explode = 0; update(); } fit([0, 0, face ? -1 : 1], true); };
+  $('#art-focus').onclick = focusIllustration;
   $('#labels-toggle').onclick = () => { labelsOn = !labelsOn; $('#labels-toggle').setAttribute('aria-pressed', String(labelsOn)); rebuildLabels(); invalidate(); };
-  $('#explode').oninput = () => { playing = false; explode = +$('#explode').value; stage = 4; update(); };
+  $('#explode').oninput = () => { artFocused = false; playing = false; explode = +$('#explode').value; stage = 4; update(); };
   $('#play').onclick = () => {
     playing = !playing;
     if (playing) { mode = 'single'; explode = 0; stage = 1; playStart = performance.now(); face = 1; update(); fit(); }
@@ -266,12 +283,13 @@ function bind() {
   };
   $('#snapshot').onclick = () => {
     renderer.render(scene, camera);
-    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-02.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
+    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-03.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
   };
   $('#share').onclick = async () => {
     const u = new URL(location.href);
-    u.searchParams.set('rev', 'PA2-02');
-    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 2, selected, mode, face, stage, explode, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: designs.map(d => d.orientation), camera: camera.position.toArray(), target: controls.target.toArray() }));
+    u.searchParams.set('rev', 'PA2-03');
+    u.searchParams.delete('ilustracion');
+    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 2, selected, mode, face, stage, explode, artFocused, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: designs.map(d => d.orientation), camera: camera.position.toArray(), target: controls.target.toArray() }));
     try { await navigator.clipboard.writeText(u.href); notify('Enlace de esta vista copiado.'); }
     catch { prompt('Copia el enlace de esta vista:', u.href); }
   };
@@ -298,13 +316,20 @@ function resize() {
   lastViewportWidth = host.clientWidth;
   camera.aspect = host.clientWidth / Math.max(host.clientHeight, 1);
   camera.updateProjectionMatrix(); renderer.setSize(host.clientWidth, host.clientHeight, false);
-  if (refit && model) fit(direction);
+  if (refit && model) fit(direction, artFocused);
   invalidate();
 }
 function restore() {
   try {
     const raw = new URLSearchParams(location.hash.slice(1)).get('vista');
-    if (!raw) return false;
+    if (!raw) {
+      const id = new URLSearchParams(location.search).get('ilustracion');
+      const index = designs.findIndex(design => design.id === id);
+      if (index < 0) return false;
+      selected = index;
+      focusIllustration();
+      return true;
+    }
     const q = JSON.parse(raw);
     if (q.v !== 1 && q.v !== 2) return false;
     if (Array.isArray(q.orientations) && q.orientations.length === 5) {
@@ -319,6 +344,7 @@ function restore() {
     face = q.face === 1 ? 1 : 0; stage = clamp(Math.floor(+q.stage || 4), 1, 4); explode = clamp(+q.explode || 0); labelsOn = !!q.labels;
     $('#labels-toggle').setAttribute('aria-pressed', String(labelsOn)); update();
     if (q.dimensions) dimensions.setVisible(true);
+    artFocused = !!q.artFocused && mode === 'single' && stage === 4 && explode === 0;
     if (q.camera?.length === 3 && q.target?.length === 3 && [...q.camera, ...q.target].every(Number.isFinite)) {
       camera.position.fromArray(q.camera); controls.target.fromArray(q.target); tween = null; controls.update(); return true;
     }
@@ -334,7 +360,7 @@ async function start() {
   rebuild();
   transparency = QuelecSurfaceTransparency.install({ renderer, getRoot: () => model.root, isSurface: mesh => mesh.userData.surfaceTransparency === true && ['panel', 'art', 'band', 'edge'].includes(mesh.parent?.userData.type), label: 'Transparencia de las caras', container: $('#transparency'), onChange: invalidate });
   dimensions = QuelecDimensions.install({ THREE, scene, camera, viewport: host, button: $('#measure-toggle'), getBounds: bounds, isAssembled: () => mode === 'single' && stage === 4 && explode < .001, names: ['Ancho', 'Altura con mango', 'Espesor de caja'], caption: 'Medidas de estudio del cartel ensamblado. Contorno irregular; no es una plantilla de corte.', notify });
-  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-02', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. Las texturas reproducen las artes de impresión. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
+  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-03', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. Las texturas reproducen las artes de impresión. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
   bind(); resize();
   new ResizeObserver(resize).observe(host);
   if (!restore()) { update(); fit(); }

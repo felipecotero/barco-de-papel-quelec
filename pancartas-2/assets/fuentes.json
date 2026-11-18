@@ -1,5 +1,5 @@
 {
-  "revision": "PA2-02",
+  "revision": "PA2-03",
   "faces": "Misma ilustración en cada cara, derecha y sin espejo.",
   "artworks": [
     {
@@ -35,20 +35,23 @@
       ]
     },
     {
-      "file": "03-balon-PA202.jpg",
-      "sourceName": "Balón de fútbol con chincheta roja.png",
-      "bytes": 546809,
-      "sha256": "fc0e8c355dd46e10081b6bfc4883cec9b6edb8db6e5f2ffd66a54b1f78a3f5dd",
+      "file": "03-balon-PA203.jpg",
+      "sourceName": "Balón de fútbol con chincheta roja tachata roja.jpg",
+      "bytes": 1442012,
+      "sha256": "c3687a1ecdd9f697e99f7aa62304c243bd602386d54cd3f3fd8ced4652e998ef",
       "pixels": [
         1060,
         1484
       ],
       "paperColor": "#FFFFFF",
-      "printPDF": "downloads/03-balon-pliego.pdf",
+      "printPDF": "downloads/03-balon-pliego.pdf?v=PA2-03",
       "sheetCm": [
         70,
         100
-      ]
+      ],
+      "texture": "03-balon-PA203.png",
+      "textureSHA256": "1a25d8ce0db0868cdd5c96430292cda47d199720fc6d8aceb2767e997a4c5b35",
+      "layerSourceName": "Balón de fútbol con chincheta roja tachata roja.psd"
     },
     {
       "file": "04-reloj-PA202.jpg",

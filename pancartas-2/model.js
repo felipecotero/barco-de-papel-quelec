@@ -5,7 +5,7 @@
 export const DEFAULT_DESIGNS = Object.freeze([
   { id: 'osito', code: 'C2-01', name: 'Osito de peluche', orientation: 'portrait', artUrl: 'assets/01-osito-PA202.jpg', paperColor: '#ffffff', profile: 0 },
   { id: 'lapices', code: 'C2-02', name: 'Lápices de colores', orientation: 'portrait', artUrl: 'assets/02-lapices-PA202.jpg', paperColor: '#ffffff', profile: 1 },
-  { id: 'balon', code: 'C2-03', name: 'Balón de fútbol', orientation: 'portrait', artUrl: 'assets/03-balon-PA202.jpg', paperColor: '#ffffff', profile: 2 },
+  { id: 'balon', code: 'C2-03', name: 'Balón de fútbol', orientation: 'portrait', artUrl: 'assets/03-balon-PA203.png', jpgUrl: 'assets/03-balon-PA203.jpg', paperColor: '#ffffff', profile: 2 },
   { id: 'tiempo', code: 'C2-04', name: 'Reloj de arena', orientation: 'portrait', artUrl: 'assets/04-reloj-PA202.jpg', paperColor: '#600d1f', profile: 3 },
   { id: 'sonrisa', code: 'C2-05', name: 'Sonrisa', orientation: 'landscape', artUrl: 'assets/05-sonrisa-PA202.jpg', paperColor: '#ffffff', profile: 4 },
 ]);
@@ -232,7 +232,7 @@ export function buildPlacards(THREE, options = {}) {
   }
   const setState = (explode = 0, stage = 4, colors = false) => boards.forEach(board => board.setState(explode, stage, colors));
   const specs = {
-    revision: 'Carteles 2 · PA2-02', units: 'm', count: boards.length, facesPerBoard: 2,
+    revision: 'Carteles 2 · PA2-03', units: 'm', count: boards.length, facesPerBoard: 2,
     sameUprightArtworkBothSides: true, oldModuleRetained: true,
     panelThicknessM: .003, cavityM: .021, nominalShellDepthM: .027, overallDepthWithArtworkM: .0274,
     construction: 'Dos pieles de PP de 3 mm, cámara de 21 mm, banda interior y listón de 25 × 15 × 1800 mm. Uniones pasantes compactas dibujadas como propuesta; confirmar herrajes, estabilidad y manejo en prototipo.',

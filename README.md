@@ -248,11 +248,11 @@ Materiales propuestos: dos pieles de PP alveolar de 2 mm y 350 g/m² en las comp
 Seleccionar, mover y rotar cada pieza sobre sus ejes propios, introducir cotas, deshacer, aislar, transparentar pieles y mostrar u ocultar portador y rótulos. Las ventanas centrales alternan entre circular y rectangular redondeada; el plástico se puede quitar y el cálculo de masa se actualiza. Se conservan los identificadores y el almacenamiento de posiciones de las revisiones anteriores.
 
 
-## Carteles 2.0 · I39 / PA2-02 · 18 de noviembre de 2026
+## Carteles 2.0 · I40 / PA2-03 · 18 de noviembre de 2026
 
-El osito con tachón rojo, los lápices de colores, el balón y el reloj de arena se presentan en vertical, a 70 × 100 cm. La sonrisa va en horizontal, a 100 × 70 cm. Los cinco carteles conservan sus siluetas de papel encontrado y llevan la misma ilustración derecha en ambas caras. El fondo del reloj es vino tinto y el de los otros cuatro es blanco. [Abrir el visor](pancartas-2/?rev=PA2-02).
+El osito y el balón llevan los tachones rojos de sus artes finales. Se presentan en vertical junto con los lápices y el reloj de arena, en pliegos de 70 × 100 cm. La sonrisa va en horizontal, a 100 × 70 cm. Los cinco carteles conservan sus siluetas de papel encontrado y llevan la misma ilustración derecha en ambas caras. El fondo del reloj es vino tinto y el de los otros cuatro es blanco. [Abrir el visor](pancartas-2/?rev=PA2-03).
 
-Para imprimir los cinco carteles de doble cara, sacar dos copias de cada página a tamaño real (100 %). Cada PDF individual contiene un arte y el PDF conjunto reúne las cinco páginas. El fondo llega hasta los bordes del pliego. Los artes aprobados tienen 1060 × 1484 píxeles y se incluyen a su resolución nativa, entre 46 y 65 ppp en estas composiciones. [Descargas para imprenta](pancartas-2/?rev=PA2-02#artes).
+Para imprimir los cinco carteles de doble cara, sacar dos copias de cada página a tamaño real (100 %). Cada PDF individual contiene un arte y el PDF conjunto reúne las cinco páginas. El fondo llega hasta los bordes del pliego. Los artes aprobados tienen 1060 × 1484 píxeles y se incluyen a su resolución nativa, entre 46 y 65 ppp en estas composiciones. [Descargas para imprenta](pancartas-2/?rev=PA2-03#artes).
 
 El visor permite ver uno o cinco carteles, girar de cara, cambiar la orientación de la pieza, separar las capas y mostrar cotas, rótulos o transparencias. Los cinco artes también están disponibles en un ZIP de JPG. El cartel ensamblado puede descargarse como GLB, OBJ con texturas o STL.
 
