@@ -1,0 +1,62 @@
+{
+  "revision": "PA2-01",
+  "suppliedBy": "Usuario",
+  "pixelsUnchanged": true,
+  "artworks": [
+    {
+      "file": "01-osito.jpg",
+      "originalName": "Osito de acuarela con contorno marcado.jpg",
+      "bytes": 605780,
+      "sha256": "df80912dceb0490d85fc0b3fa55dfc787d6097051fb0e69bcfc587178930e7c3",
+      "pixels": [
+        1060,
+        1484
+      ],
+      "faces": "A y B: misma ilustración, derecha y sin espejo."
+    },
+    {
+      "file": "02-lapices.jpg",
+      "originalName": "Lápices de colores rotos y astillas.jpg",
+      "bytes": 1143158,
+      "sha256": "71a0690bb531b30f1c0057bf639f72c260868ea64ff9f7e8d52e47d22804997a",
+      "pixels": [
+        1060,
+        1484
+      ],
+      "faces": "A y B: misma ilustración, derecha y sin espejo."
+    },
+    {
+      "file": "03-balon.jpg",
+      "originalName": "Balón de fútbol con chincheta roja.jpg",
+      "bytes": 1068161,
+      "sha256": "6edeec640f0a1ba4b3710c36d38ddf97af370e70021f7205c856f87c8b11312f",
+      "pixels": [
+        1060,
+        1484
+      ],
+      "faces": "A y B: misma ilustración, derecha y sin espejo."
+    },
+    {
+      "file": "04-tiempo.jpg",
+      "originalName": "Reloj de arena alargado en acuarela ALARGADA Morad.jpg",
+      "bytes": 1016855,
+      "sha256": "ca2668d79550d56f1d46b7fdc95a2262284dd09b45e726b3f7185bb748bf9c36",
+      "pixels": [
+        1060,
+        1484
+      ],
+      "faces": "A y B: misma ilustración, derecha y sin espejo."
+    },
+    {
+      "file": "05-sonrisa.jpg",
+      "originalName": "Sonrisa ilustrada con dientes inferiores irregulares.jpg",
+      "bytes": 960955,
+      "sha256": "28fa2fa52e3d830310a558d524616f39a623c3635c5f85269873fe0dd1948760",
+      "pixels": [
+        1060,
+        1484
+      ],
+      "faces": "A y B: misma ilustración, derecha y sin espejo."
+    }
+  ]
+}
