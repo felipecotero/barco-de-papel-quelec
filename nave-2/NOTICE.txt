@@ -1,0 +1,4 @@
+Referencia humana: mallas y texturas MakeHuman CC0 1.0, compartidas con el visor de la cauchera.
+Atribución y fuentes completas: ../cauchera/assets/personas/NOTICE.md
+Licencia: ../cauchera/assets/personas/LICENSE-CC0.txt
+Adaptación de postura y presentación: proyecto Quelec.

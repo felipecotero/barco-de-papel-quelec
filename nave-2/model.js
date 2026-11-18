@@ -36,6 +36,9 @@ export function buildShip(THREE, options = {}) {
     mesh.receiveShadow = true;
     mesh.userData.pieceId = piece.id;
     mesh.userData.surface = type;
+    if (type === 'frames') {
+      mesh.userData.role = material === grip ? 'carrier-grip' : material === blue ? 'trim' : 'structure';
+    }
     parent.add(mesh);
     piece[type].push(mesh);
     return mesh;
@@ -44,11 +47,16 @@ export function buildShip(THREE, options = {}) {
     const curvePoints = closed && points[0].distanceToSquared(points[points.length - 1]) < 1e-12
       ? points.slice(0, -1) : points;
     const path = new THREE.CatmullRomCurve3(curvePoints, closed, 'centripetal');
-    return add(piece, new THREE.TubeGeometry(path, Math.max(points.length * 4, 20), radius, 8, closed), material);
+    const mesh = add(piece, new THREE.TubeGeometry(path, Math.max(points.length * 4, 20), radius, 8, closed), material);
+    mesh.userData.lengthM = path.getLength();
+    mesh.userData.outerDiameterM = radius * 2;
+    return mesh;
   }
   function bar(piece, a, b, radius = .009, material = metal) {
     const delta = b.clone().sub(a);
     const mesh = add(piece, new THREE.CylinderGeometry(radius, radius, delta.length(), 10), material);
+    mesh.userData.lengthM = delta.length();
+    mesh.userData.outerDiameterM = radius * 2;
     mesh.position.copy(a).addScaledVector(delta, .5);
     mesh.quaternion.setFromUnitVectors(v(0, 1, 0), delta.normalize());
     return mesh;
@@ -177,21 +185,129 @@ export function buildShip(THREE, options = {}) {
     }
   }
   function doorHandles(piece, mapping, sign) {
-    for (const x of [-.205, .205]) {
-      const a = mapping(x, .18, 0);
-      const b = mapping(x, .42, 0);
-      tube(piece, Array.from({ length: 13 }, (_, i) => mapping(x, .18 + .24 * i / 12, 0)), .008);
-      const c = a.clone().add(v(0, 0, -sign * .19));
-      const d = b.clone().add(v(0, 0, -sign * .19));
-      bar(piece, a, c, .010);
-      bar(piece, b, d, .010);
-      bar(piece, c, d, .014, grip);
+    // A shield support keeps the panel beside the carrier, who faces -X.
+    // The forearm rests in an open cuff; a releasable strap closes over it.
+    const handY = piece.windowDoor ? .10 : .15;
+    const innerSkinZ = mapping(0, .60, -panelDepth / 2).z;
+    const armZ = innerSkinZ - sign * .16;
+    const bodyZ = innerSkinZ - sign * .32;
+    const gripX = -.20;
+    const cuffX = .035;
+    const cuffLift = piece.windowDoor ? .030 : 0;
+    const cuffTilt = piece.windowDoor ? THREE.MathUtils.degToRad(10) : 0;
+    const cuffRotation = new THREE.Quaternion().setFromAxisAngle(v(0, 0, 1), cuffTilt);
+    const cuffCenter = v(cuffX, handY + cuffLift, armZ);
+    const cuffPoint = (x, y, z) => v(x, y, z).applyQuaternion(cuffRotation).add(cuffCenter);
+    const supportLengths = [];
+    function support(a, b) {
+      const mesh = bar(piece, a, b, .010);
+      mesh.userData.component = 'carrier-support';
+      mesh.userData.proposedTubeWallM = .001;
+      supportLengths.push(mesh.userData.lengthM);
     }
+    for (const x of [gripX, cuffX]) {
+      // Both nodes land on the real lower cross member, below the aperture.
+      const anchor = mapping(x, .37, 0);
+      const elbow = v(x, anchor.y, armZ);
+      const top = x === cuffX ? cuffPoint(0, -.065, 0) : v(x, handY - .065, armZ);
+      support(anchor, elbow);
+      support(elbow, top);
+      support(anchor, top);
+    }
+    const primary = add(piece, new THREE.CapsuleGeometry(.016, .088, 4, 10), grip);
+    primary.position.set(gripX, handY, armZ);
+    Object.assign(primary.userData, {
+      component: 'shield-hand-grip', lengthM: .12, outerDiameterM: .032,
+      coreOuterDiameterM: .020, proposedTubeWallM: .001,
+    });
+    // A real bent plate under the padding, not a large structural arm loop.
+    function halfRing(outerRadius, innerRadius, width, upper, material) {
+      const shape = new THREE.Shape();
+      const a = upper ? 0 : Math.PI, b = a + Math.PI;
+      shape.absarc(0, 0, outerRadius, a, b, false);
+      shape.lineTo(innerRadius * Math.cos(b), innerRadius * Math.sin(b));
+      shape.absarc(0, 0, innerRadius, b, a, true);
+      shape.closePath();
+      const geometry = new THREE.ExtrudeGeometry(shape, { depth: width, bevelEnabled: false, curveSegments: 24, steps: 1 });
+      const mesh = add(piece, geometry, material);
+      mesh.rotation.y = Math.PI / 2;
+      mesh.quaternion.premultiply(cuffRotation);
+      mesh.position.copy(cuffPoint(-width / 2, 0, 0));
+      return mesh;
+    }
+    const cuff = halfRing(.065, .063, .070, false, metal);
+    Object.assign(cuff.userData, {
+      component: 'forearm-cuff', profile: 'flat',
+      lengthM: Math.PI * .064, sectionAreaM2: .070 * .002,
+    });
+    const pad = halfRing(.063, .053, .070, false, grip);
+    Object.assign(pad.userData, { role: 'padding', component: 'forearm-cuff-padding', materialClass: 'foam' });
+    const strapMaterial = new THREE.MeshStandardMaterial({ color: '#846c50', roughness: .94, side: THREE.DoubleSide });
+    const strap = halfRing(.058, .055, .050, true, strapMaterial);
+    Object.assign(strap.userData, {
+      role: 'trim', component: 'releasable-cuff-strap', materialClass: 'webbing',
+      widthM: .050, lengthM: Math.PI * .0565,
+    });
+    const buckle = add(piece, new THREE.BoxGeometry(.056, .016, .026), blue);
+    buckle.position.copy(cuffPoint(0, .060, -sign * .022));
+    buckle.quaternion.copy(cuffRotation);
+    Object.assign(buckle.userData, { role: 'trim', component: 'cuff-release-buckle', materialClass: 'buckle' });
+    const releaseMaterial = new THREE.MeshStandardMaterial({ color: '#d8774d', roughness: .8 });
+    const release = add(piece, new THREE.BoxGeometry(.045, .007, .042), releaseMaterial);
+    release.position.copy(cuffPoint(0, .071, -sign * .046));
+    release.quaternion.copy(cuffRotation);
+    Object.assign(release.userData, { role: 'trim', component: 'cuff-release-tab', materialClass: 'webbing' });
+    // Small padded rear rest can be taken with the opposite hand temporarily.
+    const rearCenter = v(cuffX + .11, handY - .11, armZ + sign * .06);
+    for (const z of [-.060, .060]) {
+      support(cuffPoint(.035, -.040, z), rearCenter.clone().add(v(0, 0, z)));
+    }
+    const rear = bar(piece, rearCenter.clone().add(v(0, 0, -.060)), rearCenter.clone().add(v(0, 0, .060)), .016, grip);
+    Object.assign(rear.userData, {
+      component: 'rear-cuff-grip', coreOuterDiameterM: .020, proposedTubeWallM: .001,
+    });
+    const carryingArm = sign < 0 ? 'R' : 'L';
+    const hand = [gripX, handY, armZ];
+    const freeHand = [.13, -.18, bodyZ - sign * .18];
+    const shieldHands = carryingArm === 'L' ? [hand, freeHand] : [freeHand, hand];
+    const twoHands = carryingArm === 'L' ? [hand, rearCenter.toArray()] : [rearCenter.toArray(), hand];
+    piece.handleLengths = [.12, .12];
+    piece.carrier = {
+      position: [.10, -piece.home.position[1], bodyZ],
+      facing: [-1, 0, 0],
+      carryingArm, supportArm: carryingArm,
+      hands: shieldHands,
+      shieldHands,
+      twoHandPositions: twoHands,
+      handPosition: hand,
+      freeHand,
+      cuffPosition: cuffCenter.toArray(),
+      cuffAxis: v(1, 0, 0).applyQuaternion(cuffRotation).toArray(),
+      cuffInclinationRad: cuffTilt,
+      cuffLiftM: cuffLift,
+      cuffHeightWorldM: piece.home.position[1] + cuffCenter.y,
+      rearGripPosition: rearCenter.toArray(),
+      gripAxis: [0, 1, 0], rearGripAxis: [0, 0, 1],
+      referenceHeightM: 1.70,
+      gripHeightLocalM: handY,
+      gripHeightWorldM: piece.home.position[1] + handY,
+      gripLengthM: .12,
+      gripOuterDiameterM: .032,
+      cuffInnerDiameterM: .106,
+      cuffWidthM: .070,
+      cuffToHandDistanceM: Math.hypot(cuffX - gripX, cuffLift),
+      minimumFingerClearanceM: .070,
+      supportTubeLengthsM: supportLengths,
+      loadPath: 'Puño y brazalete a dos nudos del travesaño inferior del bastidor; la piel no recibe el agarre.',
+      status: 'Prototipo de escudo con brazalete abierto, correa liberable y mano contraria libre; apoyo opcional sobre el respaldo. Ajustar a cada intérprete y ensayar antes de fabricar. No certifica resistencia.',
+    };
   }
-  const nose = newPiece('nariz', 'Nariz y dos orejas', [-1.15, .90, 0],
-    { largo: 1.70, alto: 1.00, ancho: 1.00, oreja: .70, espesorOreja: panelDepth },
-    'Nariz roja redondeada y dos orejas curvas blancas de 70 cm y 3,5 cm de espesor con ojos de buey. Dos agarres interiores para un portador. Ancho de 1 m propuesto.', .50);
+  const nose = newPiece('nariz', 'Nariz y dos orejas', [-1.15, 1.36, 0],
+    { largo: 1.70, alto: .90, ancho: 1.00, oreja: .70, espesorOreja: panelDepth },
+    'Dos orejas curvas elevadas 10 cm, abiertas arriba y abajo, de 3,5 cm de espesor total. Dos agarres al bastidor. Ancho de 1 m propuesto.', .50);
   const noseY = -.5;
+  const noseGripY = 1.05 - nose.home.position[1];
+  const noseLowerRailY = -.40;
   const sectors = 44, rings = 30;
   const pts = [], indices = [];
   function nosePoint(t, a) {
@@ -220,7 +336,7 @@ export function buildShip(THREE, options = {}) {
   cone.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
   cone.setIndex(indices);
   cone.computeVertexNormals();
-  add(nose, cone, red, 'skins');
+  add(nose, cone, red, 'skins').userData.materialClass = 'ripstop';
   for (const t of [.27, .57, .98]) {
     tube(nose, Array.from({ length: 37 }, (_, k) => innerNosePoint(t, (-.74 + k / 36 * 1.48) * Math.PI)), .010);
   }
@@ -231,26 +347,51 @@ export function buildShip(THREE, options = {}) {
     const ear = roundedRect(.15, 0, .70, .80, .14);
     const eye = circle(.505, .44, .185);
     const mapping = (x, y, z) => {
-      const angle = Math.asin(THREE.MathUtils.clamp((y + noseY) / .5, -1, 1));
+      const angle = Math.asin(THREE.MathUtils.clamp((y + noseY + .10) / .5, -1, 1));
       const radius = .5 - panelDepth / 2 + z;
       return v(x, radius * Math.sin(angle), sign * radius * Math.cos(angle));
     };
     shellPanel(nose, ear, eye, mapping, panelDepth, white);
-    const lowerA = v(-.15, .18 + noseY, sign * .25);
-    const lowerB = v(.65, .18 + noseY, sign * .25);
+    const lowerA = v(-.15, noseLowerRailY, sign * .25);
+    const lowerB = v(.65, noseLowerRailY, sign * .25);
     bar(nose, lowerA, lowerB, .012);
-    bar(nose, mapping(.17, .24, 0), lowerA, .009);
-    bar(nose, mapping(.68, .24, 0), lowerB, .009);
-    const start = v(.12, .22 + noseY, sign * .25);
-    const end = v(.39, .22 + noseY, sign * .25);
-    bar(nose, start, end, .017, grip);
-    bar(nose, start, v(.12, .18 + noseY, sign * .25), .012);
-    bar(nose, end, v(.39, .18 + noseY, sign * .25), .012);
+    // The lower ear cross member carries both links into the perimeter frame.
+    bar(nose, mapping(.17, .08, 0), mapping(.83, .08, 0), .008);
+    bar(nose, mapping(.17, .08, 0), lowerA, .009);
+    bar(nose, mapping(.68, .08, 0), lowerB, .009);
+    // Grips sit near the ear's lower edge while the upper rim clears the head.
+    const start = v(.12, noseGripY, sign * .25);
+    const end = v(.39, noseGripY, sign * .25);
+    const handle = bar(nose, start, end, .017, grip);
+    handle.userData.component = 'padded-longitudinal-grip';
+    handle.userData.coreOuterDiameterM = .024;
+    handle.userData.proposedTubeWallM = .001;
+    bar(nose, start, v(.12, noseLowerRailY, sign * .25), .012);
+    bar(nose, end, v(.39, noseLowerRailY, sign * .25), .012);
   }
+  nose.handleLengths = [.27, .27];
+  nose.carrier = {
+    position: [.43, -nose.home.position[1], 0],
+    facing: [-1, 0, 0],
+    hands: [[.255, noseGripY, -.25], [.255, noseGripY, .25]],
+    referenceHeightM: 1.70,
+    gripHeightLocalM: noseGripY,
+    gripHeightWorldM: nose.home.position[1] + noseGripY,
+    gripLengthM: .27,
+    gripOuterDiameterM: .034,
+    handSeparationM: .50,
+    minimumFingerClearanceM: .061,
+    referenceHeadTopM: 1.70,
+    earUpperOuterAtHomeM: 1.76,
+    earUpperInnerAtHomeM: 1.732,
+    nominalHeadClearanceToEarRimM: .032,
+    noseRoofAtHomeM: 1.86,
+    status: 'Posición de transporte elevada: remate de orejas por encima de una referencia adulta de 1,70 m y dos agarres a 1,05 m del suelo, junto al borde inferior de las orejas. Ajustar y ensayar con el portador real.',
+  };
   function buildDoor(piece, sign, tail) {
     const outer = roundedRect(-.35, 0, .70, 1.10, .115);
     const circular = windowShape === 'circular' || windowShape === 'circle';
-    const hole = tail ? null : circular ? circle(0, .705, .195) : roundedRect(-.215, .49, .43, .44, .09);
+    const hole = tail ? null : circular ? circle(0, .91, .13) : roundedRect(-.215, .78, .43, .26, .065);
     const mapping = (x, y, z) => {
       const angle = Math.asin((y - .55) / fuselageRadius);
       const middleRadius = fuselageRadius - panelDepth / 2;
@@ -261,8 +402,31 @@ export function buildShip(THREE, options = {}) {
     for (const x of [-.29, .29]) {
       tube(piece, Array.from({ length: 37 }, (_, i) => mapping(x, .10 + .90 * i / 36, 0)), .008);
     }
-    for (const y of [.14, .37, 1.0]) bar(piece, mapping(-.29, y, 0), mapping(.29, y, 0), .008);
+    for (const y of [.14, .37, tail ? 1.0 : 1.075]) bar(piece, mapping(-.29, y, 0), mapping(.29, y, 0), .008);
     doorHandles(piece, mapping, sign);
+    const supportBox = new THREE.Box3();
+    for (const mesh of piece.frames.filter(mesh => mesh.userData.component)) {
+      mesh.geometry.computeBoundingBox();
+      mesh.updateMatrix();
+      supportBox.union(mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrix));
+    }
+    piece.carrier.supportEnvelope = { min: supportBox.min.toArray(), max: supportBox.max.toArray() };
+    if (hole) {
+      const apertureBox = new THREE.Box3();
+      for (const p of sampleBoundary(hole, .008)) {
+        for (const z of [-panelDepth / 2, panelDepth / 2]) apertureBox.expandByPoint(mapping(p.x, p.y, z));
+      }
+      piece.windowDimensions = { width: circular ? .26 : .43, height: .26 };
+      piece.windowOpening = {
+        shape: circular ? 'circular' : 'rounded',
+        widthM: circular ? .26 : .43, heightM: .26,
+        bottomInputM: .78, topInputM: 1.04,
+        localBounds: { min: apertureBox.min.toArray(), max: apertureBox.max.toArray() },
+        bottomAtHomeM: piece.home.position[1] + apertureBox.min.y,
+      };
+      piece.carrier.apertureClearanceNominalM = .055 - piece.carrier.cuffLiftM;
+      piece.carrier.apertureClearanceM = apertureBox.min.y - supportBox.max.y;
+    }
     if (tail) {
       const shape = new THREE.Shape();
       shape.moveTo(-.35, 0);
@@ -275,9 +439,27 @@ export function buildShip(THREE, options = {}) {
       surface(piece, shape, top, red);
       surface(piece, shape, lower, red);
       strip(piece, shape.getPoints(), top, lower, red);
+      // Two thin aluminum straps fit inside the 6 mm fin sandwich.
+      for (const [rootX, tipX] of [[-.24, .20], [.24, .50]]) {
+        const a = top(rootX, 0).add(v(0, -.003, 0));
+        const b = top(tipX, .70).add(v(0, -.003, 0));
+        const delta = b.clone().sub(a);
+        const mesh = add(piece, new THREE.BoxGeometry(.015, .002, delta.length()), metal);
+        mesh.position.copy(a).addScaledVector(delta, .5);
+        mesh.quaternion.setFromUnitVectors(v(0, 0, 1), delta.clone().normalize());
+        Object.assign(mesh.userData, { component: 'fin-spar', profile: 'flat', lengthM: delta.length(), sectionAreaM2: .015 * .002 });
+      }
       // Two light root brackets tie the fin skin into the door frame.
-      for (const x of [-.24, .24]) {
-        bar(piece, mapping(x, .37, 0), v(x + .025, -.015, sign * .20), .008);
+      for (const [rootX, tipX] of [[-.24, .20], [.24, .50]]) {
+        const s = .04, t = s / .70;
+        const node = top(rootX + (tipX - rootX) * t, s).add(v(0, -.003, 0));
+        bar(piece, mapping(rootX, .37, 0), node, .008);
+        const plate = add(piece, new THREE.BoxGeometry(.05, .002, .07), metal);
+        plate.position.copy(node);
+        // Plates/fasteners are included in the explicit joint mass allowance.
+        plate.userData.role = 'joint-allowance';
+        plate.userData.component = 'fin-root-plate';
+        plate.userData.attachmentNode = node.toArray();
       }
     }
   }
@@ -285,7 +467,7 @@ export function buildShip(THREE, options = {}) {
     const side = sign < 0 ? 'izquierda' : 'derecha';
     const piece = newPiece('ventana-' + side, 'Compuerta con ventana ' + side,
       [.48, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: panelDepth },
-      'Compuerta curva de 110 × 70 × 3,5 cm, hueca y redondeada. Ventana intercambiable y dos agarres interiores para un portador.', .55);
+      'Compuerta curva de 110 × 70 × 3,5 cm, hueca y redondeada. Ventana intercambiable y apoyo de medio antebrazo y empuñadura tipo escudo; el respaldo admite la otra mano. El portador camina hacia la nariz con el panel a su costado.', .55);
     piece.windowDoor = true;
     piece.sideSign = sign;
     buildDoor(piece, sign, false);
@@ -294,7 +476,7 @@ export function buildShip(THREE, options = {}) {
     const side = sign < 0 ? 'izquierda' : 'derecha';
     const piece = newPiece('aleron-' + side, 'Compuerta y alerón ' + side,
       [1.58, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: panelDepth, salidaAleron: .70, raizAleron: .70, puntaAleron: .40 },
-      'Compuerta curva, cerrada y hueca de 110 × 70 × 3,5 cm y alerón rojo trapezoidal. Salida 70 cm, raíz 70 cm y extremo 40 cm. Dos agarres para un portador.', .55);
+      'Compuerta curva, cerrada y hueca de 110 × 70 × 3,5 cm y alerón rojo trapezoidal. Salida 70 cm, raíz 70 cm y extremo 40 cm. Apoyo de medio antebrazo y empuñadura tipo escudo, con respaldo para la otra mano. El portador mira hacia la nariz y lleva el panel al costado.', .55);
     piece.sideSign = sign;
     buildDoor(piece, sign, true);
   }
@@ -320,12 +502,12 @@ export function buildShip(THREE, options = {}) {
   });
   const specs = {
     revision: 'Nave 2.0 · estudio de cinco piezas', units: 'm',
-    carriers: 5, pieces: 5, skins: 'Piel delgada de Cartón Plast de 2 mm como propuesta de estudio.',
-    structure: 'Bastidores tubulares ligeros y asas fijadas al bastidor. Perfiles y fijaciones por validar con el constructor.',
-    nose: { length: 1.70, height: 1.00, proposedWidth: 1.00, earLength: .70, earThickness: panelDepth, earOuterRadius: .50 },
+    carriers: 5, pieces: 5, skins: 'Dos pieles de PP alveolar de 2 mm y 350 g/m² en compuertas y orejas; funda de poliéster ripstop de 140 g/m² por gajos en la nariz roja.',
+    structure: 'Aluminio 6063 tubular de pared 1 mm; agarres fijados al bastidor. Diámetros y fijaciones propuestos para prototipo, pendientes de comprobación con el constructor.',
+    nose: { length: 1.70, height: .90, proposedWidth: 1.00, earLength: .70, earThickness: panelDepth, earOuterRadius: .50, earLift: .10, earEndClearance: .558 },
     doors: { height: 1.10, width: .70, thickness: panelDepth, outerRadius: fuselageRadius, outerSag: fuselageRadius - Math.sqrt(fuselageRadius ** 2 - .55 ** 2) },
     fins: { span: .70, rootChord: .70, tipChord: .40 },
-    decisions: ['Las orejas y las cuatro compuertas tienen 3,5 cm entre sus dos pieles curvas por la última medida indicada.', 'El ancho exterior de nariz de 1 m es una propuesta de estudio.', 'Las compuertas con alerones tienen pieles cerradas por indicación del usuario.', 'El acristalamiento de las ventanas se puede quitar para dejar el hueco abierto.'],
+    decisions: ['Las orejas y las cuatro compuertas tienen 3,5 cm de espesor exterior total en sus paneles curvos por la última medida indicada.', 'El ancho exterior de nariz de 1 m es una propuesta de estudio.', 'Las compuertas con alerones tienen pieles cerradas por indicación del usuario.', 'El acristalamiento de las ventanas se puede quitar para dejar el hueco abierto.'],
   };
   return { pieces, setWindowShape, setGlazing, specs };
 }

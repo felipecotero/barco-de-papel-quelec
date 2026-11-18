@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#111c24">
 <title>Nave 2.0 · Quelec</title>
-<meta name="description" content="Cinco secciones independientes de la nave de Quelec. Mueve y gira cada pieza, compara ventanas y descubre su bastidor y sus dos agarres interiores.">
+<meta name="description" content="Cinco secciones independientes de la nave de Quelec. Mueve y gira cada pieza, compara ventanas y descubre su bastidor y sus apoyos interiores de carga.">
 <link rel="icon" href="../assets/logo-grulla.svg">
 <link rel="stylesheet" href="../shared/brand.css">
-<link rel="stylesheet" href="style.css?v=N20-2">
+<link rel="stylesheet" href="style.css?v=N20-3">
 <script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/controls/OrbitControls.js":"../vendor/OrbitControls.js"}}</script>
 <script src="../shared/surface-transparency.js"></script>
 </head>
@@ -26,7 +26,8 @@
     <button data-mode="translate" aria-pressed="false" title="M · Mover la pieza seleccionada con las flechas X, Y y Z"><span>✥</span><small>Mover <kbd>M</kbd></small></button>
     <button data-mode="rotate" aria-pressed="false" title="R · Girar sobre los ejes propios de la pieza seleccionada"><span>⟳</span><small>Rotar <kbd>R</kbd></small></button>
     <i></i>
-    <button id="inside" title="Ver los dos agarres y el bastidor interior de la pieza seleccionada"><span>◧</span><small>Interior</small></button>
+    <button id="inside" title="Ver los apoyos de carga y el bastidor interior de la pieza seleccionada"><span>◧</span><small>Interior</small></button>
+    <button id="carrier" aria-pressed="false" title="Mostrar u ocultar un portador de referencia junto a la pieza seleccionada"><span aria-hidden="true"><svg width="27" height="29" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="4" r="2.5"/><path d="M7 13V9q5-3 10 0v4M12 10v7m0-1-4 8m4-8 4 8M7 10l-3 6m13-6 3 6"/></svg></span><small>Portador</small></button>
     <button id="fit" title="Encuadrar las cinco piezas en su posición actual"><span>⌗</span><small>Encuadrar</small></button>
     <button id="top-view" title="Mirar la distribución de las cinco piezas desde arriba"><span>⊤</span><small>Superior</small></button>
     <button id="labels" aria-pressed="true" title="Mostrar u ocultar los nombres de las cinco piezas"><span>◇</span><small>Rótulos</small></button>
@@ -58,22 +59,55 @@
       <button id="reset-piece" class="text-button" title="Restaurar únicamente la posición y el giro de la pieza seleccionada">↺ Reponer esta pieza</button>
     </details>
   </section>
+  <section class="panel" id="carrier-panel">
+    <h2>Postura y agarres</h2>
+    <p id="carrier-intro">El portador mira hacia la nariz. La compuerta se lleva a su costado, como un escudo.</p>
+    <div class="choice" id="hold-options" aria-label="Forma de sostener la sección"><button data-hold="shield" aria-pressed="true" title="Un brazo pasa por la abrazadera y su mano toma la empuñadura; la otra queda libre">Un brazo · escudo</button><button data-hold="two-hands" aria-pressed="false" title="Una mano toma la empuñadura delantera y la otra el respaldo de la abrazadera">Dos manos · juego</button></div>
+    <button id="carrier-view" class="wide-button" title="Aislar esta pieza, mostrar su portador y mirar los agarres desde el interior">Ver cómo se lleva</button>
+    <p id="carrier-measures"></p>
+    <p id="carrier-caution" class="small"></p>
+    <p class="small">Figura de referencia de 1,70 m. La formación y las alturas deben probarse con los intérpretes reales.</p>
+    <p id="carrier-status" class="small" role="status"></p>
+  </section>
+  <section class="panel" id="materials-panel">
+    <h2>Materiales y peso</h2>
+    <div class="mass-highlight"><strong id="piece-mass">—</strong><span>para esta sección<br>un portador</span></div>
+    <p id="mass-configuration">Estimación con las ventanas de plástico instaladas.</p>
+    <table class="mass-table"><caption>Las cinco secciones · peso estimado</caption><tbody id="mass-pieces"></tbody><tfoot><tr><th scope="row">Conjunto</th><td id="total-mass"></td></tr></tfoot></table>
+    <p class="small">Incluye un 15 % de reserva. El peso depende del gramaje comprado, los conectores y el acabado; se confirma pesando el prototipo.</p>
+    <details><summary>Desglose de esta sección</summary><div class="table-scroll"><table class="bom-table"><thead><tr><th>Componente</th><th>Cantidad</th><th>kg</th></tr></thead><tbody id="mass-breakdown"></tbody></table></div></details>
+    <details><summary>Materiales propuestos y fijaciones</summary>
+      <p><b>Orejas y compuertas:</b> PP alveolar de 2 mm y 350 g/m² por piel. Dos pieles curvas, cámara y bastidor; 35 mm de espesor total.</p>
+      <p><b>Nariz roja:</b> poliéster ripstop PU de 140 g/m², confeccionado por gajos y tensado sobre las costillas. La forma de doble curvatura necesita un patrón de confección.</p>
+      <p><b>Bastidor:</b> aluminio 6063, tubos Ø16, Ø20 y Ø25 mm de pared 1 mm. Los diámetros de compra se redondean hacia arriba a Ø16, Ø20 y Ø25 mm respecto de los perfiles de representación. Son candidatos para prototipo. Las curvas se conforman con plantilla.</p>
+      <p><b>Alerones:</b> dos pieles de PP de 2 mm, con dos pletinas interiores de aluminio de 15 × 2 mm. Sus raíces se fijan al bastidor de la compuerta.</p>
+      <p><b>Apoyo de escudo:</b> en compuertas con ventana, se coloca completamente bajo el hueco; en colas, en la zona central. En ventanas, puño a 105 cm y centro del brazalete a 108 cm, inclinado 10° para seguir el antebrazo. Abrazadera abierta y acolchada bajo el medio antebrazo, con correa liberable y respaldo exterior agarrable. La misma mano toma la empuñadura delantera redondeada; la otra puede tomar el respaldo para mover la pieza con dos manos. El conjunto se fija al bastidor, con bordes protegidos y sin encerrar el codo. La nariz conserva dos agarres acolchados de 34 mm de diámetro en la parte baja de las orejas, con la cabeza del portador por debajo del remate.</p>
+      <p><b>Fijaciones de carga:</b> placas y tornillería pasante al bastidor, con casquillos interiores para no aplastar los tubos delgados. El tamaño de placas, tornillos y uniones se verifica en el prototipo.</p>
+      <p><b>Pieles:</b> fijar al bastidor con repartidores anchos y tornillos de cabeza lisa. No concentrar la carga en un punto del PP. Los adhesivos para PP se prueban en muestra; los agarres y las raíces de alerón necesitan fijación mecánica al bastidor.</p>
+      <p><b>Ventanas:</b> A-PET de 0,5 mm, opcional. El modelo conserva el hueco al quitarlo.</p>
+    </details>
+    <details><summary>Datos del cálculo y fuentes</summary>
+      <p>Se suman las áreas desarrolladas de las dos pieles y sus remates, las longitudes del bastidor y los núcleos de las asas. Masa del tubo = 2.700 × π/4 × [D² − (D − 0,002)²] × longitud, en metros.</p>
+      <p>El desglose separa las provisiones de acolchado, uniones y acabado. Son reservas de masa de diseño. El 15 % adicional cubre variaciones; no demuestra resistencia.</p>
+      <ul class="sources"><li><a href="https://products.paulsonmfg.com/item/tactical-ppe/tactical-replacement-parts-accessories/bs-hk" target="_blank" rel="noopener">Paulson · referencia de empuñadura y correa de antebrazo</a></li><li><a href="https://www.roplast.com.tr/" target="_blank" rel="noopener">Röplast · gramajes del PP</a></li><li><a href="https://www.hydro.com/globalassets/08-about-hydro/hydro-worldwide/austria/nenzing/alloy-data-sheets/hydro-en-aw-6063.pdf" target="_blank" rel="noopener">Hydro · aluminio 6063</a></li><li><a href="https://www.ottertex.com/ripstop" target="_blank" rel="noopener">Ottertex · ripstop 140 g/m²</a></li><li><a href="https://www.display.3acomposites.com/en/products/by-brand/lumex-r/" target="_blank" rel="noopener">3A Composites · A-PET LUMEX A</a></li></ul>
+    </details>
+  </section>
   <section class="panel">
     <h2>Ventanas de las compuertas</h2>
     <div class="choice"><button data-window="rounded" aria-pressed="true" title="Huecos rectangulares con esquinas redondeadas">▢ Redondeadas</button><button data-window="round" aria-pressed="false" title="Ojos de buey circulares">○ Circulares</button></div>
     <label class="check"><input id="glazing" type="checkbox" checked> Plástico translúcido en los huecos</label>
-    <p class="small">Los ojos de buey de la nariz conservan su forma circular.</p>
+    <p class="small">Huecos superiores de 43 × 26 cm o circulares de Ø26 cm. Quedan al menos 15 mm entre el conjunto de agarre y el hueco. Los ojos de buey de la nariz conservan su forma circular.</p>
   </section>
   <details class="panel design-notes">
     <summary>Medidas y construcción de estudio</summary>
-    <p>Nariz roja redondeada de 170 cm de largo y 100 cm de alto, con dos orejas blancas curvas de 70 cm. El ancho exterior de 100 cm toma como referencia la nave anterior.</p>
-    <p>Las cuatro compuertas miden 110 × 70 cm, con 3,5 cm entre sus dos pieles. Las orejas de la nariz tienen el mismo espesor. Todas siguen una curva de fuselaje, y los agarres sobresalen hacia el portador.</p>
+    <p>Nariz roja redondeada de 170 cm de largo. Las orejas blancas curvas de 70 cm suben 10 cm y dejan abiertos el espacio superior y el inferior. La altura exterior del conjunto queda en 90 cm. El ancho exterior de 100 cm toma como referencia la nave anterior.</p>
+    <p>Las cuatro compuertas miden 110 × 70 cm, con 3,5 cm de espesor exterior total. Las orejas de la nariz tienen el mismo espesor. Todas siguen una curva de fuselaje, y los agarres sobresalen hacia el portador.</p>
     <p>Cada alerón rojo sobresale 70 cm. Su canto junto a la compuerta mide 70 cm y el extremo mide 40 cm.</p>
-    <p>Cada sección tiene dos agarres interiores acolchados unidos al bastidor. El material, las secciones resistentes y la fijación definitiva se concretan con el constructor.</p>
-    <p>Las compuertas con alerones tienen las dos pieles cerradas. El Cartón Plast de 2 mm es una propuesta de este modelo.</p>
+    <p>La nariz tiene dos agarres interiores bajos. Su altura de transporte propuesta deja el borde superior de las orejas a 176 cm del suelo para un portador de referencia de 170 cm. Las cuatro compuertas tienen apoyo de antebrazo y empuñadura tipo escudo; la abrazadera se puede tomar también con la otra mano. El portador camina mirando hacia la nariz y lleva el paño a su costado. El montaje propuesto y su resistencia se verifican en prototipo.</p>
+    <p>Las compuertas con alerones tienen las dos pieles cerradas. Los materiales y pesos se detallan en su apartado de estudio.</p>
   </details>
 </aside>
 </main>
-<script type="module" src="app.js?v=N20-2"></script>
+<script type="module" src="app.js?v=N20-3"></script>
 </body>
 </html>

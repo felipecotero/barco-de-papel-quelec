@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { TransformControls } from './TransformControls.js';
-import { buildShip } from './model.js?v=N20-2';
+import { buildShip } from './model.js?v=N20-3';
+import { estimateShip } from './materiales.js?v=N20-3';
 
 const $ = (selector) => document.querySelector(selector);
 const host = $('#viewport');
@@ -77,6 +78,84 @@ let pointerStart = null;
 const undo = [];
 const storageKey = 'quelec-nave2-N20-1';
 const labels = [];
+let massEstimate = estimateShip(pieces, true);
+let carrierStudy = null, carrierPromise = null, carrierShown = false;
+let holdMode = 'shield';
+const decimal = (n, digits = 1) => n.toLocaleString('es-CO', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+function updateMaterials(recalculate = false) {
+  if (recalculate) massEstimate = estimateShip(pieces, $('#glazing').checked);
+  const part = massEstimate.pieces[selected];
+  $('#piece-mass').textContent = '≈ ' + decimal(part.total) + ' kg';
+  $('#total-mass').textContent = '≈ ' + decimal(massEstimate.total) + ' kg';
+  $('#mass-configuration').textContent = $('#glazing').checked
+    ? 'Con el plástico de las ventanas instalado. Un portador por sección.'
+    : 'Con los huecos de ventana abiertos. Un portador por sección.';
+  const names = ['Nariz y orejas', 'Ventana izquierda', 'Ventana derecha', 'Cola izquierda', 'Cola derecha'];
+  $('#mass-pieces').replaceChildren(...massEstimate.pieces.map((p, i) => {
+    const row = document.createElement('tr');
+    row.classList.toggle('current', i === selected);
+    const name = document.createElement('th'); name.scope = 'row'; name.textContent = names[i];
+    const mass = document.createElement('td'); mass.textContent = decimal(p.total) + ' kg';
+    row.append(name, mass); return row;
+  }));
+  const lines = [...part.lines, { label: 'Reserva adicional · 15 %', mass: part.reserve, unit: '' }];
+  $('#mass-breakdown').replaceChildren(...lines.map(l => {
+    const row = document.createElement('tr');
+    for (const text of [l.label, l.quantity === undefined ? '—' : decimal(l.quantity, 2) + ' ' + l.unit, decimal(l.mass, 2)]) {
+      const cell = document.createElement('td'); cell.textContent = text; row.append(cell);
+    }
+    return row;
+  }));
+}
+function updateCarrierDetails() {
+  const c = pieces[selected].carrier;
+  $('#hold-options').hidden = selected === 0;
+  $('#carrier-intro').textContent = selected === 0
+    ? 'La nariz se lleva desde dentro, con la cabeza bajo el remate superior y una mano en cada agarre inferior de las orejas. El espacio central queda abierto arriba y abajo.'
+    : holdMode === 'shield'
+      ? 'El antebrazo descansa en la abrazadera acolchada y su mano toma la empuñadura delantera. La otra mano queda libre. El portador mira hacia la nariz con el panel a su costado.'
+      : 'La mano del lado del panel toma la empuñadura delantera y la otra sujeta el respaldo de la abrazadera. Permite jugar con la pieza conservando la mirada hacia adelante.';
+  $('#carrier-measures').textContent = selected === 0
+    ? 'Asas inferiores a 105 cm del suelo · 27 cm de largo · 50 cm entre manos, en la altura de transporte propuesta.'
+    : 'Puño a ' + decimal(c.gripHeightWorldM * 100, 0) + ' cm · brazalete a ' + decimal((c.cuffPosition[1] + pieces[selected].home.position[1]) * 100, 0) + ' cm. Separación de ' + decimal(c.cuffToHandDistanceM * 100, 1) + ' cm; ajustar al medio del antebrazo.';
+  $('#carrier-caution').textContent = selected === 0
+    ? 'La altura de transporte propuesta deja el borde superior de las orejas a 176 cm del suelo. Ajustar y comprobar la holgura de la cabeza con su portador real.'
+    : (selected < 3 ? 'Los apoyos están bajo la ventana, dejando libre su hueco. ' : 'El apoyo se sitúa en la zona central del panel de cola. ') + 'La correa se libera sin herramientas. Comprobar ajuste, presión, equilibrio y recorrido con un prototipo.';
+}
+function setHoldMode(value) {
+  if (!['shield', 'two-hands'].includes(value)) return;
+  holdMode = value;
+  document.querySelectorAll('[data-hold]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.hold === value)));
+  carrierStudy?.setHoldMode(value);
+  updateCarrierDetails(); invalidate(); save();
+}
+async function showCarrier(visible) {
+  carrierShown = visible;
+  $('#carrier').setAttribute('aria-pressed', String(visible));
+  if (!visible) {
+    carrierStudy?.setVisible(false);
+    $('#carrier-status').textContent = '';
+    invalidate(); return;
+  }
+  $('#carrier-status').textContent = 'Preparando al portador…';
+  try {
+    if (!carrierPromise) carrierPromise = import('./postura.js?v=N20-3')
+      .then(({ createCarrierStudy }) => createCarrierStudy(THREE, pieces, invalidate))
+      .then(study => { carrierStudy = study; scene.add(study.root); return study; })
+      .catch(error => { carrierPromise = null; throw error; });
+    const study = await carrierPromise;
+    study.setHoldMode(holdMode);
+    study.setSelected(selected);
+    study.setVisible(carrierShown);
+    $('#carrier-status').textContent = carrierShown ? 'Portador de referencia visible · mirando hacia la nariz.' : '';
+    invalidate();
+  } catch (error) {
+    carrierShown = false;
+    $('#carrier').setAttribute('aria-pressed', 'false');
+    $('#carrier-status').textContent = 'No se pudo cargar la figura. Pulsa Portador para reintentar.';
+    console.error(error);
+  }
+}
 const radians = THREE.MathUtils.degToRad;
 const degrees = THREE.MathUtils.radToDeg;
 const invalidate = () => { needsFrame = true; };
@@ -117,7 +196,7 @@ function save() {
   try {
     localStorage.setItem(storageKey, JSON.stringify({
       poses: snapshot(), selected, windowShape, glazing: $('#glazing').checked,
-      transparency: transparency.getState().value,
+      transparency: transparency.getState().value, holdMode,
     }));
   } catch { /* El visor sigue funcionando cuando el navegador limita el almacenamiento. */ }
 }
@@ -140,14 +219,17 @@ function select(index) {
   const piece = pieces[selected];
   $('#piece-name').textContent = piece.name;
   $('#piece-dimensions').textContent = selected === 0
-    ? '170 × 100 × 100 cm · orejas de 70 cm'
+    ? '170 × 90 × 100 cm · orejas de 70 cm'
     : selected > 2 ? '110 × 70 × 3,5 cm · alerón de 70 cm' : '110 × 70 × 3,5 cm';
-  $('#piece-description').textContent = piece.description || 'Dos agarres interiores unidos al bastidor para un portador.';
+  $('#piece-description').textContent = piece.description || 'Apoyos de carga unidos al bastidor para un portador.';
   document.querySelectorAll('[data-piece]').forEach((button, i) => button.setAttribute('aria-pressed', String(i === selected)));
   labels.forEach((label, i) => label.classList.toggle('selected', i === selected));
   if (mode !== 'camera') gizmo.attach(piece.group);
   updateVisibility();
   updateInputs();
+  updateMaterials();
+  updateCarrierDetails();
+  carrierStudy?.setSelected(selected);
   save();
 }
 function setMode(next) {
@@ -171,6 +253,7 @@ function bounds() {
   scene.updateMatrixWorld(true);
   const box = new THREE.Box3();
   for (const { group } of pieces) if (group.visible) box.union(new THREE.Box3().setFromObject(group));
+  if (carrierStudy && carrierShown) { carrierStudy.update(); box.union(new THREE.Box3().setFromObject(carrierStudy.root)); }
   return box;
 }
 function fit(direction = new THREE.Vector3(-1, .65, 1)) {
@@ -190,6 +273,7 @@ function setWindows(shape) {
   ship.setWindowShape(shape === 'round' ? 'circular' : 'rounded');
   document.querySelectorAll('[data-window]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.window === shape)));
   transparency.refresh();
+  updateMaterials(true);
   invalidate();
   save();
 }
@@ -234,8 +318,19 @@ document.querySelectorAll('[data-window]').forEach((button) => button.addEventLi
 $('#glazing').addEventListener('change', () => {
   ship.setGlazing($('#glazing').checked);
   transparency.refresh();
+  updateMaterials(true);
   invalidate();
   save();
+});
+document.querySelectorAll('[data-hold]').forEach(button => button.addEventListener('click', () => setHoldMode(button.dataset.hold)));
+$('#carrier').addEventListener('click', () => showCarrier(!carrierShown));
+$('#carrier-view').addEventListener('click', async () => {
+  isolated = true; updateVisibility(); setMode('camera');
+  await showCarrier(true);
+  const piece = pieces[selected];
+  const direction = selected === 0 ? new THREE.Vector3(2, .45, 1.9) : new THREE.Vector3(-1.1, .30, -piece.sideSign * 1.8);
+  direction.applyQuaternion(piece.group.quaternion);
+  fit(direction);
 });
 $('#isolate').addEventListener('click', () => { isolated = !isolated; updateVisibility(); });
 $('#fit').addEventListener('click', () => fit());
@@ -367,14 +462,23 @@ new ResizeObserver(() => {
 try {
   const saved = JSON.parse(localStorage.getItem(storageKey));
   if (saved && isPose(saved.poses)) {
+    // Raise only the former default carry height; preserve custom placements.
+    if (Math.abs(saved.poses[0].position[1] - .90) < .0001) saved.poses[0].position[1] = pieces[0].home.position[1];
     apply(saved.poses);
     if (['round', 'rounded'].includes(saved.windowShape)) setWindows(saved.windowShape);
     $('#glazing').checked = saved.glazing !== false;
     ship.setGlazing($('#glazing').checked);
     if (Number.isFinite(saved.transparency)) transparency.setValue(saved.transparency);
+    if (['shield', 'two-hands'].includes(saved.holdMode)) setHoldMode(saved.holdMode);
     if (Number.isInteger(saved.selected) && saved.selected >= 0 && saved.selected < pieces.length) selected = saved.selected;
   }
 } catch { /* Conservar la disposición inicial si no hay una sesión válida. */ }
+updateMaterials(true);
+const initialQuery = new URLSearchParams(location.search);
+const queryPiece = pieces.findIndex(piece => piece.id === initialQuery.get('pieza'));
+if (queryPiece >= 0) selected = queryPiece;
+if (initialQuery.get('postura') === 'escudo') setHoldMode('shield');
+if (initialQuery.get('postura') === 'dos-manos') setHoldMode('two-hands');
 select(selected);
 controls.update();
 $('#loading').remove();
@@ -382,8 +486,11 @@ document.documentElement.dataset.ready = 'true';
 renderer.setAnimationLoop(() => {
   controls.update();
   if (!needsFrame) return;
+  carrierStudy?.update();
   positionTags();
   renderer.render(scene, camera);
   needsFrame = false;
 });
-window.nave2 = { ship, pieces, camera, renderer, controls, gizmo, transparency, select, setMode, setWindows, snapshot };
+window.nave2 = { ship, pieces, camera, renderer, controls, gizmo, transparency, select, setMode, setWindows, snapshot, showCarrier, setHoldMode, get massEstimate() { return massEstimate; }, get carrierStudy() { return carrierStudy; } };
+
+if (['escudo', 'dos-manos'].includes(initialQuery.get('postura'))) $('#carrier-view').click();
