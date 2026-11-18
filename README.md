@@ -235,3 +235,10 @@ Cuna abierta, collar con hueco para el paño, pasador y tapa de retención con c
 Control común de transparencia0–100% en los siete objetos, con etiqueta del material, porcentaje y botón de restauración. El cero conserva exactamente la apariencia de partida, incluida la translucidez que ya tuviera el material. Sólo se cambian materiales temporales al dibujar; las animaciones y exportaciones leen los originales. Los detalles y piezas que se reconstruyen al cambiar opciones se vuelven a seleccionar automáticamente.
 
 La grulla deja ver su bastidor existente al traslucir la piel, sin cambiar de forma permanente el estado de «Ver interior». El estudio rápido actualiza su sombra de contacto y las escenas de trazado de rayos opcional de barco/grulla respetan el mismo porcentaje. Los HTML autónomos activos se han regenerado con el control incorporado y sin peticiones de red al iniciar. No se alteran las versiones de diseño, sus advertencias de fabricación, documentos técnicos, pesos, materiales elegidos o PC02.
+
+
+## Nave 2.0 · I33 · 17 de noviembre de 2026
+
+[Visor de las cinco piezas](nave-2/?rev=N20-1). Nariz de 170 × 100 cm con dos orejas blancas de 70 cm, dos compuertas con ventanas y dos compuertas con alerones rojos. Las compuertas tienen pieles separadas 15 cm, planta nominal de 70 cm y altura de 110 cm. Cada pieza tiene dos agarres interiores y un bastidor. Seleccionar, mover o rotar con los ejes propios, introducir cotas de posición, deshacer, aislar y transparentar las pieles. Las dos ventanas centrales alternan entre hueco circular y rectangular redondeado. El acristalamiento se puede ocultar.
+
+El ancho de nariz de 1 m, la piel PP de 2 mm y el ojo de buey en las compuertas de cola son propuestas de estudio. Los alerones salen 70 cm, con raíz de 70 cm y extremo de 40 cm. El espesor corresponde a la cámara entre pieles. La curvatura y los agarres añaden envolvente. Los perfiles y las fijaciones se concretan con el constructor. Las piezas se guardan en el navegador y se pueden reponer a la formación escénica inicial.

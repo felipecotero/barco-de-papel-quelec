@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111c24">
+<title>Nave 2.0 · Quelec</title>
+<meta name="description" content="Cinco secciones independientes de la nave de Quelec. Mueve y gira cada pieza, compara ventanas y descubre su bastidor y sus dos agarres interiores.">
+<link rel="icon" href="../assets/logo-grulla.svg">
+<link rel="stylesheet" href="../shared/brand.css">
+<link rel="stylesheet" href="style.css?v=N20-1">
+<script type="importmap">{"imports":{"three":"../vendor/three.module.js","three/addons/controls/OrbitControls.js":"../vendor/OrbitControls.js"}}</script>
+<script src="../shared/surface-transparency.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="../#nave-2" title="Volver al índice del Taller">← Taller de Objetos</a>
+  <div class="title"><h1>Nave 2.0</h1><span>Cinco secciones · cinco portadores</span></div>
+  <a class="version" href="../nave/?rev=N02">Nave anterior ↗</a>
+</header>
+<main class="workspace">
+<section class="viewer" aria-label="Modelo 3D de la nave 2.0">
+  <div id="viewport"><p id="loading" role="status">Preparando las cinco piezas…</p><div id="tags" aria-hidden="true"></div><div id="axes" aria-hidden="true"><span class="x">X largo</span><span class="y">Y altura</span><span class="z">Z ancho</span></div></div>
+  <nav class="toolbar" aria-label="Herramientas del visor">
+    <button data-mode="camera" aria-pressed="true" title="C · Girar la cámara alrededor del modelo"><span>◉</span><small>Cámara <kbd>C</kbd></small></button>
+    <button data-mode="translate" aria-pressed="false" title="M · Mover la pieza seleccionada con las flechas X, Y y Z"><span>✥</span><small>Mover <kbd>M</kbd></small></button>
+    <button data-mode="rotate" aria-pressed="false" title="R · Girar sobre los ejes propios de la pieza seleccionada"><span>⟳</span><small>Rotar <kbd>R</kbd></small></button>
+    <i></i>
+    <button id="inside" title="Ver los dos agarres y el bastidor interior de la pieza seleccionada"><span>◧</span><small>Interior</small></button>
+    <button id="fit" title="Encuadrar las cinco piezas en su posición actual"><span>⌗</span><small>Encuadrar</small></button>
+    <button id="top-view" title="Mirar la distribución de las cinco piezas desde arriba"><span>⊤</span><small>Superior</small></button>
+    <button id="labels" aria-pressed="true" title="Mostrar u ocultar los nombres de las cinco piezas"><span>◇</span><small>Rótulos</small></button>
+    <button id="undo" title="Ctrl o ⌘ Z · Deshacer el último movimiento, giro o cambio de disposición" disabled><span>↶</span><small>Deshacer</small></button>
+  </nav>
+  <p class="hint" id="hint">Selecciona una pieza en la lista o sobre el modelo. Arrastra el fondo para girar la cámara.</p>
+</section>
+<aside aria-label="Piezas y opciones">
+  <section class="panel">
+    <h2>Las cinco piezas</h2>
+    <div id="pieces" class="piece-list"></div>
+    <div class="arrangement">
+      <button id="assembled" title="Reponer las cinco piezas en su disposición escénica inicial">Formación</button>
+      <button id="separated" title="Separar las cinco piezas para estudiar cada volumen">Separadas</button>
+    </div>
+  </section>
+  <section class="panel selected-panel">
+    <div class="section-line"><h2 id="piece-name">Nariz y orejas</h2><button id="isolate" title="Mostrar solo la pieza seleccionada" aria-pressed="false">Aislar</button></div>
+    <p id="piece-dimensions" class="size"></p>
+    <p id="piece-description"></p>
+    <div id="transparency"></div>
+    <details id="position-details">
+      <summary>Posición y giro exactos</summary>
+      <p class="small">Posición en cm · giro sobre sus ejes en grados</p>
+      <div class="numeric-grid"><span></span><b class="x">X</b><b class="y">Y</b><b class="z">Z</b>
+        <span>Posición</span><input data-position="0" type="number" step="1" aria-label="Posición X en centímetros"><input data-position="1" type="number" step="1" aria-label="Posición Y en centímetros"><input data-position="2" type="number" step="1" aria-label="Posición Z en centímetros">
+        <span>Giro</span><input data-rotation="0" type="number" step="1" aria-label="Rotación X en grados"><input data-rotation="1" type="number" step="1" aria-label="Rotación Y en grados"><input data-rotation="2" type="number" step="1" aria-label="Rotación Z en grados">
+      </div>
+      <button id="reset-piece" class="text-button" title="Restaurar únicamente la posición y el giro de la pieza seleccionada">↺ Reponer esta pieza</button>
+    </details>
+  </section>
+  <section class="panel">
+    <h2>Ventanas de las compuertas</h2>
+    <div class="choice"><button data-window="rounded" aria-pressed="true" title="Huecos rectangulares con esquinas redondeadas">▢ Redondeadas</button><button data-window="round" aria-pressed="false" title="Ojos de buey circulares">○ Circulares</button></div>
+    <label class="check"><input id="glazing" type="checkbox" checked> Plástico translúcido en los huecos</label>
+    <p class="small">Los ojos de buey de la nariz conservan su forma circular.</p>
+  </section>
+  <details class="panel design-notes">
+    <summary>Medidas y construcción de estudio</summary>
+    <p>Nariz roja redondeada de 170 cm de largo y 100 cm de alto, con dos orejas blancas de 70 cm. El ancho exterior de 100 cm toma como referencia la nave anterior.</p>
+    <p>Las cuatro compuertas miden 110 × 70 cm, con 15 cm entre sus dos pieles. La curvatura y los agarres sobresalen de esa cámara. Se tomó tu última medida de espesor.</p>
+    <p>Cada alerón rojo sobresale 70 cm. Su canto junto a la compuerta mide 70 cm y el extremo mide 40 cm.</p>
+    <p>Cada sección tiene dos agarres interiores acolchados unidos al bastidor. El material, las secciones resistentes y la fijación definitiva se concretan con el constructor.</p>
+    <p>La piel de Cartón Plast de 2 mm y los ojos de buey de las piezas de cola son propuestas de este modelo.</p>
+  </details>
+</aside>
+</main>
+<script type="module" src="app.js?v=N20-1"></script>
+</body>
+</html>

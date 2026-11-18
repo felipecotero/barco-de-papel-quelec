@@ -1,1 +1,1 @@
-I32 / 12.11.2026 / Cama-carriola y cuatro cubrelechos en 3D o vista plana. Artes 01 y 03 para sublimación a 2 × 2,20 m y referencias 02 y 04. Reconstrucción del cuaderno de utilería con caída de tela aproximada.
+I33 / 17.11.2026 / Nave 2.0 como sección independiente. Cinco piezas con dos agarres por portador, bastidores huecos, ventanas intercambiables y transparencia de pieles. Movimiento XYZ, rotación local y deshacer. Estudio de forma y montaje.
