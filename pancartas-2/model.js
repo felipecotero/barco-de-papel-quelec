@@ -3,11 +3,11 @@
  * outward winding and reversed U coordinates; it is not a mirrored backface.
  */
 export const DEFAULT_DESIGNS = Object.freeze([
-  { id: 'osito', code: 'C2-01', name: 'Osito de peluche', orientation: 'portrait', artUrl: 'assets/01-osito.jpg', paperColor: '#f6f4ef', profile: 0 },
-  { id: 'lapices', code: 'C2-02', name: 'Lápices de colores', orientation: 'landscape', artUrl: 'assets/02-lapices.jpg', paperColor: '#f3f2ed', profile: 1 },
-  { id: 'balon', code: 'C2-03', name: 'Balón de fútbol', orientation: 'portrait', artUrl: 'assets/03-balon.jpg', paperColor: '#f4f3ef', profile: 2 },
-  { id: 'tiempo', code: 'C2-04', name: 'Reloj de arena', orientation: 'portrait', artUrl: 'assets/04-tiempo.jpg', paperColor: '#681126', profile: 3 },
-  { id: 'sonrisa', code: 'C2-05', name: 'Sonrisa', orientation: 'landscape', artUrl: 'assets/05-sonrisa.jpg', paperColor: '#f6f4ef', profile: 4 },
+  { id: 'osito', code: 'C2-01', name: 'Osito de peluche', orientation: 'portrait', artUrl: 'assets/01-osito-PA202.jpg', paperColor: '#ffffff', profile: 0 },
+  { id: 'lapices', code: 'C2-02', name: 'Lápices de colores', orientation: 'portrait', artUrl: 'assets/02-lapices-PA202.jpg', paperColor: '#ffffff', profile: 1 },
+  { id: 'balon', code: 'C2-03', name: 'Balón de fútbol', orientation: 'portrait', artUrl: 'assets/03-balon-PA202.jpg', paperColor: '#ffffff', profile: 2 },
+  { id: 'tiempo', code: 'C2-04', name: 'Reloj de arena', orientation: 'portrait', artUrl: 'assets/04-reloj-PA202.jpg', paperColor: '#600d1f', profile: 3 },
+  { id: 'sonrisa', code: 'C2-05', name: 'Sonrisa', orientation: 'landscape', artUrl: 'assets/05-sonrisa-PA202.jpg', paperColor: '#ffffff', profile: 4 },
 ]);
 
 // Five shallow, asymmetric offcuts. Coordinates run around each boundary;
@@ -19,6 +19,10 @@ const PROFILES = [
   [[.01,.07],[.29,.02],[.60,.09],[.95,0],[.99,.27],[.94,.52],[.98,.86],[.84,.99],[.54,.95],[.25,1],[.03,.87],[.07,.58],[0,.29]],
   [[.08,0],[.39,.07],[.66,.03],[.98,.08],[.93,.39],[1,.69],[.90,.94],[.62,.99],[.36,.94],[.03,1],[.07,.71],[0,.42]],
 ];
+
+export function sheetSize(orientation) {
+  return orientation === 'landscape' ? { width: 1, height: .70 } : { width: .70, height: 1 };
+}
 
 function pointInPolygon(point, polygon) {
   let inside = false;
@@ -52,6 +56,45 @@ export function createOutline(THREE, width, height, profile = 0) {
   }
   inset = Math.min(.25, Math.ceil(inset * 1000) / 1000);
   return { shape, outline, artSafeRect: { x: inset, y: inset, width: 1 - inset * 2, height: 1 - inset * 2 }, artInset: inset };
+}
+
+// Shared by the viewer and the print layout. Coordinates are fractions of a
+// full sheet. A centred image reads upright after the asymmetric board turns.
+export function placeArtwork(THREE, design, imageWidth, imageHeight) {
+  const { width, height } = sheetSize(design.orientation);
+  const { outline } = createOutline(THREE, width, height, design.profile);
+  const fit = Math.min(width / imageWidth, height / imageHeight);
+  const clearance = .004;
+  function fits(scale) {
+    const x = imageWidth * fit * scale / 2 + clearance;
+    const y = imageHeight * fit * scale / 2 + clearance;
+    // If the centre is inside and no outline segment crosses the rectangle,
+    // the complete print rectangle and its clearance are inside the offcut.
+    for (let i = 0; i < outline.length; i++) {
+      const a = outline[i], b = outline[(i + 1) % outline.length];
+      let lo = 0, hi = 1;
+      for (const [axis, half] of [[0, x], [1, y]]) {
+        const delta = b[axis] - a[axis];
+        if (Math.abs(delta) < 1e-12) {
+          if (Math.abs(a[axis]) > half) { hi = -1; break; }
+        } else {
+          const t0 = (-half - a[axis]) / delta, t1 = (half - a[axis]) / delta;
+          lo = Math.max(lo, Math.min(t0, t1));
+          hi = Math.min(hi, Math.max(t0, t1));
+        }
+      }
+      if (lo <= hi) return false;
+    }
+    return true;
+  }
+  let low = 0, high = 1;
+  for (let i = 0; i < 18; i++) {
+    const mid = (low + high) / 2;
+    if (fits(mid)) low = mid;
+    else high = mid;
+  }
+  const w = imageWidth * fit * low / width, h = imageHeight * fit * low / height;
+  return { x: (1 - w) / 2, y: (1 - h) / 2, w, h, paperColor: design.paperColor };
 }
 
 export function buildPlacards(THREE, options = {}) {
@@ -91,8 +134,7 @@ export function buildPlacards(THREE, options = {}) {
   for (let index = 0; index < designs.length; index++) {
     const design = { ...DEFAULT_DESIGNS[index % DEFAULT_DESIGNS.length], ...designs[index] };
     const orientation = design.orientation === 'landscape' ? 'landscape' : 'portrait';
-    const width = design.width || (orientation === 'landscape' ? .90 : .70);
-    const height = design.height || (orientation === 'landscape' ? .70 : 1.00);
+    const { width, height } = sheetSize(orientation);
     const panelBottom = 1.20, panelCenterY = panelBottom + height / 2;
     const poleHeight = 1.80, panelThickness = .003, cavity = .021, shellDepth = .027;
     const geometry = createOutline(THREE, width, height, design.profile);
@@ -106,7 +148,7 @@ export function buildPlacards(THREE, options = {}) {
       artSafeRect: geometry.artSafeRect, artInset: geometry.artInset,
       design: { ...design, orientation, width, height, artSafeRect: geometry.artSafeRect, artInset: geometry.artInset },
       dimensions: { width, height, totalHeight: panelBottom + height, panelThickness, cavity, shellDepth, pole: [.025, .015, poleHeight] },
-      description: 'Retazo de contorno irregular, dos caras con la misma ilustración derecha y mango oculto entre pieles. Envolvente nominal propuesta; no es patrón de corte ni montaje aprobado.',
+      description: 'El mango queda oculto entre las dos pieles. Cada cara lleva una copia de la misma ilustración, orientada para leerse de frente.',
       home: { position: group.position.toArray(), rotation: [0, 0, 0] },
     };
     boards.push(board);
@@ -190,7 +232,7 @@ export function buildPlacards(THREE, options = {}) {
   }
   const setState = (explode = 0, stage = 4, colors = false) => boards.forEach(board => board.setState(explode, stage, colors));
   const specs = {
-    revision: 'Carteles 2 · PA2-01', units: 'm', count: boards.length, facesPerBoard: 2,
+    revision: 'Carteles 2 · PA2-02', units: 'm', count: boards.length, facesPerBoard: 2,
     sameUprightArtworkBothSides: true, oldModuleRetained: true,
     panelThicknessM: .003, cavityM: .021, nominalShellDepthM: .027, overallDepthWithArtworkM: .0274,
     construction: 'Dos pieles de PP de 3 mm, cámara de 21 mm, banda interior y listón de 25 × 15 × 1800 mm. Uniones pasantes compactas dibujadas como propuesta; confirmar herrajes, estabilidad y manejo en prototipo.',

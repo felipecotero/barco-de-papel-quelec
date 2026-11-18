@@ -1,6 +1,6 @@
 import * as THREE from '../vendor/three.module.js';
 import { OrbitControls } from '../vendor/OrbitControls.js';
-import { buildPlacards, DEFAULT_DESIGNS, createOutline } from './model.js?v=PA2-01';
+import { buildPlacards, DEFAULT_DESIGNS, sheetSize, placeArtwork } from './model.js?v=PA2-02';
 
 const $ = selector => document.querySelector(selector);
 const V = a => new THREE.Vector3(...a);
@@ -64,57 +64,22 @@ function notify(message) {
 function textureFor(design) {
   const im = images.get(design.artUrl || design.image || design.asset);
   if (!im) throw new Error('Falta la ilustración de ' + (design.name || design.id));
-  const landscape = design.orientation === 'landscape';
-  const width = design.width || (landscape ? .9 : .7), height = design.height || (landscape ? .7 : 1);
+  const { width, height } = sheetSize(design.orientation);
   const canvas = document.createElement('canvas');
   const edge = 1600;
-  canvas.width = width >= height ? edge : Math.round(edge * width / height);
-  canvas.height = height >= width ? edge : Math.round(edge * height / width);
+  canvas.width = Math.round(edge * width);
+  canvas.height = Math.round(edge * height);
   const ctx = canvas.getContext('2d');
-  // Extend the source paper's own colour beyond its rectangular image bounds.
-  const probe = document.createElement('canvas'); probe.width = im.width; probe.height = im.height;
-  const pctx = probe.getContext('2d', { willReadFrequently: true }); pctx.drawImage(im, 0, 0);
-  const samples = [];
-  for (const dx of [18, 28, 42, 60]) for (const dy of [18, 28, 42, 60]) for (const sx of [dx, im.width - 1 - dx]) for (const sy of [dy, im.height - 1 - dy]) {
-    const rgb = pctx.getImageData(sx, sy, 1, 1).data;
-    if (design.id.toLowerCase().includes('tiempo') || /reloj|tiempo/i.test(design.name || '')) { if (rgb[0] > 35 && rgb[0] > rgb[1] * 1.5) samples.push([...rgb].slice(0, 3)); }
-    else if (Math.min(rgb[0], rgb[1], rgb[2]) > 215) samples.push([...rgb].slice(0, 3));
-  }
-  const median = a => a.sort((x, y) => x - y)[Math.floor(a.length / 2)];
-  const paper = samples.length ? 'rgb(' + [0, 1, 2].map(i => median(samples.map(p => p[i]))).join(',') + ')' : design.paperColor || '#f5f5f3';
-  ctx.fillStyle = paper;
+  const rect = placeArtwork(THREE, design, im.naturalWidth, im.naturalHeight);
+  ctx.fillStyle = rect.paperColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  const outline = createOutline(THREE, width, height, design.profile || 0).outline;
-  function contains(x, y) {
-    let inside = false;
-    for (let i = 0, j = outline.length - 1; i < outline.length; j = i++) {
-      const a = outline[i], b = outline[j];
-      if ((a[1] > y) !== (b[1] > y) && x < (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1]) + a[0]) inside = !inside;
-    }
-    return inside;
-  }
-  // Fit the actual aspect-preserving image rectangle, not an assumed square.
-  // A margin around that rectangle keeps every source pixel inside the offcut.
-  let inset = .025, w = 0, h = 0;
-  for (; inset <= .255; inset += .005) {
-    const maxW = canvas.width * (1 - 2 * inset), maxH = canvas.height * (1 - 2 * inset);
-    const ratio = Math.min(maxW / im.width, maxH / im.height);
-    w = im.width * ratio; h = im.height * ratio;
-    const halfX = w / canvas.width * width / 2 + .004;
-    const halfY = h / canvas.height * height / 2 + .004;
-    let safe = true;
-    for (let i = 0; i <= 32 && safe; i++) {
-      const x = -halfX + 2 * halfX * i / 32, y = -halfY + 2 * halfY * i / 32;
-      if (!contains(x, -halfY) || !contains(x, halfY) || !contains(-halfX, y) || !contains(halfX, y)) safe = false;
-    }
-    if (safe) break;
-  }
-  ctx.drawImage(im, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
+  ctx.drawImage(im, rect.x * canvas.width, rect.y * canvas.height, rect.w * canvas.width, rect.h * canvas.height);
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
-  texture.userData.sourceRectUV = { x: (1 - w / canvas.width) / 2, y: (1 - h / canvas.height) / 2, width: w / canvas.width, height: h / canvas.height };
-  texture.userData.sourceUncropped = true; texture.userData.paperColor = paper;
+  texture.userData.sourceRectUV = { x: rect.x, y: rect.y, width: rect.w, height: rect.h };
+  texture.userData.sourceUncropped = true;
+  texture.userData.paperColor = rect.paperColor;
   textures.push(texture);
   return texture;
 }
@@ -206,9 +171,12 @@ function update() {
   const board = boards[selected], design = designs[selected];
   $('#piece-code').textContent = (board.code || design.code || board.id) + ' · DOS CARAS';
   $('#piece-title').textContent = board.name;
+  $('#selected-jpg').href = design.artUrl;
+  $('#selected-jpg').textContent = '↓ Descargar «' + board.name + '» en JPG';
   $('#piece-size').textContent = Math.round(board.width * 100) + ' × ' + Math.round(board.height * 100) + ' cm · ' + (board.orientation === 'landscape' ? 'horizontal' : 'vertical');
   $('#piece-note').textContent = board.description || 'Contorno orgánico y dibujo completo, sin estirar ni recortar la ilustración.';
-  $('#orientation').value = design.orientation || board.orientation;
+  $('#orientation').value = board.orientation;
+  $('#orientation-note').hidden = board.orientation === DEFAULT_DESIGNS[selected].orientation;
   $('#view-name').textContent = mode === 'collection' ? 'CINCO CARTELES · CARAS ' + (face ? 'B' : 'A') : mode === 'inside' ? board.id + ' · POR DENTRO' : board.id + ' · CARA ' + (face ? 'B' : 'A');
   $('#view-measures').textContent = mode === 'collection' ? 'Cinco siluetas distintas · medidas de estudio' : Math.round(board.width * 100) + ' × ' + Math.round(board.height * 100) + ' cm · altura total ≈ ' + Math.round(board.totalHeight * 100) + ' cm';
   document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === mode)));
@@ -250,29 +218,6 @@ function setFace(value) {
   if (mode === 'inside') { mode = 'single'; stage = 4; explode = 0; }
   update(); fit();
 }
-function buildCatalog() {
-  $('#catalog').replaceChildren(); $('#art-downloads').replaceChildren();
-  designs.forEach((d, i) => {
-    const name = d.name || boards[i].name;
-    const url = d.artUrl || d.image || d.asset;
-    const button = document.createElement('button');
-    button.dataset.index = i;
-    button.title = 'Examinar ' + name;
-    const image = document.createElement('img'); image.src = url; image.alt = '';
-    const copy = document.createElement('span'); copy.className = 'catalog-copy';
-    const title = document.createElement('strong'); title.textContent = String(i + 1).padStart(2, '0') + ' · ' + name;
-    const small = document.createElement('small'); small.textContent = 'Mismo dibujo en las dos caras';
-    copy.append(title, small);
-    const arrow = document.createElement('em'); arrow.textContent = '↗';
-    button.append(image, copy, arrow); button.onclick = () => choose(i);
-    $('#catalog').append(button);
-    const a = document.createElement('a'); a.href = url; a.download = url.split('/').pop(); a.title = 'Descargar la ilustración original de ' + name;
-    const thumb = document.createElement('img'); thumb.src = url; thumb.alt = name;
-    const label = document.createElement('span'); label.textContent = String(i + 1).padStart(2, '0') + ' · ' + name;
-    const note = document.createElement('small'); note.textContent = '↓ JPG original · sin modificar';
-    a.append(thumb, label, note); $('#art-downloads').append(a);
-  });
-}
 function records() {
   const b = boards[selected];
   const position = b.root.position.clone();
@@ -283,6 +228,9 @@ function records() {
   return result;
 }
 function bind() {
+  document.querySelectorAll('#catalog [data-index]').forEach(button => {
+    button.onclick = () => choose(Number(button.dataset.index));
+  });
   document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => setMode(b.dataset.view));
   document.querySelectorAll('[data-face]').forEach(b => b.onclick = () => setFace(+b.dataset.face));
   document.querySelectorAll('[data-stage]').forEach(b => b.onclick = () => {
@@ -292,10 +240,8 @@ function bind() {
     const orientation = $('#orientation').value;
     const d = designs[selected];
     d.orientation = orientation;
-    d.width = orientation === 'landscape' ? .9 : .7;
-    d.height = orientation === 'landscape' ? .7 : 1;
     playing = false; mode = 'single'; stage = 4; explode = 0;
-    rebuild(); buildCatalog(); update(); fit();
+    rebuild(); update(); fit();
     notify('Orientación de este cartel cambiada; el dibujo conserva su proporción.');
   };
   $('#orbit').onclick = () => {
@@ -320,18 +266,15 @@ function bind() {
   };
   $('#snapshot').onclick = () => {
     renderer.render(scene, camera);
-    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-01.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
+    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-02.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
   };
   $('#share').onclick = async () => {
     const u = new URL(location.href);
-    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 1, selected, mode, face, stage, explode, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: designs.map(d => d.orientation), camera: camera.position.toArray(), target: controls.target.toArray() }));
+    u.searchParams.set('rev', 'PA2-02');
+    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 2, selected, mode, face, stage, explode, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: designs.map(d => d.orientation), camera: camera.position.toArray(), target: controls.target.toArray() }));
     try { await navigator.clipboard.writeText(u.href); notify('Enlace de esta vista copiado.'); }
     catch { prompt('Copia el enlace de esta vista:', u.href); }
   };
-  for (const id of ['downloads-open', 'downloads-side']) $('#' + id).onclick = () => $('#downloads').showModal();
-  $('#downloads-close').onclick = () => $('#downloads').close();
-  window.addEventListener('hashchange', () => { if (location.hash === '#artes' && !$('#downloads').open) $('#downloads').showModal(); });
-  $('#downloads').addEventListener('click', e => { if (e.target === $('#downloads')) { const r = e.target.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.target.close(); } });
   document.addEventListener('keydown', e => {
     if (e.target.closest('input,select,textarea,dialog,summary') || e.ctrlKey || e.metaKey || e.altKey) return;
     if (e.key.toLowerCase() === 'c') $('#orbit').click();
@@ -363,12 +306,13 @@ function restore() {
     const raw = new URLSearchParams(location.hash.slice(1)).get('vista');
     if (!raw) return false;
     const q = JSON.parse(raw);
-    if (q.v !== 1) return false;
+    if (q.v !== 1 && q.v !== 2) return false;
     if (Array.isArray(q.orientations) && q.orientations.length === 5) {
       q.orientations.forEach((o, i) => {
         if (!['portrait', 'landscape'].includes(o)) return;
-        designs[i].orientation = o; designs[i].width = o === 'landscape' ? .9 : .7; designs[i].height = o === 'landscape' ? .7 : 1;
-      }); rebuild(); buildCatalog();
+        // Old shared views stored the former landscape default for pencils.
+        designs[i].orientation = q.v === 1 && designs[i].id === 'lapices' ? 'portrait' : o;
+      }); rebuild();
     }
     selected = clamp(Math.floor(+q.selected || 0), 0, 4);
     mode = ['single', 'collection', 'inside'].includes(q.mode) ? q.mode : 'collection';
@@ -390,12 +334,11 @@ async function start() {
   rebuild();
   transparency = QuelecSurfaceTransparency.install({ renderer, getRoot: () => model.root, isSurface: mesh => mesh.userData.surfaceTransparency === true && ['panel', 'art', 'band', 'edge'].includes(mesh.parent?.userData.type), label: 'Transparencia de las caras', container: $('#transparency'), onChange: invalidate });
   dimensions = QuelecDimensions.install({ THREE, scene, camera, viewport: host, button: $('#measure-toggle'), getBounds: bounds, isAssembled: () => mode === 'single' && stage === 4 && explode < .001, names: ['Ancho', 'Altura con mango', 'Espesor de caja'], caption: 'Medidas de estudio del cartel ensamblado. Contorno irregular; no es una plantilla de corte.', notify });
-  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-01', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. El original se conserva sin recolorear. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
-  buildCatalog(); bind(); resize();
+  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-02', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. Las texturas reproducen las artes de impresión. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
+  bind(); resize();
   new ResizeObserver(resize).observe(host);
   if (!restore()) { update(); fit(); }
   $('#loading').hidden = true;
-  if (location.hash === '#artes') $('#downloads').showModal();
   document.documentElement.dataset.ready = 'true';
   window.pancartas2 = { scene, camera, renderer, controls, get model() { return model; }, get boards() { return boards; }, designs, dimensions, transparency, exporter, records, choose, setMode, setFace, rebuild, getState: () => ({ selected, mode, face, explode, stage, playing, labels: labelsOn }) };
   renderer.setAnimationLoop(t => {

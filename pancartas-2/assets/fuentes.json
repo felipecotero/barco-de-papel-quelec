@@ -1,62 +1,86 @@
 {
-  "revision": "PA2-01",
-  "suppliedBy": "Usuario",
-  "pixelsUnchanged": true,
+  "revision": "PA2-02",
+  "faces": "Misma ilustración en cada cara, derecha y sin espejo.",
   "artworks": [
     {
-      "file": "01-osito.jpg",
-      "originalName": "Osito de acuarela con contorno marcado.jpg",
-      "bytes": 605780,
-      "sha256": "df80912dceb0490d85fc0b3fa55dfc787d6097051fb0e69bcfc587178930e7c3",
+      "file": "01-osito-PA202.jpg",
+      "sourceName": "Osito de acuarela con contorno marcado_1.jpg",
+      "bytes": 463547,
+      "sha256": "587a2847f6acea64dae7e2e649eada518bf322782068dea5b9aac22c67a143dc",
       "pixels": [
         1060,
         1484
       ],
-      "faces": "A y B: misma ilustración, derecha y sin espejo."
+      "paperColor": "#FFFFFF",
+      "printPDF": "downloads/01-osito-pliego.pdf",
+      "sheetCm": [
+        70,
+        100
+      ]
     },
     {
-      "file": "02-lapices.jpg",
-      "originalName": "Lápices de colores rotos y astillas.jpg",
-      "bytes": 1143158,
-      "sha256": "71a0690bb531b30f1c0057bf639f72c260868ea64ff9f7e8d52e47d22804997a",
+      "file": "02-lapices-PA202.jpg",
+      "sourceName": "Lápices de colores rotos y astillas.psd",
+      "bytes": 488444,
+      "sha256": "4b09d46cdd02a8b0d69dbf6f62544a2170ab5d691d5c68fd48adb9bd75e98bbd",
       "pixels": [
         1060,
         1484
       ],
-      "faces": "A y B: misma ilustración, derecha y sin espejo."
+      "paperColor": "#FFFFFF",
+      "printPDF": "downloads/02-lapices-pliego.pdf",
+      "sheetCm": [
+        70,
+        100
+      ]
     },
     {
-      "file": "03-balon.jpg",
-      "originalName": "Balón de fútbol con chincheta roja.jpg",
-      "bytes": 1068161,
-      "sha256": "6edeec640f0a1ba4b3710c36d38ddf97af370e70021f7205c856f87c8b11312f",
+      "file": "03-balon-PA202.jpg",
+      "sourceName": "Balón de fútbol con chincheta roja.png",
+      "bytes": 546809,
+      "sha256": "fc0e8c355dd46e10081b6bfc4883cec9b6edb8db6e5f2ffd66a54b1f78a3f5dd",
       "pixels": [
         1060,
         1484
       ],
-      "faces": "A y B: misma ilustración, derecha y sin espejo."
+      "paperColor": "#FFFFFF",
+      "printPDF": "downloads/03-balon-pliego.pdf",
+      "sheetCm": [
+        70,
+        100
+      ]
     },
     {
-      "file": "04-tiempo.jpg",
-      "originalName": "Reloj de arena alargado en acuarela ALARGADA Morad.jpg",
-      "bytes": 1016855,
-      "sha256": "ca2668d79550d56f1d46b7fdc95a2262284dd09b45e726b3f7185bb748bf9c36",
+      "file": "04-reloj-PA202.jpg",
+      "sourceName": "Reloj de arena alargado en acuarela ALARGADA Morad.psd",
+      "bytes": 468935,
+      "sha256": "318bfd674c9dcaae65a2494439395778a795dd405523b56adffe543986e5b85f",
       "pixels": [
         1060,
         1484
       ],
-      "faces": "A y B: misma ilustración, derecha y sin espejo."
+      "paperColor": "#600D1F",
+      "printPDF": "downloads/04-reloj-pliego.pdf",
+      "sheetCm": [
+        70,
+        100
+      ]
     },
     {
-      "file": "05-sonrisa.jpg",
-      "originalName": "Sonrisa ilustrada con dientes inferiores irregulares.jpg",
-      "bytes": 960955,
-      "sha256": "28fa2fa52e3d830310a558d524616f39a623c3635c5f85269873fe0dd1948760",
+      "file": "05-sonrisa-PA202.jpg",
+      "sourceName": "Sonrisa ilustrada con dientes inferiores irregulares.png",
+      "bytes": 440624,
+      "sha256": "68123786f0d696fff7fae2f0e952f5afd71127a6477b2526b4c59c23091f7f43",
       "pixels": [
         1060,
         1484
       ],
-      "faces": "A y B: misma ilustración, derecha y sin espejo."
+      "paperColor": "#FFFFFF",
+      "printPDF": "downloads/05-sonrisa-pliego.pdf",
+      "sheetCm": [
+        100,
+        70
+      ]
     }
   ]
 }

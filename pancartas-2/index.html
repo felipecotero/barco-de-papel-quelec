@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111c24">
 <title>Carteles 2.0 · Quelec</title><meta name="description" content="Cinco carteles de Quelec con contornos orgánicos, las nuevas ilustraciones del proyecto y dos caras. Visor, montaje y artes descargables.">
-<link rel="icon" href="../assets/logo-pancartas.svg"><link rel="stylesheet" href="../shared/brand.css"><link rel="stylesheet" href="style.css?v=PA2-01">
+<link rel="icon" href="../assets/logo-pancartas.svg"><link rel="stylesheet" href="../shared/brand.css"><link rel="stylesheet" href="style.css?v=PA2-02">
 <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
 </head>
 <body>
-<header class="top"><a class="back" href="../index.html?rev=I36#pancartas-2">← Taller de Objetos</a><div class="title"><img src="../assets/logo-pancartas.svg" width="36" height="36" alt=""><div><h1>Carteles 2.0</h1><span>Cinco objetos · diez caras · PA2-01</span></div></div><div class="header-actions"><a class="previous" href="../pancartas/?rev=PA07">Versión anterior ↗</a><button id="downloads-open" title="Descargar las cinco ilustraciones originales">↓ Artes</button><button id="export-model" title="Descargar el cartel ensamblado: GLB u OBJ con texturas; STL solo geometría">⇩ Descargar 3D</button></div></header>
+<header class="top"><a class="back" href="../index.html?rev=I39#pancartas-2">← Taller de Objetos</a><div class="title"><img src="../assets/logo-pancartas.svg" width="36" height="36" alt=""><div><h1>Carteles 2.0</h1><span>Cinco objetos · diez caras · PA2-02</span></div></div><div class="header-actions"><a class="previous" href="../pancartas/?rev=PA07">Versión anterior ↗</a><a class="download-nav" href="#artes">↓ Descargar PDF</a><button id="export-model" title="Descargar el cartel ensamblado: GLB u OBJ con texturas; STL solo geometría">⇩ Descargar 3D</button></div></header>
 <main class="workspace">
 <section class="viewer" aria-label="Modelo 3D de los cinco carteles">
   <div id="viewport"><p id="loading" role="status">Preparando los cinco carteles…</p><div id="part-labels" aria-hidden="true"></div><div class="view-caption"><span id="view-name">LOS CINCO CARTELES</span><small id="view-measures"></small></div></div>
@@ -22,18 +22,45 @@
     <button id="labels-toggle" aria-pressed="false" title="Mostrar u ocultar los nombres de las piezas"><b>◇</b><small>Rótulos</small></button>
     <button id="measure-toggle" aria-pressed="false" title="Mostrar u ocultar las cotas del cartel ensamblado"><b>↔</b><small>Cotas</small></button>
     <button id="snapshot" title="Descargar una imagen PNG de esta vista"><b>▤</b><small>Imagen</small></button>
+    <a class="toolbar-download" href="#artes" title="Elegir un arte de impresión o descargar los cinco"><b aria-hidden="true">↓</b><small>Descargar PDF</small></a>
   </nav>
   <div class="viewer-footer"><span>Arrastra para girar · rueda o pinza para acercar</span><button id="share" title="Copiar un enlace a esta vista del modelo">↗ Compartir vista</button></div>
   <div id="toast" role="status"></div>
 </section>
 <aside>
   <section class="panel intro-panel"><div class="eyebrow">NUEVAS ILUSTRACIONES DEL PROYECTO</div><h2>Pedazos encontrados.</h2><p>Carteles con bordes desiguales, como fragmentos de papel o cartón aprovechados. Cada uno conserva su ilustración y su tachón. Las dos caras muestran el mismo dibujo, derecho y sin espejo.</p><div class="views"><button data-view="single" aria-pressed="false" title="Examinar únicamente el cartel seleccionado">▯ Un cartel</button><button data-view="collection" aria-pressed="true" title="Comparar los cinco carteles y sus siluetas">▥ Los cinco</button><button data-view="inside" aria-pressed="false" title="Abrir la segunda cara para mirar el mango y el refuerzo">◧ Por dentro</button></div></section>
-  <section class="panel"><h2>Elige un cartel</h2><div id="catalog" class="catalog"></div></section>
-  <section class="panel selected-panel"><div class="eyebrow" id="piece-code">CARTEL 01</div><h2 id="piece-title">Osito de peluche</h2><p id="piece-size" class="size"></p><p id="piece-note"></p><div class="orientation-choice"><label for="orientation">Orientación de esta pieza</label><select id="orientation" title="Comparar un contorno vertical u horizontal para este dibujo"><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></div><div class="face-choice" aria-label="Cara visible"><button data-face="0" aria-pressed="true" title="Mirar la primera cara del cartel">Cara A</button><button data-face="1" aria-pressed="false" title="Mirar la segunda cara del cartel, sin espejo">Cara B</button></div><div id="transparency"></div></section>
+  <section id="artes" class="panel" aria-labelledby="artes-title" tabindex="-1">
+    <h2 id="artes-title">Carteles y artes de impresión</h2>
+    <div id="catalog" class="catalog">
+      <div class="catalog-row">
+        <button data-index="0" aria-pressed="true" title="Ver osito de peluche en el visor"><img src="assets/01-osito-PA202.jpg" alt=""><span class="catalog-copy"><strong>01 · Osito de peluche</strong><small>70 × 100 cm</small></span></button>
+        <a href="downloads/01-osito-pliego.pdf" download aria-label="Descargar PDF de osito de peluche">↓ PDF</a>
+      </div>
+      <div class="catalog-row">
+        <button data-index="1" aria-pressed="false" title="Ver lápices de colores en el visor"><img src="assets/02-lapices-PA202.jpg" alt=""><span class="catalog-copy"><strong>02 · Lápices de colores</strong><small>70 × 100 cm</small></span></button>
+        <a href="downloads/02-lapices-pliego.pdf" download aria-label="Descargar PDF de lápices de colores">↓ PDF</a>
+      </div>
+      <div class="catalog-row">
+        <button data-index="2" aria-pressed="false" title="Ver balón de fútbol en el visor"><img src="assets/03-balon-PA202.jpg" alt=""><span class="catalog-copy"><strong>03 · Balón de fútbol</strong><small>70 × 100 cm</small></span></button>
+        <a href="downloads/03-balon-pliego.pdf" download aria-label="Descargar PDF de balón de fútbol">↓ PDF</a>
+      </div>
+      <div class="catalog-row">
+        <button data-index="3" aria-pressed="false" title="Ver reloj de arena en el visor"><img src="assets/04-reloj-PA202.jpg" alt=""><span class="catalog-copy"><strong>04 · Reloj de arena</strong><small>70 × 100 cm</small></span></button>
+        <a href="downloads/04-reloj-pliego.pdf" download aria-label="Descargar PDF de reloj de arena">↓ PDF</a>
+      </div>
+      <div class="catalog-row">
+        <button data-index="4" aria-pressed="false" title="Ver sonrisa en el visor"><img src="assets/05-sonrisa-PA202.jpg" alt=""><span class="catalog-copy"><strong>05 · Sonrisa</strong><small>100 × 70 cm</small></span></button>
+        <a href="downloads/05-sonrisa-pliego.pdf" download aria-label="Descargar PDF de sonrisa">↓ PDF</a>
+      </div>
+    </div>
+    <a class="download-all" href="downloads/Carteles-2-Artes-pliego-PA2-02.pdf" download>↓ Descargar los cinco en PDF</a>
+    <p class="small">Un pliego por ilustración. Imprime a tamaño real (100 %) y pide dos copias por cartel para vestir ambas caras.</p>
+    <p class="small">Los dibujos tienen una resolución efectiva de 46 a 65 píxeles por pulgada a este tamaño y están pensados para verse a distancia en escena.</p>
+    <a class="download-jpg" href="downloads/Carteles-2-Artes-limpios-PA2-02.zip" download>↓ Cinco artes en JPG (ZIP)</a>
+  </section>
+  <section class="panel selected-panel"><div class="eyebrow" id="piece-code">CARTEL 01</div><h2 id="piece-title">Osito de peluche</h2><p id="piece-size" class="size"></p><p id="piece-note"></p><div class="orientation-choice"><label for="orientation">Orientación en el visor</label><select id="orientation" title="Comparar un contorno vertical u horizontal para este dibujo"><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select><small id="orientation-note" hidden>El PDF conserva el formato indicado en la lista de artes.</small></div><div class="face-choice" aria-label="Cara visible"><button data-face="0" aria-pressed="true" title="Mirar la primera cara del cartel">Cara A</button><button data-face="1" aria-pressed="false" title="Mirar la segunda cara del cartel, sin espejo">Cara B</button></div><div id="transparency"></div><a id="selected-jpg" class="download-jpg" href="assets/01-osito-PA202.jpg" download>↓ Descargar el osito en JPG</a></section>
   <section class="panel"><h2>Cómo se arma</h2><div class="control-head"><label for="explode">Separar las piezas</label><output id="explode-value">0 %</output></div><input id="explode" type="range" min="0" max="1" step="0.01" value="0" title="Separar las capas sin cambiar sus tamaños para entender el montaje"><div class="steps"><button data-stage="1" title="Ver los paneles y sus contornos">1 · Recortar</button><button data-stage="2" title="Añadir el mango y su apoyo">2 · Fijar mango</button><button data-stage="3" title="Ver el espacio interior entre las dos caras">3 · Dar espacio</button><button data-stage="4" class="active" title="Cerrar la segunda cara y aplicar los dibujos">4 · Vestir</button></div><button id="play" class="wide-button" title="Mostrar las cuatro etapas del montaje">▶ Ver montaje</button><div id="stage-description" class="explanation"></div><details><summary>Medidas y construcción de estudio</summary><p>Los tamaños de esta versión son propuestas para comparar la lectura y el manejo. Los contornos irregulares deben cortarse con bordes suaves.</p><p>El mango y sus fijaciones quedan entre las dos caras, de modo que no tapen el dibujo. La transparencia permite revisar los apoyos. El montaje y la rigidez requieren una prueba con el material y el portador antes de fabricar.</p><p>Los planos PA05 y el modelo de pliego PA07 pertenecen a la versión anterior. Los contornos y el montaje de esta versión 2 son un estudio para revisar antes de fabricar.</p></details></section>
-  <section class="panel"><h2>Las artes</h2><p>Descarga las cinco ilustraciones aportadas para esta versión. Los originales se conservan sin cambiar sus colores, trazos ni tachones.</p><button id="downloads-side" class="wide-button" title="Ver las descargas de ilustraciones originales">↓ Abrir descargas de artes</button><p class="small">Descargar 3D guarda el cartel seleccionado ensamblado a escala 1:1. GLB y OBJ incluyen las texturas; STL contiene solo geometría.</p></section>
 </aside>
 </main>
-<dialog id="downloads"><div class="dialog-head"><div><div class="eyebrow">CINCO ILUSTRACIONES · PA2-01</div><h2>Artes originales.</h2></div><button id="downloads-close" title="Cerrar las descargas" aria-label="Cerrar las descargas">×</button></div><p>Un dibujo por cartel, repetido en sus dos caras. Los archivos originales no son plantillas de corte ni se deben deformar para llenar un contorno.</p><a class="zip-download" href="downloads/Carteles-2-Artes-originales-PA2-01.zip" download title="Descargar los cinco JPG originales juntos en un ZIP">↓ Descargar las cinco ilustraciones · ZIP</a><div id="art-downloads" class="art-downloads"></div><p class="small">Para impresión, la escala, el soporte y el margen de corte se acuerdan con el proveedor. Estos archivos conservan los píxeles de origen.</p></dialog>
-<script src="../shared/obj-export.js?v=I05"></script><script src="../shared/dimensions.js?v=I05"></script><script src="../shared/surface-transparency.js?v=I24"></script><script type="module" src="app.js?v=PA2-01"></script>
+<script src="../shared/obj-export.js?v=I05"></script><script src="../shared/dimensions.js?v=I05"></script><script src="../shared/surface-transparency.js?v=I24"></script><script type="module" src="app.js?v=PA2-02"></script>
 </body></html>

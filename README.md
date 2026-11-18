@@ -248,13 +248,13 @@ Materiales propuestos: dos pieles de PP alveolar de 2 mm y 350 g/m² en las comp
 Seleccionar, mover y rotar cada pieza sobre sus ejes propios, introducir cotas, deshacer, aislar, transparentar pieles y mostrar u ocultar portador y rótulos. Las ventanas centrales alternan entre circular y rectangular redondeada; el plástico se puede quitar y el cálculo de masa se actualiza. Se conservan los identificadores y el almacenamiento de posiciones de las revisiones anteriores.
 
 
-## Carteles 2.0 · I36 / PA2-01 · 18 de noviembre de 2026
+## Carteles 2.0 · I39 / PA2-02 · 18 de noviembre de 2026
 
-[Visor de los cinco carteles](pancartas-2/?rev=PA2-01). Nueva versión independiente con osito, lápices, balón, reloj de arena y sonrisa, usando los cinco JPG aportados por el usuario. Cinco objetos de doble cara: el mismo dibujo completo por delante y por detrás, derecho y sin espejo. Contornos asimétricos suaves inspirados en los bocetos de fragmentos de papel o cartón encontrado. La versión PA07 anterior se conserva.
+El osito con tachón rojo, los lápices de colores, el balón y el reloj de arena se presentan en vertical, a 70 × 100 cm. La sonrisa va en horizontal, a 100 × 70 cm. Los cinco carteles conservan sus siluetas de papel encontrado y llevan la misma ilustración derecha en ambas caras. El fondo del reloj es vino tinto y el de los otros cuatro es blanco. [Abrir el visor](pancartas-2/?rev=PA2-02).
 
-Por defecto, osito, balón y reloj en vertical de 70 × 100 cm; lápices y sonrisa en horizontal de 90 × 70 cm. La orientación se puede cambiar por cartel. Los cinco JPG son verticales de 1060 × 1484 píxeles; el visor los encaja completos y sin deformarlos dentro de cada silueta, con margen de papel del tono de origen. No se han creado composiciones horizontales nuevas ni se recortan los dibujos para llenar el formato. [Paquete de los cinco originales](pancartas-2/downloads/Carteles-2-Artes-originales-PA2-01.zip).
+Para imprimir los cinco carteles de doble cara, sacar dos copias de cada página a tamaño real (100 %). Cada PDF individual contiene un arte y el PDF conjunto reúne las cinco páginas. El fondo llega hasta los bordes del pliego. Los artes aprobados tienen 1060 × 1484 píxeles y se incluyen a su resolución nativa, entre 46 y 65 ppp en estas composiciones. [Descargas para imprenta](pancartas-2/?rev=PA2-02#artes).
 
-Un cartel o los cinco, caras A/B, giro de cámara, rótulos y cotas apagables, cuatro etapas de montaje, separación de capas y transparencia de las superficies. Mango, separadores y uniones interiores quedan visibles. Exportación del cartel seleccionado ensamblado en GLB/OBJ con texturas o STL de geometría, a escala; las descargas de JPG conservan exactamente los bytes de origen.
+El visor permite ver uno o cinco carteles, girar de cara, cambiar la orientación de la pieza, separar las capas y mostrar cotas, rótulos o transparencias. Los cinco artes también están disponibles en un ZIP de JPG. El cartel ensamblado puede descargarse como GLB, OBJ con texturas o STL.
 
 Montaje de estudio: dos pieles de PP de 3 mm, cámara de 21 mm y mango de madera de 25 × 15 × 1800 mm. Caja nominal de 27 mm; 27,4 mm contando la representación superficial de las ilustraciones. Altura total propuesta de 220 cm en vertical y 190 cm en horizontal. Las cabezas enrasadas y las uniones compactas son una propuesta, pendiente de prototipo, herraje disponible y revisión del manejo. Las envolventes del visor no son plantillas de corte. Los constructivos PA05 y los costos PC02 pertenecen a las versiones anteriores.
 
