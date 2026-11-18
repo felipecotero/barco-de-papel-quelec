@@ -9,6 +9,8 @@ export function buildShip(THREE, options = {}) {
   const glass = new THREE.MeshPhysicalMaterial({ color: '#add5de', roughness: .13, metalness: 0, transparent: true, opacity: .28, side: THREE.DoubleSide, depthWrite: false });
   let windowShape = options.windowShape || 'rounded';
   let glazingOn = options.glazing !== false;
+  const panelDepth = .035;
+  const fuselageRadius = 1.10;
   const v = (x, y, z) => new Vector3(x, y, z);
   function roundedRect(x, y, width, height, radius) {
     const s = new THREE.Shape();
@@ -39,7 +41,9 @@ export function buildShip(THREE, options = {}) {
     return mesh;
   }
   function tube(piece, points, radius = .009, material = metal, closed = false) {
-    const path = new THREE.CatmullRomCurve3(points, closed, 'centripetal');
+    const curvePoints = closed && points[0].distanceToSquared(points[points.length - 1]) < 1e-12
+      ? points.slice(0, -1) : points;
+    const path = new THREE.CatmullRomCurve3(curvePoints, closed, 'centripetal');
     return add(piece, new THREE.TubeGeometry(path, Math.max(points.length * 4, 20), radius, 8, closed), material);
   }
   function bar(piece, a, b, radius = .009, material = metal) {
@@ -49,15 +53,71 @@ export function buildShip(THREE, options = {}) {
     mesh.quaternion.setFromUnitVectors(v(0, 1, 0), delta.normalize());
     return mesh;
   }
-  function surface(piece, shape, map, material, type = 'skins') {
-    const geo = new THREE.ShapeGeometry(shape, 18);
-    const positions = geo.attributes.position;
-    for (let i = 0; i < positions.count; i++) {
-      const p = map(positions.getX(i), positions.getY(i));
-      positions.setXYZ(i, p.x, p.y, p.z);
+  function sampleBoundary(shape, step = .025) {
+    const coarse = shape.getPoints(32);
+    const points = [];
+    for (let i = 0; i < coarse.length - 1; i++) {
+      const a = coarse[i], b = coarse[i + 1];
+      const count = Math.max(1, Math.ceil(a.distanceTo(b) / step));
+      for (let k = 0; k < count; k++) points.push(a.clone().lerp(b, k / count));
     }
-    geo.computeVertexNormals();
-    return add(piece, geo, material, type);
+    points.push(coarse[coarse.length - 1].clone());
+    return points;
+  }
+  function subdividedSurface(shape, map) {
+    const source = new THREE.ShapeGeometry(shape, 24);
+    const positions = source.attributes.position;
+    const vertices = Array.from({ length: positions.count }, (_, i) =>
+      new THREE.Vector2(positions.getX(i), positions.getY(i)));
+    let indices = Array.from(source.index.array);
+    const maximumEdge = .05;
+    for (let pass = 0; pass < 10; pass++) {
+      const midpoints = new Map();
+      const edgeKey = (a, b) => a < b ? a + '/' + b : b + '/' + a;
+      for (let i = 0; i < indices.length; i += 3) {
+        const tri = indices.slice(i, i + 3);
+        for (let j = 0; j < 3; j++) {
+          const a = tri[j], b = tri[(j + 1) % 3], key = edgeKey(a, b);
+          if (!midpoints.has(key) && vertices[a].distanceToSquared(vertices[b]) > maximumEdge ** 2) {
+            midpoints.set(key, vertices.length);
+            vertices.push(vertices[a].clone().lerp(vertices[b], .5));
+          }
+        }
+      }
+      if (!midpoints.size) break;
+      const next = [];
+      for (let i = 0; i < indices.length; i += 3) {
+        const [a, b, d] = indices.slice(i, i + 3);
+        const ab = midpoints.get(edgeKey(a, b));
+        const bd = midpoints.get(edgeKey(b, d));
+        const da = midpoints.get(edgeKey(d, a));
+        const splits = Number(ab !== undefined) + Number(bd !== undefined) + Number(da !== undefined);
+        if (splits === 0) next.push(a, b, d);
+        else if (splits === 3) next.push(a, ab, da, ab, b, bd, da, bd, d, ab, bd, da);
+        else if (splits === 1) {
+          if (ab !== undefined) next.push(a, ab, d, ab, b, d);
+          else if (bd !== undefined) next.push(b, bd, a, bd, d, a);
+          else next.push(d, da, b, da, a, b);
+        } else if (da === undefined) next.push(b, bd, ab, a, ab, d, ab, bd, d);
+        else if (ab === undefined) next.push(d, da, bd, b, bd, a, bd, da, a);
+        else next.push(a, ab, da, d, da, b, da, ab, b);
+      }
+      indices = next;
+    }
+    source.dispose();
+    const mapped = [];
+    for (const point of vertices) {
+      const p = map(point.x, point.y);
+      mapped.push(p.x, p.y, p.z);
+    }
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(mapped, 3));
+    geometry.setIndex(indices);
+    geometry.computeVertexNormals();
+    return geometry;
+  }
+  function surface(piece, shape, map, material, type = 'skins') {
+    return add(piece, subdividedSurface(shape, map), material, type);
   }
   function strip(piece, points, mapA, mapB, material, type = 'skins') {
     const vertices = [], indices = [];
@@ -93,22 +153,22 @@ export function buildShip(THREE, options = {}) {
     const back = (x, y) => mapping(x, y, -depth / 2);
     surface(piece, perforated, front, material);
     surface(piece, perforated, back, material);
-    const rim = outer.getPoints(32);
+    const rim = sampleBoundary(outer);
     strip(piece, rim, front, back, material);
     if (frame) {
-      const center = outer.getPoints(32).reduce((sum, p) => sum.add(p), new THREE.Vector2()).divideScalar(rim.length);
+      const center = rim.reduce((sum, p) => sum.add(p), new THREE.Vector2()).divideScalar(rim.length);
       const inset = rim.map(p => {
         const delta = p.clone().sub(center);
         return p.clone().addScaledVector(delta.normalize(), -.014);
       });
-      tube(piece, inset.map(p => mapping(p.x, p.y, 0)), .009, metal, true);
+      tube(piece, inset.map(p => mapping(p.x, p.y, 0)), .008, metal, true);
       if (hole) {
-        const aperture = hole.getPoints(48);
+        const aperture = sampleBoundary(hole, .018);
         strip(piece, aperture, front, back, white);
-        for (const z of [-depth / 2, depth / 2]) {
-          tube(piece, aperture.map(p => mapping(p.x, p.y, z)), .011, blue, true);
+        for (const z of [-depth / 2 + .006, depth / 2 - .006]) {
+          tube(piece, aperture.map(p => mapping(p.x, p.y, z)), .006, blue, true);
         }
-        tube(piece, aperture.map(p => mapping(p.x, p.y, 0)), .008, metal, true);
+        tube(piece, aperture.map(p => mapping(p.x, p.y, 0)), .007, metal, true);
       }
     }
     if (hole) {
@@ -120,7 +180,7 @@ export function buildShip(THREE, options = {}) {
     for (const x of [-.205, .205]) {
       const a = mapping(x, .18, 0);
       const b = mapping(x, .42, 0);
-      bar(piece, a, b, .011);
+      tube(piece, Array.from({ length: 13 }, (_, i) => mapping(x, .18 + .24 * i / 12, 0)), .008);
       const c = a.clone().add(v(0, 0, -sign * .19));
       const d = b.clone().add(v(0, 0, -sign * .19));
       bar(piece, a, c, .010);
@@ -129,8 +189,8 @@ export function buildShip(THREE, options = {}) {
     }
   }
   const nose = newPiece('nariz', 'Nariz y dos orejas', [-1.15, .90, 0],
-    { largo: 1.70, alto: 1.00, ancho: 1.00, oreja: .70 },
-    'Nariz roja redondeada y dos orejas blancas de 70 cm con ojos de buey. Dos agarres interiores para un portador. Ancho de 1 m propuesto.', .50);
+    { largo: 1.70, alto: 1.00, ancho: 1.00, oreja: .70, espesorOreja: panelDepth },
+    'Nariz roja redondeada y dos orejas curvas blancas de 70 cm y 3,5 cm de espesor con ojos de buey. Dos agarres interiores para un portador. Ancho de 1 m propuesto.', .50);
   const noseY = -.5;
   const sectors = 44, rings = 30;
   const pts = [], indices = [];
@@ -170,13 +230,17 @@ export function buildShip(THREE, options = {}) {
   for (const sign of [-1, 1]) {
     const ear = roundedRect(.15, 0, .70, .80, .14);
     const eye = circle(.505, .44, .185);
-    const mapping = (x, y, z) => v(x, y + noseY, sign * (.465 + z));
-    shellPanel(nose, ear, eye, mapping, .046, white);
+    const mapping = (x, y, z) => {
+      const angle = Math.asin(THREE.MathUtils.clamp((y + noseY) / .5, -1, 1));
+      const radius = .5 - panelDepth / 2 + z;
+      return v(x, radius * Math.sin(angle), sign * radius * Math.cos(angle));
+    };
+    shellPanel(nose, ear, eye, mapping, panelDepth, white);
     const lowerA = v(-.15, .18 + noseY, sign * .25);
     const lowerB = v(.65, .18 + noseY, sign * .25);
     bar(nose, lowerA, lowerB, .012);
-    bar(nose, v(.17, .24 + noseY, sign * .46), lowerA, .011);
-    bar(nose, v(.68, .24 + noseY, sign * .46), lowerB, .011);
+    bar(nose, mapping(.17, .24, 0), lowerA, .009);
+    bar(nose, mapping(.68, .24, 0), lowerB, .009);
     const start = v(.12, .22 + noseY, sign * .25);
     const end = v(.39, .22 + noseY, sign * .25);
     bar(nose, start, end, .017, grip);
@@ -185,11 +249,18 @@ export function buildShip(THREE, options = {}) {
   }
   function buildDoor(piece, sign, tail) {
     const outer = roundedRect(-.35, 0, .70, 1.10, .115);
-    const circular = tail || windowShape === 'circular' || windowShape === 'circle';
-    const hole = circular ? circle(0, .705, .195) : roundedRect(-.215, .49, .43, .44, .09);
-    const mapping = (x, y, z) => v(x, y - .55, sign * (z + .055 * Math.pow((y - .55) / .55, 2)));
-    shellPanel(piece, outer, hole, mapping, .15, white);
-    for (const x of [-.29, .29]) bar(piece, mapping(x, .10, 0), mapping(x, 1., 0), .008);
+    const circular = windowShape === 'circular' || windowShape === 'circle';
+    const hole = tail ? null : circular ? circle(0, .705, .195) : roundedRect(-.215, .49, .43, .44, .09);
+    const mapping = (x, y, z) => {
+      const angle = Math.asin((y - .55) / fuselageRadius);
+      const middleRadius = fuselageRadius - panelDepth / 2;
+      const radius = middleRadius + z;
+      return v(x, radius * Math.sin(angle), sign * (radius * Math.cos(angle) - middleRadius));
+    };
+    shellPanel(piece, outer, hole, mapping, panelDepth, white);
+    for (const x of [-.29, .29]) {
+      tube(piece, Array.from({ length: 37 }, (_, i) => mapping(x, .10 + .90 * i / 36, 0)), .008);
+    }
     for (const y of [.14, .37, 1.0]) bar(piece, mapping(-.29, y, 0), mapping(.29, y, 0), .008);
     doorHandles(piece, mapping, sign);
     if (tail) {
@@ -199,8 +270,8 @@ export function buildShip(THREE, options = {}) {
       shape.lineTo(.55, .70);
       shape.lineTo(.15, .70);
       shape.closePath();
-      const top = (x, s) => v(x, -.015 + s * .045, sign * (.09 + s));
-      const lower = (x, s) => v(x, -.021 + s * .045, sign * (.09 + s));
+      const top = (x, s) => v(x, -.015 + s * .045, sign * (.025 + s));
+      const lower = (x, s) => v(x, -.021 + s * .045, sign * (.025 + s));
       surface(piece, shape, top, red);
       surface(piece, shape, lower, red);
       strip(piece, shape.getPoints(), top, lower, red);
@@ -213,8 +284,8 @@ export function buildShip(THREE, options = {}) {
   for (const sign of [-1, 1]) {
     const side = sign < 0 ? 'izquierda' : 'derecha';
     const piece = newPiece('ventana-' + side, 'Compuerta con ventana ' + side,
-      [.48, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: .15 },
-      'Compuerta hueca blanca, curvada y redondeada. Ventana intercambiable y dos agarres interiores para un portador.', .55);
+      [.48, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: panelDepth },
+      'Compuerta curva de 110 × 70 × 3,5 cm, hueca y redondeada. Ventana intercambiable y dos agarres interiores para un portador.', .55);
     piece.windowDoor = true;
     piece.sideSign = sign;
     buildDoor(piece, sign, false);
@@ -222,8 +293,8 @@ export function buildShip(THREE, options = {}) {
   for (const sign of [-1, 1]) {
     const side = sign < 0 ? 'izquierda' : 'derecha';
     const piece = newPiece('aleron-' + side, 'Compuerta y alerón ' + side,
-      [1.58, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: .15, salidaAleron: .70, raizAleron: .70, puntaAleron: .40 },
-      'Compuerta hueca de 110 × 70 × 15 cm y alerón rojo trapezoidal. Salida 70 cm, raíz 70 cm y extremo 40 cm. Dos agarres para un portador.', .55);
+      [1.58, .95, sign * .67], { alto: 1.10, ancho: .70, espesor: panelDepth, salidaAleron: .70, raizAleron: .70, puntaAleron: .40 },
+      'Compuerta curva, cerrada y hueca de 110 × 70 × 3,5 cm y alerón rojo trapezoidal. Salida 70 cm, raíz 70 cm y extremo 40 cm. Dos agarres para un portador.', .55);
     piece.sideSign = sign;
     buildDoor(piece, sign, true);
   }
@@ -251,10 +322,10 @@ export function buildShip(THREE, options = {}) {
     revision: 'Nave 2.0 · estudio de cinco piezas', units: 'm',
     carriers: 5, pieces: 5, skins: 'Piel delgada de Cartón Plast de 2 mm como propuesta de estudio.',
     structure: 'Bastidores tubulares ligeros y asas fijadas al bastidor. Perfiles y fijaciones por validar con el constructor.',
-    nose: { length: 1.70, height: 1.00, proposedWidth: 1.00, earLength: .70 },
-    doors: { height: 1.10, width: .70, thickness: .15 },
+    nose: { length: 1.70, height: 1.00, proposedWidth: 1.00, earLength: .70, earThickness: panelDepth, earOuterRadius: .50 },
+    doors: { height: 1.10, width: .70, thickness: panelDepth, outerRadius: fuselageRadius, outerSag: fuselageRadius - Math.sqrt(fuselageRadius ** 2 - .55 ** 2) },
     fins: { span: .70, rootChord: .70, tipChord: .40 },
-    decisions: ['Se representa 15 cm de espesor de compuerta por la última medida indicada.', 'El ancho exterior de nariz de 1 m es una propuesta de estudio.', 'Los ojos de buey de cola son una interpretación del alerón sobre ventana.', 'El acristalamiento se puede quitar para dejar el hueco abierto.'],
+    decisions: ['Las orejas y las cuatro compuertas tienen 3,5 cm entre sus dos pieles curvas por la última medida indicada.', 'El ancho exterior de nariz de 1 m es una propuesta de estudio.', 'Las compuertas con alerones tienen pieles cerradas por indicación del usuario.', 'El acristalamiento de las ventanas se puede quitar para dejar el hueco abierto.'],
   };
   return { pieces, setWindowShape, setGlazing, specs };
 }

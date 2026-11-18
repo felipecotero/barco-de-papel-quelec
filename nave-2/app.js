@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { TransformControls } from './TransformControls.js';
-import { buildShip } from './model.js';
+import { buildShip } from './model.js?v=N20-2';
 
 const $ = (selector) => document.querySelector(selector);
 const host = $('#viewport');
@@ -141,7 +141,7 @@ function select(index) {
   $('#piece-name').textContent = piece.name;
   $('#piece-dimensions').textContent = selected === 0
     ? '170 × 100 × 100 cm · orejas de 70 cm'
-    : selected > 2 ? '110 × 70 × 15 cm · alerón de 70 cm' : '110 × 70 × 15 cm';
+    : selected > 2 ? '110 × 70 × 3,5 cm · alerón de 70 cm' : '110 × 70 × 3,5 cm';
   $('#piece-description').textContent = piece.description || 'Dos agarres interiores unidos al bastidor para un portador.';
   document.querySelectorAll('[data-piece]').forEach((button, i) => button.setAttribute('aria-pressed', String(i === selected)));
   labels.forEach((label, i) => label.classList.toggle('selected', i === selected));
