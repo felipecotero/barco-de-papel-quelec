@@ -1,10 +1,18 @@
 import * as THREE from 'three';
 import {OrbitControls} from '../vendor/OrbitControls.js';
 import {createC4DPetalMotion} from './c4d-petal-motion.js?v=I31';
+import {buildCinemaTextiles} from './cinema-textiles.js?v=FT1';
 import {buildCinemaStage, buildCinemaCarrier} from './cinema-stage.js?v=F07';
 
 const $ = selector => document.querySelector(selector);
-const bloom = new URLSearchParams(location.search).get('rev') !== 'F07';
+const params = new URLSearchParams(location.search);
+const bloom = params.get('rev') !== 'F07';
+const requestedArt = params.get('tallo');
+const textileView = bloom && ['fibras','bambu'].includes(requestedArt);
+if (params.get('galeria') === '1') {
+  document.documentElement.classList.add('en-galeria');
+  $('#study-numbers').open = false;
+}
 const format = value => value.toLocaleString('es-CO', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const stages = [
   ['Guardada', 'Los cinco paños tienen su pliegue en el primer tercio. Sus puntas vuelven sobre el centro y cada raíz conserva su dirección.'],
@@ -20,6 +28,7 @@ const platformLow = 1.77;
 const platformHigh = 9.75;
 
 if (!bloom) {
+  $('#textile-choice').hidden = $('#textile-toggle').hidden = $('#cloth-scope').hidden = true;
   document.title = 'Flor central · Apertura radial F07 · Quelec';
   $('#revision').textContent = 'ESTUDIO F07 · CINEMA 4D';
   $('#intro').textContent = 'Cinco pétalos continuos. Cada punta vuelve sobre el centro al plegarse y se extiende hacia su propio lado al abrir.';
@@ -160,6 +169,10 @@ const openingHalfZ = Math.max(-packed.min.z, packed.max.z) + clearance;
 const deckHeight = Math.max(2.75, Math.ceil((platformLow + packed.max.y + clearance + .18) / .05) * .05);
 const stage = buildCinemaStage({halfX: openingHalfX, halfZ: openingHalfZ, deckY: deckHeight});
 scene.add(stage.group);
+const textiles = bloom ? buildCinemaTextiles({
+  loader, anisotropy:Math.min(8,renderer.capabilities.getMaxAnisotropy()), platformHigh,
+}) : null;
+if (textiles) scene.add(textiles.group);
 $('#opening-size').textContent = format(2 * openingHalfX) + ' × ' + format(2 * openingHalfZ) + ' m';
 $('#stage-scope').textContent = 'Montaje de estudio. La tarima se dibuja a ' + format(deckHeight)
   + ' m para alojar el paquete y el piso de 18 cm. La boca se dimensionó para este recorrido; sus tapas y el espacio real requieren revisión.';
@@ -169,6 +182,7 @@ const viewDirection = {
   crown: new THREE.Vector3(1, bloom ? .54 : .68, 1.13),
   side: new THREE.Vector3(.32, .10, 1),
   top: new THREE.Vector3(0, 1, .0004),
+  flower: new THREE.Vector3(-.20, .76, 1.22),
   stage: new THREE.Vector3(1, .57, 1.42),
 };
 const easing = value => value * value * (3 - 2 * value);
@@ -183,8 +197,15 @@ function timelineForOpening(opening) {
   return liftEnd + (1 - liftEnd) * (low + high) / 2;
 }
 const stops = [0, .11, bloom ? timelineForOpening(model.envelope.bloomPeakAt) : .71, 1];
-let view = 'crown';
-let progress = 0;
+let view = textileView ? 'flower' : 'crown';
+let progress = textileView ? 1 : 0;
+let stemArt = requestedArt === 'bambu' ? 'bambu' : 'fibras';
+$('#stem-art').value = stemArt;
+textiles?.select(stemArt);
+function updateViewButtons() {
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === view));
+}
+updateViewButtons();
 let currentPhase = -1;
 let direction = 1;
 let playing = false;
@@ -198,9 +219,9 @@ let previousPlatformY = platformLow;
 function focus() {
   const shape = camera.aspect < 1 ? camera.aspect : 1;
   const isStage = view === 'stage';
-  const size = isStage ? 16.2 : progress > .40 ? 8.7 : 5.25;
+  const size = isStage ? 16.2 : view === 'flower' ? 10.9 : progress > .40 ? 8.7 : 5.25;
   const target = isStage ? new THREE.Vector3(0, 5.15, 0)
-    : new THREE.Vector3(0, previousPlatformY + .65, 0);
+    : view === 'flower' ? new THREE.Vector3(0, 6.45, 0) : new THREE.Vector3(0, previousPlatformY + .65, 0);
   const cameraDirection = viewDirection[view].clone();
   if (view === 'side' && inspect !== 'all') {
     const angle = petals[Number(inspect)].angle;
@@ -218,13 +239,14 @@ function apply(next) {
   const opening = easing(THREE.MathUtils.clamp((progress - liftEnd) / (1 - liftEnd), 0, 1));
   const platformY = THREE.MathUtils.lerp(platformLow, platformHigh, raised);
   const dy = platformY - previousPlatformY;
-  if (view !== 'stage') {
+  if (view !== 'stage' && view !== 'flower') {
     camera.position.y += dy;
     controls.target.y += dy;
   }
   previousPlatformY = platformY;
   carrier.group.position.y = platformY;
   stage.update(platformY);
+  textiles?.update(platformY, deckHeight);
   if (opening !== lastOpening) {
     profile = model.state(opening);
     deform(profile);
@@ -250,7 +272,7 @@ function apply(next) {
   slider.value = Math.round(progress * 1000);
   slider.setAttribute('aria-valuetext', percent + ', ' + stages[phase][0]);
 
-  if (!manualCamera && view !== 'stage') {
+  if (!manualCamera && view !== 'stage' && view !== 'flower') {
     // Keep the compact fold readable while it travels, and expand framing
     // gradually as the canopy grows across the viewport.
     const factor = Math.min(camera.aspect, 1);
@@ -292,7 +314,7 @@ document.querySelectorAll('[data-stage]').forEach(button => {
 document.querySelectorAll('[data-view]').forEach(button => {
   button.onclick = () => {
     view = button.dataset.view;
-    document.querySelectorAll('[data-view]').forEach(other => other.setAttribute('aria-pressed', other === button));
+    updateViewButtons();
     manualCamera = false;
     focus();
     apply(progress);
@@ -307,9 +329,18 @@ $('#inspect').onchange = event => {
     apply(progress);
   }
 };
+$('#stem-art').onchange = event => {
+  stemArt = event.target.value;
+  textiles?.select(stemArt);
+  const current = new URL(location.href);
+  current.searchParams.set('tallo',stemArt);
+  history.replaceState(history.state,'',current);
+};
+$('#textiles-visible').onchange = event => { if(textiles) textiles.group.visible = event.target.checked; };
 $('#opacity').oninput = event => {
   const value = Number(event.target.value) / 100;
   $('#opacity-value').textContent = event.target.value + ' %';
+  textiles?.opacity(value);
   petals.forEach(({cloth, textile}) => {
     cloth.visible = value > 0;
     textile.opacity = value;
@@ -353,8 +384,8 @@ function frame(now) {
 }
 requestAnimationFrame(frame);
 
-window.__FLOR_CINEMA = {scene, model, petals, carrier, stage, packed, openingHalfX, openingHalfZ,
+window.__FLOR_CINEMA = {scene, model, petals, carrier, stage, textiles, packed, openingHalfX, openingHalfZ,
   seek,
-  getState() { return {progress, opening: lastOpening, platformY: previousPlatformY, playing,
+  getState() { return {progress, view, stemArt, opening: lastOpening, platformY: previousPlatformY, playing,
     tip: profile.tipM, profilePhase: profile.phase}; },
 };

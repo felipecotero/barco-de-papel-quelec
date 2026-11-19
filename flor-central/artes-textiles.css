@@ -1,0 +1,43 @@
+#visor-textiles {
+  margin: 0 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+#visor-textiles > summary {
+  padding: 13px 16px;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+#visor-textiles > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.textile-viewport iframe {
+  display: block;
+  width: 100%;
+  height: 780px;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+#tallo-y-hojas {
+  scroll-margin-top: 16px;
+}
+#tallo-y-hojas .textile-view {
+  margin-bottom: 12px;
+  text-underline-offset: 3px;
+  font-size: .9rem;
+}
+.textile-files, .textile-packages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.textile-files { margin-top: auto; }
+.textile-print-title { margin: 20px 0 10px; font: 600 1rem/1.4 Montserrat, Arial, sans-serif; }
+.textile-pieces { margin: 12px 0 0; padding-inline-start: 20px; }
+.textile-pieces li { padding: 3px 0; }
+@media (min-width: 800px) {
+  #tallo-y-hojas .art-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

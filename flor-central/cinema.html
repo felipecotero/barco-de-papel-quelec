@@ -7,7 +7,7 @@
   <title>Flor central · Apertura hacia arriba F08 · Quelec</title>
   <link rel="icon" href="favicon.svg">
   <link rel="stylesheet" href="../shared/brand.css?v=I05">
-  <link rel="stylesheet" href="cinema.css?v=F07">
+  <link rel="stylesheet" href="cinema.css?v=FT1">
   <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <a class="brand" href="../"><img src="favicon.svg" alt=""><span>Quelec<small>TALLER DE OBJETOS</small></span></a>
     <nav aria-label="Enlaces del taller">
       <a id="small-flowers" href="../flores-pequenas/apertura.html?rev=I31">Flores pequeñas ↗</a>
-      <a href="artes.html?rev=I25">Artes de la flor ↓</a>
+      <a href="artes.html#tallo-y-hojas">Descargar artes ↓</a>
       <a href="../">← Taller</a>
     </nav>
   </header>
@@ -44,6 +44,11 @@
       <span class="eyebrow" id="revision">ESTUDIO F08 · CINEMA 4D</span>
       <h1>Flor central</h1>
       <p class="intro" id="intro">Cinco pétalos continuos. Cada punta se levanta al desdoblarse y después se abre hacia su propio lado.</p>
+      <div class="textile-choice" id="textile-choice">
+        <label for="stem-art">Textura del tallo</label>
+        <select id="stem-art"><option value="fibras">Tallo de fibras</option><option value="bambu">Bambú verde por secciones</option></select>
+        <button type="button" data-view="flower" aria-pressed="false">Flor completa</button>
+      </div>
       <div class="view-tools" aria-label="Cámaras">
         <button data-view="crown" aria-pressed="true" title="Seguir los pétalos durante el ciclo">✿ Corona</button>
         <button data-view="side" aria-pressed="false" title="Mirar de lado para leer la U">◫ Perfil</button>
@@ -62,6 +67,7 @@
         </select>
         <label for="opacity">Opacidad del paño <output id="opacity-value" for="opacity">100 %</output></label>
         <input id="opacity" type="range" min="0" max="100" value="100">
+        <label class="toggle" id="textile-toggle"><input id="textiles-visible" type="checkbox" checked> Mostrar el tallo y las hojas de bore</label>
         <label class="toggle"><input id="context" type="checkbox" checked> Mostrar tarima y elevación</label>
       </div>
       <section class="phase" aria-live="polite">
@@ -70,6 +76,8 @@
         <p id="phase-text"></p>
         <p id="tip-height" hidden></p>
       </section>
+      <details id="study-numbers" open>
+        <summary>Medidas del estudio</summary>
       <dl class="readings">
         <div><dt>Contorno nominal</dt><dd>4,00 × 3,50 m</dd></div>
         <div><dt>Pliegue desde la raíz</dt><dd>≈ ⅓</dd></div>
@@ -77,6 +85,8 @@
         <div><dt>Boca libre del estudio</dt><dd id="opening-size">—</dd></div>
       </dl>
       <p class="scope" id="stage-scope"></p>
+      <p class="scope" id="cloth-scope">El recogido del tallo y las hojas ilustra cómo se ven los estampados durante la elevación. El plegado de las telas requiere una prueba de taller.</p>
+      </details>
       <details>
         <summary>Alcance de la simulación</summary>
         <p id="motion-description">El pliegue conserva el largo de los aros y paños. En la apertura, las puntas suben, se extienden hacia afuera y caen suavemente al final. Al regresar se recorre la misma trayectoria en sentido inverso.</p>
@@ -86,6 +96,6 @@
       </details>
     </aside>
   </main>
-  <script type="module" src="cinema-app.js?v=F08"></script>
+  <script type="module" src="cinema-app.js?v=FT1"></script>
 </body>
 </html>

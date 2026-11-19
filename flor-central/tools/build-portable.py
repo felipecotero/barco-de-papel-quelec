@@ -19,7 +19,9 @@ physics=(P/'physics-core.js').read_text();physicsNames=re.findall(r'^export (?:c
 contact=(P/'contact-guard.js').read_text();contactNames=re.findall(r'^export (?:const|function) ([A-Za-z_$][\w$]*)',contact,flags=re.M);contact=re.sub(r"^import \{([^}]+)\} from '[^']+';",lambda m:'const {'+m.group(1)+'}=__PHYSICS;',contact,flags=re.M);contact=re.sub(r'\bexport (const|function) ',r'\1 ',contact);contact='const {createContactGuard}=(()=>{'+contact+';return{'+','.join(contactNames)+'};})();\n'
 app=(P/'app.js').read_text();app=re.sub(r'^import .*;\n','',app,flags=re.M)
 textures={key:data(P/'assets'/f'{key}.jpg','image/jpeg')for key in['cream','copper','magenta']}
-app=app.replace("loader.loadAsync('assets/'+key+'.jpg')","loader.loadAsync(__FLOR_TEXTURES[key])")
+textures.update({key:data(P/'artes-preview'/f'textiles-{key}.webp','image/webp') for key in ['fibras','bambu','bore-mayor','bore-menor']})
+assert app.count('loader.loadAsync(url)') == 1
+app=app.replace('loader.loadAsync(url)','loader.loadAsync(__FLOR_TEXTURES[key])')
 app=app.replace("await fetch('sources.json').then(r=>r.json())",'__FLOR_SOURCES')
 bundle=core+mod+orb+stage+scene+sim+physics+contact+'const __FLOR_TEXTURES='+json.dumps(textures)+';const __FLOR_SOURCES='+(P/'sources.json').read_text()+';\n(()=>{'+app+'})();'
 html=(P/'index.html').read_text();html=re.sub(r'<script type="importmap">.*?</script>','',html)
@@ -39,6 +41,7 @@ html=re.sub(r'<script type="module" src="app.js[^"]*"></script>',lambda m:'<scri
 html=html.replace('href="mecanica.html"','href="'+data(P/'mecanica.html','text/html')+'" download="Flor-F04-Mecanica.html"')
 html+='\n<!-- Three.js license: '+(Q/'vendor/LICENSE-three.txt').read_text().replace('--','- -')+' -->\n<!-- Montserrat SIL OFL: '+(Q/'assets/fonts/OFL-Montserrat.txt').read_text().replace('--','- -')+' -->\n'
 html=html.replace('href="../index.html?rev=I21"','href="https://felipecotero.github.io/barco-de-papel-quelec/?rev=I21"')
+html=html.replace('href="artes.html#tallo-y-hojas"','href="https://felipecotero.github.io/barco-de-papel-quelec/flor-central/artes.html#tallo-y-hojas"')
 out=P/'Abrir-Flor-Central-F04.html';out.write_text(html)
 scripts=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',html,flags=re.S)
 node=args.node or shutil.which('node');assert node,'Node is required to verify the portable scripts'

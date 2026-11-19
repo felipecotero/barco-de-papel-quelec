@@ -22,10 +22,13 @@ const DEFAULTS = Object.freeze({
   petalLengthM: 4, petalWidthM: 3.5, petalRootReadyDeg: 70
 });
 
-function paramGeometry(nu, nv) {
+function paramGeometry(nu, nv, uvAt) {
   const g = new THREE.BufferGeometry(), p = new Float32Array((nu + 1) * (nv + 1) * 3), uv = [];
   const ids = [];
-  for (let j = 0; j <= nv; j++) for (let i = 0; i <= nu; i++) uv.push(i / nu, j / nv);
+  for (let j = 0; j <= nv; j++) for (let i = 0; i <= nu; i++) {
+    const u = i / nu, v = j / nv;
+    uv.push(...(uvAt ? uvAt(u, v, j) : [u, v]));
+  }
   for (let j = 0; j < nv; j++) for (let i = 0; i < nu; i++) {
     const a = j * (nu + 1) + i, b = a + 1, c = a + nu + 1, d = c + 1;
     ids.push(a, b, c, b, d, c);
@@ -109,6 +112,22 @@ function ovalTube(profile,radius=.022,samples=128) {
   return new THREE.TubeGeometry(curve,samples,radius,8,true);
 }
 
+function leafWidthAt(u, q) {
+  const side = u * 2 - 1;
+  const profile = q <= 0 || q >= 1 ? 0 : Math.pow(Math.sin(Math.PI * Math.pow(q, .66)), .67);
+  return side * .5 * profile * (.90 + .10 * Math.sin(q * TAU)) * (1 + .055 * side * Math.sin(q * Math.PI));
+}
+function boreUV(index, u, v) {
+  // The printed midrib follows this curve in the rectangular 850 × 1100 artwork.
+  // Cut the leaf from that rectangle; narrow ends take only the pixels near the midrib.
+  const s = (360 + 1100 * v) / 1810;
+  const center = (index === 0 ? .496 : .521)
+    + (index === 0 ? .030 : -.035) * Math.sin(7.2 * s + .42 * index)
+    + (index === 0 ? .012 : .015) * Math.sin(3.4 * s + 1.12);
+  const x = leafWidthAt(u, v);
+  return [center + 2 * x * (x < 0 ? center : 1 - center), 1 - v];
+}
+
 export function createFlowerStudy({config = {}, textures = {}} = {}) {
   const cfg = {...DEFAULTS, ...config};
   // Accept the shorter aliases used in some early briefing data without changing dimensions.
@@ -159,7 +178,10 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
   const between = (o, a, b) => { const d = b.clone().sub(a); o.position.copy(a).add(b).multiplyScalar(.5); o.quaternion.setFromUnitVectors(UP, d.clone().normalize()); o.scale.y = d.length(); };
   const tube = (g, points, radius, material) => mesh(g, new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map(V)),Math.max(12,points.length*5),radius,6,false),material);
   const steel = mat('#b3bfc1',{metalness:.65,roughness:.4}), dark = mat('#34474c',{metalness:.3}), rubber = mat('#273033'), yellow = mat('#cfaa4d',{roughness:.63});
-  const rimMat = mat('#426f65',{metalness:.05,roughness:.9}), stemMat = fabric('#4e8b82',textures.stem,{sheen:.28,sheenColor:new THREE.Color('#d5e4c0')}), leafMat = fabric('#42825f',textures.leaf,{sheen:.24,roughness:.94});
+  const rimMat = mat('#426f65',{metalness:.05,roughness:.9});
+  const stemMat = fabric(textures.fibras ? '#ffffff' : '#4e8b82',textures.fibras,{sheen:.28,sheenColor:new THREE.Color('#d5e4c0')});
+  const leafMats = ['bore-mayor', 'bore-menor'].map(name =>
+    fabric(textures[name] ? '#ffffff' : '#42825f', textures[name], {sheen:.24,roughness:.94}));
   const creamMat = fabric('#f0dfb9',textures.cream), copperMat = fabric('#a96732',textures.copper), magentaMat = fabric('#9b265c',textures.magenta);
   const cordMat = mat('#d0bb8a',{roughness:1}), cuffMat = mat('#5a714e',{roughness:.95});
 
@@ -230,11 +252,31 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
 
   const TAL=group('TAL','Tallo orgánico: seis aros de distinta proporción',objectRoot,'Óvalos más largos alternan con aros casi circulares; cada uno contiene la envolvente rectangular declarada. La tela adopta esos apoyos, con pliegues y pequeños vientres entre ellos. La comprobación geométrica no aprueba rigidez ni holgura real.');
   const stemRings=hoopProfiles.map((p,i)=> {const r=mesh(TAL,ovalTube(p,.022),rimMat);r.name='TAL_Aro_'+(i+1)+'_oval';return r;});
-  const continuous=mesh(TAL,paramGeometry(72,60),stemMat);continuous.name='TAL_Manga_continua';continuous.castShadow=false;
-  const strips=Array.from({length:12},(_,i)=> {const m=mesh(TAL,paramGeometry(6,60),stemMat);m.name='TAL_Franja_'+String(i+1).padStart(2,'0');m.castShadow=false;return m;});
+  const ringFractions=[0,.24,.48,.78,.90,1];
+  // Give the print a fixed material coordinate. The integer number of repeats
+  // closes each oval at the same seam; the 3 m vertical repeat follows real height.
+  const segments = 120;
+  const stemRows = Array.from({length:61}, (_, j) => {
+    const rings = j / 12, lower = Math.min(4, Math.floor(rings));
+    const heightFraction = mix(ringFractions[lower], ringFractions[lower+1], rings-lower);
+    const oval = profileAt(j / 60), arc = [0];
+    for (let k=1; k<=segments; k++) {
+      const a = (k-1)*TAU/segments, b = k*TAU/segments;
+      arc.push(arc[k-1] + Math.hypot(oval.a*(Math.sin(b)-Math.sin(a)), oval.b*(Math.cos(b)-Math.cos(a))));
+    }
+    return {arc, length:arc[segments], v:1 - (1-heightFraction)*(cfg.targetCrownM-.20)/3};
+  });
+  const tileCount = Math.max(1, Math.round(stemRows.reduce((sum,row)=>sum+row.length,0)/stemRows.length/1.5));
+  function stemUV(turn, j) {
+    const row=stemRows[j], whole=Math.floor(turn), step=(turn-whole)*segments;
+    const k=Math.min(segments-1,Math.floor(step));
+    return [tileCount*(whole+mix(row.arc[k],row.arc[k+1],step-k)/row.length),row.v];
+  }
+  const continuous=mesh(TAL,paramGeometry(72,60,(u,v,j)=>stemUV(u,j)),stemMat);continuous.name='TAL_Manga_continua';continuous.castShadow=false;
+  const strips=Array.from({length:12},(_,i)=> {const m=mesh(TAL,paramGeometry(6,60,(u,v,j)=>stemUV((i+u*1.16)/12,j)),stemMat);m.name='TAL_Franja_'+String(i+1).padStart(2,'0');m.castShadow=false;return m;});
   const HOJ=group('HOJ','Dos hojas de bore',objectRoot,'Hojas propuestas con vena curva y paño blando. Se recogen junto al tallo; su despliegue acompaña la elevación. Forma y plegado son esquemas de movimiento.');
   const leaves=[{angle:-80,faceAngle:-15,level:.60,length:3.0,width:2.25},{angle:65,faceAngle:25,level:.80,length:2.75,width:2.15}].map((d,i)=> {
-    const surface=mesh(HOJ,paramGeometry(18,28),leafMat);surface.name='HOJ_'+(i+1);surface.castShadow=false;
+    const surface=mesh(HOJ,paramGeometry(18,28,(u,v)=>boreUV(i,u,v)),leafMats[i]);surface.name='HOJ_'+(i+1);surface.castShadow=false;
     const vein=mesh(HOJ,dynamicTube(40,6,.018),cuffMat);vein.name='HOJ_Vena_'+(i+1);return{...d,index:i,surface,vein};
   });
 
@@ -351,10 +393,10 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
   function leafPoint(d,u,v,wind=true) {
     // Full rest-size leaf, outside its supporting ring. There is no width/length morph.
     const theta=d.angle*Math.PI/180,q=v,s=u*2-1,rootIndex=Math.round(d.level*5),rootY=ringYs[rootIndex]||0;
-    const profile=q<=0||q>=1?0:Math.pow(Math.sin(Math.PI*Math.pow(q,.66)),.67),h=hoopProfiles[rootIndex];
+    const h=hoopProfiles[rootIndex];
     const rootXZ=ellipsePoint(h,theta),normal=ellipseNormal(h,theta);
     const c=Math.cos(h.yaw),sn=Math.sin(h.yaw),tx=h.a*Math.cos(theta),tz=-h.b*Math.sin(theta),tangent=new THREE.Vector3(tx*c+tz*sn,0,-tx*sn+tz*c).normalize();
-    const x=s*d.width*.5*profile*(.90+.10*Math.sin(q*Math.PI*2))*(1+.055*s*Math.sin(q*Math.PI));
+    const x=d.width*leafWidthAt(u,q);
     const lobe=.16*Math.sin(Math.PI*q)*s*s,veinRelief=.075*(1-s*s)*Math.sin(Math.PI*q);
     const z=.62*Math.sin(Math.PI*q)+.55*q+lobe-veinRelief+.24*Math.sin(Math.PI*q);
     const y=-d.length*q+.43*Math.sin(Math.PI*q)+.18*s*s*Math.sin(Math.PI*q);
@@ -389,7 +431,6 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     const showPetals=!['folded','stage','trap','stem','leaves'].includes(state.view);
     for(const d of petals) {const selected=showPetals&&(!laboratory()||d.index===0);d.surface.visible=selected&&state.showSkin;d.surface.castShadow=state.showSkin;d.edge.visible=selected;d.edge.castShadow=!state.showSkin;updateParam(d.surface.geometry,(u,v)=>petalPoint(d,u,.085+.915*v));updateTube(d.edge.geometry,t=>outlinePoint(d,t),bodyUp(d),bodyRight(d));}
     throat.position.set(0,crownY+.19,.32);throat.visible=showPetals&&!laboratory()&&state.showSkin;
-    const ringFractions=[0,.24,.48,.78,.90,1];
     ringYs=Array.from({length:6},(_,i)=>i===5?cfg.targetCrownM:.20+(cfg.targetCrownM-.20)*ringFractions[i]);
     for(let i=0;i<6;i++){stemRings[i].position.y=ringYs[i];stemRings[i].castShadow=!state.showSkin;}
     continuous.visible=state.showSkin&&state.stemMode==='continuous';for(const p of strips)p.visible=state.showSkin&&state.stemMode==='strips';
@@ -418,6 +459,9 @@ export function createFlowerStudy({config = {}, textures = {}} = {}) {
     s.chamberTopM=clamp(finite(s.chamberTopM,cfg.stageTopM),cfg.stageTopM,3);s.deckThicknessM=clamp(finite(s.deckThicknessM,cfg.deckThicknessM),0,.30);
     s.speed=clamp(next.windSpeedMps??next.speed??state.speed,0,20);s.azimuth=finite(next.windAzimuthDeg??next.azimuth??state.azimuth,0);s.gust=clamp(next.gustFactor??next.gust??state.gust,1,2);s.time=finite(s.time,0);
     if(!['folded','trap','stage'].includes(s.view)){s.liftProgress=1;s.leafProgress=1;}s.windOn=false;
+    s.stemArt=s.stemArt==='bambu'?'bambu':'fibras';
+    const map=textures[s.stemArt] || null;
+    if(stemMat.map!==map){stemMat.map=map;stemMat.needsUpdate=true;}
     state=s;const key=geometryKey();if(key!==lastKey){updateGeometry();lastKey=key;}return getState();
   }
   function geometryKey(){return JSON.stringify([state.view,state.trapProgress,state.slopeDeg,state.liftProgress,state.opening,state.leafProgress,state.stemMode,state.windOn,state.windOn?state.speed:0,state.windOn?state.azimuth:0,state.windOn?state.gust:0,state.windOn?state.time:0,state.showSkin,state.showMachine,state.showStage,state.cutaway,state.showKeepout,state.colors,state.showRopes,state.packMode,state.packHeightM,state.storageRailsFolded,state.chamberTopM,state.deckThicknessM]);}

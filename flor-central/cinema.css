@@ -61,3 +61,15 @@ summary { color: var(--gold); cursor: pointer; }
   .panel { border-left: 0; border-top: 1px solid var(--line); }
   .stages button { font-size: 10px; padding: 6px 2px; }
 }
+
+.textile-choice { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; margin-top: 15px; }
+.textile-choice label { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+.textile-choice select { min-width: 0; }
+[hidden] { display: none !important; }
+.en-galeria .site-header { display: none !important; }
+.en-galeria main { min-height: 0; }
+.en-galeria .viewer { grid-template-rows: 650px auto; align-content: start; }
+.en-galeria .panel { padding-top: 16px; padding-bottom: 16px; }
+@media (max-width: 750px) {
+  .en-galeria .viewer { grid-template-rows: 375px auto; }
+}
