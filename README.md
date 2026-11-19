@@ -1,6 +1,6 @@
 # Quelec · Taller de objetos
 
-[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I24) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F06 · pétalo continuo](flor-central/flex.html?rev=F06)
+[**Abrir el taller**](https://felipecotero.github.io/barco-de-papel-quelec/?rev=I41) · [Morral de Quelec](maleta-quelec/) · [Barco R08](barco.html?rev=R08-H01) · [Grulla G04](grulla/?rev=G04-H02) · [Nave N02](nave/?rev=N02) · [Cauchera · visor C04 / PVC C03](cauchera/?rev=C04-virtual) · [Pancartas PA07 en pliego](pancartas/?rev=PA07) · [Colas de pavo CP03](colas-de-pavo/?rev=CP03) · [Flor central F06 · pétalo continuo](flor-central/flex.html?rev=F06)
 
 Índice oscuro con imágenes originales de los TDR y el boceto C02 aportado por el equipo para la cauchera. Cada objeto tiene su propio símbolo. Títulos en Quiche Display instalada localmente, con Georgia de respaldo; no se distribuye la fuente comercial. Subtítulos Montserrat incluida con licencia OFL; cuerpo Arial/Avenir.
 
@@ -277,3 +277,7 @@ Dos planos de corte independientes, cinco páginas Carta cada uno: mapa de ubica
 Cámara ortográfica, giro libre, vistas lateral/planta/proa y lado opuesto. Comparación de ambos a la misma escala o selección individual. Transparencia de casco y vela que conserva la costilla opaca; colores, 22 aristas físicas por barco sin triangulación auxiliar, cotas generales y selección de cada pieza con sus lados. «Mirar paño» muestra su forma real. Exportación del barco elegido en GLB/OBJ/STL.
 
 Los planos de corte describen los triángulos para trazarlos a mano. Las guías de armado muestran qué bordes coinciden en el casco, cómo colocar la costilla entre las cuatro caras de la vela y dónde apoyar la vela en el casco. Las superficies exteriores del visor son planos geométricos de referencia; la costilla se representa con su espesor real. El constructor debe comprobar las fijaciones y el encaje con el material de taller. Se conservan los dos croquis originales, el barco R08 de 4 m y el modelo local B03 como antecedentes distintos.
+
+## Morral de Quelec · MQ05
+
+El morral de dinosaurio mide 45 × 50 × 20 cm. El visor permite dibujar con el ratón o el dedo directamente sobre la tela, girar el modelo y compartir con el equipo un enlace que recupera los trazos y el ángulo de vista. También admite guardar y abrir un archivo de marcas y descargar el modelo GLB a escala en metros. [Abrir el morral](maleta-quelec/)
