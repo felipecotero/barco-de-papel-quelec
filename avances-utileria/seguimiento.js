@@ -1,7 +1,7 @@
 'use strict';
 
 const colores = [
-  ['rojo', '#e06666', 'Sin iniciar'],
+  ['rojo', '#e06666', 'Muy rezagadas'],
   ['naranja', '#f6b26b', 'Priorizar'],
   ['amarillo', '#ffd966', 'Cerrar pendientes'],
   ['verde claro', '#93c47d', 'Revisar remates'],
@@ -66,6 +66,40 @@ function dibujarFicha(p, abierta) {
   ficha.append(titulo, detalle);
   return ficha;
 }
+const porcentaje = new Intl.NumberFormat('es-CO', {style:'percent', maximumFractionDigits:1});
+
+function actualizarResumen() {
+  const total = partidas.length;
+  const cantidades = new Map(colores.map(([color]) => [color, 0]));
+  for (const partida of partidas) cantidades.set(partida.color, cantidades.get(partida.color) + 1);
+  const barra = document.querySelector('#barra-resumen');
+  const leyenda = document.querySelector('#leyenda-resumen');
+  barra.replaceChildren();
+  leyenda.replaceChildren();
+  for (const [color, tono, descripcion] of colores) {
+    const cantidad = cantidades.get(color);
+    const proporcion = porcentaje.format(cantidad / total);
+    if (cantidad) {
+      const tramo = crear('span');
+      tramo.style.flexGrow = String(cantidad);
+      tramo.style.setProperty('--tono', tono);
+      tramo.title = rotulo(color) + ' · ' + cantidad + ' de ' + total + ' (' + proporcion + ')';
+      barra.append(tramo);
+    }
+    const item = crear('li');
+    const categoria = crear('span', undefined, 'categoria');
+    categoria.append(muestra(color), rotulo(color));
+    const cifras = crear('span', undefined, 'cifras');
+    cifras.append(crear('strong', String(cantidad)), crear('span', proporcion));
+    item.append(categoria, cifras, crear('small', descripcion));
+    leyenda.append(item);
+    botones.get(color).cantidad.textContent = String(cantidad);
+  }
+  botones.get('').cantidad.textContent = String(total);
+  document.querySelector('#resumen-total').textContent = total + ' partidas · 100 %';
+  document.querySelector('#resumen').hidden = false;
+}
+
 function mostrar() {
   const termino = normalizar(buscar.value);
   const visibles = partidas.filter(p =>
@@ -76,9 +110,8 @@ function mostrar() {
   const focoEn = document.activeElement?.closest('#fichas details')?.dataset.id;
   fichas.replaceChildren(...visibles.map(p => dibujarFicha(p, abiertas.has(p.id))));
   if (focoEn) Array.from(fichas.children).find(el => el.dataset.id === focoEn)?.querySelector('summary')?.focus({preventScroll:true});
-  for (const [color, {control, cantidad}] of botones) {
+  for (const [color, {control}] of botones) {
     control.setAttribute('aria-pressed', String(seleccionado === color));
-    cantidad.textContent = String(color ? partidas.filter(p => p.color === color).length : partidas.length);
   }
   document.querySelector('#resultados').textContent = visibles.length ?
     visibles.length + ' de ' + partidas.length + ' partidas' : 'Ninguna partida coincide con la búsqueda o el filtro.';
@@ -128,6 +161,7 @@ function aplicar(estado) {
   if (fechaCorte(actualizado) < fechaCorte(corteActual)) return;
   if (partidas.some((p, i) => p.color !== siguientes[i].color || p.estado !== siguientes[i].estado)) {
     partidas = siguientes;
+    actualizarResumen();
     mostrar();
   }
   corteActual = actualizado;
@@ -146,6 +180,7 @@ async function actualizar(manual = false) {
       partidas = partidaBase;
       corteActual = base.lectura;
       mostrarCorte(corteActual);
+      actualizarResumen();
       mostrar();
     }
     try {

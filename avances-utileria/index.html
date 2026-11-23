@@ -8,8 +8,8 @@
   <title>Avances de utilería · Taller de Objetos de Quelec</title>
   <link rel="icon" href="../assets/logo-grulla.svg">
   <link rel="stylesheet" href="../shared/brand.css">
-  <link rel="stylesheet" href="estilos.css">
-  <script defer src="seguimiento.js"></script>
+  <link rel="stylesheet" href="estilos.css?v=I44">
+  <script defer src="seguimiento.js?v=I44"></script>
 </head>
 <body>
   <header>
@@ -21,6 +21,11 @@
       <div><p class="kicker">HENRY ALARCÓN</p><h1 id="titulo">Avances de utilería</h1>
         <p class="bajada">Consulta el avance de cada partida y abre su ficha para ver la cantidad, el estado escrito en la matriz y los puntos por verificar.</p>
       </div>
+      <figure class="resumen" id="resumen" aria-labelledby="resumen-titulo" hidden>
+        <figcaption><h2 id="resumen-titulo">Avance por color</h2><span id="resumen-total"></span></figcaption>
+        <div class="barra-resumen" id="barra-resumen" aria-hidden="true"></div>
+        <ul class="leyenda-resumen" id="leyenda-resumen" aria-label="Cantidad y porcentaje por color"></ul>
+      </figure>
       <dl class="entregas"><div><dt>Parcial tentativa</dt><dd>24 o 25 de noviembre</dd><small>Objetos de manipuladores. Día y listado por confirmar.</small></div>
         <div><dt>Entrega final programada</dt><dd>28 de noviembre de 2026</dd></div></dl>
     </section>
