@@ -1,1 +1,1 @@
-I43 / 23.11.2026 / Avances de utilería de Henry Alarcón. Consulta por partida, color y grupo de entrega desde el índice del Taller de Objetos.
+I44 / 23.11.2026 / Avances de utilería. El encabezado muestra la distribución de las partidas por color, con cantidades y porcentajes sobre el total.
