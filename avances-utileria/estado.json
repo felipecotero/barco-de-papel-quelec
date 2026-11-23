@@ -1,0 +1,185 @@
+{
+  "actualizado": "2026-11-23T22:58:23Z",
+  "partidas": {
+    "H01": {
+      "color": "naranja",
+      "estado": "En proceso"
+    },
+    "H02": {
+      "color": "amarillo",
+      "estado": "En proceso"
+    },
+    "H03": {
+      "color": "naranja",
+      "estado": "Por verificar"
+    },
+    "H32": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H04": {
+      "color": "rojo",
+      "estado": "Por verificar"
+    },
+    "H33": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H05": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H06": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H07": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H08": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H09": {
+      "color": "verde claro",
+      "estado": "Por verificar"
+    },
+    "H10": {
+      "color": "naranja",
+      "estado": "Por verificar"
+    },
+    "H34": {
+      "color": "rojo",
+      "estado": "Por verificar"
+    },
+    "H11": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H12": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H35": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H36": {
+      "color": "verde",
+      "estado": "En proceso"
+    },
+    "H13": {
+      "color": "amarillo",
+      "estado": "En proceso"
+    },
+    "H14": {
+      "color": "verde",
+      "estado": "En proceso"
+    },
+    "H37": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H38": {
+      "color": "verde claro",
+      "estado": "Por verificar"
+    },
+    "H15": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H39": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H40": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H41": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H16": {
+      "color": "naranja",
+      "estado": "Por verificar"
+    },
+    "H17": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H19": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H20": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H42": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H43": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H21": {
+      "color": "naranja",
+      "estado": "Por verificar"
+    },
+    "H22": {
+      "color": "verde claro",
+      "estado": "Por verificar"
+    },
+    "H23": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H24": {
+      "color": "rojo",
+      "estado": "Por verificar"
+    },
+    "H26": {
+      "color": "sin color",
+      "estado": "Por verificar"
+    },
+    "H27": {
+      "color": "sin color",
+      "estado": "Por verificar"
+    },
+    "H29": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H47": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H48": {
+      "color": "amarillo",
+      "estado": "Por verificar"
+    },
+    "H30": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H44": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H45": {
+      "color": "verde claro",
+      "estado": "Por verificar"
+    },
+    "H46": {
+      "color": "verde",
+      "estado": "Por verificar"
+    },
+    "H31": {
+      "color": "verde claro",
+      "estado": "Por verificar"
+    }
+  }
+}

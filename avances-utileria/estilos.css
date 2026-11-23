@@ -1,0 +1,56 @@
+:root {color-scheme: dark; --fondo:#10191f; --panel:#19292f; --linea:#3d535a; --tinta:#edf3ef; --suave:#bed0cc; --acento:#c6dfb9;}
+* {box-sizing:border-box}
+body {margin:0; background:var(--fondo); color:var(--tinta); font-size:16px; line-height:1.5;}
+header,main {width:min(1160px,100%); margin:auto; padding-inline:clamp(18px,4vw,56px);}
+header {display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:76px; border-bottom:1px solid var(--linea);}
+a {color:var(--acento); text-underline-offset:4px;}
+.marca {display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--tinta); font:21px/1 Georgia,serif; letter-spacing:.08em;}
+.marca small {display:block; margin-top:6px; font:9px/1.3 Montserrat,Arial,sans-serif; letter-spacing:.14em;}
+.volver {font-size:.9rem;}
+.cabecera {display:grid; grid-template-columns:1.45fr 1fr; align-items:center; gap:clamp(28px,7vw,90px); padding:clamp(30px,5vw,70px) 0; border-bottom:1px solid var(--linea);}
+.kicker {font-size:.75rem; letter-spacing:.16em; font-weight:bold; color:var(--acento); margin:0 0 12px;}
+h1,h2 {line-height:1.1; margin:0;}
+h1 {font-size:clamp(39px,5.5vw,76px); letter-spacing:-.035em;}
+h2 {font-size:clamp(28px,3.2vw,44px);}
+.bajada,.criterio,.aviso,#resultados,.lectura,.entregas small {color:var(--suave);}
+.bajada {max-width:39em; margin:18px 0 0;}
+.entregas {margin:0; padding-inline-start:22px; border-left:2px solid #799885;}
+.entregas>div+div {margin-top:16px;}
+.entregas dt,.busqueda label,.filtros legend {font:600 .78rem/1.5 Montserrat,Arial,sans-serif; color:var(--suave);}
+.entregas dd {margin:0; font-size:1.15rem;}
+.entregas small {display:block; font-size:.82rem;}
+.consulta {padding:32px 0 70px;}
+.encabezado-lista,.lectura,.filtros,.busqueda {display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
+.encabezado-lista {justify-content:space-between; gap:14px;}
+.lectura {font-size:.86rem;}
+button,input,select {font:inherit;}
+button {cursor:pointer; border:1px solid var(--linea); border-radius:7px; background:var(--panel); color:var(--tinta); padding:8px 12px;}
+button:hover {border-color:var(--acento);}
+button:disabled {cursor:wait;}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible {outline:3px solid #d6bb78; outline-offset:3px;}
+.criterio,.aviso {font-size:.91rem; max-width:780px;}
+.aviso:empty {display:none;}
+.filtros {padding:0; border:0; margin:24px 0 12px; gap:7px;}
+.filtros legend {margin:0 0 6px; padding:0;}
+.filtros button {display:inline-flex; align-items:center; gap:7px; font-size:.85rem;}
+.filtros button[aria-pressed="true"] {color:#15251b; background:var(--acento); border-color:var(--acento);}
+.muestra {display:inline-block; width:11px; height:11px; flex-shrink:0; border-radius:50%; background:var(--muestra); border:1px solid #45534a;}
+.controles {display:flex; gap:12px 22px; flex-wrap:wrap; margin:18px 0;}
+.busqueda {gap:7px; align-items:stretch; flex-direction:column; flex:1 1 245px;}
+input,select {width:100%; min-height:42px; padding:8px 12px; border:1px solid var(--linea); border-radius:7px; color:var(--tinta); background:#142329;}
+input::placeholder {color:#9bb1b2;}
+#resultados {font-size:.9rem; margin:14px 0 8px;}
+#fichas {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; align-items:start;}
+details {border:1px solid var(--linea); border-radius:8px; background:var(--panel);}
+summary {list-style:none; display:grid; grid-template-columns:1fr auto; gap:5px 12px; cursor:pointer; padding:13px 16px;}
+summary::-webkit-details-marker {display:none;}
+summary::after {content:"+"; grid-area:1/2/3/3; align-self:center; font-size:1.35rem; color:var(--acento);}
+details[open] summary::after {content:"−";}
+summary .clave {font:normal .77rem/1.4 Arial,sans-serif; color:var(--suave); display:flex; align-items:center; gap:7px;}
+summary strong {font-size:.96rem; line-height:1.35;}
+.detalle {margin:0 16px 14px; padding-top:10px; border-top:1px solid var(--linea); font-size:.94rem;}
+.detalle dl {display:flex; gap:15px; flex-wrap:wrap; margin:0;}
+.detalle dt {font-size:.77rem; color:var(--suave);}
+.detalle dd {margin:0;}
+.detalle p {margin:9px 0 0; color:#d2dfde;}
+@media(max-width:720px){.cabecera {grid-template-columns:1fr; gap:22px;} #fichas {grid-template-columns:1fr;} .entregas{display:flex; flex-wrap:wrap; gap:14px 22px;} .entregas>div{flex:1 1 155px;} .entregas>div+div{margin:0;} .volver {text-align:right;}.consulta{padding-top:24px;}}

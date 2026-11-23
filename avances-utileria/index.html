@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112028">
+  <meta name="description" content="Avances por objeto, estado de la matriz y fechas de entrega de la utilería de Henry Alarcón para Quelec.">
+  <title>Avances de utilería · Taller de Objetos de Quelec</title>
+  <link rel="icon" href="../assets/logo-grulla.svg">
+  <link rel="stylesheet" href="../shared/brand.css">
+  <link rel="stylesheet" href="estilos.css">
+  <script defer src="seguimiento.js"></script>
+</head>
+<body>
+  <header>
+    <a class="marca" href="../"><img src="../assets/logo-grulla.svg" alt="" width="45" height="37"><span>QUELEC<small>TALLER DE OBJETOS</small></span></a>
+    <a class="volver" href="../">← Volver al taller</a>
+  </header>
+  <main>
+    <section class="cabecera" aria-labelledby="titulo">
+      <div><p class="kicker">HENRY ALARCÓN</p><h1 id="titulo">Avances de utilería</h1>
+        <p class="bajada">Consulta el avance de cada partida y abre su ficha para ver la cantidad, el estado escrito en la matriz y los puntos por verificar.</p>
+      </div>
+      <dl class="entregas"><div><dt>Parcial tentativa</dt><dd>24 o 25 de noviembre</dd><small>Objetos de manipuladores. Día y listado por confirmar.</small></div>
+        <div><dt>Entrega final programada</dt><dd>28 de noviembre de 2026</dd></div></dl>
+    </section>
+    <section class="consulta" aria-labelledby="partidas">
+      <div class="encabezado-lista"><h2 id="partidas">Partidas de la matriz</h2>
+        <div class="lectura"><span id="fecha">Consultando datos…</span><button id="actualizar" type="button">Actualizar</button></div>
+      </div>
+      <p id="aviso" class="aviso" role="status"></p>
+      <p class="criterio">El color corresponde al fondo de «Elemento» en la matriz. El verde indica que se reportó listo. La recepción y las pruebas se confirman por separado.</p>
+      <fieldset class="filtros" id="filtros"><legend>Filtrar por color</legend></fieldset>
+      <div class="controles"><div class="busqueda">
+        <label for="grupo">Agrupación propuesta para coordinar la entrega</label>
+        <select id="grupo">
+          <option value="">Todos los grupos</option><option>Manipuladores</option><option>Actores</option>
+          <option>Danza y coro</option><option>Acróbatas</option><option>Apoyo de taller</option><option>Por confirmar</option>
+        </select>
+      </div><div class="busqueda"><label for="buscar">Buscar partida</label><input type="search" id="buscar" placeholder="Nombre o código, p. ej. H04" autocomplete="off" maxlength="120"></div></div>
+      <p role="status" id="resultados"></p>
+      <div id="fichas"></div>
+      <noscript><p>Activa JavaScript para consultar las partidas y aplicar filtros.</p></noscript>
+    </section>
+  </main>
+</body>
+</html>
