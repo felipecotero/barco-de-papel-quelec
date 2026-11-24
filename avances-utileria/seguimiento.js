@@ -14,19 +14,31 @@ const buscar = document.querySelector('#buscar');
 const grupo = document.querySelector('#grupo');
 const fichas = document.querySelector('#fichas');
 const fecha = document.querySelector('#fecha');
+const lecturaDrive = document.querySelector('#lectura-drive');
+const consultaPagina = document.querySelector('#consulta-pagina');
+const comprobacion = document.querySelector('#comprobacion');
 const aviso = document.querySelector('#aviso');
 const boton = document.querySelector('#actualizar');
 const estadosPublicos = 'https://raw.githubusercontent.com/felipecotero/barco-de-papel-quelec/main/avances-utileria/estado.json';
+const ejecuciones = 'https://api.github.com/repos/felipecotero/barco-de-papel-quelec/actions/workflows/avances-utileria.yml/runs?branch=main&status=success&per_page=1';
 const orden = colores.map(([nombre]) => nombre);
 const botones = new Map();
 const formatoFecha = new Intl.DateTimeFormat('es-CO', {
   timeZone: 'America/Bogota', day: 'numeric', month: 'long', year: 'numeric'
+});
+const formatoHora = new Intl.DateTimeFormat('es-CO', {
+  timeZone: 'America/Bogota', day: 'numeric', month: 'short', year: 'numeric',
+  hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
 });
 
 let partidaBase = [];
 let partidas = [];
 let seleccionado = '';
 let corteActual = '';
+let ultimaLectura = '';
+let ultimaEjecucion = '';
+let consultaEjecucionPendiente = false;
+let inicioConsultaEjecucion = 0;
 let enConsulta = false;
 
 function crear(etiqueta, texto, clase) {
@@ -47,6 +59,10 @@ function rotulo(texto) {
 function normalizar(texto) {
   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 }
+function revision(iso) {
+  if (iso === undefined) return 'Pendiente de sincronizar';
+  return iso ? formatoFecha.format(fechaCorte(iso)) : 'Sin fecha registrada';
+}
 function dibujarFicha(p, abierta) {
   const ficha = crear('details');
   ficha.dataset.id = p.id;
@@ -57,7 +73,15 @@ function dibujarFicha(p, abierta) {
   titulo.append(clave, crear('strong', p.elemento));
   const detalle = crear('div', undefined, 'detalle');
   const dl = crear('dl');
-  for (const [etiqueta, valor] of [['Cantidad', p.cantidad], ['Estado escrito', p.estado || 'Sin registrar'], ['Grupo propuesto', p.grupo]]) {
+  const campos = [
+    ['Avance y apoyo requerido', p.avance === undefined ? 'Pendiente de sincronizar' : p.avance || 'Sin nota registrada'],
+    ['Última revisión', revision(p.ultimaRevision)],
+    ['Próxima revisión', revision(p.proximaRevision)],
+    ['Estado escrito', p.estado || 'Sin registrar'],
+    ['Cantidad', p.cantidad],
+    ['Grupo propuesto', p.grupo]
+  ];
+  for (const [etiqueta, valor] of campos) {
     const campo = crear('div');
     campo.append(crear('dt', etiqueta), crear('dd', valor));
     dl.append(campo);
@@ -131,9 +155,9 @@ for (const [color, , descripcion] of [['', '', 'Todas las partidas'], ...colores
 buscar.addEventListener('input', mostrar);
 grupo.addEventListener('change', mostrar);
 
-async function leerJSON(url) {
+async function leerJSON(url, limite = 9000) {
   const control = new AbortController();
-  const reloj = setTimeout(() => control.abort(), 9000);
+  const reloj = setTimeout(() => control.abort(), limite);
   try {
     const respuesta = await fetch(url, {cache:'no-store', credentials:'omit', signal:control.signal});
     if (!respuesta.ok) throw new Error('Lectura no disponible');
@@ -142,36 +166,77 @@ async function leerJSON(url) {
     clearTimeout(reloj);
   }
 }
+async function comprobarEjecucion(manual) {
+  if (consultaEjecucionPendiente || (!manual && Date.now() - inicioConsultaEjecucion < 300000)) return;
+  consultaEjecucionPendiente = true;
+  inicioConsultaEjecucion = Date.now();
+  try {
+    const datos = await leerJSON(ejecuciones + '&v=' + inicioConsultaEjecucion, 6000);
+    const ultima = datos.workflow_runs?.[0];
+    if (ultima?.conclusion !== 'success' || ultima.head_branch !== 'main' || !Number.isFinite(Date.parse(ultima.updated_at))) {
+      throw new Error('Ejecución sin confirmar');
+    }
+    if (!ultimaEjecucion || Date.parse(ultima.updated_at) > Date.parse(ultimaEjecucion)) ultimaEjecucion = ultima.updated_at;
+    comprobacion.textContent = fechaPublicada(ultimaEjecucion);
+  } catch {
+    comprobacion.textContent = ultimaEjecucion ? fechaPublicada(ultimaEjecucion) + ' (última conocida)' : 'GitHub no pudo confirmarla';
+  } finally {
+    consultaEjecucionPendiente = false;
+  }
+}
 function fechaCorte(iso) {
   // Las fechas sin hora identifican todo un día calendario de Bogotá.
   return new Date(iso.length === 10 ? iso + 'T05:00:00Z' : iso);
 }
-function mostrarCorte(iso) {
-  fecha.textContent = 'Corte del ' + formatoFecha.format(fechaCorte(iso));
+function fechaPublicada(iso) {
+  return iso.length === 10 ? formatoFecha.format(fechaCorte(iso)) : formatoHora.format(fechaCorte(iso));
 }
-function aplicar(estado) {
-  const {actualizado, partidas: cambios} = estado;
+function preparar(estado) {
+  const {actualizado, consultado = '', partidas: cambios} = estado;
   if (typeof actualizado !== 'string' || !Number.isFinite(fechaCorte(actualizado).getTime()) ||
+      typeof consultado !== 'string' || (consultado && !Number.isFinite(fechaCorte(consultado).getTime())) ||
       !cambios || typeof cambios !== 'object' || Array.isArray(cambios)) throw new Error('Corte inválido');
   const siguientes = partidaBase.map(p => {
     const registro = cambios[p.id];
     if (!registro || !paleta.has(registro.color) || typeof registro.estado !== 'string') throw new Error('Partida incompleta');
-    return {...p, color:registro.color, estado:registro.estado};
+    const {color, estado, avance, ultimaRevision, proximaRevision} = registro;
+    if (avance !== undefined && typeof avance !== 'string') throw new Error('Nota inválida');
+    for (const dia of [ultimaRevision, proximaRevision]) {
+      if (dia !== undefined && dia !== '' && (typeof dia !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(dia) ||
+          !Number.isFinite(fechaCorte(dia).getTime()) || fechaCorte(dia).toISOString().slice(0, 10) !== dia)) {
+        throw new Error('Fecha de revisión inválida');
+      }
+    }
+    return {...p, color, estado, avance, ultimaRevision, proximaRevision};
   });
-  if (fechaCorte(actualizado) < fechaCorte(corteActual)) return;
-  if (partidas.some((p, i) => p.color !== siguientes[i].color || p.estado !== siguientes[i].estado)) {
+  return {actualizado, consultado, partidas: siguientes};
+}
+function comparar(a, b) {
+  const porCambio = fechaCorte(a.actualizado) - fechaCorte(b.actualizado);
+  return porCambio || (a.consultado ? fechaCorte(a.consultado).getTime() : 0) - (b.consultado ? fechaCorte(b.consultado).getTime() : 0);
+}
+function aplicar({actualizado, consultado, partidas: siguientes}) {
+  if (comparar({actualizado, consultado}, {actualizado: corteActual, consultado: ultimaLectura}) < 0) return 'anterior';
+  const campos = ['color', 'estado', 'avance', 'ultimaRevision', 'proximaRevision'];
+  const cambio = partidas.some((p, i) => campos.some(campo => p[campo] !== siguientes[i][campo]));
+  if (cambio) {
     partidas = siguientes;
     actualizarResumen();
     mostrar();
   }
   corteActual = actualizado;
-  mostrarCorte(actualizado);
+  ultimaLectura = consultado;
+  fecha.textContent = fechaPublicada(actualizado);
+  lecturaDrive.textContent = consultado ? fechaPublicada(consultado) : 'Sin hora publicada';
+  return cambio ? 'cambio' : 'igual';
 }
 async function actualizar(manual = false) {
   if (enConsulta) return;
   enConsulta = true;
   boton.disabled = true;
-  if (manual) aviso.textContent = 'Comprobando el corte publicado…';
+  boton.textContent = 'Consultando…';
+  if (manual) aviso.textContent = 'Buscando la última versión publicada…';
+  void comprobarEjecucion(manual);
   try {
     if (!partidaBase.length) {
       const base = await leerJSON('datos.json');
@@ -179,23 +244,35 @@ async function actualizar(manual = false) {
       partidaBase = base.partidas;
       partidas = partidaBase;
       corteActual = base.lectura;
-      mostrarCorte(corteActual);
+      fecha.textContent = fechaPublicada(corteActual);
+      lecturaDrive.textContent = 'Sin hora publicada';
       actualizarResumen();
       mostrar();
     }
-    try {
-      const minuto = Math.floor(Date.now() / 60000);
-      aplicar(await leerJSON(estadosPublicos + '?v=' + minuto));
-      aviso.textContent = manual ? 'Consulta actualizada.' : '';
-    } catch {
-      try { aplicar(await leerJSON('estado.json')); } catch { /* Se conserva el último corte válido. */ }
-      aviso.textContent = 'Se muestra el último corte disponible. No se pudo comprobar una versión más reciente.';
-    }
+    const consulta = '?v=' + Date.now();
+    const lecturas = await Promise.allSettled([estadosPublicos, 'estado.json'].map(async url =>
+      preparar(await leerJSON(url + consulta))
+    ));
+    const validas = lecturas.filter(r => r.status === 'fulfilled').map(r => r.value);
+    if (!validas.length) throw new Error('Sin versión disponible');
+    validas.sort((a, b) => comparar(b, a));
+    const resultado = aplicar(validas[0]);
+    const mensajes = [];
+    if (resultado === 'anterior') mensajes.push('Las versiones disponibles son anteriores. Se conserva la última que viste.');
+    else if (resultado === 'cambio') mensajes.push('Se actualizaron las fichas con los datos publicados.');
+    else if (manual) mensajes.push('La versión publicada coincide con la que estás viendo.');
+    if (lecturas[0].status === 'rejected') mensajes.push('Se consultó la copia del sitio. No se pudo comprobar el archivo de GitHub.');
+    aviso.textContent = mensajes.join(' ');
   } catch {
-    fecha.textContent = 'Corte pendiente de cargar';
-    aviso.textContent = 'No se pudo cargar la lista. Pulsa Actualizar para reintentar.';
+    if (partidas.length) aviso.textContent = 'No se pudieron actualizar las fichas. Sigues viendo los últimos datos disponibles.';
+    else {
+      fecha.textContent = 'Por confirmar';
+      aviso.textContent = 'No se pudo cargar la lista. Pulsa Actualizar para reintentar.';
+    }
   } finally {
+    consultaPagina.textContent = formatoHora.format(new Date());
     boton.disabled = false;
+    boton.textContent = 'Actualizar';
     enConsulta = false;
   }
 }

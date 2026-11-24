@@ -1,185 +1,321 @@
 {
-  "actualizado": "2026-11-23T22:58:23Z",
+  "actualizado": "2026-11-24T13:41:13Z",
+  "consultado": "2026-11-24T13:41:13Z",
   "partidas": {
     "H01": {
       "color": "naranja",
-      "estado": "En proceso"
+      "estado": "En proceso",
+      "avance": "Hace falta sistema de iluminacion y aplicar piel de interlon que ayude con el sistema de naufragio.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H02": {
       "color": "amarillo",
-      "estado": "En proceso"
+      "estado": "En proceso",
+      "avance": "Actualizar artes y mandar a imprimir:\nYa estan los artes mario debe revisasr la de los lapices que hacía falta",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H03": {
       "color": "naranja",
-      "estado": "Por verificar"
-    },
-    "H32": {
-      "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "En proceso",
+      "avance": "Tantear el peso que tiene y estar muy alerta de la coraza y que realmente parezca una cauchera de palo.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H04": {
       "color": "rojo",
-      "estado": "Por verificar"
-    },
-    "H33": {
-      "color": "verde",
-      "estado": "Por verificar"
+      "estado": "En proceso",
+      "avance": "Iniciar con la construccion",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H05": {
-      "color": "amarillo",
-      "estado": "Por verificar"
+      "color": "rojo",
+      "estado": "En proceso",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H06": {
       "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "Pendiente",
+      "avance": "Conversacion y definicion de alquileres con los interpretes.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H07": {
       "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "Por verificar",
+      "avance": "Hace falta aplicar los adornos de buclkes a la pantalla como el diseño lo indica.\nSistema de iluminación",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H08": {
       "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "Por verificar",
+      "avance": "Verificar el modo de uso del tocado u la pechera",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H09": {
       "color": "verde claro",
-      "estado": "Por verificar"
+      "estado": "Por verificar",
+      "avance": "Verificar sobre el interpret para corroborar medidas",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H10": {
       "color": "naranja",
-      "estado": "Por verificar"
-    },
-    "H34": {
-      "color": "rojo",
-      "estado": "Por verificar"
+      "estado": "En proceso",
+      "avance": "1. Finalizar el tema de la piel con inter Lon\n2. Construir estructuras que le permita poner los puntos de anclaje para el agarre con cuerdas que no dificulté la ubicación de la semilla.\n3. Sistema de iluminación del cuello y las dos alas.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H11": {
-      "color": "amarillo",
-      "estado": "Por verificar"
+      "color": "rojo",
+      "estado": "Por verificar",
+      "avance": "Verificar el estado de la compra de estos insumos",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H12": {
       "color": "amarillo",
-      "estado": "Por verificar"
-    },
-    "H35": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H36": {
-      "color": "verde",
-      "estado": "En proceso"
+      "estado": "Por verificar",
+      "avance": "Aunque se está esperando a que llegue a la cama necesitamos tener claro si ya se tiene el proveedor de este colchón",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H13": {
       "color": "amarillo",
-      "estado": "En proceso"
+      "estado": "Pendiente",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H14": {
       "color": "verde",
-      "estado": "En proceso"
-    },
-    "H37": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H38": {
-      "color": "verde claro",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H15": {
       "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H39": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H40": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H41": {
-      "color": "verde",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "Hay que ubicarla en la vela del barco grande y ver si es necesario darle una estructura para que permanezca abierta la bandera y visible al público",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H16": {
       "color": "naranja",
-      "estado": "Por verificar"
+      "estado": "Por verificar",
+      "avance": "Verificar iluminación y en los que son de cartónplast, terminar el que hace falta de 1 m de eslora, aplicar iluminación y probar.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H17": {
       "color": "verde",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H19": {
       "color": "verde",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H20": {
       "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H42": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H43": {
-      "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "Hacer pruebas de desinflado",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H21": {
-      "color": "naranja",
-      "estado": "Por verificar"
+      "color": "rojo",
+      "estado": "Pendiente",
+      "avance": "Iniciar construcción",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H22": {
       "color": "verde claro",
-      "estado": "Por verificar"
+      "estado": "En proceso",
+      "avance": "Finalización de los estándares",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H23": {
       "color": "verde",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "Prueba con los gruñones",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H24": {
       "color": "rojo",
-      "estado": "Por verificar"
+      "estado": "Pendiente",
+      "avance": "Revisar de acuerdo al uso de material recargable qué tan pertinente es esta estación de carga y cuáles son los requerimientos técnicos que necesita",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H26": {
-      "color": "sin color",
-      "estado": "Por verificar"
+      "color": "verde claro",
+      "estado": "Pendiente",
+      "avance": "Al momento de entrar a la plaza ubicación y equipamiento del taller de utillería del montaje",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H27": {
-      "color": "sin color",
-      "estado": "Por verificar"
+      "color": "verde claro",
+      "estado": "Pendiente",
+      "avance": "Establecer un inventario de lo que se necesita de lo que se lleva y de su uso durante el montaje y la temporada",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H29": {
       "color": "amarillo",
-      "estado": "Por verificar"
-    },
-    "H47": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H48": {
-      "color": "amarillo",
-      "estado": "Por verificar"
+      "estado": "En proceso",
+      "avance": "Fijar el centro de la antena",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H30": {
       "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H44": {
-      "color": "verde",
-      "estado": "Por verificar"
-    },
-    "H45": {
-      "color": "verde claro",
-      "estado": "Por verificar"
-    },
-    "H46": {
-      "color": "verde",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     "H31": {
       "color": "verde claro",
-      "estado": "Por verificar"
+      "estado": "Entregado",
+      "avance": "Finalizar los barcos que van a estar hechos previamente y ubicar en el taller de utilería los papeles para los que hagan falta durante la temporada",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H32": {
+      "color": "amarillo",
+      "estado": "En proceso",
+      "avance": "Intervencion a lo que Carolina ya compro que las haga parecer de tela",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H33": {
+      "color": "verde",
+      "estado": "En prueba",
+      "avance": "Listos, prueba con actores. Verificar que la vicera se pueda mover para amplificacion con microfonos",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H34": {
+      "color": "rojo",
+      "estado": "Pendiente",
+      "avance": "Iniciar con la construcción\nTener en cuenta que el centro luminoso debe ser circular como un orbe de luz o como el referente una Ochoa donde el capuchón está en su sol estructura y la Pepa de Ochoa es la fuente de luz.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H35": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H36": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H37": {
+      "color": "verde",
+      "estado": "En prueba",
+      "avance": "Revisar que quepa en la maleta del viajero",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H38": {
+      "color": "verde claro",
+      "estado": "En prueba",
+      "avance": "Finalizar y revisar que quepa en la maleta del viajero",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H39": {
+      "color": "verde",
+      "estado": "En prueba",
+      "avance": "Probar con el intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H40": {
+      "color": "verde",
+      "estado": "En prueba",
+      "avance": "Probar con el intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H41": {
+      "color": "verde",
+      "estado": "En prueba",
+      "avance": "Probar con los intérpretes",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H42": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "Hacer prueba de inflador",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H43": {
+      "color": "amarillo",
+      "estado": "En proceso",
+      "avance": "Hacer acabados\nPintura y lacado",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H44": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H45": {
+      "color": "verde claro",
+      "estado": "Entregado",
+      "avance": "Finalizar el Bosé en la punta opuesta la del ojo para generar mayor visibilidad del catalejo",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H46": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H47": {
+      "color": "verde",
+      "estado": "Entregado",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
+    },
+    "H48": {
+      "color": "amarillo",
+      "estado": "En proceso",
+      "avance": "Verificar segunda diadema para fijar los audífonos a la cabeza del intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     }
   }
 }

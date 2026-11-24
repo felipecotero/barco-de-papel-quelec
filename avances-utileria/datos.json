@@ -1,23 +1,29 @@
 {
-  "lectura": "2026-11-23T22:58:23Z",
+  "lectura": "2026-11-24T13:41:13Z",
   "partidas": [
     {
       "id": "H04",
       "color": "rojo",
       "elemento": "Nave canoa-cohete",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Resolver la nave según la versión vigente del Taller de Objetos. Confirmar adaptación, carcasas y portadores, y revisar su relación con la cauchera.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Iniciar con la construccion",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H24",
       "color": "rojo",
       "elemento": "Estación de carga",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Comprobar la carga de los objetos iluminados, incluido el barco, la flotilla, la grulla, las semillas, los estandartes y la regadera.",
-      "grupo": "Apoyo de taller"
+      "grupo": "Apoyo de taller",
+      "avance": "Revisar de acuerdo al uso de material recargable qué tan pertinente es esta estación de carga y cuáles son los requerimientos técnicos que necesita",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H01",
@@ -26,25 +32,34 @@
       "cantidad": "1",
       "estado": "En proceso",
       "detalle": "Revisar materiales, estructura, uniones, peso y manipulación del barco R08. Cotejar la muestra con los planos del despiece.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Hace falta sistema de iluminacion y aplicar piel de interlon que ayude con el sistema de naufragio.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H03",
       "color": "naranja",
       "elemento": "Cauchera gigante",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Cotejar el objeto escénico con el diseño del taller y revisar en ensayo su relación con las siete esferas H32.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Tantear el peso que tiene y estar muy alerta de la coraza y que realmente parezca una cauchera de palo.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H10",
       "color": "naranja",
       "elemento": "Grulla portante iluminada",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Entregar la grulla-canasta según la versión vigente, con iluminación, interruptor, batería recargable y cargador. Revisar cuelgue y entrega de la semilla H34.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "1. Finalizar el tema de la piel con inter Lon\n2. Construir estructuras que le permita poner los puntos de anclaje para el agarre con cuerdas que no dificulté la ubicación de la semilla.\n3. Sistema de iluminación del cuello y las dos alas.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H16",
@@ -53,16 +68,22 @@
       "cantidad": "7",
       "estado": "Por verificar",
       "detalle": "Siete barcos de la flotilla sobre sus bastones, con luz propia y manejo revisado.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Verificar iluminación y en los que son de cartónplast, terminar el que hace falta de 1 m de eslora, aplicar iluminación y probar.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H21",
-      "color": "naranja",
+      "color": "rojo",
       "elemento": "Regadera iluminada",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Una regadera de mano de metal calado, sin soporte, con luz cálida solo dentro del recipiente e interruptor al alcance del intérprete. Del rociador cuelgan varias tiras enrolladas de papel azul, sin iluminación.",
-      "grupo": "Por confirmar"
+      "grupo": "Por confirmar",
+      "avance": "Iniciar construcción",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H02",
@@ -71,34 +92,46 @@
       "cantidad": "4",
       "estado": "En proceso",
       "detalle": "Cuatro pancartas de dos caras según los artes, formatos y montaje de la matriz y el Taller de Objetos vigentes. Revisar manejo, lectura de ambas caras y acabado.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Actualizar artes y mandar a imprimir:\nYa estan los artes mario debe revisasr la de los lapices que hacía falta",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H32",
       "color": "amarillo",
       "elemento": "Esferas de cañón luminosas",
       "cantidad": "7",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Revisar las seis esferas escénicas y la unidad de respaldo, con sus filamentos translúcidos y núcleo de luz.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Intervencion a lo que Carolina ya compro que las haga parecer de tela",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H05",
-      "color": "amarillo",
+      "color": "rojo",
       "elemento": "Colas de pavo",
       "cantidad": "5",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Cinco colas con sujeción, apertura y acabado según diseño vigente; aprobar prueba antes de replicar.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H06",
       "color": "amarillo",
       "elemento": "Soportes para invertidas",
       "cantidad": "5",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Confirmar disponibilidad de cinco soportes con los intérpretes y revisar el apoyo y la geometría con cada artista.",
-      "grupo": "Acróbatas"
+      "grupo": "Acróbatas",
+      "avance": "Conversacion y definicion de alquileres con los interpretes.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H07",
@@ -107,7 +140,10 @@
       "cantidad": "1",
       "estado": "Por verificar",
       "detalle": "Tocado de lámpara con rostro legible y luz operable por el intérprete; coordinar con vestuario y maquillaje.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Hace falta aplicar los adornos de buclkes a la pantalla como el diseño lo indica.\nSistema de iluminación",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H08",
@@ -116,43 +152,58 @@
       "cantidad": "1",
       "estado": "Por verificar",
       "detalle": "Accesorio / estructura del Perchero ajustado al cuerpo y sin ocultar el rostro; revisar boceto antes de terminar.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Verificar el modo de uso del tocado u la pechera",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H13",
       "color": "amarillo",
       "elemento": "Morral de Quelec",
       "cantidad": "1",
-      "estado": "En proceso",
+      "estado": "Pendiente",
       "detalle": "Revisar el morral contra el diseño vigente y coordinar la tela con Vestuario.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H43",
       "color": "amarillo",
       "elemento": "Chincheta escénica",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Entregar una chincheta escénica liviana de punta blanda. Revisar su manejo y su relación con los balones en la escena de fútbol.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Hacer acabados\nPintura y lacado",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H29",
       "color": "amarillo",
       "elemento": "Antena de escucha de los Gruñones",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Entregar una antena escénica del conjunto de escucha de los Gruñones. Revisar su manejo con Arte.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Fijar el centro de la antena",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H48",
       "color": "amarillo",
       "elemento": "Audífonos sobredimensionados de los Gruñones",
       "cantidad": "1 par",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Entregar un par de audífonos sobredimensionados. Revisar ajuste y sujeción con el intérprete y Arte.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Verificar segunda diadema para fijar los audífonos a la cabeza del intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H09",
@@ -161,205 +212,274 @@
       "cantidad": "1",
       "estado": "Por verificar",
       "detalle": "Tocado y accesorios de Matera según diseño vigente; coordinar follaje y lectura del rostro.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Verificar sobre el interpret para corroborar medidas",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H22",
       "color": "verde claro",
       "elemento": "Estandartes de diente de león del coro",
       "cantidad": "12 (11+1 repuesto)",
-      "estado": "Por verificar",
+      "estado": "En proceso",
       "detalle": "Doce estandartes iluminados de diente de león, once de uso y uno de repuesto. Revisar interruptor y manejo.",
-      "grupo": "Danza y coro"
+      "grupo": "Danza y coro",
+      "avance": "Finalización de los estándares",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H45",
       "color": "verde claro",
       "elemento": "Catalejo pirata",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar un catalejo escénico liviano. Confirmar el intérprete que lo usa y revisar su manejo.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Finalizar el Bosé en la punta opuesta la del ojo para generar mayor visibilidad del catalejo",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H33",
       "color": "verde",
       "elemento": "Cascos de los intérpretes de la nave",
       "cantidad": "4",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar cuatro cascos, uno por operador de la nave. Revisar solución de visor, acolchado, ajuste y visibilidad con Arte y los intérpretes.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Listos, prueba con actores. Verificar que la vicera se pueda mover para amplificacion con microfonos",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H35",
       "color": "verde",
       "elemento": "Juegos de cama",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar dos juegos con edredón, almohadas y sábanas a la medida del colchón H12.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H36",
       "color": "verde",
       "elemento": "Cobija tejida de la Abuela",
       "cantidad": "1",
-      "estado": "En proceso",
+      "estado": "Entregado",
       "detalle": "Entregar una cobija tejida de fibra gruesa para cubrir las piernas y el regazo de la Abuela. Revisar lectura desde la gradería.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H14",
       "color": "verde",
       "elemento": "Maleta amarilla del Viajero",
       "cantidad": "1",
-      "estado": "En proceso",
+      "estado": "Entregado",
       "detalle": "Entregar la maleta amarilla del Viajero según el diseño de referencia de Félix el Gato. Revisar apertura, manejo en escena e integración con la butaca H37 y el libro H38.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H37",
       "color": "verde",
       "elemento": "Butaco plegable del Viajero",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar un butaco plegable según la referencia fotográfica. Revisar su integración en escena con la maleta del Viajero H14.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Revisar que quepa en la maleta del viajero",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H15",
       "color": "verde",
       "elemento": "Banderas piratas",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar dos banderas con sus astas. La roja va en el barco y la negra la lleva el capitán.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Hay que ubicarla en la vela del barco grande y ver si es necesario darle una estructura para que permanezca abierta la bandera y visible al público",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H39",
       "color": "verde",
       "elemento": "Sombrero pirata de Quelec",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar el sombrero rojo de Quelec. Verificar la silueta ampliada y la talla interior con el intérprete.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con el intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H40",
       "color": "verde",
       "elemento": "Sombrero pirata del Hermano",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar el sombrero del Hermano. Validar su diseño y talla con Arte y el intérprete.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con el intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H41",
       "color": "verde",
       "elemento": "Sombreros piratas de los Gruñones",
       "cantidad": "4",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar cuatro sombreros, uno por Gruñón. Identificar el sombrero negro del capitán y revisar diseño y talla de los cuatro.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con los intérpretes",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H17",
       "color": "verde",
       "elemento": "Muñecos de los amigos imaginarios",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Revisar los dos muñecos según los diseños acordados con Vestuario.",
-      "grupo": "Por confirmar"
+      "grupo": "Por confirmar",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H19",
       "color": "verde",
       "elemento": "Cañones de polvo holi del Viajero",
       "cantidad": "30",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar 30 cañones de polvo holi para el efecto del Viajero, contemplando ensayos y temporada. Coordinar presentación y distribución con Arte y Producción.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H20",
       "color": "verde",
       "elemento": "Balones inflables de 2 m",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar dos balones inflables de 2 m, con vaciado rápido reutilizable y kit de reparación. Comprobar compatibilidad con el soplador H42.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Hacer pruebas de desinflado",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H42",
       "color": "verde",
       "elemento": "Inflador eléctrico para los balones",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar un soplador eléctrico compatible con las válvulas de los balones H20. Verificar el reinflado entre ensayo y función.",
-      "grupo": "Apoyo de taller"
+      "grupo": "Apoyo de taller",
+      "avance": "Hacer prueba de inflador",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H23",
       "color": "verde",
       "elemento": "Red de captura",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar una red de captura liviana y manipulable, con agarres adecuados para la persecución en escena.",
-      "grupo": "Por confirmar"
+      "grupo": "Por confirmar",
+      "avance": "Prueba con los gruñones",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H47",
       "color": "verde",
       "elemento": "Cono de escucha de los Gruñones",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar un cono de escucha. Revisar tamaño, acabado y manipulación con Arte.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H30",
       "color": "verde",
       "elemento": "Loro pirata",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar un loro de espuma tallada sobre pechera. Revisar su ajuste al cuerpo y manejo en escena.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H44",
       "color": "verde",
       "elemento": "Espadas piratas",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar dos espadas piratas ligeras y blandas. Revisar manejo y distribución con Arte.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H46",
       "color": "verde",
       "elemento": "Garfio pirata",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar un garfio escénico liviano y blando. Revisar ajuste, manejo y asignación con Arte.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Probar con intérprete",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H34",
       "color": "rojo",
       "elemento": "Semillas luminosas",
       "cantidad": "2",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Entregar dos semillas luminosas, una principal y una de respaldo. Verificar acceso de servicio, luz y compatibilidad con la grulla H10.",
-      "grupo": "Manipuladores"
+      "grupo": "Manipuladores",
+      "avance": "Iniciar con la construcción\nTener en cuenta que el centro luminoso debe ser circular como un orbe de luz o como el referente una Ochoa donde el capuchón está en su sol estructura y la Pepa de Ochoa es la fuente de luz.",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H11",
-      "color": "amarillo",
+      "color": "rojo",
       "elemento": "Pantallas portables para mano",
       "cantidad": "120",
       "estado": "Por verificar",
       "detalle": "Entregar 120 luces portables para mano, recargables, con luz RGB, difusor, batería, interruptor y cargador. El taller realiza el reverso negro y un sistema de sujeción a muñeca o mano, sin obstruir luz, carga ni controles.",
-      "grupo": "Danza y coro"
+      "grupo": "Danza y coro",
+      "avance": "Verificar el estado de la compra de estos insumos",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H12",
@@ -368,43 +488,58 @@
       "cantidad": "1",
       "estado": "Por verificar",
       "detalle": "Entregar un colchón ajustado a la estructura real de la cama. Confirmar medidas, espesor e integración con el taller y el equipo de aéreos. 2m x 1,90 m x 0,3 m",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Aunque se está esperando a que llegue a la cama necesitamos tener claro si ya se tiene el proveedor de este colchón",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H38",
       "color": "verde claro",
       "elemento": "Libro antiguo del Viajero",
       "cantidad": "1",
-      "estado": "Por verificar",
+      "estado": "En prueba",
       "detalle": "Entregar un libro de aspecto antiguo según la referencia fotográfica. Revisar su uso en escena y su integración con la maleta del Viajero H14.",
-      "grupo": "Actores"
+      "grupo": "Actores",
+      "avance": "Finalizar y revisar que quepa en la maleta del viajero",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H26",
-      "color": "sin color",
+      "color": "verde claro",
       "elemento": "Mantenimiento en plaza y logística",
       "cantidad": "1 servicio con logística incluida",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Coordinar reparaciones entre funciones, embalaje, traslado desde ensayos y almacenamiento protegido de la humedad.",
-      "grupo": "Apoyo de taller"
+      "grupo": "Apoyo de taller",
+      "avance": "Al momento de entrar a la plaza ubicación y equipamiento del taller de utillería del montaje",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H27",
-      "color": "sin color",
+      "color": "verde claro",
       "elemento": "Lote de insumos de taller",
       "cantidad": "1 lote · 34 renglones",
-      "estado": "Por verificar",
+      "estado": "Pendiente",
       "detalle": "Verificar las cantidades y los faltantes en los 34 renglones del lote de insumos.",
-      "grupo": "Apoyo de taller"
+      "grupo": "Apoyo de taller",
+      "avance": "Establecer un inventario de lo que se necesita de lo que se lleva y de su uso durante el montaje y la temporada",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     },
     {
       "id": "H31",
       "color": "verde claro",
       "elemento": "Papel para barcos plegados",
       "cantidad": "50 pliegos · 90 g/m²",
-      "estado": "Por verificar",
+      "estado": "Entregado",
       "detalle": "Entregar 50 pliegos de papel blanco o crudo claro de 90 g/m² para los barcos plegados de unos 35 cm. Prever el plegado diario de 20 a 25 barcos durante la temporada, a cargo de los asistentes de escena.",
-      "grupo": "Apoyo de taller"
+      "grupo": "Apoyo de taller",
+      "avance": "Finalizar los barcos que van a estar hechos previamente y ubicar en el taller de utilería los papeles para los que hagan falta durante la temporada",
+      "ultimaRevision": "2026-11-20",
+      "proximaRevision": "2026-11-24"
     }
   ]
 }

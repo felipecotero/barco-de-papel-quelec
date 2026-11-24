@@ -8,8 +8,8 @@
   <title>Avances de utilería · Taller de Objetos de Quelec</title>
   <link rel="icon" href="../assets/logo-grulla.svg">
   <link rel="stylesheet" href="../shared/brand.css">
-  <link rel="stylesheet" href="estilos.css?v=I44">
-  <script defer src="seguimiento.js?v=I44"></script>
+  <link rel="stylesheet" href="estilos.css?v=I50">
+  <script defer src="seguimiento.js?v=I50"></script>
 </head>
 <body>
   <header>
@@ -19,7 +19,7 @@
   <main>
     <section class="cabecera" aria-labelledby="titulo">
       <div><p class="kicker">HENRY ALARCÓN</p><h1 id="titulo">Avances de utilería</h1>
-        <p class="bajada">Consulta el avance de cada partida y abre su ficha para ver la cantidad, el estado escrito en la matriz y los puntos por verificar.</p>
+        <p class="bajada">Abre la ficha de un objeto para consultar su avance, el apoyo que requiere y las fechas de revisión.</p>
       </div>
       <figure class="resumen" id="resumen" aria-labelledby="resumen-titulo" hidden>
         <figcaption><h2 id="resumen-titulo">Avance por color</h2><span id="resumen-total"></span></figcaption>
@@ -31,10 +31,18 @@
     </section>
     <section class="consulta" aria-labelledby="partidas">
       <div class="encabezado-lista"><h2 id="partidas">Partidas de la matriz</h2>
-        <div class="lectura"><span id="fecha">Consultando datos…</span><button id="actualizar" type="button">Actualizar</button></div>
+        <button id="actualizar" type="button" aria-describedby="ayuda-actualizar">Actualizar</button>
       </div>
+      <p id="ayuda-actualizar" class="criterio">Actualizar refresca la vista con la última versión publicada. GitHub Actions tiene programada la comprobación de la matriz de Drive cada 10 minutos, aunque puede demorarse. Cuando detecta cambios, los publica aquí. Las horas corresponden a Bogotá.</p>
+      <dl class="lecturas">
+        <div><dt>Última comprobación exitosa de la matriz</dt><dd id="comprobacion">Consultando GitHub…</dd></div>
+        <div><dt>Lectura de Drive de esta versión</dt><dd id="lectura-drive">Por confirmar</dd></div>
+        <div><dt>Último cambio publicado</dt><dd id="fecha">Consultando…</dd></div>
+        <div><dt>Consulta de esta página</dt><dd id="consulta-pagina">En curso…</dd></div>
+      </dl>
       <p id="aviso" class="aviso" role="status"></p>
-      <p class="criterio">El color corresponde al fondo de «Elemento» en la matriz. El verde indica que se reportó listo. La recepción y las pruebas se confirman por separado.</p>
+      <p class="solicitar-lectura"><a href="https://github.com/felipecotero/barco-de-papel-quelec/actions/workflows/avances-utileria.yml">Solicitar una lectura de Drive en GitHub</a> · Quienes tengan permisos de escritura en el taller pueden elegir «Run workflow». Cuando termine, pulsa Actualizar.</p>
+      <p class="criterio">El color reproduce el fondo de «Elemento» en la matriz. Consulta el estado escrito de la ficha para distinguir pendientes, pruebas y entregas.</p>
       <fieldset class="filtros" id="filtros"><legend>Filtrar por color</legend></fieldset>
       <div class="controles"><div class="busqueda">
         <label for="grupo">Agrupación propuesta para coordinar la entrega</label>

@@ -29,11 +29,11 @@ jobs:
             /avances-utileria/estado.json
           sparse-checkout-cone-mode: false
           filter: blob:none
-      - name: Consultar el color de cada elemento y su estado escrito
+      - name: Consultar estados, notas y fechas de revisión en Drive
         env:
           HENRY_SHEET_ID: ${{ secrets.HENRY_SHEET_ID }}
         run: python3 tools/actualizar-avances.py
-      - name: Publicar los cambios de la matriz
+      - name: Publicar el corte verificado de la matriz
         shell: bash
         run: |
           set -euo pipefail

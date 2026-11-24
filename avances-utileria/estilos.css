@@ -12,7 +12,7 @@ a {color:var(--acento); text-underline-offset:4px;}
 h1,h2 {line-height:1.1; margin:0;}
 h1 {font-size:clamp(39px,5.5vw,76px); letter-spacing:-.035em;}
 h2 {font-size:clamp(28px,3.2vw,44px);}
-.bajada,.criterio,.aviso,#resultados,.lectura,.entregas small {color:var(--suave);}
+.bajada,.criterio,.aviso,#resultados,.entregas small {color:var(--suave);}
 .bajada {max-width:39em; margin:18px 0 0;}
 .entregas {margin:0; padding-inline-start:22px; border-left:2px solid #799885;}
 .entregas>div+div {margin-top:16px;}
@@ -38,15 +38,18 @@ h2 {font-size:clamp(28px,3.2vw,44px);}
 @media(max-width:720px){.entregas{grid-column:1;grid-row:auto;}}
 @media(max-width:420px){.leyenda-resumen{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .consulta {padding:32px 0 70px;}
-.encabezado-lista,.lectura,.filtros,.busqueda {display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
+.encabezado-lista,.filtros,.busqueda {display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
 .encabezado-lista {justify-content:space-between; gap:14px;}
-.lectura {font-size:.86rem;}
+.lecturas {display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:10px 20px; margin:16px 0; padding:12px 0; border-block:1px solid var(--linea);}
+.lecturas dt {color:var(--suave); font-size:.8rem;}
+.lecturas dd {margin:2px 0 0; font-size:.93rem; font-variant-numeric:tabular-nums;}
 button,input,select {font:inherit;}
 button {cursor:pointer; border:1px solid var(--linea); border-radius:7px; background:var(--panel); color:var(--tinta); padding:8px 12px;}
 button:hover {border-color:var(--acento);}
 button:disabled {cursor:wait;}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible {outline:3px solid #d6bb78; outline-offset:3px;}
 .criterio,.aviso {font-size:.91rem; max-width:780px;}
+.solicitar-lectura {margin:-4px 0 12px; color:var(--suave); font-size:.85rem;}
 .aviso:empty {display:none;}
 .filtros {padding:0; border:0; margin:24px 0 12px; gap:7px;}
 .filtros legend {margin:0 0 6px; padding:0;}
@@ -67,8 +70,9 @@ details[open] summary::after {content:"−";}
 summary .clave {font:normal .77rem/1.4 Arial,sans-serif; color:var(--suave); display:flex; align-items:center; gap:7px;}
 summary strong {font-size:.96rem; line-height:1.35;}
 .detalle {margin:0 16px 14px; padding-top:10px; border-top:1px solid var(--linea); font-size:.94rem;}
-.detalle dl {display:flex; gap:15px; flex-wrap:wrap; margin:0;}
+.detalle dl {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 15px; margin:0;}
+.detalle dl>div:first-child {grid-column:1/-1;}
 .detalle dt {font-size:.77rem; color:var(--suave);}
-.detalle dd {margin:0;}
+.detalle dd {margin:0; white-space:pre-line; overflow-wrap:anywhere;}
 .detalle p {margin:9px 0 0; color:#d2dfde;}
 @media(max-width:720px){.cabecera {grid-template-columns:1fr; gap:22px;} #fichas {grid-template-columns:1fr;} .entregas{display:flex; flex-wrap:wrap; gap:14px 22px;} .entregas>div{flex:1 1 155px;} .entregas>div+div{margin:0;} .volver {text-align:right;}.consulta{padding-top:24px;}}

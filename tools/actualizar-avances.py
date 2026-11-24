@@ -1,4 +1,4 @@
-"""Lee únicamente el color y el estado publicables de las partidas del tablero."""
+"""Publica los campos de seguimiento de las partidas del tablero."""
 import io
 import json
 import os
@@ -6,7 +6,7 @@ import posixpath
 import re
 import sys
 import zipfile
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -26,6 +26,52 @@ COLORES = {
     "00FF00": "verde", "6AA84F": "verde",
 }
 ESTADOS = {"Por verificar", "Pendiente", "En proceso", "En prueba", "Bloqueado", "Entregado", "Validado", ""}
+
+CABECERAS = ("ID", "Elemento", "Estado", "Avance y apoyo requerido", "Última revisión", "Próxima revisión")
+
+
+def columnas_de(fila):
+    por_nombre = {" ".join(texto.split()).casefold(): indice for indice, texto in fila}
+    if all(cabecera.casefold() in por_nombre for cabecera in CABECERAS):
+        return {nombre: por_nombre[nombre.casefold()] for nombre in CABECERAS}
+    return {}
+
+
+def fecha_revision(texto, usa_1904=False):
+    if not texto or texto.strip().casefold() in {"pendiente", "por definir", "sin fecha", "n/a", "-", "—"}:
+        return ""
+    if re.fullmatch(r"\d+(?:\.\d+)?", texto):
+        dias = int(float(texto))
+        origen = date(1904, 1, 1) if usa_1904 else date(1899, 12, 30 if dias >= 60 else 31)
+        return (origen + timedelta(days=dias)).isoformat()
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}(?:T.*)?", texto):
+        return date.fromisoformat(texto[:10]).isoformat()
+    return datetime.strptime(texto, "%d/%m/%Y").date().isoformat()
+
+
+# Solo se exporta la nota elegida del seguimiento. Los contactos, enlaces
+# privados, credenciales y cifras de dinero que se peguen en ella se omiten.
+DATOS_PRIVADOS = re.compile(
+    r"(?:https?://|www\.)[^\s<>]+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}"
+    r"|(?:[$€£]\s*|\b(?:COP|USD|EUR)\s*)\d+(?:[., ]\d+)*(?:\s*(?:millones?|mil)\b)?"
+    r"|\b\d+(?:[., ]\d+)*(?:\s*(?:millones?|mil))?\s*(?:pesos|COP|USD|EUR|dólares|euros)\b"
+    r"|(?<!\w)\+?\d(?:[ .()-]*\d){6,14}(?!\d)"
+    r"|\b(?:clave|contraseña|password|token|api[ _-]?key|PIN)\s*[:=]\s*[^\s,;]+"
+    r"|\b(?:gh[pousr]_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+|sk-[A-Za-z0-9_-]{16,})\b",
+    re.IGNORECASE,
+)
+
+
+def partida(color, estado, nota, ultima, proxima, usa_1904=False):
+    if color is None or estado not in ESTADOS:
+        raise ValueError("Se requiere revisar un color o estado nuevo.")
+    return {
+        "color": color,
+        "estado": estado,
+        "avance": DATOS_PRIVADOS.sub("[dato reservado]", nota.strip()),
+        "ultimaRevision": fecha_revision(ultima, usa_1904),
+        "proximaRevision": fecha_revision(proxima, usa_1904),
+    }
 
 
 def leer_xml(libro, nombre):
@@ -71,6 +117,8 @@ def valor(celda, cadenas):
 def extraer(datos, ids):
     with zipfile.ZipFile(io.BytesIO(datos)) as libro:
         filas = leer_xml(libro, localizar_matriz(libro)).findall("x:sheetData/x:row", NS)
+        propiedades = leer_xml(libro, "xl/workbook.xml").find("x:workbookPr", NS)
+        usa_1904 = propiedades is not None and propiedades.get("date1904") in {"true", "1"}
         estilos = leer_colores(libro)
         cadenas = []
         if "xl/sharedStrings.xml" in libro.namelist():
@@ -81,9 +129,7 @@ def extraer(datos, ids):
     for fila in filas:
         celdas = {re.sub(r"\d+", "", celda.attrib["r"]): celda for celda in fila.findall("x:c", NS)}
         if not columnas:
-            nombres = {valor(celda, cadenas): col for col, celda in celdas.items()}
-            if {"ID", "Elemento", "Estado"}.issubset(nombres):
-                columnas = nombres
+            columnas = columnas_de((col, valor(celda, cadenas)) for col, celda in celdas.items())
             continue
         codigo = valor(celdas.get(columnas["ID"]), cadenas)
         if codigo not in ids:
@@ -91,10 +137,8 @@ def extraer(datos, ids):
         if codigo in partidas or columnas["Elemento"] not in celdas:
             raise ValueError("Partida duplicada o incompleta.")
         color = estilos[int(celdas[columnas["Elemento"]].get("s", "0"))]
-        estado = valor(celdas.get(columnas["Estado"]), cadenas)
-        if color is None or estado not in ESTADOS:
-            raise ValueError("Se requiere revisar un color o estado nuevo.")
-        partidas[codigo] = {"color": color, "estado": estado}
+        campos = [valor(celdas.get(columnas[nombre]), cadenas) for nombre in CABECERAS[2:]]
+        partidas[codigo] = partida(color, *campos, usa_1904=usa_1904)
     if partidas.keys() != ids:
         raise ValueError("La lectura no contiene todas las partidas del tablero.")
     return partidas
@@ -113,6 +157,8 @@ class TablaSheets(HTMLParser):
     def handle_starttag(self, tag, attrs):
         if tag == "style":
             self.en_estilo = True
+        elif tag == "br" and self.celda is not None:
+            self.celda[1].append("\n")
         elif tag == "tr":
             self.fila = []
         elif tag in ("td", "th") and self.fila is not None:
@@ -167,9 +213,7 @@ def extraer_html(datos, ids):
     partidas = {}
     for fila in tabla.filas:
         if not columnas:
-            nombres = {nombre: i for i, (nombre, _) in enumerate(fila)}
-            if {"ID", "Elemento", "Estado"}.issubset(nombres):
-                columnas = {k: nombres[k] for k in ("ID", "Elemento", "Estado")}
+            columnas = columnas_de((i, nombre) for i, (nombre, _) in enumerate(fila))
             continue
         if len(fila) <= columnas["ID"]:
             continue
@@ -183,19 +227,18 @@ def extraer_html(datos, ids):
         if not nuevo:
             nuevo = next((rellenos[c] for c in attrs.get("class", "").split() if c in rellenos), None)
         color = COLORES.get(nuevo)
-        estado = fila[columnas["Estado"]][0]
-        if color is None or estado not in ESTADOS:
-            raise ValueError("Color o estado sin clasificar.")
-        partidas[codigo] = {"color": color, "estado": estado}
+        campos = [fila[columnas[nombre]][0] for nombre in CABECERAS[2:]]
+        partidas[codigo] = partida(color, *campos)
     if partidas.keys() != ids:
         raise ValueError("La vista no contiene todas las partidas del tablero.")
     return partidas
 
 
-def descargar(url):
-    with urlopen(Request(url, headers={"User-Agent": "Quelec-Taller/1.0"}), timeout=30) as respuesta:
-        contenido = respuesta.read(12_000_001)
-    if len(contenido) > 12_000_000:
+def descargar(url, limite):
+    peticion = Request(url, headers={"User-Agent": "Quelec-Taller/2.0", "Cache-Control": "no-cache"})
+    with urlopen(peticion, timeout=45) as respuesta:
+        contenido = respuesta.read(limite + 1)
+    if len(contenido) > limite:
         raise ValueError("La descarga supera el tamaño esperado.")
     return contenido
 
@@ -207,20 +250,26 @@ def actualizar():
     anterior = json.loads(SALIDA.read_text(encoding="utf-8"))
     base = f"https://docs.google.com/spreadsheets/d/{identificador}"
     ids = set(anterior["partidas"])
+    consulta = int(datetime.now(timezone.utc).timestamp())
     try:
-        hoja = descargar(f"{base}/export?format=xlsx&gid={GID}")
-        partidas = extraer(hoja, ids)
-    except Exception:
-        print("Se consultará la vista HTML de la misma pestaña.")
-        html = descargar(f"{base}/htmlview/sheet?gid={GID}&single=true&headers=false")
+        html = descargar(f"{base}/htmlview/sheet?gid={GID}&single=true&headers=false&t={consulta}", 3_000_000)
         partidas = extraer_html(html, ids)
-    if partidas == anterior["partidas"]:
-        print("La lectura coincide con el corte publicado.")
+    except Exception:
+        print("Se consultará la exportación XLSX de la misma matriz.")
+        hoja = descargar(f"{base}/export?format=xlsx&gid={GID}&t={consulta}", 64_000_000)
+        partidas = extraer(hoja, ids)
+    cambio = partidas != anterior["partidas"]
+    if not cambio and anterior.get("consultado"):
+        print(f"Comprobadas {len(partidas)} partidas. El corte sigue vigente.")
         return
     fecha = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    salida = {"actualizado": fecha, "partidas": dict(sorted(partidas.items()))}
+    salida = {
+        "actualizado": fecha if cambio else anterior["actualizado"],
+        "consultado": fecha,
+        "partidas": dict(sorted(partidas.items())),
+    }
     SALIDA.write_text(json.dumps(salida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Actualizadas {len(partidas)} partidas.")
+    print(f"Renovado el corte de {len(partidas)} partidas.")
 
 
 if __name__ == "__main__":
