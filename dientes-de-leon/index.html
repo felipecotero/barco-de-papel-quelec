@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102322">
+  <meta name="description" content="Estandarte de diente de león de Quelec. Explora su centro luminoso, observa un vilano de cerca y sopla para dispersar los frutos en el visor 3D.">
+  <title>Dientes de león · Taller de objetos de Quelec</title>
+  <link rel="icon" href="../assets/logo-grulla.svg">
+  <link rel="stylesheet" href="../shared/brand.css?v=I05">
+  <link rel="stylesheet" href="estudio.css?v=DL01">
+  <script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header class="top">
+    <a href="../" class="identity"><img src="../assets/logo-grulla.svg" alt="" width="38" height="32"><span>QUELEC</span></a>
+    <a href="../#dientes-de-leon" class="back">← Taller de objetos</a>
+  </header>
+  <main>
+    <div class="heading"><div><p class="kicker">Estandarte de utilería</p><h1>Dientes de león</h1></div>
+      <a class="jump" href="#botanica">Anatomía del diente de león ↓</a>
+    </div>
+    <div class="study">
+      <section class="stage" aria-label="Visor 3D del estandarte">
+        <div class="viewport" id="viewport">
+          <canvas id="scene" tabindex="0" aria-label="Modelo 3D. Arrastra para girar, usa la rueda o dos dedos para acercarte. Con el teclado, usa las flechas para girar y los signos más y menos para acercarte o alejarte."></canvas>
+          <div id="fallback" hidden><img src="preview.webp" alt="Cabezuela del estandarte con un núcleo luminoso entre los vilanos blancos."><p>La vista interactiva necesita WebGL. Puedes consultar las medidas y la anatomía más abajo.</p></div>
+          <div class="caption-overlay"><span class="live-dot" aria-hidden="true"></span><span id="view-label">Cabezuela</span></div>
+          <div id="labels" hidden aria-hidden="true"><span>Vilano</span><span>Pico</span><span>Fruto</span></div>
+          <p class="hint" id="hint">Arrastra para girar · Acerca para ver los filamentos</p>
+        </div>
+        <div class="views" role="group" aria-label="Encuadre del modelo">
+          <button type="button" data-view="cabeza" aria-pressed="true">Cabezuela</button>
+          <button type="button" data-view="entero" aria-pressed="false">Estandarte entero</button>
+          <button type="button" data-view="fruto" aria-pressed="false">Un fruto</button>
+        </div>
+      </section>
+      <section class="controls" aria-label="Controles de la dispersión">
+        <h2>El soplo</h2>
+        <p>Desprende los frutos del centro y sigue sus paracaídas en el aire. Cada soplo toma un rumbo distinto.</p>
+        <button class="blow" id="blow" type="button" disabled><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 8h11c4 0 4-6 0-5M2 12h16c5 0 5-7 1-6M4 16h9c5 0 5 6 1 5"/></svg>Soplar</button>
+        <button class="mic" id="mic" type="button" aria-pressed="false" disabled>Soplar con el micrófono</button>
+        <small id="mic-note" role="status">El micrófono es opcional. El sonido se procesa en tu equipo.</small>
+        <div class="seed-count"><span>Frutos en la cabezuela</span><strong id="remaining" aria-live="polite">—</strong></div>
+        <div class="track" aria-hidden="true"><i id="fill"></i></div>
+        <button id="reset" class="text-btn" type="button" disabled>↺ Reponer semillas</button>
+        <div class="light-row"><label for="light">Centro luminoso</label><input type="checkbox" id="light" role="switch" checked disabled></div>
+      </section>
+    </div>
+    <section class="measurements" aria-label="Medidas escénicas">
+      <div><span>Vara hasta el centro</span><strong>180 <small>cm</small></strong></div>
+      <div><span>Diámetro de la esfera</span><strong>70 <small>cm</small></strong></div>
+      <div><span>Altura total nominal</span><strong>215 <small>cm</small></strong></div>
+    </section>
+    <section class="botany" id="botanica">
+      <p class="kicker"><i>Taraxacum officinale</i> · Asteráceas</p>
+      <h2>De la flor amarilla al vilano</h2>
+      <div class="notes">
+        <section><h3>Un ramo diminuto</h3><p>Lo que parece una sola flor amarilla es un capítulo de muchas flores diminutas. Cada una tiene una corola en forma de lengüeta y comparte con las demás un centro llamado receptáculo.</p></section>
+        <section><h3>La esfera blanca</h3><p>Al madurar, cada flor da un fruto seco con una semilla dentro. Ese fruto, la cipsela, termina en un pico fino que sostiene el vilano, una corona de pelos sedosos. Los vilanos de todos los frutos forman la esfera.</p></section>
+        <section><h3>Lo que vuela</h3><p>El fruto, el pico y el vilano viajan juntos. El aire pasa entre los pelos y forma un anillo de aire en rotación sobre el vilano, que ayuda a frenar la caída. Al soplar en el visor puedes ver el receptáculo que queda al descubierto.</p></section>
+      </div>
+      <p class="sources">Fuentes botánicas y de vuelo · <a href="https://w3.biosci.utexas.edu/prc/K12/pages/Taraxacum%20officinale.html">Flora de Williamson County, Universidad de Texas</a> · <a href="https://doi.org/10.1038/s41586-018-0604-2">Cummins y colaboradores, <i>Nature</i></a></p>
+    </section>
+    <section class="scenic"><h2>La versión de Quelec</h2><p id="scene-context">El coro alza los dientes de león desde la gradería durante el florecimiento final. El taller prevé once estandartes en escena y uno de repuesto, con iluminación autónoma. Las semillas escénicas permanecen sujetas. En el visor, el soplo permite imaginar su dispersión y descubrir el centro luminoso.</p><small>Cuaderno de utilería, pág. 58 · Acuerdo de arte del 17 de septiembre e inventario de taller del 6 de noviembre de 2026.</small></section>
+  </main>
+  <script type="module" src="visor.js?v=DL01"></script>
+</body>
+</html>

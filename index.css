@@ -48,7 +48,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outli
   grid-auto-rows: clamp(96px, calc((100svh - 202px) / 3), 240px);
 }
 .object { min-width: 0; }
-.object:nth-child(-n+2) { grid-column: span 2; }
+.object:first-child { grid-column: span 2; }
 .open {
   height: 100%; display: grid; grid-template-rows: minmax(0,1fr) auto; text-decoration: none; overflow: hidden;
   border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
@@ -57,6 +57,8 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outli
 .picture { overflow: hidden; min-height: 0; background: linear-gradient(var(--sky, #fefefe), var(--ground, var(--sky, #fefefe))); }
 #cama { --sky: #e8e2d6; --ground: #f4f1eb; }
 #cauchera { --sky: #fdfdfd; }
+#dientes-de-leon .picture { background: #152925; }
+#dientes-de-leon .picture img { object-fit: cover; }
 #colas .picture { background: linear-gradient(#26323c 47%, #667985 47%); }
 #flor-central { --sky: #fefdf9; --ground: #fdfbf7; }
 #flores-pequenas { --sky: #172830; --ground: #182931; }
@@ -82,7 +84,7 @@ details p { max-width: 70ch; }
 .team-access-dot:hover, .team-access-dot:focus-visible { opacity: .9; }
 @media (min-width: 701px) and (max-width: 999px) {
   .objects { grid-template-columns: repeat(4,minmax(0,1fr)); grid-auto-rows: clamp(85px, calc((100svh - 212px) / 4), 200px); }
-  .object:nth-child(2) { grid-column: span 1; }
+  .object:first-child { grid-column: span 1; }
   .object.initial { grid-column: span 2; }
 }
 @media (max-width: 700px) {
@@ -100,9 +102,8 @@ details p { max-width: 70ch; }
   .heading h1 { font-size: 29px; }
   .heading p { margin-top: 3px; font-size: 12px; }
   .landscape { left: 45%; opacity: .36; mask-image: linear-gradient(to right, transparent, black 45%); }
-  .objects { grid-template-columns: repeat(6,minmax(0,1fr)); grid-auto-rows: clamp(72px, calc((100svh - 172px) / 5), 140px); gap: 7px; }
-  .object, .object:nth-child(2) { grid-column: span 2; }
-  .object:first-child { grid-column: span 4; }
+  .objects { grid-template-columns: repeat(6,minmax(0,1fr)); grid-auto-rows: clamp(72px, calc((100svh - 182px) / 5), 140px); gap: 7px; }
+  .object, .object:first-child { grid-column: span 2; }
   .object.initial { grid-column: span 3; }
   .open { border-radius: 6px; }
   .caption { padding: 5px 6px; min-height: 30px; gap: 4px; }
@@ -133,7 +134,7 @@ details p { max-width: 70ch; }
   .heading p { display: none; }
   .objects { grid-template-columns: repeat(5,minmax(0,1fr)); grid-auto-rows: max(53px, calc((100svh - 124px) / 3)); gap: 5px; }
   .object, .object.initial { grid-column: span 1; }
-  .object:nth-child(-n+2) { grid-column: span 2; }
+  .object:first-child { grid-column: span 2; }
   .caption { min-height: 24px; padding: 3px 5px; }
   .caption h2 { font-size: 13px; }
 }

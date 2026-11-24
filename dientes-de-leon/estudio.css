@@ -1,0 +1,95 @@
+:root {
+  color-scheme: dark;
+  --paper: #f0eedb; --muted: #bac9bc; --edge: #38504a; --gold: #e5c989;
+  --surface: #1a302c; --dark: #102322;
+}
+* {box-sizing: border-box}
+[hidden] {display:none!important}
+body {margin:0; color:var(--paper); background:var(--dark); line-height:1.5}
+a {color:inherit; text-underline-offset:3px}
+button, input {font: inherit}
+button {cursor:pointer; color:inherit}
+button:disabled {cursor:default; opacity:.5}
+:focus-visible {outline:3px solid var(--gold); outline-offset:3px}
+.top, main {width:min(1272px,100%); padding-inline:clamp(16px,4vw,56px); margin:auto}
+.top {display:flex; align-items:center; justify-content:space-between; min-height:64px}
+.identity {display:inline-flex; align-items:center; gap:10px; font-size:26px; letter-spacing:.075em; text-decoration:none}
+.back,.jump {font:600 12px/1.4 var(--font-subtitle); color:var(--muted)}
+.heading {border-top:1px solid var(--edge); padding:24px 0 20px; display:flex; align-items:end; justify-content:space-between; gap:10px}
+h1,h2,h3,p {margin:0}
+h1 {font-size:clamp(42px,5.1vw,72px); line-height:1.04}
+h2 {font-size:clamp(28px,3vw,43px); line-height:1.12}
+.kicker {font:600 11px/1.4 var(--font-subtitle); color:var(--gold); letter-spacing:.12em; text-transform:uppercase; margin-bottom:7px}
+.jump {padding-bottom:6px}
+.study {display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,31%); align-items:stretch; border:1px solid var(--edge); border-radius:14px; overflow:hidden; background:var(--surface)}
+.stage {min-width:0; display:flex; flex-direction:column}
+.viewport {flex:1; position:relative; isolation:isolate; min-height:clamp(365px,47vh,540px); background:radial-gradient(ellipse at 53% 47%,#324842 0%,#233b36 33%,#162d2a 69%,#112723 100%); overflow:hidden}
+#scene,#fallback {position:absolute; inset:0; width:100%; height:100%; display:block}
+#scene {touch-action:none; cursor:grab}
+#scene:active {cursor:grabbing}
+#scene:focus-visible {outline-offset:-5px}
+#fallback {z-index:1; display:grid; place-content:center; justify-items:center; text-align:center; padding:15px}
+#fallback img {width:min(430px,100%); max-height:240px; object-fit:contain}
+#fallback p {max-width:32em; margin:8px; font-size:14px}
+.caption-overlay,.hint,.views button,.measurements span,.seed-count {font-family:var(--font-subtitle)}
+.caption-overlay,.hint {position:absolute; pointer-events:none; z-index:1; color:#d3decd; font-size:11px}
+.caption-overlay {top:15px; left:17px; display:flex; gap:7px; align-items:center}
+.live-dot {width:6px;height:6px;border-radius:50%;background:#e6c681}
+.hint {bottom:11px;left:16px;right:12px}
+#labels {position:absolute;inset:0;pointer-events:none}
+#labels span {position:absolute; font:600 11px var(--font-subtitle); color:#f3e0ae; padding:2px 5px; white-space:nowrap; background:#17312bef; border-radius:3px; border-left:2px solid var(--gold)}
+.views {display:flex; justify-content:center; gap:5px; padding:9px 8px; background:#172b28; border-top:1px solid var(--edge)}
+.views button,.mic {border:1px solid transparent; background:transparent; color:var(--muted); border-radius:6px; padding:8px 12px; font-size:12px}
+.views button[aria-pressed=true] {border-color:#728b73; background:#2c453c; color:var(--paper)}
+.views button:hover,.text-btn:hover,.mic:hover {color:#fff}
+.controls {padding:clamp(20px,2.3vw,34px); border-left:1px solid var(--edge); display:flex; flex-direction:column; justify-content:center; align-items:stretch}
+.controls h2 {font-size:36px}
+.controls>p,.scenic p {color:var(--muted); font-size:15px; margin:10px 0 16px}
+.blow,.mic {width:100%; min-height:41px}
+.blow {border-radius:7px; border:1px solid #f4deab; display:flex; align-items:center; justify-content:center; gap:8px; font-weight:700; font-size:16px; color:#302b19; background:var(--gold)}
+.blow:enabled:hover {background:#f9dfa4}
+.mic {margin-top:7px; border:1px solid var(--edge); color:#e6ead6}
+.mic[aria-pressed=true] {background:#365548; border-color:#8ca98c}
+#mic-note {display:block; color:var(--muted); font-size:11px; line-height:1.4; margin:6px 0 13px}
+.seed-count,.light-row {display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:12px}
+.seed-count strong {font-variant-numeric:tabular-nums;font-size:16px}
+.track {height:3px; margin-top:5px; background:#3d5049; border-radius:3px; overflow:hidden}
+.track i {display:block; width:100%; height:100%; background:#c3cfa4; transition:width .25s}
+.text-btn {align-self:flex-start; border:0; background:none; color:var(--muted); font-size:12px; padding:8px 0}
+.light-row {border-top:1px solid var(--edge); margin-top:9px; padding-top:13px; font:600 12px var(--font-subtitle)}
+.light-row label {cursor:pointer}
+.light-row input {width:34px; height:19px; appearance:none; position:relative; border:1px solid #829484; border-radius:15px; background:#273a35; cursor:pointer}
+.light-row input:checked {background:#d7ba7b; border-color:#d7ba7b}
+.light-row input::before {content:""; position:absolute; width:11px; height:11px; left:3px; top:3px; border-radius:50%; background:#b8c4b2}
+.light-row input:checked::before {left:18px; background:#29372b}
+.measurements {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:16px 0 36px; border-block:1px solid var(--edge); padding:13px 0; gap:10px}
+.measurements>div {padding-left:clamp(8px,2.5vw,35px); border-left:1px solid var(--edge)}
+.measurements>div:first-child {padding-left:0; border:0}
+.measurements span {display:block; font-size:11px; color:var(--muted)}
+.measurements strong {font:400 clamp(24px,2.3vw,32px) var(--font-title); font-variant-numeric:tabular-nums}
+.measurements strong small {font:13px var(--font-subtitle); color:var(--muted)}
+.botany {scroll-margin-top:20px}
+.notes {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,3vw,42px); margin:18px 0}
+.notes h3 {font-size:15px; margin-bottom:5px}
+.notes p,.sources {font-size:14px; color:var(--muted)}
+.sources {font-size:12px}
+.scenic {margin:25px 0 50px;padding-top:17px;border-top:1px solid var(--edge)}
+.scenic h2 {font-size:25px}
+.scenic p {max-width:77ch}
+@media(max-width:740px) {
+  body header.top {display:flex!important; padding:8px 16px!important; min-height:52px}
+  .heading {padding:17px 0; align-items:start}
+  .jump {max-width:115px;align-self:center;text-align:right;font-size:11px}
+  .study {grid-template-columns:1fr}
+  .viewport {min-height:clamp(280px,45svh,410px)}
+  .controls {border-left:0;border-top:1px solid var(--edge);padding:16px 18px}
+  .controls h2 {font-size:27px}
+  .controls>p {margin:4px 0 11px}
+  .measurements {margin:14px 0 27px}
+  .measurements span {font-size:10px}
+  .notes {grid-template-columns:1fr}
+}
+@media(max-width:380px) {.jump {display:none}.views button {padding:8px 7px}}
+@media(prefers-reduced-motion:reduce) {.track i {transition:none}}
+.scenic small {color:var(--muted); font-size:12px}
+#labels span::before {content:""; position:absolute; right:100%; top:50%; width:var(--guia,0); border-top:1px dotted #b8bb9d; opacity:.75}
