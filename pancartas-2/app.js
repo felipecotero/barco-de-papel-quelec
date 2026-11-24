@@ -1,6 +1,6 @@
 import * as THREE from '../vendor/three.module.js';
 import { OrbitControls } from '../vendor/OrbitControls.js';
-import { buildPlacards, DEFAULT_DESIGNS, sheetSize, placeArtwork } from './model.js?v=PA2-03';
+import { buildPlacards, DEFAULT_DESIGNS, sheetSize, placeArtwork } from './model.js?v=PA2-04';
 
 const $ = selector => document.querySelector(selector);
 const V = a => new THREE.Vector3(...a);
@@ -18,7 +18,7 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.04;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.domElement.setAttribute('aria-label', 'Cinco carteles orgánicos de dos caras');
+renderer.domElement.setAttribute('aria-label', 'Cuatro carteles orgánicos de dos caras');
 host.prepend(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
@@ -81,7 +81,7 @@ function textureFor(design) {
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
   texture.userData.sourceRectUV = { x: rect.x, y: rect.y, width: rect.w, height: rect.h };
-  texture.userData.sourceUncropped = true;
+  texture.userData.sourceUncropped = !(design.id === 'lapices' && design.orientation === 'portrait');
   texture.userData.paperColor = rect.paperColor;
   textures.push(texture);
   return texture;
@@ -187,8 +187,8 @@ function update() {
   $('#piece-note').textContent = board.description || 'Contorno orgánico y dibujo completo, sin estirar ni recortar la ilustración.';
   $('#orientation').value = board.orientation;
   $('#orientation-note').hidden = board.orientation === DEFAULT_DESIGNS[selected].orientation;
-  $('#view-name').textContent = mode === 'collection' ? 'CINCO CARTELES · CARAS ' + (face ? 'B' : 'A') : mode === 'inside' ? board.id + ' · POR DENTRO' : board.id + ' · CARA ' + (face ? 'B' : 'A');
-  $('#view-measures').textContent = mode === 'collection' ? 'Cinco siluetas distintas · medidas de estudio' : Math.round(board.width * 100) + ' × ' + Math.round(board.height * 100) + ' cm · altura total ≈ ' + Math.round(board.totalHeight * 100) + ' cm';
+  $('#view-name').textContent = mode === 'collection' ? 'CUATRO CARTELES · CARAS ' + (face ? 'B' : 'A') : mode === 'inside' ? board.id + ' · POR DENTRO' : board.id + ' · CARA ' + (face ? 'B' : 'A');
+  $('#view-measures').textContent = mode === 'collection' ? 'Cuatro siluetas distintas · medidas de estudio' : Math.round(board.width * 100) + ' × ' + Math.round(board.height * 100) + ' cm · altura total ≈ ' + Math.round(board.totalHeight * 100) + ' cm';
   document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === mode)));
   document.querySelectorAll('[data-face]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.face === face)));
   document.querySelectorAll('[data-index]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.index === selected)));
@@ -197,7 +197,7 @@ function update() {
   $('#explode-value').textContent = Math.round(explode * 100) + ' %';
   $('#explode').disabled = mode === 'collection';
   const text = mode === 'collection'
-    ? ['Cinco carteles, diez caras', 'Elige uno para mirar su contorno y montaje. Voltear permite comprobar que las ilustraciones se leen derechas por los dos lados.']
+    ? ['Cuatro carteles, ocho caras', 'Elige uno para mirar su contorno y montaje. Voltear permite comprobar que las ilustraciones se leen derechas por los dos lados.']
     : mode === 'inside'
       ? ['Un mango oculto entre dos caras', 'La tapa posterior se aparta para ver el refuerzo y los apoyos. Los dibujos quedan por fuera; la madera no tapa ninguna de las caras.']
       : stages[stage];
@@ -283,13 +283,13 @@ function bind() {
   };
   $('#snapshot').onclick = () => {
     renderer.render(scene, camera);
-    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-03.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
+    const a = document.createElement('a'); a.download = 'Quelec-' + boards[selected].id + '-PA2-04.png'; a.href = renderer.domElement.toDataURL('image/png'); a.click();
   };
   $('#share').onclick = async () => {
     const u = new URL(location.href);
-    u.searchParams.set('rev', 'PA2-03');
+    u.searchParams.set('rev', 'PA2-04');
     u.searchParams.delete('ilustracion');
-    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 2, selected, mode, face, stage, explode, artFocused, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: designs.map(d => d.orientation), camera: camera.position.toArray(), target: controls.target.toArray() }));
+    u.hash = 'vista=' + encodeURIComponent(JSON.stringify({ v: 3, selectedId: designs[selected].id, mode, face, stage, explode, artFocused, labels: labelsOn, dimensions: dimensions.getState().visible, orientations: Object.fromEntries(designs.map(d => [d.id, d.orientation])), camera: camera.position.toArray(), target: controls.target.toArray() }));
     try { await navigator.clipboard.writeText(u.href); notify('Enlace de esta vista copiado.'); }
     catch { prompt('Copia el enlace de esta vista:', u.href); }
   };
@@ -331,15 +331,23 @@ function restore() {
       return true;
     }
     const q = JSON.parse(raw);
-    if (q.v !== 1 && q.v !== 2) return false;
-    if (Array.isArray(q.orientations) && q.orientations.length === 5) {
-      q.orientations.forEach((o, i) => {
-        if (!['portrait', 'landscape'].includes(o)) return;
-        // Old shared views stored the former landscape default for pencils.
-        designs[i].orientation = q.v === 1 && designs[i].id === 'lapices' ? 'portrait' : o;
-      }); rebuild();
+    if (![1, 2, 3].includes(q.v)) return false;
+    const legacyIds = ['osito', 'lapices', 'balon', 'tiempo', 'sonrisa'];
+    const legacy = q.v < 3;
+    const selectedId = legacy ? legacyIds[q.selected ?? 0] : q.selectedId;
+    const index = designs.findIndex(d => d.id === selectedId);
+    if (index < 0) return false;
+    if (q.orientations) {
+      for (const design of designs) {
+        const key = legacy ? legacyIds.indexOf(design.id) : design.id;
+        const o = q.orientations[key];
+        if (['portrait', 'landscape'].includes(o)) {
+          design.orientation = q.v === 1 && design.id === 'lapices' ? 'portrait' : o;
+        }
+      }
+      rebuild();
     }
-    selected = clamp(Math.floor(+q.selected || 0), 0, 4);
+    selected = index;
     mode = ['single', 'collection', 'inside'].includes(q.mode) ? q.mode : 'collection';
     face = q.face === 1 ? 1 : 0; stage = clamp(Math.floor(+q.stage || 4), 1, 4); explode = clamp(+q.explode || 0); labelsOn = !!q.labels;
     $('#labels-toggle').setAttribute('aria-pressed', String(labelsOn)); update();
@@ -360,7 +368,7 @@ async function start() {
   rebuild();
   transparency = QuelecSurfaceTransparency.install({ renderer, getRoot: () => model.root, isSurface: mesh => mesh.userData.surfaceTransparency === true && ['panel', 'art', 'band', 'edge'].includes(mesh.parent?.userData.type), label: 'Transparencia de las caras', container: $('#transparency'), onChange: invalidate });
   dimensions = QuelecDimensions.install({ THREE, scene, camera, viewport: host, button: $('#measure-toggle'), getBounds: bounds, isAssembled: () => mode === 'single' && stage === 4 && explode < .001, names: ['Ancho', 'Altura con mango', 'Espesor de caja'], caption: 'Medidas de estudio del cartel ensamblado. Contorno irregular; no es una plantilla de corte.', notify });
-  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-03', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. Las texturas reproducen las artes de impresión. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
+  exporter = QuelecOBJ.install({ THREE, button: $('#export-model'), name: 'Quelec-Cartel-Organico', revision: 'PA2-04', getRecords: records, notes: 'Cartel seleccionado ensamblado; ambas caras muestran la misma ilustración derecha, sin espejo. Contorno orgánico y medidas de estudio. PP, cámara, mango y fijaciones son propuestas pendientes de prototipo. Las texturas reproducen las artes de impresión. No incluye suelo, cotas ni rótulos. Formatos en metros o milímetros según elección.' });
   bind(); resize();
   new ResizeObserver(resize).observe(host);
   if (!restore()) { update(); fit(); }

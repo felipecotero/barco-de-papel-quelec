@@ -1,5 +1,5 @@
 {
-  "revision": "PA2-03",
+  "revision": "PA2-04",
   "faces": "Misma ilustración en cada cara, derecha y sin espejo.",
   "artworks": [
     {
@@ -19,20 +19,22 @@
       ]
     },
     {
-      "file": "02-lapices-PA202.jpg",
-      "sourceName": "Lápices de colores rotos y astillas.psd",
-      "bytes": 488444,
-      "sha256": "4b09d46cdd02a8b0d69dbf6f62544a2170ab5d691d5c68fd48adb9bd75e98bbd",
+      "file": "02-lapices-PA204.jpg",
+      "sourceName": "Lápices rotos sobre índigo · PA2-04",
+      "bytes": 721534,
+      "sha256": "113975a873b421cb79f49d66dffd4fe2db1463b65f8aa9459cf6604482dd5620",
       "pixels": [
-        1060,
-        1484
+        1049,
+        1499
       ],
-      "paperColor": "#FFFFFF",
-      "printPDF": "downloads/02-lapices-pliego.pdf",
+      "paperColor": "#1A184E",
+      "printPDF": "downloads/02-lapices-pliego.pdf?v=PA2-04",
       "sheetCm": [
         70,
         100
-      ]
+      ],
+      "texture": "02-lapices-PA204.png",
+      "textureSHA256": "9174d3d9dcf562f99f0677b7f4be2e462f5e915618953e7cd809aebbc512668a"
     },
     {
       "file": "03-balon-PA203.jpg",
@@ -52,22 +54,6 @@
       "texture": "03-balon-PA203.png",
       "textureSHA256": "1a25d8ce0db0868cdd5c96430292cda47d199720fc6d8aceb2767e997a4c5b35",
       "layerSourceName": "Balón de fútbol con chincheta roja tachata roja.psd"
-    },
-    {
-      "file": "04-reloj-PA202.jpg",
-      "sourceName": "Reloj de arena alargado en acuarela ALARGADA Morad.psd",
-      "bytes": 468935,
-      "sha256": "318bfd674c9dcaae65a2494439395778a795dd405523b56adffe543986e5b85f",
-      "pixels": [
-        1060,
-        1484
-      ],
-      "paperColor": "#600D1F",
-      "printPDF": "downloads/04-reloj-pliego.pdf",
-      "sheetCm": [
-        70,
-        100
-      ]
     },
     {
       "file": "05-sonrisa-PA202.jpg",

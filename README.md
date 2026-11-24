@@ -248,13 +248,17 @@ Materiales propuestos: dos pieles de PP alveolar de 2 mm y 350 g/m² en las comp
 Seleccionar, mover y rotar cada pieza sobre sus ejes propios, introducir cotas, deshacer, aislar, transparentar pieles y mostrar u ocultar portador y rótulos. Las ventanas centrales alternan entre circular y rectangular redondeada; el plástico se puede quitar y el cálculo de masa se actualiza. Se conservan los identificadores y el almacenamiento de posiciones de las revisiones anteriores.
 
 
-## Carteles 2.0 · I40 / PA2-03 · 18 de noviembre de 2026
+## Grulla G04 · Despiece para corte a mano
 
-El osito y el balón llevan los tachones rojos de sus artes finales. Se presentan en vertical junto con los lápices y el reloj de arena, en pliegos de 70 × 100 cm. La sonrisa va en horizontal, a 100 × 70 cm. Los cinco carteles conservan sus siluetas de papel encontrado y llevan la misma ilustración derecha en ambas caras. El fondo del reloj es vino tinto y el de los otros cuatro es blanco. [Abrir el visor](pancartas-2/?rev=PA2-03).
+La guía reúne las 41 piezas en 21 fichas de trazado, con mapa isométrico, cotas en centímetros y barra de control de 5 cm. La página 3 muestra los dos laterales del cuello en espejo y la marca de unión con el pico. [Descargar el PDF de 23 páginas Carta](grulla/downloads/Grulla-G04-Corte-a-mano-revisado-Carta.pdf).
 
-Para imprimir los cinco carteles de doble cara, sacar dos copias de cada página a tamaño real (100 %). Cada PDF individual contiene un arte y el PDF conjunto reúne las cinco páginas. El fondo llega hasta los bordes del pliego. Los artes aprobados tienen 1060 × 1484 píxeles y se incluyen a su resolución nativa, entre 46 y 65 ppp en estas composiciones. [Descargas para imprenta](pancartas-2/?rev=PA2-03#artes).
+## Carteles 2.0 · I45 / PA2-04 · 23 de noviembre de 2026
 
-El visor permite ver uno o cinco carteles, girar de cara, cambiar la orientación de la pieza, separar las capas y mostrar cotas, rótulos o transparencias. Los cinco artes también están disponibles en un ZIP de JPG. El cartel ensamblado puede descargarse como GLB, OBJ con texturas o STL.
+El osito, los lápices rotos y el balón van en pliegos verticales de 70 × 100 cm. La sonrisa lleva un pliego horizontal de 100 × 70 cm. Cada cartel muestra la misma ilustración por sus dos caras. Los lápices ocupan más superficie y el fondo índigo llega a los bordes del pliego. [Abrir el visor](pancartas-2/?rev=PA2-04).
+
+Para vestir las dos caras, imprimir dos copias de cada página al 100 %. Se puede descargar cada cartel por separado, los cuatro pliegos en un PDF o los cuatro JPG en un ZIP. [Descargas para imprenta](pancartas-2/?rev=PA2-04#artes).
+
+El visor permite girar los carteles, cambiar de cara, separar las capas, mostrar las cotas, ajustar la transparencia y descargar modelos en GLB, OBJ con texturas o STL.
 
 Montaje de estudio: dos pieles de PP de 3 mm, cámara de 21 mm y mango de madera de 25 × 15 × 1800 mm. Caja nominal de 27 mm; 27,4 mm contando la representación superficial de las ilustraciones. Altura total propuesta de 220 cm en vertical y 190 cm en horizontal. Las cabezas enrasadas y las uniones compactas son una propuesta, pendiente de prototipo, herraje disponible y revisión del manejo. Las envolventes del visor no son plantillas de corte. Los constructivos PA05 y los costos PC02 pertenecen a las versiones anteriores.
 

@@ -4,9 +4,8 @@
  */
 export const DEFAULT_DESIGNS = Object.freeze([
   { id: 'osito', code: 'C2-01', name: 'Osito de peluche', orientation: 'portrait', artUrl: 'assets/01-osito-PA202.jpg', paperColor: '#ffffff', profile: 0 },
-  { id: 'lapices', code: 'C2-02', name: 'Lápices de colores', orientation: 'portrait', artUrl: 'assets/02-lapices-PA202.jpg', paperColor: '#ffffff', profile: 1 },
+  { id: 'lapices', code: 'C2-02', name: 'Lápices rotos', orientation: 'portrait', artUrl: 'assets/02-lapices-PA204.png', jpgUrl: 'assets/02-lapices-PA204.jpg', paperColor: '#1a184e', profile: 1 },
   { id: 'balon', code: 'C2-03', name: 'Balón de fútbol', orientation: 'portrait', artUrl: 'assets/03-balon-PA203.png', jpgUrl: 'assets/03-balon-PA203.jpg', paperColor: '#ffffff', profile: 2 },
-  { id: 'tiempo', code: 'C2-04', name: 'Reloj de arena', orientation: 'portrait', artUrl: 'assets/04-reloj-PA202.jpg', paperColor: '#600d1f', profile: 3 },
   { id: 'sonrisa', code: 'C2-05', name: 'Sonrisa', orientation: 'landscape', artUrl: 'assets/05-sonrisa-PA202.jpg', paperColor: '#ffffff', profile: 4 },
 ]);
 
@@ -62,8 +61,15 @@ export function createOutline(THREE, width, height, profile = 0) {
 // full sheet. A centred image reads upright after the asymmetric board turns.
 export function placeArtwork(THREE, design, imageWidth, imageHeight) {
   const { width, height } = sheetSize(design.orientation);
-  const { outline } = createOutline(THREE, width, height, design.profile);
   const fit = Math.min(width / imageWidth, height / imageHeight);
+  // The pencil artwork shares its centred 85% print layout with the PDF.
+  // The margins contain only indigo on both sides of the asymmetric cut.
+  if (design.id === 'lapices' && design.orientation === 'portrait') {
+    const w = imageWidth * fit * .85 / width;
+    const h = imageHeight * fit * .85 / height;
+    return { x: (1 - w) / 2, y: (1 - h) / 2, w, h, paperColor: design.paperColor };
+  }
+  const { outline } = createOutline(THREE, width, height, design.profile);
   const clearance = .004;
   function fits(scale) {
     const x = imageWidth * fit * scale / 2 + clearance;
@@ -100,7 +106,7 @@ export function placeArtwork(THREE, design, imageWidth, imageHeight) {
 export function buildPlacards(THREE, options = {}) {
   const designs = options.designs || DEFAULT_DESIGNS;
   const textures = options.textures || new Map();
-  const root = new THREE.Group(); root.name = 'Carteles_2_cinco_doble_cara';
+  const root = new THREE.Group(); root.name = 'Carteles_2_doble_cara';
   const boards = [];
   const V = (x, y, z) => new THREE.Vector3(x, y, z);
   const partColors = { panel: '#dfd2ad', art: '#d8e5eb', band: '#84b6ab', pole: '#b88e61', spacers: '#c4a5d1', edge: '#dec49b', hardware: '#9eaeb5' };
@@ -232,7 +238,7 @@ export function buildPlacards(THREE, options = {}) {
   }
   const setState = (explode = 0, stage = 4, colors = false) => boards.forEach(board => board.setState(explode, stage, colors));
   const specs = {
-    revision: 'Carteles 2 · PA2-03', units: 'm', count: boards.length, facesPerBoard: 2,
+    revision: 'Carteles 2 · PA2-04', units: 'm', count: boards.length, facesPerBoard: 2,
     sameUprightArtworkBothSides: true, oldModuleRetained: true,
     panelThicknessM: .003, cavityM: .021, nominalShellDepthM: .027, overallDepthWithArtworkM: .0274,
     construction: 'Dos pieles de PP de 3 mm, cámara de 21 mm, banda interior y listón de 25 × 15 × 1800 mm. Uniones pasantes compactas dibujadas como propuesta; confirmar herrajes, estabilidad y manejo en prototipo.',
