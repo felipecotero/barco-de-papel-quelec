@@ -1,6 +1,6 @@
 {
-  "actualizado": "2026-11-24T13:41:13Z",
-  "consultado": "2026-11-24T13:41:13Z",
+  "actualizado": "2026-11-25T02:59:39Z",
+  "consultado": "2026-11-25T02:59:39Z",
   "partidas": {
     "H01": {
       "color": "naranja",
@@ -52,7 +52,7 @@
       "proximaRevision": "2026-11-24"
     },
     "H08": {
-      "color": "amarillo",
+      "color": "verde",
       "estado": "Por verificar",
       "avance": "Verificar el modo de uso del tocado u la pechera",
       "ultimaRevision": "2026-11-20",
@@ -73,21 +73,21 @@
       "proximaRevision": "2026-11-24"
     },
     "H11": {
-      "color": "rojo",
+      "color": "verde",
       "estado": "Por verificar",
       "avance": "Verificar el estado de la compra de estos insumos",
       "ultimaRevision": "2026-11-20",
       "proximaRevision": "2026-11-24"
     },
     "H12": {
-      "color": "amarillo",
+      "color": "verde",
       "estado": "Por verificar",
       "avance": "Aunque se está esperando a que llegue a la cama necesitamos tener claro si ya se tiene el proveedor de este colchón",
       "ultimaRevision": "2026-11-20",
       "proximaRevision": "2026-11-24"
     },
     "H13": {
-      "color": "amarillo",
+      "color": "verde",
       "estado": "Pendiente",
       "avance": "",
       "ultimaRevision": "2026-11-20",
@@ -213,7 +213,7 @@
       "proximaRevision": "2026-11-24"
     },
     "H34": {
-      "color": "rojo",
+      "color": "verde claro",
       "estado": "Pendiente",
       "avance": "Iniciar con la construcción\nTener en cuenta que el centro luminoso debe ser circular como un orbe de luz o como el referente una Ochoa donde el capuchón está en su sol estructura y la Pepa de Ochoa es la fuente de luz.",
       "ultimaRevision": "2026-11-20",
