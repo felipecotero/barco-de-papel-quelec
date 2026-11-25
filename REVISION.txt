@@ -1,1 +1,1 @@
-I50 / 24.11.2026 / Seguimiento de las 45 partidas de utilería. Cada ficha muestra el avance y apoyo requerido, la última revisión y la próxima revisión. El tablero informa cuándo se leyó Drive y cuándo se consultó la copia publicada.
+I51 / 24.11.2026 / Bodega de utilería en la primera casilla del Taller. Plano 3D de objetos, áreas y volúmenes, recorridos e inventario.

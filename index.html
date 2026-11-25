@@ -8,7 +8,7 @@
   <title>Quelec · Taller de objetos</title>
   <link rel="icon" href="assets/logo-grulla.svg">
   <link rel="stylesheet" href="shared/brand.css?v=I05">
-  <link rel="stylesheet" href="index.css?v=I49">
+  <link rel="stylesheet" href="index.css?v=I51">
   <script>const u=new URL(location.href);if(u.hash.includes('vista=')||u.searchParams.has('vista')||/^R0[5-8]/.test(u.searchParams.get('rev')||''))location.replace('barco.html'+u.search+u.hash);</script>
 </head>
 <body>
@@ -25,10 +25,16 @@
   </header>
   <main>
     <div class="heading">
-      <div><h1>Taller de objetos</h1><p>Selecciona un objeto para abrir su visor 3D.</p></div>
+      <div><h1>Taller de objetos</h1><p>Abre la bodega o elige un objeto para ver su modelo 3D.</p></div>
       <div class="landscape" aria-hidden="true"></div>
     </div>
-    <section id="objetos" class="objects" aria-label="Los 14 objetos del taller">
+    <section id="objetos" class="objects" aria-label="Bodega y objetos del taller">
+      <article class="object" id="bodega-de-utileria">
+        <a class="open" href="bodega-de-utileria.html">
+          <div class="picture"><img src="bodega-de-utileria.webp" alt=""></div>
+          <div class="caption"><h2>Bodega de utilería</h2><span class="arrow" aria-hidden="true">↗</span></div>
+        </a>
+      </article>
       <article class="object" id="flor-central">
         <a class="open" href="flor-central/artes.html?rev=I42&amp;visor=1#tallo-y-hojas">
           <div class="picture"><img src="assets/indice/flor-central.webp" alt=""></div>

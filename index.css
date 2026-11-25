@@ -57,6 +57,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outli
 .picture { overflow: hidden; min-height: 0; background: linear-gradient(var(--sky, #fefefe), var(--ground, var(--sky, #fefefe))); }
 #cama { --sky: #e8e2d6; --ground: #f4f1eb; }
 #cauchera { --sky: #fdfdfd; }
+#bodega-de-utileria .picture { background: #111b20; }
 #dientes-de-leon .picture { background: #152925; }
 #dientes-de-leon .picture img { object-fit: cover; }
 #colas .picture { background: linear-gradient(#26323c 47%, #667985 47%); }
