@@ -1,0 +1,22 @@
+/* SE01: presentación del taller; modelo y controles originales intactos. */
+:root{--bg:#111c21;--panel:#1b2a2e;--line:#395054;--ink:#f3f1e6;--mut:#b5c4c1;--cy:#c5dfb8;--amb:#f4cc85}
+body{font-family:var(--font-body)}
+.taller-header{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;border-bottom:1px solid var(--line);background:var(--bg)}
+.identity{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;letter-spacing:.075em;font-size:25px;line-height:1}
+.identity small{display:block;font:600 8px/1.2 var(--font-subtitle);letter-spacing:.16em;margin-top:5px}
+.back{font:600 12px var(--font-subtitle);text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px 12px}
+.back:hover{background:#2a403e;border-color:var(--cy)}
+.app{height:calc(100vh - 70px);height:calc(100dvh - 70px)}
+.top{background:linear-gradient(#111c21ed 55%,#111c2100);padding:20px 22px 28px}
+h1{font-size:clamp(26px,2.6vw,36px);line-height:1.12;max-width:22ch}
+h2{font-size:23px;line-height:1.15;border-top:1px solid var(--line);padding-top:20px;margin-top:24px}h2:first-child{border:0;padding-top:0}
+.hint{font-family:var(--font-body);font-size:12px;margin-top:8px;max-width:52ch}
+button{background:#23363d;border:1px solid #5c797b;border-radius:6px;font-size:12px;padding:0 12px}
+button:hover{background:#345048}button[aria-pressed=true]{background:#c5dfb8;color:#203529;border-color:#c5dfb8}
+a:focus-visible{outline:3px solid var(--amb);outline-offset:3px}
+.views{background:linear-gradient(#111c2100,#111c21ed 45%)}
+.tot,.tplbox{background:#142226;border-radius:6px}
+th{font-family:var(--font-subtitle);font-size:11px}table{font-size:13px}
+#tpl .t{font-family:var(--font-body);fill:var(--mut)}
+@media(max-width:860px){.app{height:auto}.viewer{height:68svh;min-height:420px}.taller-header{padding:10px 14px}.views button{font-size:12px}}
+@media(max-width:420px){.identity{font-size:20px}.identity small{font-size:6px}.identity img{width:30px}.back{padding:9px;font-size:10px}h1{font-size:26px}}
